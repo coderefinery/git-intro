@@ -1,0 +1,64 @@
+title: "Example lesson"
+start_time: 540  # 9:00
+
+# where things are
+source: .
+destination: ./_site
+plugins_dir: ./_plugins
+layouts_dir: ./_layouts
+data_dir: ./_data
+
+# handling reading
+safe: false
+include: [".htaccess"]
+exclude: []
+keep_files: [".git"]
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# filtering content
+show_drafts: null
+limit_posts: 0
+future: true
+unpublished: false
+
+# plugins
+whitelist: []
+gems: []
+
+# conversion
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+lsi: false
+excerpt_separator: "\n\n"
+
+# serving
+detach: false
+port: 4000
+host: 127.0.0.1
+baseurl: ""
+
+# outputting
+timezone: null
+quiet: false
+
+# markdown processors
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+include: ['_pages']
+
+collections:
+  episodes:
+    output: true
+    permalink: /:name/

@@ -1,0 +1,13 @@
+{% if page.keypoints %}
+<h2>Key points</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <ul>
+          {% for keypoint in page.keypoints %}
+              <li>{{ keypoint }}</li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
