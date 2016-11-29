@@ -107,7 +107,7 @@ it. In git you can always check the status of files in your repository using
 *git status*. It is always a safe command to run and in general a good idea to
 do when you're trying to figure what to do next..
 
-``` shell
+```shell-script
 $ git status
 On branch master
 
@@ -124,7 +124,8 @@ add the file to the list of files tracked by git. By default git doesn't track
 any files and you need make a conscious decision to add a file. Let's do what
 git hints and add the file using *git add*.
 
-``` shell
+```shell
+
 $ git add hello.py 
 $ git status
 On branch master
@@ -135,6 +136,7 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
         new file:   hello.py
+
 ```
 
 Now *git status* is telling us that the file hello.py will be committed as a
@@ -146,9 +148,11 @@ the *man* page of that commit. The first command will work on Unix systems
 that support man pages and the second one will work on both. Observe the dash
 in the man call.
 
-``` shell
+```shell
+
 $ man git-commit 
 $ git help commit
+
 ```
 
 You should see a very long help page as the tool is very versatile. Do not
