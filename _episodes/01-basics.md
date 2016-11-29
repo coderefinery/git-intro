@@ -59,7 +59,7 @@ though.
 First we need to tell git who you are. When you make commits git stores your
 name and.
 
-```{r, engine='sh', count_lines}
+``` {r, engine='sh', count_lines}
 $ git config --global user.name "Your Name"
 $ git config --global user.email "your.name@example.org"
 ```
@@ -97,7 +97,7 @@ print("Hello World"")
 ```
 
 Verify that it works
-``` shell
+``` sh
 $ python hello.py
 Hello World!
 ```
