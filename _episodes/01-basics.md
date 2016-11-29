@@ -59,7 +59,7 @@ though.
 First we need to tell git who you are. When you make commits git stores your
 name and.
 
-```shell
+```{r, engine='sh', count_lines}
 $ git config --global user.name "Your Name"
 $ git config --global user.email "your.name@example.org"
 ```
@@ -80,7 +80,7 @@ vi if nothing is set.
 
 
 For Windows users
-```shell
+```
 $ git config core.editor notepad
 $ git config format.commitMessageColumns 72
 ```
