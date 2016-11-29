@@ -38,10 +38,10 @@ Something something about being able to work in parallel.
 
 One of the basic principles of git is that it is easy to create repositories. 
 
-```shell
-$ mkdir testrepo
-$ cd testrepo
-$ git init
+```
+mkdir testrepo
+cd testrepo
+git init
 ```
 
 That's it. Now you've created an empty git repository! Before we can start
