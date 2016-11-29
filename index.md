@@ -3,27 +3,27 @@ layout: lesson
 permalink: /
 ---
 
-# Example lesson
+# Introduction to Version Control with Git
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+This lesson will teach students the basics of the [git](https://git-scm.com/)
+version control system.
 
 ## Prerequisites
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-   culpa qui officia deserunt mollit anim id est laborum.
+1. Students should have installed the latest or a reasonably new version of
+   git on their machines. For installation instructions and binaries see 
+   [the git home page](https://git-scm.com/).
 
-2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-   culpa qui officia deserunt mollit anim id est laborum.
+2. Students should have some version of Python installed. This will be already
+   installed on \*nix systems. For Windows users we recommend installing the
+   latest Python 3 release from
+   [here](https://www.python.org/downloads/windows/).
+
+3. Students are expected to be familiar with using the command line. No
+   expertise is required, but the lesson will be mostly taken from the command
+   line.
+
+4. Students should be familiar with using a text editor on their system. Emacs
+   and Vim are excellent choices if you know how to use them but Nano or
+   Notepad on Windows are sufficient.
+
