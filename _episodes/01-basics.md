@@ -330,7 +330,7 @@ Notice how git tells you what changes it will make with the commit and gives you
 
 In general files can have one of 4 states inside a git repository. *Image CC BY 3.0 from the Pro Git book.*
 
-![States of a git file](/assets/img/lifecycle.png "States of a git file. License CC BY 3.0")
+![States of a git file](../assets/img/lifecycle.png "States of a git file. License CC BY 3.0")
 
 Now you decide you actually want to commit the changes to the python files and only then add the .gitignore file. Let's use git reset to reset the staged file to it's previous state (untracked)
 
@@ -500,7 +500,7 @@ config      index       objects
 ```
 
 Git stores everything under the .git folder in your repository. In fact, **the
-.git directory is the git repository.*
+.git directory is the git repository.**
 
 Previously when you wrote the commit messages using your text editor, they
 were in fact saved to COMMIT_EDITMSG.
@@ -517,15 +517,15 @@ the state of each file.
 
 *Image CC BY 3.0 from the Pro Git book.*
 
-![A commit inside git](/assets/img/commit-and-tree.png "States of a git file. License CC BY 3.0")
+![A commit inside git](../assets/img/commit-and-tree.png "States of a git file. License CC BY 3.0")
 
 
 Once you have several commits, each commit blob also links to the hash of the previous commit. Up until now these commits have created a list but in the next lessons they will create a [directed acyclic graph](http://eagain.net/articles/git-for-computer-scientists/) (don't worry if the term is not familiar).
 
 *Image CC BY 3.0 from the Pro Git book.*
 
-![A commit and it's parents](/assets/img/commits-and-parents-.png "Commit and it's parents License CC BY 3.0")
+![A commit and it's parents](../assets/img/commits-and-parents.png "Commit and it's parents License CC BY 3.0")
 
-A branches and tags in Git are simply pointers to a commit. Basic branching and
+All branches and tags in Git are simply pointers to a commit. Basic branching and
 merging is the topic of our next lesson.
 
