@@ -1,4 +1,4 @@
-title: "Example lesson"
+title: "Git Intro"
 start_time: 540  # 9:00
 
 # where things are
@@ -35,6 +35,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
+    code_class: 'hilight'
 
 lsi: false
 excerpt_separator: "\n\n"
