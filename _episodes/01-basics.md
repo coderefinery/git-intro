@@ -529,6 +529,8 @@ Once you have several commits, each commit blob also links to the hash of the pr
 All branches and tags in Git are simply pointers to a commit. Basic branching and
 merging is the topic of our next lesson.
 
+## Challenge example
+
 > ## this is a challenge
 > what does it do
 > 
