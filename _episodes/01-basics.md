@@ -106,7 +106,7 @@ Create a file called **hello.py** with the following content in **testrepo/**
 
 ``` python
 from __future__ import print_function
-print("Hello World"")
+print("Hello World")
 ```
 
 Verify that it works
@@ -220,7 +220,7 @@ Edit the  file called **hello.py** to create the following
 ``` python
 from __future__ import print_function
 def say_hello():
-	print("Hello World"")
+	print("Hello World")
 ```
 
 Now, create a new file called **runner.py** 
@@ -301,7 +301,7 @@ that the one file tracked by git has changed.
 
 Keep in mind that version control is about telling the story of how your project came to be. Let's commit the changes in two separate steps.
 
-First, use **git add** to add the .gitignore file, check what happened with **git status** and commit the changes. The -m handle gives **git commit** a commit message without opening your text editor.
+First, use **git add** to add the .gitignore file, check what happened with **git status** ~~and commit the changes. The -m handle gives **git commit** a commit message without opening your text editor.~~
 
 ```
 $ git add .gitignore
