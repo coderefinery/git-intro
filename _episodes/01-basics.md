@@ -325,7 +325,7 @@ Untracked files:
 ```
 
 Notice how git tells you what changes it will make with the commit and gives you instructions on the things you might want to do. The `hello.py` file can moved to a staged state or unmodified state with either `git add` or `git checkout --`.
-
+![States of hello.py](../assets/img/hw_state001.png){:class="img-responsive"}
 ### States of a file.
 
 In general files can have one of 4 states inside a git repository. *Image CC BY 3.0 from the Pro Git book.*
