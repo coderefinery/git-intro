@@ -332,7 +332,7 @@ In general files can have one of 4 states inside a git repository. *Image CC BY 
 
 ![States of a git file](../assets/img/lifecycle.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
 
-Now you decide you actually want to commit the changes to the python files and only then add the .gitignore file. Let's use git reset to reset the staged file to it's previous state (untracked)
+The developement of `.gitignore` is kind of sidetrack to your main story, the development of the python files. Conseqeuently you decide you actually want to commit the changes to the python files and only then add the .gitignore file. Let's use git reset to reset the staged file to it's previous state (untracked)
 
 ```
 $ git reset HEAD hello.py
