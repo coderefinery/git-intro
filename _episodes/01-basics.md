@@ -324,7 +324,7 @@ Untracked files:
 	runner.py
 ```
 
-Notice how git tells you what changes it will make with the commit and gives you instructions on the things you might want to do.
+Notice how git tells you what changes it will make with the commit and gives you instructions on the things you might want to do. The `hello.py` file can moved to a staged state or unmodified state with either `git add` or `git checkout --`.
 
 ### States of a file.
 
@@ -336,6 +336,7 @@ Now you decide you actually want to commit the changes to the python files and o
 
 ```
 $ git reset HEAD hello.py
+$ git reset HEAD .gitignore
 ```
 
 What does HEAD mean here? It's a reference to the current committed state of the project. We'll get back to that in a bit.
