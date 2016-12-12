@@ -20,11 +20,13 @@ keypoints:
   - Creating and merging branches is simple in git
   - Creating and merging branches is not always straightforward
   - A tag is a pointer to a moment in the history of the project
+
 ---
 
 ## Food for thought
 - How do you work on two things in parallel?
 - How often do you find yourself wanting to go into two directions at once?
+
 ---
 
 ## Branches
@@ -644,9 +646,11 @@ merge commit.
 
 ## Tags
 
-So far we have dealt with branches. A branch is semantically a division unit of
-work that can be updated as the work progresses. Internally it is represented
-as a pointer to a commit file in the .git/log/ directory.
+So far we have dealt with branches. A branch is semantically a line of of
+develompent that can be updated as the work progresses. Internally it is
+represented as a pointer to a commit file in the .git/log/ directory. The
+commit references it's parent (or two parents if it's a merge commit) and so
+on recursively untile the initial commit.
 
 Another thing that we sometimes want to do is to record the exact state of the
 project at a given point in time, like for instance versioning. (If in doubt
