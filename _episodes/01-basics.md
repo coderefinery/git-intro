@@ -106,7 +106,7 @@ Create a file called **hello.py** with the following content in **testrepo/**
 
 ``` python
 from __future__ import print_function
-print("Hello World"")
+print("Hello World")
 ```
 
 Verify that it works
@@ -220,7 +220,7 @@ Edit the  file called **hello.py** to create the following
 ``` python
 from __future__ import print_function
 def say_hello():
-	print("Hello World"")
+	print("Hello World")
 ```
 
 Now, create a new file called **runner.py** 
@@ -301,7 +301,7 @@ that the one file tracked by git has changed.
 
 Keep in mind that version control is about telling the story of how your project came to be. Let's commit the changes in two separate steps.
 
-First, use **git add** to add the .gitignore file, check what happened with **git status** and commit the changes. The -m handle gives **git commit** a commit message without opening your text editor.
+First, use **git add** to add the .gitignore file, check what happened with **git status** ~~and commit the changes. The -m handle gives **git commit** a commit message without opening your text editor.~~
 
 ```
 $ git add .gitignore
@@ -324,18 +324,19 @@ Untracked files:
 	runner.py
 ```
 
-Notice how git tells you what changes it will make with the commit and gives you instructions on the things you might want to do.
-
+Notice how git tells you what changes it will make with the commit and gives you instructions on the things you might want to do. The `hello.py` file can moved to a staged state or unmodified state with either `git add` or `git checkout --`.
+![States of hello.py](../assets/img/hw_state001.png){:class="img-responsive"}
 ### States of a file.
 
 In general files can have one of 4 states inside a git repository. *Image CC BY 3.0 from the Pro Git book.*
 
 ![States of a git file](../assets/img/lifecycle.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
 
-Now you decide you actually want to commit the changes to the python files and only then add the .gitignore file. Let's use git reset to reset the staged file to it's previous state (untracked)
+The developement of `.gitignore` is kind of sidetrack to your main story, the development of the python files. Conseqeuently you decide you actually want to commit the changes to the python files and only then add the .gitignore file. Let's use git reset to reset the staged file to it's previous state (untracked)
 
 ```
 $ git reset HEAD hello.py
+$ git reset HEAD .gitignore
 ```
 
 What does HEAD mean here? It's a reference to the current committed state of the project. We'll get back to that in a bit.
