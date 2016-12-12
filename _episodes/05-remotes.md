@@ -5,8 +5,8 @@ teaching: 20
 exercises: 25
 questions:
   - How does version control scale from 1 to N users per repository?
-  - How can I easily set up a public repository online
-  - How can I easily set up a local repository for my computer?
+  - How can I set up a public repository online
+  - How can I set up a local repository for my computer?
 objectives:
   - "Student understands the concept of remotes"
   - "Student can add an initialized repository to GitHub"
@@ -194,8 +194,13 @@ To /Users/jexample/devel/testrepo.git/
    dc39fc3..f478420  master -> master
 ```
 
-**Note:** pushing to the master branch is not always a good strategy. Better
-strategies will be covered in collaborative git.
+> ## Note
+>
+> Pushing to the master branch is not always a good strategy. It may work if
+> you're working alone on a project but Better strategies for teams will be
+> covered in collaborative git.
+{: .callout :}
+
 
 Now you're in a state where the old testrepo master branch is behind the master
 in testrepo.git.
@@ -257,6 +262,15 @@ things very nicely.
 It is free for public projects and hosting private projects costs a monthly
 fee. The free part of the service has made it very popular with many open
 source providers.
+
+> ## Alternatives exist
+>
+> CodeRefinery does not in any way endorse the use if GitHub. There are many
+> commercial alternatives such as [GitLab](https://about.gitlab.com/),
+>
+{: .callout :}
+
+
 
 ### Set up GitHub account
 
