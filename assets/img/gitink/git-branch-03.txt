@@ -1,0 +1,6 @@
+
+     [master,_HEAD]
+      |
+c1----c2
+      |
+     [feature1,HEAD]

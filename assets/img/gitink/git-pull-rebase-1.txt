@@ -1,0 +1,5 @@
+     [origin/master]
+      |
+c1----c2
+      |
+     [master,HEAD]

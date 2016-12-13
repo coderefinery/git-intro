@@ -1,0 +1,9 @@
+        [feature1] 
+         | 
+         b1
+        /              
+c1----c2
+        \     
+         d1
+         |
+        [feature2]
