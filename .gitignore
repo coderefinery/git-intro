@@ -2,3 +2,5 @@ _drafts/
 _site/
 .sass-cache
 Gemfile.lock
+# vim swap files
+*.swp
