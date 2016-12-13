@@ -38,6 +38,7 @@ Something something about telling a story.
 Something something about being able to work in parallel.
 
 ---
+
 ## Creating a git repository
 
 One of the basic principles of git is that it is easy to create repositories.
@@ -105,7 +106,6 @@ $ git config format.commitMessageColumns 72
 Create a file called **hello.py** with the following content in **testrepo/**
 
 ``` python
-from __future__ import print_function
 print("Hello World")
 ```
 
@@ -218,7 +218,6 @@ Let's make the example more complicated
 Edit the  file called **hello.py** to create the following
 
 ``` python
-from __future__ import print_function
 def say_hello():
 	print("Hello World")
 ```
@@ -353,7 +352,7 @@ Untracked files:
 
 
 > ## Commit the staged changes
-> Go ahead and commit the changes to .gitignore.
+> Go ahead and commit the changes to hello.py and runner.py
 >
 > You can use the **-m** handle to pass a message without opening your editor.
 >
@@ -376,10 +375,14 @@ Date:   Tue Nov 29 11:30:56 2016 +0200
     initial commit containing a simple hello world example.
 ```
 
-Now add the .gitignore file and commit it too.
+> ## Commit .gitignore
+>
+> Add the .gitignore file and commit it too.
+>
+{: .task :}
 
 > ## What commands did you use?
-> >
+> > ## Example solution
 > > ```
 > > $ git add .gitignore
 > > $ git commit -m ".gitignore"

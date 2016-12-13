@@ -93,7 +93,6 @@ $ git branch
 Now, edit the hello world string in your hello.py to something else, e.g.
 
 ``` python
-from __future__ import  print_function
 def say_hello():
     print("Hello World!")
     print("Bye Bye World!")
@@ -106,12 +105,12 @@ def say_hello():
 >
 > What commands did you use?
 >
-> > ## Solution
+> > ## Example solution
 > >
 > > ```
 > > $ git add hello.py
 > > $ git commit -m "change hello.py"
-> > ``
+> > ```
 > {: .solution }
 {: .challenge :}
 
@@ -361,7 +360,6 @@ Now look at the file hello.py with a text editor or **cat**
 
 ```
 $ cat hello.py
-from __future__ import  print_function
 def say_hello():
 <<<<<<< HEAD
     print("Good Morning World!")
@@ -452,7 +450,7 @@ Now that you no longer need the old branches you can delete them.
 > ## Challenge
 > What commands did you use?
 >
-> > ## Solution
+> > ## Example solution
 > > ```
 > > $git branch -d feature2
 > > Deleted branch feature2 (was 2e69aab).
@@ -493,7 +491,6 @@ will merge the results back to master.
 Edit the files **hello.py** and **runner.py**
 
 ```python
-from __future__ import  print_function
 def say_something(something):
     if something:
         print(" ".join(something))
@@ -553,7 +550,6 @@ index bef8bd3..e68b52d 100644
 --- a/hello.py
 +++ b/hello.py
 @@ -1,4 +1,11 @@
- from __future__ import  print_function
 +
  def say_hello():
      print("Good Morning World!")
@@ -628,7 +624,6 @@ say_hello will still be available in the history of your project.
 Edit **hello.py** so that it looks like this
 
 ```python
-from __future__ import  print_function
 
 def say_something(something):
     if something:
@@ -760,6 +755,7 @@ merge commit.
 
 ![branch 03 03](../assets/img/gitink/git-branch-3-03.svg
 "git branch 03 03"){:class="img-responsive"}
+
 ## Tags
 
 So far we have dealt with branches. A branch is semantically a line of of
@@ -811,6 +807,14 @@ HEAD is now at dc39fc3... Merge branch 'say_reversed' into say_whatever
 Now git is telling us that we checked out a particular commit but we are not on
 any branch. The message really tells it rather nicely. One of the most
 difficult things about using git is reading the messages it gives you.
+
+Visually it looks like this
+
+![detached head](../assets/img/gitink/git-detached-head.svg
+"detached head"){:class="img-responsive"}
+
+Detached HEAD means that HEAD doesn't point to a branch which points to a
+commit but to a specific commit without any branch association.
 
 ```
 $ git status

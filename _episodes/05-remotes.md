@@ -130,6 +130,7 @@ $ git branch
 ```
 
 Now have a look at where git stored these configurations
+
 ```
 $ cat .git/config
 [core]

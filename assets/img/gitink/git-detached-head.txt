@@ -1,0 +1,8 @@
+
+           [master]
+            |
+c1----c2----c3
+      |       \
+     [HEAD]    b2
+               |
+              [branch2]
