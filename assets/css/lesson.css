@@ -43,13 +43,47 @@
 
 .callout h2:before {
 	font-family: 'Glyphicons Halflings';
-	content: "";
+	content: "\e104";
 	float: left;
 	padding-left: 5px;
 	padding-right: 5px;
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 }
+
+
+.task {
+	padding-left: 5px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	border: 1px solid;
+	border-color: #9cd6dc;
+	padding-bottom: 5px;
+}
+
+.task h2 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 20px;
+	background: linear-gradient(to bottom, #9cd6dc, #9cd7dd);
+	border-color: #9cd6dc;
+	margin-top: 0px;
+	margin-left: -5px;
+}
+
+.task h2:before {
+	font-family: 'Glyphicons Halflings';
+	content: "\270f";
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
 
 .challenge {
 	padding-left: 5px;
@@ -91,4 +125,9 @@ code {
 
 img {
 	max-width: 100%;
+}
+
+/*make callout text the same size as others*/
+blockquote {
+    font-size: 14px;
 }

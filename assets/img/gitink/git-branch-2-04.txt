@@ -1,0 +1,9 @@
+        [feature2] 
+         | 
+         b1[master,HEAD]
+        /  \|    
+c1----c2----m1
+        \  /      
+         d1
+         |
+        [feature2]

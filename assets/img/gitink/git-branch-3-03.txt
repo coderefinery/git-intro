@@ -1,0 +1,7 @@
+                 [master, say_whatever, HEAD]
+                  |
+            a1----m1
+           /     /
+         b1----b3
+        /            
+c1----c2

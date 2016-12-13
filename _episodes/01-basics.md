@@ -22,9 +22,9 @@ keypoints:
 ## Food for thought
 
 - Have you ever had to work with other people on the same project in parallel?
-  - What were the challenges? 
+  - What were the challenges?
   - Did you end up doing overlapping things?
-- Have you ever had to start working software written by others? 
+- Have you ever had to start working software written by others?
   - Did you ever find yourself asking why?
 - Have you ever had to maintain a production version of your code and work on
   new features at the same time?
@@ -40,7 +40,7 @@ Something something about being able to work in parallel.
 ---
 ## Creating a git repository
 
-One of the basic principles of git is that it is easy to create repositories. 
+One of the basic principles of git is that it is easy to create repositories.
 
 
 ```python
@@ -87,7 +87,7 @@ You can avoid using one  one by always passing messages on the command line,
 but that limits you in the long run.
 
 For Unix users git uses whatever you have set as your $EDITOR or defaults to
-vi if nothing is set. 
+vi if nothing is set.
 
 
 For Windows users
@@ -111,7 +111,7 @@ print("Hello World")
 
 Verify that it works
 
-``` 
+```
 $ python hello.py
 Hello World!
 ```
@@ -140,7 +140,7 @@ git hints and add the file using **git add**.
 
 ```
 
-$ git add hello.py 
+$ git add hello.py
 $ git status
 On branch master
 
@@ -164,7 +164,7 @@ in the man call.
 
 ```
 
-$ man git-commit 
+$ man git-commit
 $ git help commit
 
 ```
@@ -223,7 +223,7 @@ def say_hello():
 	print("Hello World")
 ```
 
-Now, create a new file called **runner.py** 
+Now, create a new file called **runner.py**
 
 ``` python
 from hello import say_hello
@@ -232,11 +232,13 @@ if __name__ == "__main__":
 ```
 
 Test that it works
+
 ````
-$ python runner.py 
+$ python runner.py
 Hello World!
 ```
-Great! Now you have made changes and you want to record the status of the current state of the project you worked on. 
+
+Great! Now you have made changes and you want to record the status of the current state of the project you worked on.
 
 Check the current status of your working tree.
 
@@ -265,7 +267,9 @@ committed to version control.__ There are many reasons for this:
 * the files are automatically generated and thus do not contribute in any meaningful way
 * the number of changes to track per source code change can increase quickly
 
-To help you on your way let's create a [**.gitignore**](https://git-scm.com/docs/gitignore) file with the following content:
+To help you on your way let's create a
+[**.gitignore**](https://git-scm.com/docs/gitignore) file with the following
+content:
 
 ```
 # ignore compiled python 2 files
@@ -273,9 +277,10 @@ To help you on your way let's create a [**.gitignore**](https://git-scm.com/docs
 # ignore compiled python 3 files
 __pycache__
 ```
+
 This .gitignore file tells git to ignore files matching certain file name
 globs. The file applies to this directory and subdirectories, but
-subdirectories can have their own .gitignores. 
+subdirectories can have their own .gitignores.
 
 Now check the status of your working tree again:
 
@@ -299,18 +304,20 @@ Untracked files:
 Here git tells you that there are two files that are not yet tracked by git and
 that the one file tracked by git has changed.
 
-Keep in mind that version control is about telling the story of how your project came to be. Let's commit the changes in two separate steps.
+Keep in mind that version control is about telling the story of how your
+project came to be. Let's commit the changes in two separate steps.
 
-First, use **git add** to add the .gitignore file, check what happened with **git status** ~~and commit the changes. The -m handle gives **git commit** a commit message without opening your text editor.~~
+First, use **git add** to add the runner.py file, check what happened with
+**git status**.
 
 ```
-$ git add .gitignore
+$ git add runner.py
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	new file:   .gitignore
+	new file:   runner.py
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -321,50 +328,64 @@ Changes not staged for commit:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	runner.py
+	.gitignore
 ```
 
-Notice how git tells you what changes it will make with the commit and gives you instructions on the things you might want to do. The `hello.py` file can moved to a staged state or unmodified state with either `git add` or `git checkout --`.
-![States of hello.py](../assets/img/hw_state001.png){:class="img-responsive"}
-### States of a file.
+Notice how git tells you what changes it will make with the commit and gives
+you instructions on the things you might want to do.
 
-In general files can have one of 4 states inside a git repository. *Image CC BY 3.0 from the Pro Git book.*
-
-![States of a git file](../assets/img/lifecycle.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
-
-The developement of `.gitignore` is kind of sidetrack to your main story, the development of the python files. Conseqeuently you decide you actually want to commit the changes to the python files and only then add the .gitignore file. Let's use git reset to reset the staged file to it's previous state (untracked)
-
+Use **git add** again to add the modified hello.py.
 ```
-$ git reset HEAD hello.py
-$ git reset HEAD .gitignore
-```
-
-What does HEAD mean here? It's a reference to the current committed state of the project. We'll get back to that in a bit.
-
-Now add the files you want to commit again and commit them with an optional message.
-
-```
+$ git add hello.py
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	modified:   hello.py
 	new file:   runner.py
+	modified:   hello.py
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	.gitignore
-$ git commit
+```
+
+
+> ## Commit the staged changes
+> Go ahead and commit the changes to .gitignore.
+>
+> You can use the **-m** handle to pass a message without opening your editor.
+>
+{: .task :}
+
+Check that you succeeded with
+
+```
+$ git log
+commit 94b96dbc0c4008873d569505e59158cfc18e687a
+Author: Joe Example <joe@example.com>
+Date:   Wed Nov 30 14:33:26 2016 +0200
+
+    Split hello world functionality to two files.
+
+commit f2045a6e190ebd49b8d6d39ced4f2eec54d566f7
+Author: Joe Example <joe@example.com>
+Date:   Tue Nov 29 11:30:56 2016 +0200
+
+    initial commit containing a simple hello world example.
 ```
 
 Now add the .gitignore file and commit it too.
 
-```
-$ git add .gitignore
-$ git commit -m ".gitignore"
-```
+> ## What commands did you use?
+> >
+> > ```
+> > $ git add .gitignore
+> > $ git commit -m ".gitignore"
+> > ```
+> {: .solution :}
+{: .challenge :}
 
 Now you can check the commit history of your repository with *git log*
 
@@ -394,11 +415,85 @@ paginator and you can follow the system all the way back to the initial commit.
 The commit messages you write tell a story of what has been done at each stage
 of the project.
 
-### Food for thought
-
-**ToDo: have special css for these pondering points**
+#### Food for thought
 
 Is the last commit message informative enough?
+
+
+### States of a file.
+
+In general files can have one of 4 states inside a git repository. *Image CC BY 3.0 from the Pro Git book.*
+
+![States of a git file](../assets/img/lifecycle.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
+
+> ## Make a change
+> Make a change to hello.py. You can add a comment or something similar, the
+> nature of the change is not important.
+>
+{. :task :}
+```
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Now you can add the changes using **git add** as the message tells you. You
+could also discard the changes with **git checkout --**.
+
+
+> ## **git checkout --** behaviour
+>
+> The purpose of git checkout -- is to **erase** uncommitted changes you made
+> to a file. This means that you will irrevocably lose those changes.
+> Usually this is what you want but it is good to keep in mind so you don't lose what you don't want to.
+>
+> In the context of the state diagram above git checkout will move the file from modified to unmodified.
+{: .callout :}
+
+Let's instead move the file from modified to staged.
+
+```
+$ git add hello.py
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   hello.py
+
+```
+
+Now the file is staged, which means it will be committed when you make the commit.
+
+Notice how git tells you what changes it will make with the commit and gives
+you instructions on the things you might want to do.
+
+You can move back, i.e. unstage the change with **git reset HEAD**
+
+```
+$ git reset HEAD hello.py
+Unstaged changes after reset:
+M	hello.py
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   hello.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+> ## Commit the change
+> Go ahead and stage the change again and commit it with a descriptive message.
+{: .task :}
 
 ### Amending
 
@@ -407,7 +502,8 @@ change the last commit before you publish it to others (more on this later).
 One of the basic tenents of git is that __published commits remain unchanged__.
 If you do not follow this you risk losing friends and social contacs!
 
-Fortunately we haven't published anything yet so we can use the **--amend** handle for **git commit**
+Fortunately we haven't published anything yet so we can use the **--amend**
+handle for **git commit**
 
 ```
 $ git commit --amend -m "add .gitignore to ignore temporary Python files"
@@ -418,6 +514,17 @@ Date:   Wed Nov 30 14:34:49 2016 +0200
 
     add .gitignore to ignore temporary Python files
 ```
+
+> ## Changing public history is bad
+>
+> Git lets you do marvelous things with history. This is all fine and well as
+> long as you are working alone. When you start collaborating with other
+> people it is considered very bad form and will cause a lot of grief to
+> others if you change things that are already public and have been used.
+>
+> In short: if you change something you published you will lose friends and be
+> reviled.
+{: .callout :}
 
 ### Undoing uncommitted changes
 
@@ -485,14 +592,14 @@ On branch master
 nothing to commit, working tree clean
 ```
 
---- 
+---
 
 ## Down the rabbit hole
 
 Now that we've made a couple of commits let's look at what's happening under
 the hood.
 
-``` 
+```
 $ cd .git
 $ ls
 COMMIT_EDITMSG  description info        refs
@@ -514,14 +621,18 @@ string (called a blob) can be found under
 Each commit in git is stored as a blob. This blob contains information about
 the author and the commit message.  The blob references another blob that lists
 the files present in the directory at the time and references blobs that record
-the state of each file. 
+the state of each file.
 
 *Image CC BY 3.0 from the Pro Git book.*
 
 ![A commit inside git](../assets/img/commit-and-tree.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
 
 
-Once you have several commits, each commit blob also links to the hash of the previous commit. Up until now these commits have created a list but in the next lessons they will create a [directed acyclic graph](http://eagain.net/articles/git-for-computer-scientists/) (don't worry if the term is not familiar).
+Once you have several commits, each commit blob also links to the hash of the
+previous commit. Up until now these commits have created a list but in the
+next lessons they will create a [directed acyclic
+graph](http://eagain.net/articles/git-for-computer-scientists/) (don't worry
+if the term is not familiar).
 
 *Image CC BY 3.0 from the Pro Git book.*
 
@@ -529,13 +640,3 @@ Once you have several commits, each commit blob also links to the hash of the pr
 
 All branches and tags in Git are simply pointers to a commit. Basic branching and
 merging is the topic of our next lesson.
-
-## Challenge example
-
-> ## this is a challenge
-> what does it do
-> 
-> > ## Solution
-> > this is a solution
-> {: .solution }
-{: .challenge :}

@@ -1,0 +1,9 @@
+           [say_reversed] 
+            | 
+            a1
+           /      
+         b1----b3
+        /      |      
+c1----c2      [say_whatever,HEAD]
+      |
+     [master]

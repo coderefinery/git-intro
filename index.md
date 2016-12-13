@@ -27,3 +27,6 @@ version control system.
    and Vim are excellent choices if you know how to use them but Nano or
    Notepad on Windows are sufficient.
 
+If you're interested in the git-aware prompt you can find it on
+[GitHub](https://github.com/jimeh/git-aware-prompt).
+

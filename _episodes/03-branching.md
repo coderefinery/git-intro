@@ -37,7 +37,22 @@ isolated from one another. Developers can work on different things and merge
 the changes they made to the source code files afterwards to create a
 composite version that contains both the changes.
 
+
+Up until now our repository has only had one branch with one commit coming
+after the other, as depicted in the following.
+
+![Linear](../assets/img/gitink/git-branch-01.svg "Linear git
+repository"){:class="img-responsive"}
+
+To enable collaborative work we wish to do something more like
+
+![Git collaborative](../assets/img/gitink/git-collaborative-work.svg
+"description"){:class="img-responsive"}
+
 A group of commits that create a single narrative are called a **branch**.
+There are different branching strategies, but it's easy to think that a branch
+tells the story of a feature. E.g. "new login workflow" or "fixing bug in
+matrix inversion algoritm" might be logical branches.
 
 ## Branching
 
@@ -117,6 +132,25 @@ are on. When you switch branches, git finds the head of the branch under
 versioned files are in the version specified by the HEAD unless they have been
 changed.
 
+When you first created the branch the situation looked like this.
+
+![Linear](../assets/img/gitink/git-branch-02.svg "Linear git
+repository"){:class="img-responsive"}
+
+Git had created a new pointer, feature1 to point to the same commit as master.
+
+Running **git checkout feature1** changed the situation like this.
+
+![Linear](../assets/img/gitink/git-branch-03.svg "Linear git
+repository"){:class="img-responsive"}
+
+Now HEAD points to another branch, which still points to the same commit.
+
+After you made the commit the histories diverged.
+
+![Linear](../assets/img/gitink/git-branch-04.svg "two branches with one
+different commit"){:class="img-responsive"}
+
 ## Basic merging
 
 You can now check the status using **git log** or **git show-branch**
@@ -142,6 +176,13 @@ merge* command.
 
 ```
 $ git checkout master
+```
+
+This moves the HEAD to point to the tip of the master branch.
+
+![checkout master](../assets/img/gitink/git-branch-05.svg "checkout master"){:class="img-responsive"}
+
+```
 $ git merge feature1
 Updating ab9544c..8afc9c7
 Fast-forward
@@ -151,6 +192,8 @@ Fast-forward
 
 Git used the so-called **fast-forward** strategy. It simply moved the master
 branch to point to the same commit as the pointer for feature1.
+
+![ff merge](../assets/img/gitink/git-branch-06.svg "ff merge"){:class="img-responsive"}
 
 ```
  git log --oneline --decorate --graph --all
@@ -172,7 +215,9 @@ time to delete the branch. To do this we use the **-d** handle of git branch.
 > git will warn you if you try to delete an unmerged branch with **-d**
 >
 > If you absolutely know you want to delete an unmerged branch you can do so
-> with **-D** but you really need to know what you're doing.
+> with **-D** but you really need to know what you're doing. Even then your
+> commits won't be lost but you may have a hard time finding them as there is
+> no reference to them.
 {: .callout :}
 
 ```
@@ -185,11 +230,17 @@ $ git branch
 * master
 ```
 
+This had the following effect
+![git rm branch](../assets/img/gitink/git-branch-07.svg "rm branch"){:class="img-responsive"}
+
 ## Make conflicting changes in 2 branches
 
-## Make a branch and create a commit
-Make a new branch called **feature2**
-Edit the file so that the first print statement says. "Good Morning World!" and commit the changes.
+### Make a branch and create a commit
+
+> ## task
+> Make a new branch called **feature2**
+> Edit the file so that the first print statement says. "Good Morning World!" and commit the changes.
+{: .task :}
 
 > ## Challenge
 > What commands did you use?
@@ -201,6 +252,7 @@ Edit the file so that the first print statement says. "Good Morning World!" and 
 > > [something to edit the file]
 > > $ git add hello.py
 > > $ git commit -m "changed hello string"
+> > ```
 > {: .solution }
 {: .challenge :}
 
@@ -210,8 +262,10 @@ Now, check out the master branch with
 $ git checkout master
 ```
 
-And repeat the above steps and create a branch called **feature3** with the
-text "Good Afternoon World!".
+
+> Repeat the above steps and create a branch called **feature3** with the
+> text "Good Afternoon World!".
+{: .task :}
 
 ## Merge conflicts
 
@@ -245,6 +299,9 @@ git log --oneline --decorate --graph --all
 Both of the examples try to visualize the same situation. Feature 2 and feature
 3 have ben branched off from master and have a commit with changes in them.
 
+The end result looks something like this
+![git merge 2 1](../assets/img/gitink/git-branch-2-01.svg "merge beginning"){:class="img-responsive"}
+
 Let's merge the first branch
 
 ```
@@ -256,7 +313,14 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-OK that went without a problem. Now let's try to merge the second branch.
+OK that went without a problem. In fact git was able to use the **fast
+forward** strategy so it was just able to move the pointer for master forward
+to the tip of feature2 branch. No new merge commit needed.
+
+The result looks like this
+![git merge 2 2](../assets/img/gitink/git-branch-2-02.svg "merge first"){:class="img-responsive"}
+
+Now let's try to merge the second branch.
 
 ```
 $ git merge feature3
@@ -268,6 +332,11 @@ Automatic merge failed; fix conflicts and then commit the result.
 Git is just a stupid program so in the case of two conflicting versions of the
 same line it doesn't know which one to choose and you as a human must make the
 choice.
+
+Git is trying to create a new merge commit, m1 that would combine commits b1
+and d1 but it can't, because they change the same line of code.
+
+![git merge 2 3](../assets/img/gitink/git-branch-2-03.svg "merge first"){:class="img-responsive"}
 
 Note how git again tells you exactly what you should do: you should fix
 conflicts and then commit the result.
@@ -312,10 +381,21 @@ Git has made a composite version of the file that contains both alternatives
 for the same length of text. The one labeled HEAD is the version in the current
 branch (i.e. master) and the one labeled feature3 is from that branch.
 
-Now edit the file and leave either of the print statements and edit out the
-lines with angle brackets and equals signs. There is no need to leave either of
-the existing statements. You can edit the file freely to e.g. combine the
-functionality in both branches if you want.
+Now you need to manually edit the merge commit before it can be accepted.
+
+> ## Merge the changes
+> Edit the file and leave either of the print statements and edit out the
+> lines with angle brackets and equals signs.
+>
+> Note that there is no requirement to leave either of
+> the existing statements. You can edit the file freely to e.g. combine the
+> functionality in both branches if you want.
+{: .task :}
+
+After you commit your changes the history will look like this
+![git merge 2 4](../assets/img/gitink/git-branch-2-04.svg "merge fourth"){:class="img-responsive"}
+
+
 
 Now since we made just one small commit we'll cut a corner and use **git commit
 -a** to commit our merge.
@@ -364,12 +444,23 @@ to the next person maintaining it.
 
 Now that you no longer need the old branches you can delete them.
 
-```
-$git branch -d feature2
-Deleted branch feature2 (was 2e69aab).
-$ git branch -d feature3
-Deleted branch feature3 (was b3d5dd4).
-```
+> ## Task
+> Delete the branches
+> 
+{: .task :}
+
+> ## Challenge
+> What commands did you use?
+>
+> > ## Solution
+> > ```
+> > $git branch -d feature2
+> > Deleted branch feature2 (was 2e69aab).
+> > $ git branch -d feature3
+> > Deleted branch feature3 (was b3d5dd4).
+> > ```
+> {: .solution }
+{: .challenge :}
 
 You don't have to delete branches immediately but at some point you should as
 after merging they just take up useless screen space.
@@ -390,6 +481,8 @@ does something called a **fast-forward**. It only updates the tip of the branch
 to be merged to point to the same commit as the branch merged from. This can
 sometimes make it less clear when a branch has been merged but on the other
 hand it reduces the number of commits in history.
+
+ToDo: image
 
 ## Another example
 
@@ -544,10 +637,16 @@ def say_something(something):
         print("Hello World!")
 ```
 
-Stage the file and commit the changes with the message "removed unused
-say_hello function".
+> ## Task
+> Stage the file and commit the changes with the message "removed unused
+> say_hello function".
+{: .task :}
 
 Now we're at a slightly different situation.
+
+![branch ex3 1](../assets/img/gitink/git-branch-3-01.svg
+"branch ex3 1"){:class="img-responsive"}
+
 
 ```
 git log --graph --abbrev-commit --decorate --all
@@ -584,6 +683,12 @@ git log --graph --abbrev-commit --decorate --all
 ...
 ```
 
+Graphically it looks like this
+
+![branch 03 01](../assets/img/gitink/git-branch-3-01.svg
+"git branch 03 01"){:class="img-responsive"}
+
+
 There are two branches, **say_whatever** and **say_reversed** and they are both
 ahead of the master branch.
 
@@ -604,7 +709,16 @@ Merge made by the 'recursive' strategy.
 2 files changed, 5 insertions(+), 2 deletions(-)
 ```
 
-First merge took place without a hitch. Now for the second.
+First merge took place without a hitch. This was a so-called **recursive
+merge**. This means that git found the common ancestor of both branches,
+figured what has changed in both branches and combined the changes to create
+the merge automatically. This is what usually happens unless two branches edit
+the same code.
+
+![branch 03 02](../assets/img/gitink/git-branch-3-02.svg
+"git branch 03 02"){:class="img-responsive"}
+
+Now for the second.
 
 ```
 $ git checkout master
@@ -644,6 +758,8 @@ Now that the changes didn't overlap that wasn't painful at all. The second
 merge could be made with the fast-forward strategy so it didn't require a
 merge commit.
 
+![branch 03 03](../assets/img/gitink/git-branch-3-03.svg
+"git branch 03 03"){:class="img-responsive"}
 ## Tags
 
 So far we have dealt with branches. A branch is semantically a line of of

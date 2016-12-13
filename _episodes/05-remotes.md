@@ -12,8 +12,8 @@ objectives:
   - "Student can add an initialized repository to GitHub"
   - "Student can create a bare repository on a local machine"
 keypoints:
-  - Todo
-  - todo
+  - "A repository can have one or multiple remotes"
+  - "Local branches often track remote branches"
 ---
 
 ## Food for thought
@@ -85,14 +85,24 @@ states associated with that branch.
 
 ### Hands-on
 
-In testrepo change something and commit the change to a new branch that you
-call "my_stupid_feature". Maybe change a fixed string or add a comment.
+> ## Make a Change
+> Change something in testrepo and commit the change to a new branch that you
+> call "my_stupid_feature".
+>
+> (If you're out of ideas you can add a comment. Those begin with #)
+{: .task :}
 
-Naming conventions are important, especially when collaborating with other
-people. The local branch names and remote branch names fortunately don't have
-to match.
 
-To push your branch to the remote you can pass the name of bo
+
+> ## Note
+>
+> Naming conventions are important, especially when collaborating with other
+> people. The local branch names and remote branch names fortunately don't have
+> to match.
+{: .callout :}
+
+To push your branch to the remote you can pass the name of both the local name
+and you want to the branch to have.
 
 ```
 $ git push --set-upstream localbare my_stupid_feature:joes_stupid_feature
@@ -164,8 +174,8 @@ $ find .git/refs/
 
 ### Cloning
 
-Now it's time to pretend we're another user. For the time being let's not stray
-from the example we have created.
+Now it's time to pretend we're another user using the same repository. For the
+sake of simplicity let's not stray from the example we have created.
 
 The command **git clone** clones a repository.
 
@@ -178,7 +188,7 @@ $ cd altrepo
 $ git log
 ```
 
-And voilà! You have a clone of the repository.
+And voilà! You have a clone of the repository in another directory.
 
 Go ahead and make a change to the master branch and commit it. Once you have
 made your commit you can **git push** the change to remote repository.
@@ -293,10 +303,13 @@ opened with the public key. This feature is used for digital signing of e.g.
 annotated tags in git.
 
 In most Unix-systems you can create a pair of digital keys using
+
 ```
 $ ssh-keygen
 ```
+
 This will create a pair of files under the **~/.ssh/** folder.
+
 ```
 $ cd ~/.ssh
 $ ls
@@ -359,3 +372,27 @@ git](https://coderefinery.github.io/git-intro/) session at a
 Say something about the project here.
 
 ```
+
+> ## Add the README
+> Add the README to the root of the repository, commit the change and push it
+> to GitHub
+{: .task :}
+
+
+### Clone the repository from GitHub
+
+A typical workflow starts with cloning a repository from GitHub.
+
+As you have already noticed you can have multiple instances of the same
+repository on your filesystem in different directories.
+
+> ## Clone your repository to another folder
+> Find the repository URL on the github page of your repository.
+>
+> **Make sure to use the SSH url and not the HTTPS one**
+>
+> Use **git clone** to clone the repository to a new repository in folder
+> `gh_test`
+{: .task :}
+
+
