@@ -181,6 +181,31 @@ folder and then commit.
 !.gitignore
 ```
 
+### .gitignore glob syntax
+
+.gitignore uses something called a
+[shell glob syntax](https://en.wikipedia.org/wiki/Glob_(programming) for
+determining file patterns to ignore. You can read more about the syntax
+[in git documentation](https://git-scm.com/docs/gitignore)
+
+An example from said documentation
+
+```
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+# ignore generated html files,
+*.html
+# except foo.html which is maintained by hand
+!foo.html
+# ignore everything under build directory
+build/
+```
+
+As you noticed you can have .gitignore files in lower level directories for
+fine-tuned control. If you reference paths all the paths will be interpreted
+**relative to the location** of the .gitignore file, not the root of the
+repository.
+
 ### Food for thought
 
 * Why is it considered a bad idea to commit compiled binaries to version control?
