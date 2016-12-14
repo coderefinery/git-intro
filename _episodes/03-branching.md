@@ -480,7 +480,6 @@ to be merged to point to the same commit as the branch merged from. This can
 sometimes make it less clear when a branch has been merged but on the other
 hand it reduces the number of commits in history.
 
-ToDo: image
 
 ## Another example
 
@@ -491,6 +490,10 @@ will merge the results back to master.
 Edit the files **hello.py** and **runner.py**
 
 ```python
+def say_hello():
+    print("Hello World!")
+    print("Bye Bye World!")
+
 def say_something(something):
     if something:
         print(" ".join(something))

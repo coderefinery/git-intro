@@ -434,6 +434,7 @@ In general files can have one of 4 states inside a git repository. *Image CC BY 
 > nature of the change is not important.
 >
 {. :task :}
+
 ```
 $ git status
 On branch master
