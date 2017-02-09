@@ -427,7 +427,7 @@ Is the last commit message informative enough?
 
 In general files can have one of 4 states inside a git repository. *Image CC BY 3.0 from the Pro Git book.*
 
-![States of a git file](../assets/img/lifecycle.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
+![States of a git file]({{ site.baseurl }}/img/lifecycle.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
 
 > ## Make a change
 > Make a change to hello.py. You can add a comment or something similar, the
@@ -629,7 +629,7 @@ the state of each file.
 
 *Image CC BY 3.0 from the Pro Git book.*
 
-![A commit inside git](../assets/img/commit-and-tree.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
+![A commit inside git]({{ site.baseurl }}/img/commit-and-tree.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
 
 
 Once you have several commits, each commit blob also links to the hash of the
@@ -640,7 +640,7 @@ if the term is not familiar).
 
 *Image CC BY 3.0 from the Pro Git book.*
 
-![A commit and it's parents](../assets/img/commits-and-parents.png "Commit and it's parents License CC BY 3.0"){:class="img-responsive"}
+![A commit and it's parents]({{ site.baseurl }}/img/commits-and-parents.png "Commit and it's parents License CC BY 3.0"){:class="img-responsive"}
 
 All branches and tags in Git are simply pointers to a commit. Basic branching and
 merging is the topic of our next lesson.

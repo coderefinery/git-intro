@@ -41,12 +41,12 @@ composite version that contains both the changes.
 Up until now our repository has only had one branch with one commit coming
 after the other, as depicted in the following.
 
-![Linear](../assets/img/gitink/git-branch-01.svg "Linear git
+![Linear]({{ site.baseurl }}/img/gitink/git-branch-01.svg "Linear git
 repository"){:class="img-responsive"}
 
 To enable collaborative work we wish to do something more like
 
-![Git collaborative](../assets/img/gitink/git-collaborative-work.svg
+![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative-work.svg
 "description"){:class="img-responsive"}
 
 A group of commits that create a single narrative are called a **branch**.
@@ -133,21 +133,21 @@ changed.
 
 When you first created the branch the situation looked like this.
 
-![Linear](../assets/img/gitink/git-branch-02.svg "Linear git
+![Linear]({{ site.baseurl }}/img/gitink/git-branch-02.svg "Linear git
 repository"){:class="img-responsive"}
 
 Git had created a new pointer, feature1 to point to the same commit as master.
 
 Running **git checkout feature1** changed the situation like this.
 
-![Linear](../assets/img/gitink/git-branch-03.svg "Linear git
+![Linear]({{ site.baseurl }}/img/gitink/git-branch-03.svg "Linear git
 repository"){:class="img-responsive"}
 
 Now HEAD points to another branch, which still points to the same commit.
 
 After you made the commit the histories diverged.
 
-![Linear](../assets/img/gitink/git-branch-04.svg "two branches with one
+![Linear]({{ site.baseurl }}/img/gitink/git-branch-04.svg "two branches with one
 different commit"){:class="img-responsive"}
 
 ## Basic merging
@@ -179,7 +179,7 @@ $ git checkout master
 
 This moves the HEAD to point to the tip of the master branch.
 
-![checkout master](../assets/img/gitink/git-branch-05.svg "checkout master"){:class="img-responsive"}
+![checkout master]({{ site.baseurl }}/img/gitink/git-branch-05.svg "checkout master"){:class="img-responsive"}
 
 ```
 $ git merge feature1
@@ -192,7 +192,7 @@ Fast-forward
 Git used the so-called **fast-forward** strategy. It simply moved the master
 branch to point to the same commit as the pointer for feature1.
 
-![ff merge](../assets/img/gitink/git-branch-06.svg "ff merge"){:class="img-responsive"}
+![ff merge]({{ site.baseurl }}/img/gitink/git-branch-06.svg "ff merge"){:class="img-responsive"}
 
 ```
  git log --oneline --decorate --graph --all
@@ -230,7 +230,7 @@ $ git branch
 ```
 
 This had the following effect
-![git rm branch](../assets/img/gitink/git-branch-07.svg "rm branch"){:class="img-responsive"}
+![git rm branch]({{ site.baseurl }}/img/gitink/git-branch-07.svg "rm branch"){:class="img-responsive"}
 
 ## Make conflicting changes in 2 branches
 
@@ -299,7 +299,7 @@ Both of the examples try to visualize the same situation. Feature 2 and feature
 3 have ben branched off from master and have a commit with changes in them.
 
 The end result looks something like this
-![git merge 2 1](../assets/img/gitink/git-branch-2-01.svg "merge beginning"){:class="img-responsive"}
+![git merge 2 1]({{ site.baseurl }}/img/gitink/git-branch-2-01.svg "merge beginning"){:class="img-responsive"}
 
 Let's merge the first branch
 
@@ -317,7 +317,7 @@ forward** strategy so it was just able to move the pointer for master forward
 to the tip of feature2 branch. No new merge commit needed.
 
 The result looks like this
-![git merge 2 2](../assets/img/gitink/git-branch-2-02.svg "merge first"){:class="img-responsive"}
+![git merge 2 2]({{ site.baseurl }}/img/gitink/git-branch-2-02.svg "merge first"){:class="img-responsive"}
 
 Now let's try to merge the second branch.
 
@@ -335,7 +335,7 @@ choice.
 Git is trying to create a new merge commit, m1 that would combine commits b1
 and d1 but it can't, because they change the same line of code.
 
-![git merge 2 3](../assets/img/gitink/git-branch-2-03.svg "merge first"){:class="img-responsive"}
+![git merge 2 3]({{ site.baseurl }}/img/gitink/git-branch-2-03.svg "merge first"){:class="img-responsive"}
 
 Note how git again tells you exactly what you should do: you should fix
 conflicts and then commit the result.
@@ -391,7 +391,7 @@ Now you need to manually edit the merge commit before it can be accepted.
 {: .task :}
 
 After you commit your changes the history will look like this
-![git merge 2 4](../assets/img/gitink/git-branch-2-04.svg "merge fourth"){:class="img-responsive"}
+![git merge 2 4]({{ site.baseurl }}/img/gitink/git-branch-2-04.svg "merge fourth"){:class="img-responsive"}
 
 
 
@@ -642,7 +642,7 @@ def say_something(something):
 
 Now we're at a slightly different situation.
 
-![branch ex3 1](../assets/img/gitink/git-branch-3-01.svg
+![branch ex3 1]({{ site.baseurl }}/img/gitink/git-branch-3-01.svg
 "branch ex3 1"){:class="img-responsive"}
 
 
@@ -683,7 +683,7 @@ git log --graph --abbrev-commit --decorate --all
 
 Graphically it looks like this
 
-![branch 03 01](../assets/img/gitink/git-branch-3-01.svg
+![branch 03 01]({{ site.baseurl }}/img/gitink/git-branch-3-01.svg
 "git branch 03 01"){:class="img-responsive"}
 
 
@@ -713,7 +713,7 @@ figured what has changed in both branches and combined the changes to create
 the merge automatically. This is what usually happens unless two branches edit
 the same code.
 
-![branch 03 02](../assets/img/gitink/git-branch-3-02.svg
+![branch 03 02]({{ site.baseurl }}/img/gitink/git-branch-3-02.svg
 "git branch 03 02"){:class="img-responsive"}
 
 Now for the second.
@@ -756,7 +756,7 @@ Now that the changes didn't overlap that wasn't painful at all. The second
 merge could be made with the fast-forward strategy so it didn't require a
 merge commit.
 
-![branch 03 03](../assets/img/gitink/git-branch-3-03.svg
+![branch 03 03]({{ site.baseurl }}/img/gitink/git-branch-3-03.svg
 "git branch 03 03"){:class="img-responsive"}
 
 ## Tags
@@ -813,7 +813,7 @@ difficult things about using git is reading the messages it gives you.
 
 Visually it looks like this
 
-![detached head](../assets/img/gitink/git-detached-head.svg
+![detached head]({{ site.baseurl }}/img/gitink/git-detached-head.svg
 "detached head"){:class="img-responsive"}
 
 Detached HEAD means that HEAD doesn't point to a branch which points to a

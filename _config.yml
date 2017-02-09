@@ -1,3 +1,4 @@
+fork_me_ribbon_url: https://github.com/coderefinery/git-intro
 title: "Git Intro"
 start_time: 540  # 9:00
 
@@ -5,7 +6,8 @@ start_time: 540  # 9:00
 source: .
 destination: ./_site
 plugins_dir: ./_plugins
-layouts_dir: ./_layouts
+layouts_dir: ./jekyll-common/layouts
+includes_dir: ./jekyll-common/includes
 data_dir: ./_data
 
 # handling reading
@@ -35,8 +37,7 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    css_class: 'highlight'
-    code_class: 'hilight'
+    css_class: 'codehilite'
 
 lsi: false
 excerpt_separator: "\n\n"
@@ -58,7 +59,7 @@ rdiscount:
 redcarpet:
   extensions: []
 
-include: ['_pages']
+include: ['jekyll-common/pages']
 
 collections:
   episodes:
