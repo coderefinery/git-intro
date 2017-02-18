@@ -33,10 +33,15 @@ keypoints:
 
 ## What is version control?
 
-Something something about telling a story.
+Version control is a system that records changes to a file or set of files over time
+so that you can recall specific versions later.
+For the examples if you are developing a software, you might change it over time and include
+new features. All those points you made a change can be recorded and roll-back if needed if
+you use a version control system
 
-Something something about being able to work in parallel.
-
+Version control system also make collaboration easier. Different collaborators can 
+contribute simultaneously without disturbing others and combine (merge) their 
+contributions at the end to for the final version.  
 ---
 
 ## Creating a git repository
