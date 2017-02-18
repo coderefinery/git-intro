@@ -61,6 +61,49 @@ source providers.
 By now you should already have set up a GitHub account but if you haven't,
 please do so [here](https://github.com/join).
 
+
+#### Adding a README
+
+It's always a good convention to add a README. GitHub supports many formats for
+the README but we recommend MarkDown for easy entry at first.
+
+Below is an example but feel free to expand on it.
+
+```
+# Introduction to Git example project
+
+This repository was created during the [introduction to
+git](https://coderefinery.github.io/git-intro/) session at a
+[CodeRefinery](http://coderefinery.org/) Workshop.
+
+## Subsection
+
+Say something about the project here.
+
+```
+
+> ## Add the README
+> Add the README to the root of the repository, commit the change and push it
+> to GitHub
+{: .task :}
+
+
+### Clone the repository from GitHub
+
+A typical workflow starts with cloning a repository from GitHub.
+
+As you have already noticed you can have multiple instances of the same
+repository on your filesystem in different directories.
+
+> ## Clone your repository to another folder
+> Find the repository URL on the github page of your repository.
+>
+> **Make sure to use the SSH url and not the HTTPS one**
+>
+> Use **git clone** to clone the repository to a new repository in folder
+> `gh_test`
+{: .task :}
+
 ### Set up SSH keys
 
 SSH keys are a way to authenticate yourself to remote systems based on [public
@@ -126,48 +169,6 @@ Branch master set up to track remote branch master from origin.
 Now refresh the page in your browser you should see a HTML user interface that
 shows the contents of your repository. Feel free to explore the things that can
 be found there.
-
-#### Adding a README
-
-It's always a good convention to add a README. GitHub supports many formats for
-the README but we recommend MarkDown for easy entry at first.
-
-Below is an example but feel free to expand on it.
-
-```
-# Introduction to Git example project
-
-This repository was created during the [introduction to
-git](https://coderefinery.github.io/git-intro/) session at a
-[CodeRefinery](http://coderefinery.org/) Workshop.
-
-## Subsection
-
-Say something about the project here.
-
-```
-
-> ## Add the README
-> Add the README to the root of the repository, commit the change and push it
-> to GitHub
-{: .task :}
-
-
-### Clone the repository from GitHub
-
-A typical workflow starts with cloning a repository from GitHub.
-
-As you have already noticed you can have multiple instances of the same
-repository on your filesystem in different directories.
-
-> ## Clone your repository to another folder
-> Find the repository URL on the github page of your repository.
->
-> **Make sure to use the SSH url and not the HTTPS one**
->
-> Use **git clone** to clone the repository to a new repository in folder
-> `gh_test`
-{: .task :}
 
 
 ### Bare repositories
