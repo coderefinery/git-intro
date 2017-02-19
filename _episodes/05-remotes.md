@@ -110,8 +110,10 @@ Create a branch
 ```
 git branch user_additions
 ```
+```
 git checkout user_additions
-Add your name and comment on your git knowledge according to the comments provided on the file
+```
+Add your name and your git knowledge according to the comments provided on the file
 Commit your changes
 ```
 git add git_competence.txt
