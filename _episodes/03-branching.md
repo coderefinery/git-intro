@@ -328,8 +328,8 @@ CONFLICT (content): Merge conflict in hello.py
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Git is just a stupid program so in the case of two conflicting versions of the
-same line it doesn't know which one to choose and you as a human must make the
+In the case of two conflicting versions of the
+same line Git doesn't know which one to choose and you as a human must make the
 choice.
 
 Git is trying to create a new merge commit, m1 that would combine commits b1

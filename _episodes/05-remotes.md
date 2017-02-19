@@ -270,7 +270,7 @@ would have been sufficient. You could have set up a group, set the right group
 write permissions to that repository and you would have been set to
 collaborate.
 
-Fortunately while git is a stupid tool, it's quite smart about communication
+Git is quite smart about communication
 protocols. The simplest example is a folder on the local computer, but git can
 just as easily do things over an SSH connection on a remote machine or even
 HTTP (not recommended) or HTTPS using basic authentication. We'll get to that
@@ -299,7 +299,7 @@ states associated with that branch.
 
 > ## Make a Change
 > Change something in testrepo and commit the change to a new branch that you
-> call "my_stupid_feature".
+> call "my_feature".
 >
 > (If you're out of ideas you can add a comment. Those begin with #)
 {: .task :}
@@ -317,15 +317,15 @@ To push your branch to the remote you can pass the name of both the local name
 and you want to the branch to have.
 
 ```
-$ git push --set-upstream localbare my_stupid_feature:joes_stupid_feature
+$ git push --set-upstream localbare my_feature:joes_feature
 Counting objects: 3, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 354 bytes | 0 bytes/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To /Users/jexample/devel/testrepo.git/
- * [new branch]      my_stupid_feature -> joes_stupid_feature
- Branch my_stupid_feature set up to track remote branch joes_stupid_feature
+ * [new branch]      my_feature -> joes_feature
+ Branch my_feature set up to track remote branch joes_feature
  from localbare.
 ```
 
@@ -333,12 +333,12 @@ You can check what it looks like in the bare repository
 
 ```
 $ (cd ../testrepo.git && git branch)
-  joes_stupid_feature
+  joes_feature
   * master
 $ git branch
   change_hello
   master
-* my_stupid_feature
+* my_feature
 ```
 
 Now have a look at where git stored these configurations
@@ -361,9 +361,9 @@ $ cat .git/config
 [branch "master"]
 	remote = localbare
 	merge = refs/heads/master
-[branch "my_stupid_feature"]
+[branch "my_feature"]
 	remote = localbare
-	merge = refs/heads/joes_stupid_feature
+	merge = refs/heads/joes_feature
 ```
 
 Git has stored information about which branches locally correspond to which
@@ -376,10 +376,10 @@ $ find .git/refs/
 .git/refs//heads
 .git/refs//heads/change_hello
 .git/refs//heads/master
-.git/refs//heads/my_stupid_feature
+.git/refs//heads/my_feature
 .git/refs//remotes
 .git/refs//remotes/localbare
-.git/refs//remotes/localbare/joes_stupid_feature
+.git/refs//remotes/localbare/joes_feature
 .git/refs//remotes/localbare/master
 .git/refs//tags
 .git/refs//tags/0.1.0
