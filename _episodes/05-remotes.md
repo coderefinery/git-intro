@@ -140,9 +140,10 @@ git fetch
 ```
 git diff user_additions..github/user_additions
 ```
-Make sure you are in the correct branch
+Make sure you are on the correct branch
 ```
 git branch
+```
 ```
 git merge github/user_additions
 ```
