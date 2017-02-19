@@ -94,10 +94,10 @@ A typical workflow starts with cloning a repository from GitHub.
 As you have already noticed you can have multiple instances of the same
 repository on your filesystem in different directories.
 
-> ## Clone your repository to another folder
+> ## Clone your repository
 As an exercise we have created a repository for today's course and first we will add all participants as collaborators.
 Repository location : https://github.com/Sabryr/coderefinery_git_intro2.git
-Get a copy locally
+>Get a copy locally
 
 ```
 git clone --origin github https://github.com/Sabryr/coderefinery_git_intro2.git
@@ -110,7 +110,7 @@ Create a branch
 ```
 git branch user_additions
 ```
->git checkout user_additions
+git checkout user_additions
 Add your name and comment on your git knowledge according to the comments provided on the file
 Commit your changes
 ```
