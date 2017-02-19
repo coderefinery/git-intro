@@ -61,14 +61,6 @@ By now you should already have set up a GitHub account but if you haven't,
 please do so [here](https://github.com/join).
 
 
-#### Adding a README
-
-It's always a good convention to add a README. GitHub supports many formats for
-the README but we recommend MarkDown for easy entry at first.
-
-Below is an example but feel free to expand on it.
-
-```
 # Introduction to Git example project
 
 This repository was created during the [introduction to
@@ -113,7 +105,7 @@ git branch user_additions
 ```
 git checkout user_additions
 ```
-Add your name and your git knowledge according to the comments provided on the file
+Add your name and your git knowledge according to the comments provided on the file and
 Commit your changes
 ```
 git add git_competence.txt
@@ -135,12 +127,57 @@ git config --global push.default matching
 ```
 git push github user_additions
 ```
+You might get a conflict if a colleague has pushed something while you were working 
+and you did not ferch that.
+```
+ ! [rejected]        user_additions -> user_additions (fetch first)
+error: failed to push some refs to 'https://github.com/Sabryr/coderefinery_git_intro2.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+Then you need to resolve the conflict
+```
+git diff user_additions..github/user_additions
+```
+```
+git fetch
+```
+```
+git diff user_additions..github/user_additions
+```
+Make sure you are in the correct branch
+```
+git branch
+```
+git merge github/user_additions
+```
+Resolve the conflicts manually. That is to keep what you want to be permanent. Git gives you guidelines on what each versions are differing in.
+Add and commit your changes
+
+Push it again
+```
+git push github user_additions 
+```
+If again if you encounter a conflict, follow the above procedure until you get out of it. You could use method of communication when working with central repositories, like a chat client.
+
+
 
 >An alternative to this procedure and a more systematic one would be to fork the above repository, make and commit your changes, then request a pull request. 
 >We shall take about this and show an example and everyone could follow if we have time. 
 {: .task :}
 
+#### Adding a README
 
+It's always a good convention to add a README. GitHub supports many formats for
+the README but we recommend MarkDown for easy entry at first.
+
+Below is an example but feel free to expand on it.
+
+```
 
 ### Set up SSH keys
 
