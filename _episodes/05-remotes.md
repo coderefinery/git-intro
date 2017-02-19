@@ -69,15 +69,6 @@ git](https://coderefinery.github.io/git-intro/) session at a
 
 ## Subsection
 
-Say something about the project here.
-
-```
-
-> ## Add the README
-> Add the README to the root of the repository, commit the change and push it
-> to GitHub
-{: .task :}
-
 
 ### Clone the repository from GitHub
 
@@ -149,9 +140,10 @@ git fetch
 ```
 git diff user_additions..github/user_additions
 ```
-Make sure you are in the correct branch
+Make sure you are on the correct branch
 ```
 git branch
+```
 ```
 git merge github/user_additions
 ```
@@ -178,6 +170,15 @@ the README but we recommend MarkDown for easy entry at first.
 Below is an example but feel free to expand on it.
 
 ```
+Say something about the project here.
+
+```
+
+> ## Add the README
+> Add the README to the root of the repository, commit the change and push it
+> to GitHub
+{: .task :}
+
 
 ### Set up SSH keys
 
