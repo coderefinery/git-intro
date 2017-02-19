@@ -23,6 +23,8 @@ keypoints:
   others about it just yet?
 ---
 
+
+
 ## Remotes
 
 As we have seen the git repository is in fact a directory on your computer,
@@ -33,7 +35,216 @@ commit in detached HEAD mode or the head (or some other commit) in a branch.
 It should not come as a surprise that as everything in git is stored in blobs
 in a directory then synchronizing changes is about synchronizing those files.
 
-First, let's have a look at another type of repository.
+
+## GitHub
+
+GitHub is a for-profit service that hosts remote git repositories for you. It
+offers a nice HTML user interface to browse the repositories and handles many
+things very nicely.
+
+It is free for public projects and hosting private projects costs a monthly
+fee. The free part of the service has made it very popular with many open
+source providers.
+
+> ## Alternatives exist
+>
+> CodeRefinery does not in any way endorse the use if GitHub. There are many
+> commercial alternatives such as [GitLab](https://about.gitlab.com/),
+>
+{: .callout :}
+
+
+
+### Set up GitHub account
+
+By now you should already have set up a GitHub account but if you haven't,
+please do so [here](https://github.com/join).
+
+
+# Introduction to Git example project
+
+This repository was created during the [introduction to
+git](https://coderefinery.github.io/git-intro/) session at a
+[CodeRefinery](http://coderefinery.org/) Workshop.
+
+## Subsection
+
+Say something about the project here.
+
+```
+
+> ## Add the README
+> Add the README to the root of the repository, commit the change and push it
+> to GitHub
+{: .task :}
+
+
+### Clone the repository from GitHub
+
+A typical workflow starts with cloning a repository from GitHub.
+
+As you have already noticed you can have multiple instances of the same
+repository on your filesystem in different directories.
+
+> ## Clone your repository
+As an exercise we have created a repository for today's course and first we will add all participants as collaborators.
+Repository location : https://github.com/Sabryr/coderefinery_git_intro2.git
+>Get a copy locally
+
+```
+git clone --origin github https://github.com/Sabryr/coderefinery_git_intro2.git
+```
+Check your remotes
+```
+git remote -v
+```
+Create a branch
+```
+git branch user_additions
+```
+```
+git checkout user_additions
+```
+Add your name and your git knowledge according to the comments provided on the file and
+Commit your changes
+```
+git add git_competence.txt
+```
+```
+git commit -m “Added new user to ..."
+```
+Check whether anyone else has made any changes while you were working locally
+```
+git fetch github
+```
+```
+git diff user_additions..github/user_additions
+```
+Sync with the server with the corresponding branch(github in this case)
+```
+git config --global push.default matching
+```
+```
+git push github user_additions
+```
+You might get a conflict if a colleague has pushed something while you were working 
+and you did not ferch that.
+```
+ ! [rejected]        user_additions -> user_additions (fetch first)
+error: failed to push some refs to 'https://github.com/Sabryr/coderefinery_git_intro2.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+Then you need to resolve the conflict
+```
+git diff user_additions..github/user_additions
+```
+```
+git fetch
+```
+```
+git diff user_additions..github/user_additions
+```
+Make sure you are in the correct branch
+```
+git branch
+```
+git merge github/user_additions
+```
+Resolve the conflicts manually. That is to keep what you want to be permanent. Git gives you guidelines on what each versions are differing in.
+Add and commit your changes
+
+Push it again
+```
+git push github user_additions 
+```
+If again if you encounter a conflict, follow the above procedure until you get out of it. You could use method of communication when working with central repositories, like a chat client.
+
+
+
+>An alternative to this procedure and a more systematic one would be to fork the above repository, make and commit your changes, then request a pull request. 
+>We shall take about this and show an example and everyone could follow if we have time. 
+{: .task :}
+
+#### Adding a README
+
+It's always a good convention to add a README. GitHub supports many formats for
+the README but we recommend MarkDown for easy entry at first.
+
+Below is an example but feel free to expand on it.
+
+```
+
+### Set up SSH keys
+
+SSH keys are a way to authenticate yourself to remote systems based on [public
+key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
+
+To summarize in public key cryptography you have two keys: a private key and a
+public key. Anything encrypted with your public key can only be decrypted with
+your private key. This feature can be used to create a secret message that only the
+holder of the private key can decrypt and it is often used to authenticate
+people when signing on to remote systems.
+
+Another side effect is that anything encrypted with the private key can be
+opened with the public key. This feature is used for digital signing of e.g.
+annotated tags in git.
+
+In most Unix-systems you can create a pair of digital keys using
+
+```
+$ ssh-keygen
+```
+
+This will create a pair of files under the **~/.ssh/** folder.
+
+```
+$ cd ~/.ssh
+$ ls
+config   id_rsa      id_rsa.pub  known_hosts
+```
+
+The file id_rsa is the private key and it should **never** be shared with
+anyone.
+
+The file id_rsa.pub is the public key and it is safe to publish to everyone.
+
+If you're on Windows you should probably have git-bash installed. You can then
+follow [these
+instructions](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows)
+for creating a key on Windows.
+
+Now, upload your __public__ key to GitHub -> Settings -> SSH and GPG Keys. You
+will probably be asked for your password.
+
+Now find the "New Repository" button and click it or go through
+[here](https://github.com/new). Name the repository
+coderefinery-git-example. Do _not_ initialize it with a readme or anything.
+
+The next page will give you simple instructions. You just have to remember to choose the **SSH** version of the repository URL and not the HTTPS version GitHub gives by default.
+
+```
+$ git remote add origin git@github.com:jexample/coderefinery-git-example.git
+$ git push -u origin master
+Counting objects: 36, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (36/36), 3.75 KiB | 0 bytes/s, done.
+Total 36 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas: 100% (9/9), done.
+To git@github.com:jexample/coderefinery-git-example.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+
+Now refresh the page in your browser you should see a HTML user interface that
+shows the contents of your repository. Feel free to explore the things that can
+be found there.
+
 
 ### Bare repositories
 
@@ -262,138 +473,5 @@ $ git log
 ```
 
 And you should see the change you made in the other clone of the repository.
-
-
-## GitHub
-
-GitHub is a for-profit service that hosts remote git repositories for you. It
-offers a nice HTML user interface to browse the repositories and handles many
-things very nicely.
-
-It is free for public projects and hosting private projects costs a monthly
-fee. The free part of the service has made it very popular with many open
-source providers.
-
-> ## Alternatives exist
->
-> CodeRefinery does not in any way endorse the use if GitHub. There are many
-> commercial alternatives such as [GitLab](https://about.gitlab.com/),
->
-{: .callout :}
-
-
-
-### Set up GitHub account
-
-By now you should already have set up a GitHub account but if you haven't,
-please do so [here](https://github.com/join).
-
-### Set up SSH keys
-
-SSH keys are a way to authenticate yourself to remote systems based on [public
-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
-
-To summarize in public key cryptography you have two keys: a private key and a
-public key. Anything encrypted with your public key can only be decrypted with
-your private key. This feature can be used to create a secret message that only the
-holder of the private key can decrypt and it is often used to authenticate
-people when signing on to remote systems.
-
-Another side effect is that anything encrypted with the private key can be
-opened with the public key. This feature is used for digital signing of e.g.
-annotated tags in git.
-
-In most Unix-systems you can create a pair of digital keys using
-
-```
-$ ssh-keygen
-```
-
-This will create a pair of files under the **~/.ssh/** folder.
-
-```
-$ cd ~/.ssh
-$ ls
-config   id_rsa      id_rsa.pub  known_hosts
-```
-
-The file id_rsa is the private key and it should **never** be shared with
-anyone.
-
-The file id_rsa.pub is the public key and it is safe to publish to everyone.
-
-If you're on Windows you should probably have git-bash installed. You can then
-follow [these
-instructions](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows)
-for creating a key on Windows.
-
-Now, upload your __public__ key to GitHub -> Settings -> SSH and GPG Keys. You
-will probably be asked for your password.
-
-Now find the "New Repository" button and click it or go through
-[here](https://github.com/new). Name the repository
-coderefinery-git-example. Do _not_ initialize it with a readme or anything.
-
-The next page will give you simple instructions. You just have to remember to choose the **SSH** version of the repository URL and not the HTTPS version GitHub gives by default.
-
-```
-$ git remote add origin git@github.com:jexample/coderefinery-git-example.git
-$ git push -u origin master
-Counting objects: 36, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (34/34), done.
-Writing objects: 100% (36/36), 3.75 KiB | 0 bytes/s, done.
-Total 36 (delta 9), reused 0 (delta 0)
-remote: Resolving deltas: 100% (9/9), done.
-To git@github.com:jexample/coderefinery-git-example.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
-```
-
-Now refresh the page in your browser you should see a HTML user interface that
-shows the contents of your repository. Feel free to explore the things that can
-be found there.
-
-#### Adding a README
-
-It's always a good convention to add a README. GitHub supports many formats for
-the README but we recommend MarkDown for easy entry at first.
-
-Below is an example but feel free to expand on it.
-
-```
-# Introduction to Git example project
-
-This repository was created during the [introduction to
-git](https://coderefinery.github.io/git-intro/) session at a
-[CodeRefinery](http://coderefinery.org/) Workshop.
-
-## Subsection
-
-Say something about the project here.
-
-```
-
-> ## Add the README
-> Add the README to the root of the repository, commit the change and push it
-> to GitHub
-{: .task :}
-
-
-### Clone the repository from GitHub
-
-A typical workflow starts with cloning a repository from GitHub.
-
-As you have already noticed you can have multiple instances of the same
-repository on your filesystem in different directories.
-
-> ## Clone your repository to another folder
-> Find the repository URL on the github page of your repository.
->
-> **Make sure to use the SSH url and not the HTTPS one**
->
-> Use **git clone** to clone the repository to a new repository in folder
-> `gh_test`
-{: .task :}
 
 
