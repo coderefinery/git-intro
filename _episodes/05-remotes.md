@@ -133,7 +133,7 @@ Sync with the server with the corresponding branch(github in this case)
 git config --global push.default matching
 ```
 ```
-git push  (git push github user_additions)
+git push github user_additions
 ```
 
 >An alternative to this procedure and a more systematic one would be to fork the above repository, make and commit your changes, then request a pull request. 
