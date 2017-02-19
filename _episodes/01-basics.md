@@ -11,10 +11,10 @@ questions:
   - "How do I select what to commit?"
   - "How can I undo things?"
 objectives:
-  - "Student learns to create git repositories and make commits"
+  - "Student learns to create git repositories and make commits."
   - "Student understands how the repository is structured."
 keypoints:
-  - "Initializing a git repository is simple"
+  - "Initializing a git repository is simple."
   - "Commits should be used to tell a story."
   - "Git uses the .git folder to store the repository."
 ---
