@@ -95,37 +95,50 @@ As you have already noticed you can have multiple instances of the same
 repository on your filesystem in different directories.
 
 > ## Clone your repository to another folder
->As an exercise we have created a repository for today's course and first we will add all participants as collaborators.
->Repository location : https://github.com/Sabryr/coderefinery_git_intro2.git
->Get a copy locally
->git clone --origin github https://github.com/Sabryr/coderefinery_git_intro2.git
->Check your remotes
->git remote -v
->Create a branch
->git branch user_additions
+As an exercise we have created a repository for today's course and first we will add all participants as collaborators.
+Repository location : https://github.com/Sabryr/coderefinery_git_intro2.git
+Get a copy locally
+
+```
+git clone --origin github https://github.com/Sabryr/coderefinery_git_intro2.git
+```
+Check your remotes
+```
+git remote -v
+```
+Create a branch
+```
+git branch user_additions
+```
 >git checkout user_additions
->Add your name and comment on your git knowledge according to the comments provided on the file
->Commit your changes
->git add git_competence.txt
->git commit -m “Added new user to ...”
->Check whether anyone else has made any changes while you were working locally
->git fetch github
->git diff user_additions..github/user_additions
->Sync with the server with the corresponding branch(github in this case)
->git config --global push.default matching
->git push  (git push github user_additions)
+Add your name and comment on your git knowledge according to the comments provided on the file
+Commit your changes
+```
+git add git_competence.txt
+```
+```
+git commit -m “Added new user to ..."
+```
+Check whether anyone else has made any changes while you were working locally
+```
+git fetch github
+```
+```
+git diff user_additions..github/user_additions
+```
+Sync with the server with the corresponding branch(github in this case)
+```
+git config --global push.default matching
+```
+```
+git push  (git push github user_additions)
+```
 
 >An alternative to this procedure and a more systematic one would be to fork the above repository, make and commit your changes, then request a pull request. 
 >We shall take about this and show an example and everyone could follow if we have time. 
-
-
-> Find the repository URL on the github page of your repository.
->
-> **Make sure to use the SSH url and not the HTTPS one**
->
-> Use **git clone** to clone the repository to a new repository in folder
-> `gh_test`
 {: .task :}
+
+
 
 ### Set up SSH keys
 
