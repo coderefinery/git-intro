@@ -505,8 +505,7 @@ def say_something(something):
 import sys
 from hello import say_something
 
-if __name__ == "__main__":
-    say_something(sys.argv[1:])
+say_something(sys.argv[1:])
 ```
 
 **Verify that the code works**
@@ -582,9 +581,8 @@ index bdab4ae..651d1a3 100644
 +import sys
 +from hello import say_something
 +
- if __name__ == "__main__":
--    say_hello()
-+    say_something(sys.argv[1:])
+-say_hello()
++say_something(sys.argv[1:])
 Stage this hunk [y,n,q,a,d,/,s,e,?]?
 ```
 

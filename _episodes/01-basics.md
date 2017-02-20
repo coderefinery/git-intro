@@ -231,8 +231,8 @@ Now, create a new file called **runner.py**
 
 ``` python
 from hello import say_hello
-if __name__ == "__main__":
-	say_hello()
+
+say_hello()
 ```
 
 Test that it works
@@ -559,8 +559,8 @@ Now edit the file hello.py so that it looks as follows (i.e. add a comment):
 ```python
 # i am a comment
 from hello import say_hello
-if __name__ == "__main__":
-    say_hello()
+
+say_hello()
 ```
 
 And run **git status again**.

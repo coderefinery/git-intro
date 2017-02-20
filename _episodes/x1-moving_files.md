@@ -105,8 +105,7 @@ index 651d1a3..6f6f54b 100644
 -from hello import say_something
 +from say import say_something
  
- if __name__ == "__main__":
-     say_something(sys.argv[1:])
+ say_something(sys.argv[1:])
 ```
 
 Go ahead and make the change and commit.
