@@ -69,41 +69,6 @@ You can run **git init** at the top-level folder whenever you feel like it. If
 the folder is already a git repository version control you won't succeed,
 though.
 
-## Configuring git
-
-### Configuring your personal details
-
-First we need to tell git who you are. When you make commits git stores your
-name and.
-
-```
-$ git config --global user.name "Your Name"
-$ git config --global user.email "your.name@example.org"
-```
-
-The "--global" handle sets this across
-all your repositories on this machine. It is possible to override this in a
-single repository, if for instance you want to use your work email for work
-projects and personal email in your hobby projects.
-
-### Configuring your editor
-
-Git assumes you can use a text editor and have configured one you can use.
-You can avoid using one by always passing messages on the command line,
-but that limits you in the long run.
-
-For Unix users git uses whatever you have set as your $EDITOR or defaults to
-vi if nothing is set.
-
-
-For Windows users
-
-```
-$ git config core.editor notepad
-
-$ git config format.commitMessageColumns 72
-```
-
 ---
 
 ## Making a change and commiting it
