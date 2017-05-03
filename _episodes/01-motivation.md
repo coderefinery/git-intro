@@ -50,7 +50,7 @@ contributions at the end to for the final version.
 - Merging and branching is easy and simple
 - Important platforms such as [GitHub](https://github.com), [GitLab](https://gitlab.com), and [Bitbucket](https://bitbucket.org) build on top of Git.
 - Many platforms build on top of [GitHub](https://github.com).
-- "Git is a four-handle, dual boiler espresso machine, not instant coffee".
+- *"Git is a four-handle, dual boiler espresso machine, not instant coffee."*
 
 
 ## Why Git and not [Subversion](https://subversion.apache.org)?
