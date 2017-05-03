@@ -411,25 +411,25 @@ $ git log --graph --abbrev-commit --decorate
 |\  Merge: 2e69aab b3d5dd4
 | | Author: Joe Example <joe@example.org>
 | | Date:   Mon Dec 12 09:11:57 2016 +0200
-| | 
+| |
 | |     manually merge different hello statements
-| |   
+| |
 | * commit b3d5dd4 (feature3)
 | | Author: Joe Example <joe@example.org>
 | | Date:   Thu Dec 8 12:10:07 2016 +0200
-| | 
+| |
 | |     edited hello.py with an afternoon message
-| |   
+| |
 * | commit 2e69aab (feature2)
 |/  Author: Joe Example <joe@example.org>
 |   Date:   Thu Dec 8 12:08:26 2016 +0200
-|   
+|
 |       edited hello.py with a morning message
-|  
+|
 * commit 8afc9c7
 | Author: Joe Example <joe@example.org>
 | Date:   Thu Dec 8 11:47:36 2016 +0200
-| 
+|
 |     change hello.py
 ...
 ```
@@ -444,7 +444,7 @@ Now that you no longer need the old branches you can delete them.
 
 > ## Task
 > Delete the branches
-> 
+>
 {: .task :}
 
 > ## Challenge
@@ -649,32 +649,32 @@ git log --graph --abbrev-commit --decorate --all
 * commit 8a4950b (HEAD -> say_whatever)
 | Author: Joe Example <joe@example.org>
 | Date:   Mon Dec 12 10:10:46 2016 +0200
-| 
+|
 |     remove unused say_hello function
-|    
+|
 | * commit 8d3859e (say_reversed)
 |/  Author: Joe Example <joe@example.org>
 |   Date:   Mon Dec 12 09:57:10 2016 +0200
-|   
+|
 |       reverse order of words
-|  
+|
 * commit f1ba6f0
 | Author: Joe Example <joe@example.org>
 | Date:   Mon Dec 12 09:51:02 2016 +0200
-| 
+|
 |     added function say_something
-|    
+|
 * commit f1ba6f0
 | Author: Joe Example <joe@example.org>
 | Date:   Mon Dec 12 09:51:02 2016 +0200
-| 
+|
 |     added function say_something
-|    
+|
 *   commit c79ff2c (master)
 |\  Merge: 2e69aab b3d5dd4
 | | Author: Joe Example <joe@example.org>
 | | Date:   Mon Dec 12 09:11:57 2016 +0200
-| | 
+| |
 
 ...
 ```
@@ -690,7 +690,7 @@ ahead of the master branch.
 
 There are several ways you could go about doing this:
 * You could first merge **say_whatever** and then merge **say_reversed** to the master branch.
-* You could merge **say_reversed** to **say_whatever** and then merge **say_whatever** to master. 
+* You could merge **say_reversed** to **say_whatever** and then merge **say_whatever** to master.
 * You could do something a bit more advanced called a [rebase but we will not cover it here and now
 
 Let's use the second option this time.
@@ -733,19 +733,19 @@ $ git log --graph --abbrev-commit --decorate --all
 |\  Merge: 8a4950b 8d3859e
 | | Author: Joe Example <joe@example.org>
 | | Date:   Mon Dec 12 10:20:56 2016 +0200
-| | 
+| |
 | |     Merge branch 'say_reversed' into say_whatever
-| |   
+| |
 | * commit 8d3859e
 | | Author: Joe Example <joe@example.org>
 | | Date:   Mon Dec 12 09:57:10 2016 +0200
-| | 
+| |
 | |     reverse order of words
-| |   
+| |
 * | commit 8a4950b
 |/  Author: Joe Example <joe@example.org>
 |   Date:   Mon Dec 12 10:10:46 2016 +0200
-|   
+|
 |       remove unused say_hello function
 ...
 ```

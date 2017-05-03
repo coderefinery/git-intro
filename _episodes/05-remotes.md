@@ -118,7 +118,7 @@ git config --global push.default matching
 ```
 git push github user_additions
 ```
-You might get a conflict if a colleague has pushed something while you were working 
+You might get a conflict if a colleague has pushed something while you were working
 and you did not ferch that.
 ```
  ! [rejected]        user_additions -> user_additions (fetch first)
@@ -152,14 +152,14 @@ Add and commit your changes
 
 Push it again
 ```
-git push github user_additions 
+git push github user_additions
 ```
 If again if you encounter a conflict, follow the above procedure until you get out of it. You could use method of communication when working with central repositories, like a chat client.
 
 
 
->An alternative to this procedure and a more systematic one would be to fork the above repository, make and commit your changes, then request a pull request. 
->We shall take about this and show an example and everyone could follow if we have time. 
+>An alternative to this procedure and a more systematic one would be to fork the above repository, make and commit your changes, then request a pull request.
+>We shall take about this and show an example and everyone could follow if we have time.
 {: .task :}
 
 #### Adding a README

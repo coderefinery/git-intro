@@ -104,7 +104,7 @@ index 651d1a3..6f6f54b 100644
  import sys
 -from hello import say_something
 +from say import say_something
- 
+
  say_something(sys.argv[1:])
 ```
 
@@ -117,7 +117,7 @@ Unsurprisingly there's also a **git rm** command.
 Go ahead and run
 
 ```
-$ git rm say.py 
+$ git rm say.py
 rm 'say.py'
 $ git commit -m "remove say.py"
 [master 145ef1f] remove say.py
