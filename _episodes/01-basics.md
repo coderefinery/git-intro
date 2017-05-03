@@ -24,7 +24,7 @@ keypoints:
 - Have you ever had to work with other people on the same project in parallel?
   - What were the challenges?
   - Did you end up doing overlapping things?
-- Have you ever had to start working software written by others?
+- Have you ever had to start working on software written by others?
   - Did you ever find yourself asking why?
 - Have you ever had to maintain a production version of your code and work on
   new features at the same time?
@@ -89,7 +89,7 @@ projects and personal email in your hobby projects.
 ### Configuring your editor
 
 Git assumes you can use a text editor and have configured one you can use.
-You can avoid using one  one by always passing messages on the command line,
+You can avoid using one by always passing messages on the command line,
 but that limits you in the long run.
 
 For Unix users git uses whatever you have set as your $EDITOR or defaults to
