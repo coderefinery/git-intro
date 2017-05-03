@@ -180,47 +180,7 @@ Say something about the project here.
 {: .task :}
 
 
-### Set up SSH keys
-
-SSH keys are a way to authenticate yourself to remote systems based on [public
-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
-
-To summarize in public key cryptography you have two keys: a private key and a
-public key. Anything encrypted with your public key can only be decrypted with
-your private key. This feature can be used to create a secret message that only the
-holder of the private key can decrypt and it is often used to authenticate
-people when signing on to remote systems.
-
-Another side effect is that anything encrypted with the private key can be
-opened with the public key. This feature is used for digital signing of e.g.
-annotated tags in git.
-
-In most Unix-systems you can create a pair of digital keys using
-
-```
-$ ssh-keygen
-```
-
-This will create a pair of files under the **~/.ssh/** folder.
-
-```
-$ cd ~/.ssh
-$ ls
-config   id_rsa      id_rsa.pub  known_hosts
-```
-
-The file id_rsa is the private key and it should **never** be shared with
-anyone.
-
-The file id_rsa.pub is the public key and it is safe to publish to everyone.
-
-If you're on Windows you should probably have git-bash installed. You can then
-follow [these
-instructions](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows)
-for creating a key on Windows.
-
-Now, upload your __public__ key to GitHub -> Settings -> SSH and GPG Keys. You
-will probably be asked for your password.
+### Creating a new repository
 
 Now find the "New Repository" button and click it or go through
 [here](https://github.com/new). Name the repository
