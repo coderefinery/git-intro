@@ -21,17 +21,14 @@ objectives:
 
 ---
 
-## What is version control?
+## Explain what version control is in one minute
 
-Version control is a system that records changes to a file or set of files over time
-so that you can recall specific versions later.
-For the examples if you are developing a software, you might change it over time and include
-new features. All those points you made a change can be recorded and roll-back if needed if
-you use a version control system
-
-Version control system also make collaboration easier. Different collaborators can
-contribute simultaneously without disturbing others and combine (merge) their
-contributions at the end to for the final version.
+- System which records snapshots of a project.
+- Implements branching:
+  - you can work on several features and switch between them
+  - different people can work on the same code without interfering
+- Implements merging:
+  - tool merges development branches for you (conflicts may appear)
 
 ---
 
