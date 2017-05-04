@@ -19,6 +19,7 @@ objectives:
 - If you are already familiar with Git, have you ever had to google for
   a command to solve your problem?
 
+---
 
 ## What is version control?
 
@@ -32,6 +33,7 @@ Version control system also make collaboration easier. Different collaborators c
 contribute simultaneously without disturbing others and combine (merge) their
 contributions at the end to for the final version.
 
+---
 
 ## Why Git?
 
@@ -44,6 +46,7 @@ contributions at the end to for the final version.
 - Many platforms build on top of [GitHub](https://github.com).
 - *"Git is a four-handle, dual boiler espresso machine, not instant coffee."*
 
+---
 
 ## Why Git and not [Subversion](https://subversion.apache.org)?
 
@@ -56,6 +59,7 @@ contributions at the end to for the final version.
     - commit changes without network
     - edit changes after they have been committed
 
+---
 
 ## Why Git and not [Mercurial](https://www.mercurial-scm.org)?
 
