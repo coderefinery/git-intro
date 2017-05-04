@@ -20,55 +20,52 @@ keypoints:
   - "Git uses the .git folder to store the snapshots."
 ---
 
-## Creating a git repository
+## Tracking a guacamole recipe with Git
 
-One of the basic principles of git is that it is easy to create repositories.
+We will learn how to create a Git repository, how to track changes, and we will also learn how
+to create a delicious guacamole.
 
+This example is inspired by [Byron Smith](http://blog.byronjsmith.com), for original reference, see
+[this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 
-```python
-def foo():
-    print('foo!')
-```
+Let us start!
+One of the basic principles of Git is that it is easy to create repositories.
 
-
-```
-$ mkdir testrepo
-$ cd testrepo
+```shell
+$ mkdir recipe
+$ cd recipe
 $ git init
 ```
 
-That's it. Now you've created an empty git repository! Before we can start
-committing files to it we need to set up a few very basic settings, though.
+That's it! Now we have created an empty Git repository!
 
-Sometimes the idea to version control your project comes as an afterthought.
-You can run **git init** at the top-level folder whenever you feel like it. If
-the folder is already a git repository version control you won't succeed,
-though.
+Let us now add two files to the repository.
 
----
-
-## Making a change and commiting it
-
-Create a file called **hello.py** with the following content in **testrepo/**
-
-``` python
-print("Hello World")
-```
-
-Verify that it works
+One file called `instructions.txt`, containing:
 
 ```
-$ python hello.py
-Hello World!
+* chop avocados
+* chop onion
+* squeeze lime
+* add salt
+* and mix well
 ```
 
-Great, now you have your first script and want to commit the first version of
-it. In git you can always check the status of files in your repository using
-**git status**. It is always a safe command to run and in general a good idea to
-do when you're trying to figure what to do next..
+And one file called `ingredients.txt`, containing:
 
 ```
+* 2 avocados
+* 1 lime
+* 2 tsp salt
+```
+
+In git you can always check the status of files in your repository using
+`git status`. It is always a safe command to run and in general a good idea to
+do when you are trying to figure what to do next:
+
+```shell
 $ git status
+
 On branch master
 
 Initial commit
@@ -76,18 +73,23 @@ Initial commit
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-        hello.py
+	ingredients.txt
+	instructions.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-There is now an untracked file in the repository (the directory). You want to
-add the file to the list of files tracked by git. By default git doesn't track
+The two files are untracked in the repository (the directory).  You want to add
+the files to the list of files tracked by Git. By default Git does not track
 any files and you need make a conscious decision to add a file. Let's do what
-git hints and add the file using **git add**.
+Git hints at and add the files:
 
-```
 
-$ git add hello.py
+```shell
+$ git add ingredients.txt
+$ git add instructions.txt
 $ git status
+
 On branch master
 
 Initial commit
@@ -95,126 +97,173 @@ Initial commit
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-        new file:   hello.py
-
+	new file:   ingredients.txt
+	new file:   instructions.txt
 ```
 
-Now **git status** is telling us that the file hello.py will be committed as a
-new file. Observe how git again tells you the command you would need to not
-remove the file from the list of those being added.
+Now the snapshot is *staged* to be committed (saved).
 
-Let's make the first commit by using **git commit** but before that let's check
-the *man* page of that commit. The first command will work on Unix systems
-that support man pages and the second one will work on both. Observe the dash
-in the man call.
+Before we make the first commit, let us check the help page for that command:
 
-```
-
-$ man git-commit
+```shell
 $ git help commit
-
 ```
 
 You should see a very long help page as the tool is very versatile. Do not
 worry about this now but keep in mind that you can always read the help files
 when in doubt. Googling is also acceptable, but often checking the relevant
 help page is faster and those pages were written by the authors of the
-program and not some random people on the internet.
+program and not some random people on the internet. The help pages also work
+when you don't have a network connection.
 
-Now let's make that first commit.
+Let us now commit the change to the repository:
 
-```
-$ git commit
-[master (root-commit) f2045a6] initial commit containing a simple hello world
-example.
- 1 file changed, 2 insertions(+)
-  create mode 100644 hello.py
-```
+```shell
+$ git commit -m "adding ingredients and instructions"
 
-Git should show you an editor where you can edit your commit message. This
-message will be associated and stored with the changes you made. This message
-is your chance to explain what you've done and convince others (and your
-future self) that the changes you made were justified.
-
-Write a message and save and close the file. Git will store the commit and
-tell you some information. Namely it created one file, into which two new
-lines were inserted.
-
-
-Check the status of your working tree with **git status**
-```
-$ git status
-On branch master
-nothing to commit, working tree clean
+[master (root-commit) aa243ea] adding ingredients and instructions
+ 2 files changed, 10 insertions(+)
+ create mode 100644 ingredients.txt
+ create mode 100644 instructions.txt
 ```
 
-You can check the history of commits made with **git log**
+Now try `git log`:
 
-```
+```shell
 $ git log
-commit f2045a6e190ebd49b8d6d39ced4f2eec54d566f7
-Author: Jyry Suvilehto <jyry.suvilehto@csc.fi>
-Date:   Tue Nov 29 11:30:56 2016 +0200
 
-    initial commit containing a simple hello world example.
+commit c98917b3868812a140a0f3c1ec3f16518714cf81
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Thu May 4 15:02:56 2017 +0200
+
+    adding ingredients and instructions
 ```
 
-Let's make the example more complicated
+---
 
-Edit the  file called **hello.py** to create the following
+## Exercise: record changes
 
-``` python
-def say_hello():
-	print("Hello World")
+Add 1/2 onion to `ingredients.txt` and also the instruction
+to "enjoy!" to `instructions.txt`.
+
+When you are done, try `git diff`:
+
+```shell
+$ git diff
+
+diff --git a/ingredients.txt b/ingredients.txt
+index 2607525..ec0abc6 100644
+--- a/ingredients.txt
++++ b/ingredients.txt
+@@ -1,3 +1,4 @@
+ * 2 avocados
+ * 1 lime
+ * 2 tsp salt
++* 1/2 onion
+diff --git a/instructions.txt b/instructions.txt
+index 6a8b2af..f7dd63a 100644
+--- a/instructions.txt
++++ b/instructions.txt
+@@ -3,3 +3,4 @@
+ * squeeze lime
+ * add salt
+ * and mix well
++* enjoy!
 ```
 
-Now, create a new file called **runner.py**
+Now first stage each change, then commit it (what happens when we leave out the `-m` flag?):
 
-``` python
-from hello import say_hello
-
-say_hello()
+```shell
+$ git add ingredients.txt
+$ git commit -m "add onion"
+$ git add instructions.txt
+$ git commit
 ```
 
-Test that it works
+When you leave out the `-m` flag, Git should open an editor where you can edit
+your commit message. This message will be associated and stored with the
+changes you made. This message is your chance to explain what you've done and
+convince others (and your future self) that the changes you made were
+justified.  Write a message and save and close the file.
 
-````
-$ python runner.py
-Hello World!
+When you are done committing the changes, experiment with
+`git log`,
+`git show`, and
+`git diff`.
+
+---
+
+## Git history
+
+- We can browse the development and access each state that we have committed
+- The long hashes uniquely label a state of the code
+- They are non-incremental (why?)
+- We will use them when comparing versions and when going back in time
+- `git log --oneline` is nice to get an overview
+- `git log --oneline` only shows the first 7 characters of the commit hash
+- If the first characters of the hash are unique it is not necessary to type the entire hash
+- `git log --stat` is nice to show which files have been modified
+
+---
+
+## Commit messages
+
+- We now understand that the first line of the commit message is very important
+- Good example
+
+```
+implement Pulay DIIS algorithm
+
+implement Pulay DIIS algorithm to accelerate SCF
+convergence and set it as default
+this is based on [REF]
+this option can be deactivated with
+.NODIIS
+...
 ```
 
-Great! Now you have made changes and you want to record the status of the current state of the project you worked on.
-
-Check the current status of your working tree.
+- Convention: one line summarizing the commit, then one empty line,
+  then paragraph(s) with more details in free form, if necessary
+- Not so good example (everything in one long line):
 
 ```
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   hello.py
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	hello.pyc
-	runner.py
+implement Pulay DIIS algorithm to accelerate SCF convergence and set it ...
 ```
 
-Now we have a problem: the hello.pyc is a compiled Python file that is just a
-transformed version of hello.py. If you're using Python 3 you will instead see
-a new directory called **__pycache__**. __As a general rule compiled files are not
-committed to version control.__ There are many reasons for this:
+- This is also important for web based repository browsing
+- Another bad example:
 
-* your code could be run on different platforms
-* the files are automatically generated and thus do not contribute in any meaningful way
-* the number of changes to track per source code change can increase quickly
+```
+rbast:
 
-To help you on your way let's create a
-[**.gitignore**](https://git-scm.com/docs/gitignore) file with the following
-content:
+fixed an important bug for contracted basis sets
+...
+```
+
+- Other bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", ""
+- [http://whatthecommit.com](http://whatthecommit.com)
+- Write commit messages in english that will be understood
+  15 years from now by someone else than you
+- Many projects start out as projects "just for me" and end up to be successful projects
+  that are developed by 50 people over decades
+
+---
+
+## Use .gitignore
+
+- Should we add and track all files in a project?
+- How about generated files?
+- Why is it considered a bad idea to commit compiled binaries to version control?
+- What kind of generated files do you know?
+
+As a general rule compiled files are not
+committed to version control. There are many reasons for this:
+
+- Your code could be run on different platforms.
+- These files are automatically generated and thus do not contribute in any meaningful way.
+- The number of changes to track per source code change can increase quickly.
+
+For this we use `.gitignore` files. Example:
 
 ```
 # ignore compiled python 2 files
@@ -223,245 +272,111 @@ content:
 __pycache__
 ```
 
-This .gitignore file tells git to ignore files matching certain file name
-globs. The file applies to this directory and subdirectories, but
-subdirectories can have their own .gitignores.
+`.gitignore` uses something called a
+[shell glob syntax](https://en.wikipedia.org/wiki/Glob_(programming) for
+determining file patterns to ignore. You can read more about the syntax in the
+[documentation](https://git-scm.com/docs/gitignore).
 
-Now check the status of your working tree again:
-
-
-```
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   hello.py
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.gitignore
-	runner.py
-```
-
-Here git tells you that there are two files that are not yet tracked by git and
-that the one file tracked by git has changed.
-
-Keep in mind that version control is about telling the story of how your
-project came to be. Let's commit the changes in two separate steps.
-
-First, use **git add** to add the runner.py file, check what happened with
-**git status**.
+An example taken from [documentation](https://git-scm.com/docs/gitignore):
 
 ```
-$ git add runner.py
-$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   runner.py
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   hello.py
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.gitignore
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+# ignore generated html files,
+*.html
+# except foo.html which is maintained by hand
+!foo.html
+# ignore everything under build directory
+build/
 ```
 
-Notice how git tells you what changes it will make with the commit and gives
-you instructions on the things you might want to do.
-
-Use **git add** again to add the modified hello.py.
-```
-$ git add hello.py
-$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   runner.py
-	modified:   hello.py
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.gitignore
-```
+You can have `.gitignore` files in lower level directories and they effect the paths
+relatively.
 
 
-> ## Commit the staged changes
-> Go ahead and commit the changes to hello.py and runner.py
->
-> You can use the **-m** handle to pass a message without opening your editor.
->
-{: .task :}
+### Clean working area
 
-Check that you succeeded with
+- Use `git status` a lot
+- Use `.gitignore`
+- Untracked files belong to .gitignore
+- **All** files should be either tracked or ignored
 
-```
-$ git log
-commit 94b96dbc0c4008873d569505e59158cfc18e687a
-Author: Joe Example <joe@example.com>
-Date:   Wed Nov 30 14:33:26 2016 +0200
 
-    Split hello world functionality to two files.
+### Questions
 
-commit f2045a6e190ebd49b8d6d39ced4f2eec54d566f7
-Author: Joe Example <joe@example.com>
-Date:   Tue Nov 29 11:30:56 2016 +0200
+- Should we add and commit `.gitignore`?
+- What will happen if we choose not to use `.gitignore`?
 
-    initial commit containing a simple hello world example.
+---
+
+## Where is the Git repository?
+
+- All the magic is under `.git`, all the history, all snapshot, all branches (later), everything
+- When we staged and committed files, we "copied" them into `.git`
+- Here we only track one file but we can track entire file trees
+- Git does not pollute subdirectories
+- If we remove `.git`, we remove the repository (but of course keep the working directory)
+- It is very easy to create (and remove) a Git repository to track something that you work on
+- `.git` uses relative paths (very convenient), you can move the whole thing somewhere else
+  and it will still work
+
+---
+
+## Summary
+
+- Now we know how to save snapshots
+
+```shell
+$ git add <file(s)>
+$ git commit
 ```
 
-> ## Commit .gitignore
->
-> Add the .gitignore file and commit it too.
->
-{: .task :}
+- And this is what we do as we program
+- Every state is then saved and later we will learn how to go back to these "checkpoints"
+  and how to undo things
 
-> ## What commands did you use?
-> > ## Example solution
-> > ```
-> > $ git add .gitignore
-> > $ git commit -m ".gitignore"
-> > ```
-> {: .solution :}
-{: .challenge :}
-
-Now you can check the commit history of your repository with *git log*
-
-```
-$ git log
-commit 25cf1cb2dfd2830a85aa1da7a0a346af4991f808
-Author: Joe Example <joe@example.com>
-Date:   Wed Nov 30 14:34:49 2016 +0200
-
-    .gitignore
-
-commit 94b96dbc0c4008873d569505e59158cfc18e687a
-Author: Joe Example <joe@example.com>
-Date:   Wed Nov 30 14:33:26 2016 +0200
-
-    Split hello world functionality to two files.
-
-commit f2045a6e190ebd49b8d6d39ced4f2eec54d566f7
-Author: Joe Example <joe@example.com>
-Date:   Tue Nov 29 11:30:56 2016 +0200
-
-    initial commit containing a simple hello world example.
+```shell
+$ git init    # initialize new repository
+$ git add     # add files or stage file(s)
+$ git commit  # commit staged file(s)
+$ git status  # see what is going on
+$ git log     # see history
+$ git diff    # show unstaged/uncommitted modifications
+$ git show    # show the change for a specific commit
+$ git mv      # move tracked files
+$ git rm      # remove tracked files
 ```
 
-*git log* shows the commits made in your repository. By default it uses a
-paginator and you can follow the system all the way back to the initial commit.
-The commit messages you write tell a story of what has been done at each stage
-of the project.
+- Git is not ideal for large binary files (for this consider http://git-annex.branchable.com/)
 
-#### Food for thought
+---
 
-Is the last commit message informative enough?
+## Exercise: undo unstaged changes
+
+- Make some changes to `ingredients.txt`.
+- Inspect the changes with `git status` and `git diff`.
+- Undo the unstaged changes with `git checkout ingredients.txt`
+- Inspect the new situation with `git status` and `git diff`.
+
+---
+
+## Modifying committed changes
+
+In Git it is possible to modify and even remove committed history with `git commit --amend`
+or `git reset`.
+
+Git lets you do marvelous things with history. This is all fine and well as
+long as you are modifying commits that you are not sharing with others. When
+you start collaborating with other people it is considered very bad form and
+will cause a lot of grief to others if you change things that are already
+public and have been used.
+
+In short: if you change something you published you will lose friends and
+social contacts!
 
 
-### Amending
+### Questions
 
-Let's agree that the final commit message could be more verbose. It's possible
-change the last commit before you publish it to others (more on this later).
-One of the basic tenents of git is that __published commits remain unchanged__.
-If you do not follow this you risk losing friends and social contacs!
-
-Fortunately we haven't published anything yet so we can use the **--amend**
-handle for **git commit**
-
-```
-$ git commit --amend -m "add .gitignore to ignore temporary Python files"
-$ git log
-commit ab9544c3e5713e23e19586c29c8a3d802e361148
-Author: Joe Example <joe@example.org>
-Date:   Wed Nov 30 14:34:49 2016 +0200
-
-    add .gitignore to ignore temporary Python files
-```
-
-> ## Changing public history is bad
->
-> Git lets you do marvelous things with history. This is all fine and well as
-> long as you are working alone. When you start collaborating with other
-> people it is considered very bad form and will cause a lot of grief to
-> others if you change things that are already public and have been used.
->
-> In short: if you change something you published you will lose friends and be
-> reviled.
-{: .callout :}
-
-### Undoing uncommitted changes
-
-Remove the file hello.py
-
-```
-$ rm hello.py
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	deleted:    hello.py
-```
-
-The file is gone and git tells you as much. However as you have committed the
-file you don't need to worry. The old version is still accessible. The
-instructions to access are clearly visible in the message.
-
-Now edit the file hello.py so that it looks as follows (i.e. add a comment):
-
-```python
-# i am a comment
-from hello import say_hello
-
-say_hello()
-```
-
-And run **git status again**.
-
-```
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	deleted:    hello.py
-	modified:   runner.py
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
-
-Next we will use **git checkout** to undo the uncommitted changes to the local
-working copy. __git checkout is a dangerous command__. If you make changes to a
-file and run **git checkout** before committing, the changes will be lost!
-
-Let us for now assume you are aware of this and this is actually what you want to do.
-
-```
-$ git checkout -- hello.py
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   runner.py
-
-no changes added to commit (use "git add" and/or "git commit -a")
-$ git checkout -- runner.py
-$ git status
-On branch master
-nothing to commit, working tree clean
-```
+- A safe way to undo past commits is to use `git revert` What does it do? In doubt, try it.
+- What happens if you accidentally remove a tracked file, is it gone forever?
+- What would justify to modify the Git history and possibly remove commits?
