@@ -377,6 +377,6 @@ social contacts!
 
 ### Questions
 
-- A safe way to undo past commits is to use `git revert` What does it do? In doubt, try it.
+- A safe way to undo past commits is to use `git revert`. What does it do? In doubt, try it.
 - What happens if you accidentally remove a tracked file, is it gone forever?
 - What would justify to modify the Git history and possibly remove commits?
