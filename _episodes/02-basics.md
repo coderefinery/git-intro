@@ -12,6 +12,8 @@ questions:
 objectives:
   - "Learn to create Git repositories and make commits."
   - "Get a grasp of the structure of a repository."
+  - "Learn how to inspect the project history."
+  - "Learn how to write useful commit log messages."
 keypoints:
   - "Initializing a Git repository is simple: `git init`"
   - "Commits should be used to tell a story."
