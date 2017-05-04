@@ -6,26 +6,18 @@ exercises: 0
 questions:
   - "Why version control?"
   - "Why Git?"
-#objectives:
-#  - "Student learns to create git repositories and make commits."
-#  - "Student understands how the repository is structured."
-#keypoints:
-#  - "Initializing a git repository is simple."
-#  - "Commits should be used to tell a story."
-#  - "Git uses the .git folder to store the repository."
+objectives:
+  - "Discuss the reasons why we advocate distributed version control."
 ---
 
 ## Food for thought
 
-- Have you ever had to work with other people on the same project in parallel?
-  - What were the challenges?
-  - Did you end up doing overlapping things?
-- Have you ever had to start working on software written by others?
-  - Did you ever find yourself asking why?
+- Have you ever had to work with other people on the same project in parallel? What were the challenges?
 - Have you ever had to maintain a production version of your code and work on
   new features at the same time?
-- If you are already familiar with git, have you ever had to google for
-  a magic command to solve your problem?
+- How would you convince your colleague to use version control?
+- If you are already familiar with Git, have you ever had to google for
+  a command to solve your problem?
 
 
 ## What is version control?
