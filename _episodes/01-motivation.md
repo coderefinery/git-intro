@@ -32,6 +32,36 @@ objectives:
 
 ---
 
+## Why version control?
+
+### Roll-back functionality
+
+- Mistakes happen, with version control you can undo and go back to a working version.
+
+
+### Feature branches
+
+- Different development lines can be organized in distinct branches.
+- Help keeping the project organized.
+
+
+### Collaboration
+
+- No more *"can you please send me the latest version?"*.
+- Allows up to thousands of persons to work on the same project without stepping on each other's toes.
+- Distributed version control enables to get contributions from people you don't know yet.
+
+
+### Reproducibility
+
+- When you publish a paper you can indicate which version exactly was used so
+  others can reproduce the results.
+- When you find a bug, you can find out when precisely this bug was introduced
+  (are published results affected? has the bug made it to the last release of your code?).
+
+
+---
+
 ## Why Git?
 
 - Fast
