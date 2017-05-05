@@ -537,119 +537,40 @@ merge commit.
 ![branch 03 03]({{ site.baseurl }}/img/gitink/git-branch-3-03.svg
 "git branch 03 03"){:class="img-responsive"}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
 ## Tags
 
-So far we have dealt with branches. A branch is semantically a line of of
-develompent that can be updated as the work progresses. Internally it is
-represented as a pointer to a commit file in the .git/log/ directory. The
-commit references it's parent (or two parents if it's a merge commit) and so
-on recursively untile the initial commit.
+A branch is a pointer to a commit.
 
-Another thing that we sometimes want to do is to record the exact state of the
-project at a given point in time, like for instance versioning. (If in doubt
-about how to version, check [Semantic Versioning](http://semver.org/)). The
-main difference between tags and branches is that once created, a tag should
-always point to the same commit.
+A tag is a pointer to a commit, too.
 
-The **git tag** command lets you do things with tags.
+The difference between a branch and a tag is that a branch pointer moves
+forward as we add commits, whereas a tag should always **point to the same
+commit**.
 
-```
-$ git tag
-$
-```
+We use tags to record particular states or milestones of a project at a given
+point in time, like for instance versions (have a look at [semantic
+versioning](http://semver.org)).
 
-When used with no extra commands **git tag** lists existing tags. When given a
-string it will create a tag with that string as the name of the tag.
-
-```
-$ git tag 0.1.0
-$ git tag
-0.1.0
-```
-
-So we created a tag. Now let's try checking out the tag.
-
-```
-$ git checkout 0.1.0
-Note: checking out '0.1.0'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b <new-branch-name>
-
-HEAD is now at dc39fc3... Merge branch 'say_reversed' into say_whatever
-```
-
-Now git is telling us that we checked out a particular commit but we are not on
-any branch. The message really tells it rather nicely. One of the most
-difficult things about using git is reading the messages it gives you.
-
-Visually it looks like this
-
-![detached head]({{ site.baseurl }}/img/gitink/git-detached-head.svg
-"detached head"){:class="img-responsive"}
-
-Detached HEAD means that HEAD doesn't point to a branch which points to a
-commit but to a specific commit without any branch association.
-
-```
-$ git status
-HEAD detached at 0.1.0
-nothing to commit, working tree clean
-```
-
-Now edit the "Hello World" string in **hello.py**.
-
-```
-$ git status
-HEAD detached at 0.1.0
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   hello.py
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
-
-We can commit as we always would.
-
-```
-$ git add hello.py
-$ git commit -m "test"
-[detached HEAD c1a0c9d5] test
- 1 file changed, 1 insertion(+), 1 deletion(-)
-```
-
-The challenge now is that if we check out another branch we will have a hard
-time finding this commit that we just made. It will be recorded and stored
-safely but you'd need to have stored the "c1a0c9d5" reference to it to be able
-to check it out.
-
-The best thing to do if you want to keep the change and be able to use it is to
-make a branch, just as the help suggested.
-
-```
-$ git checkout -b change_hello
-Switched to a new branch 'change_hello'
-$ git branch
-* change_hello
-  master
-```
-
-Now you have the option of going back to the changes you made on top of tag
-0.1.0 and merge them to master (or some other branch).
-
-### Types of tags
-
-There are two basic types of tags: annotated and lightweight. The example shown
-previously was a lightweight tag. It's just a pointer like a branch object. An
-annotated tag is stored as an object, it can be cryptographically signed using
+There are two basic types of tags: annotated and lightweight. **Use annotated
+tags** since they contain the author and can be cryptographically signed using
 GPG, timestamped and a message attached.
 
 For more information about tags see for example
