@@ -4,23 +4,15 @@ title: "Conflict resolution"
 teaching: 10
 exercises: 10
 #questions:
-#  - "How can I or my team work on multiple features in parallel?"
-#  - "How to combine the changes in parallel tracks of work?"
-#  - "What is branching and when should I do it?"
-#  - "How can I permanently reference a point in history, like a software
-#    version?"
-#objectives:
-#  - "Student can create and merge branches"
-#  - "Student understand the system sufficiently to fix small merge conflicts"
-#  - "Student knows about tags"
-#  - "Students get to exercise making commits"
-#keypoints:
-#  - A branch is a division unit of work, to be merged with other units of
-#    work
-#  - Creating and merging branches is simple in git
-#  - Creating and merging branches is not always straightforward
-#  - A tag is a pointer to a moment in the history of the project
-
+#  - How can I or my team work on multiple features in parallel?
+#  - How to combine the changes in parallel tracks of work?
+#  - What is branching and when should I do it?
+#  - How can I permanently reference a point in history, like a software
+#    version?
+objectives:
+  - Understand the system sufficiently to fix small merge conflicts.
+keypoints:
+  - Conflicts often appear because of not enough communication or not optimal branching strategy.
 ---
 
 ## Make conflicting changes in 2 branches
