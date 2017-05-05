@@ -75,16 +75,7 @@
        id="tspan2987"
        x="69.000000"
        y="61.800000">c2</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 64.980000,56.600000 32.220000,56.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="64.98" y1="56.6" x2="32.22" y2="56.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -107,16 +98,7 @@
        id="tspan2987"
        x="129.000000"
        y="21.800000">b1</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 124.980000,25.680000 92.220000,47.520000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="124.98" y1="25.68" x2="92.22" y2="47.52" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -139,16 +121,7 @@
        id="tspan2987"
        x="129.000000"
        y="61.800000">c3</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 124.980000,56.600000 92.220000,56.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="124.98" y1="56.6" x2="92.22" y2="56.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -171,16 +144,7 @@
        id="tspan2987"
        x="189.000000"
        y="21.800000">b2</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 184.980000,16.600000 152.220000,16.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="184.98" y1="16.6" x2="152.22" y2="16.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -203,16 +167,7 @@
        id="tspan2987"
        x="189.000000"
        y="101.800000">d1</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 184.980000,87.520000 152.220000,65.680000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="184.98" y1="87.52" x2="152.22" y2="65.68" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -235,16 +190,7 @@
        id="tspan2987"
        x="189.000000"
        y="61.800000">c4</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 184.980000,56.600000 152.220000,56.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="184.98" y1="56.6" x2="152.22" y2="56.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -267,16 +213,7 @@
        id="tspan2987"
        x="249.000000"
        y="21.800000">b3</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 244.980000,16.600000 212.220000,16.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="244.98" y1="16.6" x2="212.22" y2="16.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -299,25 +236,7 @@
        id="tspan2987"
        x="249.000000"
        y="101.800000">m1</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 244.980000,96.600000 212.220000,96.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 244.980000,87.520000 212.220000,65.680000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="244.98" y1="96.6" x2="212.22" y2="96.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><line x1="244.98" y1="87.52" x2="212.22" y2="65.68" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -340,25 +259,7 @@
        id="tspan2987"
        x="309.000000"
        y="61.800000">m2</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 304.920000,56.600000 212.280000,56.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 304.980000,47.520000 272.220000,25.680000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="304.92" y1="56.6" x2="212.28" y2="56.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><line x1="304.98" y1="47.52" x2="272.22" y2="25.68" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -381,16 +282,7 @@
        id="tspan2987"
        x="309.000000"
        y="101.800000">d2</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 304.980000,96.600000 272.220000,96.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
+</g><line x1="304.98" y1="96.6" x2="272.22" y2="96.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1">
@@ -413,22 +305,4 @@
        id="tspan2987"
        x="369.000000"
        y="61.800000">m3</tspan></text>
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 364.980000,56.600000 332.220000,56.600000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g><g
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   id="layer1">
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
-     d="M 364.980000,65.680000 332.220000,87.520000"
-     id="path2985"
-     inkscape:connector-curvature="0" />
-</g></svg>
+</g><line x1="364.98" y1="56.6" x2="332.22" y2="56.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><line x1="364.98" y1="65.68" x2="332.22" y2="87.52" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /></svg>
