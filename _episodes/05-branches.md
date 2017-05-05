@@ -32,7 +32,7 @@ keypoints:
 Up until now our repository has only had one branch with one commit coming
 after the other:
 
-![Linear]({{ site.baseurl }}/img/gitink/git-branch-01.svg "Linear git
+![Linear]({{ site.baseurl }}/img/gitink/git-branch-1.svg "Linear git
 repository"){:class="img-responsive"}
 
 However, software development is often not linear:
@@ -52,7 +52,7 @@ version that contains both the changes.
 
 To enable collaborative work we wish to do something more like:
 
-![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative-work.svg
+![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative.svg
 "description"){:class="img-responsive"}
 
 A group of commits that create a single narrative are called a **branch**.
@@ -69,7 +69,7 @@ Before we exercise branching, a quick recap of what we got so far.
 We have three commits and only one development line (branch) and this branch is
 called "master":
 
-![]({{ site.baseurl }}/img/gitink/git-branch-01.svg)
+![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
 
 ```shell
 $ git log --stat
@@ -208,7 +208,7 @@ $ git branch
 
 Here is a graphical representation of what we have created:
 
-![]({{ site.baseurl }}/img/gitink/git-branch-result.svg)
+![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
 
 
 How do you interpret the following:
