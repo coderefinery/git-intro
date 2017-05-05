@@ -1,15 +1,14 @@
 ---
 layout: episode
-title: "Down the rabbit hole"
-teaching: x min
-exercises: y min
-#questions:
-#  - "How do I rename files in a git repository?"
-#  - "How do I restructure my project?"
-#objectives:
-#  - "Student can restructure a project when the need arises"
-#keypoints:
-#  - "Remember to use **git rm** and **git mv** instead of the normal ones."
+title: "Git under the hood"
+teaching: 10
+exercises: 0
+questions:
+  - "Where are commits stored?"
+objectives:
+  - "Verify that branches are pointers to commits."
+keypoints:
+  - "Branches are extremely lightweight."
 ---
 
 ## Down the rabbit hole
