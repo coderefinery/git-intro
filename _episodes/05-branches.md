@@ -20,27 +20,37 @@ keypoints:
 ---
 
 ## Food for thought
+
 - How do you work on two things in parallel?
 - How often do you find yourself wanting to go into two directions at once?
+- How do you patch a version of the code which is not the latest commit?
 
 ---
 
-## Branches
-
-Software develompent isn't linear. The strength of version control is that it
-permits the developers to isolate different tracks of work so that they can be
-isolated from one another. Developers can work on different things and merge
-the changes they made to the source code files afterwards to create a
-composite version that contains both the changes.
-
+## Motivation for branches
 
 Up until now our repository has only had one branch with one commit coming
-after the other, as depicted in the following.
+after the other:
 
 ![Linear]({{ site.baseurl }}/img/gitink/git-branch-01.svg "Linear git
 repository"){:class="img-responsive"}
 
-To enable collaborative work we wish to do something more like
+However, software develompent is often not linear:
+
+  - Maintenance of releases, bugfixes, and patches.
+  - Collaborative work (everybody would be exposed to your bugs; you would be
+    exposed to bugs of other people).
+  - We do not have time to write perfect code immediately, it would be nice to
+    have the possibility to experiment somewhere aside.
+  - Interrupted work (we typically work on several longer term projects at the
+    same time).
+
+The strength of version control is that it permits the developers to isolate
+different tracks of work. Developers can work on different things and merge
+the changes they made to the source code files afterwards to create a composite
+version that contains both the changes.
+
+To enable collaborative work we wish to do something more like:
 
 ![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative-work.svg
 "description"){:class="img-responsive"}
@@ -49,6 +59,10 @@ A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it's easy to think that a branch
 tells the story of a feature. E.g. "new login workflow" or "fixing bug in
 matrix inversion algoritm" might be logical branches.
+
+---
+
+
 
 ## Branching
 
