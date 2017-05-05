@@ -62,103 +62,142 @@ matrix inversion algoritm" might be logical branches.
 
 ---
 
+## What is a commit
 
+Before we exercise branching, a quick recap of what we got so far.
 
-## Branching
+We have three commits and only one development line (branch) and this branch is
+called "master":
 
-### Git branch
+![]({{ site.baseurl }}/img/gitink/git-branch-01.svg)
 
-By default when you create a new repository git creates a branch called
-**master**. You can check the branch you are on by calling the **git branch**
-command without any parameters.
+```shell
+$ git log --stat
 
+commit 7f3582dfbad6539cfa60f5b21bfad41d1b58a618
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Fri May 5 12:49:45 2017 +0200
+
+    do not forget to enjoy
+
+ instructions.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 64441c1934def7d91ff0b66af0795749d5f1954a
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Fri May 5 12:49:35 2017 +0200
+
+    add onion
+
+ ingredients.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d619bf848a3f83f05e8c08c7f4dcda3490cd99d9
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Fri May 5 12:48:36 2017 +0200
+
+    adding ingredients and instructions
+
+ ingredients.txt  | 3 +++
+ instructions.txt | 5 +++++
+ 2 files changed, 8 insertions(+)
 ```
+
+- Commits are changes.
+- Characterized by a 40-character hash (checksum).
+- We see branching points and merging points.
+- Often we call the main line development `master`.
+- Other than this convention there is nothing special about `master`, it is just a branch.
+- Commits form a directed acyclic graph.
+
+### Branches are pointers
+
+- Branches are pointers that point to a commit.
+- Branch `master` points to commit `c2`.
+- Try this:
+
+```shell
+$ cat .git/refs/heads/master
+```
+
+- It will echo a long hash, for instance this one.
+
+```shell
+7f3582dfbad6539cfa60f5b21bfad41d1b58a618
+```
+
+- That is all there is: branch `master` is simply a pointer to a hash.
+- `HEAD` is another pointer, it points to where we are right now (currently `master`).
+
+### On which branch are we?
+
+- To see where we are (where HEAD points to) use `git branch`
+
+```shell
 $ git branch
+
 * master
 ```
 
-This lists local branches and shows which one you are on using an asterisk
-(\*).
+- This command shows where we are, it does not create a branch.
+- There is only `master` and we are on `master` (star is `HEAD`).
+- In the following we will learn how to create branches,
+  how to switch between them, how to merge branches,
+  and how to remove them afterwards.
 
-Giving the command a branch name will create a new local branch.
+---
 
+## Exercise: creating and working with branches
+
+- Create a branch called `experiment` where you experiment adding
+  cilantro to `ingredients.txt` (if you don't like cilantro, you can add
+  another ingredient).
+- Create another branch called `less-salt`
+  where you reduce the amount of salt.
+- Make sure you create both branches from the `master` branch.
+- Commit your changes to the respective branches.
+
+Use the following 3 commands:
+
+```shell
+$ git branch experiment    # create branch called "experiment" pointing to the present commit
+$ git checkout experiment  # switch to branch "experiment"
+$ git branch               # list all local branches and show on which branch we are
 ```
-$ git branch devel
+
+Once you have committed your changes, try:
+
+```shell
+$ git log experiment
+$ git log less-salt
+$ git log master
+```
+
+We now have three branches:
+
+```shell
 $ git branch
-  devel
-  * master
-```
 
-Observe that creating a branch didn't automatically switch you to said branch.
-To switch to another branch you checkout the branch using **git checkout**.
-
-```
-$ git checkout devel
-Switched to branch 'devel'
-$ git branch
-* feature1
+* experiment
+  less-salt
   master
 ```
 
-Now, edit the hello world string in your hello.py to something else, e.g.
+Here is a graphical representation of what we have created:
 
-``` python
-def say_hello():
-    print("Hello World!")
-    print("Bye Bye World!")
-```
+![]({{ site.baseurl }}/img/gitink/git-branch-01.svg)
 
 
-> ## Challenge
->
-> Now add and commit this change using **git commit** and **git add**.
->
-> What commands did you use?
->
-> > ## Example solution
-> >
-> > ```
-> > $ git add hello.py
-> > $ git commit -m "change hello.py"
-> > ```
-> {: .solution }
-{: .challenge :}
 
 
-### Under the hood
 
-Every commit in git is stored as a file and all but the first commit store a
-reference to a previous commit to create the directed acyclic graph mentioned
-earlier.
 
-Branches are pointers to individual commits. When you create a new branch git
-creates a new pointer to the commit that you're currently at. Then when you
-make a new commit, the pointer for the branch you are on is updated to point to the new header.
 
-HEAD is a file under .git/ and it points to the head of the current branch you
-are on. When you switch branches, git finds the head of the branch under
-.git/logs/heads and sets that as HEAD. Then it proceeds to ensure that all the
-versioned files are in the version specified by the HEAD unless they have been
-changed.
 
-When you first created the branch the situation looked like this.
 
-![Linear]({{ site.baseurl }}/img/gitink/git-branch-02.svg "Linear git
-repository"){:class="img-responsive"}
 
-Git had created a new pointer, feature1 to point to the same commit as master.
 
-Running **git checkout feature1** changed the situation like this.
 
-![Linear]({{ site.baseurl }}/img/gitink/git-branch-03.svg "Linear git
-repository"){:class="img-responsive"}
-
-Now HEAD points to another branch, which still points to the same commit.
-
-After you made the commit the histories diverged.
-
-![Linear]({{ site.baseurl }}/img/gitink/git-branch-04.svg "two branches with one
-different commit"){:class="img-responsive"}
 
 ## Basic merging
 
