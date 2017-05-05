@@ -150,7 +150,9 @@ When you are done, try `git diff`:
 
 ```shell
 $ git diff
+```
 
+```
 diff --git a/ingredients.txt b/ingredients.txt
 index 2607525..ec0abc6 100644
 --- a/ingredients.txt
