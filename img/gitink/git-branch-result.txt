@@ -1,0 +1,8 @@
+
+           [master]    [experiment,HEAD]
+            |           |
+c1----c2----c3----e1----e2
+              \
+               s1
+               |
+              [less-salt]

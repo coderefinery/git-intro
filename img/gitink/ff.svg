@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with GitInk -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="352.000000"
+   height="206.400000"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="drawing.svg">
+<defs
+   id="defs4">
+  <marker
+     inkscape:stockid="Arrow2Mend"
+     orient="auto"
+     refY="0.0"
+     refX="0.0"
+     id="Arrow2Mend"
+     style="overflow:visible;">
+    <path
+       id="path3786"
+       style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+       d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+       transform="scale(0.6) rotate(180) translate(0,0)" />
+  </marker>
+</defs><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#ff9999;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="27.200000"
+     height="23.200000"
+     x="5.000000"
+     y="85.000000"
+     ry="3.200000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="9.000000"
+     y="101.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="9.000000"
+       y="101.800000">c1</tspan></text>
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#ff9999;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="27.200000"
+     height="23.200000"
+     x="65.000000"
+     y="85.000000"
+     ry="3.200000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="69.000000"
+     y="101.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="69.000000"
+       y="101.800000">c2</tspan></text>
+</g><line x1="64.98" y1="96.6" x2="32.22" y2="96.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#ffffff;stroke:#dddddd;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="65.600000"
+     height="23.200000"
+     x="45.800000"
+     y="45.000000"
+     ry="0.000000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:0.300000;stroke:none;font-family:DejaVu Sans Mono"
+     x="49.800000"
+     y="61.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="49.800000"
+       y="61.800000">master</tspan></text>
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.300000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 78.600000,68.240000 78.600000,84.960000"
+     id="path2985"
+     inkscape:connector-curvature="0" />
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#ffffff;stroke:#dddddd;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="46.400000"
+     height="23.200000"
+     x="55.400000"
+     y="5.000000"
+     ry="0.000000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:0.300000;stroke:none;font-family:DejaVu Sans Mono"
+     x="59.400000"
+     y="21.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="59.400000"
+       y="21.800000">HEAD</tspan></text>
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.300000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 78.600000,28.240000 78.600000,44.960000"
+     id="path2985"
+     inkscape:connector-curvature="0" />
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#9999ff;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="27.200000"
+     height="23.200000"
+     x="125.000000"
+     y="125.000000"
+     ry="3.200000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="129.000000"
+     y="141.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="129.000000"
+       y="141.800000">b1</tspan></text>
+</g><line x1="124.98" y1="127.52" x2="92.22" y2="105.68" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#9999ff;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="27.200000"
+     height="23.200000"
+     x="185.000000"
+     y="125.000000"
+     ry="3.200000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="189.000000"
+     y="141.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="189.000000"
+       y="141.800000">b2</tspan></text>
+</g><line x1="184.98" y1="136.6" x2="152.22" y2="136.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#9999ff;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="27.200000"
+     height="23.200000"
+     x="245.000000"
+     y="125.000000"
+     ry="3.200000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="249.000000"
+     y="141.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="249.000000"
+       y="141.800000">b3</tspan></text>
+</g><line x1="244.98" y1="136.6" x2="212.22" y2="136.6" style="stroke:#000000; stroke-width:1.6; stroke-opacity:1.0" /><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#dddddd;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="65.600000"
+     height="23.200000"
+     x="225.800000"
+     y="85.000000"
+     ry="0.000000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="229.800000"
+     y="101.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="229.800000"
+       y="101.800000">master</tspan></text>
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 258.600000,108.240000 258.600000,124.960000"
+     id="path2985"
+     inkscape:connector-curvature="0" />
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#dddddd;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="46.400000"
+     height="23.200000"
+     x="235.400000"
+     y="45.000000"
+     ry="0.000000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="239.400000"
+     y="61.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="239.400000"
+       y="61.800000">HEAD</tspan></text>
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 258.600000,68.240000 258.600000,84.960000"
+     id="path2985"
+     inkscape:connector-curvature="0" />
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <rect
+     style="fill:#dddddd;stroke:#000000;stroke-width:1.600000;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect2989"
+     width="56.000000"
+     height="23.200000"
+     x="230.600000"
+     y="165.000000"
+     ry="0.000000" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1.000000;stroke:none;font-family:DejaVu Sans Mono"
+     x="234.600000"
+     y="181.800000"
+     id="text2985"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan2987"
+       x="234.600000"
+       y="181.800000">devel</tspan></text>
+</g><g
+   inkscape:label="Layer 1"
+   inkscape:groupmode="layer"
+   id="layer1">
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.600000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.000000;marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 258.600000,164.960000 258.600000,148.240000"
+     id="path2985"
+     inkscape:connector-curvature="0" />
+</g></svg>

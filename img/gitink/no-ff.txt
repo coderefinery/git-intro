@@ -1,0 +1,8 @@
+
+     [_master,_HEAD]   [master,HEAD]
+      |                 |
+c1----c2----------------m1
+        \              /
+         b1----b2----b3
+                     |
+                    [devel]

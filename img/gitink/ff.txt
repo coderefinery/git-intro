@@ -1,0 +1,8 @@
+
+     [_master,_HEAD]
+      |
+c1----c2            [master,HEAD]
+        \            |
+         b1----b2----b3
+                     |
+                    [devel]
