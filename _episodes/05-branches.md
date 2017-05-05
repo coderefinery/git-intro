@@ -190,7 +190,7 @@ And on the `less-salt` branch:
 ```shell
 $ git log --oneline less-salt
 
-d66edf3 reduce amount of salt
+e66edf3 reduce amount of salt
 7f3582d do not forget to enjoy
 64441c1 add onion
 d619bf8 adding ingredients and instructions
@@ -262,7 +262,7 @@ $ git log --graph --decorate --pretty=oneline --abbrev-commit
 |\
 | * f413c60 (experiment) maybe little bit less cilantro
 | * d541ee0 let us try with some cilantro
-* | d66edf3 reduce amount of salt
+* | e66edf3 reduce amount of salt
 |/
 * 7f3582d (master) do not forget to enjoy
 * 64441c1 add onion
@@ -308,13 +308,13 @@ This is the result - discuss it:
 
 It is useful to understand the difference between fast-forward vs. non-fast-forward merges.
 
-To clarify what is meant by "fast-forward" imagine that you are on `master` and want to merge `devel`:
+To clarify what is meant by "fast-forward" imagine that you are on `master` and want to merge `experiment`:
 
 ![]({{ site.baseurl }}/img/gitink/pre-ff.svg)
 
-What will happen if we `git merge devel`?
+What will happen if we `git merge experiment`?
 
-If you now type `git merge devel`, Git will recognize that it can simply move
+If you now type `git merge experiment`, Git will recognize that it can simply move
 the `master` pointer to `b3` without creating a merge commit
 
 This is a fast-forward merge:
@@ -326,7 +326,7 @@ The default in Git is to fast-forward merge when possible.
 If you do not like this you can tell Git to merge with no fast-forward:
 
 ```shell
-$ git merge --no-ff devel
+$ git merge --no-ff experiment
 ```
 
 Both is fine, the resulting code is the same, not the history:

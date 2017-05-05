@@ -1,8 +1,8 @@
 
-     [_master,_HEAD]   [master,HEAD]
-      |                 |
-c1----c2----------------m1
-        \              /
-         b1----b2----b3
+           [_master]   [master,HEAD]
+            |           |
+d6----64----7f----------m1
+              \        /
+               d5----f4
                      |
-                    [devel]
+                    [experiment]
