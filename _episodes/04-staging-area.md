@@ -8,7 +8,7 @@ questions:
 objectives:
   - "Try to demystify the Git staging area."
 keypoints:
-  - "The staging are helps us to create well-defined commits."
+  - "The staging area helps us to create well-defined commits."
 ---
 
 ## States of a file.
@@ -157,5 +157,5 @@ $ git add -u
 
 ## Questions
 
-- When is it better to "save" a change as commit, when is it better to save it with `git add`?
+- When is it better to "save" a change as commit, when is it better to "save" it with `git add`?
 - Is it a problem to commit many small changes?
