@@ -11,7 +11,7 @@ version control system.
 
 ## Prerequisites
 
-- The latest or a reasonably new version of Git is installed.  For installation
+- A reasonably recent version of Git is installed. For installation
   instructions and binaries see [the Git home page](https://git-scm.com/).
 - Being comfortable with the command line. No expertise is required, but the
   lesson will be mostly taken from the command line.
