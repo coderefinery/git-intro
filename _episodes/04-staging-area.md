@@ -1,94 +1,161 @@
 ---
 layout: episode
 title: "Using the Git staging area"
-teaching: 20
-exercises: 25
-#questions:
-#  - "What is Git?"
-#  - "What is a repository?"
-#  - "How do I make commits?"
-#  - "How do I select what to commit?"
-#  - "How can I undo things?"
-#objectives:
-#  - "Learn to create Git repositories and make commits."
-#  - "Get a grasp of the structure of a repository."
-#keypoints:
-#  - "Commits should be used to tell a story."
-#  - "Git uses the .git folder to store the snapshots."
+teaching: 10
+exercises: 10
+questions:
+  - "Why is it good practice to first add, then commit a change?"
+objectives:
+  - "Try to demystify the Git staging area."
+keypoints:
+  - "The staging are helps us to create well-defined commits."
 ---
 
-### States of a file.
+## States of a file.
 
-In general files can have one of 4 states inside a git repository. *Image CC BY 3.0 from the Pro Git book.*
+We recall that we have committed changes in two steps.
+We have used `git add` and `git commit`:
 
-![States of a git file]({{ site.baseurl }}/img/lifecycle.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
-
-> ## Make a change
-> Make a change to hello.py. You can add a comment or something similar, the
-> nature of the change is not important.
->
-{. :task :}
-
-```
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   hello.py
-
-no changes added to commit (use "git add" and/or "git commit -a")
+```shell
+$ git add     # stages the change
+$ git commit  # commits the staged change
 ```
 
-Now you can add the changes using **git add** as the message tells you. You
-could also discard the changes with **git checkout --**.
+In general files can have one of 4 states inside a Git repository:
 
+![States of a Git file]({{ site.baseurl }}/img/lifecycle.png "States of a Git file. License CC BY 3.0"){:class="img-responsive"}
+(Image from the [Pro Git book](https://git-scm.com/book/), licensed under CC BY 3.0)
 
-> ## **git checkout --** behaviour
->
-> The purpose of git checkout -- is to **erase** uncommitted changes you made
-> to a file. This means that you will irrevocably lose those changes.
-> Usually this is what you want but it is good to keep in mind so you don't lose what you don't want to.
->
-> In the context of the state diagram above git checkout will move the file from modified to unmodified.
-{: .callout :}
+---
 
-Let's instead move the file from modified to staged.
+## Why the staging?
 
-```
-$ git add hello.py
-$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+### It is useful to have a nice and readable history
 
-	modified:   hello.py
+- Bad example
 
-```
-
-Now the file is staged, which means it will be committed when you make the commit.
-
-Notice how git tells you what changes it will make with the commit and gives
-you instructions on the things you might want to do.
-
-You can move back, i.e. unstage the change with **git reset HEAD**
-
-```
-$ git reset HEAD hello.py
-Unstaged changes after reset:
-M	hello.py
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   hello.py
-
-no changes added to commit (use "git add" and/or "git commit -a")
+```shell
+b135ec8 now feature A should work
+72d78e7 fix for parallel compilation
+bf39f9d bugfix
+49dc419 removed too much
+45831a5 removing debug print
+bddb280 more work on feature B
+72e0211 another fix to make it compile
+e2073c3 oops! forgot another file
+61dd3a3 forgot file
+a9f5172 save work on feature A
+6fe2f23 save work on feature B
 ```
 
-> ## Commit the change
-> Go ahead and stage the change again and commit it with a descriptive message.
-{: .task :}
+- Very often you will be obliged to do archaeology in your code
+- Imagine that in few months you discover that feature B was a mistake
+- It is very difficult to find and revert this in this example
+
+### Main development line should have a nice and readable history
+
+- Good example
+
+```shell
+6f0d49f feature C
+fee1807 feature B
+6fe2f23 feature A
+```
+
+- We want to have nice commits
+- But we also want to "save often" (checkpointing) - how can we have both?
+- We will now learn to fabricate nice commits using the staging area
+
+---
+
+## Checkpointing using the staging area
+
+```
+                tracked     staged   committed
+              but unstaged    |          |
+command            |          |          |   English translation
+
+git add file(s)    |--------->|          |   stage file
+git commit         |          |--------->|   commit staged file(s)
+git commit file(s) |-------------------->|   commit file(s) directly
+
+git diff           |<-------->|          |   between modified and staged
+git diff --cached  |          |<-------->|   between staged and last commit
+git diff HEAD      |<------------------->|   between modified and last commit
+git diff           |<------------------->|   if nothing is staged
+
+git reset          |<---------|          |   unstage
+git reset --soft   |          |<---------|   "uncommit" and stage
+git reset --hard   |<--------------------|   discard
+
+git checkout       |<---------|          |   undo unstaged modifications
+git checkout       |<--------------------|   if nothing is staged
+```
+
+- `git add` every change that improves the code.
+- `git checkout` every change that made things worse.
+- `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
+- Discuss/think about what is too large or too small.
+
+
+### Compare with working without the staging area
+
+```
+                tracked     staged   committed
+              but unstaged    |          |
+command            |          |          |   English translation
+
+git commit file(s) |-------------------->|   commit file(s)
+git diff           |<------------------->|   between modified and last commit
+git checkout       |<--------------------|   undo uncommitted modifications
+```
+
+---
+
+## Checkpointing using the staging area
+
+- We want to do many small commits (checkpoints)
+- But at the end we want to commit in one nice commit
+- With `git add` we can prepare commits
+
+```shell
+$ git add file.py                 # checkpoint 1
+$ git add file.py                 # checkpoint 2
+$ git add another_file.py         # checkpoint 3
+$ git add another_file.py         # checkpoint 4
+$ git diff another_file.py        # diff w.r.t. checkpoint 4
+$ git checkout another_file.py    # oops go back to checkpoint 4
+$ git commit                      # commit everything that is staged
+```
+
+- `git diff` gives differences with respect to the staging area, this is very practical.
+- Using `git add` we can fabricate very nice coherent commits.
+
+---
+
+## Staging everything
+
+- Sometimes you want to stage all modifications
+- No need to stage them one by one
+
+```shell
+$ git add -u
+```
+
+- Also removals of tracked files are then automatically staged
+
+---
+
+## Exercise
+
+- Prepare **one** nice commit to the guacamole recipe by staging **several** small changes.
+- When doing this experiment with `git diff` and `git checkout <path>` to get a feel for checkpointing.
+- Observe how `git diff` and `git checkout <path>` are with respect to *staged* changes.
+- If you see a change with `git diff`, try also `git difftool`.
+
+---
+
+## Questions
+
+- When is it better to "save" a change as commit, when is it better to save it with `git add`?
+- Is it a problem to commit many small changes?
