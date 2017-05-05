@@ -132,7 +132,7 @@ Now try `git log`:
 ```shell
 $ git log
 
-commit c98917b3868812a140a0f3c1ec3f16518714cf81
+commit d619bf848a3f83f05e8c08c7f4dcda3490cd99d9
 Author: Radovan Bast <bast@users.noreply.github.com>
 Date:   Thu May 4 15:02:56 2017 +0200
 
