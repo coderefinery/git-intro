@@ -1,9 +1,0 @@
-        [feature2,master,HEAD] 
-         | 
-         b1
-        /  \      
-c1----c2    conflict
-        \  /      
-         d1        
-         |
-        [feature2]
