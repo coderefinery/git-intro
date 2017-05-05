@@ -11,15 +11,13 @@ version control system.
 
 ## Prerequisites
 
-- Students should have installed the latest or a reasonably new version of
-  git on their machines. For installation instructions and binaries see 
-  [the git home page](https://git-scm.com/).
-- Students are expected to be familiar with using the command line. No
-  expertise is required, but the lesson will be mostly taken from the command
-  line.
+- The latest or a reasonably new version of Git is installed.  For installation
+  instructions and binaries see [the Git home page](https://git-scm.com/).
+- Being comfortable with the command line. No expertise is required, but the
+  lesson will be mostly taken from the command line.
 - Students should be familiar with using a text editor on their system. Emacs
-  and Vim are excellent choices if you know how to use them but Nano or
-  Notepad on Windows are sufficient.
+  and Vim are excellent choices if you know how to use them but Nano or Notepad
+  on Windows are sufficient.
 - Git should be configured prior to the lesson following [our installation instructions](https://coderefinery.github.io/installation/).
 
 
