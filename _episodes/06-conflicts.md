@@ -3,245 +3,239 @@ layout: episode
 title: "Conflict resolution"
 teaching: 10
 exercises: 10
-#questions:
-#  - How can I or my team work on multiple features in parallel?
-#  - How to combine the changes in parallel tracks of work?
-#  - What is branching and when should I do it?
-#  - How can I permanently reference a point in history, like a software
-#    version?
+questions:
+  - How can we resolve conflicts?
+  - How can we avoid conflicts?
 objectives:
   - Understand the system sufficiently to fix small merge conflicts.
 keypoints:
   - Conflicts often appear because of not enough communication or not optimal branching strategy.
 ---
 
-## Make conflicting changes in 2 branches
+## Conflict resolution
 
-### Make a branch and create a commit
+![]({{ site.baseurl }}/img/confict-resolution/mk1.jpg)
 
-> ## task
-> Make a new branch called **feature2**
-> Edit the file so that the first print statement says. "Good Morning World!" and commit the changes.
-{: .task :}
+- In most cases a `git merge` runs smooth and automatic.
+- Then a merge commit appears (unless fast-forward) without you even noticing.
+- Git is very good at resolving modifications when merging branches.
+- You can merge more than one branch (octopus merges).
+- But sometimes the same line is modified on two branches and Git issues a conflict.
+- Then you need to tell Git which version to keep.
+- There are several ways to do that as we will see.
 
-> ## Challenge
-> What commands did you use?
->
-> > ## Solution
-> > ```
-> > $ git branch feature2
-> > $ git checkout feature2
-> > [something to edit the file]
-> > $ git add hello.py
-> > $ git commit -m "changed hello string"
-> > ```
-> {: .solution }
-{: .challenge :}
-
-Now, check out the master branch with
-
-```
-$ git checkout master
-```
-
-
-> Repeat the above steps and create a branch called **feature3** with the
-> text "Good Afternoon World!".
-{: .task :}
-
-## Merge conflicts
-
-Now we face a typical situation called a merge conflict. We already know that
-the two changes we made change the same line of code. Typically we would want
-to avoid this, but it's never possible to entirely avoid merge conflicts.
-
-```
-git show-branch --all
-! [feature2] edited hello.py with a morning message
- ! [feature3] edited hello.py with an afternoon message
-  * [master] change hello.py
 ---
- +  [feature3] edited hello.py with an afternoon message
-+   [feature2] edited hello.py with a morning message
-++* [master] change hello.py
-```
-and
 
-```
-git log --oneline --decorate --graph --all
-* b3d5dd4 (feature3) edited hello.py with an afternoon message
-| * 2e69aab (feature2) edited hello.py with a morning message
-|/
-* 8afc9c7 (HEAD -> master) change hello.py
-* ab9544c add .gitignore to ignore temporary Python files
-* 94b96db Split hello world functionality to two files.
-* f2045a6 initial commit containing a simple hello world example.
-```
+## Exercise: create a conflict
 
-Both of the examples try to visualize the same situation. Feature 2 and feature
-3 have ben branched off from master and have a commit with changes in them.
+- Create two branches from `master`.
+- On each branch modify the amount of the same ingredient so that you arrive at
+  new but different amounts.
 
-The end result looks something like this
-![git merge 2 1]({{ site.baseurl }}/img/gitink/git-branch-2-01.svg "merge beginning"){:class="img-responsive"}
+These are my modifications:
 
-Let's merge the first branch
+```shell
+$ git show-branch
 
-```
-$ git checkout master
-$ git merge feature2
-Updating 8afc9c7..2e69aab
-Fast-forward
- hello.py | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+* [dislike-cilantro] please no cilantro
+ ! [like-cilantro] more cilantro please
+  ! [master] Merge branch 'experiment' into less-salt
+---
+*   [dislike-cilantro] please no cilantro
+ +  [like-cilantro] more cilantro please
+--- [master] Merge branch 'experiment' into less-salt
 ```
 
-OK that went without a problem. In fact git was able to use the **fast
-forward** strategy so it was just able to move the pointer for master forward
-to the tip of feature2 branch. No new merge commit needed.
-
-The result looks like this
-![git merge 2 2]({{ site.baseurl }}/img/gitink/git-branch-2-02.svg "merge first"){:class="img-responsive"}
-
-Now let's try to merge the second branch.
+On the branch `like-cilantro` I have the following `git diff`:
 
 ```
-$ git merge feature3
-Auto-merging hello.py
-CONFLICT (content): Merge conflict in hello.py
+diff --git a/ingredients.txt b/ingredients.txt
+index 27a808c..5550d6d 100644
+--- a/ingredients.txt
++++ b/ingredients.txt
+@@ -2,4 +2,4 @@
+ * 1 lime
+ * 1 tsp salt
+ * 1/2 onion
+-* 1 tbsp cilantro
++* 2 tbsp cilantro
+```
+
+And on the branch `dislike-cilantro` we have the following `git diff`:
+
+```
+diff --git a/ingredients.txt b/ingredients.txt
+index 27a808c..10eed42 100644
+--- a/ingredients.txt
++++ b/ingredients.txt
+@@ -2,4 +2,4 @@
+ * 1 lime
+ * 1 tsp salt
+ * 1/2 onion
+-* 1 tbsp cilantro
++* 0 tbsp cilantro
+```
+
+### What do you expect will happen when I try to merge these two?
+
+```shell
+$ git branch
+
+* dislike-cilantro
+  like-cilantro
+  master
+
+$ git merge like-cilantro
+
+Auto-merging ingredients.txt
+CONFLICT (content): Merge conflict in ingredients.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-In the case of two conflicting versions of the
-same line Git doesn't know which one to choose and you as a human must make the
-choice.
+Without conflict Git would have automatically created a merge commit,
+but since there is a conflict, Git did not commit:
 
-Git is trying to create a new merge commit, m1 that would combine commits b1
-and d1 but it can't, because they change the same line of code.
-
-![git merge 2 3]({{ site.baseurl }}/img/gitink/git-branch-2-03.svg "merge first"){:class="img-responsive"}
-
-Note how git again tells you exactly what you should do: you should fix
-conflicts and then commit the result.
-
-As always you can check your status with **git status**.
-
-```
+```shell
 $ git status
-On branch master
+
+On branch dislike-cilantro
 You have unmerged paths.
   (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
 
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
 
-        both modified:   hello.py
+	both modified:   ingredients.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Now look at the file hello.py with a text editor or **cat**
+Let us inspect the conflicting file:
 
 ```
-$ cat hello.py
-def say_hello():
+$ cat ingredients.txt
+
+* 2 avocados
+* 1 lime
+* 1 tsp salt
+* 1/2 onion
 <<<<<<< HEAD
-    print("Good Morning World!")
+* 0 tbsp cilantro
 =======
-    print("Good Afternoon World!")
->>>>>>> feature3
-    print("Bye Bye World!")
+* 2 tbsp cilantro
+>>>>>>> like-cilantro
 ```
 
-The root of the problem here is that the changes made in the different branches
-__overlap__, i.e. they change the same lines of code. Most of the time this
-does not happen and there is no need to handle merge conflicts.  The working
-practices and software structure are often designed with parallel work in mind
-but this is the topic of other lessons.
+Git inserted resolution markers (the `<<<<<<<`, `>>>>>>>`, and `=======`).
 
-Git has made a composite version of the file that contains both alternatives
-for the same length of text. The one labeled HEAD is the version in the current
-branch (i.e. master) and the one labeled feature3 is from that branch.
-
-Now you need to manually edit the merge commit before it can be accepted.
-
-> ## Merge the changes
-> Edit the file and leave either of the print statements and edit out the
-> lines with angle brackets and equals signs.
->
-> Note that there is no requirement to leave either of
-> the existing statements. You can edit the file freely to e.g. combine the
-> functionality in both branches if you want.
-{: .task :}
-
-After you commit your changes the history will look like this
-![git merge 2 4]({{ site.baseurl }}/img/gitink/git-branch-2-04.svg "merge fourth"){:class="img-responsive"}
-
-
-
-Now since we made just one small commit we'll cut a corner and use **git commit
--a** to commit our merge.
+Try also `git diff`:
 
 ```
-$git commit -a -m "manually merge different hello statements"
-[master c79ff2c] manually merge different hello statements
-
-$ git status
-On branch master
-nothing to commit, working tree clean
-
-$ git log --graph --abbrev-commit --decorate
-*   commit c79ff2c (HEAD -> master)
-|\  Merge: 2e69aab b3d5dd4
-| | Author: Joe Example <joe@example.org>
-| | Date:   Mon Dec 12 09:11:57 2016 +0200
-| |
-| |     manually merge different hello statements
-| |
-| * commit b3d5dd4 (feature3)
-| | Author: Joe Example <joe@example.org>
-| | Date:   Thu Dec 8 12:10:07 2016 +0200
-| |
-| |     edited hello.py with an afternoon message
-| |
-* | commit 2e69aab (feature2)
-|/  Author: Joe Example <joe@example.org>
-|   Date:   Thu Dec 8 12:08:26 2016 +0200
-|
-|       edited hello.py with a morning message
-|
-* commit 8afc9c7
-| Author: Joe Example <joe@example.org>
-| Date:   Thu Dec 8 11:47:36 2016 +0200
-|
-|     change hello.py
-...
+diff --cc ingredients.txt
+index 10eed42,5550d6d..0000000
+--- a/ingredients.txt
++++ b/ingredients.txt
+@@@ -2,4 -2,4 +2,8 @@@
+  * 1 lime
+  * 1 tsp salt
+  * 1/2 onion
+++<<<<<<< HEAD
+ +* 0 tbsp cilantro
+++=======
++ * 2 tbsp cilantro
+++>>>>>>> like-cilantro
 ```
 
-The **-a** handle tells git commit to merely stage all the changed files that
-are tracked by git. It's simple but if overused it can make the next person
-somewhat surprised at what has happened. If you make more than one change then
-the use of **-a** conflicts with the idea of telling a story about your project
-to the next person maintaining it.
+`git diff` now only shows the conflicting part, nothing else.
 
-Now that you no longer need the old branches you can delete them.
+We have to resolve the conflict.
+We will discuss 3 different ways to do this.
 
-> ## Task
-> Delete the branches
->
-{: .task :}
+---
 
-> ## Challenge
-> What commands did you use?
->
-> > ## Example solution
-> > ```
-> > $git branch -d feature2
-> > Deleted branch feature2 (was 2e69aab).
-> > $ git branch -d feature3
-> > Deleted branch feature3 (was b3d5dd4).
-> > ```
-> {: .solution }
-{: .challenge :}
+## Manual resolution
 
-You don't have to delete branches immediately but at some point you should as
-after merging they just take up useless screen space.
+```
+<<<<<<< HEAD
+* 0 tbsp cilantro
+=======
+* 2 tbsp cilantro
+>>>>>>> like-cilantro
+```
+
+- Manual resolution means that you have to edit the code/text between the resolution markers.
+- Git stages all files without conflicts and leaves the files with conflicts unstaged.
+- Decide what you keep (the one, the other, or both or something else).
+- Then remove the resolution markers.
+- Tell Git that you have resolved the conflict with `git add ingredients.txt`.
+- Then verify with `git status`.
+- Now commit the merge; this opens up a prepared commit message that you can keep or modify.
+- It is good practice to keep the information that there was a conflict in the commit message.
+
+---
+
+## Resolution using mergetool
+
+```shell
+$ git mergetool
+```
+
+![]({{ site.baseurl }}/img/confict-resolution/mergetool.png)
+
+- Your current branch is left, the branch you merge is right, result is in the middle.
+- After you are done, close and commit, `git add` is not needed when using `git mergetool`.
+
+---
+
+## Using "ours" or "theirs" strategy
+
+![]({{ site.baseurl }}/img/confict-resolution/mk2.jpg)
+
+- Sometimes you know that you want to keep "ours" version (version on this branch)
+  or "theirs" (version on the merged branch).
+- Then you do not have to resolve conflicts manually.
+- See [merge strategies](https://git-scm.com/docs/merge-strategies).
+
+```shell
+$ git checkout --theirs ingredients.txt  # take the version of the other branch
+                                         # alternative would be --ours
+$ git add ingredients.txt                # tell Git that you have resolved it
+$ git commit
+```
+
+---
+
+## Aborting a conflicting merge
+
+- Imagine it is Friday evening, you try to merge but have conflicts all over
+  the place.
+- You do not feel like resolving it now and want to undo the half-finished
+  merge.
+- Or it is a conflict that you cannot resolve and only your colleague knows
+  which version is the one to keep.
+- There is no reason to delete the whole repository.
+- Simply reset the repository to `HEAD` (last committed state).
+
+```shell
+$ git reset --hard HEAD # throws away everything that is not in HEAD
+```
+
+The repository looks exactly as it was before the merge.
+
+---
+
+## Avoiding conflicts
+
+- Conflicts can be avoided if you think and talk with your colleagues before committing.
+- Think and plan to which branch you will commit to.
+- Fortran people: modifying common blocks often causes conflicts.
+- Modifying global data often causes conflicts.
+- Monolithic entangled spaghetti-code maximizes risk of conflicts.
+- Modular programming minimizes risk of conflicts.
+- Ball-of-mud branches for "everything" maximize risk of conflicts.
+- One branch for one task only.
+- Resolve conflicts early.
+- If the branch affects code that is likely to be modified by others:
+  - the branch should be short-lived and/or merge often to the main development line
+  - the branch should merge the main development line often to stay up-to-date
