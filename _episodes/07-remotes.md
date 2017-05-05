@@ -1,8 +1,8 @@
 ---
 layout: episode
 title: "Remotes and GitHub"
-teaching: 20
-exercises: 25
+teaching: 10
+exercises: 15
 questions:
   - How does version control scale from 1 to N users per repository?
   - How can I set up a public repository online

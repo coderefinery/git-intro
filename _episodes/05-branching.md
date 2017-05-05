@@ -2,7 +2,7 @@
 layout: episode
 title: "Branching and Merging"
 teaching: 20
-exercises: 25
+exercises: 20
 questions:
   - "How can I or my team work on multiple features in parallel?"
   - "How to combine the changes in parallel tracks of work?"
