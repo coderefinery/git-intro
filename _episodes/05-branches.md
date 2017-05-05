@@ -173,7 +173,19 @@ $ git log less-salt
 $ git log master
 ```
 
-We now have three branches:
+Examining the log on the `experiment` branch may now produce the following log:
+
+```shell
+$ git log --oneline experiment
+
+f413c60 maybe little bit less cilantro
+d541ee0 let us try with some cilantro
+7f3582d do not forget to enjoy
+64441c1 add onion
+d619bf8 adding ingredients and instructions
+```
+
+We now have three branches (in this case `HEAD` points to `experiment`):
 
 ```shell
 $ git branch
