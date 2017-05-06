@@ -28,8 +28,9 @@ If we remove `.git`, we remove all Git history of a project.
 - What if the hard disk fails?
 - How can we collaborate with others?
 
+---
 
-### GitHub
+## GitHub
 
 One option to host your repository on the web is [GitHub](https://github.com).
 
@@ -45,8 +46,9 @@ CodeRefinery does not in any way endorse the use if GitHub. There are many
 commercial alternatives such as [GitLab](https://about.gitlab.com) or
 [Bitbucket](https://bitbucket.org). Another option is [NotABug](https://notabug.org).
 
+---
 
-### Set up GitHub account
+## Set up GitHub account
 
 By now you should already have set up a GitHub account but if you haven't,
 please do so [here](https://github.com/join). But it is OK if you want to use
@@ -66,8 +68,9 @@ where we will employ GitHub.
 Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
 to remove it afterwards.
 
+---
 
-### Create a new repository on GitHub
+## Create a new repository on GitHub
 
 - Login
 - Click on "Repositories"
@@ -91,8 +94,9 @@ To push changes to the project you will either need SSH keys for the SSH
 address (preferred) or you will have to use your GitHub user and password when
 using the HTTPS address.
 
+---
 
-### Pushing our recipe repository to GitHub
+## Pushing our guacamole recipe repository to GitHub
 
 We now want to try the second option:
 
@@ -123,14 +127,15 @@ Branch master set up to track remote branch master from origin.
 **Reload your GitHub project website and - taa-daa - your commits should now be
 online!**
 
+---
 
-### Cloning a repository
+## Cloning a repository
 
 Now other people can clone this repository and suggest changes. In the
 [collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson
 we will learn how this works.
 
-Here a quick appetizer - if you copy the SSH or HTTPS address, you can clone repositories like this:
+At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this:
 
 ```shell
 $ git clone git@github.com:bast/recipe.git
