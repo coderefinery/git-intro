@@ -4,10 +4,10 @@ title: "Motivation"
 teaching: 15
 exercises: 0
 questions:
-  - "Why version control?"
-  - "Why Git?"
+  - Why version control?
+  - Why Git?
 objectives:
-  - "Discuss the reasons why we advocate distributed version control."
+  - Discuss the reasons why we advocate distributed version control.
 ---
 
 ## Food for thought
