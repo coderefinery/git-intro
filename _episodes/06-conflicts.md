@@ -16,13 +16,16 @@ keypoints:
 
 ![]({{ site.baseurl }}/img/conflict-resolution/mk1.jpg)
 
-- In most cases a `git merge` runs smooth and automatic.
-- Then a merge commit appears (unless fast-forward) without you even noticing.
-- Git is very good at resolving modifications when merging branches.
-- You can merge more than one branch (octopus merges).
-- But sometimes the same line is modified on two branches and Git issues a conflict.
-- Then you need to tell Git which version to keep.
-- There are several ways to do that as we will see.
+In most cases a `git merge` runs smooth and automatic.
+Then a merge commit appears (unless fast-forward) without you even noticing.
+
+Git is very good at resolving modifications when merging branches.
+You can merge more than one branch (octopus merges).
+
+But sometimes the same line is modified on two branches and Git issues a conflict.
+Then you need to tell Git which version to keep.
+
+There are several ways to do that as we will see.
 
 ---
 
@@ -46,7 +49,7 @@ $ git show-branch
 --- [master] Merge branch 'experiment' into less-salt
 ```
 
-On the branch `like-cilantro` I have the following `git diff`:
+On the branch `like-cilantro` I have the following change:
 
 ```
 diff --git a/ingredients.txt b/ingredients.txt
@@ -61,7 +64,7 @@ index 27a808c..5550d6d 100644
 +* 2 tbsp cilantro
 ```
 
-And on the branch `dislike-cilantro` we have the following `git diff`:
+And on the branch `dislike-cilantro` we have the following change:
 
 ```
 diff --git a/ingredients.txt b/ingredients.txt
@@ -110,6 +113,8 @@ Unmerged paths:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+
+Observe how Git gives us hints on how to move forward.
 
 Let us inspect the conflicting file:
 
