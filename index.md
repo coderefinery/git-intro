@@ -6,7 +6,9 @@ permalink: /
 # Introduction to version control with Git
 
 This lesson will teach students the basics of the [Git](https://git-scm.com/)
-version control system.
+version control system. The guacamole example that we use is inspired by
+[Byron Smith](http://blog.byronjsmith.com), for original reference, see
+[this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 
 
 ## Prerequisites
