@@ -4,11 +4,12 @@ title: "Git under the hood"
 teaching: 10
 exercises: 0
 questions:
-  - "Where are commits stored?"
+  - Where are commits stored?
+  - What are branches really?
 objectives:
-  - "Verify that branches are pointers to commits."
+  - Verify that branches are pointers to commits.
 keypoints:
-  - "Branches are extremely lightweight."
+  - Branches are extremely lightweight.
 ---
 
 ## Down the rabbit hole
