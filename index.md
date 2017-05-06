@@ -5,17 +5,20 @@ permalink: /
 
 # Introduction to version control with Git
 
-This lesson will teach students the basics of the [Git](https://git-scm.com/)
-version control system.
-
+This is the introductory lesson to version control using
+[Git](https://git-scm.com/). It is assumed to be the very first thing done in a
+course.  This lesson has been designed so that the first 45 minutes are spent
+on learning to make commits. After that the idea is to take baby steps to make
+more complex arrangement.  The goals of the module as a whole are that the user
+will feel comfortable about staging changes, committing them, merging and
+branching. Additionally they should have some rudimentary understanding about
+remotes and a few best practices like micro-commits and `.gitignore` files.
 The guacamole example that we use is inspired by
 [Byron Smith](http://blog.byronjsmith.com), for original reference, see
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 
-The commit log graphs with boxes are created using [gitink](https://github.com/bast/gitink).
 
-
-## Prerequisites
+### Prerequisites
 
 - A reasonably recent version of Git is installed. For installation
   instructions and binaries see [the Git home page](https://git-scm.com/).
@@ -26,11 +29,11 @@ The commit log graphs with boxes are created using [gitink](https://github.com/b
   on Windows are sufficient.
 - Git should be configured prior to the lesson following [our installation instructions](https://coderefinery.github.io/installation/).
 
-
-## Notes
-
 If you are interested in the Git-aware prompt you can find it on
 [GitHub](https://github.com/jimeh/git-aware-prompt).
+
+
+### Why [GitHub](https://github.com)?
 
 In this introduction we will mention and use [GitHub](https://github.com) but also
 [GitLab](https://gitlab.com) and [Bitbucket](https://bitbucket.org) allow
@@ -41,3 +44,12 @@ concepts using examples with [GitHub](https://github.com) because it is
 currently the most popular web platform for hosting Git repositories and the chance is high
 that you will interact with [GitHub](https://github.com)-based repositories even if you
 choose to host your Git repository on another platform.
+
+
+### Note to instructors
+
+For a complete beginner exposed to version control the half day schedule is too
+dense. The sections "Using the Git staging area" and "Git under the hood" can
+be skipped if time is tight.
+The short section "Remotes and GitHub" is here because we are exposed to GitHub in another
+lesson on the same afternoon. Otherwise it can be skipped or moved to another module.
