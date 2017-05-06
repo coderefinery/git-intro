@@ -1,11 +1,11 @@
 ---
 layout: episode
 title: "Branching and Merging"
-teaching: 15
+teaching: 20
 exercises: 15
 questions:
   - How can I or my team work on multiple features in parallel?
-  - How to combine the changes in parallel tracks of work?
+  - How to combine the changes of parallel tracks of work?
   - What is branching and when should I do it?
   - How can I permanently reference a point in history, like a software
     version?
@@ -15,7 +15,7 @@ objectives:
 keypoints:
   - A branch is a division unit of work, to be merged with other units of work.
   - Creating branches is simple in Git.
-  - Merging branches is often straightforward.
+  - Merging branches is typically straightforward.
   - A tag is a pointer to a moment in the history of a project.
 ---
 
@@ -23,6 +23,7 @@ keypoints:
 
 - How do you work on two things in parallel?
 - How often do you find yourself wanting to go into two directions at once?
+- How often are you not sure which of two options is the right one?
 - How do you patch a version of the code which is not the latest commit?
 
 ---
@@ -55,6 +56,11 @@ To enable collaborative work we wish to do something more like:
 ![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative.svg
 "description"){:class="img-responsive"}
 
+- We see branching points and merging points.
+- Often we call the main line development `master`.
+- Other than this convention there is nothing special about `master`, it is just a branch.
+- Commits form a directed acyclic graph.
+
 A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it's easy to think that a branch
 tells the story of a feature. E.g. "new login workflow" or "fixing bug in
@@ -62,12 +68,12 @@ matrix inversion algorithm" might be logical branches.
 
 ---
 
-## What is a commit
+## What is a commit?
 
 Before we exercise branching, a quick recap of what we got so far.
 
-We have three commits and only one development line (branch) and this branch is
-called "master":
+We have three commits (we use the first two characters of the commits) and only
+one development line (branch) and this branch is called "master":
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
 
@@ -103,24 +109,21 @@ Date:   Fri May 5 12:48:36 2017 +0200
  2 files changed, 8 insertions(+)
 ```
 
-- Commits are changes.
-- Characterized by a 40-character hash (checksum).
-- We see branching points and merging points.
-- Often we call the main line development `master`.
-- Other than this convention there is nothing special about `master`, it is just a branch.
-- Commits form a directed acyclic graph.
+- Commits are states characterized by a 40-character hash (checksum).
+
 
 ### Branches are pointers
 
 - Branches are pointers that point to a commit.
 - Branch `master` points to commit `c2`.
-- Try this:
+
+Try this:
 
 ```shell
 $ cat .git/refs/heads/master
 ```
 
-- It will echo a long hash, for instance this one.
+It will echo a long hash, for instance this one:
 
 ```shell
 7f3582dfbad6539cfa60f5b21bfad41d1b58a618
@@ -131,7 +134,7 @@ $ cat .git/refs/heads/master
 
 ### On which branch are we?
 
-- To see where we are (where HEAD points to) use `git branch`
+To see where we are (where HEAD points to) use `git branch`:
 
 ```shell
 $ git branch
@@ -141,9 +144,10 @@ $ git branch
 
 - This command shows where we are, it does not create a branch.
 - There is only `master` and we are on `master` (star is `HEAD`).
-- In the following we will learn how to create branches,
-  how to switch between them, how to merge branches,
-  and how to remove them afterwards.
+
+In the following we will learn how to create branches,
+how to switch between them, how to merge branches,
+and how to remove them afterwards.
 
 ---
 
@@ -206,7 +210,7 @@ $ git branch
   master
 ```
 
-Here is a graphical representation of what we have created:
+Here is a graphical representation of what we have created (do not worry if the commit hashes are different):
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
 
@@ -230,6 +234,7 @@ $ git show-branch
 
 ## Exercise: merging branches
 
+It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `less-salt`.
 
 First we switch to the `less-salt` branch:
@@ -269,7 +274,8 @@ $ git log --graph --decorate --pretty=oneline --abbrev-commit
 * d619bf8 adding ingredients and instructions
 ```
 
-Observe how Git nicely merged the changed amount of salt and the new ingredient:
+Observe how Git nicely merged the changed amount of salt and the new ingredient in the same file
+without us merging it manually:
 
 ```shell
 $ cat ingredients.txt
@@ -293,11 +299,22 @@ manually settle merge conflicts (we will do that later).
 
 ### Questions
 
-- How does the file look on `master`?
+- How do the ingredients look on `master`?
 - What do you expect to happen when you merge `experiment` into `master` (draw the result)?
 - Verify whether the result matches your expectation.
 
-**Spoiler below**
+**SPOILER BELOW**
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 This is the result - discuss it:
 
@@ -315,7 +332,7 @@ To clarify what is meant by "fast-forward" imagine that you are on `master` and 
 What will happen if we `git merge experiment`?
 
 If you now type `git merge experiment`, Git will recognize that it can simply move
-the `master` pointer to `b3` without creating a merge commit
+the `master` pointer to `f4` without creating a merge commit.
 
 This is a fast-forward merge:
 
@@ -333,7 +350,7 @@ Both is fine, the resulting code is the same, not the history:
 
 ![]({{ site.baseurl }}/img/gitink/no-ff.svg)
 
-It is a matter of taste or convention.
+It is a matter of taste or convention. Discuss the advantages of both approaches.
 
 ---
 
@@ -362,7 +379,7 @@ As you see only the pointers disappeared, not the commits.
 
 Git will not let you delete a branch which has not been reintegrated unless you
 insist using `git branch -D`. Even then your commits will not be lost but you
-may have a hard time finding them as there is no reference to them.
+may have a hard time finding them as there is no branch pointing to them.
 
 ---
 
