@@ -2,13 +2,14 @@
 layout: episode
 title: "Using the Git staging area"
 teaching: 10
-exercises: 10
+exercises: 0
 questions:
-  - "Why is it good practice to first add, then commit a change?"
+  - Why do we recommend to first add, then commit a change?
 objectives:
-  - "Try to demystify the Git staging area."
+  - Try to demystify the Git staging area.
+  - Goal is to understand, not to remember (you can revisit this page later).
 keypoints:
-  - "The staging area helps us to create well-defined commits."
+  - The staging area helps us to create well-defined commits.
 ---
 
 ## States of a file.
@@ -32,7 +33,7 @@ In general files can have one of 4 states inside a Git repository:
 
 ### It is useful to have a nice and readable history
 
-- Bad example
+Bad example:
 
 ```shell
 b135ec8 now feature A should work
@@ -48,23 +49,24 @@ a9f5172 save work on feature A
 6fe2f23 save work on feature B
 ```
 
-- Very often you will be obliged to do archaeology in your code
-- Imagine that in few months you discover that feature B was a mistake
-- It is very difficult to find and revert this in this example
+- Very often you will be obliged to do archaeology in your code.
+- Imagine that in few months you discover that feature B was a mistake.
+- It is very difficult to find and revert this in this example.
 
 ### Main development line should have a nice and readable history
 
-- Good example
+Good example:
 
 ```shell
-6f0d49f feature C
-fee1807 feature B
-6fe2f23 feature A
+6f0d49f implement feature C
+fee1807 implement feature B
+6fe2f23 implement feature A
 ```
 
-- We want to have nice commits
-- But we also want to "save often" (checkpointing) - how can we have both?
-- We will now learn to fabricate nice commits using the staging area
+We want to have nice commits.
+But we also want to "save often" (checkpointing) - how can we have both?
+
+We will now learn to fabricate nice commits using the staging area.
 
 ---
 
@@ -111,13 +113,7 @@ git diff           |<------------------->|   between modified and last commit
 git checkout       |<--------------------|   undo uncommitted modifications
 ```
 
----
-
-## Checkpointing using the staging area
-
-- We want to do many small commits (checkpoints)
-- But at the end we want to commit in one nice commit
-- With `git add` we can prepare commits
+### Example
 
 ```shell
 $ git add file.py                 # checkpoint 1
@@ -136,18 +132,18 @@ $ git commit                      # commit everything that is staged
 
 ## Staging everything
 
-- Sometimes you want to stage all modifications
-- No need to stage them one by one
+Sometimes you want to stage all modifications.
+No need to stage them one by one:
 
 ```shell
 $ git add -u
 ```
 
-- Also removals of tracked files are then automatically staged
+Also removals of tracked files are then automatically staged.
 
 ---
 
-## Exercise
+## Homework
 
 - Prepare **one** nice commit to the guacamole recipe by staging **several** small changes.
 - When doing this experiment with `git diff` and `git checkout <path>` to get a feel for checkpointing.
