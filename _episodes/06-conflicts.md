@@ -2,7 +2,7 @@
 layout: episode
 title: "Conflict resolution"
 teaching: 10
-exercises: 10
+exercises: 15
 questions:
   - How can we resolve conflicts?
   - How can we avoid conflicts?
