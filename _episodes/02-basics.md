@@ -4,20 +4,20 @@ title: "Basics"
 teaching: 25
 exercises: 20
 questions:
-  - "What is Git?"
-  - "What is a repository?"
-  - "How do I make commits?"
-  - "How do I select what to commit?"
-  - "How can I undo things?"
+  - What is Git?
+  - What is a repository?
+  - How do I make commits?
+  - How do I select what to commit?
+  - How can I undo things?
 objectives:
-  - "Learn to create Git repositories and make commits."
-  - "Get a grasp of the structure of a repository."
-  - "Learn how to inspect the project history."
-  - "Learn how to write useful commit log messages."
+  - Learn to create Git repositories and make commits.
+  - Get a grasp of the structure of a repository.
+  - Learn how to inspect the project history.
+  - Learn how to write useful commit log messages.
 keypoints:
   - "Initializing a Git repository is simple: `git init`"
-  - "Commits should be used to tell a story."
-  - "Git uses the .git folder to store the snapshots."
+  - Commits should be used to tell a story.
+  - Git uses the .git folder to store the snapshots.
 ---
 
 ## Tracking a guacamole recipe with Git
@@ -29,7 +29,7 @@ This example is inspired by [Byron Smith](http://blog.byronjsmith.com), for orig
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 
 Let us start!
-One of the basic principles of Git is that it is easy to create repositories.
+One of the basic principles of Git is that it is easy to create repositories:
 
 ```shell
 $ mkdir recipe
@@ -39,7 +39,19 @@ $ git init
 
 That's it! Now we have created an empty Git repository!
 
-Let us now add two files to the repository.
+We will use `git status` a lot to check out what is going on:
+
+```shell
+$ git status
+
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+Let us now **add two files** to the repository.
 
 One file called `instructions.txt`, containing:
 
@@ -59,7 +71,7 @@ And one file called `ingredients.txt`, containing:
 * 2 tsp salt
 ```
 
-In git you can always check the status of files in your repository using
+As mentioned above, in Git you can always check the status of files in your repository using
 `git status`. It is always a safe command to run and in general a good idea to
 do when you are trying to figure what to do next:
 
@@ -144,7 +156,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 ## Exercise: record changes
 
 Add 1/2 onion to `ingredients.txt` and also the instruction
-to "enjoy!" to `instructions.txt`.
+to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
 
 When you are done, try `git diff`:
 
@@ -193,25 +205,24 @@ When you are done committing the changes, experiment with
 `git show`, and
 `git diff`.
 
----
 
-## Git history
+### Git history
 
-- We can browse the development and access each state that we have committed
-- The long hashes uniquely label a state of the code
-- They are non-incremental (why?)
-- We will use them when comparing versions and when going back in time
-- `git log --oneline` is nice to get an overview
-- `git log --oneline` only shows the first 7 characters of the commit hash
-- If the first characters of the hash are unique it is not necessary to type the entire hash
-- `git log --stat` is nice to show which files have been modified
+- We can browse the development and access each state that we have committed.
+- The long hashes uniquely label a state of the code.
+- They are non-incremental (why?).
+- We will use them when comparing versions and when going back in time.
+- `git log --oneline` is nice to get an overview.
+- `git log --oneline` only shows the first 7 characters of the commit hash.
+- If the first characters of the hash are unique it is not necessary to type the entire hash.
+- `git log --stat` is nice to show which files have been modified.
 
----
 
-## Commit messages
+### Writing good commit messages
 
-- We now understand that the first line of the commit message is very important
-- Good example
+We now understand that the first line of the commit message is very important.
+
+Good example:
 
 ```
 implement Pulay DIIS algorithm
@@ -224,16 +235,18 @@ this option can be deactivated with
 ...
 ```
 
-- Convention: one line summarizing the commit, then one empty line,
-  then paragraph(s) with more details in free form, if necessary
-- Not so good example (everything in one long line):
+Convention: one line summarizing the commit, then one empty line,
+then paragraph(s) with more details in free form, if necessary.
+
+Not so good example (everything in one long line):
 
 ```
 implement Pulay DIIS algorithm to accelerate SCF convergence and set it ...
 ```
 
-- This is also important for web based repository browsing
-- Another bad example:
+This is also important for web based repository browsing.
+
+Another bad example:
 
 ```
 rbast:
@@ -242,21 +255,21 @@ fixed an important bug for contracted basis sets
 ...
 ```
 
-- Other bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", ""
+- Other bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", "".
 - [http://whatthecommit.com](http://whatthecommit.com)
-- Write commit messages in english that will be understood
-  15 years from now by someone else than you
+- Write commit messages in English that will be understood
+  15 years from now by someone else than you.
 - Many projects start out as projects "just for me" and end up to be successful projects
-  that are developed by 50 people over decades
+  that are developed by 50 people over decades.
 
 ---
 
-## Use .gitignore
+## Ignoring files and paths with .gitignore
 
 - Should we add and track all files in a project?
 - How about generated files?
 - Why is it considered a bad idea to commit compiled binaries to version control?
-- What kind of generated files do you know?
+- What types of generated files do you know?
 
 As a general rule compiled files are not
 committed to version control. There are many reasons for this:
@@ -298,10 +311,10 @@ relatively.
 
 ### Clean working area
 
-- Use `git status` a lot
-- Use `.gitignore`
-- Untracked files belong to .gitignore
-- **All** files should be either tracked or ignored
+- Use `git status` a lot.
+- Use `.gitignore`.
+- Untracked files belong to .gitignore.
+- **All** files should be either tracked or ignored.
 
 
 ### Questions
@@ -313,29 +326,30 @@ relatively.
 
 ## Where is the Git repository?
 
-- All the magic is under `.git`, all the history, all snapshot, all branches (later), everything
-- When we staged and committed files, we "copied" them into `.git`
-- Here we only track one file but we can track entire file trees
-- Git does not pollute subdirectories
-- If we remove `.git`, we remove the repository (but of course keep the working directory)
-- It is very easy to create (and remove) a Git repository to track something that you work on
+- All the magic is under `.git`, all the history, all snapshot, all branches (later), everything.
+- When we staged and committed files, we "copied" them into `.git`.
+- Here we only track one file but we can track entire file trees.
+- Git does not pollute subdirectories.
+- If we remove `.git`, we remove the repository (but of course keep the working directory).
+- It is very easy to create (and remove) a Git repository to track something that you work on.
 - `.git` uses relative paths (very convenient), you can move the whole thing somewhere else
-  and it will still work
+  and it will still work.
 
 ---
 
 ## Summary
 
-- Now we know how to save snapshots
+Now we know how to save snapshots:
 
 ```shell
 $ git add <file(s)>
 $ git commit
 ```
 
-- And this is what we do as we program
-- Every state is then saved and later we will learn how to go back to these "checkpoints"
-  and how to undo things
+And this is what we do as we program.
+
+Every state is then saved and later we will learn how to go back to these "checkpoints"
+and how to undo things.
 
 ```shell
 $ git init    # initialize new repository
@@ -349,7 +363,8 @@ $ git mv      # move tracked files
 $ git rm      # remove tracked files
 ```
 
-- Git is not ideal for large binary files (for this consider http://git-annex.branchable.com/)
+Git is not ideal for large binary files
+(for this consider [http://git-annex.branchable.com](http://git-annex.branchable.com)).
 
 ---
 
@@ -357,7 +372,7 @@ $ git rm      # remove tracked files
 
 - Make some changes to `ingredients.txt`.
 - Inspect the changes with `git status` and `git diff`.
-- Undo the unstaged changes with `git checkout ingredients.txt`
+- Undo the unstaged changes with `git checkout ingredients.txt`.
 - Inspect the new situation with `git status` and `git diff`.
 
 ---
@@ -380,5 +395,5 @@ social contacts!
 ### Questions
 
 - A safe way to undo past commits is to use `git revert`. What does it do? In doubt, try it.
-- What happens if you accidentally remove a tracked file, is it gone forever?
-- What would justify to modify the Git history and possibly remove commits?
+- What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
+- What situations would justify to modify the Git history and possibly remove commits?
