@@ -1,17 +1,23 @@
-# Introduction to Version Control with Git
+
+
+# [Introduction to version control with Git](https://coderefinery.github.io/git-intro/)
+
+- [Credit and license](https://coderefinery.github.io/git-intro/license/)
 
 This is the introductory lesson to version control using Git. It is
 assumed to be the very first thing done in a course.
 
 
-The lesson is licensed under the [Creative Commons Attribution license (CC
-BY4.0)](https://creativecommons.org/licenses/by/4.0/).
+## For future users
 
-The lesson Jekyll file structure and browsing layout is inspired by and derived from
-work by [Software Carpentry](http://software-carpentry.org) licensed under the
-[Creative Commons Attribution license (CC BY4.0)](https://creativecommons.org/licenses/by/4.0/).
-We have kept the YAML structure in the episode Markdown files for future compatibility
-but have heavily cut down and modified the layout and include files.
+This lesson has been designed so that the first 45 minutes are spent on
+learning to make commits. After that the idea is to take baby steps to make
+more complex arrangement.
+
+The goals of the module as a whole are that the user will feel comfortable
+about staging changes, committing them, merging and branching. Additionally
+they should have some rudimentary understanding about remotes and a few best
+practices like micro-commits and .gitignore files.
 
 
 ## Local development
@@ -33,14 +39,3 @@ $ export PATH=$PATH:$HOME/.gem/bin
 $ bundler install
 $ bundle exec jekyll serve
 ```
-
-## For future users
-
-This lesson has been designed so that the first 45 minutes are spent on
-learning to make commits. After that the idea is to take baby steps to make
-more complex arrangement
-
-The goals of the module as a whole are that the user will feel comfortable
-about staging changes, committing them, merging and branching. Additionally
-they should have some rudimentary understanding about remotes and a few best
-practices like micro-commits and .gitignore files.
