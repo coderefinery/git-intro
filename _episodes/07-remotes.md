@@ -8,12 +8,12 @@ questions:
   - How can I set up a public repository online
   - How can I set up a local repository for my computer?
 objectives:
-  - "Student understands the concept of remotes"
-  - "Student can add an initialized repository to GitHub"
-  - "Student can create a bare repository on a local machine"
+  - Student understands the concept of remotes.
+  - Student can add an initialized repository to GitHub.
+  - Student can create a bare repository on a local machine.
 keypoints:
-  - "A repository can have one or multiple remotes"
-  - "Local branches often track remote branches"
+  - A repository can have one or multiple remotes.
+  - Local branches often track remote branches.
 ---
 
 ## Food for thought
