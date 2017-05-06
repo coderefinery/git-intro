@@ -55,8 +55,9 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 - Implements branching:
   - you can work on several features and switch between them
   - different people can work on the same code without interfering
+  - you can experiment with an idea and discard it if it turns out to be a bad idea
 - Implements merging:
-  - tool merges development branches for you (conflicts may appear)
+  - merges development branches for you (conflicts may appear)
 
 ---
 
@@ -64,13 +65,13 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 
 ### Roll-back functionality
 
-- Mistakes happen, with version control you can undo and go back to a working version.
+- Mistakes happen - with version control you can undo and go back to a working version.
 
 
 ### Feature branches
 
 - Different development lines can be organized in distinct branches.
-- Help keeping the project organized.
+- Branches help keeping the project organized.
 
 
 ### Collaboration
@@ -87,7 +88,6 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 - When you find a bug, you can find out when precisely this bug was introduced
   (are published results affected? has the bug made it to the last release of your code?).
 
-
 ---
 
 ## Why Git?
@@ -96,10 +96,11 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 - Distributed
 - Powerful
 - Huge traction
-- Merging and branching is easy and simple
-- Important platforms such as [GitHub](https://github.com), [GitLab](https://gitlab.com), and [Bitbucket](https://bitbucket.org) build on top of Git.
+- Merging and branching is easy and simple.
+- Important platforms such as [GitHub](https://github.com), [GitLab](https://gitlab.com), and [Bitbucket](https://bitbucket.org)
+  build on top of Git.
 - Many platforms build on top of [GitHub](https://github.com).
-- *"Git is a four-handle, dual boiler espresso machine, not instant coffee."*
+- *"Git is a four-handle, dual boiler espresso machine, not instant coffee."* [citation needed]
 
 ---
 
