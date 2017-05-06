@@ -21,9 +21,8 @@ keypoints:
 - What happens if two or more people change the same things at the same time?
 - How could a limited number of people work on a feature without bothering
   others about it just yet?
+
 ---
-
-
 
 ## Remotes
 
@@ -34,7 +33,6 @@ commit in detached HEAD mode or the head (or some other commit) in a branch.
 
 It should not come as a surprise that as everything in git is stored in blobs
 in a directory then synchronizing changes is about synchronizing those files.
-
 
 ## GitHub
 
@@ -52,7 +50,6 @@ source providers.
 > commercial alternatives such as [GitLab](https://about.gitlab.com/),
 >
 {: .callout :}
-
 
 
 ### Set up GitHub account
@@ -85,41 +82,56 @@ Repository location : https://github.com/Sabryr/coderefinery_git_intro2.git
 ```
 git clone --origin github https://github.com/Sabryr/coderefinery_git_intro2.git
 ```
+
 Check your remotes
+
 ```
 git remote -v
 ```
+
 Create a branch
+
 ```
 git branch user_additions
 ```
+
 ```
 git checkout user_additions
 ```
+
 Add your name and your git knowledge according to the comments provided on the file and
 Commit your changes
+
 ```
 git add git_competence.txt
 ```
 ```
 git commit -m “Added new user to ..."
 ```
+
 Check whether anyone else has made any changes while you were working locally
+
 ```
 git fetch github
 ```
+
 ```
 git diff user_additions..github/user_additions
 ```
+
 Sync with the server with the corresponding branch(github in this case)
+
 ```
 git config --global push.default matching
 ```
+
 ```
 git push github user_additions
 ```
+
 You might get a conflict if a colleague has pushed something while you were working
 and you did not ferch that.
+
 ```
  ! [rejected]        user_additions -> user_additions (fetch first)
 error: failed to push some refs to 'https://github.com/Sabryr/coderefinery_git_intro2.git'
@@ -131,32 +143,42 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
 Then you need to resolve the conflict
+
 ```
 git diff user_additions..github/user_additions
 ```
+
 ```
 git fetch
 ```
+
 ```
 git diff user_additions..github/user_additions
 ```
+
 Make sure you are on the correct branch
+
 ```
 git branch
 ```
+
 ```
 git merge github/user_additions
 ```
-Resolve the conflicts manually. That is to keep what you want to be permanent. Git gives you guidelines on what each versions are differing in.
-Add and commit your changes
+
+Resolve the conflicts manually. That is to keep what you want to be permanent.
+Git gives you guidelines on what each versions are differing in.  Add and
+commit your changes
 
 Push it again
+
 ```
 git push github user_additions
 ```
-If again if you encounter a conflict, follow the above procedure until you get out of it. You could use method of communication when working with central repositories, like a chat client.
 
-
+If again if you encounter a conflict, follow the above procedure until you get
+out of it. You could use method of communication when working with central
+repositories, like a chat client.
 
 >An alternative to this procedure and a more systematic one would be to fork the above repository, make and commit your changes, then request a pull request.
 >We shall take about this and show an example and everyone could follow if we have time.
