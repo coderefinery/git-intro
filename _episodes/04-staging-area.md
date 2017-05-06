@@ -92,6 +92,7 @@ git checkout       |<---------|          |   undo unstaged modifications
 git checkout       |<--------------------|   if nothing is staged
 ```
 
+- We will discuss what the `HEAD` is in the next section.
 - `git add` every change that improves the code.
 - `git checkout` every change that made things worse.
 - `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
