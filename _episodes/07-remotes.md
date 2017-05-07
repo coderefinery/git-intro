@@ -8,12 +8,13 @@ questions:
   - How can I clone a public repository to my computer?
   - How does version control scale from 1 to N users per repository?
 objectives:
-  - We get a feeling for remote repositories.
+  - We get a feeling for remote repositories (more later).
   - We are able to publish a repository on the web.
   - We are able to fetch and track a repository from the web.
 keypoints:
-  - A repository can have one or multiple remotes.
+  - A repository can have one or multiple remotes (we will revisit these later).
   - Local branches often track remote branches.
+  - All this might be a bit nebulous but we will add clarity later this week.
 ---
 
 ## From our laptops to the web
@@ -26,6 +27,7 @@ So far everything was local and all snapshots, branches, and tags are saved unde
 If we remove `.git`, we remove all Git history of a project.
 
 - What if the hard disk fails?
+- What if somebody steals my laptop?
 - How can we collaborate with others?
 
 ---
@@ -38,9 +40,9 @@ GitHub is a for-profit service that hosts remote git repositories for you. It
 offers a nice HTML user interface to browse the repositories and handles many
 things very nicely.
 
-It is free for public projects and hosting private projects costs a monthly
-fee. The free part of the service has made it very popular with many open
-source providers.
+It is free for public projects and hosting private projects costs a monthly fee
+(but educational discounts exist). The free part of the service has made it
+very popular with many open source providers.
 
 CodeRefinery does not in any way endorse the use if GitHub. There are many
 commercial alternatives such as [GitLab](https://about.gitlab.com) or
@@ -53,7 +55,7 @@ commercial alternatives such as [GitLab](https://about.gitlab.com) or
 By now you should already have set up a GitHub account but if you haven't,
 please do so [here](https://github.com/join). But it is OK if you want to use
 [GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
-[NotABug](https://notabug.org) instead.
+[NotABug](https://notabug.org) or another platform instead.
 
 ---
 
@@ -104,7 +106,8 @@ We now want to try the second option:
 
 - Now go to your guacamole repository on your computer.
 - Check that you are in the right place with `git status`.
-- Copy paste the two lines to the terminal and execute those, in my case:
+- Copy paste the two lines to the terminal and execute those, in my case (**you
+  need to replace the "bast" part and possibly also the repository name**):
 
 ```shell
 $ git remote add origin git@github.com:bast/recipe.git
@@ -127,16 +130,28 @@ Branch master set up to track remote branch master from origin.
 **Reload your GitHub project website and - taa-daa - your commits should now be
 online!**
 
+What just happened? **Think of publishing a repository as uploading the `.git` part online**.
+
 ---
 
 ## Cloning a repository
 
-Now other people can clone this repository and suggest changes. In the
+Now other people can clone this repository and contribute changes. In the
 [collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson
 we will learn how this works.
 
-At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this:
+At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this
+(again adapt the "namespace/repository.git" part):
 
 ```shell
 $ git clone git@github.com:bast/recipe.git
 ```
+
+This creates a directory called "recipe" unless it already exists. You can also specify the target directory
+on your computer:
+
+```shell
+$ git clone git@github.com:bast/recipe.git myrecipe
+```
+
+What just happened? **Think of cloning as downloading the `.git` part to your computer**.
