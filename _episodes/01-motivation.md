@@ -19,7 +19,8 @@ objectives:
 - If you are already familiar with Git, have you ever had to google for
   a command to solve your problem?
 
-What is the problem with this kind of version control:
+What is the problem with this kind of version control (reproduced with
+permission; the colleagues have switched to Git and are now happy Git users):
 
 ```shell
 $ ls
@@ -57,7 +58,7 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
   - different people can work on the same code without interfering
   - you can experiment with an idea and discard it if it turns out to be a bad idea
 - Implements merging:
-  - merges development branches for you (conflicts may appear)
+  - tool to merge development branches for you (conflicts may appear)
 
 ---
 
@@ -78,7 +79,9 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 
 - No more *"can you please send me the latest version?"*.
 - Allows up to thousands of persons to work on the same project without stepping on each other's toes.
-- Distributed version control enables to get contributions from people you don't know yet.
+- Distributed version control enables to get contributions from people you
+  don't know yet and contribute to projects maintained by people who don't know
+  you.
 
 
 ### Reproducibility
@@ -108,7 +111,7 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 
 ## Why Git and not [Subversion](https://subversion.apache.org)?
 
-- Subversion is centralized.
+- Subversion is centralized (one server, many clients).
 - Git is distributed and supports any workflow.
 - Distributed version control enables to:
     - implement code review
