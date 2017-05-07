@@ -12,6 +12,8 @@ keypoints:
   - Branches are extremely lightweight.
 ---
 
+<img src="{{ site.baseurl }}/img/stranger.jpg" width="60%">
+
 ## Down the rabbit hole
 
 Now that we've made a couple of commits let us look at what is happening under
