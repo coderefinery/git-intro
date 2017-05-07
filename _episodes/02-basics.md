@@ -27,9 +27,11 @@ to create a delicious guacamole.
 
 This example is inspired by [Byron Smith](http://blog.byronjsmith.com), for original reference, see
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
+The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
+but not everybody may be able to relate to a program written in Python.
 
 Let us start!
-One of the basic principles of Git is that it is easy to create repositories:
+One of the basic principles of Git is that it is **easy to create repositories**:
 
 ```shell
 $ mkdir recipe
@@ -51,7 +53,9 @@ Initial commit
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-Let us now **add two files** to the repository.
+We will make sense of this information during this morning.
+
+Let us now **create two files**.
 
 One file called `instructions.txt`, containing:
 
@@ -91,8 +95,8 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The two files are untracked in the repository (the directory).  You want to add
-the files to the list of files tracked by Git. By default Git does not track
+The two files are untracked in the repository (the directory). You want to **add the files**
+to the list of files tracked by Git. By default Git does not track
 any files and you need make a conscious decision to add a file. Let's do what
 Git hints at and add the files:
 
@@ -191,7 +195,7 @@ Now first stage each change, then commit it (what happens when we leave out the 
 $ git add ingredients.txt
 $ git commit -m "add onion"
 $ git add instructions.txt
-$ git commit
+$ git commit                   # <-- we have left out -m "..."
 ```
 
 When you leave out the `-m` flag, Git should open an editor where you can edit
@@ -212,13 +216,12 @@ When you are done committing the changes, experiment with
 - The long hashes uniquely label a state of the code.
 - They are non-incremental (why?).
 - We will use them when comparing versions and when going back in time.
-- `git log --oneline` is nice to get an overview.
-- `git log --oneline` only shows the first 7 characters of the commit hash.
+- `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
 - If the first characters of the hash are unique it is not necessary to type the entire hash.
 - `git log --stat` is nice to show which files have been modified.
 
 
-### Writing good commit messages
+### Writing useful commit messages
 
 We now understand that the first line of the commit message is very important.
 
@@ -235,8 +238,8 @@ this option can be deactivated with
 ...
 ```
 
-Convention: one line summarizing the commit, then one empty line,
-then paragraph(s) with more details in free form, if necessary.
+Convention: **one line summarizing the commit, then one empty line,
+then paragraph(s) with more details in free form, if necessary**.
 
 Not so good example (everything in one long line):
 
@@ -288,7 +291,7 @@ __pycache__
 ```
 
 `.gitignore` uses something called a
-[shell glob syntax](https://en.wikipedia.org/wiki/Glob_(programming) for
+[shell glob syntax](https://en.wikipedia.org/wiki/Glob_(programming)) for
 determining file patterns to ignore. You can read more about the syntax in the
 [documentation](https://git-scm.com/docs/gitignore).
 
@@ -370,7 +373,7 @@ Git is not ideal for large binary files
 
 ## Exercise: undo unstaged changes
 
-- Make some changes to `ingredients.txt`.
+- Make some silly changes to `ingredients.txt` (e.g. add liquorice).
 - Inspect the changes with `git status` and `git diff`.
 - Undo the unstaged changes with `git checkout ingredients.txt`.
 - Inspect the new situation with `git status` and `git diff`.
@@ -380,16 +383,16 @@ Git is not ideal for large binary files
 ## Modifying committed changes
 
 In Git it is possible to modify and even remove committed history with `git commit --amend`
-or `git reset`.
+or `git reset`. We will not demonstrate this at this stage.
 
-Git lets you do marvelous things with history. This is all fine and well as
+Indeed, Git lets you do marvelous things with history. This is all fine and well as
 long as you are modifying commits that you are not sharing with others. When
 you start collaborating with other people it is considered very bad form and
 will cause a lot of grief to others if you change things that are already
 public and have been used.
 
-In short: if you change something you published you will lose friends and
-social contacts!
+In short: **if you change commits that other people depend on, you will lose friends and
+social contacts!**
 
 
 ### Questions
@@ -397,3 +400,4 @@ social contacts!
 - A safe way to undo past commits is to use `git revert`. What does it do? In doubt, try it.
 - What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
 - What situations would justify to modify the Git history and possibly remove commits?
+- Is it OK to modify commits that nobody has seen yet?
