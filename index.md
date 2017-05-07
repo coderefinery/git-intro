@@ -7,13 +7,11 @@ permalink: /
 
 This is the introductory lesson to version control using
 [Git](https://git-scm.com/). It is assumed to be the very first thing done in a
-course.  This lesson has been designed so that the first 45 minutes are spent
-on learning to make commits. After that the idea is to take baby steps to make
-more complex arrangement.  The goals of the module as a whole are that the user
+course. This lesson has been designed so that the first 45 minutes are spent
+on learning to make commits. After that the idea is to take small steps to make
+more complex arrangement. The goals of the module as a whole are that the user
 will feel comfortable about staging changes, committing them, merging and
-branching. Additionally they should have some rudimentary understanding about
-remotes and a few best practices like micro-commits and `.gitignore` files.
-The guacamole example that we use is inspired by
+branching. The guacamole example that we use is inspired by
 [Byron Smith](http://blog.byronjsmith.com), for original reference, see
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 
@@ -28,6 +26,7 @@ The guacamole example that we use is inspired by
   and Vim are excellent choices if you know how to use them but Nano or Notepad
   on Windows are sufficient.
 - Git should be configured prior to the lesson following [our installation instructions](https://coderefinery.github.io/installation/).
+- A [GitHub](https://github.com) user account (but alternatives exist, see below).
 
 If you are interested in the Git-aware prompt you can find it on
 [GitHub](https://github.com/jimeh/git-aware-prompt).
@@ -50,6 +49,7 @@ choose to host your Git repository on another platform.
 
 For a complete beginner exposed to version control the half day schedule is too
 dense. The sections "Using the Git staging area" and "Git under the hood" can
-be skipped if time is tight.
-The short section "Remotes and GitHub" is here because we are exposed to GitHub in another
-lesson on the same afternoon. Otherwise it can be skipped or moved to another module.
+be skipped if time is tight. "Using the Git staging area" can also be given as
+a homework assignment.  The short section "Remotes and GitHub" is here because
+we are exposed to GitHub in another lesson on the same afternoon. Otherwise it
+can be skipped or moved to another module.
