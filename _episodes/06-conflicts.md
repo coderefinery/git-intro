@@ -20,7 +20,6 @@ In most cases a `git merge` runs smooth and automatic.
 Then a merge commit appears (unless fast-forward) without you even noticing.
 
 Git is very good at resolving modifications when merging branches.
-You can merge more than one branch (octopus merges).
 
 But sometimes the same line is modified on two branches and Git issues a conflict.
 Then you need to tell Git which version to keep.
@@ -32,8 +31,7 @@ There are several ways to do that as we will see.
 ## Exercise: create a conflict
 
 - Create two branches from `master`.
-- On each branch modify the amount of the same ingredient so that you arrive at
-  new but different amounts.
+- On the two branches make **different modifications** to the amount of the **same ingredient**.
 
 These are my modifications:
 
@@ -219,11 +217,11 @@ $ git commit
   merge.
 - Or it is a conflict that you cannot resolve and only your colleague knows
   which version is the one to keep.
-- There is no reason to delete the whole repository.
+- There is no reason to panic and delete the whole repository.
 - Simply reset the repository to `HEAD` (last committed state).
 
 ```shell
-$ git reset --hard HEAD # throws away everything that is not in HEAD
+$ git reset --hard HEAD  # throws away everything that is not in HEAD
 ```
 
 The repository looks exactly as it was before the merge.
