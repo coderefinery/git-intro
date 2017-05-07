@@ -136,11 +136,17 @@ Let us open this file and change it to:
 ref: refs/heads/idea-3
 ```
 
-**Now we are ready for the aha moment**:
+**Now we are ready for the aha moment!**
+
+First let us go back to the working area:
 
 ```shell
 $ cd ..
+```
 
+Now - on which branch are we?
+
+```shell
 $ git branch
 
   idea
