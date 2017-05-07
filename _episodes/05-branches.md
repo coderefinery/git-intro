@@ -59,12 +59,12 @@ To enable collaborative work we wish to do something more like:
 - We see branching points and merging points.
 - Often we call the main line development `master`.
 - Other than this convention there is nothing special about `master`, it is just a branch.
-- Commits form a directed acyclic graph.
+- Commits form a directed acyclic graph (we have left our the arrows to avoid confusion about the time arrow).
 
 A group of commits that create a single narrative are called a **branch**.
-There are different branching strategies, but it's easy to think that a branch
-tells the story of a feature. E.g. "new login workflow" or "fixing bug in
-matrix inversion algorithm" might be logical branches.
+There are different branching strategies, but it is useful to think that a branch
+tells the story of a feature, e.g. "new login workflow" or "fixing bug in
+matrix inversion algorithm".
 
 ---
 
@@ -115,7 +115,7 @@ Date:   Fri May 5 12:48:36 2017 +0200
 ### Branches are pointers
 
 - Branches are pointers that point to a commit.
-- Branch `master` points to commit `c2`.
+- Branch `master` points to commit `7f3582dfbad6539cfa60f5b21bfad41d1b58a618`.
 
 Try this:
 
@@ -143,7 +143,7 @@ $ git branch
 ```
 
 - This command shows where we are, it does not create a branch.
-- There is only `master` and we are on `master` (star is `HEAD`).
+- There is only `master` and we are on `master` (star represents the `HEAD`).
 
 In the following we will learn how to create branches,
 how to switch between them, how to merge branches,
@@ -274,8 +274,8 @@ $ git log --graph --decorate --pretty=oneline --abbrev-commit
 * d619bf8 adding ingredients and instructions
 ```
 
-Observe how Git nicely merged the changed amount of salt and the new ingredient in the same file
-without us merging it manually:
+Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
+without us merging it manually**:
 
 ```shell
 $ cat ingredients.txt
@@ -323,9 +323,11 @@ This is the result - discuss it:
 
 ### Fast-forward vs. non-fast-forward merges
 
-It is useful to understand the difference between fast-forward vs. non-fast-forward merges.
+To understand what just happened, it is useful to discuss the difference
+between fast-forward vs. non-fast-forward merges.
 
-To clarify what is meant by "fast-forward" imagine that you are on `master` and want to merge `experiment`:
+To clarify what is meant by "fast-forward" imagine that you are on `master` and want to merge `experiment`
+(the color change is to make clear that the two commits are not on the `master` branch yet):
 
 ![]({{ site.baseurl }}/img/gitink/pre-ff.svg)
 
@@ -442,7 +444,9 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 
 A branch is a pointer to a commit.
 
-A tag is a pointer to a commit, too.
+A tag is a pointer to a commit, too. The reason we use tags is that tags
+can be given a semantic meaning to humans (it is difficult to remember and compare
+hashes).
 
 The difference between a branch and a tag is that a branch pointer moves
 forward as we add commits, whereas a tag should always **point to the same
