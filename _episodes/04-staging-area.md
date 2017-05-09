@@ -73,25 +73,24 @@ We will now learn to fabricate nice commits using the staging area.
 ## Checkpointing using the staging area
 
 ```
-                tracked     staged   committed
-              but unstaged    |          |
-command            |          |          |   English translation
+              unmodified   modified    staged   committed
+                   |          |          |          |
+command            |          |          |          |   English translation
 
-git add file(s)    |--------->|          |   stage file
-git commit         |          |--------->|   commit staged file(s)
-git commit file(s) |-------------------->|   commit file(s) directly
+git add file(s)    |          |--------->|          |   stage file
+git commit         |          |          |--------->|   commit staged file(s)
+git commit file(s) |          |-------------------->|   commit file(s) directly
 
-git diff           |<-------->|          |   between modified and staged
-git diff --cached  |          |<-------->|   between staged and last commit
-git diff HEAD      |<------------------->|   between modified and last commit
-git diff           |<------------------->|   if nothing is staged
+git diff           |          |<-------->|          |   between modified and staged
+git diff --cached  |          |          |<-------->|   between staged and last commit
+git diff HEAD      |          |<------------------->|   between modified and last commit
+git diff           |          |<------------------->|   if nothing is staged
 
-git reset          |<---------|          |   unstage
-git reset --soft   |          |<---------|   "uncommit" and stage
-git reset --hard   |<--------------------|   discard
+git reset          |          |<---------|          |   unstage
+git reset --hard   |<---------|          |          |   discard
+git reset --hard   |<--------------------|          |   discard
 
-git checkout       |<---------|          |   undo unstaged modifications
-git checkout       |<--------------------|   if nothing is staged
+git checkout       |<---------|          |          |   undo unstaged modifications
 ```
 
 - We will discuss what the `HEAD` is in the next section.
