@@ -89,7 +89,7 @@ git diff                |          |<------------------->|   if nothing is stage
 git reset               |          |<---------|          |   unstage
 git reset --hard        |<---------|          |          |   discard
 git reset --hard        |<--------------------|          |   discard
-git reset --soft <hash> |          |<--------------------|   "uncommit" everything after <hash>
+git reset --soft <hash> |          |          |<---------|   "uncommit" everything after <hash>
 git reset --hard <hash> |<-------------------------------|   "uncommit" everything after <hash> and abandon changes
 
 git checkout            |<---------|          |          |   undo unstaged modifications
