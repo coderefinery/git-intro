@@ -92,7 +92,8 @@ git reset --hard        |<--------------------|          |   discard
 git reset --soft <hash> |          |          |<---------|   "uncommit" everything after <hash>
 git reset --hard <hash> |<-------------------------------|   "uncommit" everything after <hash> and abandon changes
 
-git checkout            |<---------|          |          |   undo unstaged modifications
+git checkout            |<--------------------|          |   undo unstaged modifications
+git checkout            |<---------|          |          |   if nothing is staged
 ```
 
 - We will discuss what the `HEAD` is in the next section.
