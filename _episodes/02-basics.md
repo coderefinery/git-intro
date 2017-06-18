@@ -28,7 +28,7 @@ to create a delicious guacamole.
 This example is inspired by [Byron Smith](http://blog.byronjsmith.com), for original reference, see
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
-but not everybody may be able to relate to a program written in Python.
+but not everybody may be able to relate to a program written in e.g. Python or another language.
 
 Let us start!
 One of the basic principles of Git is that it is **easy to create repositories**:
@@ -162,7 +162,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 Add 1/2 onion to `ingredients.txt` and also the instruction
 to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
 
-When you are done, try `git diff`:
+When you are done editing the files, try `git diff`:
 
 ```shell
 $ git diff
@@ -214,7 +214,7 @@ When you are done committing the changes, experiment with
 
 - We can browse the development and access each state that we have committed.
 - The long hashes uniquely label a state of the code.
-- They are non-incremental (why?).
+- They are not just integers counting 1, 2, 3, 4, ... (why?).
 - We will use them when comparing versions and when going back in time.
 - `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
 - If the first characters of the hash are unique it is not necessary to type the entire hash.
@@ -223,18 +223,15 @@ When you are done committing the changes, experiment with
 
 ### Writing useful commit messages
 
-We now understand that the first line of the commit message is very important.
+Using `git log --oneline` we understand that the first line of the commit message is very important.
 
 Good example:
 
 ```
-implement Pulay DIIS algorithm
+increase threshold alpha to 2.0
 
-implement Pulay DIIS algorithm to accelerate SCF
-convergence and set it as default
-this is based on [REF]
-this option can be deactivated with
-.NODIIS
+the motivation for this change is
+to enable ...
 ...
 ```
 
@@ -244,7 +241,7 @@ then paragraph(s) with more details in free form, if necessary**.
 Not so good example (everything in one long line):
 
 ```
-implement Pulay DIIS algorithm to accelerate SCF convergence and set it ...
+increase threshold alpha to 2.0, the motivation for this change is to enable ... [very long line]
 ```
 
 This is also important for web based repository browsing.
@@ -317,13 +314,13 @@ relatively.
 - Use `git status` a lot.
 - Use `.gitignore`.
 - Untracked files belong to .gitignore.
-- **All** files should be either tracked or ignored.
+- **All files should be either tracked or ignored**.
 
 
 ### Questions
 
 - Should we add and commit `.gitignore`?
-- What will happen if we choose not to use `.gitignore`?
+- What will probably happen if we choose not to use `.gitignore` in our projects?
 
 ---
 
