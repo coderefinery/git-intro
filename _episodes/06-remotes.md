@@ -1,8 +1,8 @@
 ---
 layout: episode
 title: Sharing repositories online
-teaching: 15
-exercises: 15
+teaching: 10
+exercises: 10
 questions:
   - How can I set up a public repository online?
   - How can I clone a public repository to my computer?
