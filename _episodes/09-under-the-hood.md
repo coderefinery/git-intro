@@ -2,7 +2,7 @@
 layout: episode
 title: Git under the hood
 teaching: 10
-exercises: 0
+exercises: 10
 questions:
   - Where are commits stored?
   - What are branches really?

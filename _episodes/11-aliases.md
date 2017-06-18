@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Aliases
-teaching: 10
+teaching: 15
 exercises: 0
 questions:
   - How can I remember all these Git command options?
