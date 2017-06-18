@@ -1,14 +1,14 @@
 ---
 layout: episode
-title: "Interrupted work"
+title: Interrupted work
 teaching: 10
 exercises: 0
 questions:
-  - "How can Git help us to deal with interrupted work and context switching?"
+  - How can Git help us to deal with interrupted work and context switching?
 objectives:
-  - "Learn to switch context or abort work without panicking."
+  - Learn to switch context or abort work without panicking.
 keypoints:
-  - "There is almost never reason to clone a fresh copy to complete a task that you have in mind."
+  - There is almost never reason to clone a fresh copy to complete a task that you have in mind.
 ---
 
 ## Frequent situation: interrupted work
