@@ -28,7 +28,7 @@ If we remove `.git`, we remove all Git history of a project.
 
 - What if the hard disk fails?
 - What if somebody steals my laptop?
-- How can we collaborate with others?
+- How can we collaborate with others across the web?
 
 ---
 
@@ -47,6 +47,9 @@ very popular with many open source providers.
 CodeRefinery does not in any way endorse the use if GitHub. There are many
 commercial alternatives such as [GitLab](https://about.gitlab.com) or
 [Bitbucket](https://bitbucket.org). Another option is [NotABug](https://notabug.org).
+
+We also encourage course participants to use our new [Nordic research software repository platform](https://source.coderefinery.org),
+for more information see [http://coderefinery.org/repository/](http://coderefinery.org/repository/).
 
 ---
 
