@@ -10,7 +10,7 @@ This is the introductory lesson to version control using
 course. This lesson has been designed so that the first 45 minutes are spent
 on learning to make commits. After that the idea is to take small steps to make
 more complex arrangement. The goals of the module as a whole are that the user
-will feel comfortable about staging changes, committing them, merging and
+will feel comfortable about staging changes, committing them, merging, and
 branching. The guacamole example that we use is inspired by
 [Byron Smith](http://blog.byronjsmith.com), for original reference, see
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
@@ -43,6 +43,9 @@ concepts using examples with [GitHub](https://github.com) because it is
 currently the most popular web platform for hosting Git repositories and the chance is high
 that you will interact with [GitHub](https://github.com)-based repositories even if you
 choose to host your Git repository on another platform.
+
+Course participants are most welcome to use our new [Nordic research software repository platform](https://source.coderefinery.org),
+for more information see [http://coderefinery.org/repository/](http://coderefinery.org/repository/).
 
 
 ### Note to instructors
