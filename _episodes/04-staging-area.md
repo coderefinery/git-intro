@@ -82,9 +82,9 @@ git commit              |          |          |--------->|   commit staged file(
 git commit file(s)      |          |-------------------->|   commit file(s) directly
 
 git diff                |          |<-------->|          |   between modified and staged
-git diff --cached       |          |          |<-------->|   between staged and last commit
-git diff HEAD           |          |<------------------->|   between modified and last commit
-git diff                |          |<------------------->|   if nothing is staged
+git diff --cached       |<------------------->|          |   between staged and last commit
+git diff HEAD           |<-------->|          |          |   between modified and last commit
+git diff                |<-------->|          |          |   if nothing is staged
 
 git reset               |          |<---------|          |   unstage
 git reset --hard        |<---------|          |          |   discard
