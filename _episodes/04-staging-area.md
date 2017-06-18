@@ -22,10 +22,23 @@ $ git add     # stages the change
 $ git commit  # commits the staged change
 ```
 
-In general files can have one of 4 states inside a Git repository:
+In general files can have one of 4 states inside a Git repository (committed is a new unmodified state):
 
-![States of a Git file]({{ site.baseurl }}/img/lifecycle.png "States of a Git file. License CC BY 3.0"){:class="img-responsive"}
-(Image from the [Pro Git book](https://git-scm.com/book/), licensed under CC BY 3.0)
+```
+1. untracked
+    |
+    |
+2.  | unmodified <--
+    |  |           |
+    |  v           |
+3.  | modified     |
+    |  |           |
+    v  v           |
+4. staged          |
+       |           |
+       v           |
+2. committed -------
+```
 
 ---
 
@@ -73,27 +86,29 @@ We will now learn to fabricate nice commits using the staging area.
 ## Checkpointing using the staging area
 
 ```
-                   unmodified   modified    staged   committed
-                        |          |          |          |
-command                 |          |          |          |   English translation
+                    untracked  unmodified  modified    staged   committed/
+                        |          |          |          |      unmodified
+                        |          |          |          |          |
+command                 |          |          |          |          |   English translation
 
-git add file(s)         |          |--------->|          |   stage file
-git commit              |          |          |--------->|   commit staged file(s)
-git commit file(s)      |          |-------------------->|   commit file(s) directly
+git add path(s)         |------------------------------->|          |   add path(s)
+git add path(s)         |          |          |--------->|          |   stage path(s)
+git commit              |          |          |          |--------->|   commit staged path(s)
+git commit path(s)      |          |          |-------------------->|   commit path(s) bypassing staging
 
-git diff                |          |<-------->|          |   between modified and staged
-git diff --cached       |<------------------->|          |   between staged and last commit
-git diff HEAD           |<-------->|          |          |   between modified and last commit
-git diff                |<-------->|          |          |   if nothing is staged
+git diff                |          |          |<-------->|          |   between modified and staged
+git diff --cached       |          |<------------------->|          |   between staged and last commit
+git diff HEAD           |          |<-------->|          |          |   between modified and last commit
+git diff                |          |<-------->|          |          |   if nothing is staged
 
-git reset               |          |<---------|          |   unstage
-git reset --hard        |<---------|          |          |   discard
-git reset --hard        |<--------------------|          |   discard
-git reset --soft <hash> |          |          |<---------|   "uncommit" everything after <hash>
-git reset --hard <hash> |<-------------------------------|   "uncommit" everything after <hash> and abandon changes
+git reset               |          |          |<---------|          |   unstage
+git reset --hard        |          |<---------|          |          |   discard
+git reset --hard        |          |<--------------------|          |   discard
+git reset --soft <hash> |          |          |          |<---------|   "uncommit" everything after <hash> and stage changes
+git reset --hard <hash> |          |<-------------------------------|   "uncommit" everything after <hash> and abandon changes
 
-git checkout            |<--------------------|          |   undo unstaged modifications
-git checkout            |<---------|          |          |   if nothing is staged
+git checkout path(s)    |          |          |--------->|          |   undo modifications and go back to staged
+git checkout path(s)    |          |<---------|          |          |   if nothing is staged
 ```
 
 - We will discuss what the `HEAD` is in the next section.
@@ -106,13 +121,16 @@ git checkout            |<---------|          |          |   if nothing is stage
 ### Compare with working without the staging area
 
 ```
-                tracked     staged   committed
-              but unstaged    |          |
-command            |          |          |   English translation
+                    unmodified  modified    staged   committed/
+                        |          |          |      unmodified
+                        |          |          |          |
+command                 |          |          |          |   English translation
 
-git commit file(s) |-------------------->|   commit file(s)
-git diff           |<------------------->|   between modified and last commit
-git checkout       |<--------------------|   undo uncommitted modifications
+git commit path(s)      |          |-------------------->|   commit path(s)
+
+git diff                |<-------->|          |          |   between modified and last commit
+
+git checkout path(s)    |<---------|          |          |   undo uncommitted modifications
 ```
 
 ### Example
