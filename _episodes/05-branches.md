@@ -46,8 +46,8 @@ However, software development is often not linear:
   - Interrupted work (we typically work on several longer term projects at the
     same time).
 
-The strength of version control is that it permits the developers to isolate
-different tracks of work. Developers can work on different things and merge
+The strength of version control is that it permits the developers to **isolate
+different tracks of work**. Developers can work on different things and merge
 the changes they made to the source code files afterwards to create a composite
 version that contains both the changes.
 
@@ -59,7 +59,7 @@ To enable collaborative work we wish to do something more like:
 - We see branching points and merging points.
 - Often we call the main line development `master`.
 - Other than this convention there is nothing special about `master`, it is just a branch.
-- Commits form a directed acyclic graph (we have left our the arrows to avoid confusion about the time arrow).
+- Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
 A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it is useful to think that a branch
@@ -210,7 +210,7 @@ $ git branch
   master
 ```
 
-Here is a graphical representation of what we have created (do not worry if the commit hashes are different):
+Here is a graphical representation of what we have created (do not worry if the commit hashes are different on your laptop):
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
 
@@ -300,7 +300,7 @@ manually settle merge conflicts (we will do that later).
 ### Questions
 
 - How do the ingredients look on `master`?
-- What do you expect to happen when you merge `experiment` into `master` (draw the result)?
+- What do you expect to happen when you merge `experiment` into `master` (draw the result first)?
 - Verify whether the result matches your expectation.
 
 **SPOILER BELOW**
@@ -415,13 +415,13 @@ $ git checkout -b <name>   # create branch <name> and switch to it
 With this there are two typical workflows:
 
 ```shell
-$ git checkout -b new-feature # create branch, switch to it
-$ git commit                  # work, work, work, ...
-                              # test
-                              # feature is ready
-$ git checkout master         # switch to master
-$ git merge new-feature       # merge work to master
-$ git branch -d new-feature   # remove branch
+$ git checkout -b new-feature  # create branch, switch to it
+$ git commit                   # work, work, work, ...
+                               # test
+                               # feature is ready
+$ git checkout master          # switch to master
+$ git merge new-feature        # merge work to master
+$ git branch -d new-feature    # remove branch
 ```
 
 Sometimes you have a wild idea which does not work.
@@ -429,11 +429,11 @@ Or you want some throw-away branch for debugging:
 
 ```shell
 $ git checkout -b wild-idea
-                              # work, work, work, ...
-                              # realize it was a bad idea
+                               # work, work, work, ...
+                               # realize it was a bad idea
 $ git checkout master
-$ git branch -D wild-idea     # it is gone, off to a new idea
-                              # -D because we never merged back
+$ git branch -D wild-idea      # it is gone, off to a new idea
+                               # -D because we never merged back
 ```
 
 No problem: we worked on a branch, branch is deleted, `master` is clean.
