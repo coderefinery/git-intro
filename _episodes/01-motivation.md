@@ -50,14 +50,14 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 
 ---
 
-## Explain what version control is in one minute
+## Explain version control in one minute
 
-- System which records snapshots of a project.
-- Implements branching:
+- System which **records snapshots** of a project.
+- Implements **branching**:
   - you can work on several features and switch between them
   - different people can work on the same code without interfering
   - you can experiment with an idea and discard it if it turns out to be a bad idea
-- Implements merging:
+- Implements **merging**:
   - tool to merge development branches for you (conflicts may appear)
 
 ---
