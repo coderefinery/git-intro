@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: "Basics"
+title: Basics
 teaching: 25
 exercises: 20
 questions:

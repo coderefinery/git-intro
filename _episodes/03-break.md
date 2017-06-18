@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: "Break"
+title: Break
 break: 20
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: "Sharing repositories online"
+title: Sharing repositories online
 teaching: 10
 exercises: 10
 questions:

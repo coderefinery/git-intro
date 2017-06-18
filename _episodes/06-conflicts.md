@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: "Conflict resolution"
+title: Conflict resolution
 teaching: 10
 exercises: 15
 questions:

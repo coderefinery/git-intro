@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: "Branching and Merging"
+title: Branching and Merging
 teaching: 20
 exercises: 15
 questions:

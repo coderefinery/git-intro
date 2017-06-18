@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: "Using the Git staging area"
+title: Using the Git staging area
 teaching: 10
 exercises: 0
 questions:
