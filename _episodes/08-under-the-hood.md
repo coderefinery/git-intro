@@ -67,8 +67,8 @@ All branches and tags in Git are pointers to commits.
 
 ## Demonstration: experimenting with branches
 
-Let us lift the hood and create few branches directly in the Git plumbing.  The
-goal of this exercise is to hopefully create an aha moment and provide us a
+Let us lift the hood and create few branches manually.  The
+goal of this exercise is to hopefully create an "aha" moment and provide us a
 good understanding of the underlying model.
 
 We are starting from the `master` branch and create an `idea` branch:
