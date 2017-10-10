@@ -95,4 +95,6 @@ bundle exec jekyll serve
 ### Check the preview on your favorite browser by loading the following URL
 http://127.0.0.1:4000/ 
 
+### To stop the server user Ctrl + c
+
 
