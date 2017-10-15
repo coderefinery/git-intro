@@ -147,6 +147,8 @@ $ git commit                      # commit everything that is staged
 
 - `git diff` gives differences with respect to the staging area, this is very practical.
 - Using `git add` we can fabricate very nice coherent commits.
+- Using `git add -p` we can work holistically and filter only the changes that
+  make sense as a single commit
 
 ---
 

@@ -294,14 +294,14 @@ merge commit has two (or more) parents.
 
 If the same file is changed in both branches, Git attempts to incorporate both
 changes into the merged file. If the changes overlap then the user has to
-manually settle merge conflicts (we will do that later).
+manually *settle merge conflicts* (we will do that later).
 
 
 ### Questions
 
 - How do the ingredients look on `master`?
 - What do you expect to happen when you merge `experiment` into `master` (draw the result first)?
-- Verify whether the result matches your expectation.
+- **Verify** whether the result matches your expectation.
 
 **SPOILER BELOW**
 
@@ -348,7 +348,7 @@ If you do not like this you can tell Git to merge with no fast-forward:
 $ git merge --no-ff experiment
 ```
 
-Both is fine, the resulting code is the same, not the history:
+Both are fine, the resulting code is the same, not the history:
 
 ![]({{ site.baseurl }}/img/gitink/no-ff.svg)
 
