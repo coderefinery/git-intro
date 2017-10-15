@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Basics
-teaching: 25
+teaching: 20
 exercises: 20
 questions:
   - What is Git?
@@ -391,6 +391,7 @@ public and have been used.
 In short: **if you change commits that other people depend on, you will lose friends and
 social contacts!**
 
+In other words: **changing history is best left to expert time travelers.**
 
 ### Questions
 

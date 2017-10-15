@@ -112,7 +112,7 @@ Unmerged paths:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Observe how Git gives us hints on how to move forward.
+Observe how Git gives us clear instructions on how to move forward.
 
 Let us inspect the conflicting file:
 
@@ -199,6 +199,7 @@ $ git mergetool
   or "theirs" (version on the merged branch).
 - Then you do not have to resolve conflicts manually.
 - See [merge strategies](https://git-scm.com/docs/merge-strategies).
+- If "theirs" is things done by someone else consider how they will feel.
 
 ```shell
 $ git checkout --theirs ingredients.txt  # take the version of the other branch

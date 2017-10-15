@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Sharing repositories online
-teaching: 10
+teaching: 5
 exercises: 10
 questions:
   - How can I set up a public repository online?
@@ -157,4 +157,6 @@ on your computer:
 $ git clone git@github.com:bast/recipe.git myrecipe
 ```
 
-What just happened? **Think of cloning as downloading the `.git` part to your computer**.
+What just happened? **Think of cloning as downloading the `.git` part to your
+computer**. After downloading the `.git` part the branch pointed to by HEAD is
+automatically checked out.

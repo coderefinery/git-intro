@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: Git under the hood
+title: Git under the hood (EXTRA)
 teaching: 10
 exercises: 10
 questions:

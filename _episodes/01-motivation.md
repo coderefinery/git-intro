@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Motivation
-teaching: 15
+teaching: 5
 exercises: 0
 questions:
   - Why version control?
@@ -95,10 +95,11 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 
 ## Why Git?
 
+
 - Fast
 - Distributed
 - Powerful
-- Huge traction
+- **Other people use it**
 - Merging and branching is easy and simple.
 - Important platforms such as [GitHub](https://github.com), [GitLab](https://gitlab.com), and [Bitbucket](https://bitbucket.org)
   build on top of Git.
