@@ -16,8 +16,14 @@ keypoints:
   - A branch is a division unit of work, to be merged with other units of work.
   - Creating branches is simple in Git.
   - Merging branches is typically straightforward.
+  - Introduce the concept of telling a story about your code
   - A tag is a pointer to a moment in the history of a project.
 ---
+
+## Activation
+
+- Tell a person near you the name of the great storyteller and why they are so
+  great
 
 ## Food for thought
 
@@ -65,6 +71,10 @@ A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it is useful to think that a branch
 tells the story of a feature, e.g. "new login workflow" or "fixing bug in
 matrix inversion algorithm".
+
+Version control can be thought as people creating a common story with code to
+back the story up.  Different groups have different practices of how they
+craft their story and especially how they want it to look like after the fact.
 
 ---
 
@@ -352,7 +362,12 @@ Both are fine, the resulting code is the same, not the history:
 
 ![]({{ site.baseurl }}/img/gitink/no-ff.svg)
 
-It is a matter of taste or convention. Discuss the advantages of both approaches.
+It is a matter of taste or convention. This is where we introduce an important
+tool:
+
+- think of your version history as telling a story
+- this is why we asked you to write down the name of a great storyteller
+- if in doubt, think "What would X do?"
 
 ---
 

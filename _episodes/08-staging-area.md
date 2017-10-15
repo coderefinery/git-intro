@@ -1,48 +1,35 @@
 ---
 layout: episode
-title: Using the Git staging area
-teaching: 10
+title: Using the Git staging area (EXTRA)
+teaching: 0
 exercises: 0
 questions:
   - Why do we recommend to first add, then commit a change?
+  - How can I reason about what to commit in a single commit?
 objectives:
   - Try to demystify the Git staging area.
+  - Enforce the concept of telling a story with your git repository.
   - Goal is to understand, not to remember (you can revisit this page later).
 keypoints:
   - The staging area helps us to create well-defined commits.
 ---
 
-## States of a file.
+## Commit history is telling a story about how your code came to be
 
-We recall that we have committed changes in two steps.
-We have used `git add` and `git commit`:
+Everybody says they write self-documenting code but the reality is seldom, if
+ever that reading the code makes everything clear.
 
-```shell
-$ git add     # stages the change
-$ git commit  # commits the staged change
-```
+Documenting things from a user level or a library or interface user level is
+recommended. However nobody in their right mind documents every little details
+about their code in a separate wiki or text file. Even pedantic commenting can
+in fact lead to the code being unreadable if the comments to code ratio is too
+large.
 
-In general files can have one of 4 states inside a Git repository (committed is a new unmodified state):
+What does this leave for the developer? Commits and version history. Why do we
+call these best practices and teach them early on?
 
-```
-1. untracked
-    |
-    |
-2.  | unmodified <--
-    |  |           |
-    |  v           |
-3.  | modified     |
-    |  |           |
-    v  v           |
-4. staged          |
-       |           |
-       v           |
-2. committed -------
-```
-
----
-
-## Why the staging?
+**If you make them habit now, the drain on your time and resources is minimal
+in the future**
 
 ### It is useful to have a nice and readable history
 
@@ -50,21 +37,23 @@ Bad example:
 
 ```shell
 b135ec8 now feature A should work
-72d78e7 fix for parallel compilation
-bf39f9d bugfix
-49dc419 removed too much
-45831a5 removing debug print
-bddb280 more work on feature B
+72d78e7 feature A did not work and started work on feature B
+bf39f9d more work on feature B
+49dc419 wip
+45831a5 removing debug prints for feature A and add new file
+bddb280 more work on feature B and make feature A compile again
 72e0211 another fix to make it compile
-e2073c3 oops! forgot another file
-61dd3a3 forgot file
-a9f5172 save work on feature A
-6fe2f23 save work on feature B
+61dd3a3 forgot file and bugfix
 ```
+
+There are multiple things that are not so stellar in this version control
+history.
+
 
 - Very often you will be obliged to do archaeology in your code.
 - Imagine that in few months you discover that feature B was a mistake.
-- It is very difficult to find and revert this in this example.
+- It is very difficult to find and revert B this in this example.
+
 
 ### Main development line should have a nice and readable history
 
@@ -76,62 +65,44 @@ fee1807 implement feature B
 6fe2f23 implement feature A
 ```
 
-We want to have nice commits.
-But we also want to "save often" (checkpointing) - how can we have both?
+We want to have nice commits.  But we also want to "save often"
+(checkpointing) - how can we have both?
 
-We will now learn to fabricate nice commits using the staging area.
+We will now learn to fabricate nice commits using the staging area. Staging
+addresses the issue of having two different functionalities in the same
+commit.
 
----
+The order of the commits can be made clear one way or another using branches
+and branch design, that we'll get to later. Compressing all the work done in a
+feature branch is a special case of refactoring called squashing and it is
+relatively advanced material even though GitHub et al. will do it for you with
+the push of a button.
 
-## Checkpointing using the staging area
 
-```
-                    untracked  unmodified  modified    staged   committed/
-                        |          |          |          |      unmodified
-                        |          |          |          |          |
-command                 |          |          |          |          |   English translation
 
-git add path(s)         |------------------------------->|          |   add path(s)
-git add path(s)         |          |          |--------->|          |   stage path(s)
-git commit              |          |          |          |--------->|   commit staged path(s)
-git commit path(s)      |          |          |-------------------->|   commit path(s) bypassing staging
+## States of a file.
 
-git diff                |          |          |<-------->|          |   between modified and staged
-git diff --cached       |          |<------------------->|          |   between staged and last commit
-git diff HEAD           |          |<-------->|          |          |   between modified and last commit
-git diff                |          |<-------->|          |          |   if nothing is staged
+We recall that we have committed changes in two steps.
+We have used `git add` and `git commit`:
 
-git reset               |          |          |<---------|          |   unstage
-git reset --hard        |          |<---------|          |          |   discard
-git reset --hard        |          |<--------------------|          |   discard
-git reset --soft <hash> |          |          |          |<---------|   "uncommit" everything after <hash> and stage changes
-git reset --hard <hash> |          |<-------------------------------|   "uncommit" everything after <hash> and abandon changes
+![]({{ site.baseurl }}/img/file_states.png)
 
-git checkout path(s)    |          |          |--------->|          |   undo modifications and go back to staged
-git checkout path(s)    |          |<---------|          |          |   if nothing is staged
+```shell
+$ git add     # stages the change
+$ git commit  # commits the staged change
+$ git remove  # removes a file
+$ git reset   # unstages staged changes
+$ git diff    # see **unstaged** changes
+$ git checkout <path> # check out the latest staged version ( or committed
+                      # version if file has not been staged )
+$ git add -p <path> # stages while letting you choose which lines to take
 ```
 
-- We will discuss what the `HEAD` is in the next section.
+
 - `git add` every change that improves the code.
 - `git checkout` every change that made things worse.
 - `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
 - Discuss/think about what is too large or too small.
-
-
-### Compare with working without the staging area
-
-```
-                    unmodified  modified    staged   committed/
-                        |          |          |      unmodified
-                        |          |          |          |
-command                 |          |          |          |   English translation
-
-git commit path(s)      |          |-------------------->|   commit path(s)
-
-git diff                |<-------->|          |          |   between modified and last commit
-
-git checkout path(s)    |<---------|          |          |   undo uncommitted modifications
-```
 
 ### Example
 
@@ -149,6 +120,10 @@ $ git commit                      # commit everything that is staged
 - Using `git add` we can fabricate very nice coherent commits.
 - Using `git add -p` we can work holistically and filter only the changes that
   make sense as a single commit
+
+There is an alternative workflow where you keep making small commits and
+squash them before publishing your feature branch. Which one to use is a
+matter of taste.
 
 ---
 
