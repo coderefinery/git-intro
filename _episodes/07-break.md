@@ -1,5 +1,5 @@
 ---
 layout: episode
-title: Lunch
-break: 60
+title: End of intro part
+break: 0
 ---

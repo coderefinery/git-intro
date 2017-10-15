@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Branching and Merging
-teaching: 20
+teaching: 15
 exercises: 15
 questions:
   - How can I or my team work on multiple features in parallel?
