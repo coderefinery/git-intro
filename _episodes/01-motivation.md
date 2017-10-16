@@ -5,9 +5,10 @@ teaching: 15
 exercises: 0
 questions:
   - Why version control?
+  - What is Git ?
   - Why Git?
 objectives:
-  - Discuss the reasons why we advocate distributed version control.
+  - Discuss the reasons why we advocate version control and why we selected Git which is a distributed version control system
 ---
 
 ## Food for thought
