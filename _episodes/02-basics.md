@@ -24,11 +24,10 @@ keypoints:
 Git is used to track the content of a folder as they are changed overtime. This could be files 
 in a folder or files in one of the sub-folders. When a file is under the Git tracking, it is 
 possible to go back to any historical version of that file. More precisely, back to any version 
-of the file which we asked git to keep a record of. As this is a navigation between versions we 
+of the file which we asked Git to keep a record of. As this is a navigation between versions we 
 refer to Git as a version control system. Git need to maintain records to provide this 
-time-travel functionality. These records and associated information are called a git repository. 
-The git repository it self resides in the folder git is tracking and kept inside a sub-folder 
-called .git.     
+time-travel functionality. These records and associated information are called a Git repository. 
+The Git repository it self is a set of files and kept inside a sub-folder called ".git".     
 
 ## Tracking a guacamole recipe with Git
 
