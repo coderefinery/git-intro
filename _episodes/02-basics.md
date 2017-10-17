@@ -21,6 +21,7 @@ keypoints:
 ---
 
 ## What is Git
+
 Git is used to track the content of a folder as they are changed overtime. This could be files 
 in a folder or files in one of the sub-folders. When a file is under the Git tracking, it is 
 possible to go back to any historical version of that file. More precisely, back to any version 
