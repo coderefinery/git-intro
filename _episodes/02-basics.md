@@ -20,6 +20,15 @@ keypoints:
   - Git uses the .git folder to store the snapshots.
 ---
 
+## What is Git
+Git is used to track the content of a folder as they are changed overtime. This could be files 
+in a folder or files in one of the sub-folders. When a file is under the git tracking, it is 
+possible to go back to any historical version of that file. More precisely, back to any version 
+of the file which we asked git to keep a record of. Git need to maintain records to provide this 
+time-travel functionality. These records and associated information are called a git repository. 
+The git repository it self resides in the folder git is tracking and kept inside a sub-folder 
+called .git.     
+
 ## Tracking a guacamole recipe with Git
 
 We will learn how to create a Git repository, how to track changes, and we will also learn how
