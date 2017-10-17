@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Branching and Merging
-teaching: 20
+teaching: 15
 exercises: 15
 questions:
   - How can I or my team work on multiple features in parallel?
@@ -16,8 +16,14 @@ keypoints:
   - A branch is a division unit of work, to be merged with other units of work.
   - Creating branches is simple in Git.
   - Merging branches is typically straightforward.
+  - Introduce the concept of telling a story about your code
   - A tag is a pointer to a moment in the history of a project.
 ---
+
+## Activation
+
+- Tell a person near you the name of the great storyteller and why they are so
+  great
 
 ## Food for thought
 
@@ -65,6 +71,10 @@ A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it is useful to think that a branch
 tells the story of a feature, e.g. "new login workflow" or "fixing bug in
 matrix inversion algorithm".
+
+Version control can be thought as people creating a common story with code to
+back the story up.  Different groups have different practices of how they
+craft their story and especially how they want it to look like after the fact.
 
 ---
 
@@ -294,14 +304,14 @@ merge commit has two (or more) parents.
 
 If the same file is changed in both branches, Git attempts to incorporate both
 changes into the merged file. If the changes overlap then the user has to
-manually settle merge conflicts (we will do that later).
+manually *settle merge conflicts* (we will do that later).
 
 
 ### Questions
 
 - How do the ingredients look on `master`?
 - What do you expect to happen when you merge `experiment` into `master` (draw the result first)?
-- Verify whether the result matches your expectation.
+- **Verify** whether the result matches your expectation.
 
 **SPOILER BELOW**
 
@@ -348,11 +358,16 @@ If you do not like this you can tell Git to merge with no fast-forward:
 $ git merge --no-ff experiment
 ```
 
-Both is fine, the resulting code is the same, not the history:
+Both are fine, the resulting code is the same, not the history:
 
 ![]({{ site.baseurl }}/img/gitink/no-ff.svg)
 
-It is a matter of taste or convention. Discuss the advantages of both approaches.
+It is a matter of taste or convention. This is where we introduce an important
+tool:
+
+- think of your version history as telling a story
+- this is why we asked you to write down the name of a great storyteller
+- if in doubt, think "What would X do?"
 
 ---
 
