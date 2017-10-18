@@ -4,3 +4,4 @@ _site/
 Gemfile.lock
 # vim swap files
 *.swp
+Gemfile
