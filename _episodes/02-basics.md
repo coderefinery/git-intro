@@ -48,6 +48,23 @@ in version 2 (second snapshot) and file B stays the same.  Lets say we are in th
 we ask Git to go back to the third snapshot with the intention of getting A1 version of the file A. 
 Then we will end up with A1,C1(loose one edit) and unmodified B (loose both edits).
 
+## Recording a snapshot 
+Git takes snapshots only if we request it. Requesting a snapshot is a two step process, just as we 
+take a snap with a camera, first we focus on what we want to catch then shoot. The focusing equivalent 
+of Git is called staging. If you want to include changes to a file in a snapshot then you should stage 
+that file, if you want many files then you should stage them all. As we know just focusing is not 
+enough to capture the moment, we need to commit our selves to taking the photo by pressing the shoot 
+button. In Git, after we stage the files, we commit to it using the command commit. This action is not 
+surprisingly called a commit. 
+
+![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
+"git Vs taking a photo"){:class="img-responsive"}
+
+What do you think will be the outcome if you stage a file and then edit it and stage it again,do this 
+several time and at the end perform a commit ? (think of focusing several scenes and pressing the shoot 
+button only at the end!)    
+
+
 ## Tracking a guacamole recipe with Git
 
 We will learn how to create a Git repository, how to track changes, and we will also learn how
