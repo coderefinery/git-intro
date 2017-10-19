@@ -43,6 +43,11 @@ well. The following diagram from https://git-scm.com illustrated this point
 ![Git snapshots]({{ site.baseurl }}/img/snapshots.png
 "git as a filesystem"){:class="img-responsive"}
 
+In the diagram, we start with 3 files A,B and C in the same folder. The files A and C are modified 
+in version 2 (second snapshot) and file B stays the same.  Lets say we are in the fifth snapshot and 
+we ask Git to go back to the third snapshot with the intention of getting A1 version of the file A. 
+Then we will end up with A1,C1(loose one edit) and unmodified B (loose both edits).
+
 ## Tracking a guacamole recipe with Git
 
 We will learn how to create a Git repository, how to track changes, and we will also learn how
