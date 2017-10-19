@@ -40,6 +40,9 @@ this point a snapshot. This means that if some other file has a different compos
 to our files of interest at this snapshot, we will loose the modifications done to that file as 
 well. The following diagram from https://git-scm.com illustrated this point
 
+![Git snapshots]({{ site.baseurl }}/img/gitink/snapshots.png
+"description"){:class="img-responsive"}
+
 ## Tracking a guacamole recipe with Git
 
 We will learn how to create a Git repository, how to track changes, and we will also learn how
