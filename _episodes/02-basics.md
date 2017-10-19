@@ -6,6 +6,7 @@ exercises: 20
 questions:
   - What is Git?
   - What is a repository?
+  - How does Git operate?
   - How do I make commits?
   - How do I select what to commit?
   - How can I undo things?
@@ -20,7 +21,7 @@ keypoints:
   - Git uses the .git folder to store the snapshots.
 ---
 
-## What is Git
+## What is Git and what exactly is a Git repository
 
 Git is used to track the content of a folder as they are changed overtime. This could be files 
 in a folder or files in one of the sub-folders. When a file is under the Git tracking, it is 
@@ -29,6 +30,15 @@ of the file which we asked Git to keep a record of. As this is a navigation betw
 refer to Git as a version control system. Git need to maintain records to provide this 
 time-travel functionality. These records and associated information are called a Git repository. 
 The Git repository it self is a set of files and kept inside a sub-folder called ".git".     
+
+## How Git operates and some terms.
+Lets have an simplified overview on how Git operates before we jump in to our example. We said 
+that Git can navigate back to an older version of a file using the information stored in the 
+git-repository. In operational point of view, what Git actually does is to take the folder where 
+the file reside back in time to the point where the file had the composition we asked.  We call 
+this point a snapshot. This means that if some other file has a different composition in addition 
+to our files of interest at this snapshot, we will loose the modifications done to that file as 
+well. The following diagram from https://git-scm.com illustrated this point
 
 ## Tracking a guacamole recipe with Git
 
