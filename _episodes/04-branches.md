@@ -20,11 +20,6 @@ keypoints:
   - A tag is a pointer to a moment in the history of a project.
 ---
 
-## Activation
-
-- Tell a person near you the name of the great storyteller and why they are so
-  great
-
 ## Food for thought
 
 - How do you work on two things in parallel?
