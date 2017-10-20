@@ -35,7 +35,7 @@ The Git repository it self is a set of files and kept inside a sub-folder called
 Lets have an simplified overview on how Git operates before we jump in to our example. We said 
 that Git can navigate back to an older version of a file using the information stored in the 
 git-repository. In operational point of view, what Git actually does is to take the folder where 
-the file reside back in time to the point where the file had the composition we asked.  We call 
+the file reside back in time to the point where the file had the composition we requested.  We call 
 this point a snapshot. This means that if some other file has a different composition in addition 
 to our files of interest at this snapshot, we will loose the modifications done to that file as 
 well. The following diagram from https://git-scm.com illustrated this point
@@ -44,8 +44,8 @@ well. The following diagram from https://git-scm.com illustrated this point
 "git as a filesystem"){:class="img-responsive"}
 
 In the diagram, we start with 3 files A,B and C in the same folder. The files A and C are modified 
-in version 2 (second snapshot) and file B stays the same.  Lets say we are in the fifth snapshot and 
-we ask Git to go back to the third snapshot with the intention of getting A1 version of the file A. 
+in version 2 (second snapshot) and file B stays the same. Lets say we are in the fifth snapshot and 
+we request Git to go back to the third snapshot with the intention of getting A1 version of the file A. 
 Then we will end up with A1,C1(loose one edit) and unmodified B (loose both edits).
 
 ## Recording a snapshot 
