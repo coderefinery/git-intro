@@ -6,6 +6,7 @@ exercises: 20
 questions:
   - What is Git?
   - What is a repository?
+  - How does Git operate?
   - How do I make commits?
   - How do I select what to commit?
   - How can I undo things?
@@ -20,7 +21,7 @@ keypoints:
   - Git uses the .git folder to store the snapshots.
 ---
 
-## What is Git
+## What is Git and what exactly is a Git repository
 
 Git is used to track the content of a folder as they are changed overtime. This could be files 
 in a folder or files in one of the sub-folders. When a file is under the Git tracking, it is 
@@ -29,6 +30,40 @@ of the file which we asked Git to keep a record of. As this is a navigation betw
 refer to Git as a version control system. Git need to maintain records to provide this 
 time-travel functionality. These records and associated information are called a Git repository. 
 The Git repository it self is a set of files and kept inside a sub-folder called ".git".     
+
+## How Git operates and some terms.
+Lets have an simplified overview on how Git operates before we jump in to our example. We said 
+that Git can navigate back to an older version of a file using the information stored in the 
+git-repository. In operational point of view, what Git actually does is to take the folder where 
+the file reside back in time to the point where the file had the composition we requested.  We call 
+this point a snapshot. This means that if some other file has a different composition in addition 
+to our files of interest at this snapshot, we will loose the modifications done to that file as 
+well. The following diagram from https://git-scm.com illustrated this point
+
+![Git snapshots]({{ site.baseurl }}/img/snapshots.png
+"git as a filesystem"){:class="img-responsive"}
+
+In the diagram, we start with 3 files A,B and C in the same folder. The files A and C are modified 
+in version 2 (second snapshot) and file B stays the same. Lets say we are in the fifth snapshot and 
+we request Git to go back to the third snapshot with the intention of getting A1 version of the file A. 
+Then we will end up with A1,C1(loose one edit) and unmodified B (loose both edits).
+
+## Recording a snapshot 
+Git takes snapshots only if we request it. Requesting a snapshot is a two step process, just as we 
+take a snap with a camera, first we focus on what we want to catch then shoot. The focusing equivalent 
+of Git is called staging. If you want to include changes to a file in a snapshot then you should stage 
+that file, if you want many files then you should stage them all. As we know just focusing is not 
+enough to capture the moment, we need to commit our selves to taking the photo by pressing the shoot 
+button. In Git, after we stage the files, we commit to it using the command commit. This action is not 
+surprisingly called a commit. 
+
+![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
+"git Vs taking a photo"){:class="img-responsive"}
+
+What do you think will be the outcome if you stage a file and then edit it and stage it again,do this 
+several time and at the end perform a commit ? (think of focusing several scenes and pressing the shoot 
+button only at the end!)    
+
 
 ## Tracking a guacamole recipe with Git
 
