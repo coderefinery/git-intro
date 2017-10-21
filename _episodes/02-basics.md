@@ -201,6 +201,10 @@ Date:   Thu May 4 15:02:56 2017 +0200
 ```
 
 ---
+## Undoing things
+
+
+---
 
 ## Exercise: record changes
 
