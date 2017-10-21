@@ -32,6 +32,9 @@ to the recording head of the tape recorders (if you are too young to know what
 this is ask around). So if someone press the record button it will start the 
 recording from where the HEAD is.  At any point of operation a Git repository 
 can have only one HEAD.   
+
+![Master branch]({{ site.baseurl }}/img/master_branch.svg
+"First impression on branches"){:class="img-responsive"}
  
 ---
 
