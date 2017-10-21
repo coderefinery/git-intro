@@ -33,8 +33,7 @@ this is ask around). So if someone press the record button it will start the
 recording from where the HEAD is.  At any point of operation a Git repository 
 can have only one HEAD.   
 
-![Master branch]({{ site.baseurl }}/img/master_branch.svg
-"First impression on branches"){:class="img-responsive"}
+![Master branch]({{ site.baseurl }}/img/master_branch.png)
  
 ---
 
@@ -68,7 +67,7 @@ To enable collaborative work we wish to do something more like:
 "description"){:class="img-responsive"}
 
 - We see branching points and merging points.
-- Often we call the main line development `master`.
+- As we said before, often we call the main line development `master` as this is what Git uses as defualt.
 - Other than this convention there is nothing special about `master`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
