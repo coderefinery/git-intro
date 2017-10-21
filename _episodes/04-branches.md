@@ -4,7 +4,7 @@ title: Branching and Merging
 teaching: 15
 exercises: 15
 questions:
-  - How can a team work on multiple features in parallel?
+  - How can I or my team work on multiple features in parallel?
   - How to combine the changes of parallel tracks of work?
   - What is branching and when should I do it?
   - How can I permanently reference a point in history, like a software
