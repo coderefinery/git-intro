@@ -4,7 +4,7 @@ title: Branching and Merging
 teaching: 15
 exercises: 15
 questions:
-  - How can I or my team work on multiple features in parallel?
+  - How can a team work on multiple features in parallel?
   - How to combine the changes of parallel tracks of work?
   - What is branching and when should I do it?
   - How can I permanently reference a point in history, like a software
@@ -16,20 +16,27 @@ keypoints:
   - A branch is a division unit of work, to be merged with other units of work.
   - Creating branches is simple in Git.
   - Merging branches is typically straightforward.
-  - Introduce the concept of telling a story about your code
   - A tag is a pointer to a moment in the history of a project.
 ---
 
-## Food for thought
 
-- How do you work on two things in parallel?
-- How often do you find yourself wanting to go into two directions at once?
-- How often are you not sure which of two options is the right one?
-- How do you patch a version of the code which is not the latest commit?
-
+## Introduction
+In the previous section we made guacamole Git style. Our procedure was serial 
+(which is a cool way to say doing one thing after another in a sequence). This 
+sequence of events are depicted in the diagram below. At this point we shall 
+learn few more concepts and terms. The sequences of events depicted as in the 
+diagram is called a “branch”. When there is only one branch and  If we do not 
+rename it, Git assigns the name “master” to it. The latest state of the branch 
+is referred as the “HEAD”. The term HEAD is better explained with the reference 
+to the recording head of the tape recorders (if you are too young to know what 
+this is ask around). So if someone press the record button it will start the 
+recording from where the HEAD is.  At any point of operation a Git repository 
+can have only one HEAD.   
+ 
 ---
 
 ## Motivation for branches
+
 
 Up until now our repository has only had one branch with one commit coming
 after the other:
