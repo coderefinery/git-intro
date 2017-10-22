@@ -203,6 +203,60 @@ Date:   Thu May 4 15:02:56 2017 +0200
 ---
 ## Undoing things
 
+We have been advocating about how it is possible to use Git to go back to any 
+historical version and start over. In this section we will learn some basics 
+about this. Before we begin please be warned that some commands discussed here 
+will result in permanent data loss and should be used with prudence. As we 
+discussed Git preserves snapshots of folder content rather than history of files 
+and it is difficult to go into details on how navigation between snapshots takes 
+place in a basic course.  So rather than trying to explaining details,here we 
+have selected some examples to show to achieve certain undo tasks. The diagram 
+below shows what we did with the guacamole recipe. 
+
+![Series of events]({{ site.baseurl }}/img/events.png
+"git commits"){:class="img-responsive"}
+
+### Change the commit message
+The comment we added in the last stage (3) had the message “added enjoy”.
+Immediately after we committed before any file has been changed we want to 
+change this message to include your name as the author.  To achieve this we 
+issue the following command 
+
+```shell
+ git commit --amend
+```
+
+This will give you a chance to edit the commit message.
+
+Effect :The new commit will replace the old one. It’s as if the previous commit 
+never happened, and it won’t show up in your repository history.
+
+### Unstage a file.
+We will edit the instructions.txt file to remove the text “enjoy!”. Then stage 
+it. Then we want to unstage it so we can edit it more before committing.
+
+Open the file  instructions.txt file and remove the line “enjoy !”
+
+```shell
+git status # to confirm what has changed
+git add instructions.txt # stage it
+git status # to confirm what has staging
+git reset instructions.txt
+git status # will show the file as unstaged
+```
+
+### Un-modify a file.
+Let’s say we want to get rid of the changes we did to the  instructions.txt file. 
+
+```shell
+git checkout instructions.txt
+```
+
+This will replace the current version with the last committed version. This action 
+will result in loss of all the edits after the last commit and can not be undone.
+
+There are much more to discuss on undoing things and we leave them for later until we 
+learn about branches.  
 
 ---
 
@@ -427,9 +481,6 @@ Git is not ideal for large binary files
 ---
 
 ## Modifying committed changes
-
-In Git it is possible to modify and even remove committed history with `git commit --amend`
-or `git reset`. We will not demonstrate this at this stage.
 
 Indeed, Git lets you do marvelous things with history. This is all fine and well as
 long as you are modifying commits that you are not sharing with others. When
