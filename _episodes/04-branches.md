@@ -33,8 +33,8 @@ this is ask around). So if someone press the record button it will start the
 recording from where the HEAD is.  At any point of operation a Git repository 
 can have only one HEAD.   
 
-![Master branch]({{ site.baseurl }}/img/master_branch.png)
- 
+![Master branch]({{ site.baseurl }}/img/master_branch.svg)
+ <img src="/img/master_branch.svg" alt="master_branch" height="400">  
 ---
 
 ## Motivation for branches
