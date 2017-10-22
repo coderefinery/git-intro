@@ -21,7 +21,7 @@ keypoints:
   - Git uses the .git folder to store the snapshots.
 ---
 
-## What is Git and what exactly is a Git repository
+## What is Git and what exactly is a Git repository ?
 
 Git is used to track the content of a folder as they are changed overtime. This could be files 
 in a folder or files in one of the sub-folders. When a file is under the Git tracking, it is 
@@ -209,16 +209,17 @@ about this. Before we begin please be warned that some commands discussed here
 will result in permanent data loss and should be used with prudence. As we 
 discussed Git preserves snapshots of folder content rather than history of files 
 and it is difficult to go into details on how navigation between snapshots takes 
-place in a basic course.  So rather than trying to explaining details,here we 
-have selected some examples to show to achieve certain undo tasks. The diagram 
-below shows what we did with the guacamole recipe. 
+place in a basic course.  So instead of trying to explain details,here we 
+have selected some examples to show how to achieve certain undo tasks, untill we 
+learn more in the next sections. The diagram below shows what we did with the 
+guacamole recipe and we will see how to undo some changes. 
 
 ![Series of events]({{ site.baseurl }}/img/events.png
 "git commits"){:class="img-responsive"}
 
 ### Change the commit message
 The comment we added in the last stage (3) had the message “added enjoy”.
-Immediately after we committed before any file has been changed we want to 
+Immediately after we committed and  before any file has been changed we want to 
 change this message to include your name as the author.  To achieve this we 
 issue the following command 
 
