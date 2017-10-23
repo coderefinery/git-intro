@@ -16,25 +16,29 @@ keypoints:
   - A branch is a division unit of work, to be merged with other units of work.
   - Creating branches is simple in Git.
   - Merging branches is typically straightforward.
-  - Introduce the concept of telling a story about your code
   - A tag is a pointer to a moment in the history of a project.
 ---
 
-## Activation
 
-- Tell a person near you the name of the great storyteller and why they are so
-  great
+## Introduction
+In the previous section we made guacamole Git style. Our procedure was serial 
+(which is a cool way to say doing one thing after another in a sequence). This 
+sequence of events are depicted in the diagram below. At this point we shall 
+learn few more concepts and terms. The sequences of events depicted as in the 
+diagram is called a “branch”. When there is only one branch and  If we do not 
+rename it, Git assigns the name “master” to it. The latest state of the branch 
+is referred as the “HEAD”. The term HEAD is better explained with the reference 
+to the recording head of the tape recorders (if you are too young to know what 
+this is ask around). So if someone press the record button it will start the 
+recording from where the HEAD is.  At any point of operation a Git repository 
+can have only one HEAD.   
 
-## Food for thought
-
-- How do you work on two things in parallel?
-- How often do you find yourself wanting to go into two directions at once?
-- How often are you not sure which of two options is the right one?
-- How do you patch a version of the code which is not the latest commit?
-
+![Master branch]({{ site.baseurl }}/img/master_branch.svg)
+ <img src="/img/master_branch.svg" alt="master_branch" height="400">  
 ---
 
 ## Motivation for branches
+
 
 Up until now our repository has only had one branch with one commit coming
 after the other:
@@ -63,7 +67,7 @@ To enable collaborative work we wish to do something more like:
 "description"){:class="img-responsive"}
 
 - We see branching points and merging points.
-- Often we call the main line development `master`.
+- As we said before, often we call the main line development `master` as this is what Git uses as defualt.
 - Other than this convention there is nothing special about `master`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
