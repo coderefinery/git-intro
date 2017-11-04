@@ -56,9 +56,7 @@ that file, if you want many files then you should stage them all. As we know jus
 enough to capture the moment, we need to commit our selves to taking the photo by pressing the shoot 
 button. In Git, after we stage the files, we commit to it using the command commit. This action is not 
 surprisingly called a commit. 
-
-![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
-"git Vs taking a photo"){:class="img-responsive"}
+ <img src="/git-intro/img/git_stage_commit.svg" alt="Git staging"  width="1000"> 
 
 What do you think will be the outcome if you stage a file and then edit it and stage it again,do this 
 several time and at the end perform a commit ? (think of focusing several scenes and pressing the shoot 
@@ -212,12 +210,12 @@ and it is difficult to go into details on how navigation between snapshots takes
 place in a basic course.  So instead of trying to explain details,here we 
 have selected some examples to show how to achieve certain undo tasks, untill we 
 learn more in the next sections. The diagram below shows what we did with the 
-guacamole recipe and we will see how to undo some changes. 
+guacamole recipe and we will see how to undo some changes.
 
- <img src="]({{ site.baseurl }}/img/events.svg" alt="Events"  width="100"> 
-
+ <img src="/git-intro/img/events.svg" alt="Events"  width="800"> 
 
 ### Change the commit message
+
 The comment we added in the last stage (3) had the message “added enjoy”.
 Immediately after we committed and  before any file has been changed we want to 
 change this message to include your name as the author.  To achieve this we 
