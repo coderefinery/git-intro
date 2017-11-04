@@ -214,8 +214,8 @@ have selected some examples to show how to achieve certain undo tasks, untill we
 learn more in the next sections. The diagram below shows what we did with the 
 guacamole recipe and we will see how to undo some changes. 
 
-![Series of events]({{ site.baseurl }}/img/events.png
-"git commits"){:class="img-responsive"}
+ <img src="]({{ site.baseurl }}/img/events.svg" alt="Events"  width="100"> 
+
 
 ### Change the commit message
 The comment we added in the last stage (3) had the message “added enjoy”.
