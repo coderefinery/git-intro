@@ -189,6 +189,20 @@ $ git mergetool
 - Your current branch is left, the branch you merge is right, result is in the middle.
 - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
 
+If you have not instructed Git to avoid creating backups when using mergetool, then to be on 
+the safe side there will be additional  temporary files created. To remove those  you can do 
+a git clean after the merging.
+
+To view what will be removed
+`git clean -n` 
+
+To remove
+`git clean -f`
+
+To configure Git to avoid creating backups at all:
+
+`git config --global mergetool.keepBackup false`
+
 ---
 
 ## Using "ours" or "theirs" strategy

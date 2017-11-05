@@ -31,6 +31,18 @@ refer to Git as a version control system. Git need to maintain records to provid
 time-travel functionality. These records and associated information are called a Git repository. 
 The Git repository it self is a set of files and kept inside a sub-folder called ".git".     
 
+- All the magic is under `.git`, all the history, all snapshot, all branches (later), everything.
+- When we staged and committed files, we "copied" them into `.git`.
+- Here we only track one file but we can track entire file trees.
+- Git does not pollute subdirectories.
+- If we remove `.git`, we remove the repository (but of course keep the working directory).
+- It is very easy to create (and remove) a Git repository to track something that you work on.
+- `.git` uses relative paths (very convenient), you can move the whole thing somewhere else
+  and it will still work.
+
+---
+
+
 ## How Git operates and some terms.
 Lets have an simplified overview on how Git operates before we jump in to our example. We said 
 that Git can navigate back to an older version of a file using the information stored in the 
@@ -56,9 +68,7 @@ that file, if you want many files then you should stage them all. As we know jus
 enough to capture the moment, we need to commit our selves to taking the photo by pressing the shoot 
 button. In Git, after we stage the files, we commit to it using the command commit. This action is not 
 surprisingly called a commit. 
-
-![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
-"git Vs taking a photo"){:class="img-responsive"}
+ <img src="/git-intro/img/git_stage_commit.svg" alt="Git staging"  width="1000"> 
 
 What do you think will be the outcome if you stage a file and then edit it and stage it again,do this 
 several time and at the end perform a commit ? (think of focusing several scenes and pressing the shoot 
@@ -188,6 +198,8 @@ $ git commit -m "adding ingredients and instructions"
  create mode 100644 instructions.txt
 ```
 
+### Git history and log
+
 Now try `git log`:
 
 ```shell
@@ -200,64 +212,13 @@ Date:   Thu May 4 15:02:56 2017 +0200
     adding ingredients and instructions
 ```
 
----
-## Undoing things
-
-We have been advocating about how it is possible to use Git to go back to any 
-historical version and start over. In this section we will learn some basics 
-about this. Before we begin please be warned that some commands discussed here 
-will result in permanent data loss and should be used with prudence. As we 
-discussed Git preserves snapshots of folder content rather than history of files 
-and it is difficult to go into details on how navigation between snapshots takes 
-place in a basic course.  So instead of trying to explain details,here we 
-have selected some examples to show how to achieve certain undo tasks, untill we 
-learn more in the next sections. The diagram below shows what we did with the 
-guacamole recipe and we will see how to undo some changes. 
-
-![Series of events]({{ site.baseurl }}/img/events.png
-"git commits"){:class="img-responsive"}
-
-### Change the commit message
-The comment we added in the last stage (3) had the message “added enjoy”.
-Immediately after we committed and  before any file has been changed we want to 
-change this message to include your name as the author.  To achieve this we 
-issue the following command 
-
-```shell
- git commit --amend
-```
-
-This will give you a chance to edit the commit message.
-
-Effect :The new commit will replace the old one. It’s as if the previous commit 
-never happened, and it won’t show up in your repository history.
-
-### Unstage a file.
-We will edit the instructions.txt file to remove the text “enjoy!”. Then stage 
-it. Then we want to unstage it so we can edit it more before committing.
-
-Open the file  instructions.txt file and remove the line “enjoy !”
-
-```shell
-git status # to confirm what has changed
-git add instructions.txt # stage it
-git status # to confirm what has staging
-git reset instructions.txt
-git status # will show the file as unstaged
-```
-
-### Un-modify a file.
-Let’s say we want to get rid of the changes we did to the  instructions.txt file. 
-
-```shell
-git checkout instructions.txt
-```
-
-This will replace the current version with the last committed version. This action 
-will result in loss of all the edits after the last commit and can not be undone.
-
-There are much more to discuss on undoing things and we leave them for later until we 
-learn about branches.  
+- We can browse the development and access each state that we have committed.
+- The long hashes uniquely label a state of the code.
+- They are not just integers counting 1, 2, 3, 4, ... (why?).
+- We will use them when comparing versions and when going back in time.
+- `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
+- If the first characters of the hash are unique it is not necessary to type the entire hash.
+- `git log --stat` is nice to show which files have been modified.
 
 ---
 
@@ -313,16 +274,112 @@ When you are done committing the changes, experiment with
 `git show`, and
 `git diff`.
 
+### Optional : difftool 
+This requires you to install an additional tool called Meld (or any of the following tools; 
+opendiff kdiff3 tkdiff xxdiff kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc 
+codecompare emerge vimdiff).  How to install and more details : http://meldmerge.org/ on 
+Ubuntu sudo apt-get install meld On Windows use the installer from the above site.
 
-### Git history
+`git difftool -t <Tool_name> `
 
-- We can browse the development and access each state that we have committed.
-- The long hashes uniquely label a state of the code.
-- They are not just integers counting 1, 2, 3, 4, ... (why?).
-- We will use them when comparing versions and when going back in time.
-- `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
-- If the first characters of the hash are unique it is not necessary to type the entire hash.
-- `git log --stat` is nice to show which files have been modified.
+To use Meld
+
+ `git difftool -t meld -y`
+
+---
+
+## Undoing things
+
+We have been advocating about how it is possible to use Git to go back to any 
+historical version and start over. In this section we will learn some basics 
+about this. Before we begin please be warned that some commands discussed here 
+will result in permanent data loss and should be used with prudence. As we 
+discussed Git preserves snapshots of folder content rather than history of files 
+and it is difficult to go into details on how navigation between snapshots takes 
+place in a basic course.  So instead of trying to explain details,here we 
+have selected some examples to show how to achieve certain undo tasks, untill we 
+learn more in the next sections. The diagram below shows what we did with the 
+guacamole recipe and we will see how to undo some changes.
+
+ <img src="/git-intro/img/events.svg" alt="Events"  width="800"> 
+
+### Change the commit message
+
+The comment we added in the last stage (3) had the message “added enjoy”.
+Immediately after we committed and  before any file has been changed we want to 
+change this message to include your name as the author.  To achieve this we 
+issue the following command 
+
+```shell
+ git commit --amend
+```
+
+This will give you a chance to edit the commit message.
+
+Effect :The new commit will replace the old one. It’s as if the previous commit 
+never happened, and it won’t show up in your repository history.
+
+### Unstage a file.
+We will edit the instructions.txt file to remove the text “enjoy!”. Then stage 
+it. Then we want to unstage it so we can edit it more before committing.
+
+Open the file  instructions.txt file and remove the line “enjoy !”
+
+```shell
+git status # to confirm what has changed
+git add instructions.txt # stage it
+git status # to confirm what has staging
+git reset instructions.txt
+git status # will show the file as unstaged
+```
+
+### Un-modify a file.
+Let’s say we want to get rid of the changes we did to the  instructions.txt file. 
+
+```shell
+git checkout instructions.txt
+```
+
+This will replace the current version with the last committed version. This action 
+will result in loss of all the edits after the last commit and can not be undone.
+
+There are much more to discuss on undoing things and we leave them for later until we 
+learn about branches.  
+
+## Exercise: undo unstaged changes
+
+- Make some silly changes to `ingredients.txt` (e.g. add liquorice).
+- Inspect the changes with `git status` and `git diff`.
+- Undo the unstaged changes with `git checkout ingredients.txt`.
+- Inspect the new situation with `git status` and `git diff`.
+
+## Be considerate when modifying committed changes
+
+Indeed, Git lets you do marvelous things with history. This is all fine and well as
+long as you are modifying commits that you are not sharing with others. When
+you start collaborating with other people it is considered very bad form and
+will cause a lot of grief to others if you change things that are already
+public and have been used.
+
+In short: **if you change commits that other people depend on, you will lose friends and
+social contacts!**
+
+In other words: **changing history is best left to expert time travelers.**
+
+More in this after we learn git remotes.
+
+### Questions
+
+- A safe way to undo past commits is to use `git revert`. What does it do? In doubt, try it.
+- What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
+- What situations would justify to modify the Git history and possibly remove commits?
+- Is it OK to modify commits that nobody has seen yet?
+
+
+---
+
+
+## Git best-practices 
 
 
 ### Writing useful commit messages
@@ -366,9 +423,15 @@ fixed an important bug for contracted basis sets
 - Many projects start out as projects "just for me" and end up to be successful projects
   that are developed by 50 people over decades.
 
----
+### Commit with preview of changes
+It is possible to see the changes being commited 
 
-## Ignoring files and paths with .gitignore
+```shell
+git commit -v
+```
+
+
+### Ignoring files and paths with .gitignore
 
 - Should we add and track all files in a project?
 - How about generated files?
@@ -428,18 +491,6 @@ relatively.
 
 ---
 
-## Where is the Git repository?
-
-- All the magic is under `.git`, all the history, all snapshot, all branches (later), everything.
-- When we staged and committed files, we "copied" them into `.git`.
-- Here we only track one file but we can track entire file trees.
-- Git does not pollute subdirectories.
-- If we remove `.git`, we remove the repository (but of course keep the working directory).
-- It is very easy to create (and remove) a Git repository to track something that you work on.
-- `.git` uses relative paths (very convenient), you can move the whole thing somewhere else
-  and it will still work.
-
----
 
 ## Summary
 
@@ -472,31 +523,3 @@ Git is not ideal for large binary files
 
 ---
 
-## Exercise: undo unstaged changes
-
-- Make some silly changes to `ingredients.txt` (e.g. add liquorice).
-- Inspect the changes with `git status` and `git diff`.
-- Undo the unstaged changes with `git checkout ingredients.txt`.
-- Inspect the new situation with `git status` and `git diff`.
-
----
-
-## Modifying committed changes
-
-Indeed, Git lets you do marvelous things with history. This is all fine and well as
-long as you are modifying commits that you are not sharing with others. When
-you start collaborating with other people it is considered very bad form and
-will cause a lot of grief to others if you change things that are already
-public and have been used.
-
-In short: **if you change commits that other people depend on, you will lose friends and
-social contacts!**
-
-In other words: **changing history is best left to expert time travelers.**
-
-### Questions
-
-- A safe way to undo past commits is to use `git revert`. What does it do? In doubt, try it.
-- What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
-- What situations would justify to modify the Git history and possibly remove commits?
-- Is it OK to modify commits that nobody has seen yet?
