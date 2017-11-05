@@ -378,8 +378,6 @@ It is a matter of taste or convention. This is where we introduce an important
 tool:
 
 - think of your version history as telling a story
-- this is why we asked you to write down the name of a great storyteller
-- if in doubt, think "What would X do?"
 
 ---
 
