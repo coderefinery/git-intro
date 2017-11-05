@@ -291,6 +291,10 @@ $ git graph  #We defined this alias earlier
 * d619bf8 adding ingredients and instructions
 ```
 
+To view the branches that are merged we can use the command
+
+`git branch --merged `
+
 Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
 without us merging it manually**:
 
