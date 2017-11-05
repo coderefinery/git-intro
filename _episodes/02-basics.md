@@ -283,6 +283,7 @@ Ubuntu sudo apt-get install meld On Windows use the installer from the above sit
 `git difftool -t <Tool_name> `
 
 To use Meld
+
  `git difftool -t meld -y`
 
 ---
