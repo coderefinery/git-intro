@@ -274,6 +274,17 @@ When you are done committing the changes, experiment with
 `git show`, and
 `git diff`.
 
+### Optional : difftool 
+This requires you to install an additional tool called Meld (or any of the following tools; 
+opendiff kdiff3 tkdiff xxdiff kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc 
+codecompare emerge vimdiff).  How to install and more details : http://meldmerge.org/ on 
+Ubuntu sudo apt-get install meld On Windows use the installer from the above site.
+
+`git difftool -t <Tool_name> `
+
+To use Meld
+ `git difftool -t meld -y`
+
 ---
 
 ## Undoing things
