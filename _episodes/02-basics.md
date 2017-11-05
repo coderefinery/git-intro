@@ -411,6 +411,14 @@ fixed an important bug for contracted basis sets
 - Many projects start out as projects "just for me" and end up to be successful projects
   that are developed by 50 people over decades.
 
+### Commit with preview of changes
+It is possible to see the changes being commited 
+
+```shell
+git commit -v
+```
+
+
 ### Ignoring files and paths with .gitignore
 
 - Should we add and track all files in a project?
