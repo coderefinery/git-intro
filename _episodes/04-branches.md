@@ -228,21 +228,23 @@ Here is a graphical representation of what we have created (do not worry if the 
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
 
+Lets try to produce a visual representation of the branches using git commands.
 
-How do you interpret the following:
+Try the following :
+`git log --graph --decorate --oneline --abbrev-commit`
+ 
+This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too 
+long to type. Fortunately Git has solution for this using aliases. 
 
-```
-$ git show-branch
+`git config --global alias.graph "log --graph --decorate --oneline --abbrev-commit"`
 
-* [experiment] maybe little bit less cilantro
- ! [less-salt] reduce amount of salt
-  ! [master] do not forget to enjoy
----
-*   [experiment] maybe little bit less cilantro
-*   [experiment^] let us try with some cilantro
- +  [less-salt] reduce amount of salt
-*++ [master] do not forget to enjoy
-```
+Next time when we want this we will use the alias
+
+`git graph`
+
+For a table like (sort of) representation you could use the following command instead. 
+git show-branch
+
 
 ---
 
@@ -272,10 +274,11 @@ $ git merge experiment
 
 ![]({{ site.baseurl }}/img/gitink/git-merge-2.svg)
 
-We can verify the result in the terminal:
+We can verify the result in the terminal. 
 
 ```shell
-$ git log --graph --decorate --pretty=oneline --abbrev-commit
+
+$ git graph  #We defined this alias earlier
 
 *   265ee5d (HEAD -> less-salt) Merge branch 'experiment' into less-salt
 |\
@@ -290,6 +293,7 @@ $ git log --graph --decorate --pretty=oneline --abbrev-commit
 
 Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
 without us merging it manually**:
+
 
 ```shell
 $ cat ingredients.txt
