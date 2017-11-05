@@ -274,6 +274,8 @@ When you are done committing the changes, experiment with
 `git show`, and
 `git diff`.
 
+---
+
 ## Undoing things
 
 We have been advocating about how it is possible to use Git to go back to any 
@@ -339,9 +341,7 @@ learn about branches.
 - Undo the unstaged changes with `git checkout ingredients.txt`.
 - Inspect the new situation with `git status` and `git diff`.
 
----
-
-## Modifying committed changes
+## Be considerate when modifying committed changes
 
 Indeed, Git lets you do marvelous things with history. This is all fine and well as
 long as you are modifying commits that you are not sharing with others. When
@@ -353,6 +353,8 @@ In short: **if you change commits that other people depend on, you will lose fri
 social contacts!**
 
 In other words: **changing history is best left to expert time travelers.**
+
+More in this after we learn git remotes.
 
 ### Questions
 
@@ -408,8 +410,6 @@ fixed an important bug for contracted basis sets
   15 years from now by someone else than you.
 - Many projects start out as projects "just for me" and end up to be successful projects
   that are developed by 50 people over decades.
-
----
 
 ### Ignoring files and paths with .gitignore
 
