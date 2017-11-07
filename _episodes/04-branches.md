@@ -231,12 +231,12 @@ Here is a graphical representation of what we have created (do not worry if the 
 Lets try to produce a visual representation of the branches using git commands.
 
 Try the following :
-`git log --graph --decorate --oneline --abbrev-commit`
+`git log --all --graph --decorate --oneline --abbrev-commit`
  
 This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too 
 long to type. Fortunately Git has solution for this using aliases. 
 
-`git config --global alias.graph "log --graph --decorate --oneline --abbrev-commit"`
+`git config --all global alias.graph "log --graph --decorate --oneline --abbrev-commit"`
 
 Next time when we want this we will use the alias
 
