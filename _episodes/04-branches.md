@@ -236,7 +236,7 @@ Try the following :
 This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too 
 long to type. Fortunately Git has solution for this using aliases. 
 
-`git config --all global alias.graph "log --graph --decorate --oneline --abbrev-commit"`
+`git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"`
 
 Next time when we want this we will use the alias
 
