@@ -1,5 +1,5 @@
 ---
 layout: episode
-title: Lunch
-break: 60
+title: Lunch and Jupyter Notebooks session
+break: 180
 ---

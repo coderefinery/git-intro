@@ -1,8 +1,8 @@
 ---
 layout: episode
-title: Using the Git staging area (EXTRA)
-teaching: 0
-exercises: 0
+title: Using the Git staging area
+teaching: 15
+exercises: 10
 questions:
   - Why do we recommend to first add, then commit a change?
   - How can I reason about what to commit in a single commit?
