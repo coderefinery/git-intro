@@ -79,7 +79,6 @@ relatively advanced material even though GitHub et al. will do it for you with
 the push of a button.
 
 
-
 ## States of a file.
 
 We recall that we have committed changes in two steps.
