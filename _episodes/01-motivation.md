@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Motivation
-teaching: 5
+teaching: 15
 exercises: 0
 questions:
   - Why version control?

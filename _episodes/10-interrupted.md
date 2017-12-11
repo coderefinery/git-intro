@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: Interrupted work (EXTRA)
+title: Interrupted work
 teaching: 10
 exercises: 0
 questions:

@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Basics
-teaching: 20
+teaching: 25
 exercises: 20
 questions:
   - What is Git?

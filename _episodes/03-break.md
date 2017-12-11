@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Break
-break: 10
+break: 20
 ---
 
 ## Food for thought

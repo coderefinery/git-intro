@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Sharing repositories online
-teaching: 5
+teaching: 10
 exercises: 10
 questions:
   - How can I set up a public repository online?
