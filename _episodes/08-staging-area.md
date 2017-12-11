@@ -1,8 +1,8 @@
 ---
 layout: episode
-title: Using the Git staging area (EXTRA)
-teaching: 0
-exercises: 0
+title: Using the Git staging area
+teaching: 15
+exercises: 10
 questions:
   - Why do we recommend to first add, then commit a change?
   - How can I reason about what to commit in a single commit?
@@ -77,7 +77,6 @@ and branch design, that we'll get to later. Compressing all the work done in a
 feature branch is a special case of refactoring called squashing and it is
 relatively advanced material even though GitHub et al. will do it for you with
 the push of a button.
-
 
 
 ## States of a file.

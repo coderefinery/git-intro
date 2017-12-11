@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: Git under the hood (EXTRA)
+title: Git under the hood
 teaching: 10
 exercises: 10
 questions:
@@ -12,7 +12,8 @@ keypoints:
   - Branches are extremely lightweight.
 ---
 
-<img src="{{ site.baseurl }}/img/stranger.jpg" width="60%">
+![Stranger]({{ site.baseurl }}/img/stranger.jpg
+"stranger"){:class="img-responsive" style="max-width:60%"}
 
 ## Down the rabbit hole
 

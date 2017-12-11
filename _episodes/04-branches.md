@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Branching and Merging
-teaching: 15
+teaching: 20
 exercises: 15
 questions:
   - How can I or my team work on multiple features in parallel?
@@ -21,20 +21,20 @@ keypoints:
 
 
 ## Introduction
-In the previous section we made guacamole Git style. Our procedure was serial 
-(which is a cool way to say doing one thing after another in a sequence). This 
-sequence of events are depicted in the diagram below. At this point we shall 
-learn few more concepts and terms. The sequences of events depicted as in the 
-diagram is called a “branch”. When there is only one branch and  If we do not 
-rename it, Git assigns the name “master” to it. The latest state of the branch 
-is referred as the “HEAD”. The term HEAD is better explained with the reference 
-to the recording head of the tape recorders (if you are too young to know what 
-this is ask around). So if someone press the record button it will start the 
-recording from where the HEAD is.  At any point of operation a Git repository 
-can have only one HEAD.   
+In the previous section we made guacamole Git style. Our procedure was serial
+(which is a cool way to say doing one thing after another in a sequence). This
+sequence of events are depicted in the diagram below. At this point we shall
+learn few more concepts and terms. The sequences of events depicted as in the
+diagram is called a “branch”. When there is only one branch and  If we do not
+rename it, Git assigns the name “master” to it. The latest state of the branch
+is referred as the “HEAD”. The term HEAD is better explained with the reference
+to the recording head of the tape recorders (if you are too young to know what
+this is ask around). So if someone press the record button it will start the
+recording from where the HEAD is.  At any point of operation a Git repository
+can have only one HEAD.
 
-![Master branch]({{ site.baseurl }}/img/master_branch.svg)
- <img src="/img/master_branch.svg" alt="master_branch" height="400">  
+![Master branch]({{ site.baseurl }}/img/master_branch.svg 
+"master branch"){:class="img-responsive" style="max-width:60%"}
 ---
 
 ## Motivation for branches
@@ -232,9 +232,9 @@ Lets try to produce a visual representation of the branches using git commands.
 
 Try the following :
 `git log --all --graph --decorate --oneline --abbrev-commit`
- 
-This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too 
-long to type. Fortunately Git has solution for this using aliases. 
+
+This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too
+long to type. Fortunately Git has solution for this using aliases.
 
 `git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"`
 
@@ -242,7 +242,7 @@ Next time when we want this we will use the alias
 
 `git graph`
 
-For a table like (sort of) representation you could use the following command instead. 
+For a table like (sort of) representation you could use the following command instead.
 git show-branch
 
 
@@ -274,7 +274,7 @@ $ git merge experiment
 
 ![]({{ site.baseurl }}/img/gitink/git-merge-2.svg)
 
-We can verify the result in the terminal. 
+We can verify the result in the terminal.
 
 ```shell
 

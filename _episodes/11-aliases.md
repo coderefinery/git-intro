@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: Aliases (EXTRA)
+title: Aliases
 teaching: 15
 exercises: 0
 questions:
