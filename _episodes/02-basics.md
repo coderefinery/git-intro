@@ -68,7 +68,12 @@ that file, if you want many files then you should stage them all. As we know jus
 enough to capture the moment, we need to commit our selves to taking the photo by pressing the shoot
 button. In Git, after we stage the files, we commit to it using the command commit. This action is not
 surprisingly called a commit.
- <img src="/git-intro/img/git_stage_commit.svg" alt="Git staging"  width="1000">
+
+
+
+![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
+"git staging and committing"){:class="img-responsive" style="max-width:70%"}
+
 
 What do you think will be the outcome if you stage a file and then edit it and stage it again,do this
 several time and at the end perform a commit ? (think of focusing several scenes and pressing the shoot
@@ -302,7 +307,8 @@ have selected some examples to show how to achieve certain undo tasks, untill we
 learn more in the next sections. The diagram below shows what we did with the
 guacamole recipe and we will see how to undo some changes.
 
- <img src="/git-intro/img/events.svg" alt="Events"  width="800">
+![Git events]({{ site.baseurl }}/img/events.svg
+"git events"){:class="img-responsive" style="max-width:70%"}
 
 ### Change the commit message
 

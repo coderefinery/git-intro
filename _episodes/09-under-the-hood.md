@@ -12,7 +12,8 @@ keypoints:
   - Branches are extremely lightweight.
 ---
 
-<img src="{{ site.baseurl }}/img/stranger.jpg" width="60%">
+![Stranger]({{ site.baseurl }}/img/stranger.jpg
+"stranger"){:class="img-responsive" style="max-width:60%"}
 
 ## Down the rabbit hole
 
