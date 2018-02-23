@@ -83,15 +83,15 @@ Here is another way to view the two-step snapshotting in Git from [the Pro Git b
 
 ## Tracking a guacamole recipe with Git
 
-We will learn how to create a Git repository, how to track changes, and we will also learn how
-to create a delicious guacamole.
+We will learn how to initialize a Git repository, how to track changes, and how
+to make delicious guacamole!
 
 This example is inspired by [Byron Smith](http://blog.byronjsmith.com), for original reference, see
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
 but not everybody may be able to relate to a program written in e.g. Python or another language.
 
-Let us start!
+Let us start.
 One of the basic principles of Git is that it is **easy to create repositories**:
 
 ```shell
@@ -100,7 +100,7 @@ $ cd recipe
 $ git init
 ```
 
-That's it! Now we have created an empty Git repository!
+That's it! We have now created an empty Git repository.
 
 We will use `git status` a lot to check out what is going on:
 
@@ -138,7 +138,7 @@ And one file called `ingredients.txt`, containing:
 
 As mentioned above, in Git you can always check the status of files in your repository using
 `git status`. It is always a safe command to run and in general a good idea to
-do when you are trying to figure what to do next:
+do when you are trying to figure out what to do next:
 
 ```shell
 $ git status
@@ -156,9 +156,9 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The two files are untracked in the repository (the directory). You want to **add the files**
-to the list of files tracked by Git. By default Git does not track
-any files and you need make a conscious decision to add a file. Let's do what
+The two files are untracked in the repository (directory). You want to **add the files** (focus the camera)
+to the list of files tracked by Git. Git does not track
+any files automatically and you need make a conscious decision to add a file. Let's do what
 Git hints at and add the files:
 
 
@@ -178,7 +178,7 @@ Changes to be committed:
 	new file:   instructions.txt
 ```
 
-Now the snapshot is *staged* to be committed (saved).
+Now the snapshot is *staged* and ready to be committed.
 
 Before we make the first commit, let us check the help page for that command:
 
@@ -188,10 +188,10 @@ $ git help commit
 
 You should see a very long help page as the tool is very versatile. Do not
 worry about this now but keep in mind that you can always read the help files
-when in doubt. Googling is also acceptable, but often checking the relevant
-help page is faster and those pages were written by the authors of the
-program and not some random people on the internet. The help pages also work
-when you don't have a network connection.
+when in doubt. Searching online can also be useful, but choosing search terms 
+to find relevant information takes some practice and discussions in some
+online threads may be confusing.
+Note that help pages also work when you don't have a network connection!
 
 Let us now commit the change to the repository:
 
@@ -283,9 +283,13 @@ When you are done committing the changes, experiment with
 ### Optional : difftool
 
 This requires you to install an additional tool called Meld (or any of the following tools;
-opendiff kdiff3 tkdiff xxdiff kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc
-codecompare emerge vimdiff).  How to install and more details : http://meldmerge.org/ on
-Ubuntu sudo apt-get install meld On Windows use the installer from the above site
+opendiff, kdiff3, tkdiff, xxdiff, kompare, gvimdiff, diffuse, diffmerge, ecmerge, p4merge, araxis, bc,
+codecompare, emerge, vimdiff).  [Here is how to install and use Meld](http://meldmerge.org/). 
+In short, on Ubuntu do `sudo apt-get install meld`, while on Windows use the installer from the above site. 
+Meld is not officially supported on MacOSX yet, but can still be installed via pre-built binaries or from MacPorts, 
+Fink or Brew.
+
+Using difftools: 
 
 `git difftool -t <Tool_name> `
 
