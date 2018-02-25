@@ -184,7 +184,7 @@ $ cat ingredients.txt
 * 1 tbsp cilantro
 ```
 
-## Exercise: create a new branch
+## Exercise: branches
 
 - Create another branch called `less-salt`
   where you reduce the amount of salt.
@@ -234,17 +234,20 @@ $ git branch
   master
 ```
 
-Here is a graphical representation of what we have created (do not worry if the commit hashes are different on your laptop):
+### Visualizing branches
+
+Here is a graphical representation of what we have created (the commit hashes will be different on your laptop):
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
 
 Lets try to produce a visual representation of the branches using git commands.
 
-Try the following:
+Try the following
+
 `$ git log --all --graph --decorate --oneline --abbrev-commit`
 
 This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too
-long to type. Fortunately Git has solution for this using aliases.
+long to type. Fortunately Git has a solution for this using aliases:
 
 `$ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"`
 
@@ -253,12 +256,13 @@ Next time when we want this we will use the alias
 `$ git graph`
 
 For a table like (sort of) representation you could use the following command instead.
-git show-branch
+
+`$ git show-branch`
 
 
 ---
 
-## Exercise: merging branches
+## Merging branches
 
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `less-salt`.
@@ -303,7 +307,7 @@ $ git graph  #We defined this alias earlier
 
 To view the branches that are merged we can use the command
 
-`git branch --merged `
+`$ git branch --merged `
 
 Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
 without us merging it manually**:
@@ -329,7 +333,7 @@ changes into the merged file. If the changes overlap then the user has to
 manually *settle merge conflicts* (we will do that later).
 
 
-### Questions
+### Exercise: merge `experiment` into `master`
 
 - How do the ingredients look on `master`?
 - What do you expect to happen when you merge `experiment` into `master` (draw the result first)?
@@ -348,7 +352,7 @@ manually *settle merge conflicts* (we will do that later).
 <br>
 <br>
 
-This is the result - discuss it:
+This is the result - discuss it with people around you:
 
 ![]({{ site.baseurl }}/img/gitink/git-merge-3.svg)
 
@@ -384,10 +388,7 @@ Both are fine, the resulting code is the same, not the history:
 
 ![]({{ site.baseurl }}/img/gitink/no-ff.svg)
 
-It is a matter of taste or convention. This is where we introduce an important
-tool:
-
-- think of your version history as telling a story
+It is a matter of taste or convention. 
 
 ---
 
@@ -402,11 +403,11 @@ $ git merge less-salt
 
 ![]({{ site.baseurl }}/img/gitink/git-merge-4.svg)
 
-Now that we are happy with the work we did in the branch and the branch it is
-time to delete the feature branches:
+Now that we are happy with the work we did in the branches, and 
+they have been merged into `master`, it is time to delete them:
 
 ```shell
-$ git branch -d experimental
+$ git branch -d experiment
 $ git branch -d less-salt
 ```
 
