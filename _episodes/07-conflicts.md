@@ -243,6 +243,12 @@ The repository looks exactly as it was before the merge.
 
 ---
 
+## Exercise: Resolve the conflict 
+
+- Use one of the methods described above to resolve the cilantro conflict
+
+---
+
 ## Avoiding conflicts
 
 - Conflicts can be avoided if you think and talk with your colleagues before committing.
