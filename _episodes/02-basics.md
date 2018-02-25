@@ -34,7 +34,7 @@ located in the directory which has been put under Git version control.
 
 - All the magic is under `.git`: all the history, all snapshot, all branches, everything
 - When staging and committing files, we "copy" them into `.git`
-- One file or track entire file trees can be tracked
+- One file or entire file trees can be tracked
 - Git does not pollute subdirectories
 - If we remove `.git`, we remove the repository (but keep the working directory!)
 - It is very easy to create a Git repository to track something that you work on
@@ -59,7 +59,7 @@ It is useful to have a mental model of how Git operates before jumping in to the
 
 > Image from [the Pro Git book](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
 
-## Recording a snapshot
+### Recording a snapshot
 
 Git takes snapshots only if we request it. When taking a photo with a camera, we first focus on what we want to 
 capture and shoot. Similarly, taking a Git snapshot is a two step process. 
@@ -73,7 +73,7 @@ capture and shoot. Similarly, taking a Git snapshot is a two step process.
 "git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
 
-What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
+- What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
 several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
 button only at the end)
 
@@ -301,15 +301,16 @@ To use Meld
 
 ## Undoing things
 
-We have been advocating about how it is possible to use Git to go back to any
-historical version and start over. In this section we will learn some basics
-about this. Before we begin please be warned that some commands discussed here
-will result in permanent data loss and should be used with prudence. As we
-discussed Git preserves snapshots of folder content rather than history of files
-and it is difficult to go into details on how navigation between snapshots takes
-place in a basic course.  So instead of trying to explain details,here we
-have selected some examples to show how to achieve certain undo tasks, untill we
-learn more in the next sections. The diagram below shows what we did with the
+As emphasized above, Git can go back to any historical version of tracked files.
+In this section we will learn the basics of the available methods.
+In general, almost all Git actions *add* data and it's difficult to do anything
+undoable or to remove data permanently.
+However, please be warned that *some* commands discussed below
+will result in permanent data loss and should be used with caution. 
+
+Without going into technical details, we will have a look at
+selected examples to show how to undo or modify certain tasks. 
+The diagram below shows what we did with the
 guacamole recipe and we will see how to undo some changes.
 
 ![Git events]({{ site.baseurl }}/img/events.svg
@@ -328,11 +329,11 @@ issue the following command
 
 This will give you a chance to edit the commit message.
 
-Effect :The new commit will replace the old one. It’s as if the previous commit
-never happened, and it won’t show up in your repository history.
+**Effect**: The new commit will replace the old one. It's as if the previous commit
+never happened, and it won't show up in your repository history.
 
 ### Unstage a file.
-We will edit the instructions.txt file to remove the text “enjoy!”. Then stage
+We will edit the `instructions.txt` file to remove the text "enjoy!". Then stage
 it. Then we want to unstage it so we can edit it more before committing.
 
 Open the file  instructions.txt file and remove the line “enjoy !”
@@ -345,6 +346,9 @@ git reset instructions.txt
 git status # will show the file as unstaged
 ```
 
+**Effect**: `instructions.txt` gets unstaged (reverting the `git add` command), but our change is still there and we can keep
+working.)
+
 ### Un-modify a file.
 Let’s say we want to get rid of the changes we did to the  instructions.txt file.
 
@@ -352,10 +356,10 @@ Let’s say we want to get rid of the changes we did to the  instructions.txt fi
 git checkout instructions.txt
 ```
 
-This will replace the current version with the last committed version. This action
+**Effect**: This will replace the current version with the last committed version. This action
 will result in loss of all the edits after the last commit and can not be undone.
 
-There are much more to discuss on undoing things and we leave them for later until we
+There is much more to discuss on undoing things and we leave them for later after we
 learn about branches.
 
 ## Exercise: undo unstaged changes
@@ -369,16 +373,13 @@ learn about branches.
 
 Indeed, Git lets you do marvelous things with history. This is all fine and well as
 long as you are modifying commits that you are not sharing with others. When
-you start collaborating with other people it is considered very bad form and
+you start collaborating with other people it
 will cause a lot of grief to others if you change things that are already
 public and have been used.
 
-In short: **if you change commits that other people depend on, you will lose friends and
-social contacts!**
+In short: **if you change commits that other people depend on, you will lose friends!**
 
-In other words: **changing history is best left to expert time travelers.**
-
-More in this after we learn git remotes.
+More in this after we learn Git remotes.
 
 ### Questions
 
@@ -485,7 +486,7 @@ An example taken from [documentation](https://git-scm.com/docs/gitignore):
 build/
 ```
 
-You can have `.gitignore` files in lower level directories and they effect the paths
+You can have `.gitignore` files in lower level directories and they affect the paths
 relatively.
 
 
