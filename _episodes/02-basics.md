@@ -21,76 +21,77 @@ keypoints:
   - Git uses the .git folder to store the snapshots.
 ---
 
-## What is Git and what exactly is a Git repository ?
+## What is Git, and what exactly is a Git repository?
 
-Git is used to track the content of a folder as they are changed overtime. This could be files
-in a folder or files in one of the sub-folders. When a file is under the Git tracking, it is
-possible to go back to any historical version of that file. More precisely, back to any version
-of the file which we asked Git to keep a record of. As this is a navigation between versions we
-refer to Git as a version control system. Git need to maintain records to provide this
-time-travel functionality. These records and associated information are called a Git repository.
-The Git repository it self is a set of files and kept inside a sub-folder called ".git".
+Git is used to track the content of a folder as it changes over time. When a file is tracked by Git, it is
+possible to go back to any historical version of that file. More precisely, one can go back to any version
+of the file which Git was told to keep a record of. Git is thus a *version control system*. 
 
-- All the magic is under `.git`, all the history, all snapshot, all branches (later), everything.
-- When we staged and committed files, we "copied" them into `.git`.
-- Here we only track one file but we can track entire file trees.
-- Git does not pollute subdirectories.
-- If we remove `.git`, we remove the repository (but of course keep the working directory).
-- It is very easy to create (and remove) a Git repository to track something that you work on.
-- `.git` uses relative paths (very convenient), you can move the whole thing somewhere else
-  and it will still work.
+For this time-travelling to work, Git needs to maintain records 
+of all changes. These records and some associated information are what make up a Git repository.
+The Git repository itself is a set of files kept inside a sub-folder called ".git"
+located in the directory which has been put under Git version control.
+
+- All the magic is under `.git`: all the history, all snapshot, all branches, everything
+- When staging and committing files, we "copy" them into `.git`
+- One file or track entire file trees can be tracked
+- Git does not pollute subdirectories
+- If we remove `.git`, we remove the repository (but keep the working directory!)
+- It is very easy to create a Git repository to track something that you work on
+- `.git` uses relative paths - you can move the whole thing somewhere else and it will still work
 
 ---
 
 
-## How Git operates and some terms.
-Lets have an simplified overview on how Git operates before we jump in to our example. We said
-that Git can navigate back to an older version of a file using the information stored in the
-git-repository. In operational point of view, what Git actually does is to take the folder where
-the file reside back in time to the point where the file had the composition we requested.  We call
-this point a snapshot. This means that if some other file has a different composition in addition
-to our files of interest at this snapshot, we will loose the modifications done to that file as
-well. The following diagram from https://git-scm.com illustrated this point
+## A mental model of Git
+
+It is useful to have a mental model of how Git operates before jumping in to the first example.
+
+- Many version control systems store information as a list of file-based changes 
+  - a set of files and the changes made to each file over time 
+- Git instead thinks of its data more like a stream of snapshots 
+  - for every *commit* (when the state of a project is saved), Git takes a picture (snapshot) of what all files look like at that moment and stores a reference to that snapshot
+  - if some files have not changed, Git just stores a link to the previous identical file it has already stored
+  - it's possible to take a particular file back in time to a previous snapshot, but by default all other files will be taken back in time as well
 
 ![Git snapshots]({{ site.baseurl }}/img/snapshots.png
 "git as a filesystem"){:class="img-responsive"}
 
-In the diagram, we start with 3 files A,B and C in the same folder. The files A and C are modified
-in version 2 (second snapshot) and file B stays the same. Lets say we are in the fifth snapshot and
-we request Git to go back to the third snapshot with the intention of getting A1 version of the file A.
-Then we will end up with A1,C1(loose one edit) and unmodified B (loose both edits).
+> Image from [the Pro Git book](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
 
 ## Recording a snapshot
-Git takes snapshots only if we request it. Requesting a snapshot is a two step process, just as we
-take a snap with a camera, first we focus on what we want to catch then shoot. The focusing equivalent
-of Git is called staging. If you want to include changes to a file in a snapshot then you should stage
-that file, if you want many files then you should stage them all. As we know just focusing is not
-enough to capture the moment, we need to commit our selves to taking the photo by pressing the shoot
-button. In Git, after we stage the files, we commit to it using the command commit. This action is not
-surprisingly called a commit.
 
-
+Git takes snapshots only if we request it. When taking a photo with a camera, we first focus on what we want to 
+capture and shoot. Similarly, taking a Git snapshot is a two step process. 
+- The focusing equivalent in Git is called *staging* 
+  - if you want to include changes to a file in a snapshot then you should stage that file 
+  - if you want many files then you should stage them all 
+- The shooting equivalent Git is called a *commit*
+  - this stores the snapshot to Git history
 
 ![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
 "git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
 
-What do you think will be the outcome if you stage a file and then edit it and stage it again,do this
-several time and at the end perform a commit ? (think of focusing several scenes and pressing the shoot
-button only at the end!)
+What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
+several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
+button only at the end)
 
+Here is another way to view the two-step snapshotting in Git from [the Pro Git book](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics).
+![Git staging]({{ site.baseurl }}/img/file_states_2.png
+"git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
 ## Tracking a guacamole recipe with Git
 
-We will learn how to create a Git repository, how to track changes, and we will also learn how
-to create a delicious guacamole.
+We will learn how to initialize a Git repository, how to track changes, and how
+to make delicious guacamole!
 
 This example is inspired by [Byron Smith](http://blog.byronjsmith.com), for original reference, see
 [this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
 The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
 but not everybody may be able to relate to a program written in e.g. Python or another language.
 
-Let us start!
+Let us start.
 One of the basic principles of Git is that it is **easy to create repositories**:
 
 ```shell
@@ -99,7 +100,7 @@ $ cd recipe
 $ git init
 ```
 
-That's it! Now we have created an empty Git repository!
+That's it! We have now created an empty Git repository.
 
 We will use `git status` a lot to check out what is going on:
 
@@ -137,7 +138,7 @@ And one file called `ingredients.txt`, containing:
 
 As mentioned above, in Git you can always check the status of files in your repository using
 `git status`. It is always a safe command to run and in general a good idea to
-do when you are trying to figure what to do next:
+do when you are trying to figure out what to do next:
 
 ```shell
 $ git status
@@ -155,9 +156,9 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The two files are untracked in the repository (the directory). You want to **add the files**
-to the list of files tracked by Git. By default Git does not track
-any files and you need make a conscious decision to add a file. Let's do what
+The two files are untracked in the repository (directory). You want to **add the files** (focus the camera)
+to the list of files tracked by Git. Git does not track
+any files automatically and you need make a conscious decision to add a file. Let's do what
 Git hints at and add the files:
 
 
@@ -177,7 +178,7 @@ Changes to be committed:
 	new file:   instructions.txt
 ```
 
-Now the snapshot is *staged* to be committed (saved).
+Now the snapshot is *staged* and ready to be committed.
 
 Before we make the first commit, let us check the help page for that command:
 
@@ -187,10 +188,10 @@ $ git help commit
 
 You should see a very long help page as the tool is very versatile. Do not
 worry about this now but keep in mind that you can always read the help files
-when in doubt. Googling is also acceptable, but often checking the relevant
-help page is faster and those pages were written by the authors of the
-program and not some random people on the internet. The help pages also work
-when you don't have a network connection.
+when in doubt. Searching online can also be useful, but choosing search terms 
+to find relevant information takes some practice and discussions in some
+online threads may be confusing.
+Note that help pages also work when you don't have a network connection!
 
 Let us now commit the change to the repository:
 
@@ -282,9 +283,13 @@ When you are done committing the changes, experiment with
 ### Optional : difftool
 
 This requires you to install an additional tool called Meld (or any of the following tools;
-opendiff kdiff3 tkdiff xxdiff kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc
-codecompare emerge vimdiff).  How to install and more details : http://meldmerge.org/ on
-Ubuntu sudo apt-get install meld On Windows use the installer from the above site
+opendiff, kdiff3, tkdiff, xxdiff, kompare, gvimdiff, diffuse, diffmerge, ecmerge, p4merge, araxis, bc,
+codecompare, emerge, vimdiff).  [Here is how to install and use Meld](http://meldmerge.org/). 
+In short, on Ubuntu do `sudo apt-get install meld`, while on Windows use the installer from the above site. 
+Meld is not officially supported on MacOSX yet, but can still be installed via pre-built binaries or from MacPorts, 
+Fink or Brew.
+
+Using difftools: 
 
 `git difftool -t <Tool_name> `
 
