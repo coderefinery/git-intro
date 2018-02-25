@@ -24,12 +24,12 @@ keypoints:
 In the previous section we made guacamole Git style. Our procedure was serial
 (which is a cool way to say doing one thing after another in a sequence). This
 sequence of events are depicted in the diagram below. At this point we shall
-learn few more concepts and terms. The sequences of events depicted as in the
-diagram is called a “branch”. When there is only one branch and  If we do not
+learn few more concepts and terms. The sequence of events depicted in the
+diagram is called a “branch”. When there is only one branch and if we do not
 rename it, Git assigns the name “master” to it. The latest state of the branch
 is referred as the “HEAD”. The term HEAD is better explained with the reference
-to the recording head of the tape recorders (if you are too young to know what
-this is ask around). So if someone press the record button it will start the
+to the recording head of tape recorders (if you are too young to know what
+this is ask around). So if someone presses the record button it will start the
 recording from where the HEAD is.  At any point of operation a Git repository
 can have only one HEAD.
 
@@ -40,7 +40,7 @@ can have only one HEAD.
 ## Motivation for branches
 
 
-Up until now our repository has only had one branch with one commit coming
+Up until now our repository had only one branch with one commit coming
 after the other:
 
 ![Linear]({{ site.baseurl }}/img/gitink/git-branch-1.svg "Linear git
@@ -67,7 +67,7 @@ To enable collaborative work we wish to do something more like:
 "description"){:class="img-responsive"}
 
 - We see branching points and merging points.
-- As we said before, often we call the main line development `master` as this is what Git uses as defualt.
+- As we said before, often we call the main line development `master` as this is what Git uses as default.
 - Other than this convention there is nothing special about `master`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
@@ -75,10 +75,6 @@ A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it is useful to think that a branch
 tells the story of a feature, e.g. "new login workflow" or "fixing bug in
 matrix inversion algorithm".
-
-Version control can be thought as people creating a common story with code to
-back the story up.  Different groups have different practices of how they
-craft their story and especially how they want it to look like after the fact.
 
 ---
 
@@ -165,23 +161,37 @@ and how to remove them afterwards.
 
 ---
 
-## Exercise: creating and working with branches
+## Creating and working with branches
 
-- Create a branch called `experiment` where you experiment adding
-  cilantro to `ingredients.txt` (if you don't like cilantro, you can add
-  another ingredient).
-- Create another branch called `less-salt`
-  where you reduce the amount of salt.
-- Make sure you create both branches from the `master` branch.
-- Commit your changes to the respective branches.
-
-Use the following 3 commands:
+Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
 ```shell
 $ git branch experiment    # create branch called "experiment" pointing to the present commit
 $ git checkout experiment  # switch to branch "experiment"
 $ git branch               # list all local branches and show on which branch we are
 ```
+
+- The branch is created from the `master` branch.
+- We commit our changes to this branch.
+
+```shell
+$ cat ingredients.txt
+
+* 2 avocados
+* 1 lime
+* 1 tsp salt
+* 1/2 onion
+* 1 tbsp cilantro
+```
+
+## Exercise: create a new branch
+
+- Create another branch called `less-salt`
+  where you reduce the amount of salt.
+- **Make sure you create the branch from the `master` branch.**
+- Commit your changes to the `less-salt` branch.
+
+Use the same commands as we used above.
 
 Once you have committed your changes, try:
 
@@ -230,17 +240,17 @@ Here is a graphical representation of what we have created (do not worry if the 
 
 Lets try to produce a visual representation of the branches using git commands.
 
-Try the following :
-`git log --all --graph --decorate --oneline --abbrev-commit`
+Try the following:
+`$ git log --all --graph --decorate --oneline --abbrev-commit`
 
 This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too
 long to type. Fortunately Git has solution for this using aliases.
 
-`git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"`
+`$ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"`
 
 Next time when we want this we will use the alias
 
-`git graph`
+`$ git graph`
 
 For a table like (sort of) representation you could use the following command instead.
 git show-branch
