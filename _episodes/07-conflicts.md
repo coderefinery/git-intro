@@ -139,6 +139,8 @@ Git inserted resolution markers (the `<<<<<<<`, `>>>>>>>`, and `=======`).
 Try also `git diff`:
 
 ```
+$ git diff
+
 diff --cc ingredients.txt
 index 10eed42,5550d6d..0000000
 --- a/ingredients.txt
