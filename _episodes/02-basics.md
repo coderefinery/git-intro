@@ -306,7 +306,7 @@ To use Meld
 As emphasized above, Git can go back to any historical version of tracked files.
 In this section we will learn the basics of the available methods.
 In general, almost all Git actions *add* data and it's difficult to do anything
-undoable or to remove data permanently.
+irreversible or to remove data permanently.
 However, please be warned that *some* commands discussed below
 will result in permanent data loss and should be used with caution. 
 
@@ -352,7 +352,7 @@ git status # will show the file as unstaged
 working.)
 
 ### Un-modify a file.
-Let’s say we want to get rid of the changes we did to the  instructions.txt file.
+Let’s say we want to get rid of the changes we did to the `instructions.txt` file.
 
 ```shell
 git checkout instructions.txt
@@ -440,7 +440,7 @@ fixed an important bug for contracted basis sets
 
 ### Commit with preview of changes
 
-It is possible to see the changes being commited
+It is possible to see the changes being committed
 
 ```shell
 git commit -v
