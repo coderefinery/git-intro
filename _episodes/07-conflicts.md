@@ -50,6 +50,8 @@ $ git show-branch
 On the branch `like-cilantro` I have the following change:
 
 ```
+$ git diff master..like-cilantro
+
 diff --git a/ingredients.txt b/ingredients.txt
 index 27a808c..5550d6d 100644
 --- a/ingredients.txt
@@ -65,6 +67,8 @@ index 27a808c..5550d6d 100644
 And on the branch `dislike-cilantro` we have the following change:
 
 ```
+$ git diff master..dislike-cilantro
+
 diff --git a/ingredients.txt b/ingredients.txt
 index 27a808c..10eed42 100644
 --- a/ingredients.txt
