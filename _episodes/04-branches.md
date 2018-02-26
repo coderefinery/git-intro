@@ -486,15 +486,25 @@ hashes).
 
 The difference between a branch and a tag is that a branch pointer moves
 forward as we add commits, whereas a tag should always **point to the same
-commit**.
-
-We use tags to record particular states or milestones of a project at a given
+commit**. We use tags to record particular states or milestones of a project at a given
 point in time, like for instance versions (have a look at [semantic
 versioning](http://semver.org)).
 
 There are two basic types of tags: annotated and lightweight. **Use annotated
 tags** since they contain the author and can be cryptographically signed using
 GPG, timestamped and a message attached.
+
+Let's add an annotated tag to our current state of the guacamole recipe:
+
+```shell
+$ git tag -a nobel-2017 -m "recipe I made for the 2017 Nobel banquet"
+```
+
+As you may have found out already, `git show` is a very versatile command. Try this:
+
+```shell
+$ git show nobel-2017
+```
 
 For more information about tags see for example
 [the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
