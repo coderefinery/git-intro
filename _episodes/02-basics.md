@@ -275,10 +275,12 @@ changes you made. This message is your chance to explain what you've done and
 convince others (and your future self) that the changes you made were
 justified.  Write a message and save and close the file.
 
-When you are done committing the changes, experiment with
-`git log`,
-`git show`, and
-`git diff`.
+When you are done committing the changes, experiment with these commands:
+```shell
+$ git log    # show commit logs
+$ git show   # show various types of objects
+$ git diff   # show changes
+```
 
 ### Optional : difftool
 
