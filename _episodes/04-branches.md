@@ -56,8 +56,8 @@ However, software development is often not linear:
   - Interrupted work (we typically work on several longer term projects at the
     same time).
 
-The strength of version control is that it permits the developers to **isolate
-different tracks of work**. Developers can work on different things and merge
+The strength of version control is that it permits the researcher to **isolate
+different tracks of work**. Researchers can work on different things and merge
 the changes they made to the source code files afterwards to create a composite
 version that contains both the changes.
 
