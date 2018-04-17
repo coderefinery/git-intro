@@ -299,6 +299,10 @@ To use Meld
 
  `git difftool -t meld -y`
 
+![Git events]({{ site.baseurl }}/img/meld.png
+"git events"){:class="img-responsive" style="max-width:70%"}
+
+
 ---
 
 ## Undoing things
