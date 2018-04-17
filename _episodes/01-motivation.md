@@ -104,6 +104,7 @@ MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
 - Many platforms build on top of [GitHub](https://github.com).
 - Sharing software and data is getting popular and required in research context
   and [GitHub](https://github.com) is a popular platform for sharing software.
+- Can start using now, no need to configure a server 
 - *"Git is a four-handle, dual boiler espresso machine, not instant coffee."* [citation needed]
 
 ---
