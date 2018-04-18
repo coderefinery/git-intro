@@ -255,11 +255,6 @@ Next time when we want this we will use the alias
 
 `$ git graph`
 
-For a table like (sort of) representation you could use the following command instead.
-
-`$ git show-branch`
-
-
 ---
 
 ## Merging branches

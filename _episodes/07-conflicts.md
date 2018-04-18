@@ -33,18 +33,10 @@ There are several ways to do that as we will see.
 - Create two branches from `master`.
 - On the two branches make **different modifications** to the amount of the **same ingredient**.
 
-These are my modifications:
+To view the modifications:
 
 ```shell
-$ git show-branch
-
-* [dislike-cilantro] please no cilantro
- ! [like-cilantro] more cilantro please
-  ! [master] Merge branch 'experiment' into less-salt
----
-*   [dislike-cilantro] please no cilantro
- +  [like-cilantro] more cilantro please
---- [master] Merge branch 'experiment' into less-salt
+$ git graph
 ```
 
 On the branch `like-cilantro` I have the following change:
