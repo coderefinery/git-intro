@@ -375,6 +375,33 @@ learn about branches.
 - Undo the unstaged changes with `git checkout ingredients.txt`.
 - Inspect the new situation with `git status` and `git diff`.
 
+
+## Different meanings of "checkout"
+
+In Git the command "checkout" updates files in the working tree. However, depending on the context it is used, the way the changes are made are different. For example it it could switch to a different branch to get the versions of all the file corresponding to that branch, or it could retrieve a different version of a single file, while everything else is kept unchanged.   
+
+Some examples;
+
+Switch to the less-salt branch
+```shell
+git checkout less-salt
+```
+Create a new branch called new_branch and switch to it,  all in one go.
+```shell
+git checkout -b new_branch
+```
+Rather than checking out a branch to work on it, check out a commit for inspection and discardable experiments.
+```shell
+git checkout --detach
+```
+Revert back to the last commited version of a file (lose all uncommitted changes), earlier in the lesson we got rid of the changes to the instructions.txt file using the following command
+```shell
+git checkout instructions.txt
+```
+
+
+
+
 ## Be considerate when modifying committed changes
 
 Indeed, Git lets you do marvelous things with history. This is all fine and well as
