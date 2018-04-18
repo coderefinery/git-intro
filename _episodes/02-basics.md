@@ -370,7 +370,7 @@ learn about branches.
 
 ## Exercise: undo unstaged changes
 
-- Make some silly changes to `ingredients.txt` (e.g. add liquorice).
+- Make some changes to `ingredients.txt` (e.g. add liquorice).
 - Inspect the changes with `git status` and `git diff`.
 - Undo the unstaged changes with `git checkout ingredients.txt`.
 - Inspect the new situation with `git status` and `git diff`.
