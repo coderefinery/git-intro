@@ -34,7 +34,7 @@ There are several ways to do that as we will see.
 - On the two branches make **different modifications** to the amount of the **same ingredient**.
 
 To view the modifications:
-
+**Note that we are using an Git alias called 'graph' we defined in ealier in our branches lesson**.
 ```shell
 $ git graph
 ```
