@@ -299,6 +299,10 @@ To use Meld
 
  `git difftool -t meld -y`
 
+![Git events]({{ site.baseurl }}/img/meld.png
+"git difftool meld"){:class="img-responsive" style="max-width:70%"}
+
+
 ---
 
 ## Undoing things
@@ -366,10 +370,39 @@ learn about branches.
 
 ## Exercise: undo unstaged changes
 
-- Make some silly changes to `ingredients.txt` (e.g. add liquorice).
+- Make some changes to `ingredients.txt` (e.g. add liquorice).
 - Inspect the changes with `git status` and `git diff`.
 - Undo the unstaged changes with `git checkout ingredients.txt`.
 - Inspect the new situation with `git status` and `git diff`.
+
+
+## Different meanings of "checkout"
+
+In Git the command "checkout" updates files in the working tree. However, depending on the context it is used, the way the changes are made are different. For example it it could switch to a different branch to get the versions of all the file corresponding to that branch, or it could retrieve a different version of a single file, while everything else is kept unchanged.   
+
+Some examples;
+
+Switch to the less-salt branch
+```shell
+git checkout less-salt
+```
+Create a new branch called new_branch and switch to it,  all in one go.
+```shell
+git checkout -b new_branch
+```
+Inspect the version of a file in an older commit, using the commit hash
+```shell
+git checkout <HASH>
+e.g.
+git checkout 9c6c84e
+```
+Revert back to the last commited version of a file (lose all uncommitted changes), earlier in the lesson we got rid of the changes to the instructions.txt file using the following command
+```shell
+git checkout instructions.txt
+```
+
+
+
 
 ## Be considerate when modifying committed changes
 
