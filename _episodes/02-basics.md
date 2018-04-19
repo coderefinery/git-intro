@@ -390,9 +390,11 @@ Create a new branch called new_branch and switch to it,  all in one go.
 ```shell
 git checkout -b new_branch
 ```
-Rather than checking out a branch to work on it, check out a commit for inspection and discardable experiments.
+Inspect the version of a file in an older commit, using the commit hash
 ```shell
-git checkout --detach
+git checkout <HASH>
+e.g.
+git checkout 9c6c84e
 ```
 Revert back to the last commited version of a file (lose all uncommitted changes), earlier in the lesson we got rid of the changes to the instructions.txt file using the following command
 ```shell
