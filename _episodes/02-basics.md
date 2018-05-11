@@ -299,6 +299,9 @@ To use Meld
 
  `git difftool -t meld -y`
 
+*Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
+i.e. the above command will just return a new line and nothing will happen. 
+
 ![Git events]({{ site.baseurl }}/img/meld.png
 "git difftool meld"){:class="img-responsive" style="max-width:70%"}
 
@@ -346,6 +349,7 @@ Open the file  instructions.txt file and remove the line “enjoy !”
 
 ```shell
 git status # to confirm what has changed
+git diff #to view what was changed
 git add instructions.txt # stage it
 git status # to confirm what has staging
 git reset instructions.txt
@@ -359,7 +363,9 @@ working.)
 Let’s say we want to get rid of the changes we did to the `instructions.txt` file.
 
 ```shell
+git diff #To view the differences
 git checkout instructions.txt
+git status # To view the effect on the status
 ```
 
 **Effect**: This will replace the current version with the last committed version. This action
