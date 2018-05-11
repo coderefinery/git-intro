@@ -363,7 +363,9 @@ working.)
 Let’s say we want to get rid of the changes we did to the `instructions.txt` file.
 
 ```shell
+git diff #To view the differences
 git checkout instructions.txt
+git status # To view the effect on the status
 ```
 
 **Effect**: This will replace the current version with the last committed version. This action
