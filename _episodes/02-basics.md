@@ -349,6 +349,7 @@ Open the file  instructions.txt file and remove the line “enjoy !”
 
 ```shell
 git status # to confirm what has changed
+git diff #to view what was changed
 git add instructions.txt # stage it
 git status # to confirm what has staging
 git reset instructions.txt
