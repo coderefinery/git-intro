@@ -299,6 +299,9 @@ To use Meld
 
  `git difftool -t meld -y`
 
+*Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
+i.e. the above command will just return a new line and nothing will happen. 
+
 ![Git events]({{ site.baseurl }}/img/meld.png
 "git difftool meld"){:class="img-responsive" style="max-width:70%"}
 
