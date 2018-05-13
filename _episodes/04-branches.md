@@ -186,9 +186,9 @@ $ cat ingredients.txt
 
 ## Exercise: branches
 
+- Change to the branch Master (**Make sure you create the branch from the `master` branch.**)
 - Create another branch called `less-salt`
   where you reduce the amount of salt.
-- **Make sure you create the branch from the `master` branch.**
 - Commit your changes to the `less-salt` branch.
 
 Use the same commands as we used above.
