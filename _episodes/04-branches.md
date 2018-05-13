@@ -172,7 +172,8 @@ $ git branch               # list all local branches and show on which branch we
 ```
 
 - The branch is created from the `master` branch.
-- We commit our changes to this branch.
+- We commit our changes to this branch. 
+- Stage this and commit it with the message "let us try with some cilantro"
 
 ```shell
 $ cat ingredients.txt
@@ -181,8 +182,9 @@ $ cat ingredients.txt
 * 1 lime
 * 1 tsp salt
 * 1/2 onion
-* 1 tbsp cilantro
+* 2 tbsp cilantro
 ```
+- Edit ingredients.txt, to reduce the amount of cilantro to 1 tbsp. Stage this and commit it with the message "maybe little bit less cilantro"
 
 ## Exercise: branches
 
