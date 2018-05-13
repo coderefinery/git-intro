@@ -94,7 +94,7 @@ commit 7f3582dfbad6539cfa60f5b21bfad41d1b58a618
 Author: Radovan Bast <bast@users.noreply.github.com>
 Date:   Fri May 5 12:49:45 2017 +0200
 
-    do not forget to enjoy
+    enjoy!
 
  instructions.txt | 1 +
  1 file changed, 1 insertion(+)
