@@ -292,19 +292,20 @@ Meld is not officially supported on MacOSX yet, but can still be installed via p
 Fink or Brew.
 
 Using difftools: 
+```
+$ git difftool -t <Tool_name>
+```
 
-`git difftool -t <Tool_name> `
+To use Meld:
+```
+$ git difftool -t meld -y
+```
 
-To use Meld
-
- `git difftool -t meld -y`
-
-*Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
+Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
 i.e. the above command will just return a new line and nothing will happen. 
 
 ![Git events]({{ site.baseurl }}/img/meld.png
 "git difftool meld"){:class="img-responsive" style="max-width:70%"}
-
 
 ---
 
@@ -334,7 +335,7 @@ issue the following command. Please note that you should not do this if you
 have already pushed to a remote repository (will learn later).
 
 ```shell
- git commit --amend
+$ git commit --amend
 ```
 
 This will give you a chance to edit the commit message.
@@ -349,12 +350,12 @@ it. Then we want to unstage it so we can edit it more before committing.
 Open the file  instructions.txt file and remove the line “enjoy !”
 
 ```shell
-git status # to confirm what has changed
-git diff #to view what was changed
-git add instructions.txt # stage it
-git status # to confirm what has staging
-git reset instructions.txt
-git status # will show the file as unstaged
+$ git status                # to confirm what has changed
+$ git diff                  # to view what was changed
+$ git add instructions.txt  # stage it
+$ git status                # to confirm what has staging
+$ git reset instructions.txt
+$ git status                # will show the file as unstaged
 ```
 
 **Effect**: `instructions.txt` gets unstaged (reverting the `git add` command), but our change is still there and we can keep
@@ -364,9 +365,9 @@ working.)
 Let’s say we want to get rid of the changes we did to the `instructions.txt` file.
 
 ```shell
-git diff #To view the differences
-git checkout instructions.txt
-git status # To view the effect on the status
+$ git diff #To view the differences
+$ git checkout instructions.txt
+$ git status # To view the effect on the status
 ```
 
 **Effect**: This will replace the current version with the last committed version. This action
@@ -391,25 +392,24 @@ Some examples;
 
 Switch to the less-salt branch
 ```shell
-git checkout less-salt
+$ git checkout less-salt
 ```
 Create a new branch called new_branch and switch to it,  all in one go.
 ```shell
-git checkout -b new_branch
+$ git checkout -b new_branch
 ```
 Inspect the version of a file in an older commit, using the commit hash
 ```shell
-git checkout <HASH>
+$ git checkout <HASH>
+```
 e.g.
-git checkout 9c6c84e
+```shell
+$ git checkout 9c6c84e
 ```
 Revert back to the last commited version of a file (lose all uncommitted changes), earlier in the lesson we got rid of the changes to the instructions.txt file using the following command
 ```shell
-git checkout instructions.txt
+$ git checkout instructions.txt
 ```
-
-
-
 
 ## Be considerate when modifying committed changes
 
@@ -430,9 +430,7 @@ More in this after we learn Git remotes.
 - What situations would justify to modify the Git history and possibly remove commits?
 - Is it OK to modify commits that nobody has seen yet?
 
-
 ---
-
 
 ## Git best-practices
 
@@ -483,9 +481,8 @@ fixed an important bug for contracted basis sets
 It is possible to see the changes being committed
 
 ```shell
-git commit -v
+$ git commit -v
 ```
-
 
 ### Ignoring files and paths with .gitignore
 
@@ -576,6 +573,3 @@ $ git rm      # remove tracked files
 
 Git is not ideal for large binary files
 (for this consider [http://git-annex.branchable.com](http://git-annex.branchable.com)).
-
----
-
