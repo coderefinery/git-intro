@@ -231,10 +231,10 @@ $ git commit
 - Or it is a conflict that you cannot resolve and only your colleague knows
   which version is the one to keep.
 - There is no reason to panic and delete the whole repository.
-- Simply reset the repository to `HEAD` (last committed state).
+- Simply undo the commit and go home.
 
 ```shell
-$ git reset --hard HEAD  # throws away everything that is not in HEAD
+$ git merge --abort  # undo the merge step
 ```
 
 The repository looks exactly as it was before the merge.

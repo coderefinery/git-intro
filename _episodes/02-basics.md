@@ -329,8 +329,9 @@ guacamole recipe and we will see how to undo some changes.
 
 The comment we added in the last stage (3) had the message “added enjoy”.
 Immediately after we committed and  before any file has been changed we want to
-change this message to include your name as the author.  To achieve this we
-issue the following command
+change this message to "do not forget to enjoy".  To achieve this we
+issue the following command. Please note that you should not do this if you
+have already pushed to a remote repository (will learn later).
 
 ```shell
  git commit --amend
