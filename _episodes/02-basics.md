@@ -292,14 +292,16 @@ Meld is not officially supported on MacOSX yet, but can still be installed via p
 Fink or Brew.
 
 Using difftools: 
+```
+$ git difftool -t <Tool_name>
+```
 
-`git difftool -t <Tool_name> `
+To use Meld:
+```
+$ git difftool -t meld -y
+```
 
-To use Meld
-
- `git difftool -t meld -y`
-
-*Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
+Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
 i.e. the above command will just return a new line and nothing will happen. 
 
 ![Git events]({{ site.baseurl }}/img/meld.png
