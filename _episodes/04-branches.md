@@ -35,10 +35,10 @@ can have only one HEAD.
 
 ![Master branch]({{ site.baseurl }}/img/master_branch.svg 
 "master branch"){:class="img-responsive" style="max-width:60%"}
+
 ---
 
 ## Motivation for branches
-
 
 Up until now our repository had only one branch with one commit coming
 after the other:
@@ -246,16 +246,22 @@ Lets try to produce a visual representation of the branches using git commands.
 
 Try the following
 
-`$ git log --all --graph --decorate --oneline --abbrev-commit`
+```shell
+$ git log --all --graph --decorate --oneline --abbrev-commit
+```
 
 This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too
 long to type. Fortunately Git has a solution for this using aliases:
 
-`$ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"`
+```shell
+$ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"
+```
 
 Next time when we want this we will use the alias
 
-`$ git graph`
+```shell
+$ git graph
+```
 
 ---
 
@@ -304,7 +310,9 @@ $ git graph  #We defined this alias earlier
 
 To view the branches that are merged we can use the command
 
-`$ git branch --merged `
+```shell
+$ git branch --merged
+```
 
 Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
 without us merging it manually**:
