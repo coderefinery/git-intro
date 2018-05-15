@@ -390,11 +390,11 @@ In Git the command "checkout" updates files in the working tree. However, depend
 
 Some examples;
 
-Switch to the less-salt branch
+Switch to the less-salt branch (this only works if the branch already exists)
 ```shell
 $ git checkout less-salt
 ```
-Create a new branch called new_branch and switch to it,  all in one go.
+Create a new branch called new_branch and switch to it, all in one go.
 ```shell
 $ git checkout -b new_branch
 ```
