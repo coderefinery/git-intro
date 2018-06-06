@@ -53,6 +53,14 @@ objectives:
   (are published results affected? do you need to inform collaborators or users of your code?).
 
 
+### Compare with Dropbox or Google Drive
+
+- Document/code is in one place, no need to email snapshots.
+- How can you use an old version? Possible to get old versions but in a much less useful way - snapshots of files, not directories.
+- What about if you want to work on multiple versions at the same time? Do you make a copy? How do you merge copies?
+- What if you don't have internet?
+
+
 ### What is the problem with this kind of "version control"?
 
 Discuss the following directory listing:
@@ -80,15 +88,6 @@ mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
 mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 ...
 ```
-
----
-
-## Compare with Dropbox or Google Drive
-
-- Document/code is in one place, no need to email snapshots.
-- How can you use an old version? Possible to get old versions but in a much less useful way - snapshots of files, not directories.
-- What about if you want to work on multiple versions at the same time? Do you make a copy? How do you merge copies?
-- What if you don't have internet?
 
 ---
 
