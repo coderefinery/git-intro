@@ -15,7 +15,12 @@ keypoints:
 ![Stranger]({{ site.baseurl }}/img/stranger.jpg
 "stranger"){:class="img-responsive" style="max-width:60%"}
 
+
 ## Down the rabbit hole
+
+**You will never need to go inside .git**, but this exercise will demystify things a lot.
+
+For this exercise create a new repository and commit a couple of changes.
 
 Now that we've made a couple of commits let us look at what is happening under
 the hood.
@@ -66,7 +71,7 @@ All branches and tags in Git are pointers to commits.
 
 ---
 
-## Demonstration: experimenting with branches
+### Demonstration: experimenting with branches
 
 Let us lift the hood and create few branches manually.  The
 goal of this exercise is to hopefully create an "aha" moment and provide us a
