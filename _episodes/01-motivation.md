@@ -83,6 +83,13 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ---
 
+## Compare with Dropbox or Google Drive
+
+- Document/code is in one place, no need to email snapshots.
+- Possible to get old versions but in a much less useful way - snapshots of files, not directories.
+
+---
+
 ## We will use [Git](https://git-scm.com) to record snapshots of our work - why Git?
 
 - Easy to set up.
