@@ -119,5 +119,7 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ## Why Git and not [Mercurial](https://www.mercurial-scm.org)?
 
-- Mercurial is a fine tool but less popular than Git.
+- Mercurial: many Git concepts still apply. For that matter, most important
+  lesson is **how and why to use version control**, which applies to any system
+  with some changes.
 - Even if you use Mercurial chances are high you need to contribute to a code tracked by Git.
