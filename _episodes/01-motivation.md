@@ -85,30 +85,23 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ## Why Git?
 
-
-- Distributed
-- Other people use it
-- Merging and branching is easy and simple.
+- Easy to set up.
+- Very popular: chances are high you will need to contribute to somebody else's code which is tracked with Git.
+- Distributed: good backup, no single point of failure, you can track and clean-up changes offline, simplifies collaboration model for open-source projects.
 - Important platforms such as [GitHub](https://github.com), [GitLab](https://gitlab.com), and [Bitbucket](https://bitbucket.org)
   build on top of Git.
 - Many platforms build on top of [GitHub](https://github.com).
 - Sharing software and data is getting popular and required in research context
   and [GitHub](https://github.com) is a popular platform for sharing software.
-- Can start using now, no need to configure a server 
-- *"Git is a four-handle, dual boiler espresso machine, not instant coffee."* [citation needed]
+- However, *"Git is a four-handle, dual boiler espresso machine, not instant coffee."* [citation needed]
 
 ---
 
 ## Why Git and not [Subversion](https://subversion.apache.org)?
 
-- Subversion is centralized (one server, many clients).
-- Git is distributed and supports any workflow.
-- Distributed version control enables to:
-    - implement code review
-    - decentralize access control
-    - decentralize bug exposure
-    - commit changes without network
-    - edit changes after they have been committed
+- Subversion is centralized (one server, many clients) and requires setting up and maintaining a server.
+- You cannot easily clean-up your recorded snapshots (commits) before you share them.
+- Not easy to get contributions from external contributors.
 
 ---
 
