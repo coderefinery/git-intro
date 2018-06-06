@@ -23,16 +23,39 @@ objectives:
 
 ---
 
-## Food for thought
+## Why code becomes a disaster without version control
 
-- Have you ever had to work with other people on the same project in parallel? What were the challenges?
-- Have you ever had to maintain a production version of your code and work on
-  new features at the same time?
-- How would you convince your colleague to use version control?
-- If you are already familiar with Git, have you ever had to google for
-  a command to solve your problem?
 
-What is the problem with this kind of "version control"?
+### Roll-back functionality
+
+- Mistakes happen - without recorded snapshots you cannot easily undo mistakes and go back to a working version.
+
+
+### Branching
+
+- Often you need to work on several issues in one code - without branching this can be messy and confusing.
+- You can simulate branching by copying the entire code to multiple places but also this will be messy and confusing.
+
+
+### Collaboration
+
+- *"I will just finish my work and then you can start with your changes."*.
+- *"Can you please send me the latest version?"*.
+- *"Where is the latest version?"*.
+- *"Which version are you using?"*.
+- *"Which version have the authors used in the paper I am trying to reproduce?"*.
+
+
+### Reproducibility
+
+- How do you indicate which version of your code you have used in your paper?
+- When you find a bug, how do you know when precisely this bug was introduced
+  (are published results affected? do you need to inform collaborators or users of your code?).
+
+
+### What is the problem with this kind of "version control"?
+
+Discuss the following directory listing:
 
 ```shell
 mylib-1.2.4_18.3.07.tgz         somecode_CP_10.8.07.tgz
@@ -57,37 +80,6 @@ mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
 mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 ...
 ```
-
----
-
-## Why version control?
-
-### Roll-back functionality
-
-- Mistakes happen - with version control you can undo and go back to a working version.
-
-
-### Feature branches
-
-- Different development lines can be organized in distinct branches.
-- Branches help keeping the project organized.
-
-
-### Collaboration
-
-- No more *"can you please send me the latest version?"*.
-- Allows up to thousands of persons to work on the same project without stepping on each other's toes.
-- Distributed version control enables to get contributions from people you
-  don't know yet and contribute to projects maintained by people who don't know
-  you.
-
-
-### Reproducibility
-
-- When you publish a paper you can indicate which version exactly was used so
-  others can reproduce the results.
-- When you find a bug, you can find out when precisely this bug was introduced
-  (are published results affected? has the bug made it to the last release of your code?).
 
 ---
 
