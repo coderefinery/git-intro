@@ -94,7 +94,7 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ## We will use [Git](https://git-scm.com) to record snapshots of our work - why Git?
 
-- Easy to set up.
+- Easy to set up - use even by yourself with no server needed.
 - Very popular: chances are high you will need to contribute to somebody else's code which is tracked with Git.
 - Distributed: good backup, no single point of failure, you can track and clean-up changes offline, simplifies collaboration model for open-source projects.
 - Important platforms such as [GitHub](https://github.com), [GitLab](https://gitlab.com), and [Bitbucket](https://bitbucket.org)
