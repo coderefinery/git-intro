@@ -19,7 +19,7 @@ objectives:
   - different people can work on the same code without interfering
   - you can experiment with an idea and discard it if it turns out to be a bad idea
 - Implements **merging**:
-  - tool to merge development branches for you (conflicts may appear)
+  - tool to merge development branches for you
 
 ---
 
