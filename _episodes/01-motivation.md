@@ -20,32 +20,29 @@ objectives:
 - If you are already familiar with Git, have you ever had to google for
   a command to solve your problem?
 
-What is the problem with this kind of version control (reproduced with
-permission; the colleagues have switched to Git and are now happy Git users):
+What is the problem with this kind of "version control"?
 
 ```shell
-$ ls
-
-MAG-DKS2-RI_CP_10.8.07.tgz        ReSpect-AFDZ-1.2.4_18.3.07.tgz
-MAG-DKS2-RI_CP_17.5.07.tgz        ReSpect-AFDZ-1.2.4_27.7.07.tgz
-MAG-DKS2-RI_CP_23.8.07_final.tgz  ReSpect-AFDZ-1.2.4_29.4.08.tgz
-MAG-DKS2-RI_CP_24.5.07.tgz        ReSpect-AFDZ-1.2.4_6.10.07.tgz
-MAG-DKS2-RI_CP_25.5.07.tgz        ReSpect-AFDZ-1.2.5_23.4.08.tgz
-MAG-DKS2-RI_CP_29.5.07.tgz        ReSpect-AFDZ-1.2.5_25.5.07.tgz
-MAG-DKS2-RI_CP_30.5.07.tgz        ReSpect-AFDZ-1.2.5_6.6.07.tgz
-MAG-DKS2-RI_CP_6.10.07.tgz        ReSpect-AFDZ-1.2.5_bexC.tgz
-MAG-DKS2-RI_CP_6.6.07.tgz         ReSpect-AFDZ-1.2.5_D0.tgz
-MAG-DKS2-RI_CP_8.6.07.tgz         ReSpect-AFDZ-1.3.0_4.4.08.tgz
-MAG-DKS2-RI_KT.tgz                ReSpect-AFDZ-1.3.1_4.4.08.tgz
-MAG-DKS2-RI_PI1_2007.tgz          ReSpect-AFDZ-1.3.2_22.4.08.tgz
-MAG-DKS2-RI_PI_2007.tgz           ReSpect-AFDZ-1.3.2_4.4.08.tgz
-MAG-DKS2-RI_PI2_2007.tgz          ReSpect-AFDZ-1.3.2_5.4.08.tgz
-MAG-DKS2-RI_PI_CP_18.3.07.tgz     ReSpect-AFDZ-1.3.3_1.5.08.tgz
-MAG-mDKS_11.5.08.tgz              ReSpect-AFDZ-1.3.3_20.5.08.tgz
-MAG-mDKS_15.4.08.tgz              ReSpect-AFDZ-1.3.3_TSTrm_27.6.08.tgz
-MAG-mDKS_17.6.09_unfinished.tgz   ReSpect-AFDZ-1.3.3_WK_10.8.08.tgz
-MAG-mDKS_19.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_11.8.08.tgz
-MAG-mDKS-20.7.09.tgz              ReSpect-AFDZ-1.3.3_WK_13.8.08.tgz
+mylib-1.2.4_18.3.07.tgz         somecode_CP_10.8.07.tgz
+mylib-1.2.4_27.7.07.tgz         somecode_CP_17.5.07.tgz
+mylib-1.2.4_29.4.08.tgz         somecode_CP_23.8.07_final.tgz
+mylib-1.2.4_6.10.07.tgz         somecode_CP_24.5.07.tgz
+mylib-1.2.5_23.4.08.tgz         somecode_CP_25.5.07.tgz
+mylib-1.2.5_25.5.07.tgz         somecode_CP_29.5.07.tgz
+mylib-1.2.5_6.6.07.tgz          somecode_CP_30.5.07.tgz
+mylib-1.2.5_bexc.tgz            somecode_CP_6.10.07.tgz
+mylib-1.2.5_d0.tgz              somecode_CP_6.6.07.tgz
+mylib-1.3.0_4.4.08.tgz          somecode_CP_8.6.07.tgz
+mylib-1.3.1_4.4.08.tgz          somecode_KT.tgz
+mylib-1.3.2_22.4.08.tgz         somecode_PI1_2007.tgz
+mylib-1.3.2_4.4.08.tgz          somecode_PI_2007.tgz
+mylib-1.3.2_5.4.08.tgz          somecode_PI2_2007.tgz
+mylib-1.3.3_1.5.08.tgz          somecode_PI_CP_18.3.07.tgz
+mylib-1.3.3_20.5.08.tgz         somecode_11.5.08.tgz
+mylib-1.3.3_tstrm_27.6.08.tgz   somecode_15.4.08.tgz
+mylib-1.3.3_wk_10.8.08.tgz      somecode_17.6.09_unfinished.tgz
+mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
+mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 ...
 ```
 
