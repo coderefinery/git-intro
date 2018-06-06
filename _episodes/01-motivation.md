@@ -83,7 +83,7 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ---
 
-## Why Git?
+## We will use [Git](https://git-scm.com) to record snapshots of our work - why Git?
 
 - Easy to set up.
 - Very popular: chances are high you will need to contribute to somebody else's code which is tracked with Git.
