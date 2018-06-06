@@ -11,6 +11,18 @@ objectives:
   - Discuss the reasons why we advocate distributed version control.
 ---
 
+## The essence of version control in one minute
+
+- System which **records snapshots** of a project
+- Implements **branching**:
+  - you can work on several feature branches and switch between them
+  - different people can work on the same code without interfering
+  - you can experiment with an idea and discard it if it turns out to be a bad idea
+- Implements **merging**:
+  - tool to merge development branches for you (conflicts may appear)
+
+---
+
 ## Food for thought
 
 - Have you ever had to work with other people on the same project in parallel? What were the challenges?
@@ -45,18 +57,6 @@ mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
 mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 ...
 ```
-
----
-
-## Explain version control in one minute
-
-- System which **records snapshots** of a project
-- Implements **branching**:
-  - you can work on several feature branches and switch between them
-  - different people can work on the same code without interfering
-  - you can experiment with an idea and discard it if it turns out to be a bad idea
-- Implements **merging**:
-  - tool to merge development branches for you (conflicts may appear)
 
 ---
 
