@@ -7,6 +7,7 @@ questions:
   - Why version control?
   - Why Git?
 objectives:
+  - Make sure nobody leaves the workshop without starting to use some form of version control.
   - Discuss the reasons why we advocate distributed version control.
 ---
 
