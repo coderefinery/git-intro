@@ -76,6 +76,7 @@ All branches and tags in Git are pointers to commits.
 - CAS: ["mechanism for storing information that can be retrieved based on its content, not its storage location"](https://en.wikipedia.org/wiki/Content-addressable_storage)
 - content address is the content digest (SHA-1 checksum)
 - stored data does not change - so when we modify commits, we always create new commits
+- Git does not delete orphaned commits right away, which is why it is hard to lose data once you have committed it
 
 Let us poke a bit into raw objects! Start with:
 
