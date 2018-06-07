@@ -15,7 +15,12 @@ keypoints:
 ![Stranger]({{ site.baseurl }}/img/stranger.jpg
 "stranger"){:class="img-responsive" style="max-width:60%"}
 
+
 ## Down the rabbit hole
+
+**You will never need to go inside .git**, but this exercise will demystify things a lot.
+
+For this exercise create a new repository and commit a couple of changes.
 
 Now that we've made a couple of commits let us look at what is happening under
 the hood.
@@ -66,7 +71,24 @@ All branches and tags in Git are pointers to commits.
 
 ---
 
-## Demonstration: experimenting with branches
+### Git is basically a content-addressed storage system
+
+- CAS: ["mechanism for storing information that can be retrieved based on its content, not its storage location"](https://en.wikipedia.org/wiki/Content-addressable_storage)
+- content address is the content digest (SHA-1 checksum)
+- stored data does not change - so when we modify commits, we always create new commits
+
+Let us poke a bit into raw objects! Start with:
+
+
+```shell
+$ git cat-file -p HEAD
+```
+
+Then explore the `tree` object, then the `file` object, etc.
+
+---
+
+### Demonstration: experimenting with branches
 
 Let us lift the hood and create few branches manually.  The
 goal of this exercise is to hopefully create an "aha" moment and provide us a
