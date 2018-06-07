@@ -75,7 +75,7 @@ All branches and tags in Git are pointers to commits.
 
 - CAS: ["mechanism for storing information that can be retrieved based on its content, not its storage location"](https://en.wikipedia.org/wiki/Content-addressable_storage)
 - content address is the content digest (SHA-1 checksum)
-- stored data does not change - so when we modify commits, we always create new commits
+- stored data does not change - so when we modify commits, we always create new commits.  Git doesn't delete these right away, which is why it is *very hard to lose data if you commit it once*.
 
 Let us poke a bit into raw objects! Start with:
 
@@ -84,7 +84,7 @@ Let us poke a bit into raw objects! Start with:
 $ git cat-file -p HEAD
 ```
 
-Then explore the `tree` object, then the `file` object, etc.
+Then explore the `tree` object, then the `file` object, etc. recursively using the hashes you see.
 
 ---
 
