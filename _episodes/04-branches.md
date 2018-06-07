@@ -186,6 +186,33 @@ $ cat ingredients.txt
 ```
 - Edit ingredients.txt, to reduce the amount of cilantro to 1 tbsp. Stage this and commit it with the message "maybe little bit less cilantro"
 
+
+## Different meanings of "checkout"
+
+In Git the command "checkout" updates files in the working tree. However, depending on the context it is used, the way the changes are made are different. For example it it could switch to a different branch to get the versions of all the file corresponding to that branch, or it could retrieve a different version of a single file, while everything else is kept unchanged.   
+
+Some examples;
+
+Switch to the less-salt branch
+```shell
+git checkout less-salt
+```
+Create a new branch called new_branch and switch to it,  all in one go.
+```shell
+git checkout -b new_branch
+```
+Inspect the version of a file in an older commit, using the commit hash
+```shell
+git checkout <HASH>
+e.g.
+git checkout 9c6c84e
+```
+Revert back to the last commited version of a file (lose all uncommitted changes), earlier in the lesson we got rid of the changes to the instructions.txt file using the following command
+```shell
+git checkout instructions.txt
+```
+
+
 ## Exercise: branches
 
 - Change to the branch `master`
