@@ -188,6 +188,12 @@ $ git commit -m "adding ingredients and instructions"
  create mode 100644 instructions.txt
 ```
 
+Right after we query the status to get this useful command into our muscle memory:
+
+```shell
+$ git status
+```
+
 What does the `-m` flag mean? Let us check the help page for that command:
 
 ```shell
