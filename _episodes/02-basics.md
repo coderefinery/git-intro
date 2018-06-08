@@ -290,6 +290,34 @@ $ git show   # show various types of objects
 $ git diff   # show changes
 ```
 
+
+### Writing useful commit messages
+
+Using `git log --oneline` we understand that the first line of the commit message is very important.
+
+Good example:
+
+```
+increase threshold alpha to 2.0
+
+the motivation for this change is
+to enable ...
+...
+```
+
+Convention: **one line summarizing the commit, then one empty line,
+then paragraph(s) with more details in free form, if necessary**.
+
+- Bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", "".
+- [http://whatthecommit.com](http://whatthecommit.com)
+- Write commit messages in English that will be understood
+  15 years from now by someone else than you.
+- Many projects start out as projects "just for me" and end up to be successful projects
+  that are developed by 50 people over decades.
+- [Commits with multiple authors](https://help.github.com/articles/creating-a-commit-with-multiple-authors/)
+
+---
+
 ### Optional : difftool
 
 This requires you to install an additional tool called Meld (or any of the following tools;
@@ -318,48 +346,6 @@ i.e. the above command will just return a new line and nothing will happen.
 ---
 
 ## Git best-practices
-
-
-### Writing useful commit messages
-
-Using `git log --oneline` we understand that the first line of the commit message is very important.
-
-Good example:
-
-```
-increase threshold alpha to 2.0
-
-the motivation for this change is
-to enable ...
-...
-```
-
-Convention: **one line summarizing the commit, then one empty line,
-then paragraph(s) with more details in free form, if necessary**.
-
-Not so good example (everything in one long line):
-
-```
-increase threshold alpha to 2.0, the motivation for this change is to enable ... [very long line]
-```
-
-This is also important for web based repository browsing.
-
-Another bad example:
-
-```
-rbast:
-
-fixed an important bug for contracted basis sets
-...
-```
-
-- Other bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", "".
-- [http://whatthecommit.com](http://whatthecommit.com)
-- Write commit messages in English that will be understood
-  15 years from now by someone else than you.
-- Many projects start out as projects "just for me" and end up to be successful projects
-  that are developed by 50 people over decades.
 
 ### Commit with preview of changes
 
