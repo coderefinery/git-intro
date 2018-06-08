@@ -23,6 +23,7 @@ keypoints:
 ## What is Git, and what is a Git repository?
 
 - Git is a *version control system*: can record snapshots and track the content of a folder as it changes over time.
+- Every time we **commit** a snapshot, Git records a snapshot of the **entire project**, saves it, and assigns it a version.
 - These snapshots are kept inside a sub-folder called `.git`.
 - If we remove `.git`, we remove the repository and history (but keep the working directory!).
 - `.git` uses relative paths - you can move the whole thing somewhere else and it will still work
@@ -31,22 +32,8 @@ keypoints:
 
 ---
 
-
 ## A mental model of Git
 
-It is useful to have a mental model of how Git operates before jumping in to the first example.
-
-- Many version control systems store information as a list of file-based changes 
-  - a set of files and the changes made to each file over time 
-- Git instead thinks of its data more like a stream of snapshots 
-  - for every *commit* (when the state of a project is saved), Git takes a picture (snapshot) of what all files look like at that moment and stores a reference to that snapshot
-  - if some files have not changed, Git just stores a link to the previous identical file it has already stored
-  - it's possible to take a particular file back in time to a previous snapshot, but by default all other files will be taken back in time as well
-
-![Git snapshots]({{ site.baseurl }}/img/snapshots.png
-"git as a filesystem"){:class="img-responsive"}
-
-> Image from [the Pro Git book](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
 
 ### Recording a snapshot
 
