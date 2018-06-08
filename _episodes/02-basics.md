@@ -328,30 +328,11 @@ then paragraph(s) with more details in free form, if necessary**.
 - Inspect differences between commit hashes with `git log <hash1> <hash2>`.
 - Have a look at specific commits with `git show <hash>`.
 - Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
+- Make a modification to the code and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 
----
-
-### Optional : difftool
-
-This requires you to install an additional tool called Meld (or any of the following tools;
-opendiff, kdiff3, tkdiff, xxdiff, kompare, gvimdiff, diffuse, diffmerge, ecmerge, p4merge, araxis, bc,
-codecompare, emerge, vimdiff).  [Here is how to install and use Meld](http://meldmerge.org/). 
-In short, on Ubuntu do `sudo apt-get install meld`, while on Windows use the installer from the above site. 
-Meld is not officially supported on MacOSX yet, but can still be installed via pre-built binaries or from MacPorts, 
-Fink or Brew.
-
-Using difftools: 
 ```
-$ git difftool -t <Tool_name>
+$ git difftool
 ```
-
-To use Meld:
-```
-$ git difftool -t meld -y
-```
-
-Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
-i.e. the above command will just return a new line and nothing will happen. 
 
 ![Git events]({{ site.baseurl }}/img/meld.png
 "git difftool meld"){:class="img-responsive" style="max-width:70%"}
