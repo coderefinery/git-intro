@@ -35,7 +35,7 @@ keypoints:
 ## Recording a snapshot with Git
 
 - Git takes snapshots only if we request it.
-- We will record changes always in two steps:
+- We will record changes always in two steps (we will later explain why this is a recommended practice):
 
 ```shell
 $ git add somefile.txt
