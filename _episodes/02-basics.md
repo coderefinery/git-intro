@@ -70,10 +70,10 @@ $ git config --global user.email yourname@example.com
 The name and contact email will be recorded together with the code changes when we run `git commit`.
 
 It is convenient to set also the default text editor to use with Git. This you
-do with (**You can replace emacs with vim, nano or any other editor of your choice.**):
+do with (**You can replace nano with vim, emacs, or any other editor of your choice.**):
 
 ```shell
-$ git config --global core.editor emacs
+$ git config --global core.editor nano
 ```
 
 Colors make it easier to inspect diffs and the staging area:
