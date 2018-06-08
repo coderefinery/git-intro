@@ -177,6 +177,7 @@ to find relevant information takes some practice and discussions in some
 online threads may be confusing.
 Note that help pages also work when you don't have a network connection!
 
+
 ### Git history and log
 
 Now try `git log`:
@@ -233,7 +234,7 @@ index 6a8b2af..f7dd63a 100644
 +* enjoy!
 ```
 
-Now first stage each change, then commit it (what happens when we leave out the `-m` flag?):
+Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
 
 ```shell
 $ git add ingredients.txt
@@ -249,6 +250,7 @@ convince others (and your future self) that the changes you made were
 justified.  Write a message and save and close the file.
 
 When you are done committing the changes, experiment with these commands:
+
 ```shell
 $ git log    # show commit logs
 $ git show   # show various types of objects
