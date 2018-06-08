@@ -91,7 +91,7 @@ We will make sense of this information during this morning.
 
 Let us now **create two files**.
 
-One file called `instructions.txt`, containing:
+One file is called `instructions.txt` and contains:
 
 ```
 * chop avocados
@@ -101,7 +101,7 @@ One file called `instructions.txt`, containing:
 * and mix well
 ```
 
-And one file called `ingredients.txt`, containing:
+The second file is called `ingredients.txt` and contains:
 
 ```
 * 2 avocados
@@ -151,7 +151,7 @@ Changes to be committed:
 	new file:   instructions.txt
 ```
 
-Now the snapshot is *staged* and ready to be committed.
+Now this change is *staged* and ready to be committed.
 
 Before we make the first commit, let us check the help page for that command:
 
