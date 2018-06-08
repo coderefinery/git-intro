@@ -21,24 +21,14 @@ keypoints:
   - Git uses the .git folder to store the snapshots.
 ---
 
-## What is Git, and what exactly is a Git repository?
+## What is Git, and what is a Git repository?
 
-Git is used to track the content of a folder as it changes over time. When a file is tracked by Git, it is
-possible to go back to any historical version of that file. More precisely, one can go back to any version
-of the file which Git was told to keep a record of. Git is thus a *version control system*. 
-
-For this time-travelling to work, Git needs to maintain records 
-of all changes. These records and some associated information are what make up a Git repository.
-The Git repository itself is a set of files kept inside a sub-folder called ".git"
-located in the directory which has been put under Git version control.
-
-- All the magic is under `.git`: all the history, all snapshot, all branches, everything
-- When staging and committing files, we "copy" them into `.git`
-- One file or entire file trees can be tracked
-- Git does not pollute subdirectories
-- If we remove `.git`, we remove the repository (but keep the working directory!)
-- It is very easy to create a Git repository to track something that you work on
+- Git is a *version control system*: can record snapshots and track the content of a folder as it changes over time.
+- These snapshots are kept inside a sub-folder called `.git`.
+- If we remove `.git`, we remove the repository and history (but keep the working directory!).
 - `.git` uses relative paths - you can move the whole thing somewhere else and it will still work
+- Git doesn't do anything unless you ask it to (it does not record anything automatically).
+- Multiple interfaces to Git exist (command line, graphical interfaces, web interfaces).
 
 ---
 
