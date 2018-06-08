@@ -32,10 +32,7 @@ keypoints:
 
 ---
 
-## A mental model of Git
-
-
-### Recording a snapshot
+## Recording a snapshot
 
 Git takes snapshots only if we request it. When taking a photo with a camera, we first focus on what we want to 
 capture and shoot. Similarly, taking a Git snapshot is a two step process. 
@@ -48,14 +45,9 @@ capture and shoot. Similarly, taking a Git snapshot is a two step process.
 ![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
 "git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
-
 - What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
 several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
 button only at the end)
-
-Here is another way to view the two-step snapshotting in Git from [the Pro Git book](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics).
-![Git staging]({{ site.baseurl }}/img/file_states_2.png
-"git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
 ## Tracking a guacamole recipe with Git
 
