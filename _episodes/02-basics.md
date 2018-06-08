@@ -153,7 +153,18 @@ Changes to be committed:
 
 Now this change is *staged* and ready to be committed.
 
-Before we make the first commit, let us check the help page for that command:
+Let us now commit the change to the repository:
+
+```shell
+$ git commit -m "adding ingredients and instructions"
+
+[master (root-commit) aa243ea] adding ingredients and instructions
+ 2 files changed, 10 insertions(+)
+ create mode 100644 ingredients.txt
+ create mode 100644 instructions.txt
+```
+
+What does the `-m` flag mean? Let us check the help page for that command:
 
 ```shell
 $ git help commit
@@ -165,17 +176,6 @@ when in doubt. Searching online can also be useful, but choosing search terms
 to find relevant information takes some practice and discussions in some
 online threads may be confusing.
 Note that help pages also work when you don't have a network connection!
-
-Let us now commit the change to the repository:
-
-```shell
-$ git commit -m "adding ingredients and instructions"
-
-[master (root-commit) aa243ea] adding ingredients and instructions
- 2 files changed, 10 insertions(+)
- create mode 100644 ingredients.txt
- create mode 100644 instructions.txt
-```
 
 ### Git history and log
 
