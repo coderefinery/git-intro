@@ -358,17 +358,7 @@ i.e. the above command will just return a new line and nothing will happen.
 
 ---
 
-## Git best-practices
-
-### Commit with preview of changes
-
-It is possible to see the changes being committed
-
-```shell
-$ git commit -v
-```
-
-### Ignoring files and paths with .gitignore
+## Ignoring files and paths with .gitignore
 
 - Should we add and track all files in a project?
 - How about generated files?
@@ -381,6 +371,7 @@ committed to version control. There are many reasons for this:
 - Your code could be run on different platforms.
 - These files are automatically generated and thus do not contribute in any meaningful way.
 - The number of changes to track per source code change can increase quickly.
+- When tracking generated files you could see differences in the code although you haven't touched the code.
 
 For this we use `.gitignore` files. Example:
 
@@ -412,6 +403,8 @@ build/
 You can have `.gitignore` files in lower level directories and they affect the paths
 relatively.
 
+`.gitignore` should be part of the repository (why?).
+
 
 ### Clean working area
 
@@ -420,14 +413,7 @@ relatively.
 - Untracked files belong to .gitignore.
 - **All files should be either tracked or ignored**.
 
-
-### Questions
-
-- Should we add and commit `.gitignore`?
-- What will probably happen if we choose not to use `.gitignore` in our projects?
-
 ---
-
 
 ## Summary
 
