@@ -54,6 +54,39 @@ $ git commit
 several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
 button only at the end)
 
+---
+
+## Before we start we need to configure Git
+
+**All configuration we enter here ends up in `~/.gitconfig`.**
+
+First, the following commands will set your user name and email address:
+
+```shell
+$ git config --global user.name "Your Name"
+$ git config --global user.email yourname@example.com
+```
+
+The name and contact email will be recorded together with the code changes when we run `git commit`.
+
+It is convenient to set also the default text editor to use with Git. This you
+do with (**You can replace emacs with vim, nano or any other editor of your choice.**):
+
+```shell
+$ git config --global core.editor emacs
+```
+
+Colors make it easier to inspect diffs and the staging area:
+
+```shell
+$ git config --global color.diff auto
+$ git config --global color.status auto
+$ git config --global color.branch auto
+$ git config --global color.ui true
+```
+
+---
+
 ## Tracking a guacamole recipe with Git
 
 We will learn how to initialize a Git repository, how to track changes, and how
