@@ -318,6 +318,19 @@ then paragraph(s) with more details in free form, if necessary**.
 
 ---
 
+## Optional exercise: more changes and experiment with tools
+
+- Apply and commit more changes.
+- Add new files.
+- When you commit, try `git commit -v` (will show you the difference in the editor).
+- Rename files with `git mv` (you will need to `git commit` the rename).
+- Use `git log --oneline` and `git status`.
+- Inspect differences between commit hashes with `git log <hash1> <hash2>`.
+- Have a look at specific commits with `git show <hash>`.
+- Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
+
+---
+
 ### Optional : difftool
 
 This requires you to install an additional tool called Meld (or any of the following tools;
