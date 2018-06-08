@@ -54,6 +54,30 @@ $ git commit
 several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
 button only at the end)
 
+---
+
+## Before we start we need to configure Git
+
+**All configuration we enter here ends up in `~/.gitconfig`.**
+
+First, the following commands will set your user name and email address:
+
+```shell
+$ git config --global user.name "Your Name"
+$ git config --global user.email yourname@example.com
+```
+
+The name and contact email will be recorded together with the code changes when we run `git commit`.
+
+It is convenient to set also the default text editor to use with Git. This you
+do with (**You can replace nano with vim, emacs, or any other editor of your choice.**):
+
+```shell
+$ git config --global core.editor nano
+```
+
+---
+
 ## Tracking a guacamole recipe with Git
 
 We will learn how to initialize a Git repository, how to track changes, and how
@@ -91,7 +115,7 @@ We will make sense of this information during this morning.
 
 Let us now **create two files**.
 
-One file called `instructions.txt`, containing:
+One file is called `instructions.txt` and contains:
 
 ```
 * chop avocados
@@ -101,7 +125,7 @@ One file called `instructions.txt`, containing:
 * and mix well
 ```
 
-And one file called `ingredients.txt`, containing:
+The second file is called `ingredients.txt` and contains:
 
 ```
 * 2 avocados
@@ -151,9 +175,26 @@ Changes to be committed:
 	new file:   instructions.txt
 ```
 
-Now the snapshot is *staged* and ready to be committed.
+Now this change is *staged* and ready to be committed.
 
-Before we make the first commit, let us check the help page for that command:
+Let us now commit the change to the repository:
+
+```shell
+$ git commit -m "adding ingredients and instructions"
+
+[master (root-commit) aa243ea] adding ingredients and instructions
+ 2 files changed, 10 insertions(+)
+ create mode 100644 ingredients.txt
+ create mode 100644 instructions.txt
+```
+
+Right after we query the status to get this useful command into our muscle memory:
+
+```shell
+$ git status
+```
+
+What does the `-m` flag mean? Let us check the help page for that command:
 
 ```shell
 $ git help commit
@@ -166,16 +207,6 @@ to find relevant information takes some practice and discussions in some
 online threads may be confusing.
 Note that help pages also work when you don't have a network connection!
 
-Let us now commit the change to the repository:
-
-```shell
-$ git commit -m "adding ingredients and instructions"
-
-[master (root-commit) aa243ea] adding ingredients and instructions
- 2 files changed, 10 insertions(+)
- create mode 100644 ingredients.txt
- create mode 100644 instructions.txt
-```
 
 ### Git history and log
 
@@ -233,7 +264,7 @@ index 6a8b2af..f7dd63a 100644
 +* enjoy!
 ```
 
-Now first stage each change, then commit it (what happens when we leave out the `-m` flag?):
+Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
 
 ```shell
 $ git add ingredients.txt
@@ -249,40 +280,12 @@ convince others (and your future self) that the changes you made were
 justified.  Write a message and save and close the file.
 
 When you are done committing the changes, experiment with these commands:
+
 ```shell
 $ git log    # show commit logs
 $ git show   # show various types of objects
 $ git diff   # show changes
 ```
-
-### Optional : difftool
-
-This requires you to install an additional tool called Meld (or any of the following tools;
-opendiff, kdiff3, tkdiff, xxdiff, kompare, gvimdiff, diffuse, diffmerge, ecmerge, p4merge, araxis, bc,
-codecompare, emerge, vimdiff).  [Here is how to install and use Meld](http://meldmerge.org/). 
-In short, on Ubuntu do `sudo apt-get install meld`, while on Windows use the installer from the above site. 
-Meld is not officially supported on MacOSX yet, but can still be installed via pre-built binaries or from MacPorts, 
-Fink or Brew.
-
-Using difftools: 
-```
-$ git difftool -t <Tool_name>
-```
-
-To use Meld:
-```
-$ git difftool -t meld -y
-```
-
-Please note that, if the versions of the files are identical in your working copy and index, the tool may not open-up. 
-i.e. the above command will just return a new line and nothing will happen. 
-
-![Git events]({{ site.baseurl }}/img/meld.png
-"git difftool meld"){:class="img-responsive" style="max-width:70%"}
-
----
-
-## Git best-practices
 
 
 ### Writing useful commit messages
@@ -302,39 +305,38 @@ to enable ...
 Convention: **one line summarizing the commit, then one empty line,
 then paragraph(s) with more details in free form, if necessary**.
 
-Not so good example (everything in one long line):
-
-```
-increase threshold alpha to 2.0, the motivation for this change is to enable ... [very long line]
-```
-
-This is also important for web based repository browsing.
-
-Another bad example:
-
-```
-rbast:
-
-fixed an important bug for contracted basis sets
-...
-```
-
-- Other bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", "".
+- Bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", "".
 - [http://whatthecommit.com](http://whatthecommit.com)
 - Write commit messages in English that will be understood
   15 years from now by someone else than you.
 - Many projects start out as projects "just for me" and end up to be successful projects
   that are developed by 50 people over decades.
+- [Commits with multiple authors](https://help.github.com/articles/creating-a-commit-with-multiple-authors/)
 
-### Commit with preview of changes
+---
 
-It is possible to see the changes being committed
+## Optional exercise: more changes and experiment with tools
 
-```shell
-$ git commit -v
+- Apply and commit more changes.
+- Add new files.
+- When you commit, try `git commit -v` (will show you the difference in the editor).
+- Rename files with `git mv` (you will need to `git commit` the rename).
+- Use `git log --oneline` and `git status`.
+- Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
+- Have a look at specific commits with `git show <hash>`.
+- Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
+- Make a modification to the code and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
+
+```
+$ git difftool
 ```
 
-### Ignoring files and paths with .gitignore
+![Git events]({{ site.baseurl }}/img/meld.png
+"git difftool meld"){:class="img-responsive" style="max-width:70%"}
+
+---
+
+## Ignoring files and paths with .gitignore
 
 - Should we add and track all files in a project?
 - How about generated files?
@@ -347,6 +349,7 @@ committed to version control. There are many reasons for this:
 - Your code could be run on different platforms.
 - These files are automatically generated and thus do not contribute in any meaningful way.
 - The number of changes to track per source code change can increase quickly.
+- When tracking generated files you could see differences in the code although you haven't touched the code.
 
 For this we use `.gitignore` files. Example:
 
@@ -378,6 +381,8 @@ build/
 You can have `.gitignore` files in lower level directories and they affect the paths
 relatively.
 
+`.gitignore` should be part of the repository (why?).
+
 
 ### Clean working area
 
@@ -386,14 +391,7 @@ relatively.
 - Untracked files belong to .gitignore.
 - **All files should be either tracked or ignored**.
 
-
-### Questions
-
-- Should we add and commit `.gitignore`?
-- What will probably happen if we choose not to use `.gitignore` in our projects?
-
 ---
-
 
 ## Summary
 
