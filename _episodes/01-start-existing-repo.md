@@ -51,6 +51,7 @@ typo in documentation, missing license file, outdated usage example).
 - Browse commit changesets.
 - Note that there are [branches](https://github.com/coderefinery/example-project/network).
 - Find a bug in [example.py](https://github.com/coderefinery/example-project/blob/master/example.py) and use annotation to check when precisely the bug got introduced.
+- Discuss the enormous value of the annotation feature.
 - Identify other issues (bug in code, misleading comment, typo in documentation, missing license file, outdated usage example).
 - Instructors use the browser to create a branch and make a commit to an
   existing project: Instructors will make a change concurrently, one of them
