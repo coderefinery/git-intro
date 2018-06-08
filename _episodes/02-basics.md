@@ -32,20 +32,25 @@ keypoints:
 
 ---
 
-## Recording a snapshot
+## Recording a snapshot with Git
 
-Git takes snapshots only if we request it. When taking a photo with a camera, we first focus on what we want to 
-capture and shoot. Similarly, taking a Git snapshot is a two step process. 
-- The focusing equivalent in Git is called *staging* 
-  - if you want to include changes to a file in a snapshot then you should stage that file 
-  - if you want many files then you should stage them all 
-- The shooting equivalent Git is called a *commit*
-  - this stores the snapshot to Git history
+- Git takes snapshots only if we request it.
+- We will record changes always in two steps:
+
+```shell
+$ git add somefile.txt
+$ git commit
+
+$ git add file.txt anotherfile.txt
+$ git commit
+```
+
+- We first focus (`git add`, we "stage" the change), then shoot (`git commit`):
 
 ![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
 "git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
-- What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
+- For the more advanced users: What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
 several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
 button only at the end)
 
