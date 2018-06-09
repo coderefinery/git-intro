@@ -30,7 +30,7 @@ this is ask around). So if someone presses the record button it will start the
 recording from where the HEAD is.  At any point of operation a Git repository
 can have only one HEAD.
 
-![Master branch]({{ site.baseurl }}/img/master_branch.svg 
+![Master branch]({{ site.baseurl }}/img/master_branch.svg
 "master branch"){:class="img-responsive" style="max-width:60%"}
 
 ---
@@ -169,7 +169,7 @@ $ git branch               # list all local branches and show on which branch we
 ```
 
 - The branch is created from the `master` branch.
-- We commit our changes to this branch. 
+- We commit our changes to this branch.
 - Stage this and commit it with the message "let us try with some cilantro"
 
 ```shell
@@ -186,7 +186,7 @@ $ cat ingredients.txt
 
 ## Different meanings of "checkout"
 
-In Git the command "checkout" updates files in the working tree. However, depending on the context it is used, the way the changes are made are different. For example it it could switch to a different branch to get the versions of all the file corresponding to that branch, or it could retrieve a different version of a single file, while everything else is kept unchanged.   
+In Git the command "checkout" updates files in the working tree. However, depending on the context it is used, the way the changes are made are different. For example it it could switch to a different branch to get the versions of all the file corresponding to that branch, or it could retrieve a different version of a single file, while everything else is kept unchanged.
 
 Some examples;
 
@@ -417,7 +417,7 @@ Both are fine, the resulting code is the same, not the history:
 
 ![]({{ site.baseurl }}/img/gitink/no-ff.svg)
 
-It is a matter of taste or convention. 
+It is a matter of taste or convention.
 
 ---
 
@@ -432,7 +432,7 @@ $ git merge less-salt
 
 ![]({{ site.baseurl }}/img/gitink/git-merge-4.svg)
 
-Now that we are happy with the work we did in the branches, and 
+Now that we are happy with the work we did in the branches, and
 they have been merged into `master`, it is time to delete them:
 
 ```shell
