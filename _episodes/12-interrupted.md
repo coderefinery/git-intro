@@ -121,7 +121,7 @@ What to do?
 - You can undo the broken merge by resetting the repository to `HEAD` (last committed state).
 
 ```shell
-$ git reset --hard HEAD  # throws away everything that is not in HEAD
+$ git merge --abort
 ```
 
 The repository looks then exactly as it was before the merge.
