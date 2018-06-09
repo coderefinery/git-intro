@@ -281,64 +281,42 @@ And for comparison this is how it looks [on GitHub](https://github.com/bast/reci
 
 
 It turned out that our experiment with cilantro was a good idea.
-Our goal now is to merge `experiment` into `less-salt`.
+Our goal now is to merge `experiment` into `master`.
 
-First we switch to the `less-salt` branch:
+First we make sure we are on the branch we wish to merge **into**:
 
 ```shell
-$ git checkout less-salt
 $ git branch
 
   experiment
-* less-salt
-  master
+  less-salt
+* master
 ```
 
-![]({{ site.baseurl }}/img/gitink/git-merge-1.svg)
-
-Then we merge `experiment`:
+Then we merge `experiment` into `master`:
 
 ```shell
 $ git merge experiment
 ```
 
-![]({{ site.baseurl }}/img/gitink/git-merge-2.svg)
+![]({{ site.baseurl }}/img/gitink/git-merge-1.svg)
 
-We can verify the result in the terminal.
+We can verify the result in the terminal:
 
 ```shell
+$ git graph
 
-$ git graph  #We defined this alias earlier
-
-*   265ee5d (HEAD -> less-salt) Merge branch 'experiment' into less-salt
+*   c43b24c (HEAD -> master) Merge branch 'experiment'
 |\
-| * f413c60 (experiment) maybe little bit less cilantro
-| * d541ee0 let us try with some cilantro
-* | e66edf3 reduce amount of salt
+| * 6feb49d (origin/experiment, experiment) maybe little bit less cilantro
+| * 7cf6d8c let us try with some cilantro
+* | fdc8490 draft a readme
 |/
-* 7f3582d (master) do not forget to enjoy
-* 64441c1 add onion
-* d619bf8 adding ingredients and instructions
-```
-
-To view the branches that are merged we can use the command
-
-```shell
-$ git branch --merged
-```
-
-Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
-without us merging it manually**:
-
-
-```shell
-$ cat ingredients.txt
-
-* 2 avocados
-* 1 lime
-* 1 tsp salt
-* 1/2 onion
-* 1 tbsp cilantro
+| * bf59be6 (origin/less-salt, less-salt) reduce amount of salt
+|/
+* dd4472c (origin/master) we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
 ```
 
 What happens internally when you merge two branches is that Git creates a new
@@ -346,10 +324,63 @@ commit, attempts to incorporate changes from both branches and records the
 state of all files in the new commit. While a regular commit has one parent, a
 merge commit has two (or more) parents.
 
+To view the branches that are merged into the current branch we can use the command:
+
+```shell
+$ git branch --merged
+
+  experiment
+* master
+```
+
+We are also happy with the work on the `less-salt` branch. Let us merge that
+one, too, into `master`:
+
+```shell
+$ git branch  # make sure you are on master
+$ git merge less-salt
+```
+
+![]({{ site.baseurl }}/img/gitink/git-merge-2.svg)
+
+We can verify the result in the terminal:
+
+```shell
+$ git graph
+
+*   4f00317 (HEAD -> master) Merge branch 'less-salt'
+|\
+| * bf59be6 (origin/less-salt, less-salt) reduce amount of salt
+* |   c43b24c Merge branch 'experiment'
+|\ \
+| * | 6feb49d (origin/experiment, experiment) maybe little bit less cilantro
+| * | 7cf6d8c let us try with some cilantro
+| |/
+* | fdc8490 draft a readme
+|/
+* dd4472c (origin/master) we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
+```
+
+Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
+without us merging it manually**:
+
+```shell
+$ cat ingredients.txt
+
+* 1 tbsp cilantro
+* 2 avocados
+* 1 lime
+* 1 tsp salt
+* 1/2 onion
+```
+
 If the same file is changed in both branches, Git attempts to incorporate both
 changes into the merged file. If the changes overlap then the user has to
 manually *settle merge conflicts* (we will do that later).
 
+---
 
 ### Exercise: merge `experiment` into `master`
 
