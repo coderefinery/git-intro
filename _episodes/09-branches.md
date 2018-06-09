@@ -177,30 +177,31 @@ $ git graph
 - We commit our changes to this branch.
 
 
-## Different meanings of "checkout"
+## Interlude: Different meanings of "checkout"
 
-In Git the command "checkout" updates files in the working tree. However, depending on the context it is used, the way the changes are made are different. For example it it could switch to a different branch to get the versions of all the file corresponding to that branch, or it could retrieve a different version of a single file, while everything else is kept unchanged.
+Depending on the context `git checkout` can do very different actions:
 
-Some examples;
+1) Switch to a branch:
 
-Switch to the less-salt branch
-```shell
-git checkout less-salt
 ```
-Create a new branch called new_branch and switch to it,  all in one go.
-```shell
-git checkout -b new_branch
+$ git checkout <branchname>
 ```
-Inspect the version of a file in an older commit, using the commit hash
-```shell
-git checkout <HASH>
-e.g.
-git checkout 9c6c84e
+
+2) Bring the working tree to a specific state (commit):
+
 ```
-Revert back to the last commited version of a file (lose all uncommitted changes), earlier in the lesson we got rid of the changes to the instructions.txt file using the following command
-```shell
-git checkout instructions.txt
+$ git checkout <hash>
 ```
+
+3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
+
+```
+$ git checkout <path/file>
+```
+
+This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
+Picture `git checkout` as an operation that brings the working tree to a specific state.
+The state can be a commit or a branch (pointing to a commit).
 
 
 ## Exercise: branches
