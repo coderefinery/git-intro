@@ -244,6 +244,15 @@ And for comparison this is how it looks [on GitHub](https://github.com/bast/reci
 
 ## Merging branches
 
+**If you got stuck in the above exercises**:
+
+- **Skip this unless you got stuck**.
+- Step out of the current directory: `$ cd ..`
+- `$ git clone https://github.com/bast/recipe.git recipe-branching`
+- `$ cd recipe-branching`
+- `$ git graph`
+
+
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `less-salt`.
 
