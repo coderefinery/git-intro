@@ -16,26 +16,9 @@ keypoints:
   - A tag is a pointer to a moment in the history of a project.
 ---
 
-
-## Introduction
-In the previous section we made guacamole Git style. Our procedure was serial
-(which is a cool way to say doing one thing after another in a sequence). This
-sequence of events are depicted in the diagram below. At this point we shall
-learn few more concepts and terms. The sequence of events depicted in the
-diagram is called a “branch”. When there is only one branch and if we do not
-rename it, Git assigns the name “master” to it. The latest state of the branch
-is referred as the “HEAD”. The term HEAD is better explained with the reference
-to the recording head of tape recorders (if you are too young to know what
-this is ask around). So if someone presses the record button it will start the
-recording from where the HEAD is.  At any point of operation a Git repository
-can have only one HEAD.
-
-![Master branch]({{ site.baseurl }}/img/master_branch.svg
-"master branch"){:class="img-responsive" style="max-width:60%"}
-
----
-
 ## Motivation for branches
+
+In the previous section we tracked a guacamole recipe with Git.
 
 Up until now our repository had only one branch with one commit coming
 after the other:
@@ -43,34 +26,36 @@ after the other:
 ![Linear]({{ site.baseurl }}/img/gitink/git-branch-1.svg "Linear git
 repository"){:class="img-responsive"}
 
-However, software development is often not linear:
+- Commits are depicted as little boxes with abbreviated hashes.
+- The sequence of commits forms a **branch**.
+- Here the branch is called "master".
+- "HEAD" is the current position (remember the recording head of tape recorders?).
 
-  - Maintenance of releases, bug-fixes, and patches.
-  - Collaborative work (everybody would be exposed to your bugs; you would be
-    exposed to bugs of other people).
-  - We do not have time to write perfect code immediately, it would be nice to
-    have the possibility to experiment somewhere aside.
-  - Interrupted work (we typically work on several longer term projects at the
-    same time).
+Software development is often not linear:
+
+- We do not have time to write perfect code immediately, it would be nice to
+  have the possibility to experiment somewhere aside.
+- Interrupted work (we typically work on several longer term projects at the
+  same time).
+- Collaborative work on different features in the same project.
+- Maintenance of releases, bug-fixes, and patches.
 
 The strength of version control is that it permits the researcher to **isolate
 different tracks of work**. Researchers can work on different things and merge
 the changes they made to the source code files afterwards to create a composite
-version that contains both the changes.
-
-To enable collaborative work we wish to do something more like:
+version that contains both the changes:
 
 ![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative.svg
 "description"){:class="img-responsive"}
 
 - We see branching points and merging points.
-- As we said before, often we call the main line development `master` as this is what Git uses as default.
+- Main line development is often called `master`.
 - Other than this convention there is nothing special about `master`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
 A group of commits that create a single narrative are called a **branch**.
 There are different branching strategies, but it is useful to think that a branch
-tells the story of a feature, e.g. "new login workflow" or "fixing bug in
+tells the story of a feature, e.g. "fast sequence extraction" or "Python interface" or "fixing bug in
 matrix inversion algorithm".
 
 ---
