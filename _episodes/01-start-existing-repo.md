@@ -48,19 +48,29 @@ branches with some easy code.
 The project contains several obvious issues (bug in code,
 typo in documentation, missing license file, outdated usage example).
 
-- Explore the [repository](https://github.com/coderefinery/example-project).
-- Explore the [history](https://github.com/coderefinery/example-project/commits/master).
-- Browse commit changesets.
-- Note that there are [branches](https://github.com/coderefinery/example-project/network).
-- Find a bug in [example.py](https://github.com/coderefinery/example-project/blob/master/example.py) and use annotation to check when precisely the bug got introduced.
-- Discuss the enormous value of the annotation feature.
-- Identify other issues (bug in code, misleading comment, typo in documentation, missing license file, outdated usage example).
-- Instructors use the browser to create a branch and make a commit to an
-  existing project: Instructors will make a change concurrently, one of them
-  (the presenter) will do one change on the screen. Also experienced participants
-  can already join.
-- Make a merge request (it's easy in browser, and shows cool stuff).
-- Explore the [history](https://github.com/coderefinery/example-project/commits/master) again.
-- Browse the [network](https://github.com/coderefinery/example-project/network).
-- See [contributors](https://github.com/coderefinery/example-project/graphs/contributors).
-- Create a [release](https://github.com/coderefinery/example-project/releases).
+- History
+  - Explore the [repository](https://github.com/coderefinery/example-project).
+  - Explore the [history](https://github.com/coderefinery/example-project/commits/master).
+  - Browse commit changesets.
+  - Note that there are [branches](https://github.com/coderefinery/example-project/network).
+- Reproducibility
+  - Find a bug in
+    [example.py](https://github.com/coderefinery/example-project/blob/master/example.py)
+    and use annotation to check when precisely the bug got introduced.
+  - Discuss the enormous value of the annotation feature.
+- Collaboration
+  - Identify other issues (bug in code, misleading comment, typo in
+    documentation, missing license file, outdated usage example).
+  - Instructors use the browser to create a branch and make a commit to an
+    existing project: Instructors will make a change concurrently, one of them
+    (the presenter) will do one change on the screen. Also experienced participants
+    can already join.
+  - Make a merge request (it's easy in browser, and shows cool stuff).
+  - Browse the [network](https://github.com/coderefinery/example-project/network).
+  - See [contributors](https://github.com/coderefinery/example-project/graphs/contributors).
+- Releases
+  - Explore the [history](https://github.com/coderefinery/example-project/commits/master) again.
+  - Create a [release](https://github.com/coderefinery/example-project/releases).
+
+While some of these are GitHub features, it all can be done on other sites, or
+by yourself without GitHub at all.
