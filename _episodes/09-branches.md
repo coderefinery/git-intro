@@ -69,7 +69,8 @@ one development line (branch) and this branch is called "master":
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
 
-We have defined the `git graph` alias earlier using:
+We have defined the `git graph` alias earlier using
+(if `git graph` doesn't work for you, run this line to define it):
 
 ```shell
 $ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"
