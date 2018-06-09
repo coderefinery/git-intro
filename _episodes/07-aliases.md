@@ -41,7 +41,7 @@ $ git co [branch_name]
 A more useful shortcut:
 
 ```shell
-$ git config --global alias.ls "log --graph --decorate --pretty=oneline --abbrev-commit"
+$ git config --global alias.ls "log --graph --decorate --pretty=oneline"
 $ cd a_git_repo
 $ git ls
 ```

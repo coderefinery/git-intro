@@ -73,7 +73,7 @@ We have defined the `git graph` alias earlier using
 (if `git graph` doesn't work for you, run this line to define it):
 
 ```shell
-$ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"
+$ git config --global alias.graph "log --all --graph --decorate --oneline"
 ```
 
 Let us inspect the project history using the `git graph` alias:
