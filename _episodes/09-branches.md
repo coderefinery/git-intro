@@ -382,6 +382,59 @@ manually *settle merge conflicts* (we will do that later).
 
 ---
 
+## Deleting branches safely
+
+Both feature branches are merged:
+
+```shell
+$ git branch --merged
+
+  experiment
+  less-salt
+* master
+```
+
+This means we can delete the branches:
+
+```shell
+$ git branch -d experiment less-salt
+
+Deleted branch experiment (was 6feb49d).
+Deleted branch less-salt (was bf59be6).
+```
+
+This is the result:
+
+![]({{ site.baseurl }}/img/gitink/git-deleted-branches.svg)
+
+Compare in the terminal:
+
+```shell
+$ git graph
+
+*   4f00317 (HEAD -> master) Merge branch 'less-salt'
+|\
+| * bf59be6 (origin/less-salt) reduce amount of salt
+* |   c43b24c Merge branch 'experiment'
+|\ \
+| * | 6feb49d (origin/experiment) maybe little bit less cilantro
+| * | 7cf6d8c let us try with some cilantro
+| |/
+* | fdc8490 draft a readme
+|/
+* dd4472c (origin/master) we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
+```
+
+As you see only the pointers disappeared, not the commits.
+
+Git will not let you delete a branch which has not been reintegrated unless you
+insist using `git branch -D`. Even then your commits will not be lost but you
+may have a hard time finding them as there is no branch pointing to them.
+
+---
+
 ### Exercise: merge `experiment` into `master`
 
 - How do the ingredients look on `master`?
@@ -438,35 +491,6 @@ Both are fine, the resulting code is the same, not the history:
 ![]({{ site.baseurl }}/img/gitink/no-ff.svg)
 
 It is a matter of taste or convention.
-
----
-
-## Deleting branches safely
-
-Let us merge also the `less-salt` to `master`:
-
-```shell
-$ git checkout master
-$ git merge less-salt
-```
-
-![]({{ site.baseurl }}/img/gitink/git-merge-4.svg)
-
-Now that we are happy with the work we did in the branches, and
-they have been merged into `master`, it is time to delete them:
-
-```shell
-$ git branch -d experiment
-$ git branch -d less-salt
-```
-
-![]({{ site.baseurl }}/img/gitink/git-merge-5.svg)
-
-As you see only the pointers disappeared, not the commits.
-
-Git will not let you delete a branch which has not been reintegrated unless you
-insist using `git branch -D`. Even then your commits will not be lost but you
-may have a hard time finding them as there is no branch pointing to them.
 
 ---
 
