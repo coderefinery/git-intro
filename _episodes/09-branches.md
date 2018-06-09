@@ -253,12 +253,12 @@ Now you should have this situation:
 $ git graph
 
 * fdc8490 (HEAD -> master) draft a readme
-| * bf59be6 (origin/less-salt, less-salt) reduce amount of salt
+| * bf59be6 (less-salt) reduce amount of salt
 |/
-| * 6feb49d (origin/experiment, experiment) maybe little bit less cilantro
+| * 6feb49d (experiment) maybe little bit less cilantro
 | * 7cf6d8c let us try with some cilantro
 |/
-* dd4472c (origin/master) we should not forget to enjoy
+* dd4472c we should not forget to enjoy
 * 2bb9bb4 add half an onion
 * 2d79e7e adding ingredients and instructions
 ```
@@ -308,13 +308,13 @@ $ git graph
 
 *   c43b24c (HEAD -> master) Merge branch 'experiment'
 |\
-| * 6feb49d (origin/experiment, experiment) maybe little bit less cilantro
+| * 6feb49d (experiment) maybe little bit less cilantro
 | * 7cf6d8c let us try with some cilantro
 * | fdc8490 draft a readme
 |/
-| * bf59be6 (origin/less-salt, less-salt) reduce amount of salt
+| * bf59be6 (less-salt) reduce amount of salt
 |/
-* dd4472c (origin/master) we should not forget to enjoy
+* dd4472c we should not forget to enjoy
 * 2bb9bb4 add half an onion
 * 2d79e7e adding ingredients and instructions
 ```
@@ -350,15 +350,15 @@ $ git graph
 
 *   4f00317 (HEAD -> master) Merge branch 'less-salt'
 |\
-| * bf59be6 (origin/less-salt, less-salt) reduce amount of salt
+| * bf59be6 (less-salt) reduce amount of salt
 * |   c43b24c Merge branch 'experiment'
 |\ \
-| * | 6feb49d (origin/experiment, experiment) maybe little bit less cilantro
+| * | 6feb49d (experiment) maybe little bit less cilantro
 | * | 7cf6d8c let us try with some cilantro
 | |/
 * | fdc8490 draft a readme
 |/
-* dd4472c (origin/master) we should not forget to enjoy
+* dd4472c we should not forget to enjoy
 * 2bb9bb4 add half an onion
 * 2d79e7e adding ingredients and instructions
 ```
@@ -414,15 +414,15 @@ $ git graph
 
 *   4f00317 (HEAD -> master) Merge branch 'less-salt'
 |\
-| * bf59be6 (origin/less-salt) reduce amount of salt
+| * bf59be6 reduce amount of salt
 * |   c43b24c Merge branch 'experiment'
 |\ \
-| * | 6feb49d (origin/experiment) maybe little bit less cilantro
+| * | 6feb49d maybe little bit less cilantro
 | * | 7cf6d8c let us try with some cilantro
 | |/
 * | fdc8490 draft a readme
 |/
-* dd4472c (origin/master) we should not forget to enjoy
+* dd4472c we should not forget to enjoy
 * 2bb9bb4 add half an onion
 * 2d79e7e adding ingredients and instructions
 ```
