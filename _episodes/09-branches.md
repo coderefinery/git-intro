@@ -492,21 +492,13 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 
 ## Tags
 
-A branch is a pointer to a commit.
-
-A tag is a pointer to a commit, too. The reason we use tags is that tags
-can be given a semantic meaning to humans (it is difficult to remember and compare
-hashes).
-
-The difference between a branch and a tag is that a branch pointer moves
-forward as we add commits, whereas a tag should always **point to the same
-commit**. We use tags to record particular states or milestones of a project at a given
-point in time, like for instance versions (have a look at [semantic
-versioning](http://semver.org)).
-
-There are two basic types of tags: annotated and lightweight. **Use annotated
-tags** since they contain the author and can be cryptographically signed using
-GPG, timestamped and a message attached.
+- A tag is a pointer to a commit but in contrast to a branch it does not move.
+- We use tags to record particular states or milestones of a project at a given
+  point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
+  v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
+- There are two basic types of tags: annotated and lightweight.
+- **Use annotated tags** since they contain the author and can be cryptographically signed using
+  GPG, timestamped, and a message attached.
 
 Let's add an annotated tag to our current state of the guacamole recipe:
 
