@@ -183,7 +183,7 @@ Let us now commit the change to the repository:
 $ git commit -m "adding ingredients and instructions"
 
 [master (root-commit) aa243ea] adding ingredients and instructions
- 2 files changed, 10 insertions(+)
+ 2 files changed, 8 insertions(+)
  create mode 100644 ingredients.txt
  create mode 100644 instructions.txt
 ```
@@ -268,7 +268,7 @@ Now first stage and commit each change separately (what happens when we leave ou
 
 ```shell
 $ git add ingredients.txt
-$ git commit -m "add onion"
+$ git commit -m "add half an onion"
 $ git add instructions.txt
 $ git commit                   # <-- we have left out -m "..."
 ```

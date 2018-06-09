@@ -69,45 +69,30 @@ one development line (branch) and this branch is called "master":
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
 
+We have defined the `git graph` alias earlier using:
+
 ```shell
-$ git log --stat
+$ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"
+```
 
-commit 7f3582dfbad6539cfa60f5b21bfad41d1b58a618
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Fri May 5 12:49:45 2017 +0200
+Let us inspect the project history using the `git graph` alias:
 
-    do not forget to enjoy
+```shell
+$ git graph
 
- instructions.txt | 1 +
- 1 file changed, 1 insertion(+)
-
-commit 64441c1934def7d91ff0b66af0795749d5f1954a
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Fri May 5 12:49:35 2017 +0200
-
-    add onion
-
- ingredients.txt | 1 +
- 1 file changed, 1 insertion(+)
-
-commit d619bf848a3f83f05e8c08c7f4dcda3490cd99d9
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Fri May 5 12:48:36 2017 +0200
-
-    adding ingredients and instructions
-
- ingredients.txt  | 3 +++
- instructions.txt | 5 +++++
- 2 files changed, 8 insertions(+)
+* dd4472c (HEAD -> master) we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
 ```
 
 - Commits are states characterized by a 40-character hash (checksum).
+- `git graph` print abbreviations of these checksums.
 
 
 ### Branches are pointers
 
 - Branches are pointers that point to a commit.
-- Branch `master` points to commit `7f3582dfbad6539cfa60f5b21bfad41d1b58a618`.
+- Branch `master` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
 
 Try this:
 
@@ -115,14 +100,15 @@ Try this:
 $ cat .git/refs/heads/master
 ```
 
-It will echo a long hash, for instance this one:
+It will echo a long hash, for instance this one (in your case it will be different):
 
 ```shell
-7f3582dfbad6539cfa60f5b21bfad41d1b58a618
+dd4472c8093b7bbcdaa15e3066da6ca77fcabadd
 ```
 
 - That is all there is: branch `master` is simply a pointer to a hash.
-- `HEAD` is another pointer, it points to where we are right now (currently `master`).
+- `HEAD` is another pointer, it points to where we are right now (currently `master`) - remember
+  the tape recorder head.
 
 ### On which branch are we?
 
@@ -153,20 +139,42 @@ $ git checkout experiment  # switch to branch "experiment"
 $ git branch               # list all local branches and show on which branch we are
 ```
 
-- The branch is created from the `master` branch.
-- We commit our changes to this branch.
-- Stage this and commit it with the message "let us try with some cilantro"
+- Verify that you are on the `experiment` branch:
 
 ```shell
-$ cat ingredients.txt
+$ git branch
 
+* experiment
+  master
+```
+
+- Then add 2 tbsp cilantro **on top** of the `ingredients.txt`:
+
+```shell
+* 2 tbsp cilantro
 * 2 avocados
 * 1 lime
-* 1 tsp salt
+* 2 tsp salt
 * 1/2 onion
-* 2 tbsp cilantro
 ```
-- Edit ingredients.txt, to reduce the amount of cilantro to 1 tbsp. Stage this and commit it with the message "maybe little bit less cilantro"
+
+- Stage this and commit it with the message "let us try with some cilantro".
+- Then reduce the amount of cilantro to 1 tbsp, stage and commit again with "maybe little bit less cilantro".
+
+We have created **two new commits**:
+
+```shell
+$ git graph
+
+* 6feb49d (HEAD -> experiment) maybe little bit less cilantro
+* 7cf6d8c let us try with some cilantro
+* dd4472c (master) we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
+```
+
+- The branch `experiment` is two commits ahead of `master`.
+- We commit our changes to this branch.
 
 
 ## Different meanings of "checkout"
