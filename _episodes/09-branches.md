@@ -445,6 +445,7 @@ $ git branch <name>        # create branch <name>
 $ git checkout <name>      # switch to branch <name>
 $ git merge <name>         # merge branch <name> (to current branch)
 $ git branch -d <name>     # delete branch <name>
+$ git branch -D <name>     # delete unmerged branch
 ```
 
 Since the following command combo is so frequent:
