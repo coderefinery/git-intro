@@ -88,28 +88,11 @@ $ git graph
 
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
-
-
-### Branches are pointers
-
 - Branches are pointers that point to a commit.
 - Branch `master` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
-
-Try this:
-
-```shell
-$ cat .git/refs/heads/master
-```
-
-It will echo a long hash, for instance this one (in your case it will be different):
-
-```shell
-dd4472c8093b7bbcdaa15e3066da6ca77fcabadd
-```
-
-- That is all there is: branch `master` is simply a pointer to a hash.
 - `HEAD` is another pointer, it points to where we are right now (currently `master`) - remember
   the tape recorder head.
+
 
 ### On which branch are we?
 
