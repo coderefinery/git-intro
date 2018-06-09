@@ -213,37 +213,6 @@ The state can be a commit or a branch (pointing to a commit).
 
 Use the same commands as we used above.
 
-Once you have committed your changes, try:
-
-```shell
-$ git log experiment
-$ git log less-salt
-$ git log master
-```
-
-Examining the log on the `experiment` branch may now produce the following log:
-
-```shell
-$ git log --oneline experiment
-
-f413c60 maybe little bit less cilantro
-d541ee0 let us try with some cilantro
-7f3582d do not forget to enjoy
-64441c1 add onion
-d619bf8 adding ingredients and instructions
-```
-
-And on the `less-salt` branch:
-
-```shell
-$ git log --oneline less-salt
-
-e66edf3 reduce amount of salt
-7f3582d do not forget to enjoy
-64441c1 add onion
-d619bf8 adding ingredients and instructions
-```
-
 We now have three branches (in this case `HEAD` points to `experiment`):
 
 ```shell
@@ -252,34 +221,22 @@ $ git branch
 * experiment
   less-salt
   master
+
+$ git graph
+
+* bf59be6 (HEAD -> less-salt) reduce amount of salt
+| * 6feb49d (experiment) maybe little bit less cilantro
+| * 7cf6d8c let us try with some cilantro
+|/
+* dd4472c (master) we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
 ```
 
-### Visualizing branches
-
-Here is a graphical representation of what we have created (the commit hashes will be different on your laptop):
+Here is a graphical representation of what we have created (the commit hashes
+will be different on your laptop):
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
-
-Lets try to produce a visual representation of the branches using git commands.
-
-Try the following
-
-```shell
-$ git log --all --graph --decorate --oneline --abbrev-commit
-```
-
-This was very nice way to visualise the branches and the commits. But the command has too many parameters and it is too
-long to type. Fortunately Git has a solution for this using aliases:
-
-```shell
-$ git config --global alias.graph "log --all --graph --decorate --oneline --abbrev-commit"
-```
-
-Next time when we want this we will use the alias
-
-```shell
-$ git graph
-```
 
 ---
 
