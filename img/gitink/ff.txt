@@ -1,8 +1,0 @@
-
-           [_master,_HEAD]
-            |
-d6----64----7f      [master,HEAD]
-              \      |
-               d5----f4
-                     |
-                    [experiment]

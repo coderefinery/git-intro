@@ -1,8 +1,0 @@
-
-                       [experiment,master,HEAD]
-                        |
-d6----64----7f----d5----f4
-              \           \
-               e6----------26
-                           |
-                          [less-salt]
