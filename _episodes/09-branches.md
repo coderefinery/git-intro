@@ -435,62 +435,17 @@ may have a hard time finding them as there is no branch pointing to them.
 
 ---
 
-### Exercise: merge `experiment` into `master`
+### Exercise: encounter a fast-forward merge
 
-- How do the ingredients look on `master`?
-- What do you expect to happen when you merge `experiment` into `master` (draw the result first)?
-- **Verify** whether the result matches your expectation.
+- Create a new branch from `master` and switch to it.
+- Create a couple of commits on the new branch (for instance edit `README.md`):
 
-**SPOILER BELOW**
+![]({{ site.baseurl }}/img/gitink/git-pre-ff.svg)
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-This is the result - discuss it with people around you:
-
-![]({{ site.baseurl }}/img/gitink/git-merge-3.svg)
-
-
-### Fast-forward vs. non-fast-forward merges
-
-To understand what just happened, it is useful to discuss the difference
-between fast-forward vs. non-fast-forward merges.
-
-To clarify what is meant by "fast-forward" imagine that you are on `master` and want to merge `experiment`
-(the color change is to make clear that the two commits are not on the `master` branch yet):
-
-![]({{ site.baseurl }}/img/gitink/pre-ff.svg)
-
-What will happen if we `git merge experiment`?
-
-If you now type `git merge experiment`, Git will recognize that it can simply move
-the `master` pointer to `f4` without creating a merge commit.
-
-This is a fast-forward merge:
-
-![]({{ site.baseurl }}/img/gitink/ff.svg)
-
-The default in Git is to fast-forward merge when possible.
-
-If you do not like this you can tell Git to merge with no fast-forward:
-
-```shell
-$ git merge --no-ff experiment
-```
-
-Both are fine, the resulting code is the same, not the history:
-
-![]({{ site.baseurl }}/img/gitink/no-ff.svg)
-
-It is a matter of taste or convention.
+- Now switch to `master`.
+- Merge the new branch to `master`.
+- Examine the result with `git graph`.
+- Have you expected the result? Discuss what you see.
 
 ---
 
