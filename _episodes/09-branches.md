@@ -123,7 +123,8 @@ $ git checkout experiment  # switch to branch "experiment"
 $ git branch               # list all local branches and show on which branch we are
 ```
 
-- Verify that you are on the `experiment` branch:
+- Verify that you are on the `experiment` branch (note that `git graph` also
+  makes it clear what branch you are on: `HEAD -> branchname`):
 
 ```shell
 $ git branch
