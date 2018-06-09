@@ -1,12 +1,11 @@
 ---
 layout: episode
-title: Branching and Merging
+title: Branching and merging
 teaching: 20
 exercises: 15
 questions:
   - How can I or my team work on multiple features in parallel?
   - How to combine the changes of parallel tracks of work?
-  - What is branching and when should I do it?
   - How can I permanently reference a point in history, like a software
     version?
 objectives:
@@ -14,8 +13,6 @@ objectives:
   - Know the difference between a branch and a tag.
 keypoints:
   - A branch is a division unit of work, to be merged with other units of work.
-  - Creating branches is simple in Git.
-  - Merging branches is typically straightforward.
   - A tag is a pointer to a moment in the history of a project.
 ---
 
