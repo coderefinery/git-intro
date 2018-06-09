@@ -5,5 +5,5 @@ Installation:
 ```shell
 virtualenv venv
 source venv/bin/activate
-pip install --upgrade git+https://github.com/bast/gitink@master
+pip install gitink
 ```
