@@ -238,6 +238,8 @@ will be different on your laptop):
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
 
+And for comparison this is how it looks [on GitHub](https://github.com/bast/recipe/network).
+
 ---
 
 ## Merging branches
