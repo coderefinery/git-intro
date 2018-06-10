@@ -1,8 +1,10 @@
 
-           [master]    [experiment,_HEAD]
-            |           |
-d6----64----7f----d5----f4
-              \
-               e6
+                         [master,HEAD]
+                          |
+               m4---------m5
+              /          /
+m1----m2----m3----e1----e2
+              \         |
+               l1      [experiment]
                |
-              [less-salt,HEAD]
+              [less-salt]

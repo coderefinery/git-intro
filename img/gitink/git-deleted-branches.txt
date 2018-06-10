@@ -5,9 +5,9 @@
                /          /      \
               /          /        \
 m1----m2----m3----e1----e2         \
-              \         |           \
-               \       [experiment]  \
+              \                     \
+               \                     \
                 \                     \
                  l1--------------------m6
-                 |                     |
-                [less-salt]           [master,HEAD]
+                                       |
+                                      [master,HEAD]
