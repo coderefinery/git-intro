@@ -81,19 +81,9 @@ $ git config --global alias.fe fetch
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
 $ git config --global alias.rem remote
 $ git config --global alias.st status
-```
-
-Some common `-p` aliases:
-
-```
 $ git config --global alias.ap "add --patch"
 $ git config --global alias.cip "commit --patch -v"
 $ git config --global alias.cop "checkout --patch"
-```
-
-Working with Git submodules (nested Git repositories):
-
-```
 $ git config --global alias.cl "clone --recursive"
 $ git config --global alias.su "submodule update --init --recursive"
 ```
