@@ -17,6 +17,16 @@ keypoints:
   - All this might be a bit nebulous but we will add clarity later this week.
 ---
 
+We will learn how to work with remote repositories in detail in the
+[collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson.
+
+In this section we only want to get a taste to prepare us for other lessons
+where we will employ GitHub.
+
+Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
+to remove it afterwards.
+
+
 ## From our laptops to the web
 
 We have seen that **creating Git repositories and moving them around is
@@ -32,6 +42,39 @@ If we remove `.git`, we remove all Git history of a project.
 
 ---
 
+## Remotes
+
+To store your git data on another server, you use **remotes**.  A
+remote is treated the same as a branch - most of the same concept
+apply, but you can also **push** changes to the remote and **pull**
+from the remote.
+
+You might use remotes to:
+- Back up your own work
+- To collaborate with other people.
+
+There are different types of remotes:
+- If you have a server you can ssh to, you can use that as a remote.
+- GitHub is a popular, closed-source commercial site.
+
+- [GitLab](https://about.gitlab.com) is a popular, open-core
+  commercial site.  Many universities have their own private GitLabs
+  set up.
+
+- [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
+
+- Another option is [NotABug](https://notabug.org)
+
+- **We especially encourage course participants to use our new [Nordic
+  research software repository
+  platform](https://source.coderefinery.org)**, for more information
+  see
+  [http://coderefinery.org/repository/](http://coderefinery.org/repository/).
+  This is GitLab, free for researchers and allows private,
+  cross-university sharing.
+
+---
+
 ## GitHub
 
 One option to host your repository on the web is [GitHub](https://github.com).
@@ -44,12 +87,10 @@ It is free for public projects and hosting private projects costs a monthly fee
 (but educational discounts exist). The free part of the service has made it
 very popular with many open source providers.
 
-CodeRefinery does not in any way endorse the use if GitHub. There are many
-commercial alternatives such as [GitLab](https://about.gitlab.com) or
-[Bitbucket](https://bitbucket.org). Another option is [NotABug](https://notabug.org).
-
-We also encourage course participants to use our new [Nordic research software repository platform](https://source.coderefinery.org),
-for more information see [http://coderefinery.org/repository/](http://coderefinery.org/repository/).
+CodeRefinery does not in any way endorse the use of GitHub. There are many
+commercial and open-source alternatives, just check the list above.  In the
+end, it is a balance between control and visibility, and we use GitHub because
+you are likely to have to use it for other software anyway.
 
 ---
 
@@ -59,19 +100,6 @@ By now you should already have set up a GitHub account but if you haven't,
 please do so [here](https://github.com/join). But it is OK if you want to use
 [GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
 [NotABug](https://notabug.org) or another platform instead.
-
----
-
-## Sharing a Git repository on GitHub
-
-We will learn how to work with remote repositories in detail in the
-[collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson.
-
-In this section we only want to get a taste to prepare us for other lessons
-where we will employ GitHub.
-
-Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
-to remove it afterwards.
 
 ---
 
@@ -96,14 +124,14 @@ What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
 
 To push changes to the project you will either need SSH keys for the SSH
-address (preferred) or you will have to use your GitHub user and password when
-using the HTTPS address.
+address (preferred) or you will have to use your GitHub username and password when
+using the HTTPS address.  **If you don't know what to do, use HTTPS.**
 
 ---
 
 ## Pushing our guacamole recipe repository to GitHub
 
-We now want to try the second option:
+We now want to try the second option that GitHub suggests:
 
 > **... or push an existing repository from the command line**
 
