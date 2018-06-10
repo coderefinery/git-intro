@@ -215,20 +215,19 @@ We will discuss 3 different ways to do this.
 
 ```
 <<<<<<< HEAD
-* 0 tbsp cilantro
-=======
 * 2 tbsp cilantro
->>>>>>> like-cilantro
+=======
+* 0.5 tbsp cilantro
+>>>>>>> dislike-cilantro
 ```
 
-- Manual resolution means that you have to edit the code/text between the resolution markers.
+- We have to edit the code/text between the resolution markers.
 - Git stages all files without conflicts and leaves the files with conflicts unstaged.
 - Decide what you keep (the one, the other, or both or something else).
 - Then remove the resolution markers.
-- Tell Git that you have resolved the conflict with `git add ingredients.txt`.
-- Then verify with `git status`.
-- Now commit the merge; this opens up a prepared commit message that you can keep or modify.
-- It is good practice to keep the information that there was a conflict in the commit message.
+- Don't forget to run `git diff` after you have attempted resolution.
+- Tell Git that you have resolved the conflict with `git add ingredients.txt`, then verify with `git status`.
+- Finally commit the merge.
 
 ---
 
