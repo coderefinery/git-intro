@@ -33,12 +33,10 @@ repository"){:class="img-responsive"}
 
 Software development is often not linear:
 
-- We do not have time to write perfect code immediately, it would be nice to
-  have the possibility to experiment somewhere aside.
-- Interrupted work (we typically work on several longer term projects at the
-  same time).
-- Collaborative work on different features in the same project.
-- Maintenance of releases, bug-fixes, and patches.
+- We typically need at least one version of the code to "work" (to compile, to give expected results, ...).
+- At the same time we work on new features, often several features concurrently.
+  Often they are unfinished.
+- We need to be able to separate different lines of work really well.
 
 The strength of version control is that it permits the researcher to **isolate
 different tracks of work**. Researchers can work on different things and merge
