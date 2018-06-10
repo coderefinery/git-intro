@@ -263,6 +263,7 @@ And for comparison this is how it looks [on GitHub](https://github.com/bast/reci
 - `$ git clone https://github.com/bast/recipe.git recipe-branching`
 - `$ cd recipe-branching`
 - `$ git graph`
+- Or call a helper to un-stuck it for you.
 
 
 It turned out that our experiment with cilantro was a good idea.
