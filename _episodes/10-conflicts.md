@@ -295,13 +295,17 @@ $ git config --global mergetool.keepBackup false
   or "theirs" (version on the merged branch).
 - Then you do not have to resolve conflicts manually.
 - See [merge strategies](https://git-scm.com/docs/merge-strategies).
-- If "theirs" is things done by someone else consider how they will feel.
+
+Example:
 
 ```shell
-$ git checkout --theirs ingredients.txt  # take the version of the other branch
-                                         # alternative would be --ours
-$ git add ingredients.txt                # tell Git that you have resolved it
-$ git commit
+$ git merge -s recursive -Xours less-avocados  # merge and in doubt take the changes from current branch
+```
+
+Or:
+
+```shell
+$ git merge -s recursive -Xtheirs less-avocados  # merge and in doubt take the changes from less-avocados branch
 ```
 
 ---
