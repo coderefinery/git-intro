@@ -235,7 +235,7 @@ Now you should have this situation:
 ```shell
 $ git graph
 
-* fdc8490 (HEAD -> master) draft a readme
+* 40fbb90 (HEAD -> master) draft a readme
 | * bf59be6 (less-salt) reduce amount of salt
 |/
 | * 6feb49d (experiment) maybe little bit less cilantro
@@ -294,7 +294,7 @@ $ git graph
 |\
 | * 6feb49d (experiment) maybe little bit less cilantro
 | * 7cf6d8c let us try with some cilantro
-* | fdc8490 draft a readme
+* | 40fbb90 draft a readme
 |/
 | * bf59be6 (less-salt) reduce amount of salt
 |/
@@ -340,7 +340,7 @@ $ git graph
 | * | 6feb49d (experiment) maybe little bit less cilantro
 | * | 7cf6d8c let us try with some cilantro
 | |/
-* | fdc8490 draft a readme
+* | 40fbb90 draft a readme
 |/
 * dd4472c we should not forget to enjoy
 * 2bb9bb4 add half an onion
@@ -404,7 +404,7 @@ $ git graph
 | * | 6feb49d maybe little bit less cilantro
 | * | 7cf6d8c let us try with some cilantro
 | |/
-* | fdc8490 draft a readme
+* | 40fbb90 draft a readme
 |/
 * dd4472c we should not forget to enjoy
 * 2bb9bb4 add half an onion
