@@ -240,7 +240,19 @@ We will discuss 3 different ways to do this.
 
 ---
 
-## Resolution using mergetool
+## Optional exercise: Resolution using mergetool
+
+- Again create a conflict (for instance disagree on the number of avocados).
+- Stop at this stage:
+
+```
+Auto-merging ingredients.txt
+CONFLICT (content): Merge conflict in ingredients.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+- Instead of resolving the conflict manually, use a visual tool
+  (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 
 ```shell
 $ git mergetool
@@ -252,18 +264,26 @@ $ git mergetool
 - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
 
 If you have not instructed Git to avoid creating backups when using mergetool, then to be on
-the safe side there will be additional  temporary files created. To remove those  you can do
+the safe side there will be additional temporary files created. To remove those  you can do
 a git clean after the merging.
 
-To view what will be removed
-`git clean -n`
+To view what will be removed:
 
-To remove
-`git clean -f`
+```
+$ git clean -n
+```
+
+To remove:
+
+```
+$ git clean -f`
+```
 
 To configure Git to avoid creating backups at all:
 
-`git config --global mergetool.keepBackup false`
+```
+$ git config --global mergetool.keepBackup false
+```
 
 ---
 
