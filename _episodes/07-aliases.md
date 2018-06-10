@@ -79,8 +79,8 @@ $ git config --global alias.diw "diff --color-words"
 $ git config --global alias.dis "!git --no-pager diff --stat"
 $ git config --global alias.fe fetch
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
-$ git config --global alias.rem "remote"
-$ git config --global alias.st "status
+$ git config --global alias.rem remote
+$ git config --global alias.st status
 ```
 
 Some common `-p` aliases:
@@ -88,7 +88,7 @@ Some common `-p` aliases:
 ```
 $ git config --global alias.ap "add --patch"
 $ git config --global alias.cip "commit --patch -v"
-$ git config --global alias.cop "checkout --patch "
+$ git config --global alias.cop "checkout --patch"
 ```
 
 Working with Git submodules (nested Git repositories):
