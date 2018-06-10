@@ -56,15 +56,11 @@ You might use remotes to:
 There are different types of remotes:
 - If you have a server you can ssh to, you can use that as a remote.
 - GitHub is a popular, closed-source commercial site.
-
 - [GitLab](https://about.gitlab.com) is a popular, open-core
   commercial site.  Many universities have their own private GitLabs
   set up.
-
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
-
 - Another option is [NotABug](https://notabug.org)
-
 - **We especially encourage course participants to use our new [Nordic
   research software repository
   platform](https://source.coderefinery.org)**, for more information
@@ -105,9 +101,9 @@ please do so [here](https://github.com/join). But it is OK if you want to use
 
 ## Create a new repository on GitHub
 
-- Login
-- Click on "Repositories"
-- Click on the green button "New"
+1. Login
+2. Click on "Repositories"
+3. Click on the green button "New"
 
 On this page choose a project name (screenshot).
 
@@ -135,9 +131,9 @@ We now want to try the second option that GitHub suggests:
 
 > **... or push an existing repository from the command line**
 
-- Now go to your guacamole repository on your computer.
-- Check that you are in the right place with `git status`.
-- Copy paste the two lines to the terminal and execute those, in my case (**you
+1. Now go to your guacamole repository on your computer.
+2. Check that you are in the right place with `git status`.
+3. Copy paste the two lines to the terminal and execute those, in my case (**you
   need to replace the "bast" part and possibly also the repository name**):
 
 ```shell
