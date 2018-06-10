@@ -30,20 +30,12 @@ keypoints:
 
 ### Global aliases
 
-A simple shortcut:
+A very useful shortcut which we will use a lot today:
 
 ```shell
-$ git config --global alias.co checkout
-$ cd a_git_repo
-$ git co [branch_name]
-```
-
-A more useful shortcut:
-
-```shell
-$ git config --global alias.ls "log --graph --decorate --pretty=oneline"
-$ cd a_git_repo
-$ git ls
+$ git config --global alias.graph "log --all --graph --decorate --oneline"
+$ cd your_git_repository
+$ git graph
 ```
 
 Global aliases are stored in `~/.gitconfig`.
@@ -53,10 +45,10 @@ Global aliases are stored in `~/.gitconfig`.
 
 It is possible to call external commands using the exclamation mark character "!".
 In this case we create a local alias which is
-stored in `.git/config` and not synchronized with remotes.
+stored in `.git/config` and not synchronized with remotes:
 
 ```shell
-$ cd a_git_repo
+$ cd your_git_repository
 $ git config alias.hi '!echo hello'
 $ git hi
 ```
