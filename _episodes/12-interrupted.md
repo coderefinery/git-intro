@@ -31,43 +31,31 @@ things.
 
 - `git stash` will put working directory and staging area changes
   away.  Your code will be same as last commit.
-
 - `git stash pop` will return to the state you were before. Can give it a list.
-
 - `git stash list` will list the current stashes.
-
 - `git stash save NAME` is like the first, but will give it a name.
   Useful if it might last a while.
-
 - `git stash save [-p] [filename]` will stash certain files files
   and/or by patches.
-
 - `git stash drop` will drop the most recent stash (or whichever stash
   you give).
-
 - The stashes form a stack, so you can stash several batches of modifications.
 
 
 ### Exercise: stashes
 
-- Make a change.
-
-- Check status/diff, stash the change, check status/diff again.
-
-- Make a separate, unrelated change which doesn't touch the same
+1. Make a change.
+2. Check status/diff, stash the change, check status/diff again.
+3. Make a separate, unrelated change which doesn't touch the same
   lines.  Commit this change.
-
-- Pop off the stash you saved, check status/diff.
-
-- Optional: Do the same but stash twice.  Also check `git stash list`.
+4. Pop off the stash you saved, check status/diff.
+5. Optional: Do the same but stash twice.  Also check `git stash list`.
   Can you pop the stashes in the opposite order?
-
-- Advanced: What happens if stashes conflict with other changes?  make
+6. Advanced: What happens if stashes conflict with other changes?  make
   a change and stash it.  Modify the same line or one right above or
   below.  Pop the stash back.  Resolve the conflict.  Note there is no
   extra commit.
-
-- Advanced: what does `git graph` show when you have something
+7. Advanced: what does `git graph` show when you have something
   stashed?
 
 ---
@@ -96,11 +84,10 @@ Later you can merge it to master or rebase it on top of master and resume work.
 
 You already know how to do this...
 
-- Optional: Go through the process above.  Start a change, create new
+1. Optional: Go through the process above.  Start a change, create new
   branch and store your changes.  Go back to master and fix something
   else.  Resume your work and merge the new branch.
-
-- Discuss how to resume your former work.  Can you git rid of branch?
+2. Discuss how to resume your former work.  Can you git rid of branch?
   Continue using it?  etc.
 
 ---
