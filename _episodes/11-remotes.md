@@ -15,6 +15,9 @@ keypoints:
   - A repository can have one or multiple remotes (we will revisit these later).
   - Local branches often track remote branches.
   - All this might be a bit nebulous but we will add clarity later this week.
+  - A remote serves as a full backup of your work.
+  - We'll properly learn how to use these in the next "git
+    collaborative" lesson.
 ---
 
 We will learn how to work with remote repositories in detail in the
