@@ -21,7 +21,7 @@ Then a merge commit appears (unless fast-forward) without you even noticing.
 
 Git is very good at resolving modifications when merging branches.
 
-But sometimes the same line is modified on two branches and Git issues a conflict.
+But sometimes the same line or portion of the code/text is modified on two branches and Git issues a conflict.
 Then you need to tell Git which version to keep.
 
 There are several ways to do that as we will see.
