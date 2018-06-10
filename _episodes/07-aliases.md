@@ -60,3 +60,63 @@ $ git hi
 - How many times should you wait before aliasing a command?
 - Do you believe a list of generic two-letter acronyms for common commands will
   save your time?
+
+---
+
+## List of aliases the instructors use
+
+You are welcome to reuse, suggest, improve.
+
+Common aliases:
+
+```
+$ git config --global alias.br branch
+$ git config --global alias.ci "commit -v"
+$ git config --global alias.co checkout
+$ git config --global alias.di diff
+$ git config --global alias.di diff --cached --color-words
+$ git config --global alias.diw "diff --color-words"
+$ git config --global alias.dis "!git --no-pager diff --stat"
+$ git config --global alias.fe fetch
+$ git config --global alias.graph "log --all --graph --decorate --oneline"
+$ git config --global alias.rem "remote"
+$ git config --global alias.st "status
+```
+
+Some common `-p` aliases:
+
+```
+$ git config --global alias.ap "add --patch"
+$ git config --global alias.cip "commit --patch -v"
+$ git config --global alias.cop "checkout --patch "
+```
+
+Working with Git submodules (nested Git repositories):
+
+```
+$ git config --global alias.cl "clone --recursive"
+$ git config --global alias.su "submodule update --init --recursive"
+```
+
+Other aliases that may be too advanced, but would set people up for the future better (not formatted properly):
+
+```
+$ git config --global alias.cif "commit -v -p --fixup"
+
+$ git config --global alias.rb "rebase --autosquash"
+$ git config --global alias.rbi "rebase --interactive --autosquash"
+$ git config --global alias.rbis "rebase --interactive --autosquash --autostash"
+$ git config --global alias.rbs "rebase --autosquash --autostash"
+$ git config --global alias.rec "!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD"
+$ git config --global alias.ls-ignored "ls-files -o -i --exclude-standard"
+
+$ git config --global alias.new "log HEAD..HEAD@{upstream}"
+$ git config --global alias.news "log --stat HEAD..HEAD@{upstream}"
+$ git config --global alias.newd "log --patch --color-words HEAD..HEAD@{upstream}"
+$ git config --global alias.newdi "diff --color-words HEAD...HEAD@{upstream}"
+
+$ git config --global alias.rec "!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD"
+$ git config --global alias.reca "!git --no-pager log --oneline --graph --decorate -n10 --all"
+$ git config --global alias.recd "log --decorate --patch @{upstream}^^^..HEAD"
+$ git config --global alias.recs "!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD --stat"
+```
