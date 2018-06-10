@@ -88,7 +88,7 @@ $ git config --global alias.cl "clone --recursive"
 $ git config --global alias.su "submodule update --init --recursive"
 ```
 
-Other aliases that may be too advanced, but would set people up for the future better (not formatted properly):
+Other aliases that may be too advanced, but you might want to know what is possible.
 
 ```
 $ git config --global alias.cif "commit -v -p --fixup"
