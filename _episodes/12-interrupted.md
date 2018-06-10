@@ -13,28 +13,26 @@ keypoints:
 
 ## Frequent situation: interrupted work
 
-We are saying that you should make nice, prefect code.  But the real world is much more choatic.
+We are saying that you should make nice, prefect code.  But the real world is much more chaotic.
 
 - You are in the middle of a Jackson-Pollock-style debugging spree with 27 modified files
   and debugging prints everywhere.
-- Your supervisor comes in and wants you to fix/commit something right now.
+- Your colleague comes in and wants you to fix/commit something right now.
 - What to do?
 
 Git provides lots of ways to switch tasks without ruining everything.
 
-
 ---
-
 
 ## Option 1: Stashing
 
-The **stash** is the first and easiest place to temporararily "stash"
+The **stash** is the first and easiest place to temporarily "stash"
 things.
 
 - `git stash` will put working directory and staging area changes
   away.  Your code will be same as last commit.
 
-- `git stash pop` will return to the state you were before.  Can give it a list
+- `git stash pop` will return to the state you were before. Can give it a list.
 
 - `git stash list` will list the current stashes.
 
@@ -52,7 +50,7 @@ things.
 
 ### Exercise: stashes
 
-- Make a change
+- Make a change.
 
 - Check status/diff, stash the change, check status/diff again.
 
@@ -72,7 +70,6 @@ things.
 - Advanced: what does `git graph` show when you have something
   stashed?
 
-
 ---
 
 ## Option 2: Create branches
@@ -89,7 +86,7 @@ $ git add <paths>            # stage changes
 $ git commit                 # commit them
 $ git checkout master        # back to master
                              # do your work...
-$ git checkout temporary     # continue where you left off.
+$ git checkout temporary     # continue where you left off
 ```
 
 Later you can merge it to master or rebase it on top of master and resume work.
@@ -105,7 +102,6 @@ You already know how to do this...
 
 - Discuss how to resume your former work.  Can you git rid of branch?
   Continue using it?  etc.
-
 
 ---
 
@@ -126,8 +122,9 @@ $ git merge --abort
 
 The repository looks then exactly as it was before the merge.
 
+---
 
-## Storing various junk you don't need but don't want to get rid of.
+## Storing various junk you don't need but don't want to get rid of
 
 It's often that you do something and don't need it, but you don't want
 to lose it right away.  You can use either of the above strategies to
