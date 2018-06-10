@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: In-browser session
-teaching: 25
+teaching: 20
 exercises: 0
 objectives:
   - See an existing repository in action.
