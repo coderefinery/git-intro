@@ -49,20 +49,11 @@ $ git ls
 Global aliases are stored in `~/.gitconfig`.
 
 
-### A local alias
-
-```shell
-$ cd a_git_repo
-$ git config alias.who "shortlog -s --"
-$ git who
-```
-
-Local aliases are stored in `.git/config` and not synchronized with remotes.
-
-
 ### Using external commands
 
-It is possible to call external commands using the exclamation mark character "!":
+It is possible to call external commands using the exclamation mark character "!".
+In this case we create a local alias which is
+stored in `.git/config` and not synchronized with remotes.
 
 ```shell
 $ cd a_git_repo
