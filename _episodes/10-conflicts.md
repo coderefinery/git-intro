@@ -231,6 +231,15 @@ We will discuss 3 different ways to do this.
 
 ---
 
+## Exercise: create another conflict and resolve
+
+- After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
+- Again modify some ingredient on both branches.
+- Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
+- What happens if you apply the same modification on both branches?
+
+---
+
 ## Resolution using mergetool
 
 ```shell
