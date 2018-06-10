@@ -230,20 +230,20 @@ $ git commit
 
 ## Aborting a conflicting merge
 
-- Imagine it is Friday evening, you try to merge but have conflicts all over
-  the place.
-- You do not feel like resolving it now and want to undo the half-finished
-  merge.
-- Or it is a conflict that you cannot resolve and only your colleague knows
-  which version is the one to keep.
-- There is no reason to panic and delete the whole repository.
-- Simply undo the commit and go home.
+- Imagine it is Friday evening, you try to merge but have conflicts all over the place.
+- You do not feel like resolving it now and want to undo the half-finished merge.
+- Or it is a conflict that you cannot resolve and only your colleague knows which version is the one to keep.
+
+What to do?
+
+- There is no reason to delete the whole repository.
+- You can undo the broken merge by resetting the repository to `HEAD` (last committed state).
 
 ```shell
-$ git merge --abort  # undo the merge step
+$ git merge --abort
 ```
 
-The repository looks exactly as it was before the merge.
+The repository looks then exactly as it was before the merge.
 
 ---
 
