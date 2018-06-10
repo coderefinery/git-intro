@@ -36,59 +36,103 @@ Please remember:
 
 ## Exercise: create a conflict
 
-- Create two branches from `master`.
-- On the two branches make **different modifications** to the amount of the **same ingredient**.
+- Create two branches from `master`: one called `like-cilantro`, one called `dislike-cilantro`:
 
-To view the modifications:
-**Note: that we are using an Git alias called 'graph' we defined in ealier in our branches lesson**.
 ```shell
 $ git graph
+
+*   4b3e3cc (HEAD -> master, like-cilantro, dislike-cilantro) Merge branch 'less-salt'
+|\
+| * bf59be6 reduce amount of salt
+* |   80351a9 Merge branch 'experiment'
+|\ \
+| * | 6feb49d maybe little bit less cilantro
+| * | 7cf6d8c let us try with some cilantro
+| |/
+* | 40fbb90 draft a readme
+|/
+* dd4472c we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
 ```
 
-On the branch `like-cilantro` I have the following change:
+- On the two branches make **different modifications** to the amount of the **same ingredient**:
+
+```shell
+$ git graph
+
+* eee4b85 (dislike-cilantro) reduce cilantro to 0.5
+| * 55d1ce2 (like-cilantro) please more cilantro
+|/
+*   4b3e3cc (HEAD -> master) Merge branch 'less-salt'
+|\
+| * bf59be6 reduce amount of salt
+* |   80351a9 Merge branch 'experiment'
+|\ \
+| * | 6feb49d maybe little bit less cilantro
+| * | 7cf6d8c let us try with some cilantro
+| |/
+* | 40fbb90 draft a readme
+|/
+* dd4472c we should not forget to enjoy
+* 2bb9bb4 add half an onion
+* 2d79e7e adding ingredients and instructions
+```
+
+On the branch `like-cilantro` we have the following change:
 
 ```
-$ git diff master  like-cilantro
+$ git diff master like-cilantro
 
 diff --git a/ingredients.txt b/ingredients.txt
-index 27a808c..5550d6d 100644
+index a83af39..83f2f94 100644
 --- a/ingredients.txt
 +++ b/ingredients.txt
-@@ -2,4 +2,4 @@
- * 1 lime
- * 1 tsp salt
- * 1/2 onion
+@@ -1,4 +1,4 @@
 -* 1 tbsp cilantro
 +* 2 tbsp cilantro
+ * 2 avocados
+ * 1 lime
+ * 1 tsp salt
 ```
 
 And on the branch `dislike-cilantro` we have the following change:
 
 ```
-$ git diff master  dislike-cilantro
+$ git diff master dislike-cilantro
 
 diff --git a/ingredients.txt b/ingredients.txt
-index 27a808c..10eed42 100644
+index a83af39..2f60e23 100644
 --- a/ingredients.txt
 +++ b/ingredients.txt
-@@ -2,4 +2,4 @@
+@@ -1,4 +1,4 @@
+-* 1 tbsp cilantro
++* 0.5 tbsp cilantro
+ * 2 avocados
  * 1 lime
  * 1 tsp salt
- * 1/2 onion
--* 1 tbsp cilantro
-+* 0 tbsp cilantro
 ```
 
-### What do you expect will happen when I try to merge these two?
+### What do you expect will happen when we try to merge these two branches into master?
+
+The first merge will work:
 
 ```shell
-$ git branch
-
-* dislike-cilantro
-  like-cilantro
-  master
-
+$ git checkout master
+$ git status
 $ git merge like-cilantro
+
+Updating 4b3e3cc..55d1ce2
+Fast-forward
+ ingredients.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+But the second will fail:
+
+
+```shell
+$ git merge dislike-cilantro
 
 Auto-merging ingredients.txt
 CONFLICT (content): Merge conflict in ingredients.txt
@@ -101,7 +145,7 @@ but since there is a conflict, Git did not commit:
 ```shell
 $ git status
 
-On branch dislike-cilantro
+On branch master
 You have unmerged paths.
   (fix conflicts and run "git commit")
   (use "git merge --abort" to abort the merge)
@@ -121,15 +165,15 @@ Let us inspect the conflicting file:
 ```
 $ cat ingredients.txt
 
+<<<<<<< HEAD
+* 2 tbsp cilantro
+=======
+* 0.5 tbsp cilantro
+>>>>>>> dislike-cilantro
 * 2 avocados
 * 1 lime
 * 1 tsp salt
 * 1/2 onion
-<<<<<<< HEAD
-* 0 tbsp cilantro
-=======
-* 2 tbsp cilantro
->>>>>>> like-cilantro
 ```
 
 Git inserted resolution markers (the `<<<<<<<`, `>>>>>>>`, and `=======`).
@@ -140,18 +184,18 @@ Try also `git diff`:
 $ git diff
 
 diff --cc ingredients.txt
-index 10eed42,5550d6d..0000000
+index 83f2f94,2f60e23..0000000
 --- a/ingredients.txt
 +++ b/ingredients.txt
-@@@ -2,4 -2,4 +2,8 @@@
+@@@ -1,4 -1,4 +1,8 @@@
+++<<<<<<< HEAD
+ +* 2 tbsp cilantro
+++=======
++ * 0.5 tbsp cilantro
+++>>>>>>> dislike-cilantro
+  * 2 avocados
   * 1 lime
   * 1 tsp salt
-  * 1/2 onion
-++<<<<<<< HEAD
- +* 0 tbsp cilantro
-++=======
-+ * 2 tbsp cilantro
-++>>>>>>> like-cilantro
 ```
 
 `git diff` now only shows the conflicting part, nothing else.
@@ -247,7 +291,7 @@ The repository looks then exactly as it was before the merge.
 
 ---
 
-## Exercise: Resolve the conflict 
+## Exercise: Resolve the conflict
 
 - Use one of the methods described above to resolve the cilantro conflict
 
