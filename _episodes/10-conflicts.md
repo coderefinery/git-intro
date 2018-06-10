@@ -26,6 +26,12 @@ Then you need to tell Git which version to keep.
 
 There are several ways to do that as we will see.
 
+Please remember:
+
+- Conflicts look scary, but not that bad if you stop and take a deep breath. Also they are luckily rare.
+- Don't be afraid of Git because of conflicts. You may not meet some conflicts using other systems because you simply can't do the kinds of things you do in Git.
+  You can take human measures to reduce them.
+
 ---
 
 ## Exercise: create a conflict
