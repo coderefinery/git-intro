@@ -329,12 +329,6 @@ The repository looks then exactly as it was before the merge.
 
 ---
 
-## Exercise: Resolve the conflict
-
-- Use one of the methods described above to resolve the cilantro conflict
-
----
-
 ## Avoiding conflicts
 
 - Human measures
