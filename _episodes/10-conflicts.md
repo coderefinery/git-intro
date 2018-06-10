@@ -83,7 +83,9 @@ On the branch `like-cilantro` we have the following change:
 
 ```
 $ git diff master like-cilantro
+```
 
+```diff
 diff --git a/ingredients.txt b/ingredients.txt
 index a83af39..83f2f94 100644
 --- a/ingredients.txt
@@ -100,7 +102,9 @@ And on the branch `dislike-cilantro` we have the following change:
 
 ```
 $ git diff master dislike-cilantro
+```
 
+```diff
 diff --git a/ingredients.txt b/ingredients.txt
 index a83af39..2f60e23 100644
 --- a/ingredients.txt
@@ -182,7 +186,9 @@ Try also `git diff`:
 
 ```
 $ git diff
+```
 
+```diff
 diff --cc ingredients.txt
 index 83f2f94,2f60e23..0000000
 --- a/ingredients.txt
