@@ -151,18 +151,14 @@ $ git commit                      # commit everything that is staged
 ## Exercises
 
 1. In your recipe example, make two different changes to
-`ingredients.txt` and `instructions.txt` which do not go together.
-
+  `ingredients.txt` and `instructions.txt` which do not go together.
 2. Use `git add` to stage them and put them into two different commits.
-
 3. Make two more unrelated changes, but stage them separately using
   `git add -p ` (without a filename).  Use `?` to figure out what the
   different commands are, and try at least `y`, `n`, `d`, `a`, `q`.
   Do you prefer `-p` compared to naming files yourself?
-
-3. Make two changes.  Stage one and checkout the other.
-
-4. Make a change and stage it.  Feel some regret, and unstage it.
+4. Make two changes.  Stage one and checkout the other.
+5. Make a change and stage it.  Feel some regret, and unstage it.
 
 ---
 
@@ -180,7 +176,7 @@ Also removals of tracked files are then automatically staged.
 
 ---
 
-## Alternatives (optional)
+## Alternatives (optional, semi-advanced)
 
 Some people accept that there will be many small commits.  Some people
 are very obsessive about clean history and constantly use `rebase` to
@@ -190,7 +186,7 @@ Below are some alternatives, from easiest to hardest.  *Don't worry
 about understanding them all*, this is one of the last lessons so we
 just try to show you some dreams
 
-** Use `git commit -p`.**
+**Use `git commit -p`.**
 You can use `git commit -p` on unstaged changes to directly commit.
 This is a convenient short cut, but if you notice something wrong as
 you are committing, you have to start over again.  Still, if you are
