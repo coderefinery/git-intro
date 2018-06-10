@@ -74,7 +74,7 @@ $ git config --global alias.br branch
 $ git config --global alias.ci "commit -v"
 $ git config --global alias.co checkout
 $ git config --global alias.di diff
-$ git config --global alias.di diff --cached --color-words
+$ git config --global alias.dic diff --cached --color-words
 $ git config --global alias.diw "diff --color-words"
 $ git config --global alias.dis "!git --no-pager diff --stat"
 $ git config --global alias.fe fetch
