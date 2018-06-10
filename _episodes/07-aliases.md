@@ -1,8 +1,8 @@
 ---
 layout: episode
 title: Aliases and configuration
-teaching: 15
-exercises: 0
+teaching: 5
+exercises: 5
 questions:
   - How can I remember all these Git command options?
   - Is there too much configuration?

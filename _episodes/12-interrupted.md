@@ -1,8 +1,8 @@
 ---
 layout: episode
 title: Interrupted work
-teaching: 10
-exercises: 0
+teaching: 5
+exercises: 10
 questions:
   - How can Git help us to deal with interrupted work and context switching?
 objectives:

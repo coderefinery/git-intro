@@ -1,8 +1,8 @@
 ---
 layout: episode
 title: Undoing things
-teaching: 15
-exercises: 20
+teaching: 10
+exercises: 10
 questions:
   - How can I undo things?
 ---
