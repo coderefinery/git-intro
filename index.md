@@ -7,13 +7,29 @@ permalink: /
 
 This is the introductory lesson to version control using
 [Git](https://git-scm.com/). It is assumed to be the very first thing done in a
-course. This lesson has been designed so that the first 45 minutes are spent
-on learning to make commits. After that the idea is to take small steps to make
-more complex arrangement. The goals of the module as a whole are that the user
-will feel comfortable about staging changes, committing them, merging, and
-branching. The guacamole example that we use is inspired by
-[Byron Smith](http://blog.byronjsmith.com), for original reference, see
-[this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
+course.
+
+Our philosophy is that we start from own local repository, branching and
+merging (locally), and a brief introduction to pushing to remotes.  In the
+separate [collaborative git lesson](http://coderefinery.org/lessons/), we
+teach more use of remote repositories and good collaborative workflows.  We
+try to stick to simple workflows, just enough for researchers who aren't
+obsessed with git to be able to work well.  We try to avoid commands which
+might get you into a bad state.
+
+Our general flow is 30 minutes on "why version control" and exploring an
+online repository to see the full reason we go through this effort.  Then,
+there's about an hour of the basics of how to make commits.  Then, there are
+several small steps until we get to branching, merging, and conflict
+resolution.  Then, we just see a little bit about mirroring to an online
+repository and a few other random points before we conclude.
+
+The goals of the module as a whole are that the user will feel comfortable
+about staging changes, committing them, merging, and branching. The guacamole
+example that we use is inspired by [Byron Smith](http://blog.byronjsmith.com),
+for original reference, see [this
+thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
+If you are teaching this lesson, see the [instructor's guide](guide.html)
 
 
 ### Prerequisites
@@ -44,5 +60,5 @@ currently the most popular web platform for hosting Git repositories and the cha
 that you will interact with [GitHub](https://github.com)-based repositories even if you
 choose to host your Git repository on another platform.
 
-Course participants are most welcome to use our new [Nordic research software repository platform](https://source.coderefinery.org),
+Course participants are most welcome to use our new [Nordic research software repository platform](https://source.coderefinery.org) instead,
 for more information see [http://coderefinery.org/repository/](http://coderefinery.org/repository/).
