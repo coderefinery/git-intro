@@ -30,7 +30,7 @@ Please remember:
 
 - Conflicts look scary, but not that bad if you stop and take a deep breath. Also they are luckily rare.
 - Don't be afraid of Git because of conflicts. You may not meet some conflicts using other systems because you simply can't do the kinds of things you do in Git.
-  You can take human measures to reduce them.
+- You can take human measures to reduce them.
 
 ---
 
@@ -344,10 +344,9 @@ The repository looks then exactly as it was before the merge.
   - Monolithic entangled spaghetti-code maximizes risk of conflicts.
   - Modular programming minimizes risk of conflicts.
 - Technical measures
-  - Push early and often.
+  - **Push early and often** - this is one of the happy,
+    rare circumstances when everyone doing the selfish thing (pushing as early as practical) results in best case for everyone!
+  - Pull/rebase often to keep up to date with upstream.
   - Resolve conflicts early.
-  - If the branch affects code that is likely to be modified by others:
-    - the branch should be short-lived and/or merge often to the main development line
-    - the branch should merge the main development line often to stay up-to-date
 
 Discuss how Git handles conflicts compared to the Google Drive.
