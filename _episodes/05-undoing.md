@@ -9,20 +9,13 @@ questions:
 
 ## Undoing things
 
-As emphasized above, Git can go back to any historical version of tracked files.
-In this section we will learn the basics of the available methods.
-In general, almost all Git actions *add* data and it's difficult to do anything
-irreversible or to remove data permanently.
-However, please be warned that *some* commands discussed below
-will result in permanent data loss and should be used with caution. 
+- Commits that are part of any branch will not get lost.
+- Files which were added and later removed can always be recovered.
+- In Git we can modify, reorder, squash, and remove commits and also these actions can be undone.
+- Some commands can permanently delete **uncommitted** changes. In doubt always commit first.
+- Some commands **modify history**. This is OK for local commits but may not be OK for commits shared
+  with others.
 
-Without going into technical details, we will have a look at
-selected examples to show how to undo or modify certain tasks. 
-The diagram below shows what we did with the
-guacamole recipe and we will see how to undo some changes.
-
-![Git events]({{ site.baseurl }}/img/events.svg
-"git events"){:class="img-responsive" style="max-width:70%"}
 
 ### Change the commit message
 
