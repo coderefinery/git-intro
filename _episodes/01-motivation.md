@@ -11,12 +11,12 @@ objectives:
   - Discuss the reasons why we advocate distributed version control.
 ---
 
-## The essence of version control in one minute
+## The essence of version control
 
 - System which **records snapshots** of a project
 - Implements **branching**:
   - you can work on several feature branches and switch between them
-  - different people can work on the same code without interfering
+  - different people can work on the same code/project without interfering
   - you can experiment with an idea and discard it if it turns out to be a bad idea
 - Implements **merging**:
   - tool to merge development branches for you
@@ -57,7 +57,7 @@ objectives:
 
 - Document/code is in one place, no need to email snapshots.
 - How can you use an old version? Possible to get old versions but in a much less useful way - snapshots of files, not directories.
-- What about if you want to work on multiple versions at the same time? Do you make a copy? How do you merge copies?
+- What if you want to work on multiple versions at the same time? Do you make a copy? How do you merge copies?
 - What if you don't have internet?
 
 
