@@ -80,24 +80,6 @@ This means that we never use this command on commits that we have shared with ot
 
 ---
 
-### Unstage a file.
-We will edit the `instructions.txt` file to remove the text "enjoy!". Then stage
-it. Then we want to unstage it so we can edit it more before committing.
-
-Open the file  instructions.txt file and remove the line “enjoy !”
-
-```shell
-$ git status                # to confirm what has changed
-$ git diff                  # to view what was changed
-$ git add instructions.txt  # stage it
-$ git status                # to confirm what has staging
-$ git reset instructions.txt
-$ git status                # will show the file as unstaged
-```
-
-**Effect**: `instructions.txt` gets unstaged (reverting the `git add` command), but our change is still there and we can keep
-working.)
-
 ### Un-modify a file.
 Let’s say we want to get rid of the changes we did to the `instructions.txt` file.
 
