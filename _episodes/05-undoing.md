@@ -16,6 +16,48 @@ questions:
 - Some commands **modify history**. This is OK for local commits but may not be OK for commits shared
   with others.
 
+---
+
+### Reverting commits
+
+- Imagine we made a couple of commits.
+- We realize that commit `f960dd3` was a mistake and we wish to undo it:
+
+```
+$ git log --oneline
+
+52e5998 (HEAD -> master) another tasty ingredient
+f960dd3 not sure this is a good idea
+40fbb90 draft a readme
+dd4472c we should not forget to enjoy
+2bb9bb4 add half an onion
+2d79e7e adding ingredients and instructions
+```
+
+A safe way to undo the commit is to revert the commit with `git revert`:
+
+```
+$ git revert f960dd3
+```
+
+This creates a **new commit** that does the opposite of the reverted commit.
+The old commit remains in the history:
+
+```
+$ git log --oneline
+
+d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
+52e5998 another tasty ingredient
+f960dd3 not sure this is a good idea
+40fbb90 draft a readme
+dd4472c we should not forget to enjoy
+2bb9bb4 add half an onion
+2d79e7e adding ingredients and instructions
+```
+
+Now try `git show` on both the reverted and the newly created commit.
+
+---
 
 ### Change the commit message
 
@@ -89,7 +131,6 @@ More in this after we learn Git remotes.
 
 ### Questions
 
-- A safe way to undo past commits is to use `git revert`. What does it do? In doubt, try it.
 - What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
 - What situations would justify to modify the Git history and possibly remove commits?
 - Is it OK to modify commits that nobody has seen yet?
