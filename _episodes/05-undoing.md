@@ -116,18 +116,6 @@ learn about branches.
 - Inspect the new situation with `git status` and `git diff`.
 
 
-## Be considerate when modifying committed changes
-
-Indeed, Git lets you do marvelous things with history. This is all fine and well as
-long as you are modifying commits that you are not sharing with others. When
-you start collaborating with other people it
-will cause a lot of grief to others if you change things that are already
-public and have been used.
-
-In short: **if you change commits that other people depend on, you will lose friends!**
-
-More in this after we learn Git remotes.
-
 ### Questions
 
 - What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
