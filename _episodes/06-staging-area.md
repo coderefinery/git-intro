@@ -91,7 +91,7 @@ The staging area isn't the only way to organize your history nicely, but it's ea
   - Go through the store and put everything you need in your shopping
     basket.
   - Get to the checkout.  Put your home stuff on the conveyor belt
-    (`git add`).  Check both the belt (`git diff --cached`) and your
+    (`git add`).  Check both the belt (`git diff --staged`) and your
     basket (`git diff`) to make sure you got all your home stuff.
   - Pay (`git commit`)
   - Repeat for work stuff.
@@ -115,7 +115,7 @@ $ git add <path>       # stages all changes in file
 $ git add -p <path>    # stages while letting you choose which lines to take
 $ git commit           # commits the staged change
 $ git diff             # see **unstaged** changes
-$ git diff --cached    # see **staged** changes
+$ git diff --staged    # see **staged** changes
 $ git rm               # removes a file
 $ git reset            # unstages staged changes
 $ git checkout <path>  # check out the latest staged version ( or committed
@@ -200,10 +200,8 @@ details of rebasing because there is more that can go wrong.  This is
 fairly advanced, but GitHub and other sites allow you to automatically
 do this.
 
-
 *Note: the "staging area" has also alternatively been referred to as
 the index and the cache*.
-
 
 ---
 
