@@ -17,9 +17,7 @@ Are you getting tired of typing so much?  Git can make aliases that can save you
 - These are great because they can save you time typing
 - But it's easy to forget them, get confused, or be inconsistent with your colleagues.
 
-There is plenty of other configuration for git, that can make it nicer.
-
-This section
+There is plenty of other configuration for Git, that can make it nicer.
 
 ---
 
@@ -118,9 +116,9 @@ the `p` aliases.
 
 ---
 
-## Advanced git config (advanced or home exercise)
+## Advanced git configuration (advanced or home exercise)
 
-These are advanced aliases and config options.  We won't explain them,
+These are advanced aliases and configuration options.  We won't explain them,
 but if you are bored, have some time, or want to go deeper, try to
 figure out what they do.  You might want to check the git manual
 pages!
@@ -145,7 +143,7 @@ git config --global alias.recd "log --decorate --patch @{upstream}^^^..HEAD"
 git config --global alias.recs "!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD --stat"
 ```
 
-### Advanced git config
+### Advanced git configuration
 
 Besides aliases, you can do plenty of other configuration of `git`.
 Here are some of the most common ones:
