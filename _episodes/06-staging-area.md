@@ -28,9 +28,7 @@ reading code is seldom clear.  In particular, code itself doesn't tell
 you how it came to be, just what is there now.
 
 It would be great if all changes were documented, but that is too much
-to ask most of the time.  In fact, too much documentation or commenting can
-in fact lead to the code being unreadable if the comments to code ratio is too
-large.
+to ask most of the time.
 
 So what is a good compromise?  You will always make version history
 and commit messages, and if these are clear then you are a long way to
