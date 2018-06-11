@@ -80,28 +80,27 @@ This means that we never use this command on commits that we have shared with ot
 
 ---
 
-### Un-modify a file.
-Let’s say we want to get rid of the changes we did to the `instructions.txt` file.
+### Undo unstaged/uncommitted changes
 
-```shell
-$ git diff #To view the differences
-$ git checkout instructions.txt
-$ git status # To view the effect on the status
-```
+This is a command that **permanently deletes** changes
+that were unstaged/uncommitted!
 
-**Effect**: This will replace the current version with the last committed version. This action
-will result in loss of all the edits after the last commit and can not be undone.
+Exercise: Modify without staging
 
-There is much more to discuss on undoing things and we leave them for later after we
-learn about branches.
+- Make a silly change to a project, do not stage it or commit it.
+- Inspect the change with `git status` and `git diff`.
+- Now undo the change with `git checkout <file>`.
+- Verify that the change is gone with `git status` and `git diff`.
 
-## Exercise: undo unstaged changes
+Exercise: Modify after staging
 
-- Make some changes to `ingredients.txt` (e.g. add liquorice).
-- Inspect the changes with `git status` and `git diff`.
-- Undo the unstaged changes with `git checkout ingredients.txt`.
-- Inspect the new situation with `git status` and `git diff`.
+- Make a reasonable change to a project, stage it.
+- Make a silly change after you have staged the reasonable change.
+- Inspect the situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
+- Now undo the silly change with `git checkout <file>`.
+- Inspect the new situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
 
+---
 
 ### Questions
 
