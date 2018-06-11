@@ -74,8 +74,8 @@ We want to have nice commits.  But we also want to "save often"
 (checkpointing) - how can we have both?
 
 We will now learn to fabricate nice commits using the *staging area*. Staging
-addresses the issue of having two different functionalities in the same
-commit.
+addresses the issue of having unrelated functionalities in the same
+commit or having one logical change spread over several commits.
 
 The staging area isn't the only way to organize your history nicely, but it's easy to do.  We discuss some alternatives at the end of the lesson.
 
