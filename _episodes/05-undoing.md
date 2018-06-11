@@ -59,22 +59,21 @@ Now try `git show` on both the reverted and the newly created commit.
 
 ---
 
-### Change the commit message
+### Adding to the previous commit
 
-The comment we added in the last stage (3) had the message “added enjoy”.
-Immediately after we committed and  before any file has been changed we want to
-change this message to "do not forget to enjoy".  To achieve this we
-issue the following command. Please note that you should not do this if you
-have already pushed to a remote repository (will learn later).
+Sometimes we commit but realize we forgot something.
+We can amend to the last commit:
 
 ```shell
 $ git commit --amend
 ```
 
-This will give you a chance to edit the commit message.
+This can also be used to modify the last commit message.
 
-**Effect**: The new commit will replace the old one. It's as if the previous commit
-never happened, and it won't show up in your repository history.
+Note that this **will change the commit hash**. This command **modifies the history**.
+This means that we never use this command on commits that we have shared with others.
+
+---
 
 ### Unstage a file.
 We will edit the `instructions.txt` file to remove the text "enjoy!". Then stage
