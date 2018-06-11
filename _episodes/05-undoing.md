@@ -7,12 +7,6 @@ questions:
   - How can I undo things?
 ---
 
-We need to place this somewhere:
-
-Here is another way to view the two-step snapshotting in Git from [the Pro Git book](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics).
-![Git staging]({{ site.baseurl }}/img/file_states_2.png
-"git staging and committing"){:class="img-responsive" style="max-width:70%"}
-
 ## Undoing things
 
 As emphasized above, Git can go back to any historical version of tracked files.
