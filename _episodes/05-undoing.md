@@ -55,7 +55,12 @@ dd4472c we should not forget to enjoy
 2d79e7e adding ingredients and instructions
 ```
 
-Now try `git show` on both the reverted and the newly created commit.
+Exercise:
+
+- Create a commit.
+- Revert the commit with `git revert`.
+- Inspect the history with `git log --oneline`.
+- Now try `git show` on both the reverted and the newly created commit.
 
 ---
 
