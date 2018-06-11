@@ -151,10 +151,9 @@ $ git commit                      # commit everything that is staged
 1. In your recipe example, make two different changes to
   `ingredients.txt` and `instructions.txt` which do not go together.
 2. Use `git add` to stage them and put them into two different commits.
-3. Make two more unrelated changes, but stage them separately using
-  `git add -p ` (without a filename).  Use `?` to figure out what the
-  different commands are, and try at least `y`, `n`, `d`, `a`, `q`.
-  Do you prefer `-p` compared to naming files yourself?
+3. Make two more unrelated changes now in the same file, but stage them separately using
+   `git add -p`.  Use `?` to figure out what the
+   different commands are, and try at least `y`, `n`, `d`, `a`, `q`.
 4. Make two changes.  Stage one and checkout the other.
 5. Make a change and stage it.  Feel some regret, and unstage it.
 
