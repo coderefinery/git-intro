@@ -53,14 +53,14 @@ apply, but you can also **push** changes to the remote and **pull**
 from the remote.
 
 You might use remotes to:
-- Back up your own work
+- Back up your own work.
 - To collaborate with other people.
 
 There are different types of remotes:
 - If you have a server you can ssh to, you can use that as a remote.
-- GitHub is a popular, closed-source commercial site.
+- [GitHub](https://github.com) is a popular, closed-source commercial site.
 - [GitLab](https://about.gitlab.com) is a popular, open-core
-  commercial site.  Many universities have their own private GitLabs
+  commercial site.  Many universities have their own private GitLab servers
   set up.
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
 - Another option is [NotABug](https://notabug.org)
