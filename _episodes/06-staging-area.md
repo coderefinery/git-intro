@@ -28,9 +28,7 @@ reading code is seldom clear.  In particular, code itself doesn't tell
 you how it came to be, just what is there now.
 
 It would be great if all changes were documented, but that is too much
-to ask most of the time.  In fact, too much documentation or commenting can
-in fact lead to the code being unreadable if the comments to code ratio is too
-large.
+to ask most of the time.
 
 So what is a good compromise?  You will always make version history
 and commit messages, and if these are clear then you are a long way to
@@ -76,8 +74,8 @@ We want to have nice commits.  But we also want to "save often"
 (checkpointing) - how can we have both?
 
 We will now learn to fabricate nice commits using the *staging area*. Staging
-addresses the issue of having two different functionalities in the same
-commit.
+addresses the issue of having unrelated functionalities in the same
+commit or having one logical change spread over several commits.
 
 The staging area isn't the only way to organize your history nicely, but it's easy to do.  We discuss some alternatives at the end of the lesson.
 
@@ -93,7 +91,7 @@ The staging area isn't the only way to organize your history nicely, but it's ea
   - Go through the store and put everything you need in your shopping
     basket.
   - Get to the checkout.  Put your home stuff on the conveyor belt
-    (`git add`).  Check both the belt (`git diff --cached`) and your
+    (`git add`).  Check both the belt (`git diff --staged`) and your
     basket (`git diff`) to make sure you got all your home stuff.
   - Pay (`git commit`)
   - Repeat for work stuff.
@@ -117,7 +115,7 @@ $ git add <path>       # stages all changes in file
 $ git add -p <path>    # stages while letting you choose which lines to take
 $ git commit           # commits the staged change
 $ git diff             # see **unstaged** changes
-$ git diff --cached    # see **staged** changes
+$ git diff --staged    # see **staged** changes
 $ git rm               # removes a file
 $ git reset            # unstages staged changes
 $ git checkout <path>  # check out the latest staged version ( or committed
@@ -153,10 +151,9 @@ $ git commit                      # commit everything that is staged
 1. In your recipe example, make two different changes to
   `ingredients.txt` and `instructions.txt` which do not go together.
 2. Use `git add` to stage them and put them into two different commits.
-3. Make two more unrelated changes, but stage them separately using
-  `git add -p ` (without a filename).  Use `?` to figure out what the
-  different commands are, and try at least `y`, `n`, `d`, `a`, `q`.
-  Do you prefer `-p` compared to naming files yourself?
+3. Make two more unrelated changes now in the same file, but stage them separately using
+   `git add -p`.  Use `?` to figure out what the
+   different commands are, and try at least `y`, `n`, `d`, `a`, `q`.
 4. Make two changes.  Stage one and checkout the other.
 5. Make a change and stage it.  Feel some regret, and unstage it.
 
@@ -203,10 +200,8 @@ details of rebasing because there is more that can go wrong.  This is
 fairly advanced, but GitHub and other sites allow you to automatically
 do this.
 
-
 *Note: the "staging area" has also alternatively been referred to as
 the index and the cache*.
-
 
 ---
 

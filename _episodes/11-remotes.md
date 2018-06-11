@@ -53,14 +53,14 @@ apply, but you can also **push** changes to the remote and **pull**
 from the remote.
 
 You might use remotes to:
-- Back up your own work
+- Back up your own work.
 - To collaborate with other people.
 
 There are different types of remotes:
 - If you have a server you can ssh to, you can use that as a remote.
-- GitHub is a popular, closed-source commercial site.
+- [GitHub](https://github.com) is a popular, closed-source commercial site.
 - [GitLab](https://about.gitlab.com) is a popular, open-core
-  commercial site.  Many universities have their own private GitLabs
+  commercial site.  Many universities have their own private GitLab servers
   set up.
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
 - Another option is [NotABug](https://notabug.org)
@@ -137,10 +137,10 @@ We now want to try the second option that GitHub suggests:
 1. Now go to your guacamole repository on your computer.
 2. Check that you are in the right place with `git status`.
 3. Copy paste the two lines to the terminal and execute those, in my case (**you
-  need to replace the "bast" part and possibly also the repository name**):
+  need to replace the "user" part and possibly also the repository name**):
 
 ```shell
-$ git remote add origin git@github.com:bast/recipe.git
+$ git remote add origin https://github.com/user/recipe.git
 $ git push -u origin master
 ```
 
@@ -174,14 +174,14 @@ At this point only a brief demo - if you copy the SSH or HTTPS address, you can 
 (again adapt the "namespace/repository.git" part):
 
 ```shell
-$ git clone git@github.com:bast/recipe.git
+$ git clone https://github.com/user/recipe.git
 ```
 
 This creates a directory called "recipe" unless it already exists. You can also specify the target directory
 on your computer:
 
 ```shell
-$ git clone git@github.com:bast/recipe.git myrecipe
+$ git clone https://github.com/user/recipe.git myrecipe
 ```
 
 What just happened? **Think of cloning as downloading the `.git` part to your

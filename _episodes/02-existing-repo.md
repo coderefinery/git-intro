@@ -3,6 +3,8 @@ layout: episode
 title: In-browser session
 teaching: 20
 exercises: 0
+questions:
+  - Where are we heading?
 objectives:
   - See an existing repository in action.
   - Browse the history.
@@ -23,8 +25,9 @@ objectives:
 
 - Often our first contact with Git is an existing repository, and it is
   relatively easy to contribute to them.
-- The existing repository is often on GitHub (but this demonstration applies equally well to GitLab or Bitbucket).
-- Most of the git commands we are about to learn can be done in the browser,
+- The existing repository is often on GitHub (but this demonstration applies
+  equally well to GitLab or Bitbucket).
+- Most of the Git commands we are about to learn can be done in the browser,
   which is a more intuitive way to get started.
 - It's good to see the social aspect to know what our end goal is.
 
@@ -33,8 +36,8 @@ objectives:
 ## Do not worry
 
 - If you are new to version control, don't focus on what we do. Focus on what comes out of it.
-- When browsing a GitHub repository we are looking at **two layers**. Later we will explain what is in the Git layer and
-  what is in the GitHub layer.
+- When browsing a GitHub repository we are looking at **two layers**. Later we
+  will explain what is in the Git layer and what is in the GitHub layer.
 
 ---
 

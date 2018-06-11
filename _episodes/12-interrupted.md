@@ -51,7 +51,7 @@ things.
 4. Pop off the stash you saved, check status/diff.
 5. Optional: Do the same but stash twice.  Also check `git stash list`.
   Can you pop the stashes in the opposite order?
-6. Advanced: What happens if stashes conflict with other changes?  make
+6. Advanced: What happens if stashes conflict with other changes? Make
   a change and stash it.  Modify the same line or one right above or
   below.  Pop the stash back.  Resolve the conflict.  Note there is no
   extra commit.
@@ -98,4 +98,4 @@ It's often that you do something and don't need it, but you don't want
 to lose it right away.  You can use either of the above strategies to
 stash/branch it away: branches is probably better.  Note that if you
 try to use a branch after a long time, conflicts might get really bad
-- but at least you have the data still.
+but at least you have the data still.
