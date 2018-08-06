@@ -29,7 +29,7 @@ about staging changes, committing them, merging, and branching. The guacamole
 example that we use is inspired by [Byron Smith](http://blog.byronjsmith.com),
 for original reference, see [this
 thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
-If you are teaching this lesson, see the [instructor's guide](guide.html)
+If you are teaching this lesson, see the [instructor's guide](guide)
 
 
 ### Prerequisites
