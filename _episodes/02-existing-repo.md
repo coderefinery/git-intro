@@ -14,10 +14,8 @@ objectives:
 # In-browser session
 
 - We will explore and visualize an **existing Git repository** on GitHub and make small changes to it.
-- The goal of this episode is not to teach GitHub.
-- We will start out with a jam session on the web (work on existing repository).
-- Then we will practice scales on our local instruments (practice Git on our laptops).
-- Then (tomorrow) we regroup again and play orchestra music together.
+- The goal of this episode is not to teach GitHub, but rather to get a glimpse of the 
+wider picture before going into the details.
 
 ---
 
