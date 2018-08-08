@@ -58,7 +58,7 @@ dd4472c we should not forget to enjoy
 2d79e7e adding ingredients and instructions
 ```
 
-## Exercise: Revert a commit
+### Exercise: Revert a commit
 
 - Create a commit.
 - Revert the commit with `git revert`.
@@ -88,14 +88,14 @@ This means that we never use this command on commits that we have shared with ot
 This is a command that **permanently deletes** changes
 that were unstaged/uncommitted!
 
-## Exercise: Modify without staging
+### Exercise: Modify without staging
 
 - Make a silly change to a project, do not stage it or commit it.
 - Inspect the change with `git status` and `git diff`.
 - Now undo the change with `git checkout <file>`.
 - Verify that the change is gone with `git status` and `git diff`.
 
-Exercise: Modify after staging
+### Exercise: Modify after staging
 
 - Make a reasonable change to a project, stage it.
 - Make a silly change after you have staged the reasonable change.
