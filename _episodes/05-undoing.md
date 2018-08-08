@@ -5,6 +5,9 @@ teaching: 10
 exercises: 10
 questions:
   - How can I undo things?
+objectives:
+  - Learn to undo changes safely
+  - See when undone changes are permanently deleted and when they can be retrieved
 ---
 
 ## Undoing things
