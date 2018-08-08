@@ -5,35 +5,30 @@ teaching: 15
 exercises: 10
 questions:
   - Why do we recommend to first add, then commit a change?
-  - How can I reason about what to commit in a single commit?
+  - What should be included in a single commit?
 objectives:
-  - Try to demystify the Git staging area.
-  - Enforce the concept of telling a story with your git repository.
-  - Goal is to understand, not to remember (you can revisit this page later).
+  - Demystify the Git staging area.
+  - Learn how to tell a story with your commit history.
 keypoints:
   - The staging area helps us to create well-defined commits.
 ---
 
 ## `git add` vs `git commit`
 
-This whole time, we have been using `git add` every time we want to
-commit, separate from `git commit`.  Why?  We will demystify this now,
+We have been using `git add` every time we want to
+commit a change, separate from `git commit`.  Why?  We will demystify this now,
 and learn how to *keep organized*.
 
 
 ## Commit history is telling a story about how your code came to be
 
-Everybody says they write self-documenting code but the reality is
-reading code is seldom clear.  In particular, code itself doesn't tell
-you how it came to be, just what is there now.
+- Code is rarely self-documenting.
+- Code also doesn't reveal how it came to be, only what is there now.
+- It would be great if all changes were documented, but that is too much to ask.
+- What is a good compromise?  
 
-It would be great if all changes were documented, but that is too much
-to ask most of the time.
-
-So what is a good compromise?  You will always make version history
-and commit messages, and if these are clear then you are a long way to
-organized code.  **If you make these a habit now, the drain on your
-time and resources is minimal in the future**
+Git forces you to create version history and commit messages, 
+and if these are clear then you are a long way to organized code.  
 
 
 ### It is useful to have a nice and readable history
@@ -73,11 +68,10 @@ fee1807 implement feature B
 We want to have nice commits.  But we also want to "save often"
 (checkpointing) - how can we have both?
 
-We will now learn to fabricate nice commits using the *staging area*. Staging
-addresses the issue of having unrelated functionalities in the same
+- We will now learn to create nice commits using the *staging area*. 
+- Staging addresses the issue of having unrelated changes in the same
 commit or having one logical change spread over several commits.
-
-The staging area isn't the only way to organize your history nicely, but it's easy to do.  We discuss some alternatives at the end of the lesson.
+- The staging area isn't the only way to organize your history nicely, some alternatives are discussed at the end of the lesson.
 
 
 ## An analogy
@@ -125,7 +119,6 @@ $ git checkout <path>  # check out the latest staged version ( or committed
 - `git add` every change that improves the code.
 - `git checkout` every change that made things worse.
 - `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
-- The `-p` can also apply to `checkout` and `reset`.  What does it do?
 - Discuss/think about what is too large or too small.
 
 
@@ -142,7 +135,7 @@ $ git commit                      # commit everything that is staged
 ```
 
 - `git diff` gives differences with respect to the staging area, this is very practical.
-- Using `git add` we can fabricate very nice coherent commits.
+- Using `git add` we can create very nice coherent commits.
 - The `-p` option gives you even more control, and as a bonus shows you the diffs as you stage/reset/checkout things.
 
 
