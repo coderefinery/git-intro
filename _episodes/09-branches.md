@@ -214,8 +214,7 @@ $ git graph
 * 2d79e7e adding ingredients and instructions
 ```
 
-Here is a graphical representation of what we have created (the commit hashes
-will be different on your laptop):
+Here is a graphical representation of what we have created:
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
 
