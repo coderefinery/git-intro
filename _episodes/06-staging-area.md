@@ -161,10 +161,9 @@ $ git add -u
 
 Also removals of tracked files are then automatically staged.
 
-
 ---
 
-## Alternatives (optional, semi-advanced)
+## (Optional, semiadvanced) Alternatives
 
 Some people accept that there will be many small commits.  Some people
 are very obsessive about clean history and constantly use `rebase` to
