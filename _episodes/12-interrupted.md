@@ -13,7 +13,7 @@ keypoints:
 
 ## Frequent situation: interrupted work
 
-We are saying that you should make nice, prefect code.  But the real world is much more chaotic.
+We all wish that we could write beautiful perfect code. But the real world is much more chaotic:
 
 - You are in the middle of a Jackson-Pollock-style debugging spree with 27 modified files
   and debugging prints everywhere.
@@ -87,15 +87,15 @@ You already know how to do this...
 1. Optional: Go through the process above.  Start a change, create new
   branch and store your changes.  Go back to master and fix something
   else.  Resume your work and merge the new branch.
-2. Discuss how to resume your former work.  Can you git rid of branch?
+2. Discuss how to resume your former work.  Can you git rid of a branch?
   Continue using it?  etc.
 
 ---
 
 ## Storing various junk you don't need but don't want to get rid of
 
-It's often that you do something and don't need it, but you don't want
+It happens often that you do something and don't need it, but you don't want
 to lose it right away.  You can use either of the above strategies to
-stash/branch it away: branches is probably better.  Note that if you
+stash/branch it away: using branches is probably better.  Note that if you
 try to use a branch after a long time, conflicts might get really bad
 but at least you have the data still.
