@@ -139,16 +139,14 @@ $ git commit                      # commit everything that is staged
 - The `-p` option gives you even more control, and as a bonus shows you the diffs as you stage/reset/checkout things.
 
 
-## Exercises
+## Exercise: Using the staging area
 
 1. In your recipe example, make two different changes to
   `ingredients.txt` and `instructions.txt` which do not go together.
-2. Use `git add` to stage them and put them into two different commits.
-3. Make two more unrelated changes now in the same file, but stage them separately using
-   `git add -p`.  Use `?` to figure out what the
-   different commands are, and try at least `y`, `n`, `d`, `a`, `q`.
-4. Make two changes.  Stage one and checkout the other.
-5. Make a change and stage it.  Feel some regret, and unstage it.
+2. Use `git add` to stage one of the changes.
+3. Use `git status` to see what's going on, and use `git diff` and `git diff --staged` to see the changes.
+4. Feel some regret and checkout the unstaged change.
+5. Feel further regret and unstage the staged change.
 
 ---
 
@@ -163,10 +161,9 @@ $ git add -u
 
 Also removals of tracked files are then automatically staged.
 
-
 ---
 
-## Alternatives (optional, semi-advanced)
+## (Optional, semiadvanced) Alternatives
 
 Some people accept that there will be many small commits.  Some people
 are very obsessive about clean history and constantly use `rebase` to
