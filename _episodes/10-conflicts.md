@@ -225,7 +225,6 @@ We will discuss 3 different ways to do this.
 - Git stages all files without conflicts and leaves the files with conflicts unstaged.
 - Decide what you keep (the one, the other, or both or something else).
 - Then remove the resolution markers.
-- Don't forget to run `git diff` after you have attempted resolution.
 - Tell Git that you have resolved the conflict with `git add ingredients.txt`, then verify with `git status`.
 - Finally commit the merge.
 
