@@ -391,6 +391,15 @@ relatively.
 - Untracked files belong to .gitignore.
 - **All files should be either tracked or ignored**.
 
+### GUI tools
+
+We have seen how to make commits directly via the GitHub website, and also via command line. 
+But it is also possible to work from within a Git graphical user interface (GUI):
+
+- [GitHub Desktop](https://desktop.github.com)
+- [SourceTree](https://www.sourcetreeapp.com)
+- [List of third-party GUIs](https://git-scm.com/downloads/guis)
+
 ---
 
 ## Summary
