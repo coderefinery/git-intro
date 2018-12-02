@@ -69,6 +69,10 @@ $ git config --global user.email yourname@example.com
 
 The name and contact email will be recorded together with the code changes when we run `git commit`.
 
+> If you're using GitHub, and if you'd like to keep your personal email address private, 
+> you can use a GitHub-provided no-reply email address as your commit email address. 
+> [See here for further details](https://help.github.com/articles/about-commit-email-addresses/).
+
 It is convenient to set also the default text editor to use with Git. This you
 do with (**You can replace nano with vim, emacs, or any other editor of your choice.**):
 
