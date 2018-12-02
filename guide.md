@@ -42,6 +42,12 @@ long. These section can be skipped:
   afternoon. Otherwise it can be skipped or moved to another module.
 
 
+## Conflict resolution
+
+We use screenshots from a violent video game in the section on conflict resolution, but 
+it should be emphasized that conflicts are a good thing since otherwise collaborators would 
+overwrite each other's changes. Git saves us from this situation by producing conflicts.
+
 ## Log your history in a separate window
 
 Set `PROMPT_COMMAND = "history -a"` and in another window, run `tail
