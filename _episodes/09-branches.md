@@ -448,12 +448,12 @@ $ git checkout -b <branch/hash>   # create a branch pointing to <branch/hash>
 ```
 
 - Make a few commits to `master`, then realize you committed to the wrong branch,
-  branch off and rewind the `master` branch back.
+  branch off and rewind the `master` branch back using `git reset --hard`.
 - Delete a branch that is merged, then recreate it.
+- Delete an unmerged branch, then try to recreate it.
 - Rebase a branch.
 - Squash commits that are "at the end".
-- Squash a couple of commits except the last one.
-- Delete an unmerged branch, then try to recreate it.
+- Squash a couple of commits except the last one using `git rebase -i`.
 
 ---
 
