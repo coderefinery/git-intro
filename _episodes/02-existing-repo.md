@@ -60,6 +60,8 @@ typo in documentation, missing license file, outdated usage example).
     and use annotation to check when precisely the bug got introduced.
   - Discuss the enormous value of the annotation feature.
 - Collaboration
+  - You can refer to [code portions](https://github.com/coderefinery/example-project/blob/master/example.py#L18-L19)
+    (so much simpler to send a link rather than describe which file to open and where to scroll to).
   - Identify other issues (bug in code, misleading comment, typo in
     documentation, missing license file, outdated usage example).
   - Instructors use the browser to create a branch and make a commit to an
