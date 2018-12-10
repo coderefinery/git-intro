@@ -5,6 +5,15 @@ permalink: /guide/
 
 # Instructor guide
 
+
+## Things to prepare
+
+Mirror a fresh https://github.com/coderefinery/example-project
+from https://github.com/bast/example-project for episode 2.
+
+Do not just fork it since it can confuse users sending pull requests.
+
+
 ## Different ways to present
 
 The whole lesson covers why you would use git, how to use it, and
