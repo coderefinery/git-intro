@@ -88,6 +88,9 @@ it's probably too confusing to use after this course.  But, the idea
 of commands moving from the "working dir", "staging area", "commits",
 etc is good.
 
+Example:
+![]({{ site.baseurl }}/img/cheat-sheet.jpg)
+
 
 ## Draw a graph on the board
 
