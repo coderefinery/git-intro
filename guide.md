@@ -5,6 +5,15 @@ permalink: /guide/
 
 # Instructor guide
 
+
+## Things to prepare
+
+Mirror a fresh https://github.com/coderefinery/example-project
+from https://github.com/bast/example-project for episode 2.
+
+Do not just fork it since it can confuse users sending pull requests.
+
+
 ## Different ways to present
 
 The whole lesson covers why you would use git, how to use it, and
@@ -87,6 +96,9 @@ far, far more commands on there than you need to know right now., and
 it's probably too confusing to use after this course.  But, the idea
 of commands moving from the "working dir", "staging area", "commits",
 etc is good.
+
+Example:
+![]({{ site.baseurl }}/img/cheat-sheet.jpg)
 
 
 ## Draw a graph on the board

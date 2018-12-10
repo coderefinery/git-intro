@@ -11,7 +11,7 @@ course.
 
 Our philosophy is that we start from own local repository, branching and
 merging (locally), and a brief introduction to pushing to remotes.  In the
-separate [collaborative git lesson](http://coderefinery.org/lessons/), we
+separate [collaborative git lesson](https://coderefinery.org/lessons/), we
 teach more use of remote repositories and good collaborative workflows.  We
 try to stick to simple workflows, just enough for researchers who aren't
 obsessed with git to be able to work well.  We try to avoid commands which
@@ -61,4 +61,4 @@ that you will interact with [GitHub](https://github.com)-based repositories even
 choose to host your Git repository on another platform.
 
 Course participants are most welcome to use our new [Nordic research software repository platform](https://source.coderefinery.org) instead,
-for more information see [http://coderefinery.org/repository/](http://coderefinery.org/repository/).
+for more information see [https://coderefinery.org/repository/](https://coderefinery.org/repository/).

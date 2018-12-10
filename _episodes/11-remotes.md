@@ -68,7 +68,7 @@ There are different types of remotes:
   research software repository
   platform](https://source.coderefinery.org)**, for more information
   see
-  [http://coderefinery.org/repository/](http://coderefinery.org/repository/).
+  [https://coderefinery.org/repository/](https://coderefinery.org/repository/).
   This is GitLab, free for researchers and allows private,
   cross-university sharing.
 

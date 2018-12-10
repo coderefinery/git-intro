@@ -205,8 +205,8 @@ $ git branch
 
 $ git graph
 
-* bf59be6 (HEAD -> less-salt) reduce amount of salt
-| * 6feb49d (experiment) maybe little bit less cilantro
+* bf59be6 (less-salt) reduce amount of salt
+| * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
 | * 7cf6d8c let us try with some cilantro
 |/
 * dd4472c (master) we should not forget to enjoy
@@ -448,12 +448,12 @@ $ git checkout -b <branch/hash>   # create a branch pointing to <branch/hash>
 ```
 
 - Make a few commits to `master`, then realize you committed to the wrong branch,
-  branch off and rewind the `master` branch back.
+  branch off and rewind the `master` branch back using `git reset --hard`.
 - Delete a branch that is merged, then recreate it.
+- Delete an unmerged branch, then try to recreate it.
 - Rebase a branch.
 - Squash commits that are "at the end".
-- Squash a couple of commits except the last one.
-- Delete an unmerged branch, then try to recreate it.
+- Squash a couple of commits except the last one using `git rebase -i`.
 
 ---
 
