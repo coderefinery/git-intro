@@ -73,6 +73,7 @@ We want to have nice commits.  But we also want to "save often"
 commit or having one logical change spread over several commits.
 - The staging area isn't the only way to organize your history nicely, some alternatives are discussed at the end of the lesson.
 
+---
 
 ## An analogy
 
@@ -93,6 +94,14 @@ commit or having one logical change spread over several commits.
 In order to keep organized, you have to use multiple locations to
 stage things in sequence.
 
+
+## What can go wrong without staging
+
+- You wait too long before you record a change.
+- You may have done too many changes and cannot go back just the last step.
+- You do several things at once (different files or same file), but commit them at the same time.
+
+---
 
 ## States of a file.
 
