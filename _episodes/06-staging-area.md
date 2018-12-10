@@ -152,11 +152,11 @@ $ git commit                      # commit everything that is staged
 
 ## Staging everything
 
-Sometimes you want to stage all modifications.
+Sometimes you want to stage all modifications **but not add any new files**.
 No need to stage them one by one:
 
 ```shell
-$ git add -u
+$ git add --update
 ```
 
 Also removals of tracked files are then automatically staged.
