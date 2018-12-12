@@ -70,11 +70,17 @@ command terminates.
 These might work but needs debugging (there are lots of complexities
 in extracting out the right parts), but will get commands as soon as
 they are run and also will capture commands if you `ssh` to somewhere
-else, etc.
+else, etc.  Note: this begins working after the second line you type,
+somehow.
 
 ```
 script -f demos.out
-tail -n 0 -f demos.out | awk '{ if (match($0,/^[^@]+@[^$]+[$][^ ]+ (.*)/,m)) print m[1] }'
+# most general... prompt must end in '$ '.
+tail -n 0 -f demos.out | awk '{ if (match($0,/^[^$]+[$][^ ]* (.*)/,m)) print m[1] }'
+# Standard bash prompt of 'user@host$ ' (less likely to have false positives)
+tail -n 0 -f demos.out | awk '{ if (match($0,/^[^@]+@[^$]+[$][^ ]* (.*)/,m)) print m[1] }'
+# Prompt is $ ' alone on a line.
+tail -n 0 -f demos.out | awk '{ if (match($0,/^[$] (.*)/,m)) print m[1] }'
 ```
 
 
