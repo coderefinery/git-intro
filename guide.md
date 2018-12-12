@@ -81,6 +81,8 @@ tail -n 0 -f demos.out | awk '{ if (match($0,/^[^$]+[$][^ ]* (.*)/,m)) print m[1
 tail -n 0 -f demos.out | awk '{ if (match($0,/^[^@]+@[^$]+[$][^ ]* (.*)/,m)) print m[1] }'
 # Prompt is $ ' alone on a line.
 tail -n 0 -f demos.out | awk '{ if (match($0,/^[$] (.*)/,m)) print m[1] }'
+# used for the fish shell (note: untested)
+tail -f -n 0 ~/fish_history | sed -u -e s'/- cmd:/ \>/'
 ```
 
 
