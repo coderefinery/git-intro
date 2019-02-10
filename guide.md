@@ -75,12 +75,19 @@ somehow.
 
 ```
 script -f demos.out
+
 # most general... prompt must end in '$ '.
-tail -n 0 -f demos.out | awk '{ if (match($0,/^[^$]+[$][^ ]* (.*)/,m)) print m[1] }'
+tail -n 0 -f demos.out | awk '{ if (match($0,/^[^$ ]+ ?[^$ ]*[$][[:cntrl:]0-9m;[]{,10} (.*)/,m)) print m[1] }'
+
+# Prompt format of [username@host]$
+tail -n 1 -f demos.out | while read line; do [[ "$line" =~ \]\$\ ([^ ].+)$ ]] && echo  ${BASH_REMATCH[1]}; done
+
 # Standard bash prompt of 'user@host$ ' (less likely to have false positives)
 tail -n 0 -f demos.out | awk '{ if (match($0,/^[^@]+@[^$]+[$][^ ]* (.*)/,m)) print m[1] }'
+
 # Prompt is $ ' alone on a line.
 tail -n 0 -f demos.out | awk '{ if (match($0,/^[$] (.*)/,m)) print m[1] }'
+
 # used for the fish shell (note: untested)
 tail -f -n 0 ~/fish_history | sed -u -e s'/- cmd:/ \>/'
 ```
