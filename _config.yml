@@ -1,0 +1,67 @@
+fork_me_ribbon_url: https://github.com/coderefinery/git-solo
+title: "Git for the solo developer"
+start_time: 570  # 9:30
+
+# where things are
+source: .
+destination: ./_site
+plugins_dir: ./_plugins
+layouts_dir: ./jekyll-common/layouts
+includes_dir: ./jekyll-common/includes
+data_dir: ./_data
+
+# handling reading
+safe: false
+include: [".htaccess"]
+exclude: []
+keep_files: [".git"]
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# filtering content
+show_drafts: null
+limit_posts: 0
+future: true
+unpublished: false
+
+# plugins
+whitelist: []
+plugins: []
+
+# conversion
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'codehilite'
+
+lsi: false
+excerpt_separator: "\n\n"
+
+# serving
+detach: false
+port: 4000
+host: 127.0.0.1
+baseurl: "/git-solo"
+
+# outputting
+timezone: null
+quiet: false
+
+# markdown processors
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+include: ['jekyll-common/pages']
+
+collections:
+  episodes:
+    output: true
+    permalink: /:name/
