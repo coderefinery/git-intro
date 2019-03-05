@@ -1,3 +1,3 @@
 [submodule "jekyll-common"]
 	path = jekyll-common
-	url = git@github.com:coderefinery/jekyll-common.git
+	url = https://github.com/coderefinery/jekyll-common.git
