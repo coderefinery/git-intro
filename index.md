@@ -3,7 +3,7 @@ layout: lesson
 permalink: /
 ---
 
-# troduction to version control with Git
+# Introduction to version control with Git
 
 This is the introductory lesson to version control using
 [Git](https://git-scm.com/). It is assumed to be the very first thing done in a
@@ -17,12 +17,13 @@ try to stick to simple workflows, just enough for researchers who aren't
 obsessed with git to be able to work well.  We try to avoid commands which
 might get you into a bad state.
 
-Our general flow is 30 minutes on "why version control" and exploring an
-online repository to see the full reason we go through this effort.  Then,
-there's about an hour of the basics of how to make commits.  Then, there are
+Our general flow is 10 minutes on "why version control", followed by
+about 45 minutes of the basics of how to make commits.  Then, there are
 several small steps until we get to branching, merging, and conflict
-resolution.  Then, we just see a little bit about mirroring to an online
-repository and a few other random points before we conclude.
+resolution.  
+Then, we see a little bit about sharing repositories online, how to 
+effectively dig into the history of a project,
+and a few other random points before we conclude.
 
 The goals of the module as a whole are that the user will feel comfortable
 about staging changes, committing them, merging, and branching. The guacamole
