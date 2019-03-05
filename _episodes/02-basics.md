@@ -1,8 +1,8 @@
 ---
 layout: episode
 title: Basics
-teaching: 20
-exercises: 25
+teaching: 15
+exercises: 20
 questions:
   - What is Git?
   - What is a repository?
@@ -58,27 +58,8 @@ button only at the end)
 
 ## Before we start we need to configure Git
 
-**All configuration we enter here ends up in `~/.gitconfig`.**
-
-First, the following commands will set your user name and email address:
-
-```shell
-$ git config --global user.name "Your Name"
-$ git config --global user.email yourname@example.com
-```
-
-The name and contact email will be recorded together with the code changes when we run `git commit`.
-
-> If you're using GitHub, and if you'd like to keep your personal email address private, 
-> you can use a GitHub-provided no-reply email address as your commit email address. 
-> [See here for further details](https://help.github.com/articles/about-commit-email-addresses/).
-
-It is convenient to set also the default text editor to use with Git. This you
-do with (**You can replace nano with vim, emacs, or any other editor of your choice.**):
-
-```shell
-$ git config --global core.editor nano
-```
+If you haven't already configured Git, please follow the instructions in the 
+[Git refresher lesson](https://coderefinery.github.io/git-refresher/01-setup/#configuring-git)
 
 ---
 
@@ -236,61 +217,83 @@ Date:   Thu May 4 15:02:56 2017 +0200
 
 ---
 
-## Exercise: record changes
+> ## Exercise: record changes
+> 
+> Add 1/2 onion to `ingredients.txt` and also the instruction
+> to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
+> 
+> When you are done editing the files, try `git diff`:
+> 
+> ```shell
+> $ git diff
+> ```
+> 
+> ```
+> diff --git a/ingredients.txt b/ingredients.txt
+> index 2607525..ec0abc6 100644
+> --- a/ingredients.txt
+> +++ b/ingredients.txt
+> @@ -1,3 +1,4 @@
+>  * 2 avocados
+>  * 1 lime
+>  * 2 tsp salt
+> +* 1/2 onion
+> diff --git a/instructions.txt b/instructions.txt
+> index 6a8b2af..f7dd63a 100644
+> --- a/instructions.txt
+> +++ b/instructions.txt
+> @@ -3,3 +3,4 @@
+>  * squeeze lime
+>  * add salt
+>  * and mix well
+> +* enjoy!
+> ```
+> 
+> Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
+> 
+> ```shell
+> $ git add ingredients.txt
+> $ git commit -m "add half an onion"
+> $ git add instructions.txt
+> $ git commit                   # <-- we have left out -m "..."
+> ```
+> 
+> When you leave out the `-m` flag, Git should open an editor where you can edit
+> your commit message. This message will be associated and stored with the
+> changes you made. This message is your chance to explain what you've done and
+> convince others (and your future self) that the changes you made were
+> justified.  Write a message and save and close the file.
+> 
+> When you are done committing the changes, experiment with these commands:
+> 
+> ```shell
+> $ git log    # show commit logs
+> $ git show   # show various types of objects
+> $ git diff   # show changes
+> ```
+{: .challenge}
 
-Add 1/2 onion to `ingredients.txt` and also the instruction
-to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
+> ## Optional exercise: more changes and experiment with difftool
+> 
+> - Apply and commit more changes.
+> - Add new files.
+> - When you commit, try `git commit -v` (will show you the difference in the editor).
+> - Rename files with `git mv` (you will need to `git commit` the rename).
+> - Use `git log --oneline` and `git status`.
+> - Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
+> - Have a look at specific commits with `git show <hash>`.
+> - Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
+> - Make a modification to the code and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
+> 
+> ```
+> $ git difftool
+> ```
+> 
+> ![Git events]({{ site.baseurl }}/img/meld.png
+> "git difftool meld"){:class="img-responsive" style="max-width:70%"}
+{: .challenge}
 
-When you are done editing the files, try `git diff`:
-
-```shell
-$ git diff
-```
-
-```
-diff --git a/ingredients.txt b/ingredients.txt
-index 2607525..ec0abc6 100644
---- a/ingredients.txt
-+++ b/ingredients.txt
-@@ -1,3 +1,4 @@
- * 2 avocados
- * 1 lime
- * 2 tsp salt
-+* 1/2 onion
-diff --git a/instructions.txt b/instructions.txt
-index 6a8b2af..f7dd63a 100644
---- a/instructions.txt
-+++ b/instructions.txt
-@@ -3,3 +3,4 @@
- * squeeze lime
- * add salt
- * and mix well
-+* enjoy!
-```
-
-Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
-
-```shell
-$ git add ingredients.txt
-$ git commit -m "add half an onion"
-$ git add instructions.txt
-$ git commit                   # <-- we have left out -m "..."
-```
-
-When you leave out the `-m` flag, Git should open an editor where you can edit
-your commit message. This message will be associated and stored with the
-changes you made. This message is your chance to explain what you've done and
-convince others (and your future self) that the changes you made were
-justified.  Write a message and save and close the file.
-
-When you are done committing the changes, experiment with these commands:
-
-```shell
-$ git log    # show commit logs
-$ git show   # show various types of objects
-$ git diff   # show changes
-```
-
+---
 
 ### Writing useful commit messages
 
@@ -319,26 +322,6 @@ then paragraph(s) with more details in free form, if necessary**.
 
 ---
 
-## Optional exercise: more changes and experiment with tools
-
-- Apply and commit more changes.
-- Add new files.
-- When you commit, try `git commit -v` (will show you the difference in the editor).
-- Rename files with `git mv` (you will need to `git commit` the rename).
-- Use `git log --oneline` and `git status`.
-- Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
-- Have a look at specific commits with `git show <hash>`.
-- Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
-- Make a modification to the code and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
-
-```
-$ git difftool
-```
-
-![Git events]({{ site.baseurl }}/img/meld.png
-"git difftool meld"){:class="img-responsive" style="max-width:70%"}
-
----
 
 ## Ignoring files and paths with .gitignore
 
@@ -387,6 +370,7 @@ relatively.
 
 `.gitignore` should be part of the repository (why?).
 
+---
 
 ### Clean working area
 
@@ -394,6 +378,8 @@ relatively.
 - Use `.gitignore`.
 - Untracked files belong to .gitignore.
 - **All files should be either tracked or ignored**.
+
+---
 
 ### GUI tools
 
@@ -434,3 +420,37 @@ $ git rm      # remove tracked files
 
 Git is not ideal for large binary files
 (for this consider [http://git-annex.branchable.com](http://git-annex.branchable.com)).
+
+
+> ## Test your understanding
+>
+> Which command(s) below would save the changes of `myfile.txt`
+> to my local Git repository?
+>
+> 1. ~~~
+>    $ git commit -m "my recent changes"
+>    ~~~
+>    {: .language-bash}
+> 2. ~~~
+>    $ git init myfile.txt
+>    $ git commit -m "my recent changes"
+>    ~~~
+>    {: .language-bash}
+> 3. ~~~
+>    $ git add myfile.txt
+>    $ git commit -m "my recent changes"
+>    ~~~
+>    {: .language-bash}
+> 4. ~~~
+>    $ git commit -m myfile.txt "my recent changes"
+>    ~~~
+>    {: .language-bash}
+>
+> > ## Solution
+> >
+> > 1. Would only create a commit if files have already been staged.
+> > 2. Would try to create a new repository.
+> > 3. Is correct: first add the file to the staging area, then commit.
+> > 4. Would try to commit a file "my recent changes" with the message myfile.txt.
+> {: .solution}
+{: .challenge}
