@@ -39,9 +39,8 @@ Software development is often not linear:
 - We need to be able to separate different lines of work really well.
 
 The strength of version control is that it permits the researcher to **isolate
-different tracks of work**. Researchers can work on different things and merge
-the changes they made to the source code files afterwards to create a composite
-version that contains both the changes:
+different tracks of work**, which can later be merged to create a composite
+version that contains all changes:
 
 ![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative.svg
 "description"){:class="img-responsive"}
@@ -67,12 +66,17 @@ one development line (branch) and this branch is called "master":
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
 
-We have defined the `git graph` alias earlier using
-(if `git graph` doesn't work for you, run this line to define it):
-
-```shell
-$ git config --global alias.graph "log --all --graph --decorate --oneline"
-```
+> ## A useful alias
+>
+> We will now define an *alias* in Git, to be able to nicely visualize branch 
+> structure in the terminal without having to remember a long Git command 
+> (more details about aliases are given
+> [in a later section]({{ site.baseurl }}/11-aliases)):
+> 
+> ```shell
+> $ git config --global alias.graph "log --all --graph --decorate --oneline"
+> ```
+{: .callout}
 
 Let us inspect the project history using the `git graph` alias:
 
@@ -86,7 +90,7 @@ $ git graph
 
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
-- Branches are pointers that point to a commit.
+- **Branches are pointers that point to a commit.**
 - Branch `master` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
 - `HEAD` is another pointer, it points to where we are right now (currently `master`) 
 
@@ -185,67 +189,68 @@ Picture `git checkout` as an operation that brings the working tree to a specifi
 The state can be a commit or a branch (pointing to a commit).
 
 
-## Exercise: branches
-
-- Change to the branch `master`.
-- Create another branch called `less-salt`
-  where you reduce the amount of salt.
-- Commit your changes to the `less-salt` branch.
-
-Use the same commands as we used above.
-
-We now have three branches (in this case `HEAD` points to `experiment`):
-
-```shell
-$ git branch
-
-* experiment
-  less-salt
-  master
-
-$ git graph
-
-* bf59be6 (less-salt) reduce amount of salt
-| * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
-| * 7cf6d8c let us try with some cilantro
-|/
-* dd4472c (master) we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
-```
-
-Here is a graphical representation of what we have created:
-
-![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
-
-- Now switch to `master`.
-- Add and commit the following `README.md` to `master`:
-
-```markdown
-# Guacamole recipe
-
-Used in teaching Git.
-```
-
-Now you should have this situation:
-
-```shell
-$ git graph
-
-* 40fbb90 (HEAD -> master) draft a readme
-| * bf59be6 (less-salt) reduce amount of salt
-|/
-| * 6feb49d (experiment) maybe little bit less cilantro
-| * 7cf6d8c let us try with some cilantro
-|/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
-```
-
-![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
-
-And for comparison this is how it looks [on GitHub](https://github.com/bast/recipe/network).
+> ## Exercise: branches
+> 
+> - Change to the branch `master`.
+> - Create another branch called `less-salt`
+>   where you reduce the amount of salt.
+> - Commit your changes to the `less-salt` branch.
+> 
+> Use the same commands as we used above.
+> 
+> We now have three branches (in this case `HEAD` points to `experiment`):
+> 
+> ```shell
+> $ git branch
+> 
+> * experiment
+>   less-salt
+>   master
+> 
+> $ git graph
+> 
+> * bf59be6 (less-salt) reduce amount of salt
+> | * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
+> | * 7cf6d8c let us try with some cilantro
+> |/
+> * dd4472c (master) we should not forget to enjoy
+> * 2bb9bb4 add half an onion
+> * 2d79e7e adding ingredients and instructions
+> ```
+> 
+> Here is a graphical representation of what we have created:
+> 
+> ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
+> 
+> - Now switch to `master`.
+> - Add and commit the following `README.md` to `master`:
+> 
+> ```markdown
+> # Guacamole recipe
+> 
+> Used in teaching Git.
+> ```
+> 
+> Now you should have this situation:
+> 
+> ```shell
+> $ git graph
+> 
+> * 40fbb90 (HEAD -> master) draft a readme
+> | * bf59be6 (less-salt) reduce amount of salt
+> |/
+> | * 6feb49d (experiment) maybe little bit less cilantro
+> | * 7cf6d8c let us try with some cilantro
+> |/
+> * dd4472c we should not forget to enjoy
+> * 2bb9bb4 add half an onion
+> * 2d79e7e adding ingredients and instructions
+> ```
+> 
+> ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
+> 
+> And for comparison this is how it looks [on GitHub](https://github.com/bast/recipe/network).
+{: .task}
 
 ---
 
