@@ -459,7 +459,7 @@ may have a hard time finding them as there is no branch pointing to them.
 > 3. Delete an unmerged branch, then try to recreate it.
 > 4. Rebase a branch.
 > 5. Squash commits that are "at the end".
-> .6 Squash a couple of commits except the last one using `git rebase -i`.
+> 6. Squash a couple of commits except the last one using `git rebase -i`.
 {: .challenge}
 
 ---
@@ -548,9 +548,49 @@ subject.
 
 ---
 
-## Questions
-
-- What is a detached `HEAD`?
-- What are orphaned commits?
-- What will happen to orphaned commits?
-- How can you recover orphaned commits?
+> ## Test your understanding
+> 
+> 1. Which of the following combos (one or more) creates a new branch and makes a commit to it?
+>    1. 
+>    ```shell
+>    $ git branch new-branch	
+>    $ git add file.txt
+>    $ git commit 
+>    ```
+>    2. 
+>    ```shell
+>    $ git add file.txt
+>    $ git branch new-branch
+>    $ git checkout new-branch
+>    $ git commit 
+>    ```
+>    3. 
+>    ```shell
+>    $ git checkout -b new-branch	
+>    $ git add file.txt
+>    $ git commit 
+>    ```
+>    4. 
+>    ```shell
+>    $ git checkout new-branch	
+>    $ git add file.txt
+>    $ git commit 
+>    ```
+> 2. What is a detached `HEAD`?
+> 3. What are orphaned commits?
+> 
+> > ## Solutions
+> > 
+> > 1. Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the 
+> >    branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we 
+> >    don't give the `-b` flag to `git checkout` to create the new branch.
+> > 2. When you check out a branch name, HEAD will point to the most recent commit of that branch.
+> >    You can however check out a *particular hash*. This will bring your working directory back in 
+> >    time to that commit, and your HEAD will be pointing to that commit but it will not be attached 
+> >    to any branch. If you want to make commits in that state, you should instead create a new branch:
+> >    `git checkout -b test-branch <hash>`.
+> > 3. An orphaned commit is a commit that does not belong to any branch, and therefore doesn't have 
+> >    any parent commits. This could happen if you make a commit in a detached HEAD state. Commits 
+> >    rarely vanish in Git, and you could still find the orphaned commit using `git reflog`.
+> {: .solution}
+{: .challenge}
