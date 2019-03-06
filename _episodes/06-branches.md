@@ -520,31 +520,32 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 
 ---
 
-## Tags
-
-- A tag is a pointer to a commit but in contrast to a branch it does not move.
-- We use tags to record particular states or milestones of a project at a given
-  point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
-  v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
-- There are two basic types of tags: annotated and lightweight.
-- **Use annotated tags** since they contain the author and can be cryptographically signed using
-  GPG, timestamped, and a message attached.
-
-Let's add an annotated tag to our current state of the guacamole recipe:
-
-```shell
-$ git tag -a nobel-2017 -m "recipe I made for the 2017 Nobel banquet"
-```
-
-As you may have found out already, `git show` is a very versatile command. Try this:
-
-```shell
-$ git show nobel-2017
-```
-
-For more information about tags see for example
-[the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
-subject.
+> ## (Optional) Tags
+> 
+> - A tag is a pointer to a commit but in contrast to a branch it does not move.
+> - We use tags to record particular states or milestones of a project at a given
+>   point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
+>   v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
+> - There are two basic types of tags: annotated and lightweight.
+> - **Use annotated tags** since they contain the author and can be cryptographically signed using
+>   GPG, timestamped, and a message attached.
+> 
+> Let's add an annotated tag to our current state of the guacamole recipe:
+> 
+> ```shell
+> $ git tag -a nobel-2017 -m "recipe I made for the 2017 Nobel banquet"
+> ```
+> 
+> As you may have found out already, `git show` is a very versatile command. Try this:
+> 
+> ```shell
+> $ git show nobel-2017
+> ```
+> 
+> For more information about tags see for example
+> [the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
+> subject.
+{: .challenge}
 
 ---
 
