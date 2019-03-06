@@ -271,19 +271,19 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > $ git show   # show various types of objects
 > $ git diff   # show changes
 > ```
-{: .challenge}
+{: .task}
 
 > ## Optional exercise: more changes and experiment with difftool
 > 
-> - Apply and commit more changes.
-> - Add new files.
-> - When you commit, try `git commit -v` (will show you the difference in the editor).
-> - Rename files with `git mv` (you will need to `git commit` the rename).
-> - Use `git log --oneline` and `git status`.
-> - Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
-> - Have a look at specific commits with `git show <hash>`.
-> - Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
-> - Make a modification to the code and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
+> 1. Apply and commit more changes.
+> 2. Add new files.
+> 3. When you commit, try `git commit -v` (will show you the difference in the editor).
+> 4. Rename files with `git mv` (you will need to `git commit` the rename).
+> 5. Use `git log --oneline` and `git status`.
+> 6. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
+> 7. Have a look at specific commits with `git show <hash>`.
+> 8. Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
+> 9. Make a modification to the code and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 > 
 > ```
 > $ git difftool
@@ -291,7 +291,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > 
 > ![Git events]({{ site.baseurl }}/img/meld.png
 > "git difftool meld"){:class="img-responsive" style="max-width:70%"}
-{: .challenge}
+{: .task}
 
 ---
 
