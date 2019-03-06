@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Using the Git staging area
-teaching: 15
+teaching: 10
 exercises: 10
 questions:
   - Why do we recommend to first add, then commit a change?
@@ -55,9 +55,7 @@ history.
 - It is very difficult to find and revert B in this example.
 
 
-### Main development line should have a nice and readable history
-
-Good example:
+A better example would be:
 
 ```shell
 6f0d49f implement feature C
@@ -75,25 +73,18 @@ commit or having one logical change spread over several commits.
 
 ---
 
-## An analogy
+## [An analogy](https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh)
 
-- You need to go shopping and buy some stuff for work and for home.
-  You need two separate receipts.
-- Bad idea: go through the store get home stuff, pay, start at the
-  beginning and go through the store again.  This is inefficient and
-  annoying.
-- What you actually do:
-  - Go through the store and put everything you need in your shopping
-    basket.
-  - Get to the checkout.  Put your home stuff on the conveyor belt
-    (`git add`).  Check both the belt (`git diff --staged`) and your
-    basket (`git diff`) to make sure you got all your home stuff.
-  - Pay (`git commit`)
-  - Repeat for work stuff.
+<img src="{{ site.baseurl }}/img/ikea_box.jpg" width="30%">
 
-In order to keep organized, you have to use multiple locations to
-stage things in sequence.
+- You're moving and you have a box to pack your things in.
+- You can put stuff into the box, but you can also take stuff out of the box. 
+- You wouldn't want to mix items from the bathroom, kitchen and living room into the same box.
+- The box corresponds to the staging area of Git, where you can craft your commits. 
+- Committing is like sealing the box and sticking a label on it. 
+- You wouldn't want to label your box with "stuff", but rather give a more descriptive label.
 
+---
 
 ## What can go wrong without staging
 
