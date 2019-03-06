@@ -177,17 +177,9 @@ $ git commit                      # commit everything that is staged
 
 ---
 
-## Homework
-
-- Prepare **one** nice commit to the guacamole recipe by staging **several** small changes.
-- When doing this experiment with `git diff` and `git checkout <path>` to get a feel for checkpointing.
-- Observe how `git diff` and `git checkout <path>` are with respect to *staged* changes.
-- If you see a change with `git diff`, try also `git difftool`.
-
----
-
-## Questions
-
-- When is it better to "save" a change as commit, when is it better to "save" it with `git add`?
-- Is it a problem to commit many small changes?
-- What types of problems can occur in other version control systems without a staging area?
+> ## Test your understanding
+> 
+> - When is it better to "save" a change as commit, when is it better to "save" it with `git add`?
+> - Is it a problem to commit many small changes?
+> - What types of problems can occur in other version control systems without a staging area?
+{: .challenge}
