@@ -249,7 +249,7 @@ The state can be a commit or a branch (pointing to a commit).
 > 
 > ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
 > 
-> And for comparison this is how it looks [on GitHub](https://github.com/bast/recipe/network).
+> And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
 {: .task}
 
 ---
@@ -260,7 +260,7 @@ The state can be a commit or a branch (pointing to a commit).
 
 - **Skip this unless you got stuck**.
 - Step out of the current directory: `$ cd ..`
-- `$ git clone https://github.com/bast/recipe.git recipe-branching`
+- `$ git clone https://github.com/coderefinery/recipe.git recipe-branching`
 - `$ cd recipe-branching`
 - `$ git graph`
 - Or call a helper to un-stuck it for you.
