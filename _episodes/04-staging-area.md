@@ -96,13 +96,14 @@ commit or having one logical change spread over several commits.
 
 ## States of a file.
 
-Just like the shopping example, files can be untracked (still on the
-shelf), modified (in your basket), staged (on the conveyor belt), or
-committed (paid for).
-
-We have a variety of commands to go between states:
+Files can be untracked, modified, staged, or committed, and 
+we have a variety of commands to go between states:
 
 ![]({{ site.baseurl }}/img/file_states.png)
+
+*Note: the "staging area" has also alternatively been referred to as
+the index and the cache*.
+
 
 ```shell
 $ git add <path>       # stages all changes in file
@@ -163,35 +164,33 @@ Also removals of tracked files are then automatically staged.
 
 ---
 
-## (Optional, semiadvanced) Alternatives
-
-Some people accept that there will be many small commits.  Some people
-are very obsessive about clean history and constantly use `rebase` to
-make it clean.
-
-Below are some alternatives, from easiest to hardest.  *Don't worry
-about understanding them all*, this is one of the last lessons so we
-just try to show you some dreams
-
-**Use `git commit -p`.**
-You can use `git commit -p` on unstaged changes to directly commit.
-This is a convenient short cut, but if you notice something wrong as
-you are committing, you have to start over again.  Still, if you are
-doing simple things, it can be useful.  Check `git show HEAD` and `git
-diff` when done to make sure things are OK.
-
-You could use **lots of temporary branches**.  It's more explicit but
-can get annoying.  Then, you can use **rebase** to **squash** all of
-the commits together.
-
-You can make lots of small commits on a branch and then **rebase**
-them to squash them together into one commit.  We don't go into the
-details of rebasing because there is more that can go wrong.  This is
-fairly advanced, but GitHub and other sites allow you to automatically
-do this.
-
-*Note: the "staging area" has also alternatively been referred to as
-the index and the cache*.
+> ## (Optional, semiadvanced) Alternatives
+> 
+> Some people accept that there will be many small commits.  Some people
+> are very obsessive about clean history and constantly use `rebase` to
+> make it clean.
+> 
+> Below are some alternatives, from easiest to hardest.  *Don't worry
+> about understanding them all*, this is one of the last lessons so we
+> just try to show you some dreams
+> 
+> **Use `git commit -p`.**
+> You can use `git commit -p` on unstaged changes to directly commit.
+> This is a convenient short cut, but if you notice something wrong as
+> you are committing, you have to start over again.  Still, if you are
+> doing simple things, it can be useful.  Check `git show HEAD` and `git
+> diff` when done to make sure things are OK.
+> 
+> You could use **lots of temporary branches**.  It's more explicit but
+> can get annoying.  Then, you can use **rebase** to **squash** all of
+> the commits together.
+> 
+> You can make lots of small commits on a branch and then **rebase**
+> them to squash them together into one commit.  We don't go into the
+> details of rebasing because there is more that can go wrong.  This is
+> fairly advanced, but GitHub and other sites allow you to automatically
+> do this.
+{: .discussion}
 
 ---
 
