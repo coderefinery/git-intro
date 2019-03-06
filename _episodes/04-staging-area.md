@@ -135,14 +135,15 @@ $ git checkout another_file.py    # oops go back to checkpoint 4
 $ git commit                      # commit everything that is staged
 ```
 
-## Exercise: Using the staging area
-
-1. In your recipe example, make two different changes to
-  `ingredients.txt` and `instructions.txt` which do not go together.
-2. Use `git add` to stage one of the changes.
-3. Use `git status` to see what's going on, and use `git diff` and `git diff --staged` to see the changes.
-4. Feel some regret and checkout the unstaged change.
-5. Feel further regret and unstage the staged change.
+> ## Exercise: Using the staging area
+> 
+> 1. In your recipe example, make two different changes to
+>   `ingredients.txt` and `instructions.txt` which do not go together.
+> 2. Use `git add` to stage one of the changes.
+> 3. Use `git status` to see what's going on, and use `git diff` and `git diff --staged` to see the changes.
+> 4. Feel some regret and checkout the unstaged change.
+> 5. Feel further regret and unstage the staged change.
+{: .challenge}
 
 ---
 
