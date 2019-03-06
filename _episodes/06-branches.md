@@ -39,9 +39,8 @@ Software development is often not linear:
 - We need to be able to separate different lines of work really well.
 
 The strength of version control is that it permits the researcher to **isolate
-different tracks of work**. Researchers can work on different things and merge
-the changes they made to the source code files afterwards to create a composite
-version that contains both the changes:
+different tracks of work**, which can later be merged to create a composite
+version that contains all changes:
 
 ![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative.svg
 "description"){:class="img-responsive"}
@@ -67,12 +66,17 @@ one development line (branch) and this branch is called "master":
 
 ![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
 
-We have defined the `git graph` alias earlier using
-(if `git graph` doesn't work for you, run this line to define it):
-
-```shell
-$ git config --global alias.graph "log --all --graph --decorate --oneline"
-```
+> ## A useful alias
+>
+> We will now define an *alias* in Git, to be able to nicely visualize branch 
+> structure in the terminal without having to remember a long Git command 
+> (more details about aliases are given
+> [in a later section]({{ site.baseurl }}/11-aliases)):
+> 
+> ```shell
+> $ git config --global alias.graph "log --all --graph --decorate --oneline"
+> ```
+{: .callout}
 
 Let us inspect the project history using the `git graph` alias:
 
@@ -86,7 +90,7 @@ $ git graph
 
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
-- Branches are pointers that point to a commit.
+- **Branches are pointers that point to a commit.**
 - Branch `master` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
 - `HEAD` is another pointer, it points to where we are right now (currently `master`) 
 
@@ -185,67 +189,68 @@ Picture `git checkout` as an operation that brings the working tree to a specifi
 The state can be a commit or a branch (pointing to a commit).
 
 
-## Exercise: branches
-
-- Change to the branch `master`.
-- Create another branch called `less-salt`
-  where you reduce the amount of salt.
-- Commit your changes to the `less-salt` branch.
-
-Use the same commands as we used above.
-
-We now have three branches (in this case `HEAD` points to `experiment`):
-
-```shell
-$ git branch
-
-* experiment
-  less-salt
-  master
-
-$ git graph
-
-* bf59be6 (less-salt) reduce amount of salt
-| * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
-| * 7cf6d8c let us try with some cilantro
-|/
-* dd4472c (master) we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
-```
-
-Here is a graphical representation of what we have created:
-
-![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
-
-- Now switch to `master`.
-- Add and commit the following `README.md` to `master`:
-
-```markdown
-# Guacamole recipe
-
-Used in teaching Git.
-```
-
-Now you should have this situation:
-
-```shell
-$ git graph
-
-* 40fbb90 (HEAD -> master) draft a readme
-| * bf59be6 (less-salt) reduce amount of salt
-|/
-| * 6feb49d (experiment) maybe little bit less cilantro
-| * 7cf6d8c let us try with some cilantro
-|/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
-```
-
-![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
-
-And for comparison this is how it looks [on GitHub](https://github.com/bast/recipe/network).
+> ## Exercise: branches
+> 
+> - Change to the branch `master`.
+> - Create another branch called `less-salt`
+>   where you reduce the amount of salt.
+> - Commit your changes to the `less-salt` branch.
+> 
+> Use the same commands as we used above.
+> 
+> We now have three branches (in this case `HEAD` points to `experiment`):
+> 
+> ```shell
+> $ git branch
+> 
+> * experiment
+>   less-salt
+>   master
+> 
+> $ git graph
+> 
+> * bf59be6 (less-salt) reduce amount of salt
+> | * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
+> | * 7cf6d8c let us try with some cilantro
+> |/
+> * dd4472c (master) we should not forget to enjoy
+> * 2bb9bb4 add half an onion
+> * 2d79e7e adding ingredients and instructions
+> ```
+> 
+> Here is a graphical representation of what we have created:
+> 
+> ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
+> 
+> - Now switch to `master`.
+> - Add and commit the following `README.md` to `master`:
+> 
+> ```markdown
+> # Guacamole recipe
+> 
+> Used in teaching Git.
+> ```
+> 
+> Now you should have this situation:
+> 
+> ```shell
+> $ git graph
+> 
+> * 40fbb90 (HEAD -> master) draft a readme
+> | * bf59be6 (less-salt) reduce amount of salt
+> |/
+> | * 6feb49d (experiment) maybe little bit less cilantro
+> | * 7cf6d8c let us try with some cilantro
+> |/
+> * dd4472c we should not forget to enjoy
+> * 2bb9bb4 add half an onion
+> * 2d79e7e adding ingredients and instructions
+> ```
+> 
+> ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
+> 
+> And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
+{: .task}
 
 ---
 
@@ -255,7 +260,7 @@ And for comparison this is how it looks [on GitHub](https://github.com/bast/reci
 
 - **Skip this unless you got stuck**.
 - Step out of the current directory: `$ cd ..`
-- `$ git clone https://github.com/bast/recipe.git recipe-branching`
+- `$ git clone https://github.com/coderefinery/recipe.git recipe-branching`
 - `$ cd recipe-branching`
 - `$ git graph`
 - Or call a helper to un-stuck it for you.
@@ -416,44 +421,46 @@ may have a hard time finding them as there is no branch pointing to them.
 
 ---
 
-### Exercise: encounter a fast-forward merge
-
-- Create a new branch from `master` and switch to it.
-- Create a couple of commits on the new branch (for instance edit `README.md`):
-
-![]({{ site.baseurl }}/img/gitink/git-pre-ff.svg)
-
-- Now switch to `master`.
-- Merge the new branch to `master`.
-- Examine the result with `git graph`.
-- Have you expected the result? Discuss what you see.
+> ## Exercise: encounter a fast-forward merge
+> 
+> 1. Create a new branch from `master` and switch to it.
+> 2. Create a couple of commits on the new branch (for instance edit `README.md`):
+> 
+>     ![]({{ site.baseurl }}/img/gitink/git-pre-ff.svg)
+> 
+> 3. Now switch to `master`.
+> 4. Merge the new branch to `master`.
+> 5. Examine the result with `git graph`.
+> 6. Have you expected the result? Discuss what you see.
+{: .task}
 
 ---
 
-### Optional advanced exercises
-
-These are advanced exercises. Absolutely no problem to postpone them to
-few months later.
-
-They make use of the following commands:
-
-```shell
-$ git reset --hard <branch/hash>  # rewind current branch to <branch/hash>
-                                  # and throw away all later code changes
-$ git reset --soft <branch/hash>  # rewind current branch to <branch/hash>
-                                  # but keep all later code changes and stage them
-$ git rebase <branch/hash>        # cut current branch off and transplant it on top of <branch/hash>
-$ git reflog                      # show me a log of past hashes I have visited
-$ git checkout -b <branch/hash>   # create a branch pointing to <branch/hash>
-```
-
-- Make a few commits to `master`, then realize you committed to the wrong branch,
-  branch off and rewind the `master` branch back using `git reset --hard`.
-- Delete a branch that is merged, then recreate it.
-- Delete an unmerged branch, then try to recreate it.
-- Rebase a branch.
-- Squash commits that are "at the end".
-- Squash a couple of commits except the last one using `git rebase -i`.
+> ## Optional advanced exercises
+> 
+> These are advanced exercises. Absolutely no problem to postpone them to
+> few months later.
+> 
+> They make use of the following commands:
+> 
+> ```shell
+> $ git reset --hard <branch/hash>  # rewind current branch to <branch/hash>
+>                                   # and throw away all later code changes
+> $ git reset --soft <branch/hash>  # rewind current branch to <branch/hash>
+>                                   # but keep all later code changes and stage them
+> $ git rebase <branch/hash>        # cut current branch off and transplant it on top of <branch/hash>
+> $ git reflog                      # show me a log of past hashes I have visited
+> $ git checkout -b <branch/hash>   # create a branch pointing to <branch/hash>
+> ```
+> 
+> 1. Make a few commits to `master`, then realize you committed to the wrong branch,
+>   branch off and rewind the `master` branch back using `git reset --hard`.
+> 2. Delete a branch that is merged, then recreate it.
+> 3. Delete an unmerged branch, then try to recreate it.
+> 4. Rebase a branch.
+> 5. Squash commits that are "at the end".
+> 6. Squash a couple of commits except the last one using `git rebase -i`.
+{: .challenge}
 
 ---
 
@@ -513,37 +520,78 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 
 ---
 
-## Tags
-
-- A tag is a pointer to a commit but in contrast to a branch it does not move.
-- We use tags to record particular states or milestones of a project at a given
-  point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
-  v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
-- There are two basic types of tags: annotated and lightweight.
-- **Use annotated tags** since they contain the author and can be cryptographically signed using
-  GPG, timestamped, and a message attached.
-
-Let's add an annotated tag to our current state of the guacamole recipe:
-
-```shell
-$ git tag -a nobel-2017 -m "recipe I made for the 2017 Nobel banquet"
-```
-
-As you may have found out already, `git show` is a very versatile command. Try this:
-
-```shell
-$ git show nobel-2017
-```
-
-For more information about tags see for example
-[the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
-subject.
+> ## (Optional) Tags
+> 
+> - A tag is a pointer to a commit but in contrast to a branch it does not move.
+> - We use tags to record particular states or milestones of a project at a given
+>   point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
+>   v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
+> - There are two basic types of tags: annotated and lightweight.
+> - **Use annotated tags** since they contain the author and can be cryptographically signed using
+>   GPG, timestamped, and a message attached.
+> 
+> Let's add an annotated tag to our current state of the guacamole recipe:
+> 
+> ```shell
+> $ git tag -a nobel-2017 -m "recipe I made for the 2017 Nobel banquet"
+> ```
+> 
+> As you may have found out already, `git show` is a very versatile command. Try this:
+> 
+> ```shell
+> $ git show nobel-2017
+> ```
+> 
+> For more information about tags see for example
+> [the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
+> subject.
+{: .challenge}
 
 ---
 
-## Questions
-
-- What is a detached `HEAD`?
-- What are orphaned commits?
-- What will happen to orphaned commits?
-- How can you recover orphaned commits?
+> ## Test your understanding
+> 
+> 1. Which of the following combos (one or more) creates a new branch and makes a commit to it?
+>    1. 
+>    ```shell
+>    $ git branch new-branch	
+>    $ git add file.txt
+>    $ git commit 
+>    ```
+>    2. 
+>    ```shell
+>    $ git add file.txt
+>    $ git branch new-branch
+>    $ git checkout new-branch
+>    $ git commit 
+>    ```
+>    3. 
+>    ```shell
+>    $ git checkout -b new-branch	
+>    $ git add file.txt
+>    $ git commit 
+>    ```
+>    4. 
+>    ```shell
+>    $ git checkout new-branch	
+>    $ git add file.txt
+>    $ git commit 
+>    ```
+> 2. What is a detached `HEAD`?
+> 3. What are orphaned commits?
+> 
+> > ## Solutions
+> > 
+> > 1. Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the 
+> >    branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we 
+> >    don't give the `-b` flag to `git checkout` to create the new branch.
+> > 2. When you check out a branch name, HEAD will point to the most recent commit of that branch.
+> >    You can however check out a *particular hash*. This will bring your working directory back in 
+> >    time to that commit, and your HEAD will be pointing to that commit but it will not be attached 
+> >    to any branch. If you want to make commits in that state, you should instead create a new branch:
+> >    `git checkout -b test-branch <hash>`.
+> > 3. An orphaned commit is a commit that does not belong to any branch, and therefore doesn't have 
+> >    any parent commits. This could happen if you make a commit in a detached HEAD state. Commits 
+> >    rarely vanish in Git, and you could still find the orphaned commit using `git reflog`.
+> {: .solution}
+{: .challenge}
