@@ -96,14 +96,13 @@ commit or having one logical change spread over several commits.
 
 ## States of a file.
 
-Files can be untracked, modified, staged, or committed, and 
-we have a variety of commands to go between states:
-
 ![]({{ site.baseurl }}/img/file_states.png)
 
 *Note: the "staging area" has also alternatively been referred to as
 the index and the cache*.
 
+Files can be untracked, modified, staged, or committed, and 
+we have a variety of commands to go between states:
 
 ```shell
 $ git add <path>       # stages all changes in file
@@ -117,13 +116,14 @@ $ git checkout <path>  # check out the latest staged version ( or committed
                        # version if file has not been staged )
 ```
 
+**Recommendation:**
 - `git add` every change that improves the code.
 - `git checkout` every change that made things worse.
 - `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
 - Discuss/think about what is too large or too small.
 
 
-### Example
+### Example workflow
 
 ```shell
 $ git add file.py                 # checkpoint 1
@@ -135,11 +135,6 @@ $ git checkout another_file.py    # oops go back to checkpoint 4
 $ git commit                      # commit everything that is staged
 ```
 
-- `git diff` gives differences with respect to the staging area, this is very practical.
-- Using `git add` we can create very nice coherent commits.
-- The `-p` option gives you even more control, and as a bonus shows you the diffs as you stage/reset/checkout things.
-
-
 ## Exercise: Using the staging area
 
 1. In your recipe example, make two different changes to
@@ -148,19 +143,6 @@ $ git commit                      # commit everything that is staged
 3. Use `git status` to see what's going on, and use `git diff` and `git diff --staged` to see the changes.
 4. Feel some regret and checkout the unstaged change.
 5. Feel further regret and unstage the staged change.
-
----
-
-## Staging everything
-
-Sometimes you want to stage all modifications **but not add any new files**.
-No need to stage them one by one:
-
-```shell
-$ git add --update
-```
-
-Also removals of tracked files are then automatically staged.
 
 ---
 
