@@ -421,44 +421,46 @@ may have a hard time finding them as there is no branch pointing to them.
 
 ---
 
-### Exercise: encounter a fast-forward merge
-
-- Create a new branch from `master` and switch to it.
-- Create a couple of commits on the new branch (for instance edit `README.md`):
-
-![]({{ site.baseurl }}/img/gitink/git-pre-ff.svg)
-
-- Now switch to `master`.
-- Merge the new branch to `master`.
-- Examine the result with `git graph`.
-- Have you expected the result? Discuss what you see.
+> ## Exercise: encounter a fast-forward merge
+> 
+> 1. Create a new branch from `master` and switch to it.
+> 2. Create a couple of commits on the new branch (for instance edit `README.md`):
+> 
+>     ![]({{ site.baseurl }}/img/gitink/git-pre-ff.svg)
+> 
+> 3. Now switch to `master`.
+> 4. Merge the new branch to `master`.
+> 5. Examine the result with `git graph`.
+> 6. Have you expected the result? Discuss what you see.
+{: .task}
 
 ---
 
-### Optional advanced exercises
-
-These are advanced exercises. Absolutely no problem to postpone them to
-few months later.
-
-They make use of the following commands:
-
-```shell
-$ git reset --hard <branch/hash>  # rewind current branch to <branch/hash>
-                                  # and throw away all later code changes
-$ git reset --soft <branch/hash>  # rewind current branch to <branch/hash>
-                                  # but keep all later code changes and stage them
-$ git rebase <branch/hash>        # cut current branch off and transplant it on top of <branch/hash>
-$ git reflog                      # show me a log of past hashes I have visited
-$ git checkout -b <branch/hash>   # create a branch pointing to <branch/hash>
-```
-
-- Make a few commits to `master`, then realize you committed to the wrong branch,
-  branch off and rewind the `master` branch back using `git reset --hard`.
-- Delete a branch that is merged, then recreate it.
-- Delete an unmerged branch, then try to recreate it.
-- Rebase a branch.
-- Squash commits that are "at the end".
-- Squash a couple of commits except the last one using `git rebase -i`.
+> ## Optional advanced exercises
+> 
+> These are advanced exercises. Absolutely no problem to postpone them to
+> few months later.
+> 
+> They make use of the following commands:
+> 
+> ```shell
+> $ git reset --hard <branch/hash>  # rewind current branch to <branch/hash>
+>                                   # and throw away all later code changes
+> $ git reset --soft <branch/hash>  # rewind current branch to <branch/hash>
+>                                   # but keep all later code changes and stage them
+> $ git rebase <branch/hash>        # cut current branch off and transplant it on top of <branch/hash>
+> $ git reflog                      # show me a log of past hashes I have visited
+> $ git checkout -b <branch/hash>   # create a branch pointing to <branch/hash>
+> ```
+> 
+> 1. Make a few commits to `master`, then realize you committed to the wrong branch,
+>   branch off and rewind the `master` branch back using `git reset --hard`.
+> 2. Delete a branch that is merged, then recreate it.
+> 3. Delete an unmerged branch, then try to recreate it.
+> 4. Rebase a branch.
+> 5. Squash commits that are "at the end".
+> .6 Squash a couple of commits except the last one using `git rebase -i`.
+{: .challenge}
 
 ---
 
