@@ -62,7 +62,7 @@ dd4472c we should not forget to enjoy
 > - Revert the commit with `git revert`.
 > - Inspect the history with `git log --oneline`.
 > - Now try `git show` on both the reverted and the newly created commit.
-{: .challenge}
+{: .task}
 
 ---
 
@@ -89,20 +89,20 @@ that were unstaged/uncommitted!
 
 > ## Exercise: Modify without staging
 > 
-> - Make a silly change to the recipe, do not stage it or commit it.
-> - Inspect the change with `git status` and `git diff`.
-> - Now undo the change with `git checkout <file>`.
-> - Verify that the change is gone with `git status` and `git diff`.
-{: .challenge}
+> 1. Make a silly change to the recipe, do not stage it or commit it.
+> 2. Inspect the change with `git status` and `git diff`.
+> 3. Now undo the change with `git checkout <file>`.
+> 4. Verify that the change is gone with `git status` and `git diff`.
+{: .task}
 
 > ## Exercise: Modify after staging
 > 
-> - Make a reasonable change to the recipe, stage it.
-> - Make a silly change after you have staged the reasonable change.
-> - Inspect the situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
-> - Now undo the silly change with `git checkout <file>`.
-> - Inspect the new situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
-{: .challenge}
+> 1. Make a reasonable change to the recipe, stage it.
+> 2. Make a silly change after you have staged the reasonable change.
+> 3. Inspect the situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
+> 4. Now undo the silly change with `git checkout <file>`.
+> 5. Inspect the new situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
+{: .task}
 
 ---
 
