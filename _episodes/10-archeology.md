@@ -14,73 +14,96 @@ keypoints:
   - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
 ---
 
-Clone the repository of `git` itself from [here](https://github.com/git/git).
+Clone the repository of an example project from 
+[here](https://github.com/coderefinery/word-count) 
+(we will also use this project in later lessons):
+```shell
+$ git clone https://github.com/coderefinery/word-count
+$ cd word-count
+```
 
 ## Inspecting commits
 
-At any moment we can inspect individual commits with `git show`:
+At any moment we can inspect individual commits with `git show`. 
+Let's first find the earliest commits to this repository:
+```shell
+$ git log --reverse
 
-```
-$ git show e83c51633
+commit c4a32caae2f0ddc4d85481f5adf61360198edc2f
+Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
+Date:   Tue May 8 15:15:48 2018 +0200
 
-commit e83c5163316f89bfbde7d9ab23ca2e25604af290
-Author: Linus Torvalds <torvalds@ppc970.osdl.org>
-Date:   Thu Apr 7 15:13:13 2005 -0700
+    initial commit
 
-    Initial revision of "git", the information manager from hell
+commit a0cc9e1d0ef853464cd0019479f6ac4eb4ba88c7
+Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
+Date:   Tue May 8 15:24:57 2018 +0200
+
+    add license and credit to SWC
 
 ...
-diff --git a/README b/README
-new file mode 100644
-index 000000000..27577f768
---- /dev/null
-+++ b/README
-@@ -0,0 +1,168 @@
+```
+
+and then use `git show` to display the changeset for the second commit:
+
+```
+$ git show a0cc9e1d0
+
+commit a0cc9e1d0ef853464cd0019479f6ac4eb4ba88c7
+Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
+Date:   Tue May 8 15:24:57 2018 +0200
+
+    add license and credit to SWC
+
+diff --git a/README.md b/README.md
+index 8fe4059..d11eb04 100644
+--- a/README.md
++++ b/README.md
+@@ -1,8 +1,9 @@
+-[![License](https://img.shields.io/badge/license-%20MPL--v2.0-blue.svg)](../master/LICENSE)
+-
+-
+ # Word count example
+
++This example project is inspired by and derived from
++work by [Software Carpentry](http://software-carpentry.org) licensed under the
++[Creative Commons Attribution license (CC BY4.0)](https://creativecommons.org/licenses/by/4.0/).
 +
-+       GIT - the stupid content tracker
-+
-+"git" can mean anything, depending on your mood.
-+
-+ - random three-letter combination that is pronounceable, and not
-+   actually used by any common UNIX command.  The fact that it is a
-+   mispronounciation of "get" may or may not be relevant.
-+ - stupid. contemptible and despicable. simple. Take your pick from the
-+   dictionary of slang.
-+ - "global information tracker": you're in a good mood, and it actually
-+   works for you. Angels sing, and a light suddenly fills the room.
-+ - "goddamn idiotic truckload of sh*t": when it breaks
-+
-+This is a stupid (but extremely fast) directory content manager.  It
-+doesn't do a whole lot, but what it _does_ do is track directory
-+contents efficiently.
+ These programs will count words in a given text, plot a bar chart of the 10 mos
+t common words,
+ and test [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) on the two mo
+st common words.
 ...
 ```
 
 We see that the start of the hash is enough if it is unique.
 
-Compare this with: [https://github.com/git/git/commit/e83c51633](https://github.com/git/git/commit/e83c51633)
+Compare this with: [https://github.com/coderefinery/word-count/commit/a0cc9e1d0](https://github.com/coderefinery/word-count/commit/a0cc9e1d0)
 
 ---
 
 ## Grepping code
 
-What if the combination of `git log` and `git show` is not enough?
+What if the combination of `git log` and `git show` is not enough to find what we need?
 
-```
-$ git grep -i indexing
+```shell
+$ git grep -i zipf
 
-Documentation/config/add.txt:   added due to indexing errors. Equivalent to the `--ignore-errors`
-Documentation/git-add.txt:      If some files could not be added because of errors indexing
-Documentation/git-clone.txt:branch of some repository for search indexing.
-builtin/index-pack.c:                           from_stdin ? _("Receiving objects") : _("Indexing objects"),
-compat/nedmalloc/malloc.c.h:/* ---------------------------- Indexing Bins ---------------------------- */
-compat/nedmalloc/nedmalloc.c:   if(bestsize!=size)      /* dlmalloc can round up, so we round down to preserve indexing */
-diff-delta.c:   /* Determine index hash size.  Note that indexing skips the
-hash.h: * Note that these constants are suitable for indexing the hash_algos array and
-po/bg.po:msgid "read error while indexing %s"
-po/bg.po:msgid "short read while indexing %s"
-po/bg.po:msgid "Indexing objects"
-
+Makefile:# Test Zipf's law
+Makefile:results/results.txt: processed_data/abyss.dat source/zipf_test.py
+Makefile:       python source/zipf_test.py processed_data/abyss.dat > results/results.txt
+Makefile_all:$(RESDIR)/results.txt: $(DATA) source/zipf_test.py
+Makefile_all:   python source/zipf_test.py $(DATA) > $@
+README.md:most common words, and test [Zipf's
+README.md:law](https://en.wikipedia.org/wiki/Zipf%27s_law) on the two most common words.
+Snakefile_all:        'zipf_analysis.tar.gz'
+Snakefile_all:        rm -f zipf_analysis.tar.gz processed_data/* results/*
+Snakefile_all:rule zipf_test:
+Snakefile_all:        zipf='source/zipf_test.py',
+Snakefile_all:    shell:  'python {input.zipf} {input.books} > {output}'
+Snakefile_all:    output: 'zipf_analysis.tar.gz'
+doc/exercises.rst:- Write a sentence or two about Zipf's law and link to Wikipedia
+doc/purpose.rst:Zipf's law
 ```
 
 - Greps entire repository below current directory.
@@ -104,25 +127,25 @@ $ git blame <filename>
 
 Example from real life:
 
-```
-$ git blame blame.c
+```shell
+$ git blame README.md
 
-072bf4321f (Jeff Smith              2017-05-24 00:15:34 -0500    1) #include "cache.h"
-072bf4321f (Jeff Smith              2017-05-24 00:15:34 -0500    2) #include "refs.h"
-cbd53a2193 (Stefan Beller           2018-05-15 16:42:15 -0700    3) #include "object-store.h"
-072bf4321f (Jeff Smith              2017-05-24 00:15:34 -0500    4) #include "cache-tree.h"
-b543bb1cdf (Jeff Smith              2017-05-24 00:15:35 -0500    5) #include "mergesort.h"
-b543bb1cdf (Jeff Smith              2017-05-24 00:15:35 -0500    6) #include "diff.h"
-b543bb1cdf (Jeff Smith              2017-05-24 00:15:35 -0500    7) #include "diffcore.h"
-09002f1b31 (Jeff Smith              2017-05-24 00:15:36 -0500    8) #include "tag.h"
-f5dd754c36 (Jeff Smith              2017-05-24 00:15:33 -0500    9) #include "blame.h"
-14ba97f81c (Stefan Beller           2018-05-15 14:48:42 -0700   10) #include "alloc.h"
-4e0df4e663 (Nguyễn Thái Ngọc Duy    2018-05-19 07:28:19 +0200   11) #include "commit-slab.h"
-4e0df4e663 (Nguyễn Thái Ngọc Duy    2018-05-19 07:28:19 +0200   12)
-4e0df4e663 (Nguyễn Thái Ngọc Duy    2018-05-19 07:28:19 +0200   13) define_commit_slab(blame_suspects, struct blame_origin *);
-4e0df4e663 (Nguyễn Thái Ngọc Duy    2018-05-19 07:28:19 +0200   14) static struct blame_suspects blame_suspects;
-4e0df4e663 (Nguyễn Thái Ngọc Duy    2018-05-19 07:28:19 +0200   15)
-4e0df4e663 (Nguyễn Thái Ngọc Duy    2018-05-19 07:28:19 +0200   16) struct blame_origin *get_blame_suspects(struct commit *commit)
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  1)
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  2)
+^c4a32ca (Kjartan Thor Wikfeldt 2018-05-08 15:15:48 +0200  3) # Word count example
+^c4a32ca (Kjartan Thor Wikfeldt 2018-05-08 15:15:48 +0200  4)
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  5) These programs will count words in a given text, plot a bar chart of the 10
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  6) most common words, and test [Zipf's
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  7) law](https://en.wikipedia.org/wiki/Zipf%27s_law) on the two most common words.
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  8)
+9187d4be (Radovan Bast          2018-08-22 15:16:56 +0200  9) - Inspired by and derived from https://hpc-carpentry.github.io/hpc-python/
+9187d4be (Radovan Bast          2018-08-22 15:16:56 +0200 10)   which is distributed under
+9187d4be (Radovan Bast          2018-08-22 15:16:56 +0200 11)   [Creative Commons Attribution license (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 12) - Documentation: https://word-count.readthedocs.io
+a0cc9e1d (Kjartan Thor Wikfeldt 2018-05-08 15:24:57 +0200 13)
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 14) We use this example in two [CodeRefinery](https://coderefinery.org/) lessons:
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 15) - https://coderefinery.github.io/reproducible-research/
+73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 16) - https://coderefinery.github.io/documentation/
 ```
 
 Rather typical timeline:
@@ -131,7 +154,7 @@ Rather typical timeline:
 
 Who was the last to edit a specific line of the source file for `git blame` and when and why?
 
-- [https://github.com/git/git/blame/master/blame.c](https://github.com/git/git/blame/master/blame.c)
+- [https://github.com/coderefinery/word-count/blame/master/README.md](https://github.com/coderefinery/word-count/blame/master/README.md)
 
 ---
 
@@ -144,13 +167,11 @@ easily find it with `git blame`.
 
 Real-life example:
 ```
-$ git log --oneline --grep "removed"
+$ git log --oneline --grep "remove"
 
-9a4cb8781 builtin/notes: remove unnecessary free
-d1664e73a add: speed up cmd_add() by utilizing read_cache_preload()
-bf1e6da79 compat: make sure git_mmap is not expected to write
-2588f6ed8 shallow: offer to prune only non-existing entries
-1dcd9f204 midx: close multi-pack-index on repack
+707c200 remove trailing whitespace for more silent diffs
+cc843ff Merge pull request #5 from coderefinery/radovan/encoding
+bbf088e (origin/radovan/encoding, radovan/encoding) remove encoding="utf-8" arg to allow also python 2.7
 ```
 
 Note that `git log --grep` will grep the whole commit message even if you use the `--oneline` option.
@@ -161,29 +182,29 @@ Note that `git log --grep` will grep the whole commit message even if you use th
 
 The day will come when you are in this situation:
 
-> *I remember there used to be a line containing the word "the_repository".
+> *I remember there used to be a function called "typeset_labels".
 > Now it is gone:*
 
-```
-$ git grep "the_repository" grep.c
+```shell
+$ git grep 'typeset_labels' source/plotcount.py
 
 [no output]
 ```
-(You can also grep all files at once: `git grep "the_repository"`)
+(You can also grep all files at once: `git grep 'typeset_labels`)
 
 Sometimes also the log does not help because the commit messages are not helpful:
 
-```
-$ git log --oneline grep.c
+```shell
+$ git log --oneline source/plotcount.py
 
-4002e87cb grep: remove #ifdef NO_PTHREADS
-acd00ea04 userdiff.c: remove implicit dependency on the_index
-38bbc2ea3 grep.c: remove implicit dependency on the_index
-6afaf8078 diff.c: remove the_index dependency in textconv() functions
-87ece7ce1 Merge branch 'tb/grep-only-matching'
-d036d667b Merge branch 'tb/grep-column'
-00624d608 Merge branch 'sb/object-store-grafts'
-...
+7ef076e rm a lot of unused code; fixes #12
+aa8cd8a clean up sources with pycodestyle
+086715d rm outcommented code
+707c200 remove trailing whitespace for more silent diffs
+a362e23 python scripts do not need to be executable
+6297979 add python command and rm shebangs
+8738e1e call python scripts using py3 shebang
+c4a32ca initial commit
 ```
 
 What now?
@@ -191,47 +212,55 @@ What now?
 We can figure out when it disappeared:
 
 ```
-$ git log -S 'the_repository' grep.c
+$ git log -S 'typeset_labels' source/plotcount.py
 
-commit 38bbc2ea39372ce1b7eb494b31948f4a8a903f88
-Author: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>
-Date:   Fri Sep 21 17:57:23 2018 +0200
+commit 7ef076eb516851f5f5e2be50d1fd1a1681294e6d
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Tue Aug 21 00:37:43 2018 +0200
 
-    grep.c: remove implicit dependency on the_index
-...
-commit 6afaf807859bd671a3f8e9101952e648a1a5e1a9
-Author: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>
-Date:   Fri Sep 21 17:57:22 2018 +0200
+    rm a lot of unused code; fixes #12
 
-    diff.c: remove the_index dependency in textconv() functions
-...
+commit c4a32caae2f0ddc4d85481f5adf61360198edc2f
+Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
+Date:   Tue May 8 15:15:48 2018 +0200
+
+    initial commit
 ```
 
 Now let us have a look at that commit:
 
-```
-$ git show 38bbc2e grep.c
+```shell
+$ git show 7ef076eb source/plotcount.py
 
-commit 38bbc2ea39372ce1b7eb494b31948f4a8a903f88
-Author: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>
-Date:   Fri Sep 21 17:57:23 2018 +0200
+commit 7ef076eb516851f5f5e2be50d1fd1a1681294e6d
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Tue Aug 21 00:37:43 2018 +0200
 
-    grep.c: remove implicit dependency on the_index
+    rm a lot of unused code; fixes #12
+
+diff --git a/source/plotcount.py b/source/plotcount.py
+index db7180f..268de5b 100644
+--- a/source/plotcount.py
++++ b/source/plotcount.py
+@@ -1,7 +1,6 @@
+ import numpy as np
+ import matplotlib.pyplot as plt
+ import sys
+-from collections import Sequence
+
+ from wordcount import load_word_counts
+
+@@ -23,67 +22,6 @@ def plot_word_counts(counts, limit=10):
+     plt.bar(position, count_data, width, color='b')
+
+
+-def typeset_labels(labels=None, gap=5):
+-    """
+-    Given a list of labels, create a new list of labels such that each label
+-    is right-padded by spaces so that every label has the same width, then
+-    is further right padded by ' ' * gap.
+-    """
 ...
-
-diff --git a/grep.c b/grep.c
-index e146ff20b..6c0eede3a 100644
---- a/grep.c
-+++ b/grep.c
-...
-@@ -1741,7 +1744,7 @@ static int fill_textconv_grep(struct userdiff_driver *driver,
-         * structure.
-         */
-        grep_read_lock();
--       size = fill_textconv(the_repository, driver, df, &buf);
-+       size = fill_textconv(r, driver, df, &buf);
-        grep_read_unlock();
-        free_filespec(df);
 ```
 
 Indeed! Thank you, Git!
