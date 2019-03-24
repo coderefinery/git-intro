@@ -141,8 +141,7 @@ $ git commit                      # commit everything that is staged
 >   `ingredients.txt` and `instructions.txt` which do not go together.
 > 2. Use `git add` to stage one of the changes.
 > 3. Use `git status` to see what's going on, and use `git diff` and `git diff --staged` to see the changes.
-> 4. Feel some regret and checkout the unstaged change.
-> 5. Feel further regret and unstage the staged change.
+> 4. Feel some regret and unstage the staged change.
 {: .task}
 
 ---
