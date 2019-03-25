@@ -130,6 +130,7 @@ $ git add file.py                 # checkpoint 1
 $ git add file.py                 # checkpoint 2
 $ git add another_file.py         # checkpoint 3
 $ git add another_file.py         # checkpoint 4
+# ... further work on another_file.py ...
 $ git diff another_file.py        # diff w.r.t. checkpoint 4
 $ git checkout another_file.py    # oops go back to checkpoint 4
 $ git commit                      # commit everything that is staged
