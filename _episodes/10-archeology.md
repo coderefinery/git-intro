@@ -15,19 +15,19 @@ keypoints:
 ---
 
 
-## Preparation 
-Please make sure that you do not clone repositories inside an already tracked folder. 
-Tip: issue the command 
+## Preparation
+Please make sure that you do not clone repositories inside an already tracked folder.
+Tip: issue the command
 ```shell
 $ git status
 ```
-Inside the folder and if it is an untracked location you will see the message 
-"fatal: not a git repository (or any of the parent directories): .git". 
-If you get an message starting with "On branch .. " then you should stop and 
-find a different location. 
+Inside the folder and if it is an untracked location you will see the message
+"fatal: not a git repository (or any of the parent directories): .git".
+If you get an message starting with "On branch .. " then you should stop and
+find a different location.
 
-Clone the repository of an example project from 
-[https://github.com/coderefinery/word-count](https://github.com/coderefinery/word-count) 
+Clone the repository of an example project from
+[https://github.com/coderefinery/word-count](https://github.com/coderefinery/word-count)
 (we will also use this project in later lessons):
 ```shell
 $ git clone https://github.com/coderefinery/word-count
@@ -35,7 +35,7 @@ $ cd word-count
 ```
 ## Inspecting commits
 
-At any moment we can inspect individual commits with `git show`. 
+At any moment we can inspect individual commits with `git show`.
 Let's first find the earliest commits to this repository:
 ```shell
 $ git log --reverse
@@ -324,8 +324,8 @@ Branches help us to keep the repository organized.
 
 ```shell
 $ git bisect start
-$ git bisect good 89578ed  # this is a commit that worked
-$ git bisect bad HEAD      # last commit is broken
+$ git bisect good f0ea950  # this is a commit that worked
+$ git bisect bad master    # last commit is broken
   # now compile and/or run
   # after that decide whether
 $ git bisect good
@@ -345,43 +345,50 @@ $ git bisect bad
 ---
 
 > ## Git bisect exercise
-> 
-> Clone [this repository](https://github.com/coderefinery/git-bisect-exercise).
-> 
-> 
+>
+> Clone [https://github.com/coderefinery/git-bisect-exercise](https://github.com/coderefinery/git-bisect-exercise).
+>
+>
 > #### Motivation
-> 
+>
 > The motivation for this exercise is to be able to do archaeology with Git on a
 > source code where the bug is difficult to see visually. **Finding the offending
 > commit is often more than half the debugging**.
-> 
-> 
+>
+>
 > #### Background
-> 
+>
 > The script `get_pi.py` approximates pi using terms of the Nilakantha series. It
 > should produce 3.14 but it does not. The script broke at some point and
 > produces 3.57 using the last commit:
-> 
+>
 > ```
 > $ python get_pi.py
-> 
+>
 > 3.57
 > ```
-> 
+>
 > At some point within the 500 first commits, an error was introduced. The only
 > thing we know is that the first commit worked correctly.
-> 
-> 
+>
+>
 > #### Your task
-> 
-> Use `git bisect` to find the commit which broke the computation.
-> 
-> 
-> - But how to find the first commit? Either by `git log --reverse` or `git log --oneline | tail -n 1`
+>
+> Clone or fork this repository and use `git bisect` to find the commit which
+> broke the computation
+> ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
+>
+>
+> #### How to find the first commit
+>
+> ```
+> $ git log --oneline | tail -n 1
+> ```
 {: .task}
 
 > ## Bonus exercise
-> 
+>
 > Write a script that checks for a correct result and use `git bisect run` to
-> find the offending commit automatically.
+> find the offending commit automatically
+> ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
 {: .task}
