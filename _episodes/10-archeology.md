@@ -21,6 +21,21 @@ Clone the repository of an example project from
 $ git clone https://github.com/coderefinery/word-count
 $ cd word-count
 ```
+## (Note!) make sure the current directory is not already tracked by git
+>Please make sure that you do not do this inside an already tracked folder. 
+> Tip: issue the command 
+>```shell
+>$ git status
+>```
+> Inside the folder and if it is an untracked location you will see the message 
+> "fatal: not a git repository (or any of the parent directories): .git". 
+> If you get an message starting with "On branch .. " then you should stop and 
+> find a different location. 
+
+{: .discussion}
+
+
+
 
 ## Inspecting commits
 
