@@ -14,14 +14,25 @@ keypoints:
   - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
 ---
 
+
+## Preparation 
+Please make sure that you do not clone repositories inside an already tracked folder. 
+Tip: issue the command 
+```shell
+$ git status
+```
+Inside the folder and if it is an untracked location you will see the message 
+"fatal: not a git repository (or any of the parent directories): .git". 
+If you get an message starting with "On branch .. " then you should stop and 
+find a different location. 
+
 Clone the repository of an example project from 
-[here](https://github.com/coderefinery/word-count) 
+[https://github.com/coderefinery/word-count](https://github.com/coderefinery/word-count) 
 (we will also use this project in later lessons):
 ```shell
 $ git clone https://github.com/coderefinery/word-count
 $ cd word-count
 ```
-
 ## Inspecting commits
 
 At any moment we can inspect individual commits with `git show`. 
