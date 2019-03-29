@@ -82,9 +82,10 @@ GitHub is a for-profit service that hosts remote git repositories for you. It
 offers a nice HTML user interface to browse the repositories and handles many
 things very nicely.
 
-It is free for public projects and hosting private projects costs a monthly fee
-(but educational discounts exist). The free part of the service has made it
-very popular with many open source providers.
+It offers unlimited public and private repositories free of charge and costs
+a monthly fee if you want access to the pro-tools or need more than 3
+collaborators for your private repos. These features had made GitHub very popular
+with many open source providers
 
 CodeRefinery does not in any way endorse the use of GitHub. There are many
 commercial and open-source alternatives, just check the list above.  In the
