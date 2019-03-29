@@ -14,15 +14,9 @@ keypoints:
   - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
 ---
 
-Clone the repository of an example project from 
-[here](https://github.com/coderefinery/word-count) 
-(we will also use this project in later lessons):
-```shell
-$ git clone https://github.com/coderefinery/word-count
-$ cd word-count
-```
-## (Note!) make sure the current directory is not already tracked by git
->Please make sure that you do not do this inside an already tracked folder. 
+
+### Please make sure the current directory is not already tracked by git before you start
+>Please make sure that you do not clone repositories inside an already tracked folder. 
 > Tip: issue the command 
 >```shell
 >$ git status
@@ -34,9 +28,13 @@ $ cd word-count
 
 {: .discussion}
 
-
-
-
+Clone the repository of an example project from 
+[here](https://github.com/coderefinery/word-count) 
+(we will also use this project in later lessons):
+```shell
+$ git clone https://github.com/coderefinery/word-count
+$ cd word-count
+```
 ## Inspecting commits
 
 At any moment we can inspect individual commits with `git show`. 
