@@ -324,8 +324,8 @@ Branches help us to keep the repository organized.
 
 ```shell
 $ git bisect start
-$ git bisect good 89578ed  # this is a commit that worked
-$ git bisect bad HEAD      # last commit is broken
+$ git bisect good f0ea950  # this is a commit that worked
+$ git bisect bad master    # last commit is broken
   # now compile and/or run
   # after that decide whether
 $ git bisect good
@@ -346,7 +346,7 @@ $ git bisect bad
 
 > ## Git bisect exercise
 >
-> Clone [this repository](https://github.com/coderefinery/git-bisect-exercise).
+> Clone [https://github.com/coderefinery/git-bisect-exercise](https://github.com/coderefinery/git-bisect-exercise).
 >
 >
 > #### Motivation
@@ -374,14 +374,21 @@ $ git bisect bad
 >
 > #### Your task
 >
-> Use `git bisect` to find the commit which broke the computation.
+> Clone or fork this repository and use `git bisect` to find the commit which
+> broke the computation
+> ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
 >
 >
-> - But how to find the first commit? Either by `git log --reverse` or `git log --oneline | tail -n 1`
+> #### How to find the first commit
+>
+> ```
+> $ git log --oneline | tail -n 1
+> ```
 {: .task}
 
 > ## Bonus exercise
 >
 > Write a script that checks for a correct result and use `git bisect run` to
-> find the offending commit automatically.
+> find the offending commit automatically
+> ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
 {: .task}
