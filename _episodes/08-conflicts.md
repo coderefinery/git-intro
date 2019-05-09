@@ -7,7 +7,7 @@ questions:
   - How can we resolve conflicts?
   - How can we avoid conflicts?
 objectives:
-  - Understand the system sufficiently to fix small merge conflicts.
+  - Understand merge conflicts sufficiently well to be able to fix them.
 keypoints:
   - Conflicts often appear because of not enough communication or not optimal branching strategy.
 ---
@@ -28,13 +28,13 @@ There are several ways to do that as we will see.
 
 Please remember:
 
-- Conflicts look scary, but not that bad if you stop and take a deep breath. Also they are luckily rare.
+- Conflicts look scary, but are not that bad after a little bit of practice. Also they are luckily rare.
 - Don't be afraid of Git because of conflicts. You may not meet some conflicts using other systems because you simply can't do the kinds of things you do in Git.
 - You can take human measures to reduce them.
 
 ---
 
-## Exercise: create a conflict
+## Type-along: create a conflict
 
 - Create two branches from `master`: one called `like-cilantro`, one called `dislike-cilantro`:
 
@@ -230,59 +230,61 @@ We will discuss 3 different ways to do this.
 
 ---
 
-## Exercise: create another conflict and resolve
-
-- After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
-- Again modify some ingredient on both branches.
-- Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
-- What happens if you apply the same modification on both branches?
+> ## Exercise: create another conflict and resolve
+> 
+> 1. After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
+> 2. Again modify some ingredient on both branches.
+> 3. Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
+> 4. What happens if you apply the same modification on both branches?
+{: .task}
 
 ---
 
-## Optional exercise: Resolution using mergetool
-
-- Again create a conflict (for instance disagree on the number of avocados).
-- Stop at this stage:
-
-```
-Auto-merging ingredients.txt
-CONFLICT (content): Merge conflict in ingredients.txt
-Automatic merge failed; fix conflicts and then commit the result.
-```
-
-- Instead of resolving the conflict manually, use a visual tool
-  (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
-
-```shell
-$ git mergetool
-```
-
-![]({{ site.baseurl }}/img/conflict-resolution/mergetool.png)
-
-- Your current branch is left, the branch you merge is right, result is in the middle.
-- After you are done, close and commit, `git add` is not needed when using `git mergetool`.
-
-If you have not instructed Git to avoid creating backups when using mergetool, then to be on
-the safe side there will be additional temporary files created. To remove those  you can do
-a git clean after the merging.
-
-To view what will be removed:
-
-```
-$ git clean -n
-```
-
-To remove:
-
-```
-$ git clean -f`
-```
-
-To configure Git to avoid creating backups at all:
-
-```
-$ git config --global mergetool.keepBackup false
-```
+> ## (Optional) Resolution using mergetool
+> 
+> - Again create a conflict (for instance disagree on the number of avocados).
+> - Stop at this stage:
+> 
+> ```
+> Auto-merging ingredients.txt
+> CONFLICT (content): Merge conflict in ingredients.txt
+> Automatic merge failed; fix conflicts and then commit the result.
+> ```
+> 
+> - Instead of resolving the conflict manually, use a visual tool
+>   (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
+> 
+> ```shell
+> $ git mergetool
+> ```
+> 
+> ![]({{ site.baseurl }}/img/conflict-resolution/mergetool.png)
+> 
+> - Your current branch is left, the branch you merge is right, result is in the middle.
+> - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
+> 
+> If you have not instructed Git to avoid creating backups when using mergetool, then to be on
+> the safe side there will be additional temporary files created. To remove those  you can do
+> a git clean after the merging.
+> 
+> To view what will be removed:
+> 
+> ```
+> $ git clean -n
+> ```
+> 
+> To remove:
+> 
+> ```
+> $ git clean -f
+> ```
+> 
+> To configure Git to avoid creating backups at all:
+> 
+> ```
+> $ git config --global mergetool.keepBackup false
+> ```
+{: .challenge}
 
 ---
 
