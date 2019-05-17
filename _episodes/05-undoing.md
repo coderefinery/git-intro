@@ -84,7 +84,7 @@ This means that we never use this command on commits that we have shared with ot
 
 ### Undo unstaged/uncommitted changes
 
-This is a command that **permanently deletes** changes
+`git checkout <file>` is a command that **permanently deletes** changes
 that were unstaged/uncommitted!
 
 > ## Exercise: Modify without staging
