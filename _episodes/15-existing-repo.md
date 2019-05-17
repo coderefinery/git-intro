@@ -4,7 +4,7 @@ title: (Optional) In-browser session
 teaching: 20
 exercises: 0
 questions:
-  - Where are we heading?
+  - How can I contribute to repositories without command line?
 objectives:
   - See an existing repository in action.
   - Browse the history.

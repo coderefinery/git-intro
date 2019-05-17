@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: Aliases and configuration
+title: (Optional) Aliases and configuration
 teaching: 5
 exercises: 5
 questions:

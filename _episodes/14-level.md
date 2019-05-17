@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: Start simple, later increase the level of complexity
+title: (Optional) Start simple, later increase the level of complexity
 teaching: 10
 exercises: 0
 questions:
