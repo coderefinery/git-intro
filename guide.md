@@ -34,7 +34,6 @@ should explain the high-level picture, and they should use git better,
 if they already know the basics.
 
 
-
 *Optional sections:*
 For a complete beginner exposed to version control the half day schedule is too
 long. These section can be skipped:
@@ -56,6 +55,47 @@ long. These section can be skipped:
 We use screenshots from a violent video game in the section on conflict resolution, but 
 it should be emphasized that conflicts are a good thing since otherwise collaborators would 
 overwrite each other's changes. Git saves us from this situation by producing conflicts.
+
+## Inspecting history
+
+Key lesson is *how to find when something is broken or what commit has broken the code*.
+
+It can be useful to emphasize that it
+can be really valuable to be able to search through the history of a project
+efficiently to find when bugs were introduced or when something changed and
+why.
+Also show that `git blame` and `git show` are available
+on GitHub and GitLab.
+
+When discussing `git blame` and `git bisect` the "when" is more important than "who". It is not
+to blame anybody but rather to find out whether published results are affected.
+
+Discuss how one would find out this information without version control.
+
+**Questions to involve participants:**
+
+- Have you ever found a bug in your code and wondered whether it has affected published results?
+- Have you ever wondered when, and by whom, a particular line of code was introduced?
+- Have you ever found out that a code behaves differently than it used to but you are not sure when
+  precisely this changed?
+
+
+**Confusion during `git bisect` exercise:**
+
+Learners may get stuck in the `git bisect` exercise if they incorrectly assign a commit
+as *bad* or *good*.
+To leave the bisect mode and return to the commit before `git bisect start` was issued,
+one can do
+```shell
+$ git bisect reset
+```
+and start over if needed.
+
+
+## Live better than reading the website material
+
+It is better to demonstrate the commands live and type-along. Ideally connecting
+to examples discussed earlier. 
 
 ## Log your history in a separate window
 
@@ -134,7 +174,7 @@ then look at `git graph` again.
   after you are used to things... anytime you do something you do
   infrequently, it's good to check.
 
-- `git graph` is a direct representation of what we am drawing on the
+- `git graph` is a direct representation of what we are drawing on the
   board and should constantly be compared to it.
 
 - Once you `git add` something, it's almost impossible to lose it.
