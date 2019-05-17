@@ -8,11 +8,13 @@ permalink: /guide/
 
 ## Things to prepare
 
+In a typical workshop the optional in-browser episode is not taught.
+**But if you intend to teach it:**
+
 Mirror a fresh https://github.com/coderefinery/example-project
-from https://github.com/bast/example-project for episode 2.
+from https://github.com/bast/example-project.
 
 Do not just fork it since it can confuse users sending pull requests.
-
 
 ## Different ways to present
 
@@ -50,6 +52,9 @@ long. These section can be skipped:
   skipped we are exposed to GitHub in another lesson on the same
   afternoon. Otherwise it can be skipped or moved to another module.
 
+- The "In-browser session" can be taught to audiences who need to be able to 
+  commit to existing repositories (e.g. documentation, webpages, ...)
+  but may not want to use command line.
 
 ## Conflict resolution
 
