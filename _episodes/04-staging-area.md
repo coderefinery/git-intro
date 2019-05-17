@@ -147,33 +147,19 @@ $ git commit                      # commit everything that is staged
 
 ---
 
-> ## (Optional, semiadvanced) Alternatives
+> ## (Optional) Interactive staging
 > 
-> Some people accept that there will be many small commits.  Some people
-> are very obsessive about clean history and constantly use `rebase` to
-> make it clean.
+> One option to help us create nice logical commits is to stage *interactively* 
+> with `git add -p` (you can also directly commit interactively with `git commit -p`):
 > 
-> Below are some alternatives, from easiest to hardest.  *Don't worry
-> about understanding them all*, this is one of the last lessons so we
-> just try to show you some dreams
-> 
-> **Use `git commit -p`.**
-> You can use `git commit -p` on unstaged changes to directly commit.
-> This is a convenient short cut, but if you notice something wrong as
-> you are committing, you have to start over again.  Still, if you are
-> doing simple things, it can be useful.  Check `git show HEAD` and `git
-> diff` when done to make sure things are OK.
-> 
-> You could use **lots of temporary branches**.  It's more explicit but
-> can get annoying.  Then, you can use **rebase** to **squash** all of
-> the commits together.
-> 
-> You can make lots of small commits on a branch and then **rebase**
-> them to squash them together into one commit.  We don't go into the
-> details of rebasing because there is more that can go wrong.  This is
-> fairly advanced, but GitHub and other sites allow you to automatically
-> do this.
-{: .discussion}
+> 1. Modify multiple lines in `instructions.txt`.
+> 2. Run `git add -p instructions.txt`.
+> 3. Type `?` and Enter to get an explanation of what the different options mean.
+> 4. See if you can use the `s`, `y` and `n` options to include only a subset of your modifications in the staging.
+> 5. When you're done, inspect the situation with `git status`, `git diff` and `git diff --staged`.
+> 6. If you want, you can try repeating the procedure above but use `git commit -p` instead of `git add -p` to commit directly.
+>
+{: .task}
 
 ---
 

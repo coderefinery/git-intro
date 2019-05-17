@@ -47,4 +47,4 @@ keypoints:
 - If you are unsure about size of commits, rather create too many commits than too few:
   you can always combine commits later.
 - Later you can start using the staging area.
-- Later start using `git add -p`.
+- Later start using `git add -p` and/or `git commit -p`.
