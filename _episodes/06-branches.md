@@ -458,24 +458,25 @@ may have a hard time finding them as there is no branch pointing to them.
 > 
 > As an alternative to merging branches, one can also *rebase* branches. 
 > Rebasing means that the new commits are *replayed* on top of another branch
-> (instead of creating an explicit merge commit).  
+> (instead of creating an explicit merge commit).   
+> **Note that rebasing changes history and should not be done on public commits!**
 > 1. Create a new branch, and make a couple of commits on it.
 > 2. Switch back to `master`, and make a couple of commits on it.
 > 3. Inspect the situation with `git graph`.
-> 4. Now rebase the new branch on top of `master` by first switching to master, and then `git rebase master`.
+> 4. Now rebase the new branch on top of `master` by first switching to the new branch, and then `git rebase master`.
 > 5. Inspect again the situation with `git graph`. Notice that the commit hashes have changed - think about why!
 {: .challenge}
 
 > ## (Optional) Exercise: Squashing commits
 > 
 > Sometimes you may want to *squash* incomplete commits, particularly before 
-> before merging or rebasing with another branch (typically `master`) to get a cleaner history.  
-> **Note that this changes history and should not be done on public commits!**
-> 1. Create *three* small but related commits on a new feature branch, and inspect with `git graph`.
-> 2. Do a *soft* reset with `git reset --soft HEAD~3`. This rewinds the current branch 
->    by three commits, but keeps all changes and stages them.
+> merging or rebasing with another branch (typically `master`) to get a cleaner history.  
+> **Note that squashing changes history and should not be done on public commits!**
+> 1. Create *two* small but related commits on a new feature branch, and inspect with `git graph`.
+> 2. Do a *soft* reset with `git reset --soft HEAD~2`. This rewinds the current branch 
+>    by two commits, but keeps all changes and stages them.
 > 3. Inspect the situation with `git graph`, `git status` and `git diff --staged`.
-> 4. Commit again with a commit message describing all three commits.
+> 4. Commit again with a commit message describing the changes.
 > 5. What do you think happens if you instead do `git reset --soft <hash>`?
 {: .challenge}
 

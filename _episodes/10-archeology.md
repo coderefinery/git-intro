@@ -201,7 +201,7 @@ $ git grep 'typeset_labels' source/plotcount.py
 
 [no output]
 ```
-(You can also grep all files at once: `git grep 'typeset_labels`)
+(You can also grep all files at once: `git grep 'typeset_labels'`)
 
 Sometimes also the log does not help because the commit messages are not helpful:
 
