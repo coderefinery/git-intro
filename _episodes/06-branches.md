@@ -161,6 +161,7 @@ $ git graph
 - The branch `experiment` is two commits ahead of `master`.
 - We commit our changes to this branch.
 
+---
 
 ## Interlude: Different meanings of "checkout"
 
@@ -188,6 +189,7 @@ This is unfortunate from the user's point of view but the way Git is implemented
 Picture `git checkout` as an operation that brings the working tree to a specific state.
 The state can be a commit or a branch (pointing to a commit).
 
+---
 
 > ## Exercise: branches
 > 
@@ -436,30 +438,45 @@ may have a hard time finding them as there is no branch pointing to them.
 
 ---
 
-> ## Optional advanced exercises
+> The following exercises are advanced, absolutely no problem to postpone them to a
+> few months later. If you give them a go, keep in mind that you might run into conflicts,
+> which we will learn to resolve in the next section.
+
+
+> ## (Optional) Exercise: Moving commits to another branch
 > 
-> These are advanced exercises. Absolutely no problem to postpone them to
-> few months later.
+> Sometimes it happens that we commit to the wrong branch, e.g. to `master` 
+> instead of a feature branch.
+> This can easily be fixed by branching off, and then using `git reset --hard`:
+> 1. Make a couple of commits to `master`, then realize these should have been on 
+>    a new feature branch.
+> 2. Create a new branch from `master`, and rewind `master` back using `git reset --hard <hash>`.
+> 3. Inspect the situation with `git graph`. Problem solved!
+{: .challenge}
+
+> ## (Optional) Exercise: Rebasing 
 > 
-> They make use of the following commands:
+> As an alternative to merging branches, one can also *rebase* branches. 
+> Rebasing means that the new commits are *replayed* on top of another branch
+> (instead of creating an explicit merge commit).  
+> 1. Create a new branch, and make a couple of commits on it.
+> 2. Switch back to `master`, and make a couple of commits on it.
+> 3. Inspect the situation with `git graph`.
+> 4. Now rebase the new branch on top of `master` by first switching to master, and then `git rebase master`.
+> 5. Inspect again the situation with `git graph`. Notice that the commit hashes have changed - think about why!
+{: .challenge}
+
+> ## (Optional) Exercise: Squashing commits
 > 
-> ```shell
-> $ git reset --hard <branch/hash>  # rewind current branch to <branch/hash>
->                                   # and throw away all later code changes
-> $ git reset --soft <branch/hash>  # rewind current branch to <branch/hash>
->                                   # but keep all later code changes and stage them
-> $ git rebase <branch/hash>        # cut current branch off and transplant it on top of <branch/hash>
-> $ git reflog                      # show me a log of past hashes I have visited
-> $ git checkout -b <branch/hash>   # create a branch pointing to <branch/hash>
-> ```
-> 
-> 1. Make a few commits to `master`, then realize you committed to the wrong branch,
->   branch off and rewind the `master` branch back using `git reset --hard`.
-> 2. Delete a branch that is merged, then recreate it.
-> 3. Delete an unmerged branch, then try to recreate it.
-> 4. Rebase a branch.
-> 5. Squash commits that are "at the end".
-> 6. Squash a couple of commits except the last one using `git rebase -i`.
+> Sometimes you may want to *squash* incomplete commits, particularly before 
+> before merging or rebasing with another branch (typically `master`) to get a cleaner history.  
+> **Note that this changes history and should not be done on public commits!**
+> 1. Create *three* small but related commits on a new feature branch, and inspect with `git graph`.
+> 2. Do a *soft* reset with `git reset --soft HEAD~3`. This rewinds the current branch 
+>    by three commits, but keeps all changes and stages them.
+> 3. Inspect the situation with `git graph`, `git status` and `git diff --staged`.
+> 4. Commit again with a commit message describing all three commits.
+> 5. What do you think happens if you instead do `git reset --soft <hash>`?
 {: .challenge}
 
 ---
