@@ -21,6 +21,15 @@ objectives:
 
 ---
 
+> ## Clear your workspace
+>
+> - If you have unstaged changes from earlier sections, remove them with `git checkout <filename>`.
+> - We will see in more detail below how `git checkout` works.
+> 
+{: .callout}
+
+---
+
 ### Reverting commits
 
 - Imagine we made a few commits.
