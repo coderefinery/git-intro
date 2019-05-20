@@ -273,17 +273,24 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > ```
 {: .task}
 
-> ## Optional exercise: more changes and experiment with difftool
+> ## (Optional) Exercise: more changes and renaming
 > 
 > 1. Apply and commit more changes.
 > 2. Add new files.
 > 3. When you commit, try `git commit -v` (will show you the difference in the editor).
 > 4. Rename files with `git mv` (you will need to `git commit` the rename).
 > 5. Use `git log --oneline` and `git status`.
-> 6. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
-> 7. Have a look at specific commits with `git show <hash>`.
-> 8. Those who are a bit more advanced, apply multiple unrelated changes to one file and try staging them selectively with `git add -p`.
-> 9. Make a modification to the code and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
+{: .task}
+
+> ## (Optional) Exercise: Comparing and showing commits
+> 
+> 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
+> 2. Have a look at specific commits with `git show <hash>`.
+{: .task}
+
+> ## (Optional) Exercise: Visual diff tools
+> 
+> - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 > 
 > ```
 > $ git difftool
