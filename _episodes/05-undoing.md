@@ -65,6 +65,10 @@ dd4472c we should not forget to enjoy
 2d79e7e adding ingredients and instructions
 ```
 
+You can revert any commit, no matter how old it is.  It doesn't affect
+other commits you have done since then - but if they touch the same
+code, you may get a conflict (which we'll learn about later).
+
 > ## Exercise: Revert a commit
 > 
 > - Create a commit.
