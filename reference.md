@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /reference/
+---
+
 # git-intro quick reference
 
 ## Other cheatsheets
