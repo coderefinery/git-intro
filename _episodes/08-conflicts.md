@@ -221,12 +221,20 @@ We will discuss 3 different ways to do this.
 >>>>>>> dislike-cilantro
 ```
 
-- We have to edit the code/text between the resolution markers.
-- Git stages all files without conflicts and leaves the files with conflicts unstaged.
-- Decide what you keep (the one, the other, or both or something else).
-- Then remove the resolution markers.
+We have to edit the code/text between the resolution markers.  You
+only have to care about what git shows you: Git stages all files
+without conflicts and leaves the files with conflicts unstaged.
+
+Simple steps:
+
+- Check status with `git status` and `git diff`.
+- Decide what you keep (the one, the other, or both or something
+  else).  Edit the file to do this.
+  - Remove the resolution markers, if not already done.
+  - The file(s) should now look exactly how you want them.
+- Check status with `git status` and `git diff`.
 - Tell Git that you have resolved the conflict with `git add ingredients.txt`, then verify with `git status`.
-- Finally commit the merge.
+- Finally commit the merge with just `git commit` - everything is pre-filled.
 
 ---
 
