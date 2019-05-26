@@ -152,10 +152,11 @@ $ git commit                      # commit everything that is staged
 > One option to help us create nice logical commits is to stage *interactively* 
 > with `git add -p` (you can also directly commit interactively with `git commit -p`):
 > 
-> 1. Modify multiple lines in `instructions.txt`.
+> 1. Modify multiple lines in `instructions.txt`.  Make sure that they
+>    are separated by at least one unmodified line.
 > 2. Run `git add -p instructions.txt`.
 > 3. Type `?` and Enter to get an explanation of what the different options mean.
-> 4. See if you can use the `s`, `y` and `n` options to include only a subset of your modifications in the staging.
+> 4. See if you can use the `s` (split), `y` and `n` options to include only a subset of your modifications in the staging.
 > 5. When you're done, inspect the situation with `git status`, `git diff` and `git diff --staged`.
 > 6. If you want, you can try repeating the procedure above but use `git commit -p` instead of `git add -p` to commit directly.
 >
