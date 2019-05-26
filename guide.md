@@ -104,38 +104,9 @@ to examples discussed earlier.
 
 ## Log your history in a separate window
 
-Set `PROMPT_COMMAND = "history -a"` and in another window, run `tail
--f -n 0 ~/.bash_history`  (these commands have not been checked).  Show a
-few lines of the tail window at the top of the screen, above your main
-shell window.  Now, the students can see your last few commands, even
-if they scroll off the screen and without having to search for your
-prompt.  The disadvantage is that the prompt is only written after the
-command terminates.
-
-These might work but needs debugging (there are lots of complexities
-in extracting out the right parts), but will get commands as soon as
-they are run and also will capture commands if you `ssh` to somewhere
-else, etc.  Note: this begins working after the second line you type,
-somehow.
-
-```
-script -f demos.out
-
-# most general... prompt must end in '$ '.
-tail -n 0 -f demos.out | awk '{ if (match($0,/^[^$ ]+ ?[^$ ]*[$][[:cntrl:]0-9m;[]{,10} (.*)/,m)) print m[1] }'
-
-# Prompt format of [username@host]$
-tail -n 1 -f demos.out | while read line; do [[ "$line" =~ \]\$\ ([^ ].+)$ ]] && echo  ${BASH_REMATCH[1]}; done
-
-# Standard bash prompt of 'user@host$ ' (less likely to have false positives)
-tail -n 0 -f demos.out | awk '{ if (match($0,/^[^@]+@[^$]+[$][^ ]* (.*)/,m)) print m[1] }'
-
-# Prompt is $ ' alone on a line.
-tail -n 0 -f demos.out | awk '{ if (match($0,/^[$] (.*)/,m)) print m[1] }'
-
-# used for the fish shell (note: untested)
-tail -f -n 0 ~/fish_history | sed -u -e s'/- cmd:/ \>/'
-```
+The screencasting (shell window cheatsheet) hints have been moved to
+the [presenting
+manual](https://github.com/coderefinery/manuals/blob/master/presenting.md#screencasting).
 
 
 ## Create a cheatsheet on the board
