@@ -5,7 +5,7 @@ start_time: 570  # 9:30
 # where things are
 source: .
 destination: ./_site
-plugins_dir: ./jekyll-common/plugins
+plugins_dir: ./_plugins
 layouts_dir: ./jekyll-common/layouts
 includes_dir: ./jekyll-common/includes
 data_dir: ./_data
