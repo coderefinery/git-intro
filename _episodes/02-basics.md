@@ -185,8 +185,8 @@ What does the `-m` flag mean? Let us check the help page for that command:
 $ git help commit
 ```
 
-You should see a very long help page as the tool is very versatile. Do not
-worry about this now but keep in mind that you can always read the help files
+You should see a very long help page as the tool is very versatile (press q to quit). 
+Do not worry about this now but keep in mind that you can always read the help files
 when in doubt. Searching online can also be useful, but choosing search terms 
 to find relevant information takes some practice and discussions in some
 online threads may be confusing.
