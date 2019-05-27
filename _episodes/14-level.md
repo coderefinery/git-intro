@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: (Optional) Practical advice: how much git is necessary?
+title: (Optional) Start simple, later increase the level of complexity
 teaching: 10
 exercises: 0
 questions:
