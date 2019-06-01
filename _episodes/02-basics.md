@@ -63,7 +63,7 @@ If you haven't already configured Git, please follow the instructions in the
 
 ---
 
-## Tracking a guacamole recipe with Git
+## Type-along: Tracking a guacamole recipe with Git
 
 We will learn how to initialize a Git repository, how to track changes, and how
 to make delicious guacamole!
