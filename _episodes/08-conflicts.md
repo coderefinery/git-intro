@@ -21,8 +21,8 @@ Then a merge commit appears (unless fast-forward) without you even noticing.
 
 Git is very good at resolving modifications when merging branches.
 
-But sometimes the same line or portion of the code/text is modified on two branches and Git issues a conflict.
-Then you need to tell Git which version to keep.
+But sometimes the same line or portion of the code/text is modified on two branches and Git issues a **conflict**.
+Then you need to tell Git which version to keep (**resolve** it).
 
 There are several ways to do that as we will see.
 
@@ -35,6 +35,12 @@ Please remember:
 ---
 
 ## Type-along: create a conflict
+
+We will make two branches, make two conflicting changes (both increase
+and decrease the amount of cilantro), and then try to merge them
+together.  Git won't decide which to take for you, so will present it
+to you for deciding.  We do that and commit again to resolve the
+conflict.
 
 - Create two branches from `master`: one called `like-cilantro`, one called `dislike-cilantro`:
 

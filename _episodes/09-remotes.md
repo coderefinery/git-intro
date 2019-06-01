@@ -104,7 +104,11 @@ will practice collaborative Git on GitHub tomorrow).
 
 ---
 
-## Create a new repository on GitHub
+## Type-along: Create a new repository on GitHub
+
+For the rest of this page, we will make a new repository for our
+guacamole recipe on Github, send our code to it, and then see how
+others can get the code from it.
 
 1. Login
 2. Click on "Repositories"
