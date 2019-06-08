@@ -32,37 +32,48 @@ objectives:
 
 ### Reverting commits
 
-- Imagine we made a few commits.
-- We realize that the latest commit `f960dd3` was a mistake and we wish to undo it:
+Imagine that we made a commit and later realized it was an mistake. It is possible to undo what 
+we did using git. Lets see how this works by purposefully introducing a change that we 
+want to remove and then remove it.  
+
+Add water as an ingredient and commit that change 
 
 ```
+$ cat ingredients.txt 
+* 2 avocados
+* 1 lime
+* 2 tsp salt
+* 1/2 onion
+* water
+
+$ git add ingredients.txt
+$ git commit -m "Adding water to ingredients"
+
 $ git log --oneline
-
-f960dd3 (HEAD -> master) not sure this is a good idea
-40fbb90 draft a readme
-dd4472c we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
-```
-
-A safe way to undo the commit is to revert the commit with `git revert`:
+7902cde (HEAD -> master) Adding water to ingredients
+aefcb3f we should not forget to enjoy
+b4f9f91 add half an onion
+86e7fdc adding ingredients and instructions
 
 ```
-$ git revert f960dd3
+
+Adding water was not an good idea and we want to remove that. 
+A safe way do this is to  revert the commit with `git revert`:
+
+```
+$ git revert 7902cde
 ```
 
 This creates a **new commit** that does the opposite of the reverted commit.
 The old commit remains in the history:
 
 ```
-$ git log --oneline
-
-d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
-f960dd3 not sure this is a good idea
-40fbb90 draft a readme
-dd4472c we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
+$ git log --oneline 
+49add7a (HEAD -> master) Revert "Adding water to ingredients" as this was not an good idea
+7902cde Adding water to ingredients
+aefcb3f we should not forget to enjoy
+b4f9f91 add half an onion
+86e7fdc adding ingredients and instructions
 ```
 
 You can revert any commit, no matter how old it is.  It doesn't affect
