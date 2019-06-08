@@ -306,17 +306,19 @@ We can verify the result in the terminal:
 ```shell
 $ git graph
 
-*   c43b24c (HEAD -> master) Merge branch 'experiment'
-|\
-| * 6feb49d (experiment) maybe little bit less cilantro
-| * 7cf6d8c let us try with some cilantro
-* | 40fbb90 draft a readme
-|/
-| * bf59be6 (less-salt) reduce amount of salt
-|/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+*   459599a (HEAD -> master) Merge branch 'experiment'
+|\  
+| * 5294367 (experiment) maybe little bit less cilantro
+| * 202272a let us try with some cilantro
+* | ea29b47 (origin/master) draft a readme
+|/  
+| * b30a108 (less-salt) reduce amount of salt
+|/  
+* 49add7a Revert "Adding water to ingredients" as this was not an good idea
+* 7902cde Adding water to ingredients
+* aefcb3f we should not forget to enjoy
+* b4f9f91 add half an onion
+* 86e7fdc adding ingredients and instructions
 ```
 
 What happens internally when you merge two branches is that Git creates a new
@@ -348,19 +350,21 @@ We can verify the result in the terminal:
 ```shell
 $ git graph
 
-*   4f00317 (HEAD -> master) Merge branch 'less-salt'
-|\
-| * bf59be6 (less-salt) reduce amount of salt
-* |   c43b24c Merge branch 'experiment'
-|\ \
-| * | 6feb49d (experiment) maybe little bit less cilantro
-| * | 7cf6d8c let us try with some cilantro
-| |/
-* | 40fbb90 draft a readme
-|/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+*   02ac09d (HEAD -> master) Merge branch 'less-salt'
+|\  
+| * b30a108 (less-salt) reduce amount of salt
+* |   459599a Merge branch 'experiment'
+|\ \  
+| * | 5294367 (experiment) maybe little bit less cilantro
+| * | 202272a let us try with some cilantro
+| |/  
+* | ea29b47 (origin/master) draft a readme
+|/  
+* 49add7a Revert "Adding water to ingredients" as this was not an good idea
+* 7902cde Adding water to ingredients
+* aefcb3f we should not forget to enjoy
+* b4f9f91 add half an onion
+* 86e7fdc adding ingredients and instructions
 ```
 
 Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
@@ -412,19 +416,21 @@ Compare in the terminal:
 ```shell
 $ git graph
 
-*   4f00317 (HEAD -> master) Merge branch 'less-salt'
-|\
-| * bf59be6 reduce amount of salt
-* |   c43b24c Merge branch 'experiment'
-|\ \
-| * | 6feb49d maybe little bit less cilantro
-| * | 7cf6d8c let us try with some cilantro
-| |/
-* | 40fbb90 draft a readme
-|/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+*   02ac09d (HEAD -> master) Merge branch 'less-salt'
+|\  
+| * b30a108 reduce amount of salt
+* |   459599a Merge branch 'experiment'
+|\ \  
+| * | 5294367 maybe little bit less cilantro
+| * | 202272a let us try with some cilantro
+| |/  
+* | ea29b47 (origin/master) draft a readme
+|/  
+* 49add7a Revert "Adding water to ingredients" as this was not an good idea
+* 7902cde Adding water to ingredients
+* aefcb3f we should not forget to enjoy
+* b4f9f91 add half an onion
+* 86e7fdc adding ingredients and instructions
 ```
 
 As you see only the pointers disappeared, not the commits.
