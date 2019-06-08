@@ -83,9 +83,11 @@ Let us inspect the project history using the `git graph` alias:
 ```shell
 $ git graph
 
-* dd4472c (HEAD -> master) we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+* 49add7a (HEAD -> master) Revert "Adding water to ingredients" as this was not an good idea
+* 7902cde Adding water to ingredients
+* aefcb3f we should not forget to enjoy
+* b4f9f91 add half an onion
+* 86e7fdc adding ingredients and instructions
 ```
 
 - Commits are states characterized by a 40-character hash (checksum).
@@ -151,11 +153,13 @@ We have created **two new commits**:
 ```shell
 $ git graph
 
-* 6feb49d (HEAD -> experiment) maybe little bit less cilantro
-* 7cf6d8c let us try with some cilantro
-* dd4472c (master) we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+* 5294367 (HEAD -> experiment) maybe little bit less cilantro
+* 202272a let us try with some cilantro
+* 49add7a (master) Revert "Adding water to ingredients" as this was not an good idea
+* 7902cde Adding water to ingredients
+* aefcb3f we should not forget to enjoy
+* b4f9f91 add half an onion
+* 86e7fdc adding ingredients and instructions
 ```
 
 - The branch `experiment` is two commits ahead of `master`.
@@ -197,6 +201,7 @@ The state can be a commit or a branch (pointing to a commit).
 > - Create another branch called `less-salt`
 >   where you reduce the amount of salt.
 > - Commit your changes to the `less-salt` branch.
+> - Checkout the experiment branch
 > 
 > Use the same commands as we used above.
 > 
@@ -205,19 +210,21 @@ The state can be a commit or a branch (pointing to a commit).
 > ```shell
 > $ git branch
 > 
-> * experiment
->   less-salt
+>   experiment
+> * less-salt
 >   master
 > 
 > $ git graph
-> 
-> * bf59be6 (less-salt) reduce amount of salt
-> | * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
-> | * 7cf6d8c let us try with some cilantro
-> |/
-> * dd4472c (master) we should not forget to enjoy
-> * 2bb9bb4 add half an onion
-> * 2d79e7e adding ingredients and instructions
+>
+> * b30a108 (less-salt) reduce amount of salt
+> | * 5294367 HEAD -> experiment maybe little bit less cilantro
+> | * 202272a let us try with some cilantro
+> |/  
+> * 49add7a (master) Revert "Adding water to ingredients" as this was not an good idea
+> * 7902cde Adding water to ingredients
+> * aefcb3f we should not forget to enjoy
+> * b4f9f91 add half an onion
+> * 86e7fdc adding ingredients and instructions
 > ```
 > 
 > Here is a graphical representation of what we have created:
