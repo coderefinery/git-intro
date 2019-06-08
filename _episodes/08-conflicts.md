@@ -47,42 +47,45 @@ conflict.
 ```shell
 $ git graph
 
-*   4b3e3cc (HEAD -> master, like-cilantro, dislike-cilantro) Merge branch 'less-salt'
-|\
-| * bf59be6 reduce amount of salt
-* |   80351a9 Merge branch 'experiment'
-|\ \
-| * | 6feb49d maybe little bit less cilantro
-| * | 7cf6d8c let us try with some cilantro
-| |/
-* | 40fbb90 draft a readme
-|/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+*   02ac09d (HEAD -> master, like-cilantro, dislike-cilantro) Merge branch 'less-salt'
+|\  
+| * b30a108 reduce amount of salt
+* |   459599a Merge branch 'experiment'
+|\ \  
+| * | 5294367 maybe little bit less cilantro
+| * | 202272a let us try with some cilantro
+| |/  
+* | ea29b47 (origin/master) draft a readme
+|/  
+* 49add7a Revert "Adding water to ingredients" as this was not an good idea
+* 7902cde Adding water to ingredients
+* aefcb3f we should not forget to enjoy
+* b4f9f91 add half an onion
+* 86e7fdc adding ingredients and instructions
 ```
 
 - On the two branches make **different modifications** to the amount of the **same ingredient**:
 
 ```shell
 $ git graph
-
-* eee4b85 (dislike-cilantro) reduce cilantro to 0.5
-| * 55d1ce2 (like-cilantro) please more cilantro
+* 9e77fb4 (HEAD -> dislike-cilantro) reduce cilantro to 0.5
+| * 75d14c4 (like-cilantro) please more cilantro
 |/
-*   4b3e3cc (HEAD -> master) Merge branch 'less-salt'
+*   02ac09d (master) Merge branch 'less-salt'
 |\
-| * bf59be6 reduce amount of salt
-* |   80351a9 Merge branch 'experiment'
+| * b30a108 reduce amount of salt
+* |   459599a Merge branch 'experiment'
 |\ \
-| * | 6feb49d maybe little bit less cilantro
-| * | 7cf6d8c let us try with some cilantro
+| * | 5294367 maybe little bit less cilantro
+| * | 202272a let us try with some cilantro
 | |/
-* | 40fbb90 draft a readme
+* | ea29b47 (origin/master) draft a readme
 |/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+* 49add7a Revert "Adding water to ingredients" as this was not an good idea
+* 7902cde Adding water to ingredients
+* aefcb3f we should not forget to enjoy
+* b4f9f91 add half an onion
+* 86e7fdc adding ingredients and instructions
 ```
 
 On the branch `like-cilantro` we have the following change:
