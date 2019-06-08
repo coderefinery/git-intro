@@ -210,8 +210,8 @@ The state can be a commit or a branch (pointing to a commit).
 > ```shell
 > $ git branch
 > 
->   experiment
-> * less-salt
+> * experiment
+>   less-salt
 >   master
 > 
 > $ git graph
@@ -244,16 +244,18 @@ The state can be a commit or a branch (pointing to a commit).
 > 
 > ```shell
 > $ git graph
-> 
-> * 40fbb90 (HEAD -> master) draft a readme
-> | * bf59be6 (less-salt) reduce amount of salt
-> |/
-> | * 6feb49d (experiment) maybe little bit less cilantro
-> | * 7cf6d8c let us try with some cilantro
-> |/
-> * dd4472c we should not forget to enjoy
-> * 2bb9bb4 add half an onion
-> * 2d79e7e adding ingredients and instructions
+>
+> * ea29b47 (HEAD -> master) draft a readme
+> | * b30a108 (less-salt) reduce amount of salt
+> |/  
+> | * 5294367 (experiment) maybe little bit less cilantro
+> | * 202272a let us try with some cilantro
+> |/  
+> * 49add7a Revert "Adding water to ingredients" as this was not an good idea
+> * 7902cde Adding water to ingredients
+> * aefcb3f we should not forget to enjoy
+> * b4f9f91 add half an onion
+> * 86e7fdc adding ingredients and instructions
 > ```
 > 
 > ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
