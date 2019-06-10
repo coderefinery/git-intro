@@ -39,7 +39,6 @@ objectives:
 $ git log --oneline
 
 f960dd3 (HEAD -> master) not sure this is a good idea
-40fbb90 draft a readme
 dd4472c we should not forget to enjoy
 2bb9bb4 add half an onion
 2d79e7e adding ingredients and instructions
@@ -59,7 +58,6 @@ $ git log --oneline
 
 d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
 f960dd3 not sure this is a good idea
-40fbb90 draft a readme
 dd4472c we should not forget to enjoy
 2bb9bb4 add half an onion
 2d79e7e adding ingredients and instructions
@@ -162,7 +160,6 @@ $ git log --oneline
 
 d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
 f960dd3 not sure this is a good idea
-40fbb90 draft a readme
 dd4472c we should not forget to enjoy
 2bb9bb4 add half an onion
 2d79e7e adding ingredients and instructions
