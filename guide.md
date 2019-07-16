@@ -16,6 +16,7 @@ from https://github.com/bast/example-project.
 
 Do not just fork it since it can confuse users sending pull requests.
 
+
 ## Different ways to present
 
 The whole lesson covers why you would use git, how to use it, and
@@ -55,11 +56,13 @@ long. These section can be skipped:
   commit to existing repositories (e.g. documentation, webpages, ...)
   but may not want to use command line.
 
+
 ## Conflict resolution
 
 We use screenshots from a violent video game in the section on conflict resolution, but 
 it should be emphasized that conflicts are a good thing since otherwise collaborators would 
 overwrite each other's changes. Git saves us from this situation by producing conflicts.
+
 
 ## Inspecting history
 
@@ -101,6 +104,7 @@ and start over if needed.
 
 It is better to demonstrate the commands live and type-along. Ideally connecting
 to examples discussed earlier. 
+
 
 ## Log your history in a separate window
 
