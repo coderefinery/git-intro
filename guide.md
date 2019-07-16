@@ -168,3 +168,13 @@ You probably have a highly optimized bash and git environment - one
 that is different from students.  Move `.gitconfig` and `.bashrc` out
 of the way before you start so that your environment is identical to
 what students have.
+
+
+## Sections to skip when teaching live
+
+The discussion Git vs. Subversion and Git vs. Mercurial in the Motivation section
+is useful to have in the written material but should be skipped during the lesson unless
+there are questions.
+
+Typically only very few learners have background in Subversion or Mercurial and the risk
+is to "waste" 10 minutes on a discussion that nobody can relate to and benefit from.
