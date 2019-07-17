@@ -16,6 +16,7 @@ from https://github.com/bast/example-project.
 
 Do not just fork it since it can confuse users sending pull requests.
 
+
 ## Different ways to present
 
 The whole lesson covers why you would use git, how to use it, and
@@ -55,11 +56,13 @@ long. These section can be skipped:
   commit to existing repositories (e.g. documentation, webpages, ...)
   but may not want to use command line.
 
+
 ## Conflict resolution
 
 We use screenshots from a violent video game in the section on conflict resolution, but 
 it should be emphasized that conflicts are a good thing since otherwise collaborators would 
 overwrite each other's changes. Git saves us from this situation by producing conflicts.
+
 
 ## Inspecting history
 
@@ -101,6 +104,7 @@ and start over if needed.
 
 It is better to demonstrate the commands live and type-along. Ideally connecting
 to examples discussed earlier. 
+
 
 ## Log your history in a separate window
 
@@ -164,3 +168,13 @@ You probably have a highly optimized bash and git environment - one
 that is different from students.  Move `.gitconfig` and `.bashrc` out
 of the way before you start so that your environment is identical to
 what students have.
+
+
+## Sections to skip when teaching live
+
+The discussion Git vs. Subversion and Git vs. Mercurial in the Motivation section
+is useful to have in the written material but should be skipped during the lesson unless
+there are questions.
+
+Typically only very few learners have background in Subversion or Mercurial and the risk
+is to "waste" 10 minutes on a discussion that nobody can relate to and benefit from.
