@@ -5,6 +5,27 @@ permalink: /guide/
 
 # Instructor guide
 
+## Why we teach this lesson
+
+Everyone should be using a version control system for their work, even if they're working alone. 
+There are many VC systems out there, but Git is an industry standard and even if one uses another 
+system chances are high one still encounters Git repositories.
+
+Specific motivations:
+- Code easily becomes a disaster without version control
+- Mistakes happen - Git offers roll-back functionality and easy backup mechanism
+- One often needs to work on multiple things in parallel - branches solve that problem
+- Git enables people to collaborate on code or text without stepping on each other's toes
+- Reproducibility: You can specify exact versions in publications enabling others to reproduce your work, 
+  and if bugs are found one can find out exactly when it was introduced
+
+Most learners in a CodeRefinery workshop have developed code for a few years. A majority have
+already encountered Git and have used it to some extent, but in most cases they do not yet feel 
+comfortable with it. They lack a good mental model of how Git operates and are afraid of making mistakes.
+Other learners have never used Git before. 
+This lesson teaches how things are done in Git, which is useful for the newcomers, 
+but also how Git operates (e.g. what commits and branches really are) and what are some good 
+practices (e.g. how to use the staging area), which is useful for more experienced users.
 
 ## Things to prepare
 
