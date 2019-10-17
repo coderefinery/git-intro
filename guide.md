@@ -50,7 +50,9 @@ By the end of this lesson, learners should:
 - know a few ways to search through a repository and its history
 - know about the different meanings of `git checkout`, and realize how they're in fact similar
 
-## Things to prepare
+## How to teach this lesson
+
+### Things to prepare
 
 In a typical workshop the optional in-browser episode is not taught.
 **But if you intend to teach it:**
@@ -61,7 +63,7 @@ from https://github.com/bast/example-project.
 Do not just fork it since it can confuse users sending pull requests.
 
 
-## Different ways to present
+### Different ways to present
 
 The whole lesson covers why you would use git, how to use it, and
 practical tips.  The earlier lessons are long, the later ones go quite
@@ -101,14 +103,14 @@ long. These section can be skipped:
   but may not want to use command line.
 
 
-## Conflict resolution
+### Conflict resolution
 
 We use screenshots from a violent video game in the section on conflict resolution, but 
 it should be emphasized that conflicts are a good thing since otherwise collaborators would 
 overwrite each other's changes. Git saves us from this situation by producing conflicts.
 
 
-## Inspecting history
+### Inspecting history
 
 Key lesson is *how to find when something is broken or what commit has broken the code*.
 
@@ -144,20 +146,20 @@ $ git bisect reset
 and start over if needed.
 
 
-## Live better than reading the website material
+### Live better than reading the website material
 
 It is better to demonstrate the commands live and type-along. Ideally connecting
 to examples discussed earlier. 
 
 
-## Log your history in a separate window
+### Log your history in a separate window
 
 The screencasting (shell window cheatsheet) hints have been moved to
 the [presenting
 manual](https://github.com/coderefinery/manuals/blob/master/presenting.md#screencasting).
 
 
-## Create a cheatsheet on the board
+### Create a cheatsheet on the board
 
 Create a "cheatsheet" on the board as you go . After each command is
 introduced, write it on the board. After each module, make sure you
@@ -180,7 +182,7 @@ Example:
 ![](../img/cheat-sheet.jpg)
 
 
-## Draw a graph on the board
+### Draw a graph on the board
 
 Draw the standard commit graphs on the board early on - you know, the
 thing in all the diagrams.  Keep it updated all the time.  After the
@@ -190,7 +192,7 @@ update the graph first, then run `git graph`, then do the command,
 then look at `git graph` again.
 
 
-## Repeat the following points
+### Repeat the following points
 
 - Always check `git status`, `git diff`, and `git graph` (our alias) before and
   after every command until you get used to things. These give you a clear view
@@ -206,7 +208,7 @@ then look at `git graph` again.
   it is hard to lose.  Commit before you merge or rebase. And so on.
 
 
-## Start from identical environment
+### Start from identical environment
 
 You probably have a highly optimized bash and git environment - one
 that is different from students.  Move `.gitconfig` and `.bashrc` out
@@ -214,7 +216,7 @@ of the way before you start so that your environment is identical to
 what students have.
 
 
-## Sections to skip when teaching live
+### Sections to skip when teaching live
 
 The discussion Git vs. Subversion and Git vs. Mercurial in the Motivation section
 is useful to have in the written material but should be skipped during the lesson unless
