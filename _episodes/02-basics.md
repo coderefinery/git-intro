@@ -210,6 +210,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 - We can browse the development and access each state that we have committed.
 - The long hashes uniquely label a state of the code.
 - They are not just integers counting 1, 2, 3, 4, ... (why?).
+- Output is in reverse chronological order, i.e. newest commits on top.
 - We will use them when comparing versions and when going back in time.
 - `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
 - If the first characters of the hash are unique it is not necessary to type the entire hash.
