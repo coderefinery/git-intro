@@ -121,6 +121,11 @@ The instructor should end each episode by posing the "test your understanding" m
 giving learners a minute to think about it, and then asking for the right answer or asking learners to raise their 
 hands to signal which answer they think is correct.
 
+### Coffee breaks
+
+The episodes for the coffee breaks contain thought-provoking questions. The instructor should briefly discuss 
+the questions and encourage learners to discuss them during the coffee break.
+
 ### Conflict resolution
 
 We use screenshots from a violent video game in the section on conflict resolution, but 
