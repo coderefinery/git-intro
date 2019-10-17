@@ -102,6 +102,16 @@ long. These section can be skipped:
   commit to existing repositories (e.g. documentation, webpages, ...)
   but may not want to use command line.
 
+### How to use the exercises
+
+Most episodes have standard exercises followed by optional (often more advanced) exercises 
+for more experienced learners so they don't get bored waiting for the newcomers.
+The instructor should briefly introduce the exercises and mention that after finishing the 
+standard exercise (and indicating that using the green sticky) the learners can move on to the 
+optional ones if they wish. When at least half of the learners have raised the green sticky
+the instructor should go through the standard exercise to describe its most important take-home messages.
+It's also fine to briefly go though important points from the optional exercises, but don't spend 
+too much time on it since everyone will not have attempted them.
 
 ### Conflict resolution
 
