@@ -113,6 +113,14 @@ the instructor should go through the standard exercise to describe its most impo
 It's also fine to briefly go though important points from the optional exercises, but don't spend 
 too much time on it since everyone will not have attempted them.
 
+### "Test your understanding" exercises
+
+Some episodes have a "test your understanding" exercise at the end which is intended as *formative assessment*, 
+i.e. an activity that provides feedback to instructors and learners on whether learning objectives are being met.
+The instructor should end each episode by posing the "test your understanding" multiple-choice question, 
+giving learners a minute to think about it, and then asking for the right answer or asking learners to raise their 
+hands to signal which answer they think is correct.
+
 ### Conflict resolution
 
 We use screenshots from a violent video game in the section on conflict resolution, but 
