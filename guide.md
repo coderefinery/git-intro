@@ -27,6 +27,29 @@ This lesson teaches how things are done in Git, which is useful for the newcomer
 but also how Git operates (e.g. what commits and branches really are) and what are some good 
 practices (e.g. how to use the staging area), which is useful for more experienced users.
 
+## Intended learning outcomes
+
+By the end of this lesson, learners should:
+- realize that version control is very important and Git is a valuable tool to learn and use
+- understand that Git is configurable and know how to set basic configurations 
+- be able to set up Git repositories and make commits
+- understand that information on commits, branches etc. are stored under `.git/`, and have a 
+  mental model of how that relates to the working directory
+- have a mental model of the different stages a file can have in Git (untracked, modified, staged, unmodified)
+- know how to write good commit messages
+- have an idea of how the staging area can be used to craft good commits
+- know how to undo commits using `git revert` and discard changes using `git checkout`
+- understand that `git checkout` can be dangerous if changes have not been staged
+- know how to create branches and switch between branches
+- have a mental model of how branches work and get used to thinking of branches in a graphical (tree-structure) way
+- know how to merge branches and understand what that means in terms of combining different modifications
+- know how to resolve conflicts, or to abort conflicting merges
+- realize that conflicts are generally a good thing since they prevent incorrect merges
+- be able to set up a repository on GitHub and connect it with local repository
+- push changes to a remote repository
+- know a few ways to search through a repository and its history
+- know about the different meanings of `git checkout`, and realize how they're in fact similar
+
 ## Things to prepare
 
 In a typical workshop the optional in-browser episode is not taught.
