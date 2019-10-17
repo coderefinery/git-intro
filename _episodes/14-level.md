@@ -41,10 +41,13 @@ keypoints:
 
 ---
 
-## How about staging?
+## How about staging and committing?
 
 - It is OK to start committing directly.
-- If you are unsure about size of commits, rather create too many commits than too few:
+- Commit early and often, rather create too many commits than too few:
   you can always combine commits later.
+- Once you commit, it is very, very hard to really lose your code
+- Always fully commit (or stash) before you do dangerous things, so that you know you are safe. 
+  Otherwise it can be hard to recover.
 - Later you can start using the staging area.
 - Later start using `git add -p` and/or `git commit -p`.
