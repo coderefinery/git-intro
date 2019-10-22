@@ -27,12 +27,21 @@ If you get an message starting with "On branch .. " then you should stop and
 find a different location.
 
 Clone the repository of an example project from
-[https://github.com/coderefinery/word-count](https://github.com/coderefinery/word-count)
+[https://github.com/coderefinery/git-archaeology-exercise](https://github.com/coderefinery/git-archaeology-exercise)
 (we will also use this project in later lessons):
+
 ```shell
-$ git clone https://github.com/coderefinery/word-count
-$ cd word-count
+$ git clone https://github.com/coderefinery/git-archaeology-exercise
+$ cd git-archaeology-exercise
 ```
+
+This example project counts words in a given text file and writes as 
+output the frequency distribution. Example usage:
+```shell
+$ python source/wordcount.py data/abyss.txt output.dat
+$ head output.dat
+```
+
 ## Inspecting commits
 
 At any moment we can inspect individual commits with `git show`.
@@ -40,17 +49,17 @@ Let's first find the earliest commits to this repository:
 ```shell
 $ git log --reverse
 
-commit c4a32caae2f0ddc4d85481f5adf61360198edc2f
+commit 6b0d3ea13da63876a69c97abe3274d5a0aee711a
 Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
-Date:   Tue May 8 15:15:48 2018 +0200
+Date:   Mon Oct 21 16:37:13 2019 +0200
 
-    initial commit
+    initial commit - readme
 
-commit a0cc9e1d0ef853464cd0019479f6ac4eb4ba88c7
+commit b3f33c5dfc8081eef746cf2d4c59fab2095d7c2e
 Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
-Date:   Tue May 8 15:24:57 2018 +0200
+Date:   Mon Oct 21 16:40:22 2019 +0200
 
-    add license and credit to SWC
+    add first step to read input file
 
 ...
 ```
@@ -58,38 +67,65 @@ Date:   Tue May 8 15:24:57 2018 +0200
 and then use `git show` to display the changeset for the second commit:
 
 ```
-$ git show a0cc9e1d0
+$ git show b3f33c5d
 
-commit a0cc9e1d0ef853464cd0019479f6ac4eb4ba88c7
+commit b3f33c5dfc8081eef746cf2d4c59fab2095d7c2e
 Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
-Date:   Tue May 8 15:24:57 2018 +0200
+Date:   Mon Oct 21 16:40:22 2019 +0200
 
-    add license and credit to SWC
+    add first step to read input file
 
-diff --git a/README.md b/README.md
-index 8fe4059..d11eb04 100644
---- a/README.md
-+++ b/README.md
-@@ -1,8 +1,9 @@
--[![License](https://img.shields.io/badge/license-%20MPL--v2.0-blue.svg)](../master/LICENSE)
--
--
- # Word count example
-
-+This example project is inspired by and derived from
-+work by [Software Carpentry](http://software-carpentry.org) licensed under the
-+[Creative Commons Attribution license (CC BY4.0)](https://creativecommons.org/licenses/by/4.0/).
+diff --git a/wordcount.py b/wordcount.py
+new file mode 100644
+index 0000000..55bdade
+--- /dev/null
++++ b/wordcount.py
+@@ -0,0 +1,14 @@
++import sys
 +
- These programs will count words in a given text, plot a bar chart of the 10 mos
-t common words,
- and test [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) on the two mo
-st common words.
-...
++def load_text(filename):
++    """
++    Load lines from a plain-text file and return these as a list, with
++    trailing newlines stripped.
++    """
++    with open(filename, "r") as input_fd:
++        lines = input_fd.read()
++    return lines
++
++if __name__ == '__main__':
++    input_file = sys.argv[1]
++    lines = load_text(input_file)
 ```
 
 We see that the start of the hash is enough if it is unique.
 
-Compare this with: [https://github.com/coderefinery/word-count/commit/a0cc9e1d0](https://github.com/coderefinery/word-count/commit/a0cc9e1d0)
+Compare this with: [https://github.com/coderefinery/git-archaeology-exercise/commit/b3f33c5d](https://github.com/coderefinery/git-archaeology-exercise/commit/b3f33c5d)
+
+We can also check the git log of a single file:
+```shell
+$ git log --oneline source/wordcount.py
+
+28287ac mv source files to source directory
+```
+
+Hmm, I'm sure there were more commits made to this file. Maybe it has been moved?
+
+```shell
+$ git log --oneline --follow source/wordcount.py
+
+28287ac mv source files to source directory
+5224a2e adding docstrings
+55e951a mv writing of output file to function
+a781e56 express in percentages instead
+bba58cb filter by minimum word length
+a177c8e sort the word count
+9651983 write word count to given output filename
+3cffe78 replace all delimiters with blank space
+94cc9a6 mv update of word counts to separate function
+ef9133d add functions to count words in given text file
+bfea209 should split the lines on newlines
+b3f33c5 add first step to read input file
+```
 
 ---
 
@@ -98,23 +134,24 @@ Compare this with: [https://github.com/coderefinery/word-count/commit/a0cc9e1d0]
 What if the combination of `git log` and `git show` is not enough to find what we need?
 
 ```shell
-$ git grep -i zipf
+$ git grep -i percentage 
 
-Makefile:# Test Zipf's law
-Makefile:results/results.txt: processed_data/abyss.dat source/zipf_test.py
-Makefile:       python source/zipf_test.py processed_data/abyss.dat > results/results.txt
-Makefile_all:$(RESDIR)/results.txt: $(DATA) source/zipf_test.py
-Makefile_all:   python source/zipf_test.py $(DATA) > $@
-README.md:most common words, and test [Zipf's
-README.md:law](https://en.wikipedia.org/wiki/Zipf%27s_law) on the two most common words.
-Snakefile_all:        'zipf_analysis.tar.gz'
-Snakefile_all:        rm -f zipf_analysis.tar.gz processed_data/* results/*
-Snakefile_all:rule zipf_test:
-Snakefile_all:        zipf='source/zipf_test.py',
-Snakefile_all:    shell:  'python {input.zipf} {input.books} > {output}'
-Snakefile_all:    output: 'zipf_analysis.tar.gz'
-doc/exercises.rst:- Write a sentence or two about Zipf's law and link to Wikipedia
-doc/purpose.rst:Zipf's law
+data/abyss.txt:In 1886, and up to 1893, the percentage of pauperism to population was
+data/abyss.txt:succeeding year, the percentage of pauperism to population has been
+data/abyss.txt:                   Percentage of
+data/abyss.txt:percentage of those in the lunatic asylums.  Among the males each year,
+data/last.txt:large percentage of the floes is quite thin and even the heavier ice
+data/last.txt:harm. During quite a large percentage of days, however, we had bright
+data/last.txt:capacity with food from which he could derive only a small percentage
+data/last.txt:at Cape Evans--the record shows an extraordinary large percentage
+data/last.txt:described (titration, a colorimetric method of measuring the percentage
+source/wordcount.py:    Save a list of [word, count, percentage] lists to a file, in the form
+source/wordcount.py:    "word count percentage", one tuple per line.
+source/wordcount.py:def calculate_percentages(counts):
+source/wordcount.py:    percentage) where percentage is the percentage number of occurrences
+source/wordcount.py:    save in a new file the words, counts and percentages of the total  in
+source/wordcount.py:    percentage_counts = calculate_percentages(sorted_counts)
+source/wordcount.py:    save_word_counts(output_file, percentage_counts)
 ```
 
 - Greps entire repository below current directory.
@@ -133,30 +170,22 @@ doc/purpose.rst:Zipf's law
   - Who introduced it? Not to blame people but to possibly get more information.
 
 ```shell
-$ git blame <filename>
-```
+$ git blame source/wordcount.py
 
-Example from real life:
-
-```shell
-$ git blame README.md
-
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  1)
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  2)
-^c4a32ca (Kjartan Thor Wikfeldt 2018-05-08 15:15:48 +0200  3) # Word count example
-^c4a32ca (Kjartan Thor Wikfeldt 2018-05-08 15:15:48 +0200  4)
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  5) These programs will count words in a given text, plot a bar chart of the 10
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  6) most common words, and test [Zipf's
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  7) law](https://en.wikipedia.org/wiki/Zipf%27s_law) on the two most common words.
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200  8)
-9187d4be (Radovan Bast          2018-08-22 15:16:56 +0200  9) - Inspired by and derived from https://hpc-carpentry.github.io/hpc-python/
-9187d4be (Radovan Bast          2018-08-22 15:16:56 +0200 10)   which is distributed under
-9187d4be (Radovan Bast          2018-08-22 15:16:56 +0200 11)   [Creative Commons Attribution license (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 12) - Documentation: https://word-count.readthedocs.io
-a0cc9e1d (Kjartan Thor Wikfeldt 2018-05-08 15:24:57 +0200 13)
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 14) We use this example in two [CodeRefinery](https://coderefinery.org/) lessons:
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 15) - https://coderefinery.github.io/reproducible-research/
-73434d63 (Radovan Bast          2018-08-22 15:20:30 +0200 16) - https://coderefinery.github.io/documentation/
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   1) import sys
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   2)
+3cffe784 wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 17:51:54 +0200   3) DELIMITERS = ". , ; : ? $ @ ^ < > # % ` ! * - = ( ) [ ] { } / \" '".split()
+3cffe784 wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 17:51:54 +0200   4)
+3cffe784 wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 17:51:54 +0200   5)
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   6) def load_text(filename):
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   7)     """
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   8)     Load lines from a plain-text file and return these as a list, with
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   9)     trailing newlines stripped.
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200  10)     """
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200  11)     with open(filename, "r") as input_fd:
+bfea209f wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:47 +0200  12)         lines = input_fd.read().splitlines()
+b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200  13)     return lines
+...
 ```
 
 Rather typical timeline:
@@ -165,7 +194,7 @@ Rather typical timeline:
 
 Who was the last to edit a specific line of the source file for `git blame` and when and why?
 
-- [https://github.com/coderefinery/word-count/blame/master/README.md](https://github.com/coderefinery/word-count/blame/master/README.md)
+- [https://github.com/coderefinery/git-archaeology-exercise/blame/master/source/wordcount.py](https://github.com/coderefinery/git-archaeology-exercise/blame/master/source/wordcount.py)
 
 ---
 
@@ -176,13 +205,13 @@ easily find it with `git blame`.
 - You can however remember (or guess) some keywords from the commit message
 - Commit messages can also be grepped!
 
-Real-life example:
+Example:
 ```
-$ git log --oneline --grep "remove"
+$ git log --oneline  --grep "word count"
 
-707c200 remove trailing whitespace for more silent diffs
-cc843ff Merge pull request #5 from coderefinery/radovan/encoding
-bbf088e (origin/radovan/encoding, radovan/encoding) remove encoding="utf-8" arg to allow also python 2.7
+a177c8e sort the word count
+9651983 write word count to given output filename
+94cc9a6 mv update of word counts to separate function
 ```
 
 Note that `git log --grep` will grep the whole commit message even if you use the `--oneline` option.
@@ -193,29 +222,29 @@ Note that `git log --grep` will grep the whole commit message even if you use th
 
 The day will come when you are in this situation:
 
-> *I remember there used to be a function called "typeset_labels".
+> *I remember there used to be a function called "test_calculate_word_counts".
 > Now it is gone:*
 
 ```shell
-$ git grep 'typeset_labels' source/plotcount.py
+$ git grep test_calculate_word_counts
 
 [no output]
 ```
-(You can also grep all files at once: `git grep 'typeset_labels'`)
 
 Sometimes also the log does not help because the commit messages are not helpful:
 
 ```shell
-$ git log --oneline source/plotcount.py
+$ git log --oneline 
 
-7ef076e rm a lot of unused code; fixes #12
-aa8cd8a clean up sources with pycodestyle
-086715d rm outcommented code
-707c200 remove trailing whitespace for more silent diffs
-a362e23 python scripts do not need to be executable
-6297979 add python command and rm shebangs
-8738e1e call python scripts using py3 shebang
-c4a32ca initial commit
+2faeda0 update readme
+86862e5 add license
+5b23c4a maybe won't need this test anymore
+28287ac mv source files to source directory
+6a25296 remove function
+92b77b6 add new test for wordcount
+5224a2e adding docstrings
+55e951a mv writing of output file to function
+...
 ```
 
 What now?
@@ -223,54 +252,46 @@ What now?
 We can figure out when it disappeared:
 
 ```
-$ git log -S 'typeset_labels' source/plotcount.py
+$ git log -S test_calculate_word_counts
 
-commit 7ef076eb516851f5f5e2be50d1fd1a1681294e6d
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Tue Aug 21 00:37:43 2018 +0200
-
-    rm a lot of unused code; fixes #12
-
-commit c4a32caae2f0ddc4d85481f5adf61360198edc2f
+commit 6a25296527bc0bc240441f8c070889e6dff6569a
 Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
-Date:   Tue May 8 15:15:48 2018 +0200
+Date:   Mon Oct 21 18:42:57 2019 +0200
 
-    initial commit
+    remove function
+
+commit 5ef045b9e480567c5448329dc520c30f20c50484
+Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
+Date:   Mon Oct 21 18:00:51 2019 +0200
+
+    add a test function
 ```
 
 Now let us have a look at that commit:
 
 ```shell
-$ git show 7ef076eb source/plotcount.py
+$ git show 6a25296
 
-commit 7ef076eb516851f5f5e2be50d1fd1a1681294e6d
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Tue Aug 21 00:37:43 2018 +0200
+ommit 6a25296527bc0bc240441f8c070889e6dff6569a
+Author: Kjartan Thor Wikfeldt <ktwikfeldt@gmail.com>
+Date:   Mon Oct 21 18:42:57 2019 +0200
 
-    rm a lot of unused code; fixes #12
+    remove function
 
-diff --git a/source/plotcount.py b/source/plotcount.py
-index db7180f..268de5b 100644
---- a/source/plotcount.py
-+++ b/source/plotcount.py
-@@ -1,7 +1,6 @@
- import numpy as np
- import matplotlib.pyplot as plt
- import sys
--from collections import Sequence
+diff --git a/test_wordcount.py b/test_wordcount.py
+index 29a96da..67518cb 100755
+--- a/test_wordcount.py
++++ b/test_wordcount.py
+@@ -8,15 +8,3 @@ def test_wordcount():
+     correct = [('the', 3822), ('of', 2460), ('and', 1723), ('to', 1479)]
+     assert sorted_counts[0:4] == correct
 
- from wordcount import load_word_counts
-
-@@ -23,67 +22,6 @@ def plot_word_counts(counts, limit=10):
-     plt.bar(position, count_data, width, color='b')
-
-
--def typeset_labels(labels=None, gap=5):
--    """
--    Given a list of labels, create a new list of labels such that each label
--    is right-padded by spaces so that every label has the same width, then
--    is further right padded by ' ' * gap.
--    """
+-def test_calculate_word_counts():
+-    """ Test for function wordcounts.calculate_word_counts() """
+-
+-    text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit \n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris\n nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in\n reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\n culpa qui officia deserunt mollit anim id est laborum'
+-
+-    lines = text.splitlines()
 ...
 ```
 
@@ -309,6 +330,19 @@ $ git branch -d museum
 ```
 
 Branches help us to keep the repository organized.
+
+---
+
+> ## Archaeology exercise
+>
+> There used to be another test function in the git-archaeology-exercise repository,
+> but now it's gone. You remember that the function started with "test".
+> - Try to find the commits in which the function was introduced and later removed
+> - Inspect the commits. What was the function called?
+> - Create a new branch to point at the commit **before** the commit where that test 
+>   function was removed, and inspect the `source` folder. 
+>   Hint: To refer to a commit before a given commit hash, use `<HASH>~1`.
+{: .task}
 
 ---
 
