@@ -22,6 +22,10 @@ about 45 minutes of the basics of how to make commits.  Then, there are
 several small steps until we get to branching, merging, and conflict
 resolution. 
 
+Investigating a past commit and going back in time are also introduced.
+Great emphasis is made about the importance of not changing history of
+shared repositories, when there is a need to undo commits.
+
 Then, we see a little bit about sharing repositories online, how to 
 effectively dig into the history of a project,
 and a few other random points before we conclude.
