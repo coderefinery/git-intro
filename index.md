@@ -15,12 +15,13 @@ separate [collaborative git lesson](https://coderefinery.org/lessons/), we
 teach more use of remote repositories and good collaborative workflows.  We
 try to stick to simple workflows, just enough for researchers who aren't
 obsessed with git to be able to work well.  We try to avoid commands which
-might get you into a bad state.
+might get you into a confusing state.
 
 Our general flow is 10 minutes on "why version control", followed by
 about 45 minutes of the basics of how to make commits.  Then, there are
 several small steps until we get to branching, merging, and conflict
-resolution.  
+resolution. 
+
 Then, we see a little bit about sharing repositories online, how to 
 effectively dig into the history of a project,
 and a few other random points before we conclude.
@@ -42,7 +43,8 @@ If you are teaching this lesson, see the [instructor's guide](guide)
 - Students should be familiar with using a text editor on their system. Emacs
   and Vim are excellent choices if you know how to use them but Nano or Notepad
   on Windows are sufficient.
-- Git should be configured prior to the lesson following [our installation instructions](https://coderefinery.github.io/installation/).
+- Git should be configured prior to the lesson following
+  [our installation instructions](https://coderefinery.github.io/installation/).
 - A [GitHub](https://github.com) user account (but alternatives exist, see below).
 
 If you are interested in the Git-aware prompt you can find it on
@@ -61,5 +63,7 @@ currently the most popular web platform for hosting Git repositories and the cha
 that you will interact with [GitHub](https://github.com)-based repositories even if you
 choose to host your Git repository on another platform.
 
-Course participants are most welcome to use our new [Nordic research software repository platform](https://source.coderefinery.org) instead,
-for more information see [https://coderefinery.org/repository/](https://coderefinery.org/repository/).
+Course participants are most welcome to use our new 
+[Nordic research software repository platform](https://source.coderefinery.org) instead,
+for more information see 
+[https://coderefinery.org/repository/](https://coderefinery.org/repository/).
