@@ -8,7 +8,7 @@ permalink: /guide/
 ## Why we teach this lesson
 
 Everyone should be using a version control system for their work, even if they're working alone.
-There are many VC systems out there, but Git is an industry standard and even if one uses another
+There are many version control systems out there, but Git is an industry standard and even if one uses another
 system chances are high one still encounters Git repositories.
 
 Specific motivations:
