@@ -20,13 +20,13 @@ might get you into a confusing state.
 Our general flow is 10 minutes on "why version control", followed by
 about 45 minutes of the basics of how to make commits.  Then, there are
 several small steps until we get to branching, merging, and conflict
-resolution. 
+resolution.
 
 Investigating a past commit and going back in time are also introduced.
 Great emphasis is made about the importance of not changing history of
 shared repositories, when there is a need to undo commits.
 
-Then, we see a little bit about sharing repositories online, how to 
+Then, we see a little bit about sharing repositories online, how to
 effectively dig into the history of a project,
 and a few other random points before we conclude.
 
@@ -67,7 +67,7 @@ currently the most popular web platform for hosting Git repositories and the cha
 that you will interact with [GitHub](https://github.com)-based repositories even if you
 choose to host your Git repository on another platform.
 
-Course participants are most welcome to use our new 
+Course participants are most welcome to use our new
 [Nordic research software repository platform](https://source.coderefinery.org) instead,
-for more information see 
+for more information see
 [https://coderefinery.org/repository/](https://coderefinery.org/repository/).

@@ -68,11 +68,11 @@ one development line (branch) and this branch is called "master":
 
 > ## A useful alias
 >
-> We will now define an *alias* in Git, to be able to nicely visualize branch 
-> structure in the terminal without having to remember a long Git command 
+> We will now define an *alias* in Git, to be able to nicely visualize branch
+> structure in the terminal without having to remember a long Git command
 > (more details about aliases are given
 > [in a later section]({{ site.baseurl }}/11-aliases)):
-> 
+>
 > ```shell
 > $ git config --global alias.graph "log --all --graph --decorate --oneline"
 > ```
@@ -92,7 +92,7 @@ $ git graph
 - `git graph` print abbreviations of these checksums.
 - **Branches are pointers that point to a commit.**
 - Branch `master` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
-- `HEAD` is another pointer, it points to where we are right now (currently `master`) 
+- `HEAD` is another pointer, it points to where we are right now (currently `master`)
 
 ### On which branch are we?
 
@@ -192,25 +192,25 @@ The state can be a commit or a branch (pointing to a commit).
 ---
 
 > ## Exercise: branches
-> 
+>
 > - Change to the branch `master`.
 > - Create another branch called `less-salt`
 >   where you reduce the amount of salt.
 > - Commit your changes to the `less-salt` branch.
-> 
+>
 > Use the same commands as we used above.
-> 
+>
 > We now have three branches (in this case `HEAD` points to `experiment`):
-> 
+>
 > ```shell
 > $ git branch
-> 
+>
 > * experiment
 >   less-salt
 >   master
-> 
+>
 > $ git graph
-> 
+>
 > * bf59be6 (less-salt) reduce amount of salt
 > | * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
 > | * 7cf6d8c let us try with some cilantro
@@ -219,25 +219,25 @@ The state can be a commit or a branch (pointing to a commit).
 > * 2bb9bb4 add half an onion
 > * 2d79e7e adding ingredients and instructions
 > ```
-> 
+>
 > Here is a graphical representation of what we have created:
-> 
+>
 > ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
-> 
+>
 > - Now switch to `master`.
 > - Add and commit the following `README.md` to `master`:
-> 
+>
 > ```markdown
 > # Guacamole recipe
-> 
+>
 > Used in teaching Git.
 > ```
-> 
+>
 > Now you should have this situation:
-> 
+>
 > ```shell
 > $ git graph
-> 
+>
 > * 40fbb90 (HEAD -> master) draft a readme
 > | * bf59be6 (less-salt) reduce amount of salt
 > |/
@@ -248,9 +248,9 @@ The state can be a commit or a branch (pointing to a commit).
 > * 2bb9bb4 add half an onion
 > * 2d79e7e adding ingredients and instructions
 > ```
-> 
+>
 > ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
-> 
+>
 > And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
 {: .task}
 
@@ -427,12 +427,12 @@ may have a hard time finding them as there is no branch pointing to them.
 ---
 
 > ## Exercise: encounter a fast-forward merge
-> 
+>
 > 1. Create a new branch from `master` and switch to it.
 > 2. Create a couple of commits on the new branch (for instance edit `README.md`):
-> 
+>
 >     ![]({{ site.baseurl }}/img/gitink/git-pre-ff.svg)
-> 
+>
 > 3. Now switch to `master`.
 > 4. Merge the new branch to `master`.
 > 5. Examine the result with `git graph`.
@@ -447,21 +447,21 @@ may have a hard time finding them as there is no branch pointing to them.
 
 
 > ## (Optional) Exercise: Moving commits to another branch
-> 
-> Sometimes it happens that we commit to the wrong branch, e.g. to `master` 
+>
+> Sometimes it happens that we commit to the wrong branch, e.g. to `master`
 > instead of a feature branch.
 > This can easily be fixed by branching off, and then using `git reset --hard`:
-> 1. Make a couple of commits to `master`, then realize these should have been on 
+> 1. Make a couple of commits to `master`, then realize these should have been on
 >    a new feature branch.
 > 2. Create a new branch from `master`, and rewind `master` back using `git reset --hard <hash>`.
 > 3. Inspect the situation with `git graph`. Problem solved!
 {: .challenge}
 
-> ## (Optional) Exercise: Rebasing 
-> 
-> As an alternative to merging branches, one can also *rebase* branches. 
+> ## (Optional) Exercise: Rebasing
+>
+> As an alternative to merging branches, one can also *rebase* branches.
 > Rebasing means that the new commits are *replayed* on top of another branch
-> (instead of creating an explicit merge commit).   
+> (instead of creating an explicit merge commit).
 > **Note that rebasing changes history and should not be done on public commits!**
 > 1. Create a new branch, and make a couple of commits on it.
 > 2. Switch back to `master`, and make a couple of commits on it.
@@ -471,12 +471,12 @@ may have a hard time finding them as there is no branch pointing to them.
 {: .challenge}
 
 > ## (Optional) Exercise: Squashing commits
-> 
-> Sometimes you may want to *squash* incomplete commits, particularly before 
-> merging or rebasing with another branch (typically `master`) to get a cleaner history.  
+>
+> Sometimes you may want to *squash* incomplete commits, particularly before
+> merging or rebasing with another branch (typically `master`) to get a cleaner history.
 > **Note that squashing changes history and should not be done on public commits!**
 > 1. Create *two* small but related commits on a new feature branch, and inspect with `git graph`.
-> 2. Do a *soft* reset with `git reset --soft HEAD~2`. This rewinds the current branch 
+> 2. Do a *soft* reset with `git reset --soft HEAD~2`. This rewinds the current branch
 >    by two commits, but keeps all changes and stages them.
 > 3. Inspect the situation with `git graph`, `git status` and `git diff --staged`.
 > 4. Commit again with a commit message describing the changes.
@@ -542,7 +542,7 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 ---
 
 > ## (Optional) Tags
-> 
+>
 > - A tag is a pointer to a commit but in contrast to a branch it does not move.
 > - We use tags to record particular states or milestones of a project at a given
 >   point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
@@ -550,19 +550,19 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 > - There are two basic types of tags: annotated and lightweight.
 > - **Use annotated tags** since they contain the author and can be cryptographically signed using
 >   GPG, timestamped, and a message attached.
-> 
+>
 > Let's add an annotated tag to our current state of the guacamole recipe:
-> 
+>
 > ```shell
 > $ git tag -a nobel-2017 -m "recipe I made for the 2017 Nobel banquet"
 > ```
-> 
+>
 > As you may have found out already, `git show` is a very versatile command. Try this:
-> 
+>
 > ```shell
 > $ git show nobel-2017
 > ```
-> 
+>
 > For more information about tags see for example
 > [the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
 > subject.
@@ -571,48 +571,48 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 ---
 
 > ## Test your understanding
-> 
+>
 > 1. Which of the following combos (one or more) creates a new branch and makes a commit to it?
->    1. 
+>    1.
 >    ```shell
->    $ git branch new-branch	
+>    $ git branch new-branch
 >    $ git add file.txt
->    $ git commit 
+>    $ git commit
 >    ```
->    2. 
+>    2.
 >    ```shell
 >    $ git add file.txt
 >    $ git branch new-branch
 >    $ git checkout new-branch
->    $ git commit 
+>    $ git commit
 >    ```
->    3. 
+>    3.
 >    ```shell
->    $ git checkout -b new-branch	
+>    $ git checkout -b new-branch
 >    $ git add file.txt
->    $ git commit 
+>    $ git commit
 >    ```
->    4. 
+>    4.
 >    ```shell
->    $ git checkout new-branch	
+>    $ git checkout new-branch
 >    $ git add file.txt
->    $ git commit 
+>    $ git commit
 >    ```
 > 2. What is a detached `HEAD`?
 > 3. What are orphaned commits?
-> 
+>
 > > ## Solutions
-> > 
-> > 1. Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the 
-> >    branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we 
+> >
+> > 1. Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
+> >    branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
 > >    don't give the `-b` flag to `git checkout` to create the new branch.
 > > 2. When you check out a branch name, HEAD will point to the most recent commit of that branch.
-> >    You can however check out a *particular hash*. This will bring your working directory back in 
-> >    time to that commit, and your HEAD will be pointing to that commit but it will not be attached 
+> >    You can however check out a *particular hash*. This will bring your working directory back in
+> >    time to that commit, and your HEAD will be pointing to that commit but it will not be attached
 > >    to any branch. If you want to make commits in that state, you should instead create a new branch:
 > >    `git checkout -b test-branch <hash>`.
-> > 3. An orphaned commit is a commit that does not belong to any branch, and therefore doesn't have 
-> >    any parent commits. This could happen if you make a commit in a detached HEAD state. Commits 
+> > 3. An orphaned commit is a commit that does not belong to any branch, and therefore doesn't have
+> >    any parent commits. This could happen if you make a commit in a detached HEAD state. Commits
 > >    rarely vanish in Git, and you could still find the orphaned commit using `git reflog`.
 > {: .solution}
 {: .challenge}

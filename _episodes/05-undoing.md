@@ -25,7 +25,7 @@ objectives:
 >
 > - If you have unstaged changes from earlier sections, remove them with `git checkout <filename>`.
 > - We will see in more detail below how `git checkout` works.
-> 
+>
 {: .callout}
 
 ---
@@ -68,7 +68,7 @@ other commits you have done since then - but if they touch the same
 code, you may get a conflict (which we'll learn about later).
 
 > ## Exercise: Revert a commit
-> 
+>
 > - Create a commit.
 > - Revert the commit with `git revert`.
 > - Inspect the history with `git log --oneline`.
@@ -99,7 +99,7 @@ This means that we never use this command on commits that we have shared with ot
 that were unstaged/uncommitted!
 
 > ## Exercise: Modify without staging
-> 
+>
 > 1. Make a silly change to the recipe, do not stage it or commit it.
 > 2. Inspect the change with `git status` and `git diff`.
 > 3. Now undo the change with `git checkout <file>`.
@@ -107,7 +107,7 @@ that were unstaged/uncommitted!
 {: .task}
 
 > ## Exercise: Modify after staging
-> 
+>
 > 1. Make a reasonable change to the recipe, stage it.
 > 2. Make a silly change after you have staged the reasonable change.
 > 3. Inspect the situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
@@ -118,23 +118,23 @@ that were unstaged/uncommitted!
 ---
 
 > ## Test your understanding
-> 
+>
 > 1. What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
 > 2. Is it OK to modify commits that nobody has seen yet?
 > 3. What situations would justify to modify the Git history and possibly remove commits?
 > 4. What is the difference between these commands?
 >    ```
->    $ git diff 
+>    $ git diff
 >    $ git diff --staged (or git diff --cached)
 >    $ git diff HEAD
 >    $ git diff HEAD^
 >    ```
-> 
+>
 > > ## Solution
 > >
 > > 1. It is not gone forever since `git rm` creates a new commit. You can simply revert it!
 > > 2. If you haven't shared your commits with anyone it can be alright to modify them.
-> > 3. If you have shared your commits with others (e.g. pushed them to GitHub), only extraordinary 
+> > 3. If you have shared your commits with others (e.g. pushed them to GitHub), only extraordinary
 > >    conditions would justify modifying history. For example to remove sensitive or secret information.
 > > 4. The different commands show changes between different file states:
 > >    ```
@@ -149,10 +149,10 @@ that were unstaged/uncommitted!
 ---
 ### Clean history
 
-We will be using the guacamole recipe example throughout the lesson and it will be easy 
-to follow if the learners, instructor and the teaching material contains identical 
-repositories with  same number of commits. For this purpose we recommend to reset the 
-guacamole repository to an earlier state using the **git reset** command. This command is 
+We will be using the guacamole recipe example throughout the lesson and it will be easy
+to follow if the learners, instructor and the teaching material contains identical
+repositories with  same number of commits. For this purpose we recommend to reset the
+guacamole repository to an earlier state using the **git reset** command. This command is
 one of the destructive commands in Git, so use with caution.
 
 ```
@@ -170,7 +170,7 @@ HEAD is now at dd4472c we should not forget to enjoy
 
 $ git log --oneline
 
-dd4472c (HEAD -> master) we should not forget to enjoy 
+dd4472c (HEAD -> master) we should not forget to enjoy
 2bb9bb4 add half an onion
 2d79e7e adding ingredients and instructions
 

@@ -35,7 +35,7 @@ $ git clone https://github.com/coderefinery/git-archaeology-exercise
 $ cd git-archaeology-exercise
 ```
 
-This example project counts words in a given text file and writes as 
+This example project counts words in a given text file and writes as
 output the frequency distribution. Example usage:
 ```shell
 $ python source/wordcount.py data/abyss.txt output.dat
@@ -134,7 +134,7 @@ b3f33c5 add first step to read input file
 What if the combination of `git log` and `git show` is not enough to find what we need?
 
 ```shell
-$ git grep -i percentage 
+$ git grep -i percentage
 
 data/abyss.txt:In 1886, and up to 1893, the percentage of pauperism to population was
 data/abyss.txt:succeeding year, the percentage of pauperism to population has been
@@ -234,7 +234,7 @@ $ git grep test_calculate_word_counts
 Sometimes also the log does not help because the commit messages are not helpful:
 
 ```shell
-$ git log --oneline 
+$ git log --oneline
 
 2faeda0 update readme
 86862e5 add license
@@ -339,8 +339,8 @@ Branches help us to keep the repository organized.
 > but now it's gone. You remember that the function started with "test".
 > - Try to find the commits in which the function was introduced and later removed
 > - Inspect the commits. What was the function called?
-> - Create a new branch to point at the commit **before** the commit where that test 
->   function was removed, and inspect the `source` folder. 
+> - Create a new branch to point at the commit **before** the commit where that test
+>   function was removed, and inspect the `source` folder.
 >   Hint: To refer to a commit before a given commit hash, use `<HASH>~1`.
 {: .task}
 

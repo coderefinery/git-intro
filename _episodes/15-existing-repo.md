@@ -14,7 +14,7 @@ objectives:
 # In-browser session
 
 - We will explore and visualize an **existing Git repository** on GitHub and make small changes to it.
-- The goal of this episode is not to teach GitHub, but rather to get a glimpse of the 
+- The goal of this episode is not to teach GitHub, but rather to get a glimpse of the
 wider picture.
 
 ---

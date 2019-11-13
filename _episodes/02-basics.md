@@ -58,7 +58,7 @@ button only at the end)
 
 ## Before we start we need to configure Git
 
-If you haven't already configured Git, please follow the instructions in the 
+If you haven't already configured Git, please follow the instructions in the
 [Git refresher lesson](https://coderefinery.github.io/git-refresher/01-setup/#configuring-git)
 
 ---
@@ -185,9 +185,9 @@ What does the `-m` flag mean? Let us check the help page for that command:
 $ git help commit
 ```
 
-You should see a very long help page as the tool is very versatile (press q to quit). 
+You should see a very long help page as the tool is very versatile (press q to quit).
 Do not worry about this now but keep in mind that you can always read the help files
-when in doubt. Searching online can also be useful, but choosing search terms 
+when in doubt. Searching online can also be useful, but choosing search terms
 to find relevant information takes some practice and discussions in some
 online threads may be confusing.
 Note that help pages also work when you don't have a network connection!
@@ -219,16 +219,16 @@ Date:   Thu May 4 15:02:56 2017 +0200
 ---
 
 > ## Exercise: record changes
-> 
+>
 > Add 1/2 onion to `ingredients.txt` and also the instruction
 > to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
-> 
+>
 > When you are done editing the files, try `git diff`:
-> 
+>
 > ```shell
 > $ git diff
 > ```
-> 
+>
 > ```
 > diff --git a/ingredients.txt b/ingredients.txt
 > index 2607525..ec0abc6 100644
@@ -249,24 +249,24 @@ Date:   Thu May 4 15:02:56 2017 +0200
 >  * and mix well
 > +* enjoy!
 > ```
-> 
+>
 > Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
-> 
+>
 > ```shell
 > $ git add ingredients.txt
 > $ git commit -m "add half an onion"
 > $ git add instructions.txt
 > $ git commit                   # <-- we have left out -m "..."
 > ```
-> 
+>
 > When you leave out the `-m` flag, Git should open an editor where you can edit
 > your commit message. This message will be associated and stored with the
 > changes you made. This message is your chance to explain what you've done and
 > convince others (and your future self) that the changes you made were
 > justified.  Write a message and save and close the file.
-> 
+>
 > When you are done committing the changes, experiment with these commands:
-> 
+>
 > ```shell
 > $ git log    # show commit logs
 > $ git show   # show various types of objects
@@ -275,7 +275,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 {: .task}
 
 > ## (Optional) Exercise: more changes and renaming
-> 
+>
 > 1. Apply and commit more changes.
 > 2. Add new files.
 > 3. When you commit, try `git commit -v` (will show you the difference in the editor).
@@ -284,19 +284,19 @@ Date:   Thu May 4 15:02:56 2017 +0200
 {: .task}
 
 > ## (Optional) Exercise: Comparing and showing commits
-> 
+>
 > 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
 > 2. Have a look at specific commits with `git show <hash>`.
 {: .task}
 
 > ## (Optional) Exercise: Visual diff tools
-> 
+>
 > - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
-> 
+>
 > ```
 > $ git difftool
 > ```
-> 
+>
 > ![Git events]({{ site.baseurl }}/img/meld.png
 > "git difftool meld"){:class="img-responsive" style="max-width:70%"}
 {: .task}
@@ -392,7 +392,7 @@ relatively.
 
 ### GUI tools
 
-We have seen how to make commits directly via the GitHub website, and also via command line. 
+We have seen how to make commits directly via the GitHub website, and also via command line.
 But it is also possible to work from within a Git graphical user interface (GUI):
 
 - [GitHub Desktop](https://desktop.github.com)

@@ -25,10 +25,10 @@ and learn how to *keep organized*.
 - Code is rarely self-documenting.
 - Code also doesn't reveal how it came to be, only what is there now.
 - It would be great if all changes were documented, but that is too much to ask.
-- What is a good compromise?  
+- What is a good compromise?
 
-Git forces you to create version history and commit messages, 
-and if these are clear then you are a long way to organized code.  
+Git forces you to create version history and commit messages,
+and if these are clear then you are a long way to organized code.
 
 
 ### It is useful to have a nice and readable history
@@ -66,7 +66,7 @@ fee1807 implement feature B
 We want to have nice commits.  But we also want to "save often"
 (checkpointing) - how can we have both?
 
-- We will now learn to create nice commits using the *staging area*. 
+- We will now learn to create nice commits using the *staging area*.
 - Staging addresses the issue of having unrelated changes in the same
 commit or having one logical change spread over several commits.
 - The staging area isn't the only way to organize your history nicely, some alternatives are discussed at the end of the lesson.
@@ -78,10 +78,10 @@ commit or having one logical change spread over several commits.
 <img src="{{ site.baseurl }}/img/ikea_box.jpg" width="30%">
 
 - You're moving and you have a box to pack your things in.
-- You can put stuff into the box, but you can also take stuff out of the box. 
+- You can put stuff into the box, but you can also take stuff out of the box.
 - You wouldn't want to mix items from the bathroom, kitchen and living room into the same box.
-- The box corresponds to the staging area of Git, where you can craft your commits. 
-- Committing is like sealing the box and sticking a label on it. 
+- The box corresponds to the staging area of Git, where you can craft your commits.
+- Committing is like sealing the box and sticking a label on it.
 - You wouldn't want to label your box with "stuff", but rather give a more descriptive label.
 
 ---
@@ -101,7 +101,7 @@ commit or having one logical change spread over several commits.
 *Note: the "staging area" has also alternatively been referred to as
 the index and the cache*.
 
-Files can be untracked, modified, staged, or committed, and 
+Files can be untracked, modified, staged, or committed, and
 we have a variety of commands to go between states:
 
 ```shell
@@ -137,7 +137,7 @@ $ git commit                      # commit everything that is staged
 ```
 
 > ## Exercise: Using the staging area
-> 
+>
 > 1. In your recipe example, make two different changes to
 >   `ingredients.txt` and `instructions.txt` which do not go together.
 > 2. Use `git add` to stage one of the changes.
@@ -148,10 +148,10 @@ $ git commit                      # commit everything that is staged
 ---
 
 > ## (Optional) Interactive staging
-> 
-> One option to help us create nice logical commits is to stage *interactively* 
+>
+> One option to help us create nice logical commits is to stage *interactively*
 > with `git add -p` (you can also directly commit interactively with `git commit -p`):
-> 
+>
 > 1. Modify multiple lines in `instructions.txt`.  Make sure that they
 >    are separated by at least one unmodified line.
 > 2. Run `git add -p instructions.txt`.
@@ -165,7 +165,7 @@ $ git commit                      # commit everything that is staged
 ---
 
 > ## Test your understanding
-> 
+>
 > - When is it better to "save" a change as commit, when is it better to "save" it with `git add`?
 > - Is it a problem to commit many small changes?
 > - What types of problems can occur in other version control systems without a staging area?

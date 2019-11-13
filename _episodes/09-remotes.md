@@ -99,7 +99,7 @@ you are likely to have to use it for other software anyway.
 By now you should already have set up a GitHub account but if you haven't,
 please do so [here](https://github.com/join). But it is OK if you want to use
 [GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
-[NotABug](https://notabug.org) or another platform instead (although we 
+[NotABug](https://notabug.org) or another platform instead (although we
 will practice collaborative Git on GitHub tomorrow).
 
 ---

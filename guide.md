@@ -7,8 +7,8 @@ permalink: /guide/
 
 ## Why we teach this lesson
 
-Everyone should be using a version control system for their work, even if they're working alone. 
-There are many VC systems out there, but Git is an industry standard and even if one uses another 
+Everyone should be using a version control system for their work, even if they're working alone.
+There are many VC systems out there, but Git is an industry standard and even if one uses another
 system chances are high one still encounters Git repositories.
 
 Specific motivations:
@@ -16,24 +16,24 @@ Specific motivations:
 - Mistakes happen - Git offers roll-back functionality and easy backup mechanism
 - One often needs to work on multiple things in parallel - branches solve that problem
 - Git enables people to collaborate on code or text without stepping on each other's toes
-- Reproducibility: You can specify exact versions in publications enabling others to reproduce your work, 
+- Reproducibility: You can specify exact versions in publications enabling others to reproduce your work,
   and if bugs are found one can find out exactly when it was introduced
 
 Most learners in a CodeRefinery workshop have developed code for a few years. A majority have
-already encountered Git and have used it to some extent, but in most cases they do not yet feel 
+already encountered Git and have used it to some extent, but in most cases they do not yet feel
 comfortable with it. They lack a good mental model of how Git operates and are afraid of making mistakes.
-Other learners have never used Git before. 
-This lesson teaches how things are done in Git, which is useful for the newcomers, 
-but also how Git operates (e.g. what commits and branches really are) and what are some good 
+Other learners have never used Git before.
+This lesson teaches how things are done in Git, which is useful for the newcomers,
+but also how Git operates (e.g. what commits and branches really are) and what are some good
 practices (e.g. how to use the staging area), which is useful for more experienced users.
 
 ## Intended learning outcomes
 
 By the end of this lesson, learners should:
 - realize that version control is very important and Git is a valuable tool to learn and use
-- understand that Git is configurable and know how to set basic configurations 
+- understand that Git is configurable and know how to set basic configurations
 - be able to set up Git repositories and make commits
-- understand that information on commits, branches etc. are stored under `.git/`, and have a 
+- understand that information on commits, branches etc. are stored under `.git/`, and have a
   mental model of how that relates to the working directory
 - have a mental model of the different stages a file can have in Git (untracked, modified, staged, unmodified)
 - know how to write good commit messages
@@ -98,38 +98,38 @@ long. These section can be skipped:
   skipped we are exposed to GitHub in another lesson on the same
   afternoon. Otherwise it can be skipped or moved to another module.
 
-- The "In-browser session" can be taught to audiences who need to be able to 
+- The "In-browser session" can be taught to audiences who need to be able to
   commit to existing repositories (e.g. documentation, webpages, ...)
   but may not want to use command line.
 
 ### How to use the exercises
 
-Most episodes have standard exercises followed by optional (often more advanced) exercises 
+Most episodes have standard exercises followed by optional (often more advanced) exercises
 for more experienced learners so they don't get bored waiting for the newcomers.
-The instructor should briefly introduce the exercises and mention that after finishing the 
-standard exercise (and indicating that using the green sticky) the learners can move on to the 
+The instructor should briefly introduce the exercises and mention that after finishing the
+standard exercise (and indicating that using the green sticky) the learners can move on to the
 optional ones if they wish. When at least half of the learners have raised the green sticky
 the instructor should go through the standard exercise to describe its most important take-home messages.
-It's also fine to briefly go though important points from the optional exercises, but don't spend 
+It's also fine to briefly go though important points from the optional exercises, but don't spend
 too much time on it since everyone will not have attempted them.
 
 ### "Test your understanding" exercises
 
-Some episodes have a "test your understanding" exercise at the end which is intended as *formative assessment*, 
+Some episodes have a "test your understanding" exercise at the end which is intended as *formative assessment*,
 i.e. an activity that provides feedback to instructors and learners on whether learning objectives are being met.
-The instructor should end each episode by posing the "test your understanding" multiple-choice question, 
-giving learners a minute to think about it, and then asking for the right answer or asking learners to raise their 
+The instructor should end each episode by posing the "test your understanding" multiple-choice question,
+giving learners a minute to think about it, and then asking for the right answer or asking learners to raise their
 hands to signal which answer they think is correct.
 
 ### Coffee breaks
 
-The episodes for the coffee breaks contain thought-provoking questions. The instructor should briefly discuss 
+The episodes for the coffee breaks contain thought-provoking questions. The instructor should briefly discuss
 the questions and encourage learners to discuss them during the coffee break.
 
 ### Conflict resolution
 
-We use screenshots from a violent video game in the section on conflict resolution, but 
-it should be emphasized that conflicts are a good thing since otherwise collaborators would 
+We use screenshots from a violent video game in the section on conflict resolution, but
+it should be emphasized that conflicts are a good thing since otherwise collaborators would
 overwrite each other's changes. Git saves us from this situation by producing conflicts.
 
 
@@ -172,7 +172,7 @@ and start over if needed.
 ### Live better than reading the website material
 
 It is better to demonstrate the commands live and type-along. Ideally connecting
-to examples discussed earlier. 
+to examples discussed earlier.
 
 
 ### Log your history in a separate window
