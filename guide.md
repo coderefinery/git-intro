@@ -203,7 +203,7 @@ manual](https://github.com/coderefinery/manuals/blob/master/presenting.md#screen
 
 ### Create a cheatsheet on the board
 
-Create a "cheatsheet" on the board as you go . After each command is
+Create a "cheatsheet" on the board as you go. After each command is
 introduced, write it on the board. After each module, make sure you
 haven't forgotten anything. Re-create and expand in future git
 lessons.  One strategy is:
@@ -222,6 +222,10 @@ etc is good.
 
 Example:
 ![](../img/cheat-sheet.jpg)
+
+We also recommend to draw simple diagrams up on the board (eg: working
+directory - staging area - respository with commands to move between) and keep
+them there for students to refer to.
 
 
 ### Draw a graph on the board
