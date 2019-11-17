@@ -91,28 +91,11 @@ This can also be used to modify the last commit message.
 Note that this **will change the commit hash**. This command **modifies the history**.
 This means that we never use this command on commits that we have shared with others.
 
----
-
-### Undo unstaged/uncommitted changes
-
-`git checkout <file>` is a command that **permanently deletes** changes
-that were unstaged/uncommitted!
-
-> ## Exercise: Modify without staging
+> ## Exercise: Modify a previous commit
 >
-> 1. Make a silly change to the recipe, do not stage it or commit it.
-> 2. Inspect the change with `git status` and `git diff`.
-> 3. Now undo the change with `git checkout <file>`.
-> 4. Verify that the change is gone with `git status` and `git diff`.
-{: .task}
-
-> ## Exercise: Modify after staging
->
-> 1. Make a reasonable change to the recipe, stage it.
-> 2. Make a silly change after you have staged the reasonable change.
-> 3. Inspect the situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
-> 4. Now undo the silly change with `git checkout <file>`.
-> 5. Inspect the new situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
+> 1. Make an incomplete change to the recipe or a typo in your change, `git add` and `git commit` the incomplete/unsatisfactory change.
+> 2. Inspect the unsatisfactory but committed change with `git show`.
+> 3. Now complete/fix the change but instead of creating a new commit, add to the previous commit with `git commit --amend`.
 {: .task}
 
 ---
