@@ -89,8 +89,9 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ---
 
-## We will use [Git](https://git-scm.com) to record snapshots of our work - why Git?
+## Why Git?
 
+We will use [Git](https://git-scm.com) to record snapshots of our work:
 - Easy to set up - use even by yourself with no server needed.
 - Very popular: chances are high you will need to contribute to somebody else's code which is tracked with Git.
 - Distributed: good backup, no single point of failure, you can track and clean-up changes offline, simplifies collaboration model for open-source projects.
@@ -104,17 +105,15 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
   is great and is definitely the most popular and what you are most likely to
   need to know. So we teach it.
 
----
 
-## Why Git and not [Subversion](https://subversion.apache.org)?
+### Why not [Subversion](https://subversion.apache.org)?
 
 - Subversion is centralized (one server, many clients) and requires setting up and maintaining a server.
 - You cannot easily clean-up your recorded snapshots (commits) before you share them.
 - Not easy to get contributions from external contributors.
 
----
 
-## Why Git and not [Mercurial](https://www.mercurial-scm.org)?
+### Why not [Mercurial](https://www.mercurial-scm.org)?
 
 - Mercurial: many Git concepts still apply. For that matter, most important
   lesson is **how and why to use version control**, which applies to any system
