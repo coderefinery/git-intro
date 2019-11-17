@@ -239,7 +239,10 @@ Simple steps:
   - Remove the resolution markers, if not already done.
   - The file(s) should now look exactly how you want them.
 - Check status with `git status` and `git diff`.
-- Tell Git that you have resolved the conflict with `git add ingredients.txt`, then verify with `git status`.
+- Tell Git that you have resolved the conflict with `git add ingredients.txt`
+  (if you use the Emacs editor with a certain plugin the editor may stage the
+  change for you after you have removed the conflict markers).
+- Verify the result with `git status`.
 - Finally commit the merge with just `git commit` - everything is pre-filled.
 
 ---
