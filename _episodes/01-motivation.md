@@ -25,9 +25,9 @@ objectives:
 
 ## Why code can become a disaster without version control
 
-### What is the problem with this kind of "version control"?
 
-Discuss the following directory listing:
+Discuss the following directory listing. What possible problems
+do you anticipate with this kind of "version control":
 
 ```shell
 mylib-1.2.4_18.3.07.tgz         somecode_CP_10.8.07.tgz
