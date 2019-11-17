@@ -1,7 +1,7 @@
 ---
 layout: episode
 title: Motivation
-teaching: 10
+teaching: 15
 exercises: 0
 questions:
   - Why version control?
@@ -24,7 +24,6 @@ objectives:
 ---
 
 ## Why code can become a disaster without version control
-
 
 Discuss the following directory listing. What possible problems
 do you anticipate with this kind of "version control":
@@ -120,3 +119,33 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 >   with some changes.
 > - Even if you use Mercurial chances are high you need to contribute to a code tracked by Git.
 {: .discussion}
+
+---
+
+## A real-life example
+
+Before we create a new repository from scratch and learn how to record changes
+and create and merge branches, let us explore an **existing Git repository** on
+GitHub.  The goal here is not to teach GitHub yet (we will explain some of the
+concepts later), but rather to get a glimpse of the wider picture and see the
+social aspect to know what our end goal is.
+
+As an example we can explore a famous Git repository which was used
+to produce the Event Horizon Telescope images: [https://github.com/achael/eht-imaging](https://github.com/achael/eht-imaging).
+
+- History
+  - Explore the [repository](https://github.com/achael/eht-imaging).
+  - Explore the [history](https://github.com/achael/eht-imaging/commits/master).
+  - Note that there are [branches](https://github.com/achael/eht-imaging/network).
+- Reproducibility
+  - Discuss the enormous value of the annotation feature: [example file](https://github.com/achael/eht-imaging/blame/master/ehtim/imaging/starwarps.py).
+- Collaboration
+  - You can refer to [code portions](https://github.com/achael/eht-imaging/blob/31361ab62c5718b08612fc75e409795f004f5071/ehtim/imaging/starwarps.py#L66-L75)
+    (so much simpler to send a link rather than describe which file to open and where to scroll to).
+  - Browse the [forks](https://github.com/achael/eht-imaging/network/members).
+  - See [contributors](https://github.com/achael/eht-imaging/graphs/contributors).
+- Releases
+  - Explore the [release history](https://github.com/achael/eht-imaging/releases).
+
+While some of these are GitHub features, it all can be done on other sites, or
+by yourself without GitHub at all.
