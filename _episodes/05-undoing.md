@@ -117,6 +117,36 @@ that were unstaged/uncommitted!
 
 ---
 
+### Clean history
+
+We will be using the guacamole recipe example throughout the lesson and it will be easy
+to follow if the learners, instructor and the teaching material contains identical
+repositories with the same number of commits. For this purpose we recommend to reset the
+guacamole repository to an earlier state using the **git reset** command. This command is
+one of the destructive commands in Git, so use with caution:
+
+```
+$ git log --oneline
+
+d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
+f960dd3 not sure this is a good idea
+dd4472c we should not forget to enjoy
+2bb9bb4 add half an onion
+2d79e7e adding ingredients and instructions
+
+$ git reset --hard dd4472c
+
+HEAD is now at dd4472c we should not forget to enjoy
+
+$ git log --oneline
+
+dd4472c (HEAD -> master) we should not forget to enjoy
+2bb9bb4 add half an onion
+2d79e7e adding ingredients and instructions
+```
+
+---
+
 > ## Test your understanding
 >
 > 1. What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
@@ -145,33 +175,3 @@ that were unstaged/uncommitted!
 > >    ```
 > {: .solution}
 {: .challenge}
-
----
-
-### Clean history
-
-We will be using the guacamole recipe example throughout the lesson and it will be easy
-to follow if the learners, instructor and the teaching material contains identical
-repositories with the same number of commits. For this purpose we recommend to reset the
-guacamole repository to an earlier state using the **git reset** command. This command is
-one of the destructive commands in Git, so use with caution:
-
-```
-$ git log --oneline
-
-d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
-f960dd3 not sure this is a good idea
-dd4472c we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
-
-$ git reset --hard dd4472c
-
-HEAD is now at dd4472c we should not forget to enjoy
-
-$ git log --oneline
-
-dd4472c (HEAD -> master) we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
-```
