@@ -261,7 +261,7 @@ Branches help us to keep the repository organized.
 > - Create a new branch to point at the commit **before** the commit where that test
 >   function was removed, and inspect the `source` folder.
 >   Hint: To refer to a commit before a given commit hash, use `<HASH>~1`.
-{: .task}
+{: .challenge}
 
 ---
 
@@ -337,11 +337,11 @@ $ git bisect bad
 > ```
 > $ git log --oneline | tail -n 1
 > ```
-{: .task}
+{: .challenge}
 
 > ## Bonus exercise
 >
 > Write a script that checks for a correct result and use `git bisect run` to
 > find the offending commit automatically
 > ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
-{: .task}
+{: .challenge}

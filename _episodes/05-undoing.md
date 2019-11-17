@@ -73,7 +73,7 @@ code, you may get a conflict (which we'll learn about later).
 > - Revert the commit with `git revert`.
 > - Inspect the history with `git log --oneline`.
 > - Now try `git show` on both the reverted and the newly created commit.
-{: .task}
+{: .challenge}
 
 ---
 
@@ -96,7 +96,7 @@ This means that we never use this command on commits that we have shared with ot
 > 1. Make an incomplete change to the recipe or a typo in your change, `git add` and `git commit` the incomplete/unsatisfactory change.
 > 2. Inspect the unsatisfactory but committed change with `git show`.
 > 3. Now complete/fix the change but instead of creating a new commit, add to the previous commit with `git commit --amend`.
-{: .task}
+{: .challenge}
 
 ---
 

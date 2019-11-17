@@ -250,7 +250,7 @@ Simple steps:
 > 2. Again modify some ingredient on both branches.
 > 3. Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
 > 4. What happens if you apply the same modification on both branches?
-{: .task}
+{: .challenge}
 
 ---
 

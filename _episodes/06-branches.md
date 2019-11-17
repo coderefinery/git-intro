@@ -253,7 +253,7 @@ $ git graph
 > ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
 >
 > And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
-{: .task}
+{: .challenge}
 
 ---
 
@@ -438,7 +438,7 @@ may have a hard time finding them as there is no branch pointing to them.
 > 4. Merge the new branch to `master`.
 > 5. Examine the result with `git graph`.
 > 6. Have you expected the result? Discuss what you see.
-{: .task}
+{: .challenge}
 
 ---
 

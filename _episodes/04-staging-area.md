@@ -143,7 +143,7 @@ $ git commit                      # commit everything that is staged
 > 2. Use `git add` to stage one of the changes.
 > 3. Use `git status` to see what's going on, and use `git diff` and `git diff --staged` to see the changes.
 > 4. Feel some regret and unstage the staged change.
-{: .task}
+{: .challenge}
 
 ---
 
@@ -160,7 +160,7 @@ $ git commit                      # commit everything that is staged
 > 5. When you're done, inspect the situation with `git status`, `git diff` and `git diff --staged`.
 > 6. If you want, you can try repeating the procedure above but use `git commit -p` instead of `git add -p` to commit directly.
 >
-{: .task}
+{: .challenge}
 
 ---
 

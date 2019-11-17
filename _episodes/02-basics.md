@@ -272,7 +272,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > $ git show   # show various types of objects
 > $ git diff   # show changes
 > ```
-{: .task}
+{: .challenge}
 
 > ## (Optional) Exercise: more changes and renaming
 >
@@ -281,13 +281,13 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > 3. When you commit, try `git commit -v` (will show you the difference in the editor).
 > 4. Rename files with `git mv` (you will need to `git commit` the rename).
 > 5. Use `git log --oneline` and `git status`.
-{: .task}
+{: .challenge}
 
 > ## (Optional) Exercise: Comparing and showing commits
 >
 > 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
 > 2. Have a look at specific commits with `git show <hash>`.
-{: .task}
+{: .challenge}
 
 > ## (Optional) Exercise: Visual diff tools
 >
@@ -312,7 +312,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > $ git config --global diff.tool meld
 > ```
 >
-{: .task}
+{: .challenge}
 
 ---
 
