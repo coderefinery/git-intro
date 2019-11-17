@@ -10,7 +10,7 @@ objectives:
   - Quickly find a line of code, find out who introduced it, when, and why.
   - Quickly find the commit that changed a behavior.
 keypoints:
-  - "`git log/grep/blame/show/bisect` is a powerful combination when doing archaeology in a project."
+  - "`git log/grep/annotate/show/bisect` is a powerful combination when doing archaeology in a project."
   - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
 ---
 
@@ -161,7 +161,7 @@ source/wordcount.py:    save_word_counts(output_file, percentage_counts)
 
 ## Finding out who introduced a modification and when
 
-- `git blame` is a fun and useful command to find out when a specific line got introduced and by whom.
+- `git annotate` is a useful command to find out when a specific line got introduced and by whom.
 - This is important to judge the impact of a bug:
   - When was it introduced?
   - For how long has this bug been around?
@@ -170,7 +170,7 @@ source/wordcount.py:    save_word_counts(output_file, percentage_counts)
   - Who introduced it? Not to blame people but to possibly get more information.
 
 ```shell
-$ git blame source/wordcount.py
+$ git annotate source/wordcount.py
 
 b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   1) import sys
 b3f33c5d wordcount.py (Kjartan Thor Wikfeldt 2019-10-21 16:40:22 +0200   2)
@@ -192,7 +192,7 @@ Rather typical timeline:
 
 > *"Who the %&!@!!! wrote this crap?!? Oh, it was me."*
 
-Who was the last to edit a specific line of the source file for `git blame` and when and why?
+Who was the last to edit a specific line of the source file for `git annotate` and when and why?
 
 - [https://github.com/coderefinery/git-archaeology-exercise/blame/master/source/wordcount.py](https://github.com/coderefinery/git-archaeology-exercise/blame/master/source/wordcount.py)
 
@@ -201,7 +201,7 @@ Who was the last to edit a specific line of the source file for `git blame` and 
 ## Grepping commit messages
 
 - Another possible scenario is that you're looking for a particular commit, but can't
-easily find it with `git blame`.
+easily find it with `git annotate`.
 - You can however remember (or guess) some keywords from the commit message
 - Commit messages can also be grepped!
 
@@ -223,7 +223,7 @@ Note that `git log --grep` will grep the whole commit message even if you use th
 Example: you want to know who implemented a specific keyword/functionality.
 
 - `git grep` for the keyword or screen message.
-- Then with `git blame` find the person/commit that introduced it.
+- Then with `git annotate` find the person/commit that introduced it.
 - With `git show` verify the commit that introduced the change.
 
 ---

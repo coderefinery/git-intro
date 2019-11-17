@@ -49,6 +49,6 @@ permalink: /reference/
 * **git reset --hard abc123**: remove all commits after abc123, permanently throwing away their changes
 * **git merge &lt;branch-name&gt;**: merge branch &lt;branch-name&gt; into current branch
 * **git grep**: search for patterns in tracked files
-* **git blame**: find out when a specific line got introduced and by whom
+* **git annotate**: find out when a specific line got introduced and by whom
 * **git show**: inspect individual commits
 * **git bisect**: find a commit which broke some functionality

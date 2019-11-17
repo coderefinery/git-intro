@@ -160,10 +160,10 @@ It can be useful to emphasize that it
 can be really valuable to be able to search through the history of a project
 efficiently to find when bugs were introduced or when something changed and
 why.
-Also show that `git blame` and `git show` are available
+Also show that `git annotate` and `git show` are available
 on GitHub and GitLab.
 
-When discussing `git blame` and `git bisect` the "when" is more important than "who". It is not
+When discussing `git annotate` and `git bisect` the "when" is more important than "who". It is not
 to blame anybody but rather to find out whether published results are affected.
 
 Discuss how one would find out this information without version control.
