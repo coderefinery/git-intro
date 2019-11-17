@@ -293,12 +293,25 @@ Date:   Thu May 4 15:02:56 2017 +0200
 >
 > - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 >
+> On Windows or Linux:
 > ```
-> $ git difftool
+> $ git difftool --tool=meld
+> ```
+>
+> On macOS:
+> ```
+> $ git difftool --tool=opendiff
 > ```
 >
 > ![Git events]({{ site.baseurl }}/img/meld.png
 > "git difftool meld"){:class="img-responsive" style="max-width:70%"}
+>
+> You probably want to use the same visual diff tool every time and
+> you can configure Git for that:
+> ```
+> $ git config --global diff.tool meld
+> ```
+>
 {: .task}
 
 ---
