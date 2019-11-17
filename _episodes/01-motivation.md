@@ -23,7 +23,7 @@ objectives:
 
 ---
 
-## Why code becomes a disaster without version control
+## Why code can become a disaster without version control
 
 ### What is the problem with this kind of "version control"?
 
