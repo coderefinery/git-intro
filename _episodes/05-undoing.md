@@ -147,13 +147,14 @@ that were unstaged/uncommitted!
 {: .challenge}
 
 ---
+
 ### Clean history
 
 We will be using the guacamole recipe example throughout the lesson and it will be easy
 to follow if the learners, instructor and the teaching material contains identical
-repositories with  same number of commits. For this purpose we recommend to reset the
+repositories with the same number of commits. For this purpose we recommend to reset the
 guacamole repository to an earlier state using the **git reset** command. This command is
-one of the destructive commands in Git, so use with caution.
+one of the destructive commands in Git, so use with caution:
 
 ```
 $ git log --oneline
@@ -173,6 +174,4 @@ $ git log --oneline
 dd4472c (HEAD -> master) we should not forget to enjoy
 2bb9bb4 add half an onion
 2d79e7e adding ingredients and instructions
-
 ```
-

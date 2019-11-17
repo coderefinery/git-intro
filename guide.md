@@ -122,6 +122,20 @@ the instructor should go through the standard exercise to describe its most impo
 It's also fine to briefly go though important points from the optional exercises, but don't spend
 too much time on it since everyone will not have attempted them.
 
+
+### Why do we have the "Clean history" section?
+
+We introduce `git reset --hard` in passing in the
+["Clean history"](https://coderefinery.github.io/git-intro/05-undoing/#clean-history) section.
+
+Motivation for this was to allow participants to experiment with the staging
+and "mess things up" but later be able to continue with branching and see the
+same things when inspecting git graph. The reset command is there introduced in
+passing. This can create confusion. But it is also important that participants
+see the same thing as on the big screen (they often notice the tiniest
+differences and ask about it).
+
+
 ### "Test your understanding" exercises
 
 Some episodes have a "test your understanding" exercise at the end which is intended as *formative assessment*,
