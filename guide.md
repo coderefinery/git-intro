@@ -63,6 +63,15 @@ from https://github.com/bast/example-project.
 Do not just fork it since it can confuse users sending pull requests.
 
 
+### Take first editor steps slowly
+
+Some participants will be new to using a terminal text editor so please open,
+edit, and close the editor (Nano) slowly in first type-along sessions and
+exercises to avoid that participants will fall behind the instructor. At one
+point a student did not follow the file edits of the instructor, and to correct
+the mistake they had to do a manual merge, which they were not ready for.
+
+
 ### Different ways to present
 
 The whole lesson covers why you would use git, how to use it, and
