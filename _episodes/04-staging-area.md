@@ -73,16 +73,44 @@ commit or having one logical change spread over several commits.
 
 ---
 
-## [An analogy](https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh)
-
-<img src="{{ site.baseurl }}/img/ikea_box.jpg" width="30%">
-
-- You're moving and you have a box to pack your things in.
-- You can put stuff into the box, but you can also take stuff out of the box.
-- You wouldn't want to mix items from the bathroom, kitchen and living room into the same box.
-- The box corresponds to the staging area of Git, where you can craft your commits.
-- Committing is like sealing the box and sticking a label on it.
-- You wouldn't want to label your box with "stuff", but rather give a more descriptive label.
+> ## An analogy to the staging area
+>
+> We give two examples and the instructor can pick one or both:
+> - Analogy using moving boxes
+> - Analogy using shopping receipts
+>
+>
+> ### [An analogy using moving boxes](https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh)
+>
+> <img src="{{ site.baseurl }}/img/ikea_box.jpg" width="30%">
+>
+> - You're moving and you have a box to pack your things in.
+> - You can put stuff into the box, but you can also take stuff out of the box.
+> - You wouldn't want to mix items from the bathroom, kitchen and living room into the same box.
+> - The box corresponds to the staging area of Git, where you can craft your commits.
+> - Committing is like sealing the box and sticking a label on it.
+> - You wouldn't want to label your box with "stuff", but rather give a more descriptive label.
+>
+>
+> ### An analogy using shopping receipts
+>
+> - You need to go shopping and buy some stuff for work and for home.
+>   You need two separate receipts.
+> - Bad idea: go through the store get home stuff, pay, start at the
+>   beginning and go through the store again.  This is inefficient and
+>   annoying.
+> - What you actually do:
+>   - Go through the store and put everything you need in your shopping
+>     basket.
+>   - Get to the checkout.  Put your home stuff on the conveyor belt
+>     (`git add`).  Check both the belt (`git diff --staged`) and your
+>     basket (`git diff`) to make sure you got all your home stuff.
+>   - Pay (`git commit`)
+>   - Repeat for work stuff.
+>
+> In order to keep organized, you have to use multiple locations to
+> stage things in sequence.
+{: .discussion}
 
 ---
 
