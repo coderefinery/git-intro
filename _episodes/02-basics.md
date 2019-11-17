@@ -327,7 +327,12 @@ then paragraph(s) with more details in free form, if necessary**.
 - Many projects start out as projects "just for me" and end up to be successful projects
   that are developed by 50 people over decades.
 - [Commits with multiple authors](https://help.github.com/articles/creating-a-commit-with-multiple-authors/)
+
+Good references:
+
 - ["My favourite Git commit"](https://fatbusinessman.com/2019/my-favourite-git-commit)
+- ["On commit messages"](https://who-t.blogspot.com/2009/12/on-commit-messages.html)
+- ["How to Write a Git Commit Message"](https://chris.beams.io/posts/git-commit/)
 
 ---
 
