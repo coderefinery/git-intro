@@ -163,31 +163,32 @@ $ git graph
 
 ---
 
-## Interlude: Different meanings of "checkout"
-
-Depending on the context `git checkout` can do very different actions:
-
-1) Switch to a branch:
-
-```
-$ git checkout <branchname>
-```
-
-2) Bring the working tree to a specific state (commit):
-
-```
-$ git checkout <hash>
-```
-
-3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
-
-```
-$ git checkout <path/file>
-```
-
-This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
-Picture `git checkout` as an operation that brings the working tree to a specific state.
-The state can be a commit or a branch (pointing to a commit).
+> ## Interlude: Different meanings of "checkout"
+>
+> Depending on the context `git checkout` can do very different actions:
+>
+> 1) Switch to a branch:
+>
+> ```
+> $ git checkout <branchname>
+> ```
+>
+> 2) Bring the working tree to a specific state (commit):
+>
+> ```
+> $ git checkout <hash>
+> ```
+>
+> 3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
+>
+> ```
+> $ git checkout <path/file>
+> ```
+>
+> This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
+> Picture `git checkout` as an operation that brings the working tree to a specific state.
+> The state can be a commit or a branch (pointing to a commit).
+{: .callout}
 
 ---
 
