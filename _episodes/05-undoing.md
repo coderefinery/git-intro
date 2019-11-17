@@ -119,11 +119,10 @@ that were unstaged/uncommitted!
 
 ### Clean history
 
-We will be using the guacamole recipe example throughout the lesson and it will be easy
-to follow if the learners, instructor and the teaching material contains identical
-repositories with the same number of commits. For this purpose we recommend to reset the
-guacamole repository to an earlier state using the **git reset** command. This command is
-one of the destructive commands in Git, so use with caution:
+After we have experimented with reverts and amending, let us get our
+repositories to a similar state.
+
+At the same time we will learn how to remove commits (use this command with caution in your work).
 
 ```
 $ git log --oneline
