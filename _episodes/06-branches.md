@@ -188,6 +188,12 @@ $ git graph
 > This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
 > Picture `git checkout` as an operation that brings the working tree to a specific state.
 > The state can be a commit or a branch (pointing to a commit).
+>
+> In latest Git this is much nicer:
+> ```shell
+> $ git switch <branchname>  # switch to a different branch
+> $ git restore <path/file>  # discard changes in working directory
+> ```
 {: .callout}
 
 ---

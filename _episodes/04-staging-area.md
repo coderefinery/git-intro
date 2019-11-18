@@ -140,8 +140,10 @@ $ git diff             # see **unstaged** changes
 $ git diff --staged    # see **staged** changes
 $ git rm               # removes a file
 $ git reset            # unstages staged changes
+                       # in latest Git: git restore --staged <path>
 $ git checkout <path>  # check out the latest staged version ( or committed
                        # version if file has not been staged )
+                       # in latest Git: git restore <path>
 ```
 
 **Recommendation:**
