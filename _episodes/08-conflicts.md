@@ -285,7 +285,7 @@ Simple steps:
 > $ git mergetool
 > ```
 >
-> ![]({{ site.baseurl }}/img/conflict-resolution/mergetool.png)
+> <img src="{{ site.baseurl }}/img/conflict-resolution/mergetool.png" width="100%">
 >
 > - Your current branch is left, the branch you merge is right, result is in the middle.
 > - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
