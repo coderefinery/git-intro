@@ -31,6 +31,14 @@ repository"){:class="img-responsive"}
 - Here the branch is called "master".
 - "HEAD" is the current position (remember the recording head of tape recorders?).
 
+### Now we want to do this:
+
+<div style="border:2px solid #000000;">
+  <img src="{{ site.baseurl }}/img/octopus.jpeg" width="60%">
+  <br>
+  Source: <a href="https://twitter.com/jay_gee/status/703360688618536960">https://twitter.com/jay_gee/status/703360688618536960</a>
+</div>
+
 Software development is often not linear:
 
 - We typically need at least one version of the code to "work" (to compile, to give expected results, ...).
