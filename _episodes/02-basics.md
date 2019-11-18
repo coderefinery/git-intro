@@ -50,9 +50,13 @@ $ git commit
 ![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
 "git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
-- For the more advanced users: What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
-several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
-button only at the end)
+> ## Question for the more advanced participants
+>
+> What do you think will be the outcome if you
+> stage a file and then edit it and stage it again, do this several times and
+> at the end perform a commit? (think of focusing several scenes and pressing the
+> shoot button only at the end)
+{: .challenge}
 
 ---
 
@@ -397,18 +401,16 @@ relatively.
 
 `.gitignore` should be part of the repository (why?).
 
----
 
-### Clean working area
+#### Clean working area
 
 - Use `git status` a lot.
-- Use `.gitignore`.
 - Untracked files belong to .gitignore.
 - **All files should be either tracked or ignored**.
 
 ---
 
-### GUI tools
+## Graphical user interfaces
 
 We have seen how to make commits directly via the GitHub website, and also via command line.
 But it is also possible to work from within a Git graphical user interface (GUI):
