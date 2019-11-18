@@ -280,13 +280,13 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > 2. Have a look at specific commits with `git show <hash>`.
 {: .challenge}
 
-> ## (Optional) Exercise: more changes and renaming
+> ## (Optional) Exercise: Renaming and removing files
 >
-> 1. Apply and commit more changes.
-> 2. Add new files.
-> 3. When you commit, try `git commit -v` (will show you the difference in the editor).
-> 4. Rename files with `git mv` (you will need to `git commit` the rename).
-> 5. Use `git log --oneline` and `git status`.
+> 1. Create a new file, `git add` and `git commit` the file.
+> 2. Rename the file with `git mv` (you will need to `git commit` the rename).
+> 3. Use `git log --oneline` and `git status`.
+> 4. Remove the file with `git rm` (again you need to `git commit` the change).
+> 5. Inspect the history with `git log --stat`. Can you recover the removed file from the Git history?
 {: .challenge}
 
 > ## (Optional) Exercise: Visual diff tools
