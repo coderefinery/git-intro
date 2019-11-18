@@ -274,6 +274,12 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > ```
 {: .challenge}
 
+> ## (Optional) Exercise: Comparing and showing commits
+>
+> 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
+> 2. Have a look at specific commits with `git show <hash>`.
+{: .challenge}
+
 > ## (Optional) Exercise: more changes and renaming
 >
 > 1. Apply and commit more changes.
@@ -281,12 +287,6 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > 3. When you commit, try `git commit -v` (will show you the difference in the editor).
 > 4. Rename files with `git mv` (you will need to `git commit` the rename).
 > 5. Use `git log --oneline` and `git status`.
-{: .challenge}
-
-> ## (Optional) Exercise: Comparing and showing commits
->
-> 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
-> 2. Have a look at specific commits with `git show <hash>`.
 {: .challenge}
 
 > ## (Optional) Exercise: Visual diff tools
