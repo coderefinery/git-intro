@@ -13,14 +13,10 @@ keypoints:
   - The staging area helps us to create well-defined commits.
 ---
 
-## `git add` vs `git commit`
 
-We have been using `git add` every time we want to
-commit a change, separate from `git commit`.  Why?  We will demystify this now,
-and learn how to *keep organized*.
+## Commit history is telling a story
 
-
-## Commit history is telling a story about how your code came to be
+Commit history is telling a story about how your code came to be.
 
 - Code is rarely self-documenting.
 - Code also doesn't reveal how it came to be, only what is there now.
@@ -31,37 +27,40 @@ Git forces you to create version history and commit messages,
 and if these are clear then you are a long way to organized code.
 
 
-### It is useful to have a nice and readable history
-
-Bad example:
-
-```shell
-b135ec8 now feature A should work
-72d78e7 feature A did not work and started work on feature B
-bf39f9d more work on feature B
-49dc419 wip
-45831a5 removing debug prints for feature A and add new file
-bddb280 more work on feature B and make feature A compile again
-72e0211 another fix to make it compile
-61dd3a3 forgot file and bugfix
-```
-
-There are multiple things that are not so stellar in this version control
-history.
-
-
-- Very often you will be obliged to do archaeology in your code.
-- Imagine that in few months you discover that feature B was a mistake.
-- It is very difficult to find and revert B in this example.
-
-
-A better example would be:
-
-```shell
-6f0d49f implement feature C
-fee1807 implement feature B
-6fe2f23 implement feature A
-```
+> ## Discussion
+>
+> To motivate why we have always first staged with `git add` and then committed with `git commit`
+> let us discuss three examples:
+>
+> Example 1 (newest commit is on top):
+>
+> ```shell
+> b135ec8 now feature A should work
+> 72d78e7 feature A did not work and started work on feature B
+> bf39f9d more work on feature B
+> 49dc419 wip
+> 45831a5 removing debug prints for feature A and add new file
+> bddb280 more work on feature B and make feature A compile again
+> 72e0211 another fix to make it compile
+> 61dd3a3 forgot file and bugfix
+> ```
+>
+> Example 2 (newest commit is on top):
+>
+> ```shell
+> 6f0d49f implement feature C
+> fee1807 implement feature B
+> 6fe2f23 implement feature A
+> ```
+>
+> Example 3:
+>
+> ```shell
+> ab990f4 saving three months of work
+> ```
+>
+> Discuss these examples. Can you anticipate problems?
+{: .challenge}
 
 We want to have nice commits.  But we also want to "save often"
 (checkpointing) - how can we have both?
@@ -114,15 +113,7 @@ commit or having one logical change spread over several commits.
 
 ---
 
-## What can go wrong without staging
-
-- You wait too long before you record a change.
-- You may have done too many changes and cannot go back just the last step.
-- You do several things at once (different files or same file), but commit them at the same time.
-
----
-
-## States of a file.
+## States of a file
 
 ![]({{ site.baseurl }}/img/file_states.png)
 
