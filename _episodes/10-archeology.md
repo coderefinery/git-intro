@@ -37,9 +37,7 @@ fatal: not a git repository (or any of the parent directories): .git
 ### `git grep`
 
 With `git grep` you can find all lines in a repository which contain some string or regular expression.
-This is useful to find out where in the code some variable is used or some error message printed.
-
-Example:
+This is useful to find out where in the code some variable is used or some error message printed. Example:
 
 ```
 $ git grep sometext
@@ -58,12 +56,10 @@ $ git show somehash
 
 Try it out on a file - with `git annotate` you can see line by line who and **when** the line was modified
 last. It also prints the precise hash of the last change which modified each line. Incredibly useful
-for reproducibility.
-
-Example:
+for reproducibility. Example:
 
 ```
-$ git blame somefile
+$ git annotate somefile
 ```
 
 ### `git checkout -b` to inspect code in the past
@@ -102,7 +98,7 @@ $ git branch -d museum
 > 2. Find the code line which contains `'No links matched that expression'`
 > 3. Find out when this line was last modified. Find the actual commit which modified that line.
 > 4. Inspect that commit with `git show`.
-> 5. Bring the code to the state of that commit.
+> 5. Create a branch pointing to the past when that commit was created to be able to browse and use the code as it was back then.
 {: .challenge}
 
 ---
@@ -114,6 +110,12 @@ $ git branch -d museum
 - Sometimes you realize that something broke.
 - You know that it used to work.
 - You do not know when it broke.
+
+> ## How would you solve this?
+>
+> Before we go on first discuss how you would solve this problem.
+{: .discussion}
+
 - First find out a commit in past when it worked.
 - Then bisect your way until you find the commit that broke it.
 
