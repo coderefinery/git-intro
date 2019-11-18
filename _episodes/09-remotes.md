@@ -20,16 +20,6 @@ keypoints:
     collaborative" lesson.
 ---
 
-We will learn how to work with remote repositories in detail in the
-[collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson.
-
-In this section we only want to get a taste to prepare us for other lessons
-where we will employ GitHub.
-
-Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
-to remove it afterwards.
-
-
 ## From our laptops to the web
 
 We have seen that **creating Git repositories and moving them around is
@@ -46,6 +36,15 @@ If we remove `.git`, we remove all Git history of a project.
 ---
 
 ## Remotes
+
+We will learn how to work with remote repositories in detail in the
+[collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson.
+
+In this section we only want to get a taste to prepare us for other lessons
+where we will employ GitHub.
+
+Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
+to remove it afterwards.
 
 To store your git data on another server, you use **remotes**.  A
 remote is treated the same as a branch - most of the same concept
