@@ -14,7 +14,7 @@ keypoints:
 
 ## Conflict resolution
 
-![]({{ site.baseurl }}/img/conflict-resolution/mk1.jpg)
+<img src="{{ site.baseurl }}/img/conflict-resolution/conflict.png" width="60%">
 
 In most cases a `git merge` runs smooth and automatic.
 Then a merge commit appears (unless fast-forward) without you even noticing.
@@ -316,8 +316,6 @@ Simple steps:
 ---
 
 ## Using "ours" or "theirs" strategy
-
-![]({{ site.baseurl }}/img/conflict-resolution/mk2.jpg)
 
 - Sometimes you know that you want to keep "ours" version (version on this branch)
   or "theirs" (version on the merged branch).
