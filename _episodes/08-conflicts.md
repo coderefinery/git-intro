@@ -247,12 +247,22 @@ Simple steps:
 
 ---
 
-> ## Exercise: create another conflict and resolve
+> ## Exercise: Create another conflict and resolve
 >
 > 1. After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
 > 2. Again modify some ingredient on both branches.
 > 3. Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
 > 4. What happens if you apply the same modification on both branches?
+{: .challenge}
+
+---
+
+> ## (Optional) Exercise: Conflicts and rebase
+>
+> 1. Create two branches where you anticipate a conflict.
+> 2. Try to merge them and observe that indeed they conflict.
+> 3. Abort the merge.
+> 4. What you if you rebase one branch on top of the other? Do you anticipate a conflict? Try it out.
 {: .challenge}
 
 ---
