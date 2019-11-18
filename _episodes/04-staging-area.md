@@ -73,14 +73,14 @@ commit or having one logical change spread over several commits.
 
 ---
 
-> ## An analogy to the staging area
+> ## Analogies to the staging area
 >
 > We give two examples and the instructor can pick one or both:
 > - Analogy using moving boxes
 > - Analogy using shopping receipts
 >
 >
-> ### [An analogy using moving boxes](https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh)
+> ### [Analogy using moving boxes](https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh)
 >
 > <img src="{{ site.baseurl }}/img/ikea_box.jpg" width="30%">
 >
@@ -92,7 +92,7 @@ commit or having one logical change spread over several commits.
 > - You wouldn't want to label your box with "stuff", but rather give a more descriptive label.
 >
 >
-> ### An analogy using shopping receipts
+> ### Analogy using shopping receipts
 >
 > - You need to go shopping and buy some stuff for work and for home.
 >   You need two separate receipts.
