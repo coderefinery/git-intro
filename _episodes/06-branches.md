@@ -26,10 +26,10 @@ after the other:
 ![Linear]({{ site.baseurl }}/img/gitink/git-branch-1.svg "Linear git
 repository"){:class="img-responsive"}
 
-- Commits are depicted as little boxes with abbreviated hashes.
-- The sequence of commits forms a **branch**.
-- Here the branch is called "master".
+- Commits are depicted here as little boxes with abbreviated hashes.
+- Here the branch `master` points to a commit.
 - "HEAD" is the current position (remember the recording head of tape recorders?).
+- When we talk about branches, we often mean all parent commits, not only the commit pointed to.
 
 ### Now we want to do this:
 
@@ -65,15 +65,6 @@ matrix inversion algorithm".
 
 ---
 
-## What is a commit?
-
-Before we exercise branching, a quick recap of what we got so far.
-
-We have three commits (we use the first two characters of the commits) and only
-one development line (branch) and this branch is called "master":
-
-![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
-
 > ## A useful alias
 >
 > We will now define an *alias* in Git, to be able to nicely visualize branch
@@ -96,6 +87,8 @@ $ git graph
 * 2d79e7e adding ingredients and instructions
 ```
 
+- We have three commits (we use the first two characters of the commits) and only
+  one development line (branch) and this branch is called `master`.
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
 - **Branches are pointers that point to a commit.**
