@@ -359,15 +359,14 @@ The repository looks then exactly as it was before the merge.
 
 - Human measures
   - Think and plan to which branch you will commit to.
-  - Ball-of-mud branches for "everything" maximize risk of conflicts.
-  - One branch for one task only.
+  - Branches for "everything" maximize risk of conflicts.
+  - Use one branch for one task only.
 - Collaboration measures
   - Conflicts can be avoided if you think and talk with your colleagues before committing.
   - Semantic conflicts that merge but don't work: Importance of talking!
 - Project layout measures
-  - Fortran people: modifying common blocks often causes conflicts.
   - Modifying global data often causes conflicts.
-  - Monolithic entangled spaghetti-code maximizes risk of conflicts.
+  - Monolithic entangled code maximizes risk of conflicts.
   - Modular programming minimizes risk of conflicts.
 - Technical measures
   - **Push early and often** - this is one of the happy,
