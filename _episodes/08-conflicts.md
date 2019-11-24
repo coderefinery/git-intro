@@ -14,7 +14,7 @@ keypoints:
 
 ## Conflict resolution
 
-![]({{ site.baseurl }}/img/conflict-resolution/mk1.jpg)
+<img src="{{ site.baseurl }}/img/conflict-resolution/conflict.png" width="60%">
 
 In most cases a `git merge` runs smooth and automatic.
 Then a merge commit appears (unless fast-forward) without you even noticing.
@@ -239,18 +239,31 @@ Simple steps:
   - Remove the resolution markers, if not already done.
   - The file(s) should now look exactly how you want them.
 - Check status with `git status` and `git diff`.
-- Tell Git that you have resolved the conflict with `git add ingredients.txt`, then verify with `git status`.
+- Tell Git that you have resolved the conflict with `git add ingredients.txt`
+  (if you use the Emacs editor with a certain plugin the editor may stage the
+  change for you after you have removed the conflict markers).
+- Verify the result with `git status`.
 - Finally commit the merge with just `git commit` - everything is pre-filled.
 
 ---
 
-> ## Exercise: create another conflict and resolve
+> ## Exercise: Create another conflict and resolve
 >
 > 1. After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
 > 2. Again modify some ingredient on both branches.
 > 3. Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
 > 4. What happens if you apply the same modification on both branches?
-{: .task}
+{: .challenge}
+
+---
+
+> ## (Optional) Exercise: Conflicts and rebase
+>
+> 1. Create two branches where you anticipate a conflict.
+> 2. Try to merge them and observe that indeed they conflict.
+> 3. Abort the merge.
+> 4. What you if you rebase one branch on top of the other? Do you anticipate a conflict? Try it out.
+{: .challenge}
 
 ---
 
@@ -272,7 +285,7 @@ Simple steps:
 > $ git mergetool
 > ```
 >
-> ![]({{ site.baseurl }}/img/conflict-resolution/mergetool.png)
+> <img src="{{ site.baseurl }}/img/conflict-resolution/mergetool.png" width="100%">
 >
 > - Your current branch is left, the branch you merge is right, result is in the middle.
 > - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
@@ -303,8 +316,6 @@ Simple steps:
 ---
 
 ## Using "ours" or "theirs" strategy
-
-![]({{ site.baseurl }}/img/conflict-resolution/mk2.jpg)
 
 - Sometimes you know that you want to keep "ours" version (version on this branch)
   or "theirs" (version on the merged branch).
@@ -348,15 +359,14 @@ The repository looks then exactly as it was before the merge.
 
 - Human measures
   - Think and plan to which branch you will commit to.
-  - Ball-of-mud branches for "everything" maximize risk of conflicts.
-  - One branch for one task only.
+  - Branches for "everything" maximize risk of conflicts.
+  - Use one branch for one task only.
 - Collaboration measures
   - Conflicts can be avoided if you think and talk with your colleagues before committing.
   - Semantic conflicts that merge but don't work: Importance of talking!
 - Project layout measures
-  - Fortran people: modifying common blocks often causes conflicts.
   - Modifying global data often causes conflicts.
-  - Monolithic entangled spaghetti-code maximizes risk of conflicts.
+  - Monolithic entangled code maximizes risk of conflicts.
   - Modular programming minimizes risk of conflicts.
 - Technical measures
   - **Push early and often** - this is one of the happy,

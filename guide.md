@@ -8,7 +8,7 @@ permalink: /guide/
 ## Why we teach this lesson
 
 Everyone should be using a version control system for their work, even if they're working alone.
-There are many VC systems out there, but Git is an industry standard and even if one uses another
+There are many version control systems out there, but Git is an industry standard and even if one uses another
 system chances are high one still encounters Git repositories.
 
 Specific motivations:
@@ -63,6 +63,15 @@ from https://github.com/bast/example-project.
 Do not just fork it since it can confuse users sending pull requests.
 
 
+### Take first editor steps slowly
+
+Some participants will be new to using a terminal text editor so please open,
+edit, and close the editor (Nano) slowly in first type-along sessions and
+exercises to avoid that participants will fall behind the instructor. At one
+point a student did not follow the file edits of the instructor, and to correct
+the mistake they had to do a manual merge, which they were not ready for.
+
+
 ### Different ways to present
 
 The whole lesson covers why you would use git, how to use it, and
@@ -113,6 +122,20 @@ the instructor should go through the standard exercise to describe its most impo
 It's also fine to briefly go though important points from the optional exercises, but don't spend
 too much time on it since everyone will not have attempted them.
 
+
+### Why do we have the "Clean history" section?
+
+We introduce `git reset --hard` in passing in the
+["Clean history"](https://coderefinery.github.io/git-intro/05-undoing/#clean-history) section.
+
+Motivation for this was to allow participants to experiment with the staging
+and "mess things up" but later be able to continue with branching and see the
+same things when inspecting git graph. The reset command is there introduced in
+passing. This can create confusion. But it is also important that participants
+see the same thing as on the big screen (they often notice the tiniest
+differences and ask about it).
+
+
 ### "Test your understanding" exercises
 
 Some episodes have a "test your understanding" exercise at the end which is intended as *formative assessment*,
@@ -121,10 +144,6 @@ The instructor should end each episode by posing the "test your understanding" m
 giving learners a minute to think about it, and then asking for the right answer or asking learners to raise their
 hands to signal which answer they think is correct.
 
-### Coffee breaks
-
-The episodes for the coffee breaks contain thought-provoking questions. The instructor should briefly discuss
-the questions and encourage learners to discuss them during the coffee break.
 
 ### Conflict resolution
 
@@ -141,10 +160,10 @@ It can be useful to emphasize that it
 can be really valuable to be able to search through the history of a project
 efficiently to find when bugs were introduced or when something changed and
 why.
-Also show that `git blame` and `git show` are available
+Also show that `git annotate` and `git show` are available
 on GitHub and GitLab.
 
-When discussing `git blame` and `git bisect` the "when" is more important than "who". It is not
+When discussing `git annotate` and `git bisect` the "when" is more important than "who". It is not
 to blame anybody but rather to find out whether published results are affected.
 
 Discuss how one would find out this information without version control.
@@ -184,7 +203,7 @@ manual](https://github.com/coderefinery/manuals/blob/master/presenting.md#screen
 
 ### Create a cheatsheet on the board
 
-Create a "cheatsheet" on the board as you go . After each command is
+Create a "cheatsheet" on the board as you go. After each command is
 introduced, write it on the board. After each module, make sure you
 haven't forgotten anything. Re-create and expand in future git
 lessons.  One strategy is:
@@ -203,6 +222,10 @@ etc is good.
 
 Example:
 ![](../img/cheat-sheet.jpg)
+
+We also recommend to draw simple diagrams up on the board (eg: working
+directory - staging area - respository with commands to move between) and keep
+them there for students to refer to.
 
 
 ### Draw a graph on the board

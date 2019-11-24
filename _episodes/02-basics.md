@@ -50,9 +50,13 @@ $ git commit
 ![Git staging]({{ site.baseurl }}/img/git_stage_commit.svg
 "git staging and committing"){:class="img-responsive" style="max-width:70%"}
 
-- For the more advanced users: What do you think will be the outcome if you stage a file and then edit it and stage it again, do this
-several times and at the end perform a commit? (think of focusing several scenes and pressing the shoot
-button only at the end)
+> ## Question for the more advanced participants
+>
+> What do you think will be the outcome if you
+> stage a file and then edit it and stage it again, do this several times and
+> at the end perform a commit? (think of focusing several scenes and pressing the
+> shoot button only at the end)
+{: .challenge}
 
 ---
 
@@ -272,34 +276,48 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > $ git show   # show various types of objects
 > $ git diff   # show changes
 > ```
-{: .task}
-
-> ## (Optional) Exercise: more changes and renaming
->
-> 1. Apply and commit more changes.
-> 2. Add new files.
-> 3. When you commit, try `git commit -v` (will show you the difference in the editor).
-> 4. Rename files with `git mv` (you will need to `git commit` the rename).
-> 5. Use `git log --oneline` and `git status`.
-{: .task}
+{: .challenge}
 
 > ## (Optional) Exercise: Comparing and showing commits
 >
 > 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
 > 2. Have a look at specific commits with `git show <hash>`.
-{: .task}
+{: .challenge}
+
+> ## (Optional) Exercise: Renaming and removing files
+>
+> 1. Create a new file, `git add` and `git commit` the file.
+> 2. Rename the file with `git mv` (you will need to `git commit` the rename).
+> 3. Use `git log --oneline` and `git status`.
+> 4. Remove the file with `git rm` (again you need to `git commit` the change).
+> 5. Inspect the history with `git log --stat`. Can you recover the removed file from the Git history?
+>    Hint: You can try with a web search for "git checkout removed file from past".
+{: .challenge}
 
 > ## (Optional) Exercise: Visual diff tools
 >
 > - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 >
+> On Windows or Linux:
 > ```
-> $ git difftool
+> $ git difftool --tool=meld
+> ```
+>
+> On macOS:
+> ```
+> $ git difftool --tool=opendiff
 > ```
 >
 > ![Git events]({{ site.baseurl }}/img/meld.png
 > "git difftool meld"){:class="img-responsive" style="max-width:70%"}
-{: .task}
+>
+> You probably want to use the same visual diff tool every time and
+> you can configure Git for that:
+> ```
+> $ git config --global diff.tool meld
+> ```
+>
+{: .challenge}
 
 ---
 
@@ -327,7 +345,12 @@ then paragraph(s) with more details in free form, if necessary**.
 - Many projects start out as projects "just for me" and end up to be successful projects
   that are developed by 50 people over decades.
 - [Commits with multiple authors](https://help.github.com/articles/creating-a-commit-with-multiple-authors/)
+
+Good references:
+
 - ["My favourite Git commit"](https://fatbusinessman.com/2019/my-favourite-git-commit)
+- ["On commit messages"](https://who-t.blogspot.com/2009/12/on-commit-messages.html)
+- ["How to Write a Git Commit Message"](https://chris.beams.io/posts/git-commit/)
 
 ---
 
@@ -379,18 +402,16 @@ relatively.
 
 `.gitignore` should be part of the repository (why?).
 
----
 
-### Clean working area
+#### Clean working area
 
 - Use `git status` a lot.
-- Use `.gitignore`.
 - Untracked files belong to .gitignore.
 - **All files should be either tracked or ignored**.
 
 ---
 
-### GUI tools
+## Graphical user interfaces
 
 We have seen how to make commits directly via the GitHub website, and also via command line.
 But it is also possible to work from within a Git graphical user interface (GUI):

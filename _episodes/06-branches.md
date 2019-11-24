@@ -26,10 +26,18 @@ after the other:
 ![Linear]({{ site.baseurl }}/img/gitink/git-branch-1.svg "Linear git
 repository"){:class="img-responsive"}
 
-- Commits are depicted as little boxes with abbreviated hashes.
-- The sequence of commits forms a **branch**.
-- Here the branch is called "master".
+- Commits are depicted here as little boxes with abbreviated hashes.
+- Here the branch `master` points to a commit.
 - "HEAD" is the current position (remember the recording head of tape recorders?).
+- When we talk about branches, we often mean all parent commits, not only the commit pointed to.
+
+### Now we want to do this:
+
+<div style="border:2px solid #000000;">
+  <img src="{{ site.baseurl }}/img/octopus.jpeg" width="60%">
+  <br>
+  Source: <a href="https://twitter.com/jay_gee/status/703360688618536960">https://twitter.com/jay_gee/status/703360688618536960</a>
+</div>
 
 Software development is often not linear:
 
@@ -57,15 +65,6 @@ matrix inversion algorithm".
 
 ---
 
-## What is a commit?
-
-Before we exercise branching, a quick recap of what we got so far.
-
-We have three commits (we use the first two characters of the commits) and only
-one development line (branch) and this branch is called "master":
-
-![]({{ site.baseurl }}/img/gitink/git-branch-1.svg)
-
 > ## A useful alias
 >
 > We will now define an *alias* in Git, to be able to nicely visualize branch
@@ -88,6 +87,8 @@ $ git graph
 * 2d79e7e adding ingredients and instructions
 ```
 
+- We have three commits (we use the first two characters of the commits) and only
+  one development line (branch) and this branch is called `master`.
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
 - **Branches are pointers that point to a commit.**
@@ -163,31 +164,38 @@ $ git graph
 
 ---
 
-## Interlude: Different meanings of "checkout"
-
-Depending on the context `git checkout` can do very different actions:
-
-1) Switch to a branch:
-
-```
-$ git checkout <branchname>
-```
-
-2) Bring the working tree to a specific state (commit):
-
-```
-$ git checkout <hash>
-```
-
-3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
-
-```
-$ git checkout <path/file>
-```
-
-This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
-Picture `git checkout` as an operation that brings the working tree to a specific state.
-The state can be a commit or a branch (pointing to a commit).
+> ## Interlude: Different meanings of "checkout"
+>
+> Depending on the context `git checkout` can do very different actions:
+>
+> 1) Switch to a branch:
+>
+> ```
+> $ git checkout <branchname>
+> ```
+>
+> 2) Bring the working tree to a specific state (commit):
+>
+> ```
+> $ git checkout <hash>
+> ```
+>
+> 3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
+>
+> ```
+> $ git checkout <path/file>
+> ```
+>
+> This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
+> Picture `git checkout` as an operation that brings the working tree to a specific state.
+> The state can be a commit or a branch (pointing to a commit).
+>
+> In latest Git this is much nicer:
+> ```shell
+> $ git switch <branchname>  # switch to a different branch
+> $ git restore <path/file>  # discard changes in working directory
+> ```
+{: .callout}
 
 ---
 
@@ -252,7 +260,7 @@ The state can be a commit or a branch (pointing to a commit).
 > ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
 >
 > And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
-{: .task}
+{: .challenge}
 
 ---
 
@@ -437,7 +445,7 @@ may have a hard time finding them as there is no branch pointing to them.
 > 4. Merge the new branch to `master`.
 > 5. Examine the result with `git graph`.
 > 6. Have you expected the result? Discuss what you see.
-{: .task}
+{: .challenge}
 
 ---
 
