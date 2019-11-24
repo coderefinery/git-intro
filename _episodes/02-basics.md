@@ -291,6 +291,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
 > 3. Use `git log --oneline` and `git status`.
 > 4. Remove the file with `git rm` (again you need to `git commit` the change).
 > 5. Inspect the history with `git log --stat`. Can you recover the removed file from the Git history?
+>    Hint: You can try with a web search for "git checkout removed file from past".
 {: .challenge}
 
 > ## (Optional) Exercise: Visual diff tools
