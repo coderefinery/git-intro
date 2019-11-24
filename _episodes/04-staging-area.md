@@ -56,7 +56,7 @@ and if these are clear then you are a long way to organized code.
 > Example 3:
 >
 > ```shell
-> ab990f4 saving three months of work
+> ab990f4 saving three months of miscellaneous uncommitted work
 > ```
 >
 > Discuss these examples. Can you anticipate problems?
