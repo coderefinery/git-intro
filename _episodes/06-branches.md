@@ -270,12 +270,15 @@ $ git graph
 
 - **Skip this unless you got stuck**.
 - Step out of the current directory: `$ cd ..`
-- `$ git clone https://github.com/coderefinery/recipe.git recipe-branching`
-- `$ cd recipe-branching`
-- `$ git checkout experiment`
-- `$ git checkout less-salt`
-- `$ git checkout master`
-- `$ git graph`
+- Then:
+  ```
+  $ git clone https://github.com/coderefinery/recipe.git recipe-branching
+  $ cd recipe-branching
+  $ git checkout experiment
+  $ git checkout less-salt
+  $ git checkout master
+  $ git graph
+  ```
 - Or call a helper to un-stuck it for you.
 
 
