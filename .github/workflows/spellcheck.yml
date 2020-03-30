@@ -1,0 +1,23 @@
+name: Spelling Erros Check
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      max-parallel: 2
+      matrix:
+        os: [ubuntu-latest]
+      
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: curl -L https://git.io/misspell | bash
+
+    # This will return an exit code of 2, thus triggering a failed build
+    - name: Test spelling errors
+      shell: bash
+      run: |
+        bin/misspell -error *
