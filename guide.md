@@ -224,7 +224,7 @@ Example:
 ![](../img/cheat-sheet.jpg)
 
 We also recommend to draw simple diagrams up on the board (eg: working
-directory - staging area - respository with commands to move between) and keep
+directory - staging area - repository with commands to move between) and keep
 them there for students to refer to.
 
 
