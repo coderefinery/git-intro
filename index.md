@@ -41,7 +41,7 @@ If you are teaching this lesson, see the [instructor's guide](guide)
 > ## Prerequisites
 >
 > - A reasonably recent version of Git is installed. For installation
->   instructions and binaries see [the Git home page](https://git-scm.com/).
+>   instructions see [the CodeRefinery installation instructions](https://coderefinery.github.io/installation/).
 > - Being comfortable with the command line. No expertise is required, but the
 >   lesson will be mostly taken from the command line.
 > - Students should be familiar with using a text editor on their system. Emacs
