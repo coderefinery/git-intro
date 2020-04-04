@@ -270,3 +270,10 @@ there are questions.
 
 Typically only very few learners have background in Subversion or Mercurial and the risk
 is to "waste" 10 minutes on a discussion that nobody can relate to and benefit from.
+
+
+### Todo
+
+`git restore` and `git switch` were added in git 2.23 (released
+2019-08-16).  Sometime much later (2021, 2022, or 2023) perhaps, the
+older alternatives can be demoted or removed.
