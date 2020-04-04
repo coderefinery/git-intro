@@ -62,6 +62,10 @@ for reproducibility. Example:
 $ git annotate somefile
 ```
 
+If you run in a terminal, by default it uses the program `less` to
+scroll the output.  Use `/text` `<ENTER>` and then `n` and `N` to find
+text in `less`.
+
 ### `git checkout -b` to inspect code in the past
 
 We can create branches pointing to a commit in the past.
