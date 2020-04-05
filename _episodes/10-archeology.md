@@ -148,7 +148,7 @@ $ git branch -d older-code
 >    [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
 >    Then step into the new directory:
 >    ```
->    $ git clone https://github.com/tidyverse/rvest.git
+>    $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
 >    $ cd rvest
 >    ```
 > 2. Find the code line which contains `'No links matched that expression'`
