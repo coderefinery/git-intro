@@ -147,7 +147,8 @@ $ git branch -d older-code
 > do this exercise in groups of two and discuss with your neighbors.
 >
 > **Video workshops**: We will group you in breakout rooms of ~4 persons where you
-> can work and discuss together. A helper or instructor will pop in to answer questions.
+> can work and discuss together. A helper or instructor will pop in to help out.
+> Please write down questions in the collaborative notes.
 > After 15 minutes we will bring you back into the main room and discuss.
 >
 > Exercise steps:
