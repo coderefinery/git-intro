@@ -155,6 +155,7 @@ $ git branch -d older-code
 > 3. Find out when this line was last modified. Find the actual commit which modified that line.
 > 4. Inspect that commit with `git show`.
 > 5. Create a branch pointing to the past when that commit was created to be able to browse and use the code as it was back then.
+> 6. How would can you bring the code to the commit precisely before that line was last modified?
 {: .challenge}
 
 ---
