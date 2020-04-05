@@ -5,6 +5,7 @@ teaching: 15
 exercises: 20
 questions:
   - How can we find out when exactly a line of code was changed?
+  - How can we navigate past versions of the code?
   - How can we find out which commit broke or changed a functionality?
 objectives:
   - Quickly find a line of code, find out why it was introduced and when.
