@@ -7,7 +7,7 @@ questions:
   - How can we find out when exactly a line of code was changed?
   - How can we find out which commit broke or changed a functionality?
 objectives:
-  - Quickly find a line of code, find out who introduced it, when, and why.
+  - Quickly find a line of code, find out why it was introduced and when.
   - Quickly find the commit that changed a behavior.
 keypoints:
   - "`git log/grep/annotate/show/bisect` is a powerful combination when doing archaeology in a project."
