@@ -2,7 +2,7 @@
 layout: episode
 title: "Inspecting history"
 teaching: 15
-exercises: 20
+exercises: 30
 questions:
   - How can we find out when exactly a line of code was changed?
   - How can we navigate past versions of the code?
