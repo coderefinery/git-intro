@@ -236,21 +236,31 @@ $ git bisect bad
 >
 > #### Your task
 >
-> Clone or fork this repository and use `git bisect` to find the commit which
-> broke the computation
-> ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
+> - Clone or fork this repository and use `git bisect` to find the commit which
+>   broke the computation
+>   ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
+> - Once you have found the offending commit, also practice navigating to the last good commit.
+> - Bonus exercise:
+>   Write a script that checks for a correct result and use `git bisect run` to
+>   find the offending commit automatically
+>   ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
 >
 >
-> #### How to find the first commit
+> #### Hints
+>
+> Finding the first commit:
 >
 > ```
 > $ git log --oneline | tail -n 1
 > ```
 >
+> How to navigate to the parent of a commit with hash `somehash`:
 >
-> #### Bonus exercise
+> ```shell
+>   # create branch pointing to the parent of somehash
+> $ git checkout -b branchname somehash~1
 >
-> Write a script that checks for a correct result and use `git bisect run` to
-> find the offending commit automatically
-> ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
+>   # instead of a tilde you can also use this
+> $ git checkout -b branchname somehash^
+> ```
 {: .challenge}
