@@ -32,19 +32,34 @@ If you see this message, this is good in this case:
 fatal: not a git repository (or any of the parent directories): .git
 ```
 
+---
 
-## We will use the following four commands
+## Our toolbox for history inspection
 
-### `git grep`
+
+First the instructor demonstrates four commands on a real life example
+repository [networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
+Programming Historian](https://programminghistorian.org/)).
+Later we will practice these in groups in archaeology exercise.
+
+
+### `git grep` to search through the repository
 
 With `git grep` you can find all lines in a repository which contain some string or regular expression.
-This is useful to find out where in the code some variable is used or some error message printed. Example:
+This is useful to find out where in the code some variable is used or some error message printed:
 
 ```
 $ git grep sometext
 ```
 
-### `git show`
+In the [networkx](https://github.com/networkx/networkx) repository you can try:
+
+```
+$ git grep -i fixme
+```
+
+
+### `git show` to inspect commits
 
 We have seen this one before already. Using `git show` we can inspect an individual commit if
 we know its hash:
@@ -53,19 +68,33 @@ we know its hash:
 $ git show somehash
 ```
 
-### `git annotate`
+For instance:
+
+```
+$ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
+```
+
+
+### `git annotate` to annotate code with commit metadata
 
 Try it out on a file - with `git annotate` you can see line by line who and **when** the line was modified
 last. It also prints the precise hash of the last change which modified each line. Incredibly useful
-for reproducibility. Example:
+for reproducibility.
 
 ```
 $ git annotate somefile
 ```
 
+Example:
+
+```
+$ git annotate networkx/convert_matrix.py
+```
+
 If you run in a terminal, by default it uses the program `less` to
 scroll the output.  Use `/text` `<ENTER>` and then `n` and `N` to find
 text in `less`.
+
 
 ### `git checkout -b` to inspect code in the past
 
@@ -79,12 +108,17 @@ $ git checkout -b branchname somehash
 Example:
 
 ```shell
-$ git checkout -b museum abc123  # create branch called "museum" from hash abc123
-  # do some archaeology ...
-  # "What was I thinking back then!?"
-  # "Aha! Hmm."
-$ git checkout master            # after you are done switch back to "master"
-$ git branch -d museum
+  # create branch called "older-code" from hash 347e6292419b
+$ git checkout -b older-code 347e6292419bd0e4bff077fe971f983932d7a0e9
+
+  # now you can navigate and inspect the code as it was back then
+  # ...
+
+  # after we are done we can switch back to "master"
+$ git checkout master
+
+  # if we like we can delete the "older-code" branch
+$ git branch -d older-code
 ```
 
 
