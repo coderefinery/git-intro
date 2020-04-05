@@ -59,6 +59,22 @@ $ git grep -i fixme
 ```
 
 
+### `git log -S` to search through the history of changes
+
+While `git grep` searches the **current state** of the repository,
+it is possible to search also through all changes for "sometext":
+
+```
+$ git log -S sometext
+```
+
+In the [networkx](https://github.com/networkx/networkx) repository you can try:
+
+```
+$ git log -S test_weakly_connected_component
+```
+
+
 ### `git show` to inspect commits
 
 We have seen this one before already. Using `git show` we can inspect an individual commit if
