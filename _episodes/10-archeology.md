@@ -178,8 +178,19 @@ $ git branch -d older-code
 
 > ## How would you solve this?
 >
-> Before we go on first discuss how you would solve this problem.
+> Before we go on first discuss how you would solve this problem: You know that it worked
+> 500 commits ago but it does not work now.
+>
+> - How would you find the commit which changed it?
+> - Why could it be useful to know the commit that changed it?
+>
+> **Video workshops**: Write down ideas on how you would solve it in the collaborative
+> note and we will discuss various approaches.
 {: .discussion}
+
+---
+
+We will probably arrive at a solution which is similar to `git bisect`:
 
 - First find out a commit in past when it worked.
 - Then bisect your way until you find the commit that broke it.
@@ -244,6 +255,11 @@ $ git bisect bad
 >   Write a script that checks for a correct result and use `git bisect run` to
 >   find the offending commit automatically
 >   ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
+>
+> **Video workshops**: We will group you in breakout rooms of ~4 persons where you
+> can work and discuss together. A helper or instructor will pop in to help out.
+> Please write down questions in the collaborative notes.
+> After 15-20 minutes we will bring you back into the main room and discuss.
 >
 >
 > #### Hints
