@@ -107,9 +107,10 @@ Example:
 $ git annotate networkx/convert_matrix.py
 ```
 
-If you run in a terminal, by default it uses the program `less` to
-scroll the output.  Use `/text` `<ENTER>` and then `n` and `N` to find
-text in `less`.
+If you annotate in a terminal and the file is longer than the screen, Git by default uses the program `less` to
+scroll the output.
+Use `/sometext` `<ENTER>` to find "sometext" and you can cycle through the results with `n` (next) and `N` (last).
+You can also use page up/down to scroll. You can quit with `q`.
 
 
 ### `git checkout -b` to inspect code in the past
