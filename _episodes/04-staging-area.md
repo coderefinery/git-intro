@@ -195,7 +195,15 @@ $ git checkout <path>  # check out the latest staged version ( or committed
                        # in latest Git: git restore <path>
 ```
 
-**Recommendation:**
+Usage 1: you do various things at once
+- You do various things at once, you want to commit them separately.
+- `git add` all the parts of each change.
+- `git diff` and `git diff --staged` to ensure you have all the parts.
+- `git commit`.
+- Repeat.
+
+Usage 2: you want to checkpoint
+- You want to save in-progress work before you make a final commit.
 - `git add` every change that improves the code.
 - `git checkout` every change that made things worse.
 - `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
