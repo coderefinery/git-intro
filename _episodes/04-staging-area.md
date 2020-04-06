@@ -16,21 +16,21 @@ keypoints:
 
 ## Commit history is telling a story
 
-Commit history is telling a story about how your code came to be.
+Your *current code* is very important, but the *history* can be just
+as important - it tells a story about how your code came to be.
 
-- Code is rarely self-documenting.
-- Code also doesn't reveal how it came to be, only what is there now.
-- It would be great if all changes were documented, but that is too much to ask.
-- What is a good compromise?
+- Each individual line of code rarely stands alone.
+- You often want to see all the related changes together.
+- But you also hardly ever do one thing at once.
 
-Git forces you to create version history and commit messages,
-and if these are clear then you are a long way to organized code.
+Along with your code, git creates a *history* for you, and if your
+history is clear then you are a long way to organized code.
 
 
 > ## Discussion
 >
-> To motivate why we have always first staged with `git add` and then committed with `git commit`
-> let us discuss three examples:
+> Here are four types of history.  What are the advantages and
+> disadvantages of each, when you look at it later?
 >
 > Example 1 (newest commit is on top):
 >
@@ -49,7 +49,7 @@ and if these are clear then you are a long way to organized code.
 > Example 3 (newest commit is on top):
 >
 > ```shell
-> ab990f4 saving three months of miscellaneous uncommitted work
+> ab990f4 saving three months of miscellaneous work I forgot to commit
 > ```
 >
 > Example 4 (newest commit is on top):
@@ -90,19 +90,19 @@ commit or having one logical change spread over several commits.
 
 ## Interactive committing
 
-- The simplest ways to solve this is to use **interactive** committing:
+- The simplest ways to solve this is to do **interactive commits**:
   the `git commit -p` option.
 - It will present you with every change you have made individually,
   and you can decide which ones to commit right now.
-- Reference
-  - `git commit -p` to start
-  - `y` to accept a change
-  - `n` to skip it
-  - `s` (split) to make the current option more fine-grained (if it
-    groups too much together).
-  - `q` stops everything.
+- Reference and key commands
+  - `git commit -p` to start the interactive commit
+  - `y` to use the change
+  - `n` to skip the change
+  - `s` (split) if there are several changes grouped together, but
+    separated by a blank line, split them into separate choices.
+  - `q` aborts everything.
   - `?` for more options.
-- The `-p` option is also available on `checkout`, `reset`, and `add`.
+- The `-p` option is also available on `commit`, `checkout`, `reset`, and `add`.
 
 > ## Interactive committing
 >
@@ -127,8 +127,8 @@ commit or having one logical change spread over several commits.
 
 - The interactive commits above are great, but what if there are so
   many changes that you can't sort them out in one shot?
-- What if you make progress and want to record it, but it's not ready
-  to be committed?
+- What if you make progress and want to record it somehow, but it's
+  not ready to be committed?
 - The **staging area** is a place to record things before committing.
 
 > ## Analogies to the staging area
@@ -172,7 +172,7 @@ commit or having one logical change spread over several commits.
 
 ---
 
-## States of a file
+## Staging area commands
 
 With the **staging area**, there is one middle point before commits.
 
