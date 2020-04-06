@@ -4,11 +4,11 @@ title: Using the Git staging area
 teaching: 10
 exercises: 10
 questions:
-  - Why do we recommend to first add, then commit a change?
   - What should be included in a single commit?
+  - What is the git staging area?  What commands use it?
 objectives:
-  - Demystify the Git staging area.
   - Learn how to tell a story with your commit history.
+  - Demystify the Git staging area.
 keypoints:
   - The staging area helps us to create well-defined commits.
 ---
@@ -35,14 +35,7 @@ and if these are clear then you are a long way to organized code.
 > Example 1 (newest commit is on top):
 >
 > ```shell
-> b135ec8 now feature A should work
-> 72d78e7 feature A did not work and started work on feature B
-> bf39f9d more work on feature B
-> 49dc419 wip
-> 45831a5 removing debug prints for feature A and add new file
-> bddb280 more work on feature B and make feature A compile again
-> 72e0211 another fix to make it compile
-> 61dd3a3 forgot file and bugfix
+> b135ec8 add features A, B, and C
 > ```
 >
 > Example 2 (newest commit is on top):
@@ -53,10 +46,23 @@ and if these are clear then you are a long way to organized code.
 > 6fe2f23 implement feature A
 > ```
 >
-> Example 3:
+> Example 3 (newest commit is on top):
 >
 > ```shell
 > ab990f4 saving three months of miscellaneous uncommitted work
+> ```
+>
+> Example 4 (newest commit is on top):
+>
+> ```shell
+> 49dc419 wip (work in progress)
+> 61dd3a3 forgot file and bugfix
+> 72e0211 another fix to make it compile
+> 72d78e7 feature A did not work and started work on feature B
+> bddb280 more work on feature B and make feature A compile again
+> 45831a5 removing debug prints for feature A and add new file
+> bf39f9d more work on feature B
+> b135ec8 now feature A should work
 > ```
 >
 > Discuss these examples. Can you anticipate problems?
@@ -65,12 +71,56 @@ and if these are clear then you are a long way to organized code.
 We want to have nice commits.  But we also want to "save often"
 (checkpointing) - how can we have both?
 
-- We will now learn to create nice commits using the *staging area*.
+- We will now learn to create nice commits using `git commit -p` and/or the staging area.
 - Staging addresses the issue of having unrelated changes in the same
 commit or having one logical change spread over several commits.
 - The staging area isn't the only way to organize your history nicely, some alternatives are discussed at the end of the lesson.
 
+
 ---
+
+## Interactive committing
+
+- The simplest ways to solve this is to use **interactive** committing:
+  the `git commit -p` option.
+- It will present you with every change you have made individually,
+  and you can decide which ones to commit right now.
+- Reference
+  - `git commit -p` to start
+  - `y` to accept a change
+  - `n` to skip it
+  - `s` (split) to make the current option more fine-grained (if it
+    groups too much together).
+  - `q` stops everything.
+  - `?` for more options.
+- The `-p` option is also available on `checkout`, `reset`, and `add`.
+
+> ## Interactive committing
+>
+> One option to help us create nice logical commits is to stage *interactively*
+> with `git commit -p`:
+>
+> 1. Make two changes in in `instructions.txt`, at the top and bottom
+>    of the file.
+>    **Make sure that they are separated by at least several unmodified lines.**
+> 2. Run `git commit -p`.  Using the keystrokes above, commit one of
+>    the changes.
+> 3. Do it again for the other change.
+> 4. When you're done, inspect the situation with `git log`, `git status`, `git diff` and `git diff --staged`.
+> 5. When would this be useful?
+>
+{: .challenge}
+
+
+---
+
+## The staging area
+
+- The interactive commits above are great, but what if there are so
+  many changes that you can't sort them out in one shot?
+- What if you make progress and want to record it, but it's not ready
+  to be committed?
+- The **staging area** is a place to record things before committing.
 
 > ## Analogies to the staging area
 >
@@ -115,10 +165,9 @@ commit or having one logical change spread over several commits.
 
 ## States of a file
 
-![]({{ site.baseurl }}/img/file_states.png)
+With the **staging area**, there is one middle point before commits.
 
-*Note: the "staging area" has also alternatively been referred to as
-the index and the cache*.
+![]({{ site.baseurl }}/img/staging-basics.svg)
 
 Files can be untracked, modified, staged, or committed, and
 we have a variety of commands to go between states:
@@ -143,6 +192,8 @@ $ git checkout <path>  # check out the latest staged version ( or committed
 - `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
 - Discuss/think about what is too large or too small.
 
+*Note: the "staging area" has also alternatively been referred to as
+the index and the cache*.
 
 ### Example workflow
 
@@ -164,23 +215,6 @@ $ git commit                      # commit everything that is staged
 > 2. Use `git add` to stage one of the changes.
 > 3. Use `git status` to see what's going on, and use `git diff` and `git diff --staged` to see the changes.
 > 4. Feel some regret and unstage the staged change.
-{: .challenge}
-
----
-
-> ## (Optional) Interactive staging
->
-> One option to help us create nice logical commits is to stage *interactively*
-> with `git add -p` (you can also directly commit interactively with `git commit -p`):
->
-> 1. Modify multiple lines in `instructions.txt`.
->    **Make sure that they are separated by at least one unmodified line.**
-> 2. Run `git add -p instructions.txt`.
-> 3. Type `?` and Enter to get an explanation of what the different options mean.
-> 4. See if you can use the `s` (split), `y` and `n` options to include only a subset of your modifications in the staging.
-> 5. When you're done, inspect the situation with `git status`, `git diff` and `git diff --staged`.
-> 6. If you want, you can try repeating the procedure above but use `git commit -p` instead of `git add -p` to commit directly.
->
 {: .challenge}
 
 ---
