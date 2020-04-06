@@ -65,6 +65,15 @@ and if these are clear then you are a long way to organized code.
 > b135ec8 now feature A should work
 > ```
 >
+> Example 5 (newest commit is on top):
+>
+> ```shell
+> 1949dc4 Work of 2020-04-07
+> a361dd3 Work of 2020-04-06
+> 1172e02 Work of 2020-04-03
+> e772d78 Work of 2020-04-02
+> ```
+>
 > Discuss these examples. Can you anticipate problems?
 {: .challenge}
 
