@@ -31,6 +31,11 @@ Your instructor will choose two to do two in this lesson.
 >
 {: .challenge}
 
+As long as you commit something once (or at least `git add` it), you
+can almost always go back to it, no matter what you do, within ~2
+weeks.  But you may need to ask stackoverflow or your local
+guru... *until that guru becomes you*.
+
 
 
 ---
@@ -111,8 +116,7 @@ code, you may get a conflict (which we'll learn about later).
 
 
 
-
-
+---
 
 ## (optional) Modifying history
 
