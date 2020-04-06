@@ -10,27 +10,61 @@ objectives:
   - See when undone changes are permanently deleted and when they can be retrieved
 ---
 
-## Undoing things
+## Undoing and recovering
 
-- Commits that are part of any branch will not get lost.
-- Files which were added and later removed can always be recovered.
-- In Git we can modify, reorder, squash, and remove commits and also these actions can be undone.
-- Some commands can permanently delete **uncommitted** changes. In doubt always commit first.
-- Some commands **modify history**. This is OK for local commits but may not be OK for commits shared
-  with others.
+One of the main points of version control is that you can *go back in
+time to recover*.  Unlike this xkcd comic implies: https://xkcd.com/1597/
+
+This lesson covers four types of undoing:
+
+- Go back to your last commit, remove all latest changes.
+- Selectively revert one commit, without modifying history (`git revert`).
+- Change a commit *right* after it's been done (`git commit --amend`).
+- Rewind in time to a previous commit (`git reset --hard`).
+
+Your instructor will choose two to do two in this lesson.
+
+> ## Discussion: undoing
+>
+> When have you made a change, and had to go through much more trouble
+> to figure out what you did, or fix it?
+>
+{: .challenge}
+
+
 
 ---
+
+## Undoing your recent, uncommitted changes
+
+You do some work, and want to **undo everything** and go back to your
+last commit.  You can always do that with:
+
+* `git checkout -f master`: go back to master, no
+  matter what.
+
+Or, you can undo things selectively, as you have already learned:
+
+* `git checkout -p` or `git checkout $file` (working dir)
+* `git reset -p` or `git reset $file` (staging area)
 
 > ## Clear your workspace
 >
-> - If you have unstaged changes from earlier sections, remove them with `git checkout <filename>`.
-> - We will see in more detail below how `git checkout` works.
+> - If you have unstaged changes from earlier sections, remove them
+>   and get a clean working directory.
+> - `git status` should report nothing.
 >
 {: .callout}
 
+*Note: we've seen some time when `git checkout -f master` doesn't
+work.  Can you figure out when?  If it doesn't work, try `git reset
+--hard HEAD`.*
+
+
+
 ---
 
-### Reverting commits
+## Reverting commits
 
 - Imagine we made a few commits.
 - We realize that the latest commit `f960dd3` was a mistake and we wish to undo it:
@@ -75,9 +109,28 @@ code, you may get a conflict (which we'll learn about later).
 > - Now try `git show` on both the reverted and the newly created commit.
 {: .challenge}
 
+
+
+
+
+
+## (optional) Modifying history
+
+Modifying history?  Isn't a "commit" permanent?
+
+- No, you can modify old history.
+- But if you have shared that history already, *modifying it will make
+  a huge mess*.
+
+The following two commands are dangerous if you use them without
+being careful.  Use them only before you have pushed commits, until
+you have more practice!
+
+
+
 ---
 
-### Adding to the previous commit
+## (optional) Adding to the previous commit
 
 Sometimes we commit but realize we forgot something.
 We can amend to the last commit:
@@ -94,38 +147,55 @@ This means that we never use this command on commits that we have shared with ot
 > ## Exercise: Modify a previous commit
 >
 > 1. Make an incomplete change to the recipe or a typo in your change, `git add` and `git commit` the incomplete/unsatisfactory change.
-> 2. Inspect the unsatisfactory but committed change with `git show`.
-> 3. Now complete/fix the change but instead of creating a new commit, add to the previous commit with `git commit --amend`.
+> 2. Inspect the unsatisfactory but committed change with `git show`.  Remember the commit hash.
+> 3. Now complete/fix the change but instead of creating a new commit, add to the previous commit with `git commit --amend`.  What changed?
 {: .challenge}
+
+
 
 ---
 
-### Clean history
+## (optional) Rewind history
 
-After we have experimented with reverts and amending, let us get our
-repositories to a similar state.
+You can **reset branch history** to move your branch head back to some
+point in the past.
 
-At the same time we will learn how to remove commits (use this command with caution in your work).
+* `git reset --hard $commit` will force a branch head to any other point.  All
+  other changes are lost.
+* Be careful if you do this - it can mess stuff up.  Use `git graph` a
+  lot before and after.
 
-```
-$ git log --oneline
-
-d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
-f960dd3 not sure this is a good idea
-dd4472c we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
-
-$ git reset --hard dd4472c
-
-HEAD is now at dd4472c we should not forget to enjoy
-
-$ git log --oneline
-
-dd4472c (HEAD -> master) we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
-```
+> ## Exercise: Destroy our experimentation in this episode
+>
+> After we have experimented with reverts and amending, let us destroy
+> all of that and get our repositories to a similar state.
+>
+> - First, we will look at our history (`git log`/`git graph`) and
+>   find the last commit `$commit` before our tests.
+> - Then, we will `git reset --hard $commit` to that.
+> - Then, `git graph` again to see what happened.
+>
+> ```
+> $ git log --oneline
+>
+> d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
+> f960dd3 not sure this is a good idea
+> dd4472c we should not forget to enjoy
+> 2bb9bb4 add half an onion
+> 2d79e7e adding ingredients and instructions
+>
+> $ git reset --hard dd4472c
+>
+> HEAD is now at dd4472c we should not forget to enjoy
+>
+> $ git log --oneline
+>
+> dd4472c (HEAD -> master) we should not forget to enjoy
+> 2bb9bb4 add half an onion
+> 2d79e7e adding ingredients and instructions
+> ```
+>
+{: .challenge}
 
 ---
 
