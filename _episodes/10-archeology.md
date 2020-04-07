@@ -142,7 +142,7 @@ $ git branch -d older-code
 ```
 
 
-### 6. `git bisect`
+### 6. `git bisect` to locate the commit that changed a behavior
 
 We have a separate section about this command below.
 
