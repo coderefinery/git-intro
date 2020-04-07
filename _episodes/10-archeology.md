@@ -38,7 +38,7 @@ keypoints:
 ## Our toolbox for history inspection
 
 
-First the instructor demonstrates four commands on a real life example
+First the instructor demonstrates five commands on a real life example
 repository [networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
 Later we will practice these in groups in archaeology exercise.
