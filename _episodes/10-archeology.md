@@ -15,35 +15,36 @@ keypoints:
   - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
 ---
 
-## Preparation
-
-Please make sure that you do not clone repositories inside an already tracked folder:
-
-```shell
-$ git status
-```
-
-If you are inside an existing Git repository, step out of it.
-You need to find a different location since we will clone a new repository.
-
-If you see this message, this is good in this case:
-
-```
-fatal: not a git repository (or any of the parent directories): .git
-```
+> ## Preparation
+>
+> Please make sure that you do not clone repositories inside an already tracked folder:
+>
+> ```shell
+> $ git status
+> ```
+>
+> If you are inside an existing Git repository, step out of it.
+> You need to find a different location since we will clone a new repository.
+>
+> If you see this message, this is good in this case:
+>
+> ```
+> fatal: not a git repository (or any of the parent directories): .git
+> ```
+{: .discussion}
 
 ---
 
 ## Our toolbox for history inspection
 
 
-First the instructor demonstrates four commands on a real life example
-repository [networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
+First the instructor demonstrates few commands on a real life example
+repository [https://github.com/networkx/networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
 Later we will practice these in groups in archaeology exercise.
 
 
-### `git grep` to search through the repository
+### 1. `git grep` to search through the repository
 
 With `git grep` you can find all lines in a repository which contain some string or regular expression.
 This is useful to find out where in the code some variable is used or some error message printed:
@@ -55,11 +56,13 @@ $ git grep sometext
 In the [networkx](https://github.com/networkx/networkx) repository you can try:
 
 ```
+$ git clone https://github.com/networkx/networkx
+$ cd networkx
 $ git grep -i fixme
 ```
 
 
-### `git log -S` to search through the history of changes
+### 2. `git log -S` to search through the history of changes
 
 While `git grep` searches the **current state** of the repository,
 it is possible to search also through all changes for "sometext":
@@ -75,7 +78,7 @@ $ git log -S test_weakly_connected_component
 ```
 
 
-### `git show` to inspect commits
+### 3. `git show` to inspect commits
 
 We have seen this one before already. Using `git show` we can inspect an individual commit if
 we know its hash:
@@ -91,7 +94,7 @@ $ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
 ```
 
 
-### `git annotate` to annotate code with commit metadata
+### 4. `git annotate` to annotate code with commit metadata
 
 Try it out on a file - with `git annotate` you can see line by line who and **when** the line was modified
 last. It also prints the precise hash of the last change which modified each line. Incredibly useful
@@ -113,7 +116,7 @@ Use `/sometext` `<ENTER>` to find "sometext" and you can cycle through the resul
 You can also use page up/down to scroll. You can quit with `q`.
 
 
-### `git checkout -b` to inspect code in the past
+### 5. `git checkout -b` to inspect code in the past
 
 We can create branches pointing to a commit in the past.
 This is the recommended mechanism to inspect old code:
@@ -139,6 +142,11 @@ $ git branch -d older-code
 ```
 
 
+### 6. `git bisect` to locate the commit that changed a behavior
+
+We have a separate section about this command below.
+
+
 > ## Archaeology exercise
 >
 > Let us explore the value of these commands in an exercise.
@@ -148,6 +156,8 @@ $ git branch -d older-code
 >
 > **Video workshops**: We will group you in breakout rooms of ~4 persons where you
 > can work and discuss together. A helper or instructor will pop in to help out.
+> In the group one participant can share their screen and others
+> in the group help out, discuss, and try to follow along.
 > Please write down questions in the collaborative notes.
 > After 15 minutes we will bring you back into the main room and discuss.
 >
