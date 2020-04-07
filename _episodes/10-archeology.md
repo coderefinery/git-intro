@@ -157,7 +157,7 @@ We have a separate section about this command below.
 > **Video workshops**: We will group you in breakout rooms of ~4 persons where you
 > can work and discuss together. A helper or instructor will pop in to help out.
 > In the group one participant can share their screen and others
-> in the group discuss and help out.
+> in the group help out, discuss, and try to follow along.
 > Please write down questions in the collaborative notes.
 > After 15 minutes we will bring you back into the main room and discuss.
 >
