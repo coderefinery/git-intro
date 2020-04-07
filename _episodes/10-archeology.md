@@ -15,22 +15,23 @@ keypoints:
   - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
 ---
 
-## Preparation
-
-Please make sure that you do not clone repositories inside an already tracked folder:
-
-```shell
-$ git status
-```
-
-If you are inside an existing Git repository, step out of it.
-You need to find a different location since we will clone a new repository.
-
-If you see this message, this is good in this case:
-
-```
-fatal: not a git repository (or any of the parent directories): .git
-```
+> ## Preparation
+>
+> Please make sure that you do not clone repositories inside an already tracked folder:
+>
+> ```shell
+> $ git status
+> ```
+>
+> If you are inside an existing Git repository, step out of it.
+> You need to find a different location since we will clone a new repository.
+>
+> If you see this message, this is good in this case:
+>
+> ```
+> fatal: not a git repository (or any of the parent directories): .git
+> ```
+{: .discussion}
 
 ---
 
