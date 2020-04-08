@@ -359,7 +359,7 @@ The repository looks then exactly as it was before the merge.
 
 - Human measures
   - Think and plan to which branch you will commit to.
-  - Branches for "everything" maximize risk of conflicts.
+  - Few branches that contain many unrelated changes maximize risk of conflicts.
   - Use one branch for one task only.
 - Collaboration measures
   - Conflicts can be avoided if you think and talk with your colleagues before committing.
