@@ -565,13 +565,13 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 > Let's add an annotated tag to our current state of the guacamole recipe:
 >
 > ```shell
-> $ git tag -a nobel-2017 -m "recipe I made for the 2017 Nobel banquet"
+> $ git tag -a nobel-2020 -m "recipe I made for the 2020 Nobel banquet"
 > ```
 >
 > As you may have found out already, `git show` is a very versatile command. Try this:
 >
 > ```shell
-> $ git show nobel-2017
+> $ git show nobel-2020
 > ```
 >
 > For more information about tags see for example
