@@ -11,7 +11,9 @@ objectives:
   - Discuss the reasons why we advocate distributed version control.
 ---
 
-## The essence of version control
+## Motivation
+
+### The essence of version control
 
 - System which **records snapshots** of a project
 - Implements **branching**:
@@ -23,7 +25,7 @@ objectives:
 
 ---
 
-## Why code can become a disaster without version control
+### Why code can become a disaster without version control
 
 Discuss the following directory listing. What possible problems
 do you anticipate with this kind of "version control":
@@ -51,19 +53,22 @@ mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
 mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 ...
 ```
+---
 
-### Roll-back functionality
+### Why version control
 
-- Mistakes happen - without recorded snapshots you cannot easily undo mistakes and go back to a working version.
+#### Roll-back functionality
+
+- Mistakes happen - without recorded snapshots you cannot easily undo mistakes and **go back to a working version**.
 
 
-### Branching
+#### Branching
 
-- Often you need to work on several issues in one code - without branching this can be messy and confusing.
+- Often you need to work on **several issues/features in one code** - without branching this can be messy and confusing.
 - You can simulate branching by copying the entire code to multiple places but also this will be messy and confusing.
 
 
-### Collaboration
+#### Collaboration
 
 - *"I will just finish my work and then you can start with your changes."*.
 - *"Can you please send me the latest version?"*.
@@ -72,14 +77,14 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 - *"Which version have the authors used in the paper I am trying to reproduce?"*.
 
 
-### Reproducibility
+#### Reproducibility
 
 - How do you indicate which version of your code you have used in your paper?
-- When you find a bug, how do you know when precisely this bug was introduced
+- When you find a bug, how do you know **when precisely** this bug was introduced
   (are published results affected? do you need to inform collaborators or users of your code?).
 
 
-### Compare with Dropbox or Google Drive
+#### Compare with Dropbox or Google Drive
 
 - Document/code is in one place, no need to email snapshots.
 - How can you use an old version? Possible to get old versions but in a much less useful way - snapshots of files, not directories.
@@ -122,7 +127,7 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ---
 
-## A real-life example
+### A real-life example
 
 Before we create a new repository from scratch and learn how to record changes
 and create and merge branches, let us explore an **existing Git repository** on
