@@ -23,6 +23,17 @@ objectives:
 - Implements **merging**:
   - tool to merge development branches for you
 
+
+#### What we typically like to snapshot
+
+- Software (this is how it started but Git/GitHub can track a lot more)
+- Scripts
+- Documents (plain text file much better suitable than Word documents)
+- Manuscripts (Git is great for collaborating/sharing LaTeX manuscripts)
+- Configuration files
+- Website sources
+- Data
+
 ---
 
 ### Why code can become a disaster without version control
