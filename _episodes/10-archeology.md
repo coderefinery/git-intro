@@ -41,7 +41,7 @@ keypoints:
 First the instructor demonstrates few commands on a real life example
 repository [https://github.com/networkx/networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
-Later we will practice these in groups in archaeology exercise.
+Later we will practice these in groups in an archaeology exercise (below).
 
 
 ### 1. `git grep` to search through the repository
