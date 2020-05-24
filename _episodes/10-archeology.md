@@ -115,6 +115,13 @@ scroll the output.
 Use `/sometext` `<ENTER>` to find "sometext" and you can cycle through the results with `n` (next) and `N` (last).
 You can also use page up/down to scroll. You can quit with `q`.
 
+> ## Discussion
+>
+> Discuss how these two affect the annotation:
+> - wrapping long lines of text/code into shorter lines
+> - autoformatting tools such as `black`
+{: .discussion}
+
 
 ### 5. `git checkout -b` to inspect code in the past
 
