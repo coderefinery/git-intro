@@ -12,7 +12,8 @@ objectives:
   - Quickly find the commit that changed a behavior.
 keypoints:
   - "`git log/grep/annotate/show/bisect` is a powerful combination when doing archaeology in a project."
-  - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
+  - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code."
+  - "On newer Git you can use the more intuitive `git switch --create branchname somehash`."
 ---
 
 > ## Preparation
@@ -146,6 +147,12 @@ $ git checkout master
 
   # if we like we can delete the "older-code" branch
 $ git branch -d older-code
+```
+
+On newer Git versions this is the preferred command:
+
+```shell
+$ git switch --create branchname somehash
 ```
 
 
