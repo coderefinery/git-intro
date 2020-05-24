@@ -12,7 +12,8 @@ objectives:
   - Quickly find the commit that changed a behavior.
 keypoints:
   - "`git log/grep/annotate/show/bisect` is a powerful combination when doing archaeology in a project."
-  - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code"
+  - "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code."
+  - "On newer Git you can use the more intuitive `git switch --create branchname somehash`."
 ---
 
 > ## Preparation
@@ -41,7 +42,7 @@ keypoints:
 First the instructor demonstrates few commands on a real life example
 repository [https://github.com/networkx/networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
-Later we will practice these in groups in archaeology exercise.
+Later we will practice these in groups in an archaeology exercise (below).
 
 
 ### 1. `git grep` to search through the repository
@@ -115,6 +116,13 @@ scroll the output.
 Use `/sometext` `<ENTER>` to find "sometext" and you can cycle through the results with `n` (next) and `N` (last).
 You can also use page up/down to scroll. You can quit with `q`.
 
+> ## Discussion
+>
+> Discuss how these two affect the annotation:
+> - wrapping long lines of text/code into shorter lines
+> - autoformatting tools such as `black`
+{: .discussion}
+
 
 ### 5. `git checkout -b` to inspect code in the past
 
@@ -139,6 +147,12 @@ $ git checkout master
 
   # if we like we can delete the "older-code" branch
 $ git branch -d older-code
+```
+
+On newer Git versions this is the preferred command:
+
+```shell
+$ git switch --create branchname somehash
 ```
 
 
