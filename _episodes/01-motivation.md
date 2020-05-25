@@ -115,7 +115,7 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 > - Many platforms build on top of [GitHub](https://github.com).
 > - Sharing software and data is getting popular and required in research context
 >   and [GitHub](https://github.com) is a popular platform for sharing software.
-> - However, *"Git is a four-handle, dual boiler espresso machine, not instant coffee."* [citation needed].
+> - However, *"Git is a four-handle, dual boiler espresso machine, not instant coffee."* [source](https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/).
 >   Git isn't the most user friendly and has its design quirks but deep design
 >   is great and is definitely the most popular and what you are most likely to
 >   need to know. So we teach it.
