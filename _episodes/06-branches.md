@@ -70,7 +70,7 @@ matrix inversion algorithm".
 > We will now define an *alias* in Git, to be able to nicely visualize branch
 > structure in the terminal without having to remember a long Git command
 > (more details about aliases are given
-> [in a later section]({{ site.baseurl }}/11-aliases)):
+> [in a later section]({{ site.baseurl }}/12-aliases)):
 >
 > ```shell
 > $ git config --global alias.graph "log --all --graph --decorate --oneline"
