@@ -527,13 +527,13 @@ $ git checkout -b <name>   # create branch <name> and switch to it
 With this there are two typical workflows:
 
 ```shell
-$ git checkout -b new-feature master # create branch from master branch, switch to it
-$ git commit                         # work, work, work, ...
-                                     # test
-                                     # feature is ready
-$ git checkout maste      r          # switch to master
-$ git merge new-feature              # merge work to master
-$ git branch -d new-feature          # remove branch
+$ git checkout -b new-feature  # create branch, switch to it
+$ git commit                   # work, work, work, ...
+                               # test
+                               # feature is ready
+$ git checkout master          # switch to master
+$ git merge new-feature        # merge work to master
+$ git branch -d new-feature    # remove branch
 ```
 
 Sometimes you have a wild idea which does not work.
