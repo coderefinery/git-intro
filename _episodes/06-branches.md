@@ -210,7 +210,7 @@ $ git graph
 > ```shell
 >     git branch experiment master
 > ```
->   where you reduce the amount of salt.
+> - where you reduce the amount of salt.
 > - Commit your changes to the `less-salt` branch.
 >
 > Use the same commands as we used above.
