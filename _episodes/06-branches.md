@@ -119,9 +119,10 @@ and how to remove them afterwards.
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
 ```shell
-$ git branch experiment    # create branch called "experiment" pointing to the present commit
-$ git checkout experiment  # switch to branch "experiment"
-$ git branch               # list all local branches and show on which branch we are
+$ git branch experiment master   # create branch called "experiment" from master
+                                 # pointing to the present commit
+$ git checkout experiment        # switch to branch "experiment"
+$ git branch                     # list all local branches and show on which branch we are
 ```
 
 - Verify that you are on the `experiment` branch (note that `git graph` also
@@ -203,7 +204,13 @@ $ git graph
 >
 > - Change to the branch `master`.
 > - Create another branch called `less-salt`
->   where you reduce the amount of salt.
+>   - Note! makes sure you are on master branch when you create the less-salt branch
+>   - A safer way would be to explicitly mention to create from the master branch
+>     as shown below
+> ```shell
+>     git branch experiment master
+> ```
+> - where you reduce the amount of salt.
 > - Commit your changes to the `less-salt` branch.
 >
 > Use the same commands as we used above.
