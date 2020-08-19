@@ -208,7 +208,7 @@ $ git graph
 >   - A safer way would be to explicitly mention to create from the master branch
 >     as shown below
 > ```shell
->     git branch experiment master
+>     git branch less-salt master
 > ```
 > - where you reduce the amount of salt.
 > - Commit your changes to the `less-salt` branch.
