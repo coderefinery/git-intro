@@ -249,6 +249,9 @@ Simple steps:
 
 > ## Exercise: Create another conflict and resolve
 >
+> In this exercise, we repeat almost exactly what we did above with a
+> different ingredient.
+>
 > 1. After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
 > 2. Again modify some ingredient on both branches.
 > 3. Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.

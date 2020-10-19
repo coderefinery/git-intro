@@ -104,7 +104,7 @@ commit or having one logical change spread over several commits.
   - `?` for more options.
 - The `-p` option is also available on `commit`, `checkout`, `reset`, and `add`.
 
-> ## Interactive committing
+> ## Exercise: Interactive committing
 >
 > One option to help us create nice logical commits is to stage *interactively*
 > with `git commit -p`:

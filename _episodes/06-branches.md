@@ -200,7 +200,11 @@ $ git graph
 
 ---
 
-> ## Exercise: branches
+> ## Exercise: create and commit to branches
+>
+> In this exercise, you will create two new branches, make new commits
+> to each branch.  We will use this in the next section, to practice
+> merging.
 >
 > - Change to the branch `master`.
 > - Create another branch called `less-salt`
