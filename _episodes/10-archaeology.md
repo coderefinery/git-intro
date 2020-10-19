@@ -161,9 +161,11 @@ $ git switch --create branchname somehash
 We have a separate section about this command below.
 
 
-> ## Archaeology exercise
+> ## Exercise: basic archaeology commands
 >
-> Let us explore the value of these commands in an exercise.
+> Let us explore the value of these commands in an exercise.  Future
+> exercises do not depend on this, so it is OK if you do not complete
+> it fully.
 >
 > **In-person workshops**: We recommend that you
 > do this exercise in groups of two and discuss with your neighbors.
@@ -241,9 +243,12 @@ $ git bisect bad
 
 ---
 
-> ## Git bisect exercise
+> ## Exercise: Git bisect
 >
-> Clone [https://github.com/coderefinery/git-bisect-exercise](https://github.com/coderefinery/git-bisect-exercise).
+> In this exercise, we use `git bisect` on an example repository.  It
+> is OK if you do not complete this exercise fully.
+>
+> Begin by cloning [https://github.com/coderefinery/git-bisect-exercise](https://github.com/coderefinery/git-bisect-exercise).
 >
 >
 > #### Motivation
