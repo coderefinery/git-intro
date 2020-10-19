@@ -80,9 +80,11 @@ $ git checkout temporary     # continue where you left off
 Later you can merge it to master or rebase it on top of master and resume work.
 
 
-### Exercises (optional)
+### Exercise: interrupted work (optional)
 
-You already know how to do this...
+Use one of the strategies above to interrupt some work (recommendation
+if you don't know which: use stashing).  If you don't accomplish all
+of these, it is OK.
 
 1. Optional: Go through the process above.  Start a change, create new
   branch and store your changes.  Go back to master and fix something
