@@ -20,7 +20,7 @@ keypoints:
 - Use branches when you are not sure about a change.
 
 
-### Projects with few persons, you accept things breaking
+### Projects with few persons, you accept things breaking sometimes
 
 - It might be reasonable to commit to the `master` branch and feature branches.
 
