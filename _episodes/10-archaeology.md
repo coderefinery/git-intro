@@ -175,21 +175,23 @@ We have a separate section about this command below.
 > In the group one participant can share their screen and others
 > in the group help out, discuss, and try to follow along.
 > Please write down questions in the collaborative notes.
-> After 15 minutes we will bring you back into the main room and discuss.
+> After 15-20 minutes we will bring you back into the main room and discuss.
 >
 > Exercise steps:
-> 1. Clone this repository:
->    [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
->    Then step into the new directory:
->    ```
->    $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
->    $ cd rvest
->    ```
-> 2. Find the code line which contains `'No links matched that expression'`
-> 3. Find out when this line was last modified. Find the actual commit which modified that line.
-> 4. Inspect that commit with `git show`.
-> 5. Create a branch pointing to the past when that commit was created to be able to browse and use the code as it was back then.
-> 6. How would can you bring the code to the commit precisely before that line was last modified?
+> - Clone this repository:
+>   [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
+>   Then step into the new directory:
+>   ```
+>   $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
+>   $ cd rvest
+>   ```
+>
+> Then using the above 5 tools try to:
+> - Find the code line which contains `'No links matched that expression'`
+> - Find out when this line was last modified. Find the actual commit which modified that line.
+> - Inspect that commit with `git show`.
+> - Create a branch pointing to the past when that commit was created to be able to browse and use the code as it was back then.
+> - How would can you bring the code to the commit precisely before that line was last modified?
 {: .challenge}
 
 ---
