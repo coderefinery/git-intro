@@ -91,9 +91,7 @@ There are different types of remotes:
 > end, it is a balance between control and visibility, and we use GitHub because
 > you are likely to have to use it for other software anyway.
 >
->
-> #### Set up GitHub account
->
+> **Set up GitHub account**:
 > By now you should already have set up a GitHub account but if you haven't,
 > please do so [here](https://github.com/join). But it is OK if you want to use
 > [GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
