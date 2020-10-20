@@ -155,12 +155,6 @@ On newer Git versions this is the preferred command:
 $ git switch --create branchname somehash
 ```
 
-
-### 6. `git bisect` to locate the commit that changed a behavior
-
-We have a separate section about this command below.
-
-
 > ## Exercise: basic archaeology commands
 >
 > Let us explore the value of these commands in an exercise.  Future
@@ -196,7 +190,7 @@ We have a separate section about this command below.
 
 ---
 
-## Finding out when something broke with `git bisect`
+## Finding out when something broke/changed with `git bisect`
 
 > *But I am sure it used to work! Strange.*
 
