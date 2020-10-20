@@ -13,7 +13,7 @@ objectives:
 ## Undoing and recovering
 
 One of the main points of version control is that you can *go back in
-time to recover*.  Unlike this xkcd comic implies: https://xkcd.com/1597/
+time to recover*.  Unlike this xkcd comic implies: <https://xkcd.com/1597/>
 
 This lesson covers four types of undoing:
 
