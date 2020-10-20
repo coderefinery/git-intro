@@ -43,6 +43,8 @@ First the instructor demonstrates few commands on a real life example
 repository [https://github.com/networkx/networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
 Later we will practice these in groups in an archaeology exercise (below).
+After demonstrating the command line tools, the instructor can also demonstrate searching, "show" and "annotate"
+in the GitHub browser for this example project.
 
 
 ### 1. `git grep` to search through the repository
