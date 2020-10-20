@@ -46,9 +46,9 @@ where we will employ GitHub.
 Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
 to remove it afterwards.
 
-To store your git data on another server, you use **remotes**.  A
-remote is treated the same as a branch - most of the same concept
-apply, but you can also **push** changes to the remote and **pull**
+To store your git data on another server, you use **remotes**.
+A remote is a repository on its own, with its own branches
+We can **push** changes to the remote and **pull**
 from the remote.
 
 You might use remotes to:
