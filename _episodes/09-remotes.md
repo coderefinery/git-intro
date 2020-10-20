@@ -107,20 +107,35 @@ For the rest of this page, we will make a new repository for our
 guacamole recipe on Github, send our code to it, and then see how
 others can get the code from it.
 
-1. Login
-2. Click on "Repositories"
-3. Click on the green button "New"
+Make sure that you are **logged into GitHub**.
+
+To create a repository we either click the green button "New" (top left corner):
+<img src="{{ site.baseurl }}/img/creating-using-web/new-top-left.png" width="400px" style="border:2px solid #000000;">
+
+---
+
+Or if you see your profile page, there is a "+" menu (top right corner):
+<img src="{{ site.baseurl }}/img/creating-using-web/new-top-right.png" width="400px" style="border:2px solid #000000;">
+
+---
+
+Yet another way to create a new repository is to visit
+[https://github.com/new](https://github.com/new) directly.
+
+---
 
 On this page choose a project name (screenshot).
 
 For the sake of this exercise **do not select**
-"Initialize this repository with a README" (what will happen if you do?).
+"Initialize this repository with a README" (what will happen if you do?):
 
-<img src="{{ site.baseurl }}/img/github/1.jpg" width="60%" style="border:2px solid #000000;">
+<img src="{{ site.baseurl }}/img/creating-using-web/creating.png" width="700px" style="border:2px solid #000000;">
+
+---
 
 Once you click the green "Create repository", you will see a page similar to:
 
-<img src="{{ site.baseurl }}/img/github/2.jpg" width="60%" style="border:2px solid #000000;">
+<img src="{{ site.baseurl }}/img/creating-using-web/created.png" width="700px" style="border:2px solid #000000;">
 
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
@@ -139,25 +154,25 @@ We now want to try the second option that GitHub suggests:
 
 1. Now go to your guacamole repository on your computer.
 2. Check that you are in the right place with `git status`.
-3. Copy paste the two lines to the terminal and execute those, in my case (**you
+3. Copy paste the three lines to the terminal and execute those, in my case (**you
   need to replace the "user" part and possibly also the repository name**):
 
 ```shell
-$ git remote add origin https://github.com/user/recipe.git
-$ git push -u origin master
+$ git remote add origin https://github.com/user/recipe.git
+$ git branch -M main
+$ git push -u origin main
 ```
 
 You should now see:
 
 ```
-Counting objects: 4, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 259.80 KiB | 0 bytes/s, done.
-Total 4 (delta 0), reused 0 (delta 0)
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 To github.com:bast/recipe.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
 
 **Reload your GitHub project website and - taa-daa - your commits should now be
