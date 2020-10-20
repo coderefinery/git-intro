@@ -162,6 +162,11 @@ $ git branch -M main
 $ git push -u origin main
 ```
 
+The meaning of the above lines:
+- add a remote reference with the name "origin"
+- rename current branch to "main"
+- push branch "main" to "origin"
+
 You should now see:
 
 ```
