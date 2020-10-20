@@ -124,8 +124,7 @@ Yet another way to create a new repository is to visit
 
 ---
 
-On this page choose a project name (screenshot).
-
+On this page choose a project name.
 For the sake of this exercise **do not select**
 "Initialize this repository with a README" (what will happen if you do?):
 
