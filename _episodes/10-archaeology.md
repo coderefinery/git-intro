@@ -221,7 +221,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
 
 ```shell
 $ git bisect start
-$ git bisect good f0ea950  # this is a commit that worked
+$ git bisect good 7e14f28a  # this is a commit that worked
 $ git bisect bad master    # last commit is broken
   # now compile and/or run
   # after that decide whether
