@@ -219,6 +219,11 @@ $ git graph
 >
 > Use the same commands as we used above.
 >
+>  Bring the working tree back to the experiment branch.
+> ```shell
+> $ git checkout experiment
+> ```
+>
 > We now have three branches (in this case `HEAD` points to `experiment`):
 >
 > ```shell
