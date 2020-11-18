@@ -109,7 +109,7 @@ commit or having one logical change spread over several commits.
 > One option to help us create nice logical commits is to stage *interactively*
 > with `git commit -p`:
 >
-> 1. Make two changes in in `instructions.txt`, at the top and bottom
+> 1. Make two changes in `instructions.txt`, at the top and bottom
 >    of the file.
 >    **Make sure that they are separated by at least several unmodified lines.**
 > 2. Run `git commit -p`.  Using the keystrokes above, commit one of
