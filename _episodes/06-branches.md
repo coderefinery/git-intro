@@ -472,7 +472,7 @@ may have a hard time finding them as there is no branch pointing to them.
 >
 > Sometimes it happens that we commit to the wrong branch, e.g. to `master`
 > instead of a feature branch.
-> This can easily be fixed by branching off, and then using `git reset --hard`:
+> This can easily be fixed:
 > 1. Make a couple of commits to `master`, then realize these should have been on
 >    a new feature branch.
 > 2. Create a new branch from `master`, and rewind `master` back using `git reset --hard <hash>`.
