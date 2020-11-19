@@ -219,24 +219,19 @@ $ git graph
 >
 > Use the same commands as we used above.
 >
->  Bring the working tree back to the experiment branch.
-> ```shell
-> $ git checkout experiment
-> ```
->
-> We now have three branches (in this case `HEAD` points to `experiment`):
+> We now have three branches (in this case `HEAD` points to `less-salt`):
 >
 > ```shell
 > $ git branch
 >
-> * experiment
->   less-salt
+>   experiment
+> * less-salt
 >   master
 >
 > $ git graph
 >
-> * bf59be6 (less-salt) reduce amount of salt
-> | * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
+> * bf59be6 (HEAD -> less-salt) reduce amount of salt
+> | * 6feb49d (experiment) maybe little bit less cilantro
 > | * 7cf6d8c let us try with some cilantro
 > |/
 > * dd4472c (master) we should not forget to enjoy
