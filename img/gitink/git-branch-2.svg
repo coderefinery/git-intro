@@ -44,7 +44,7 @@
                 </defs>
                 <g inkscape:label="layer1"
                    inkscape:groupmode="layer"
-                   transform="translate(-0.0,130.0) rotate(0)"
+                   transform="translate(-0.0,65.0) rotate(0)"
                    id="layer1">
                    
            <line x1="196.0"
@@ -135,30 +135,6 @@
                  x="247.5"
                  y="20.5">e2</text>
            
-           <rect style="fill:#92b8f6;
-                        stroke:#4C72B0;
-                        stroke-width:1.25;
-                        stroke-miterlimit:4;
-                        stroke-opacity:1.0;
-                        stroke-dasharray:none"
-                 width="32.0"
-                 height="30.0"
-                 x="180.0"
-                 y="60.0"
-                 ry="5.0" />
-           <text style="font-size:12.5px;
-                        font-style:normal;
-                        font-weight:normal;
-                        line-height:125%%;
-                        letter-spacing:0px;
-                        word-spacing:0px;
-                        fill:#000000;
-                        fill-opacity:1.0;
-                        stroke:none;
-                        font-family:DejaVu Sans Mono"
-                 x="187.5"
-                 y="80.5">l1</text>
-           
            <rect style="fill:#9beeae;
                         stroke:#55A868;
                         stroke-width:1.25;
@@ -231,29 +207,17 @@
                  x="67.5"
                  y="20.5">m2</text>
            
-           <path style="fill:none;
-                 stroke:#000000;
-                 stroke-width:2.5;
-                 stroke-linecap:butt;
-                 stroke-linejoin:miter;
-                 stroke-opacity:1.0;
-                 marker-end:url(#fullmarker);
-                 stroke-miterlimit:4;
-                 stroke-dasharray:none"
-                 d="M 196.0,140.0 196.0,90.6"
-                 inkscape:connector-curvature="0" />
-           
-           <rect style="fill:#dddddd;
-                        stroke:#000000;
+           <rect style="fill:#92b8f6;
+                        stroke:#4C72B0;
                         stroke-width:1.25;
                         stroke-miterlimit:4;
                         stroke-opacity:1.0;
                         stroke-dasharray:none"
-                 width="88.0"
+                 width="32.0"
                  height="30.0"
-                 x="152.0"
-                 y="125.0"
-                 ry="0.0" />
+                 x="180.0"
+                 y="60.0"
+                 ry="5.0" />
            <text style="font-size:12.5px;
                         font-style:normal;
                         font-weight:normal;
@@ -264,8 +228,8 @@
                         fill-opacity:1.0;
                         stroke:none;
                         font-family:DejaVu Sans Mono"
-                 x="159.5"
-                 y="145.5">less-salt</text>
+                 x="187.5"
+                 y="80.5">l1</text>
            
            <path style="fill:none;
                  stroke:#000000;
@@ -312,7 +276,7 @@
                  marker-end:url(#fullmarker);
                  stroke-miterlimit:4;
                  stroke-dasharray:none"
-                 d="M 256.0,-115.0 256.0,-65.6"
+                 d="M 196.0,140.0 196.0,90.6"
                  inkscape:connector-curvature="0" />
            
            <rect style="fill:#dddddd;
@@ -321,10 +285,10 @@
                         stroke-miterlimit:4;
                         stroke-opacity:1.0;
                         stroke-dasharray:none"
-                 width="48.0"
+                 width="88.0"
                  height="30.0"
-                 x="232.0"
-                 y="-130.0"
+                 x="152.0"
+                 y="125.0"
                  ry="0.0" />
            <text style="font-size:12.5px;
                         font-style:normal;
@@ -336,8 +300,44 @@
                         fill-opacity:1.0;
                         stroke:none;
                         font-family:DejaVu Sans Mono"
-                 x="239.5"
-                 y="-109.5">HEAD</text>
+                 x="159.5"
+                 y="145.5">less-salt</text>
+           
+           <path style="fill:none;
+                 stroke:#000000;
+                 stroke-width:2.5;
+                 stroke-linecap:butt;
+                 stroke-linejoin:miter;
+                 stroke-opacity:1.0;
+                 marker-end:url(#fullmarker);
+                 stroke-miterlimit:4;
+                 stroke-dasharray:none"
+                 d="M 196.0,205.0 196.0,155.6"
+                 inkscape:connector-curvature="0" />
+           
+           <rect style="fill:#dddddd;
+                        stroke:#000000;
+                        stroke-width:1.25;
+                        stroke-miterlimit:4;
+                        stroke-opacity:1.0;
+                        stroke-dasharray:none"
+                 width="48.0"
+                 height="30.0"
+                 x="172.0"
+                 y="190.0"
+                 ry="0.0" />
+           <text style="font-size:12.5px;
+                        font-style:normal;
+                        font-weight:normal;
+                        line-height:125%%;
+                        letter-spacing:0px;
+                        word-spacing:0px;
+                        fill:#000000;
+                        fill-opacity:1.0;
+                        stroke:none;
+                        font-family:DejaVu Sans Mono"
+                 x="179.5"
+                 y="210.5">HEAD</text>
            
            <path style="fill:none;
                  stroke:#000000;
