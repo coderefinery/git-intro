@@ -208,13 +208,6 @@ point in the past.
 > 1. What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
 > 2. Is it OK to modify commits that nobody has seen yet?
 > 3. What situations would justify to modify the Git history and possibly remove commits?
-> 4. What is the difference between these commands?
->    ```shell
->    $ git diff
->    $ git diff --staged  # or git diff --cached
->    $ git diff HEAD
->    $ git diff HEAD^
->    ```
 >
 > > ## Solution
 > >
@@ -222,12 +215,5 @@ point in the past.
 > > 2. If you haven't shared your commits with anyone it can be alright to modify them.
 > > 3. If you have shared your commits with others (e.g. pushed them to GitHub), only extraordinary
 > >    conditions would justify modifying history. For example to remove sensitive or secret information.
-> > 4. The different commands show changes between different file states:
-> >    ```shell
-> >    $ git diff          # Show what has changed but hasn't been staged yet via git add.
-> >    $ git diff --staged # Show what has been staged but not yet committed.
-> >    $ git diff HEAD     # Show what has changed since the last commit.
-> >    $ git diff HEAD^    # Show what has changed since the commit before the latest commit.
-> >    ```
 > {: .solution}
 {: .challenge}
