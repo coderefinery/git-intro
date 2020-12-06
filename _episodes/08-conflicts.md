@@ -265,7 +265,8 @@ Simple steps:
 > 1. Create two branches where you anticipate a conflict.
 > 2. Try to merge them and observe that indeed they conflict.
 > 3. Abort the merge.
-> 4. What you if you rebase one branch on top of the other? Do you anticipate a conflict? Try it out.
+> 4. What do you expect will happen if you rebase one branch on top of the
+>    other? Do you anticipate a conflict? Try it out.
 {: .challenge}
 
 ---
