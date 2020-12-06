@@ -87,7 +87,7 @@ $ git graph
 * 2d79e7e adding ingredients and instructions
 ```
 
-- We have three commits (we use the first two characters of the commits) and only
+- We have three commits and only
   one development line (branch) and this branch is called `master`.
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
