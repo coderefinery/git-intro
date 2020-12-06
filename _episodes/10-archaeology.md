@@ -38,13 +38,21 @@ keypoints:
 
 ## Our toolbox for history inspection
 
-
 First the instructor demonstrates few commands on a real life example
-repository [https://github.com/networkx/networkx](https://github.com/networkx/networkx) (mentioned in the amazing site [The
+repository <https://github.com/networkx/networkx> (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
 Later we will practice these in groups in an archaeology exercise (below).
 After demonstrating the command line tools, the instructor can also demonstrate searching, "show" and "annotate"
 in the GitHub browser for this example project.
+
+
+### 0. Warm-up: ["Git History" browser](https://githistory.xyz/)
+
+As a warm-up we can try the ["Git History" browser](https://githistory.xyz/)
+on the README.rst file of the [networkx](https://github.com/networkx/networkx) repository:
+
+- Visit and browse <https://github.githistory.xyz/networkx/networkx/blob/master/README.rst> (use left/right keys).
+- You can try this on some of your repositories, too!
 
 
 ### 1. `git grep` to search through the repository
