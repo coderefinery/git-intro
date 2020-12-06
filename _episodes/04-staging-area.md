@@ -55,14 +55,14 @@ history is clear then you are a long way to organized code.
 > Example 4 (newest commit is on top):
 >
 > ```shell
-> 49dc419 wip (work in progress)
-> 61dd3a3 forgot file and bugfix
-> 72e0211 another fix to make it compile
-> 72d78e7 feature A did not work and started work on feature B
-> bddb280 more work on feature B and make feature A compile again
-> 45831a5 removing debug prints for feature A and add new file
 > bf39f9d more work on feature B
+> 45831a5 removing debug prints for feature A and add new file
+> bddb280 more work on feature B and make feature A compile again
+> 72d78e7 feature A did not work and started work on feature B
 > b135ec8 now feature A should work
+> 72e0211 another fix to make it compile
+> 61dd3a3 forgot file and bugfix
+> 49dc419 wip (work in progress)
 > ```
 >
 > Example 5 (newest commit is on top):
