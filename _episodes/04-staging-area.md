@@ -80,7 +80,7 @@ history is clear then you are a long way to organized code.
 We want to have nice commits.  But we also want to "save often"
 (checkpointing) - how can we have both?
 
-- We will now learn to create nice commits using `git commit -p` and/or the staging area.
+- We will now learn to create nice commits using `git commit --patch` and/or the staging area.
 - Staging addresses the issue of having unrelated changes in the same
 commit or having one logical change spread over several commits.
 - The staging area isn't the only way to organize your history nicely, some alternatives are discussed at the end of the lesson.
@@ -91,11 +91,11 @@ commit or having one logical change spread over several commits.
 ## Interactive committing
 
 - The simplest ways to solve this is to do **interactive commits**:
-  the `git commit -p` option.
+  the `git commit --patch` option (or `git commit -p` for short).
 - It will present you with every change you have made individually,
   and you can decide which ones to commit right now.
 - Reference and key commands
-  - `git commit -p` to start the interactive commit
+  - `git commit --patch` to start the interactive commit
   - `y` to use the change
   - `n` to skip the change
   - `s` (split) if there are several changes grouped together, but
@@ -107,17 +107,16 @@ commit or having one logical change spread over several commits.
 > ## Exercise: Interactive committing
 >
 > One option to help us create nice logical commits is to stage *interactively*
-> with `git commit -p`:
+> with `git commit --patch`:
 >
 > 1. Make two changes in `instructions.txt`, at the top and bottom
 >    of the file.
 >    **Make sure that they are separated by at least several unmodified lines.**
-> 2. Run `git commit -p`.  Using the keystrokes above, commit one of
+> 2. Run `git commit --patch`.  Using the keystrokes above, commit one of
 >    the changes.
 > 3. Do it again for the other change.
 > 4. When you're done, inspect the situation with `git log`, `git status`, `git diff` and `git diff --staged`.
 > 5. When would this be useful?
->
 {: .challenge}
 
 
