@@ -152,10 +152,11 @@ This means that we never use this command on commits that we have shared with ot
 >
 > 1. Make an incomplete change to the recipe or a typo in your change, `git
 >    add` and `git commit` the incomplete/unsatisfactory change.
-> 2. Inspect the unsatisfactory but committed change with `git show`.  Remember
->    the commit hash.
-> 3. Now complete/fix the change but instead of creating a new commit, add to
->    the previous commit with `git commit --amend`.  What changed?
+> 2. Inspect the unsatisfactory but committed change with `git show`. Remember
+>    or write down the commit hash.
+> 3. Now complete/fix the change but instead of creating a new commit, add the
+>    correction to the previous commit with `git add`, followed by `git commit
+>    --amend`.  What changed?
 {: .challenge}
 
 ---
