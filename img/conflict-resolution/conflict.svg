@@ -14,7 +14,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   inkscape:version="0.92.1 r15371"
    sodipodi:docname="conflict.svg">
   <defs
      id="defs2">
@@ -84,16 +84,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.8843321"
-     inkscape:cx="654.11158"
-     inkscape:cy="671.48152"
+     inkscape:zoom="0.44216605"
+     inkscape:cx="679.05158"
+     inkscape:cy="535.78589"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="2560"
-     inkscape:window-height="1328"
-     inkscape:window-x="0"
-     inkscape:window-y="56"
+     inkscape:window-width="1280"
+     inkscape:window-height="657"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -103,7 +103,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -127,22 +127,22 @@
            sodipodi:role="line"> </tspan><tspan
            id="tspan819"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
-           y="94.173286"
+           y="94.411972"
            x="-50.294559"
            sodipodi:role="line">2 avocados</tspan><tspan
            id="tspan821"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
-           y="107.40246"
+           y="107.87982"
            x="-50.294559"
-           sodipodi:role="line">2 tbsp cilantro</tspan><tspan
+           sodipodi:role="line">1 tbsp cilantro</tspan><tspan
            id="tspan823"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
-           y="120.63162"
+           y="121.34767"
            x="-50.294559"
            sodipodi:role="line">2 tsp salt</tspan><tspan
            id="tspan825"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
-           y="133.86079"
+           y="134.81552"
            x="-50.294559"
            sodipodi:role="line"> </tspan></text>
       <rect
@@ -172,29 +172,29 @@
              sodipodi:role="line">1 lime</tspan><tspan
              id="tspan861"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
-             y="58.024448"
+             y="58.26313"
              x="67.131599"
              sodipodi:role="line">2 avocados</tspan><tspan
              id="tspan863"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#ff0000;stroke-width:0.26458332"
-             y="71.253616"
+             y="71.73098"
              x="67.131599"
-             sodipodi:role="line">1 tbsp cilantro</tspan><tspan
+             sodipodi:role="line">1/2 tbsp cilantro</tspan><tspan
              id="tspan865"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
-             y="84.48278"
+             y="85.19883"
              x="67.131599"
              sodipodi:role="line">2 tsp salt</tspan><tspan
              id="tspan867"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
-             y="97.711945"
+             y="98.666679"
              x="67.131599"
              sodipodi:role="line"> </tspan></text>
         <rect
            y="32.608269"
            x="64.485222"
-           height="70.174843"
-           width="100.94584"
+           height="70.773224"
+           width="112.01587"
            id="rect871"
            style="fill:none;stroke:#1a1a1a;stroke-width:0.99603963;stroke-miterlimit:4;stroke-dasharray:none" />
       </g>
@@ -214,31 +214,32 @@
              id="tspan875"> </tspan><tspan
              sodipodi:role="line"
              x="64.13839"
-             y="144.36722"
+             y="144.6059"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
              id="tspan877">2 avocados</tspan><tspan
              sodipodi:role="line"
              x="64.13839"
-             y="157.59637"
+             y="158.07375"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#ff0000;stroke-width:0.26458332"
-             id="tspan879">3 tbsp cilantro</tspan><tspan
+             id="tspan879">2 tbsp cilantro</tspan><tspan
              sodipodi:role="line"
              x="64.13839"
-             y="170.82555"
+             y="171.5416"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.26458332"
              id="tspan881">2 tsp salt</tspan><tspan
              sodipodi:role="line"
              x="64.13839"
-             y="184.05472"
+             y="185.00945"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:monospace;-inkscape-font-specification:monospace;fill:#808080;stroke-width:0.26458332"
              id="tspan883">1/2 onion</tspan></text>
         <rect
            style="fill:none;stroke:#1a1a1a;stroke-width:0.99603963;stroke-miterlimit:4;stroke-dasharray:none"
            id="rect887"
-           width="100.94584"
-           height="70.174843"
+           width="111.41749"
+           height="67.781326"
            x="61.492004"
-           y="118.95103" />
+           y="118.95103"
+           ry="0" />
       </g>
     </g>
     <g
@@ -299,7 +300,7 @@
     </g>
     <g
        id="g2785"
-       transform="translate(0,-0.56785251)">
+       transform="matrix(0.80126344,0,0,1.184191,44.259021,-18.755786)">
       <path
          inkscape:connector-curvature="0"
          id="path2191"
