@@ -187,15 +187,17 @@ $ git switch --create branchname somehash
 >   [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
 >   Then step into the new directory:
 >   ```
->   $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
+>   $ git clone https://github.com/tidyverse/rvest.git
 >   $ cd rvest
 >   ```
 >
 > Then using the above 5 tools try to:
-> - Find the code line which contains `"No links matched that expression"`
+> - Find the code line which contains `"No links matched that expression"`.
 > - Find out when this line was last modified. Find the actual commit which modified that line.
+>   If this line got removed after we have created this exercise, find out when it was removed.
 > - Inspect that commit with `git show`.
-> - Create a branch pointing to the past when that commit was created to be able to browse and use the code as it was back then.
+> - Create a branch pointing to the past when that commit was created to be
+>   able to browse and use the code as it was back then.
 > - How would can you bring the code to the commit precisely before that line was last modified?
 {: .challenge}
 
