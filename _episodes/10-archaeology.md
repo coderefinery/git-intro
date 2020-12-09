@@ -283,7 +283,7 @@ $ git bisect bad
 >
 > #### Your task
 >
-> - Clone or fork this repository and use `git bisect` to find the commit which
+> - Clone this repository and use `git bisect` to find the commit which
 >   broke the computation
 >   ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
 > - Once you have found the offending commit, also practice navigating to the last good commit.
