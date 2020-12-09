@@ -187,16 +187,53 @@ $ git switch --create branchname somehash
 >   [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
 >   Then step into the new directory:
 >   ```
->   $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
+>   $ git clone https://github.com/tidyverse/rvest.git
 >   $ cd rvest
 >   ```
 >
 > Then using the above 5 tools try to:
-> - Find the code line which contains `"No links matched that expression"`
-> - Find out when this line was last modified. Find the actual commit which modified that line.
-> - Inspect that commit with `git show`.
-> - Create a branch pointing to the past when that commit was created to be able to browse and use the code as it was back then.
-> - How would can you bring the code to the commit precisely before that line was last modified?
+> 1. Find the code line which contains `"No links matched that expression"`.
+> 2. Find out when this line was last modified. Find the actual commit which modified that line.
+>    If this line got removed after we have created this exercise, find out when it was removed.
+> 3. Inspect that commit with `git show`.
+> 4. Create a branch pointing to the past when that commit was created to be
+>    able to browse and use the code as it was back then.
+> 5. How would can you bring the code to the commit precisely before that line was last modified?
+>
+> > ## Solution
+> >
+> > 1. We use `git grep`:
+> >    ```
+> >    $ git grep "No links matched that expression"
+> >    ```
+> >    This gives the output:
+> >    ```
+> >    R/session.R:      stop("No links matched that expression", call. = FALSE)
+> >    ```
+> > 2. We use `git annotate`:
+> >    ```
+> >    $ git annotate R/session.R
+> >    ```
+> >    Then search for "No links matched" by typing "/No links matched" followed by Enter.
+> >    The last commit that modified it was `5bbeb7df` (unless that line changed since).
+> >    If the line does not exist anymore, search for it using:
+> >    ```
+> >    $ git log -S "No links matched that expression"
+> >    ```
+> > 3. We use `git show`:
+> >    ```
+> >    $ git show 5bbeb7df
+> >    ```
+> > 4. Create a branch pointing to that commit (here we called the branch "past-code"):
+> >    ```
+> >    $ git branch past-code 5bbeb7df
+> >    ```
+> > 5. This is a compact way to access the first parent of `5bbeb7df` (here we
+> >    called the branch "just-before"):
+> >    ```
+> >    $ git checkout -b just-before 5bbeb7df~1
+> >    ```
+> {: .solution}
 {: .challenge}
 
 ---
