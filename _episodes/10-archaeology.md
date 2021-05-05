@@ -51,7 +51,7 @@ in the GitHub browser for this example project.
 As a warm-up we can try the ["Git History" browser](https://githistory.xyz/)
 on the README.rst file of the [networkx](https://github.com/networkx/networkx) repository:
 
-- Visit and browse <https://github.githistory.xyz/networkx/networkx/blob/master/README.rst> (use left/right keys).
+- Visit and browse <https://github.githistory.xyz/networkx/networkx/blob/main/README.rst> (use left/right keys).
 - You can try this on some of your repositories, too!
 
 
@@ -153,8 +153,8 @@ $ git checkout -b older-code 347e6292419bd0e4bff077fe971f983932d7a0e9
   # now you can navigate and inspect the code as it was back then
   # ...
 
-  # after we are done we can switch back to "master"
-$ git checkout master
+  # after we are done we can switch back to "main"
+$ git checkout main
 
   # if we like we can delete the "older-code" branch
 $ git branch -d older-code
@@ -268,7 +268,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
 ```shell
 $ git bisect start
 $ git bisect good f0ea950  # this is a commit that worked
-$ git bisect bad master    # last commit is broken
+$ git bisect bad main    # last commit is broken
   # now compile and/or run
   # after that decide whether
 $ git bisect good
