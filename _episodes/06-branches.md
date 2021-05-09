@@ -283,7 +283,7 @@ $ git graph
 - Step out of the current directory: `$ cd ..`
 - Then:
   ```
-  $ git clone https://github.com/coderefinery/recipe.git recipe-branching
+  $ git clone git@github.com:coderefinery/recipe.git recipe-branching
   $ cd recipe-branching
   $ git checkout experiment
   $ git checkout less-salt
