@@ -185,10 +185,11 @@ $ git switch --create branchname somehash
 > Exercise steps:
 > - Clone this repository:
 >   [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
->   Then step into the new directory:
+>   Then step into the new directory and create an exercise branch:
 >   ```
->   $ git clone https://github.com/tidyverse/rvest.git
+>   $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
 >   $ cd rvest
+>   $ git checkout -b exercise
 >   ```
 >
 > Then using the above 5 tools try to:
