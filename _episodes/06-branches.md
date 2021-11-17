@@ -595,31 +595,27 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
 > ## Test your understanding
 >
 > 1. Which of the following combos (one or more) creates a new branch and makes a commit to it?
->    1.
->    ```shell
->    $ git branch new-branch
->    $ git add file.txt
->    $ git commit
->    ```
->    2.
->    ```shell
->    $ git add file.txt
->    $ git branch new-branch
->    $ git checkout new-branch
->    $ git commit
->    ```
->    3.
->    ```shell
->    $ git checkout -b new-branch
->    $ git add file.txt
->    $ git commit
->    ```
->    4.
->    ```shell
->    $ git checkout new-branch
->    $ git add file.txt
->    $ git commit
->    ```
+>    1. ```shell
+>       $ git branch new-branch
+>       $ git add file.txt
+>       $ git commit
+>       ```
+>    2. ```shell
+>       $ git add file.txt
+>       $ git branch new-branch
+>       $ git checkout new-branch
+>       $ git commit
+>       ```
+>    3. ```shell
+>       $ git checkout -b new-branch
+>       $ git add file.txt
+>       $ git commit
+>       ```
+>    4. ```shell
+>       $ git checkout new-branch
+>       $ git add file.txt
+>       $ git commit
+>       ```
 > 2. What is a detached `HEAD`?
 > 3. What are orphaned commits?
 >
