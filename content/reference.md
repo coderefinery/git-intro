@@ -1,15 +1,11 @@
----
-layout: default
-permalink: /reference/
----
-
-# git-intro quick reference
+# Quick reference
 
 ## Other cheatsheets
 
 * [Interactive git cheatsheet](http://www.ndpsoftware.com/git-cheatsheet.html)
 * [Very detailed 2-page git
   cheatsheet](https://users.aalto.fi/~darstr1/cheatsheets/git-for-normal-people-cheatsheet_1.0.pdf)
+
 
 ## Glossary
 
@@ -23,8 +19,6 @@ permalink: /reference/
 * **Remote**: Roughly, another server that holds git.
 * **origin**: Default name for a remote repository.
 * **master**: Default name for main branch.
-
-
 
 
 ## Commands we use

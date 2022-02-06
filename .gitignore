@@ -1,8 +1,10 @@
-_drafts/
-_site/
-.sass-cache
-Gemfile.lock
-# vim swap files
-*.swp
-*~
-.jekyll-cache/
+_build/
+build/
+.ipynb_checkpoints
+/venv*
+.jupyter_cache
+jupyter_execute
+/content/__pycache__/
+/.ccls-cache/
+/content/.auctex-auto/
+/content/code/*/solution/build*

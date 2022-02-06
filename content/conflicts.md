@@ -1,20 +1,21 @@
----
-layout: episode
-title: Conflict resolution
-teaching: 15
-exercises: 15
-questions:
-  - How can we resolve conflicts?
-  - How can we avoid conflicts?
-objectives:
-  - Understand merge conflicts sufficiently well to be able to fix them.
-keypoints:
-  - Conflicts often appear because of not enough communication or not optimal branching strategy.
----
+# Conflict resolution
+
+```{objectives}
+- Understand merge conflicts sufficiently well to be able to fix them.
+```
+
+```{instructor-note}
+- 15 min teaching/type-along
+- 15 min exercise
+```
+
 
 ## Conflict resolution
 
-<img src="{{ site.baseurl }}/img/conflict-resolution/conflict.png" width="60%">
+```{figure} img/conflict-resolution/conflict.png
+:alt: Conflict resolution
+:width: 100%
+```
 
 In most cases a `git merge` runs smooth and automatic.
 Then a merge commit appears (unless fast-forward) without you even noticing.
@@ -44,7 +45,7 @@ conflict.
 
 - Create two branches from `master`: one called `like-cilantro`, one called `dislike-cilantro`:
 
-```shell
+```console
 $ git graph
 
 *   4b3e3cc (HEAD -> master, like-cilantro, dislike-cilantro) Merge branch 'less-salt'
@@ -64,7 +65,7 @@ $ git graph
 
 - On the two branches make **different modifications** to the amount of the **same ingredient**:
 
-```shell
+```console
 $ git graph
 
 * eee4b85 (dislike-cilantro) reduce cilantro to 0.5
@@ -127,7 +128,7 @@ index a83af39..2f60e23 100644
 
 The first merge will work:
 
-```shell
+```console
 $ git checkout master
 $ git status
 $ git merge like-cilantro
@@ -141,7 +142,7 @@ Fast-forward
 But the second will fail:
 
 
-```shell
+```console
 $ git merge dislike-cilantro
 
 Auto-merging ingredients.txt
@@ -152,7 +153,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 Without conflict Git would have automatically created a merge commit,
 but since there is a conflict, Git did not commit:
 
-```shell
+```console
 $ git status
 
 On branch master
@@ -172,7 +173,7 @@ Observe how Git gives us clear instructions on how to move forward.
 
 Let us inspect the conflicting file:
 
-```
+```console
 $ cat ingredients.txt
 
 <<<<<<< HEAD
@@ -245,77 +246,77 @@ Simple steps:
 - Verify the result with `git status`.
 - Finally commit the merge with just `git commit` - everything is pre-filled.
 
----
 
-> ## Exercise: Create another conflict and resolve
->
-> In this exercise, we repeat almost exactly what we did above with a
-> different ingredient.
->
-> 1. After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
-> 2. Again modify some ingredient on both branches.
-> 3. Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
-> 4. What happens if you apply the same modification on both branches?
-{: .challenge}
+## Exercise
 
----
+```{exercise} Exercise: Create another conflict and resolve
+In this exercise, we repeat almost exactly what we did above with a
+different ingredient.
 
-> ## (Optional) Exercise: Conflicts and rebase
->
-> 1. Create two branches where you anticipate a conflict.
-> 2. Try to merge them and observe that indeed they conflict.
-> 3. Abort the merge.
-> 4. What do you expect will happen if you rebase one branch on top of the
->    other? Do you anticipate a conflict? Try it out.
-{: .challenge}
+1. After you have merged `like-cilantro` and `dislike-cilantro` create again two branches.
+2. Again modify some ingredient on both branches.
+3. Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.
+4. What happens if you apply the same modification on both branches?
+```
 
----
 
-> ## (Optional) Resolution using mergetool
->
-> - Again create a conflict (for instance disagree on the number of avocados).
-> - Stop at this stage:
->
-> ```
-> Auto-merging ingredients.txt
-> CONFLICT (content): Merge conflict in ingredients.txt
-> Automatic merge failed; fix conflicts and then commit the result.
-> ```
->
-> - Instead of resolving the conflict manually, use a visual tool
->   (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
->
-> ```shell
-> $ git mergetool
-> ```
->
-> <img src="{{ site.baseurl }}/img/conflict-resolution/mergetool.png" width="100%">
->
-> - Your current branch is left, the branch you merge is right, result is in the middle.
-> - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
->
-> If you have not instructed Git to avoid creating backups when using mergetool, then to be on
-> the safe side there will be additional temporary files created. To remove those  you can do
-> a git clean after the merging.
->
-> To view what will be removed:
->
-> ```
-> $ git clean -n
-> ```
->
-> To remove:
->
-> ```
-> $ git clean -f
-> ```
->
-> To configure Git to avoid creating backups at all:
->
-> ```
-> $ git config --global mergetool.keepBackup false
-> ```
-{: .challenge}
+## Optional exercises
+
+```{exercise} Exercise: Conflicts and rebase
+1. Create two branches where you anticipate a conflict.
+2. Try to merge them and observe that indeed they conflict.
+3. Abort the merge.
+4. What do you expect will happen if you rebase one branch on top of the
+   other? Do you anticipate a conflict? Try it out.
+```
+
+````{exercise} Exercise: Resolution using mergetool
+  - Again create a conflict (for instance disagree on the number of avocados).
+  - Stop at this stage:
+ 
+  ```
+  Auto-merging ingredients.txt
+  CONFLICT (content): Merge conflict in ingredients.txt
+  Automatic merge failed; fix conflicts and then commit the result.
+  ```
+ 
+  - Instead of resolving the conflict manually, use a visual tool
+    (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
+ 
+  ```console
+  $ git mergetool
+  ```
+ 
+  ```{figure} img/conflict-resolution/mergetool.png
+  :alt: Conflict resolution using mergetool
+  :width: 100%
+  ```
+ 
+  - Your current branch is left, the branch you merge is right, result is in the middle.
+  - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
+ 
+  If you have not instructed Git to avoid creating backups when using mergetool, then to be on
+  the safe side there will be additional temporary files created. To remove those  you can do
+  a git clean after the merging.
+ 
+  To view what will be removed:
+ 
+  ```
+  $ git clean -n
+  ```
+ 
+  To remove:
+ 
+  ```
+  $ git clean -f
+  ```
+ 
+  To configure Git to avoid creating backups at all:
+ 
+  ```
+  $ git config --global mergetool.keepBackup false
+  ```
+````
 
 ---
 
@@ -328,13 +329,13 @@ Simple steps:
 
 Example:
 
-```shell
+```console
 $ git merge -s recursive -Xours less-avocados  # merge and in doubt take the changes from current branch
 ```
 
 Or:
 
-```shell
+```console
 $ git merge -s recursive -Xtheirs less-avocados  # merge and in doubt take the changes from less-avocados branch
 ```
 
@@ -351,7 +352,7 @@ What to do?
 - There is no reason to delete the whole repository.
 - You can undo the broken merge by resetting the repository to `HEAD` (last committed state).
 
-```shell
+```console
 $ git merge --abort
 ```
 
@@ -379,3 +380,7 @@ The repository looks then exactly as it was before the merge.
   - Resolve conflicts early.
 
 Discuss how Git handles conflicts compared to the Google Drive.
+
+```{keypoints}
+- Conflicts often appear because of not enough communication or not optimal branching strategy.
+```

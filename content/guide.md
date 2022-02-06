@@ -1,8 +1,3 @@
----
-layout: default
-permalink: /guide/
----
-
 # Instructor guide
 
 ## Why we teach this lesson
@@ -27,6 +22,7 @@ This lesson teaches how things are done in Git, which is useful for the newcomer
 but also how Git operates (e.g. what commits and branches really are) and what are some good
 practices (e.g. how to use the staging area), which is useful for more experienced users.
 
+
 ## Intended learning outcomes
 
 By the end of this lesson, learners should:
@@ -49,6 +45,7 @@ By the end of this lesson, learners should:
 - push changes to a remote repository
 - know a few ways to search through a repository and its history
 - know about the different meanings of `git checkout`, and realize how they're in fact similar
+
 
 ## How to teach this lesson
 
@@ -110,6 +107,7 @@ long. These section can be skipped:
 - The "In-browser session" can be taught to audiences who need to be able to
   commit to existing repositories (e.g. documentation, webpages, ...)
   but may not want to use command line.
+
 
 ### How to use the exercises
 
@@ -272,7 +270,7 @@ Typically only very few learners have background in Subversion or Mercurial and 
 is to "waste" 10 minutes on a discussion that nobody can relate to and benefit from.
 
 
-### Todo
+### TODO
 
 `git restore` and `git switch` were added in git 2.23 (released
 2019-08-16).  Sometime much later (2021, 2022, or 2023) perhaps, the

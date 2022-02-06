@@ -1,24 +1,16 @@
----
-layout: episode
-title: Sharing repositories online
-teaching: 10
-exercises: 10
-questions:
-  - How can I set up a public repository online?
-  - How can I clone a public repository to my computer?
-  - How does version control scale from 1 to N users per repository?
-objectives:
-  - We get a feeling for remote repositories (more later).
-  - We are able to publish a repository on the web.
-  - We are able to fetch and track a repository from the web.
-keypoints:
-  - A repository can have one or multiple remotes (we will revisit these later).
-  - Local branches often track remote branches.
-  - All this might be a bit nebulous but we will add clarity later this week.
-  - A remote serves as a full backup of your work.
-  - We'll properly learn how to use these in the next "git
-    collaborative" lesson.
----
+# Sharing repositories online
+
+```{objectives}
+- We get a feeling for remote repositories (more later).
+- We are able to publish a repository on the web.
+- We are able to fetch and track a repository from the web.
+```
+
+```{instructor-note}
+- 10 min teaching/type-along
+- 10 min exercise
+```
+
 
 ## From our laptops to the web
 
@@ -33,7 +25,6 @@ If we remove `.git`, we remove all Git history of a project.
 - What if somebody steals my laptop?
 - How can we collaborate with others across the web?
 
----
 
 ## Remotes
 
@@ -71,35 +62,32 @@ There are different types of remotes:
   This is GitLab, free for researchers and allows private,
   cross-university sharing.
 
----
 
-> ## Why we use GitHub
->
-> One option to host your repository on the web is [GitHub](https://github.com).
->
-> GitHub is a for-profit service that hosts remote git repositories for you. It
-> offers a nice HTML user interface to browse the repositories and handles many
-> things very nicely.
->
-> It offers unlimited public and private repositories free of charge and costs
-> a monthly fee if you want access to the pro-tools or need more than 3
-> collaborators for your private repos. These features had made GitHub very popular
-> with many open source providers
->
-> CodeRefinery does not in any way endorse the use of GitHub. There are many
-> commercial and open-source alternatives, just check the list above.  In the
-> end, it is a balance between control and visibility, and we use GitHub because
-> you are likely to have to use it for other software anyway.
->
-> **Set up GitHub account**:
-> By now you should already have set up a GitHub account but if you haven't,
-> please do so [here](https://github.com/join). But it is OK if you want to use
-> [GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
-> [NotABug](https://notabug.org) or another platform instead (although we
-> will practice collaborative Git on GitHub tomorrow).
-{: .discussion}
+```{discussion} Why we use GitHub
+One option to host your repository on the web is [GitHub](https://github.com).
 
----
+GitHub is a for-profit service that hosts remote git repositories for you. It
+offers a nice HTML user interface to browse the repositories and handles many
+things very nicely.
+
+It offers unlimited public and private repositories free of charge and costs
+a monthly fee if you want access to the pro-tools or need more than 3
+collaborators for your private repos. These features had made GitHub very popular
+with many open source providers
+
+CodeRefinery does not in any way endorse the use of GitHub. There are many
+commercial and open-source alternatives, just check the list above.  In the
+end, it is a balance between control and visibility, and we use GitHub because
+you are likely to have to use it for other software anyway.
+
+**Set up GitHub account**:
+By now you should already have set up a GitHub account but if you haven't,
+please do so [here](https://github.com/join). But it is OK if you want to use
+[GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
+[NotABug](https://notabug.org) or another platform instead (although we
+will practice collaborative Git on GitHub tomorrow).
+```
+
 
 ## Type-along: Create a new repository on GitHub
 
@@ -109,15 +97,19 @@ others can get the code from it.
 
 Make sure that you are **logged into GitHub**.
 
-To create a repository we either click the green button "New" (top left corner):
-<img src="{{ site.baseurl }}/img/creating-using-web/new-top-left.png" width="400px" style="border:2px solid #000000;">
+```{figure} img/creating-using-web/new-top-left.png
+:width: 60%
+:class: with-border
 
----
+To create a repository we either click the green button "New" (top left corner).
+```
 
-Or if you see your profile page, there is a "+" menu (top right corner):
-<img src="{{ site.baseurl }}/img/creating-using-web/new-top-right.png" width="400px" style="border:2px solid #000000;">
+```{figure} img/creating-using-web/new-top-right.png
+:width: 60%
+:class: with-border
 
----
+Or if you see your profile page, there is a "+" menu (top right corner).
+```
 
 Yet another way to create a new repository is to visit
 [https://github.com/new](https://github.com/new) directly.
@@ -127,14 +119,16 @@ Yet another way to create a new repository is to visit
 On this page choose a project name.
 For the sake of this exercise **do not select**
 "Initialize this repository with a README" (what will happen if you do?):
-
-<img src="{{ site.baseurl }}/img/creating-using-web/creating.png" width="700px" style="border:2px solid #000000;">
-
----
+```{figure} img/creating-using-web/creating.png
+:width: 100%
+:class: with-border
+```
 
 Once you click the green "Create repository", you will see a page similar to:
-
-<img src="{{ site.baseurl }}/img/creating-using-web/created.png" width="700px" style="border:2px solid #000000;">
+```{figure} img/creating-using-web/created.png
+:width: 100%
+:class: with-border
+```
 
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
@@ -156,7 +150,7 @@ We now want to try the second option that GitHub suggests:
 3. Copy paste the three lines to the terminal and execute those, in my case (**you
   need to replace the "user" part and possibly also the repository name**):
 
-```shell
+```console
 $ git remote add origin https://github.com/user/recipe.git
 $ git branch -M main
 $ git push -u origin main
@@ -169,7 +163,7 @@ The meaning of the above lines:
 
 You should now see:
 
-```
+```shell
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
@@ -195,17 +189,27 @@ we will learn how this works.
 At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this
 (again adapt the "namespace/repository.git" part):
 
-```shell
+```console
 $ git clone https://github.com/user/recipe.git
 ```
 
 This creates a directory called "recipe" unless it already exists. You can also specify the target directory
 on your computer:
 
-```shell
+```console
 $ git clone https://github.com/user/recipe.git myrecipe
 ```
 
 What just happened? **Think of cloning as downloading the `.git` part to your
 computer**. After downloading the `.git` part the branch pointed to by HEAD is
 automatically checked out.
+
+
+
+```{keypoints}
+- A repository can have one or multiple remotes (we will revisit these later).
+- Local branches often track remote branches.
+- All this might be a bit nebulous but we will add clarity later this week.
+- A remote serves as a full backup of your work.
+- We'll properly learn how to use these in the next "git collaborative" lesson.
+```

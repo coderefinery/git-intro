@@ -1,19 +1,19 @@
----
-layout: episode
-title: (Optional) Git under the hood
-teaching: 10
-exercises: 10
-questions:
-  - Where are commits stored?
-  - What are branches really?
-objectives:
-  - Verify that branches are pointers to commits.
-keypoints:
-  - Branches are extremely lightweight.
----
+# Git under the hood
 
-![Stranger]({{ site.baseurl }}/img/stranger.jpg
-"stranger"){:class="img-responsive" style="max-width:60%"}
+```{objectives}
+- Verify that branches are pointers to commits.
+- Verify that branches are extremely lightweight.
+```
+
+```{instructor-note}
+- 10 min teaching/type-along
+- 10 min exercise
+```
+
+```{figure} img/stranger.jpg
+:alt: Git under the hood
+:width: 100%
+```
 
 
 ## Down the rabbit hole
@@ -25,7 +25,7 @@ For this exercise create a new repository and commit a couple of changes.
 Now that we've made a couple of commits let us look at what is happening under
 the hood.
 
-```
+```console
 $ cd .git
 $ ls -l
 
@@ -44,7 +44,7 @@ drwx------ 4 bast users 4096 May  7 11:46 refs
 ```
 
 Git stores everything under the .git folder in your repository. In fact, **the
-.git directory is the git repository.**
+.git directory is the Git repository.**
 
 Previously when you wrote the commit messages using your text editor, they
 were in fact saved to COMMIT_EDITMSG.
@@ -56,20 +56,27 @@ the state of each file.
 
 Commits are referenced by a SHA-1 hash (a 40-character hexadecimal string).
 
-![A commit inside git]({{ site.baseurl }}/img/commit-and-tree.png "States of a git file. License CC BY 3.0"){:class="img-responsive"}
-(Image from the [Pro Git book](https://git-scm.com/book/), licensed under CC BY 3.0)
+```{figure} img/commit-and-tree.png
+:alt: A commit inside Git
+:width: 100%
+
+States of a Git file. Image from the [Pro Git book](https://git-scm.com/book/). License CC BY 3.0.
+```
 
 Once you have several commits, each commit blob also links to the hash of the
 previous commit. The commits form a [directed acyclic
 graph](http://eagain.net/articles/git-for-computer-scientists/) (do not worry
 if the term is not familiar).
 
-![A commit and it's parents]({{ site.baseurl }}/img/commits-and-parents.png "Commit and it's parents License CC BY 3.0"){:class="img-responsive"}
-(Image from the [Pro Git book](https://git-scm.com/book/), licensed under CC BY 3.0)
+```{figure} img/commits-and-parents.png
+:alt: A commit and its parents
+:width: 100%
+
+A commit and its parents. Image from the [Pro Git book](https://git-scm.com/book/). License CC BY 3.0.
+```
 
 All branches and tags in Git are pointers to commits.
 
----
 
 ### Git is basically a content-addressed storage system
 
@@ -79,14 +86,12 @@ All branches and tags in Git are pointers to commits.
 
 Let us poke a bit into raw objects! Start with:
 
-
-```shell
+```console
 $ git cat-file -p HEAD
 ```
 
 Then explore the `tree` object, then the `file` object, etc. recursively using the hashes you see.
 
----
 
 ### Demonstration: experimenting with branches
 
@@ -94,61 +99,58 @@ Let us lift the hood and create few branches manually.  The
 goal of this exercise is to hopefully create an "aha" moment and provide us a
 good understanding of the underlying model.
 
-We are starting from the `master` branch and create an `idea` branch:
+We are starting from the `main` branch and create an `idea` branch:
 
-```shell
+```console
 $ git status
 
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
-```shell
+```console
 $ git checkout -b idea
 
 Switched to a new branch 'idea'
 ```
 
-```shell
+```console
 $ git branch
 
 * idea
-  master
+  main
 ```
 
 Now let us go in:
 
-```shell
+```console
 $ cd .git
 $ cd refs/heads
 $ ls -l
 
 total 8
 -rw------- 1 bast users 41 May  7 11:47 idea
--rw------- 1 bast users 41 May  7 11:47 master
+-rw------- 1 bast users 41 May  7 11:47 main
 ```
 
 Let us check what the `idea` file looks like
 (do not worry if the hash is different):
-
-```shell
+```console
 $ cat idea
 
 7f3582dfbad6539cfa60f5b21bfad41d1b58a618
 ```
 
 Now let us replicate this file:
-
-```shell
+```console
 $ cp idea idea-2
 $ cp idea idea-3
 $ cp idea idea-4
 $ cp idea idea-5
 ```
 
-Let us go up two levels and inspect the file `HEAD`
-
-```shell
+Let us go up two levels and inspect the file `HEAD`:
+```console
 $ cd ../..
 $ cat HEAD
 
@@ -156,7 +158,6 @@ ref: refs/heads/idea
 ```
 
 Let us open this file and change it to:
-
 ```
 ref: refs/heads/idea-3
 ```
@@ -164,14 +165,12 @@ ref: refs/heads/idea-3
 **Now we are ready for the aha moment!**
 
 First let us go back to the working area:
-
-```shell
+```console
 $ cd ..
 ```
 
 Now - on which branch are we?
-
-```shell
+```console
 $ git branch
 
   idea
@@ -179,5 +178,5 @@ $ git branch
 * idea-3
   idea-4
   idea-5
-  master
+  main
 ```
