@@ -344,7 +344,7 @@ $ git bisect bad
 ````
 
 ```{keypoints}
-- "`git log/grep/annotate/show/bisect` is a powerful combination when doing archaeology in a project."
-- "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code."
-- "On newer Git you can use the more intuitive `git switch --create branchname somehash`."
+- git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project.
+- `git checkout -b <name> <hash>` is the recommended mechanism to inspect old code.
+- On newer Git you can use the more intuitive `git switch --create branchname somehash`.
 ```
