@@ -60,6 +60,7 @@ exclude_patterns = [
     ".DS_Store",
     "jupyter_execute",
     "*venv*",
+    "img/gitink/README.md",
 ]
 
 

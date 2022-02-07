@@ -218,8 +218,12 @@ it's probably too confusing to use after this course.  But, the idea
 of commands moving from the "working dir", "staging area", "commits",
 etc is good.
 
-Example:
-![](../img/cheat-sheet.jpg)
+```{figure} img/cheat-sheet.jpg
+:alt: Example cheat sheet
+:width: 100%
+
+Example cheat sheet.
+```
 
 We also recommend to draw simple diagrams up on the board (eg: working
 directory - staging area - repository with commands to move between) and keep

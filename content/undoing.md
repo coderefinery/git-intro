@@ -22,7 +22,7 @@ This lesson covers four types of undoing:
 
 Your instructor will choose two to do two in this lesson.
 
-```{discussion" Discussion: undoing
+```{discussion} Discussion: undoing
 When have you made a change, and had to go through much more trouble
 to figure out what you did, or fix it?
 ```

@@ -238,9 +238,7 @@ $ git switch --create branchname somehash
 - You know that it used to work.
 - You do not know when it broke.
 
-```{discussion}
-## How would you solve this?
-
+```{discussion} How would you solve this?
 Before we go on first discuss how you would solve this problem: You know that it worked
 500 commits ago but it does not work now.
 
