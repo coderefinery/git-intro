@@ -18,7 +18,7 @@
   - Different people can work on the same code/project without interfering
   - You can experiment with an idea and discard it if it turns out to be a bad idea
 - Implements **merging**:
-  - Tool to merge development branches for you
+  - Person A and B's simultaneous work can be easily combined
 
 
 ### What we typically like to snapshot
