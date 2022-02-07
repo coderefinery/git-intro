@@ -24,31 +24,27 @@ Along with your code, git creates a *history* for you, and if your
 history is clear then you are a long way to organized code.
 
 ````{discussion}
-  Here are four types of history.  What are the advantages and
+  Here are five types of history.  What are the advantages and
   disadvantages of each, when you look at it later?
   
-  Example 1 (newest commit is on top):
-  
+  **Example 1**:
   ```shell
   b135ec8 add features A, B, and C
   ```
   
-  Example 2 (newest commit is on top):
-  
+  **Example 2** (newest commit is on top):
   ```shell
   6f0d49f implement feature C
   fee1807 implement feature B
   6fe2f23 implement feature A
   ```
   
-  Example 3 (newest commit is on top):
-  
+  **Example 3**:
   ```shell
   ab990f4 saving three months of miscellaneous work I forgot to commit
   ```
   
-  Example 4 (newest commit is on top):
-  
+  **Example 4** (newest commit is on top):
   ```shell
   bf39f9d more work on feature B
   45831a5 removing debug prints for feature A and add new file
@@ -60,8 +56,7 @@ history is clear then you are a long way to organized code.
   49dc419 wip (work in progress)
   ```
   
-  Example 5 (newest commit is on top):
-  
+  **Example 5** (newest commit is on top):
   ```shell
   1949dc4 Work of 2020-04-07
   a361dd3 Work of 2020-04-06
