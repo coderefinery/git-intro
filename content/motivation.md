@@ -125,7 +125,13 @@ Other tools:
 Interesting newcomer:
 - [Pijul](https://pijul.org/)
 ```
+## Difficulties of version control
 
+Despite the benefits, let's be honest, there are some difficulties:
+
+- One more thing to learn (It's probably worth it, will save you more time in the long run.  Basic career skill.)
+- Difficult if some people don't want to use it (in the worst case, you can feed them versions)
+- Advanced things can be difficult,a bit too many gotchas (basics are often enough, ask others for help when needed)
 
 ## A real-life example
 
