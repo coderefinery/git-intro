@@ -82,6 +82,8 @@
 
 ### Collaboration
 
+With version control, none of these are needed anymore (or have much simpler answers):
+
 - *"I will just finish my work and then you can start with your changes."*
 - *"Can you please send me the latest version?"*
 - *"Where is the latest version?"*
