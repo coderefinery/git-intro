@@ -6,7 +6,7 @@
 ```
 
 ```{instructor-note}
-- 15 min teaching/type-along
+- 15 min teaching/demonstration
 ```
 
 
@@ -14,52 +14,57 @@
 
 - System which **records snapshots** of a project
 - Implements **branching**:
-  - you can work on several feature branches and switch between them
-  - different people can work on the same code/project without interfering
-  - you can experiment with an idea and discard it if it turns out to be a bad idea
+  - You can work on several feature branches and switch between them
+  - Different people can work on the same code/project without interfering
+  - You can experiment with an idea and discard it if it turns out to be a bad idea
 - Implements **merging**:
-  - tool to merge development branches for you
+  - Tool to merge development branches for you
 
 
 ### What we typically like to snapshot
 
 - Software (this is how it started but Git/GitHub can track a lot more)
 - Scripts
-- Documents (plain text file much better suitable than Word documents)
+- Documents (plain text files much better suitable than Word documents)
 - Manuscripts (Git is great for collaborating/sharing LaTeX manuscripts)
 - Configuration files
 - Website sources
 - Data
 
 
-## Why code can become a disaster without version control
+````{discussion}
+  Discuss the following directory listing. What possible problems
+  do you anticipate with this kind of "version control":
+  ```shell
+  mylib-1.2.4_18.3.07.tgz         somecode_CP_10.8.07.tgz
+  mylib-1.2.4_27.7.07.tgz         somecode_CP_17.5.07.tgz
+  mylib-1.2.4_29.4.08.tgz         somecode_CP_23.8.07_final.tgz
+  mylib-1.2.4_6.10.07.tgz         somecode_CP_24.5.07.tgz
+  mylib-1.2.5_23.4.08.tgz         somecode_CP_25.5.07.tgz
+  mylib-1.2.5_25.5.07.tgz         somecode_CP_29.5.07.tgz
+  mylib-1.2.5_6.6.07.tgz          somecode_CP_30.5.07.tgz
+  mylib-1.2.5_bexc.tgz            somecode_CP_6.10.07.tgz
+  mylib-1.2.5_d0.tgz              somecode_CP_6.6.07.tgz
+  mylib-1.3.0_4.4.08.tgz          somecode_CP_8.6.07.tgz
+  mylib-1.3.1_4.4.08.tgz          somecode_KT.tgz
+  mylib-1.3.2_22.4.08.tgz         somecode_PI1_2007.tgz
+  mylib-1.3.2_4.4.08.tgz          somecode_PI_2007.tgz
+  mylib-1.3.2_5.4.08.tgz          somecode_PI2_2007.tgz
+  mylib-1.3.3_1.5.08.tgz          somecode_PI_CP_18.3.07.tgz
+  mylib-1.3.3_20.5.08.tgz         somecode_11.5.08.tgz
+  mylib-1.3.3_tstrm_27.6.08.tgz   somecode_15.4.08.tgz
+  mylib-1.3.3_wk_10.8.08.tgz      somecode_17.6.09_unfinished.tgz
+  mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
+  mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
+  ...
+  ```
 
-Discuss the following directory listing. What possible problems
-do you anticipate with this kind of "version control":
-
-```shell
-mylib-1.2.4_18.3.07.tgz         somecode_CP_10.8.07.tgz
-mylib-1.2.4_27.7.07.tgz         somecode_CP_17.5.07.tgz
-mylib-1.2.4_29.4.08.tgz         somecode_CP_23.8.07_final.tgz
-mylib-1.2.4_6.10.07.tgz         somecode_CP_24.5.07.tgz
-mylib-1.2.5_23.4.08.tgz         somecode_CP_25.5.07.tgz
-mylib-1.2.5_25.5.07.tgz         somecode_CP_29.5.07.tgz
-mylib-1.2.5_6.6.07.tgz          somecode_CP_30.5.07.tgz
-mylib-1.2.5_bexc.tgz            somecode_CP_6.10.07.tgz
-mylib-1.2.5_d0.tgz              somecode_CP_6.6.07.tgz
-mylib-1.3.0_4.4.08.tgz          somecode_CP_8.6.07.tgz
-mylib-1.3.1_4.4.08.tgz          somecode_KT.tgz
-mylib-1.3.2_22.4.08.tgz         somecode_PI1_2007.tgz
-mylib-1.3.2_4.4.08.tgz          somecode_PI_2007.tgz
-mylib-1.3.2_5.4.08.tgz          somecode_PI2_2007.tgz
-mylib-1.3.3_1.5.08.tgz          somecode_PI_CP_18.3.07.tgz
-mylib-1.3.3_20.5.08.tgz         somecode_11.5.08.tgz
-mylib-1.3.3_tstrm_27.6.08.tgz   somecode_15.4.08.tgz
-mylib-1.3.3_wk_10.8.08.tgz      somecode_17.6.09_unfinished.tgz
-mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
-mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
-...
-```
+  ```{solution}
+  - Giving a version to a collaborator and merging changes later with own
+    changes sounds like lots of work.
+  - What if you discover a bug and want to know since when the bug existed?
+  ```
+````
 
 
 ## Why version control
@@ -77,18 +82,18 @@ mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
 
 ### Collaboration
 
-- *"I will just finish my work and then you can start with your changes."*.
-- *"Can you please send me the latest version?"*.
-- *"Where is the latest version?"*.
-- *"Which version are you using?"*.
-- *"Which version have the authors used in the paper I am trying to reproduce?"*.
+- *"I will just finish my work and then you can start with your changes."*
+- *"Can you please send me the latest version?"*
+- *"Where is the latest version?"*
+- *"Which version are you using?"*
+- *"Which version have the authors used in the paper I am trying to reproduce?"*
 
 
 ### Reproducibility
 
 - How do you indicate which version of your code you have used in your paper?
 - When you find a bug, how do you know **when precisely** this bug was introduced
-  (are published results affected? do you need to inform collaborators or users of your code?).
+  (Are published results affected? Do you need to inform collaborators or users of your code?).
 
 
 ### Compare with Dropbox or Google Drive
