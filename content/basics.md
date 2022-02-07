@@ -226,7 +226,7 @@ Date:   Thu May 4 15:02:56 2017 +0200
   $ git diff
   ```
  
-  ```
+  ```diff
   diff --git a/ingredients.txt b/ingredients.txt
   index 2607525..ec0abc6 100644
   --- a/ingredients.txt
