@@ -1,7 +1,7 @@
 # Practical advice: how much git is necessary?
 
 ```{instructor-note}
-- 10 min teaching/type-along
+- 10 min teaching/discussion
 ```
 
 
@@ -13,14 +13,15 @@
 - Typically start with just the `main` branch.
 - Use branches for unfinished/untested ideas.
 - Use branches when you are not sure about a change.
+- Use tags to mark important milestones.
 
 
-### Projects with few persons, you accept things breaking sometimes
+### Projects with few persons: you accept things breaking sometimes
 
 - It might be reasonable to commit to the `main` branch and feature branches.
 
 
-### Projects with few persons, changes are reviewed by others
+### Projects with few persons: changes are reviewed by others
 
 - The `main` branch is write-protected.
 - You create new feature branches for changes.
@@ -39,9 +40,9 @@
 ## How about staging and committing?
 
 - It is OK to start committing directly.
-- Commit early and often, rather create too many commits than too few:
-  you can always combine commits later.
-- Once you commit, it is very, very hard to really lose your code
+- Commit early and often: rather create too many commits than too few.
+  You can always combine commits later.
+- Once you commit, it is very, very hard to really lose your code.
 - Always fully commit (or stash) before you do dangerous things, so that you know you are safe.
   Otherwise it can be hard to recover.
 - Later you can start using the staging area.
