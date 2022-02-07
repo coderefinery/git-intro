@@ -73,10 +73,10 @@ If you are interested in the Git-aware prompt you can find it on
 
    motivation
    basics
-   staging-area
-   undoing
    branches
    conflicts
+   staging-area
+   undoing
    remotes
    archaeology
    level
