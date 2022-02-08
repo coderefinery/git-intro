@@ -11,7 +11,7 @@ the separate `collaborative git
 lesson <https://coderefinery.org/lessons/>`__, we teach more use of
 remote repositories and good collaborative workflows. We try to stick to
 simple workflows, just enough for researchers who are not obsessed with
-git to be able to work well. We try to avoid commands which might get
+Git to be able to work well. We try to avoid commands which might get
 you into a confusing state.
 
 The goals of the module as a whole are that the user will feel
@@ -38,33 +38,6 @@ If you are teaching this lesson, see the `instructor’s guide <guide>`__.
       instructions <https://coderefinery.github.io/installation/>`__.
    -  A `GitHub <https://github.com>`__ user account (but alternatives
       exist, see below).
-
-
-.. note::
-
-   **Why GitHub?**
-
-   In this introduction we will mention and use
-   `GitHub <https://github.com>`__ but also
-   `GitLab <https://gitlab.com>`__ and
-   `Bitbucket <https://bitbucket.org>`__ allow similar workflows and
-   basically everything that we will discuss is transferable. With this
-   material and these exercises we do not endorse the company
-   `GitHub <https://github.com>`__. We have chosen to demonstrate a
-   number of concepts using examples with
-   `GitHub <https://github.com>`__ because it is currently the most
-   popular web platform for hosting Git repositories and the chance is
-   high that you will interact with
-   `GitHub <https://github.com>`__-based repositories even if you choose
-   to host your Git repository on another platform.
-
-   Course participants are most welcome to use our new `Nordic research
-   software repository platform <https://source.coderefinery.org>`__
-   instead, for more information see
-   https://coderefinery.org/repository/.
-
-If you are interested in the Git-aware prompt you can find it on
-`GitHub <https://github.com/jimeh/git-aware-prompt>`__.
 
 
 .. toctree::
@@ -97,3 +70,27 @@ If you are interested in the Git-aware prompt you can find it on
 
    guide
    reference
+
+
+.. note::
+
+   **Why GitHub?**
+
+   In this introduction we will mention and use
+   `GitHub <https://github.com>`__ but also
+   `GitLab <https://gitlab.com>`__ and
+   `Bitbucket <https://bitbucket.org>`__ allow similar workflows and
+   basically everything that we will discuss is transferable. With this
+   material and these exercises we do not endorse the company
+   `GitHub <https://github.com>`__. We have chosen to demonstrate a
+   number of concepts using examples with
+   `GitHub <https://github.com>`__ because it is currently the most
+   popular web platform for hosting Git repositories and the chance is
+   high that you will interact with
+   `GitHub <https://github.com>`__-based repositories even if you choose
+   to host your Git repository on another platform.
+
+   Course participants are most welcome to use our `Nordic research
+   software repository platform <https://source.coderefinery.org>`__
+   instead, for more information see
+   https://coderefinery.org/repository/.
