@@ -38,7 +38,7 @@ After demonstrating the command line tools, the instructor can also demonstrate 
 in the GitHub browser for this example project.
 
 
-### 0. Warm-up: ["Git History" browser](https://githistory.xyz/)
+### Warm-up: ["Git History" browser](https://githistory.xyz/)
 
 As a warm-up we can try the ["Git History" browser](https://githistory.xyz/)
 on the README.rst file of the [networkx](https://github.com/networkx/networkx) repository:
@@ -47,7 +47,7 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 - You can try this on some of your repositories, too!
 
 
-### 1. `git grep` to search through the repository
+### git grep: to search through the repository
 
 With `git grep` you can find all lines in a repository which contain some string or regular expression.
 This is useful to find out where in the code some variable is used or some error message printed:
@@ -66,7 +66,7 @@ $ git grep -i fixme
 ```
 
 
-### 2. `git log -S` to search through the history of changes
+### git log -S: to search through the history of changes
 
 While `git grep` searches the **current state** of the repository,
 it is possible to search also through all changes for "sometext":
@@ -82,7 +82,7 @@ $ git log -S test_weakly_connected_component
 ```
 
 
-### 3. `git show` to inspect commits
+### git show: to inspect commits
 
 We have seen this one before already. Using `git show` we can inspect an individual commit if
 we know its hash:
@@ -98,7 +98,7 @@ $ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
 ```
 
 
-### 4. `git annotate` to annotate code with commit metadata
+### git annotate: to annotate code with commit metadata
 
 Try it out on a file - with `git annotate` you can see line by line who and **when** the line was modified
 last. It also prints the precise hash of the last change which modified each line. Incredibly useful
@@ -126,7 +126,7 @@ Discuss how these two affect the annotation:
 ```
 
 
-### 5. `git checkout -b` to inspect code in the past
+### git checkout -b: to inspect code in the past
 
 We can create branches pointing to a commit in the past.
 This is the recommended mechanism to inspect old code:
@@ -344,7 +344,7 @@ $ git bisect bad
 ````
 
 ```{keypoints}
-- "`git log/grep/annotate/show/bisect` is a powerful combination when doing archaeology in a project."
-- "`git checkout -b <name> <hash>` is the recommended mechanism to inspect old code."
-- "On newer Git you can use the more intuitive `git switch --create branchname somehash`."
+- git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project.
+- `git checkout -b <name> <hash>` is the recommended mechanism to inspect old code.
+- On newer Git you can use the more intuitive `git switch --create branchname somehash`.
 ```
