@@ -179,17 +179,16 @@ $ git switch --create branchname somehash
   Exercise steps:
   - Clone this repository:
     [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
-    Then step into the new directory and create an exercise branch:
+    Then step into the new directory and create an exercise branch from the networkx-2.6.3 tag/release:
     ```
-    $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
-    $ cd rvest
-    $ git checkout -b exercise
+    $ git clone https://github.com/networkx/networkx.git
+    $ cd networkx
+    $ git checkout -b exercise networkx-2.6.3
     ```
 
   Then using the above toolbox try to:
-  1. Find the code line which contains `"No links matched that expression"`.
-  2. Find out when this line was last modified. Find the actual commit which modified that line.
-     If this line got removed after we have created this exercise, find out when it was removed.
+  1. Find the code line which contains `"Logic error in degree_correlation"`.
+  2. Find out when this line was last modified or added. Find the actual commit which modified that line.
   3. Inspect that commit with `git show`.
   4. Create a branch pointing to the past when that commit was created to be
      able to browse and use the code as it was back then.
@@ -198,34 +197,30 @@ $ git switch --create branchname somehash
   ````{solution}
   1. We use `git grep`:
      ```console
-     $ git grep "No links matched that expression"
+     $ git grep "Logic error in degree_correlation"
      ```
      This gives the output:
      ```
-     R/session.R:      stop("No links matched that expression", call. = FALSE)
+     networkx/algorithms/threshold.py:                print("Logic error in degree_correlation", i, rdi)
      ```
   2. We use `git annotate`:
      ```console
-     $ git annotate R/session.R
+     $ git annotate networkx/algorithms/threshold.py
      ```
-     Then search for "No links matched" by typing "/No links matched" followed by Enter.
-     The last commit that modified it was `5bbeb7df` (unless that line changed since).
-     If the line does not exist anymore, search for it using:
-     ```console
-     $ git log -S "No links matched that expression"
-     ```
+     Then search for "Logic error" by typing "/Logic error" followed by Enter.
+     The last commit that modified it was `90544b4fa` (unless that line changed since).
   3. We use `git show`:
      ```console
-     $ git show 5bbeb7df
+     $ git show 90544b4fa
      ```
   4. Create a branch pointing to that commit (here we called the branch "past-code"):
      ```console
-     $ git branch past-code 5bbeb7df
+     $ git branch past-code 90544b4fa
      ```
-  5. This is a compact way to access the first parent of `5bbeb7df` (here we
+  5. This is a compact way to access the first parent of `90544b4fa` (here we
      called the branch "just-before"):
      ```console
-     $ git checkout -b just-before 5bbeb7df~1
+     $ git checkout -b just-before 90544b4fa~1
      ```
   ````
 `````
