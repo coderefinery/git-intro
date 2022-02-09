@@ -273,46 +273,46 @@ different ingredient.
 ````{exercise} Exercise: Resolution using mergetool
   - Again create a conflict (for instance disagree on the number of avocados).
   - Stop at this stage:
- 
+
   ```
   Auto-merging ingredients.txt
   CONFLICT (content): Merge conflict in ingredients.txt
   Automatic merge failed; fix conflicts and then commit the result.
   ```
- 
+
   - Instead of resolving the conflict manually, use a visual tool
     (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
- 
+
   ```console
   $ git mergetool
   ```
- 
+
   ```{figure} img/conflict-resolution/mergetool.png
   :alt: Conflict resolution using mergetool
   :width: 100%
   ```
- 
+
   - Your current branch is left, the branch you merge is right, result is in the middle.
   - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
- 
+
   If you have not instructed Git to avoid creating backups when using mergetool, then to be on
   the safe side there will be additional temporary files created. To remove those  you can do
   a git clean after the merging.
- 
+
   To view what will be removed:
- 
+
   ```
   $ git clean -n
   ```
- 
+
   To remove:
- 
+
   ```
   $ git clean -f
   ```
- 
+
   To configure Git to avoid creating backups at all:
- 
+
   ```
   $ git config --global mergetool.keepBackup false
   ```

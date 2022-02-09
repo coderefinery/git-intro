@@ -219,13 +219,13 @@ Date:   Thu May 4 15:02:56 2017 +0200
 ````{exercise}
   Add 1/2 onion to `ingredients.txt` and also the instruction
   to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
- 
+
   When you are done editing the files, try `git diff`:
- 
+
   ```console
   $ git diff
   ```
- 
+
   ```diff
   diff --git a/ingredients.txt b/ingredients.txt
   index 2607525..ec0abc6 100644
@@ -246,24 +246,24 @@ Date:   Thu May 4 15:02:56 2017 +0200
    * and mix well
   +* enjoy!
   ```
- 
+
   Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
- 
+
   ```console
   $ git add ingredients.txt
   $ git commit -m "add half an onion"
   $ git add instructions.txt
   $ git commit                   # <-- we have left out -m "..."
   ```
- 
+
   When you leave out the `-m` flag, Git should open an editor where you can edit
   your commit message. This message will be associated and stored with the
   changes you made. This message is your chance to explain what you've done and
   convince others (and your future self) that the changes you made were
   justified.  Write a message and save and close the file.
- 
+
   When you are done committing the changes, experiment with these commands:
- 
+
   ```console
   $ git log    # show commit logs
   $ git show   # show various types of objects
@@ -290,24 +290,24 @@ Date:   Thu May 4 15:02:56 2017 +0200
 
 ````{exercise} Visual diff tools
   - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
- 
+
   On Windows or Linux:
   ```
   $ git difftool --tool=meld
   ```
- 
+
   On macOS:
   ```
   $ git difftool --tool=opendiff
   ```
- 
+
   ```{figure} img/meld.png
   :alt: Git difftool using meld
   :width: 100%
 
   Git difftool using meld.
   ```
- 
+
   You probably want to use the same visual diff tool every time and
   you can configure Git for that:
   ```
@@ -445,7 +445,7 @@ Git is not ideal for large binary files
 ````{challenge} Test your understanding
   Which command(s) below would save the changes of `myfile.txt`
   to my local Git repository?
- 
+
   1. ```console
      $ git commit -m "my recent changes"
      ```
@@ -461,7 +461,7 @@ Git is not ideal for large binary files
      $ git commit -m myfile.txt "my recent changes"
      ```
   ```{solution}
-   
+
   1. Would only create a commit if files have already been staged.
   2. Would try to create a new repository.
   3. Is correct: first add the file to the staging area, then commit.

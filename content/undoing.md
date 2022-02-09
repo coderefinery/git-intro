@@ -154,27 +154,27 @@ point in the past.
 ````{exercise} Exercise: Destroy our experimentation in this episode
   After we have experimented with reverts and amending, let us destroy
   all of that and get our repositories to a similar state.
- 
+
   - First, we will look at our history (`git log`/`git graph`) and
     find the last commit `$commit` before our tests.
   - Then, we will `git reset --hard $commit` to that.
   - Then, `git graph` again to see what happened.
- 
+
   ```console
   $ git log --oneline
- 
+
   d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
   f960dd3 not sure this is a good idea
   dd4472c we should not forget to enjoy
   2bb9bb4 add half an onion
   2d79e7e adding ingredients and instructions
- 
+
   $ git reset --hard dd4472c
- 
+
   HEAD is now at dd4472c we should not forget to enjoy
- 
+
   $ git log --oneline
- 
+
   dd4472c (HEAD -> master) we should not forget to enjoy
   2bb9bb4 add half an onion
   2d79e7e adding ingredients and instructions

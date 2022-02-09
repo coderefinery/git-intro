@@ -163,17 +163,17 @@ $ git switch --create branchname somehash
   Let us explore the value of these commands in an exercise.  Future
   exercises do not depend on this, so it is OK if you do not complete
   it fully.
- 
+
   **In-person workshops**: We recommend that you
   do this exercise in groups of two and discuss with your neighbors.
- 
+
   **Video workshops**: We will group you in breakout rooms of ~4 persons where you
   can work and discuss together. A helper or instructor will pop in to help out.
   In the group one participant can share their screen and others
   in the group help out, discuss, and try to follow along.
   Please write down questions in the collaborative notes.
   After 15-20 minutes we will bring you back into the main room and discuss.
- 
+
   Exercise steps:
   - Clone this repository:
     [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
@@ -183,7 +183,7 @@ $ git switch --create branchname somehash
     $ cd rvest
     $ git checkout -b exercise
     ```
- 
+
   Then using the above 5 tools try to:
   1. Find the code line which contains `"No links matched that expression"`.
   2. Find out when this line was last modified. Find the actual commit which modified that line.
@@ -192,7 +192,7 @@ $ git switch --create branchname somehash
   4. Create a branch pointing to the past when that commit was created to be
      able to browse and use the code as it was back then.
   5. How would can you bring the code to the commit precisely before that line was last modified?
- 
+
   ````{solution}
   1. We use `git grep`:
      ```console
@@ -280,35 +280,35 @@ $ git bisect bad
 ````{exercise}
   In this exercise, we use `git bisect` on an example repository.  It
   is OK if you do not complete this exercise fully.
- 
+
   Begin by cloning [https://github.com/coderefinery/git-bisect-exercise](https://github.com/coderefinery/git-bisect-exercise).
- 
- 
+
+
   **Motivation**
- 
+
   The motivation for this exercise is to be able to do archaeology with Git on a
   source code where the bug is difficult to see visually. **Finding the offending
   commit is often more than half the debugging**.
- 
- 
+
+
   **Background**
- 
+
   The script `get_pi.py` approximates pi using terms of the Nilakantha series. It
   should produce 3.14 but it does not. The script broke at some point and
   produces 3.57 using the last commit:
- 
+
   ```
   $ python get_pi.py
- 
+
   3.57
   ```
- 
+
   At some point within the 500 first commits, an error was introduced. The only
   thing we know is that the first commit worked correctly.
- 
- 
+
+
   **Your task**
- 
+
   - Clone this repository and use `git bisect` to find the commit which
     broke the computation
     ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
@@ -317,27 +317,27 @@ $ git bisect bad
     Write a script that checks for a correct result and use `git bisect run` to
     find the offending commit automatically
     ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
- 
+
   **Video workshops**: We will group you in breakout rooms of ~4 persons where you
   can work and discuss together. A helper or instructor will pop in to help out.
   Please write down questions in the collaborative notes.
   After 15-20 minutes we will bring you back into the main room and discuss.
- 
- 
+
+
   **Hints**
- 
+
   Finding the first commit:
- 
+
   ```
   $ git log --oneline | tail -n 1
   ```
- 
+
   How to navigate to the parent of a commit with hash `somehash`:
- 
+
   ```shell
     # create branch pointing to the parent of somehash
   $ git checkout -b branchname somehash~1
- 
+
     # instead of a tilde you can also use this
   $ git checkout -b branchname somehash^
   ```

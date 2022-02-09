@@ -26,24 +26,24 @@ history is clear then you are a long way to organized code.
 ````{discussion}
   Here are five types of history.  What are the advantages and
   disadvantages of each, when you look at it later?
-  
+
   **Example 1**:
   ```shell
   b135ec8 add features A, B, and C
   ```
-  
+
   **Example 2** (newest commit is on top):
   ```shell
   6f0d49f implement feature C
   fee1807 implement feature B
   6fe2f23 implement feature A
   ```
-  
+
   **Example 3**:
   ```shell
   ab990f4 saving three months of miscellaneous work I forgot to commit
   ```
-  
+
   **Example 4** (newest commit is on top):
   ```shell
   bf39f9d more work on feature B
@@ -55,7 +55,7 @@ history is clear then you are a long way to organized code.
   61dd3a3 forgot file and bugfix
   49dc419 wip (work in progress)
   ```
-  
+
   **Example 5** (newest commit is on top):
   ```shell
   1949dc4 Work of 2020-04-07
@@ -63,7 +63,7 @@ history is clear then you are a long way to organized code.
   1172e02 Work of 2020-04-03
   e772d78 Work of 2020-04-02
   ```
-  
+
   Discuss these examples. Can you anticipate problems?
 ````
 
@@ -123,7 +123,7 @@ We give two examples and the instructor can pick one or both:
 
 ```{discussion}
   **Analogy using moving boxes**
- 
+
   - You're moving and you have a box to pack your things in.
   - You can put stuff into the box, but you can also take stuff out of the box.
   - You wouldn't want to mix items from the bathroom, kitchen and living room into the same box.
@@ -131,10 +131,10 @@ We give two examples and the instructor can pick one or both:
   - Committing is like sealing the box and sticking a label on it.
   - You wouldn't want to label your box with "stuff", but rather give a more descriptive label.
   - See also <https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh>
- 
- 
+
+
   **Analogy using shopping receipts**
- 
+
   - You need to go shopping and buy some stuff for work and for home.
     You need two separate receipts.
   - Bad idea: go through the store get home stuff, pay, start at the
@@ -148,7 +148,7 @@ We give two examples and the instructor can pick one or both:
       basket (`git diff`) to make sure you got all your home stuff.
     - Pay (`git commit`)
     - Repeat for work stuff.
- 
+
   In order to keep organized, you have to use multiple locations to
   stage things in sequence.
 ```

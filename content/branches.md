@@ -171,26 +171,26 @@ $ git graph
 
 ````{discussion} Different meanings of "checkout"
   Depending on the context `git checkout` can do very different actions:
- 
+
   1) Switch to a branch:
      ```console
      $ git checkout <branchname>
      ```
- 
+
   2) Bring the working tree to a specific state (commit):
      ```console
      $ git checkout <hash>
      ```
- 
+
   3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
      ```console
      $ git checkout <path/file>
      ```
- 
+
   This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
   Picture `git checkout` as an operation that brings the working tree to a specific state.
   The state can be a commit or a branch (pointing to a commit).
- 
+
   In Git 2.23 (2019-08-16) and later this is much nicer:
   ```console
   $ git switch <branchname>  # switch to a different branch
@@ -205,7 +205,7 @@ $ git graph
   In this exercise, you will create two new branches, make new commits
   to each branch.  We will use this in the next section, to practice
   merging.
- 
+
   - Change to the branch `master`.
   - Create another branch called `less-salt`
     - Note! makes sure you are on master branch when you create the less-salt branch
@@ -216,20 +216,20 @@ $ git graph
   ```
   - where you reduce the amount of salt.
   - Commit your changes to the `less-salt` branch.
- 
+
   Use the same commands as we used above.
- 
+
   We now have three branches (in this case `HEAD` points to `less-salt`):
- 
+
   ```console
   $ git branch
- 
+
     experiment
   * less-salt
     master
- 
+
   $ git graph
- 
+
   * bf59be6 (HEAD -> less-salt) reduce amount of salt
   | * 6feb49d (experiment) maybe little bit less cilantro
   | * 7cf6d8c let us try with some cilantro
@@ -238,26 +238,26 @@ $ git graph
   * 2bb9bb4 add half an onion
   * 2d79e7e adding ingredients and instructions
   ```
- 
+
   Here is a graphical representation of what we have created:
- 
+
   ```{figure} img/gitink/git-branch-2.svg
   ```
- 
+
   - Now switch to `master`.
   - Add and commit the following `README.md` to `master`:
- 
+
   ```markdown
   # Guacamole recipe
- 
+
   Used in teaching Git.
   ```
- 
+
   Now you should have this situation:
- 
+
   ```console
   $ git graph
- 
+
   * 40fbb90 (HEAD -> master) draft a readme
   | * bf59be6 (less-salt) reduce amount of salt
   |/
@@ -268,10 +268,10 @@ $ git graph
   * 2bb9bb4 add half an onion
   * 2d79e7e adding ingredients and instructions
   ```
- 
+
   ```{figure} img/gitink/git-branch-3.svg
   ```
- 
+
   And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
 ````
 
@@ -615,7 +615,7 @@ subject.
         ```
   2. What is a detached `HEAD`?
   3. What are orphaned commits?
- 
+
   ```{solution}
     1. Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
        branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
