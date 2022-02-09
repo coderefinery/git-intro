@@ -9,16 +9,17 @@
 
 ## Glossary
 
-* **Working directory/Workspace**: the actual files you see and edit
-* **Staging area**: Place files go after `git add` and before `git
+* **working directory/ workspace**: the actual files you see and edit
+* **staging area**: Place files go after `git add` and before `git
   commit`
-* **Hash**: unique reference of any commit or state
-* **Branch**: One line of work.  Different branches can exist at the
+* **hash**: unique reference of any commit or state
+* **branch**: One line of work.  Different branches can exist at the
   same time and split/merge.
 * **HEAD**: Pointer to the most recent commit on the current branch.
-* **Remote**: Roughly, another server that holds git.
+* **remote**: Roughly, another server that holds .git.
 * **origin**: Default name for a remote repository.
-* **master**: Default name for main branch.
+* **master**: Default name for main branch. Depending on the configuration and service,
+              the default branch is sometimes **main**.
 
 
 ## Commands we use
@@ -46,7 +47,7 @@ General work:
 * `git commit`: record a version, add it to current branch
 * `git commit --amend`: amend our last commit
 * `git branch`: show which branch we're on
-* `git branch <name>`: create a new branch &lt;name&gt;
+* `git branch <name>`: create a new branch called "name"
 * `git checkout <file>`: checkout last committed version of &lt;file&gt;, losing unstaged changes
 * `git checkout -b <branch-name>`: create a new branch and switch to it
 * `git revert abc123`: create a new commit which reverts commit abc123
