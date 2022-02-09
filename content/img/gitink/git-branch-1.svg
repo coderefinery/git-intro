@@ -71,30 +71,6 @@
                         stroke-dasharray:none"
                  width="32.0"
                  height="30.0"
-                 x="60.0"
-                 y="0.0"
-                 ry="5.0" />
-           <text style="font-size:12.5px;
-                        font-style:normal;
-                        font-weight:normal;
-                        line-height:125%%;
-                        letter-spacing:0px;
-                        word-spacing:0px;
-                        fill:#000000;
-                        fill-opacity:1.0;
-                        stroke:none;
-                        font-family:DejaVu Sans Mono"
-                 x="67.5"
-                 y="20.5">m2</text>
-           
-           <rect style="fill:#9beeae;
-                        stroke:#55A868;
-                        stroke-width:1.25;
-                        stroke-miterlimit:4;
-                        stroke-opacity:1.0;
-                        stroke-dasharray:none"
-                 width="32.0"
-                 height="30.0"
                  x="120.0"
                  y="0.0"
                  ry="5.0" />
@@ -110,6 +86,30 @@
                         font-family:DejaVu Sans Mono"
                  x="127.5"
                  y="20.5">m3</text>
+           
+           <rect style="fill:#9beeae;
+                        stroke:#55A868;
+                        stroke-width:1.25;
+                        stroke-miterlimit:4;
+                        stroke-opacity:1.0;
+                        stroke-dasharray:none"
+                 width="32.0"
+                 height="30.0"
+                 x="60.0"
+                 y="0.0"
+                 ry="5.0" />
+           <text style="font-size:12.5px;
+                        font-style:normal;
+                        font-weight:normal;
+                        line-height:125%%;
+                        letter-spacing:0px;
+                        word-spacing:0px;
+                        fill:#000000;
+                        fill-opacity:1.0;
+                        stroke:none;
+                        font-family:DejaVu Sans Mono"
+                 x="67.5"
+                 y="20.5">m2</text>
            
            <rect style="fill:#9beeae;
                         stroke:#55A868;
