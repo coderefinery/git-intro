@@ -59,7 +59,7 @@ Collaborative Git.
 ```
 
 - We see branching points and merging points.
-- Main line development is often called `master`.
+- Main line development is often called `master` or `main`.
 - Other than this convention there is nothing special about `master`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
@@ -119,6 +119,10 @@ and how to remove them afterwards.
 
 
 ## Creating and working with branches
+
+```{instructor-note}
+We do the following part together. Encourage participants to type along.
+```
 
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
@@ -202,8 +206,8 @@ $ git graph
 ## Exercise: create and commit to branches
 
 ````{exercise}
-  In this exercise, you will create two new branches, make new commits
-  to each branch.  We will use this in the next section, to practice
+  In this exercise, you will create another new branch and few more commits.
+  We will use this in the next section, to practice
   merging.
 
   - Change to the branch `master`.
@@ -212,9 +216,9 @@ $ git graph
     - A safer way would be to explicitly mention to create from the master branch
       as shown below
   ```console
-  git branch less-salt master
+  $ git branch less-salt master
   ```
-  - where you reduce the amount of salt.
+  - Where you reduce the amount of salt.
   - Commit your changes to the `less-salt` branch.
 
   Use the same commands as we used above.
@@ -278,24 +282,28 @@ $ git graph
 
 ## Merging branches
 
-**If you got stuck in the above exercises**:
+It turned out that our experiment with cilantro was a good idea.
+Our goal now is to merge `experiment` into `master`.
 
-- **Skip this unless you got stuck**.
-- Step out of the current directory: `$ cd ..`
-- Then:
-  ```
+````{note}
+  **If you got stuck in the above exercises** you can apply the commands below.
+  But **skip this box if you managed to create branches**.
+
+  ```console
+  $ cd ..  # step out of the current directory
+
   $ git clone https://github.com/coderefinery/recipe.git recipe-branching
   $ cd recipe-branching
+
   $ git checkout experiment
   $ git checkout less-salt
   $ git checkout master
+
   $ git graph
   ```
-- Or call a helper to un-stuck it for you.
 
-
-It turned out that our experiment with cilantro was a good idea.
-Our goal now is to merge `experiment` into `master`.
+  Or call a helper to un-stuck it for you.
+````
 
 First we make sure we are on the branch we wish to merge **into**:
 
@@ -396,7 +404,6 @@ If the same file is changed in both branches, Git attempts to incorporate both
 changes into the merged file. If the changes overlap then the user has to
 manually *settle merge conflicts* (we will do that later).
 
----
 
 ## Deleting branches safely
 
@@ -450,9 +457,14 @@ Git will not let you delete a branch which has not been reintegrated unless you
 insist using `git branch -D`. Even then your commits will not be lost but you
 may have a hard time finding them as there is no branch pointing to them.
 
----
 
-````{exercise} Exercise: encounter a fast-forward merge
+## Optional exercises
+
+The following exercises are advanced, absolutely no problem to postpone them to a
+few months later. If you give them a go, keep in mind that you might run into conflicts,
+which we will learn to resolve in the next section.
+
+````{exercise} Exercise: Encounter a fast-forward merge
 1. Create a new branch from `master` and switch to it.
 2. Create a couple of commits on the new branch (for instance edit `README.md`):
    ```{figure} img/gitink/git-pre-ff.svg
@@ -462,24 +474,6 @@ may have a hard time finding them as there is no branch pointing to them.
 5. Examine the result with `git graph`.
 6. Have you expected the result? Discuss what you see.
 ````
-
----
-
-## Optional exercises
-
-The following exercises are advanced, absolutely no problem to postpone them to a
-few months later. If you give them a go, keep in mind that you might run into conflicts,
-which we will learn to resolve in the next section.
-
-```{exercise} Exercise: Moving commits to another branch
-Sometimes it happens that we commit to the wrong branch, e.g. to `master`
-instead of a feature branch.
-This can easily be fixed:
-1. Make a couple of commits to `master`, then realize these should have been on
-   a new feature branch.
-2. Create a new branch from `master`, and rewind `master` back using `git reset --hard <hash>`.
-3. Inspect the situation with `git graph`. Problem solved!
-```
 
 ```{exercise} Exercise: Rebasing
 As an alternative to merging branches, one can also *rebase* branches.
@@ -493,19 +487,33 @@ Rebasing means that the new commits are *replayed* on top of another branch
 5. Inspect again the situation with `git graph`. Notice that the commit hashes have changed - think about why!
 ```
 
-```{exercise} Exercise: Squashing commits
-Sometimes you may want to *squash* incomplete commits, particularly before
-merging or rebasing with another branch (typically `master`) to get a cleaner history.
-**Note that squashing changes history and should not be done on public commits!**
-1. Create *two* small but related commits on a new feature branch, and inspect with `git graph`.
-2. Do a *soft* reset with `git reset --soft HEAD~2`. This rewinds the current branch
-   by two commits, but keeps all changes and stages them.
-3. Inspect the situation with `git graph`, `git status` and `git diff --staged`.
-4. Commit again with a commit message describing the changes.
-5. What do you think happens if you instead do `git reset --soft <hash>`?
+
+## Tags
+
+- A tag is a pointer to a commit but in contrast to a branch it **does not ever move**.
+- We use tags to record particular states or milestones of a project at a given
+  point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
+  v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
+- There are two basic types of tags: annotated and lightweight.
+- **Use annotated tags** since they contain the author and can be cryptographically signed using
+  GPG, timestamped, and a message attached.
+
+Let's add an annotated tag to our current state of the guacamole recipe:
+
+```console
+$ git tag -a nobel-2020 -m "recipe I made for the 2020 Nobel banquet"
 ```
 
----
+As you may have found out already, `git show` is a very versatile command. Try this:
+
+```console
+$ git show nobel-2020
+```
+
+For more information about tags see for example
+[the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
+subject.
+
 
 ## Summary
 
@@ -537,7 +545,7 @@ $ git checkout -b <name>   # create branch <name> and switch to it
 
 With this there are two typical workflows:
 
-```console
+```shell
 $ git checkout -b new-feature  # create branch, switch to it
 $ git commit                   # work, work, work, ...
                                # test
@@ -550,7 +558,7 @@ $ git branch -d new-feature    # remove branch
 Sometimes you have a wild idea which does not work.
 Or you want some throw-away branch for debugging:
 
-```console
+```shell
 $ git checkout -b wild-idea
                                # work, work, work, ...
                                # realize it was a bad idea
@@ -561,76 +569,36 @@ $ git branch -D wild-idea      # it is gone, off to a new idea
 
 No problem: we worked on a branch, branch is deleted, `master` is clean.
 
-
-## Tags
-
-- A tag is a pointer to a commit but in contrast to a branch it does not move.
-- We use tags to record particular states or milestones of a project at a given
-  point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
-  v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
-- There are two basic types of tags: annotated and lightweight.
-- **Use annotated tags** since they contain the author and can be cryptographically signed using
-  GPG, timestamped, and a message attached.
-
-Let's add an annotated tag to our current state of the guacamole recipe:
-
-```console
-$ git tag -a nobel-2020 -m "recipe I made for the 2020 Nobel banquet"
-```
-
-As you may have found out already, `git show` is a very versatile command. Try this:
-
-```console
-$ git show nobel-2020
-```
-
-For more information about tags see for example
-[the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
-subject.
-
----
-
 ````{challenge} Test your understanding
-  1. Which of the following combos (one or more) creates a new branch and makes a commit to it?
-     1. ```console
-        $ git branch new-branch
-        $ git add file.txt
-        $ git commit
-        ```
-     2. ```console
-        $ git add file.txt
-        $ git branch new-branch
-        $ git checkout new-branch
-        $ git commit
-        ```
-     3. ```console
-        $ git checkout -b new-branch
-        $ git add file.txt
-        $ git commit
-        ```
-     4. ```console
-        $ git checkout new-branch
-        $ git add file.txt
-        $ git commit
-        ```
-  2. What is a detached `HEAD`?
-  3. What are orphaned commits?
+  Which of the following combos (one or more) creates a new branch and makes a commit to it?
+  1. ```console
+     $ git branch new-branch
+     $ git add file.txt
+     $ git commit
+     ```
+  2. ```console
+     $ git add file.txt
+     $ git branch new-branch
+     $ git checkout new-branch
+     $ git commit
+     ```
+  3. ```console
+     $ git checkout -b new-branch
+     $ git add file.txt
+     $ git commit
+     ```
+  4. ```console
+     $ git checkout new-branch
+     $ git add file.txt
+     $ git commit
+     ```
 
   ```{solution}
-    1. Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
-       branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
-       don't give the `-b` flag to `git checkout` to create the new branch.
-    2. When you check out a branch name, HEAD will point to the most recent commit of that branch.
-       You can however check out a *particular hash*. This will bring your working directory back in
-       time to that commit, and your HEAD will be pointing to that commit but it will not be attached
-       to any branch. If you want to make commits in that state, you should instead create a new branch:
-       `git checkout -b test-branch <hash>`.
-    3. An orphaned commit is a commit that does not belong to any branch, and therefore doesn't have
-       any parent commits. This could happen if you make a commit in a detached HEAD state. Commits
-       rarely vanish in Git, and you could still find the orphaned commit using `git reflog`.
+  Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
+  branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
+  don't give the `-b` flag to `git checkout` to create the new branch.
   ```
 ````
-
 
 ```{keypoints}
 - A branch is a division unit of work, to be merged with other units of work.
