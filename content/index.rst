@@ -16,11 +16,7 @@ you into a confusing state.
 
 The goals of the module as a whole are that the user will feel
 comfortable about staging changes, committing them, merging, and
-branching. The guacamole example that we use is inspired by `Byron
-Smith <http://blog.byronjsmith.com>`__, for original reference, see
-`this
-thread <https://carpentries.topicbox.com/groups/discuss/Tfe5ac909d5fb476b>`__.
-If you are teaching this lesson, see the `instructor’s guide <guide>`__.
+branching.
 
 
 .. prereq::
