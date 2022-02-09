@@ -30,12 +30,14 @@ fatal: not a git repository (or any of the parent directories): .git
 
 ## Our toolbox for history inspection
 
+```{instructor-note}
 First the instructor demonstrates few commands on a real life example
 repository <https://github.com/networkx/networkx> (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
 Later we will practice these in groups in an archaeology exercise (below).
 After demonstrating the command line tools, the instructor can also demonstrate searching, "show" and "annotate"
 in the GitHub browser for this example project.
+```
 
 
 ### Warm-up: ["Git History" browser](https://githistory.xyz/)
@@ -44,7 +46,7 @@ As a warm-up we can try the ["Git History" browser](https://githistory.xyz/)
 on the README.rst file of the [networkx](https://github.com/networkx/networkx) repository:
 
 - Visit and browse <https://github.githistory.xyz/networkx/networkx/blob/main/README.rst> (use left/right keys).
-- You can try this on some of your repositories, too!
+- You can try this on some of your GitHub repositories, too!
 
 
 ### git grep: to search through the repository
@@ -69,7 +71,7 @@ $ git grep -i fixme
 ### git log -S: to search through the history of changes
 
 While `git grep` searches the **current state** of the repository,
-it is possible to search also through all changes for "sometext":
+it is also possible to search through all changes for "sometext":
 
 ```console
 $ git log -S sometext
@@ -135,7 +137,7 @@ This is the recommended mechanism to inspect old code:
 $ git checkout -b branchname somehash
 ```
 
-Example:
+Example (lines starting with "#" are only comments):
 
 ```shell
   # create branch called "older-code" from hash 347e6292419b
@@ -176,18 +178,17 @@ $ git switch --create branchname somehash
 
   Exercise steps:
   - Clone this repository:
-    [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
-    Then step into the new directory and create an exercise branch:
+    <https://github.com/networkx/networkx.git>.
+    Then step into the new directory and create an exercise branch from the networkx-2.6.3 tag/release:
     ```
-    $ git clone --branch v0.3.5 https://github.com/tidyverse/rvest.git
-    $ cd rvest
-    $ git checkout -b exercise
+    $ git clone https://github.com/networkx/networkx.git
+    $ cd networkx
+    $ git checkout -b exercise networkx-2.6.3
     ```
 
-  Then using the above 5 tools try to:
-  1. Find the code line which contains `"No links matched that expression"`.
-  2. Find out when this line was last modified. Find the actual commit which modified that line.
-     If this line got removed after we have created this exercise, find out when it was removed.
+  Then using the above toolbox try to:
+  1. Find the code line which contains `"Logic error in degree_correlation"`.
+  2. Find out when this line was last modified or added. Find the actual commit which modified that line.
   3. Inspect that commit with `git show`.
   4. Create a branch pointing to the past when that commit was created to be
      able to browse and use the code as it was back then.
@@ -196,41 +197,37 @@ $ git switch --create branchname somehash
   ````{solution}
   1. We use `git grep`:
      ```console
-     $ git grep "No links matched that expression"
+     $ git grep "Logic error in degree_correlation"
      ```
      This gives the output:
      ```
-     R/session.R:      stop("No links matched that expression", call. = FALSE)
+     networkx/algorithms/threshold.py:                print("Logic error in degree_correlation", i, rdi)
      ```
   2. We use `git annotate`:
      ```console
-     $ git annotate R/session.R
+     $ git annotate networkx/algorithms/threshold.py
      ```
-     Then search for "No links matched" by typing "/No links matched" followed by Enter.
-     The last commit that modified it was `5bbeb7df` (unless that line changed since).
-     If the line does not exist anymore, search for it using:
-     ```console
-     $ git log -S "No links matched that expression"
-     ```
+     Then search for "Logic error" by typing "/Logic error" followed by Enter.
+     The last commit that modified it was `90544b4fa` (unless that line changed since).
   3. We use `git show`:
      ```console
-     $ git show 5bbeb7df
+     $ git show 90544b4fa
      ```
   4. Create a branch pointing to that commit (here we called the branch "past-code"):
      ```console
-     $ git branch past-code 5bbeb7df
+     $ git branch past-code 90544b4fa
      ```
-  5. This is a compact way to access the first parent of `5bbeb7df` (here we
+  5. This is a compact way to access the first parent of `90544b4fa` (here we
      called the branch "just-before"):
      ```console
-     $ git checkout -b just-before 5bbeb7df~1
+     $ git checkout -b just-before 90544b4fa~1
      ```
   ````
 `````
 
 ---
 
-## Finding out when something broke/changed with `git bisect`
+## Finding out when something broke/changed with git bisect
 
 > *But I am sure it used to work! Strange.*
 
