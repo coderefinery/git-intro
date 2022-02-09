@@ -18,7 +18,8 @@
 
 ## Down the rabbit hole
 
-**You will never need to go inside .git**, but this exercise will demystify things a lot.
+When working with Git, **you will never need to go inside .git**, but in this
+exercise we will, in order to learn about how branches are implemented in Git.
 
 For this exercise create a new repository and commit a couple of changes.
 
@@ -49,7 +50,7 @@ Git stores everything under the .git folder in your repository. In fact, **the
 Previously when you wrote the commit messages using your text editor, they
 were in fact saved to COMMIT_EDITMSG.
 
-Each commit in Git is stored as a blob. This blob contains information about
+Each commit in Git is stored as a "blob". This blob contains information about
 the author and the commit message. The blob references another blob that lists
 the files present in the directory at the time and references blobs that record
 the state of each file.
@@ -78,11 +79,13 @@ A commit and its parents. Image from the [Pro Git book](https://git-scm.com/book
 All branches and tags in Git are pointers to commits.
 
 
-### Git is basically a content-addressed storage system
+## Git is basically a content-addressed storage system
 
 - CAS: ["mechanism for storing information that can be retrieved based on its content, not its storage location"](https://en.wikipedia.org/wiki/Content-addressable_storage)
-- content address is the content digest (SHA-1 checksum)
-- stored data does not change - so when we modify commits, we always create new commits.  Git doesn't delete these right away, which is why it is *very hard to lose data if you commit it once*.
+- Content address is the content digest (SHA-1 checksum)
+- Stored data does not change - so when we modify commits, we always create new
+  commits.  Git doesn't delete these right away, which is why it is *very hard
+  to lose data if you commit it once*.
 
 Let us poke a bit into raw objects! Start with:
 
@@ -93,18 +96,18 @@ $ git cat-file -p HEAD
 Then explore the `tree` object, then the `file` object, etc. recursively using the hashes you see.
 
 
-### Demonstration: experimenting with branches
+## Demonstration: experimenting with branches
 
 Let us lift the hood and create few branches manually.  The
 goal of this exercise is to hopefully create an "aha" moment and provide us a
 good understanding of the underlying model.
 
-We are starting from the `main` branch and create an `idea` branch:
+We are starting from the `master` branch and create an `idea` branch:
 
 ```console
 $ git status
 
-On branch main
+On branch master
 nothing to commit, working tree clean
 ```
 
@@ -118,7 +121,7 @@ Switched to a new branch 'idea'
 $ git branch
 
 * idea
-  main
+  master
 ```
 
 Now let us go in:
@@ -130,7 +133,7 @@ $ ls -l
 
 total 8
 -rw------- 1 bast users 41 May  7 11:47 idea
--rw------- 1 bast users 41 May  7 11:47 main
+-rw------- 1 bast users 41 May  7 11:47 master
 ```
 
 Let us check what the `idea` file looks like
@@ -178,5 +181,9 @@ $ git branch
 * idea-3
   idea-4
   idea-5
-  main
+  master
+```
+
+```{discussion}
+Discuss the findings with other course participants.
 ```
