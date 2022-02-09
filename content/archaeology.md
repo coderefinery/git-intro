@@ -30,12 +30,14 @@ fatal: not a git repository (or any of the parent directories): .git
 
 ## Our toolbox for history inspection
 
+```{instructor-note}
 First the instructor demonstrates few commands on a real life example
 repository <https://github.com/networkx/networkx> (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
 Later we will practice these in groups in an archaeology exercise (below).
 After demonstrating the command line tools, the instructor can also demonstrate searching, "show" and "annotate"
 in the GitHub browser for this example project.
+```
 
 
 ### Warm-up: ["Git History" browser](https://githistory.xyz/)
@@ -44,7 +46,7 @@ As a warm-up we can try the ["Git History" browser](https://githistory.xyz/)
 on the README.rst file of the [networkx](https://github.com/networkx/networkx) repository:
 
 - Visit and browse <https://github.githistory.xyz/networkx/networkx/blob/main/README.rst> (use left/right keys).
-- You can try this on some of your repositories, too!
+- You can try this on some of your GitHub repositories, too!
 
 
 ### git grep: to search through the repository
@@ -69,7 +71,7 @@ $ git grep -i fixme
 ### git log -S: to search through the history of changes
 
 While `git grep` searches the **current state** of the repository,
-it is possible to search also through all changes for "sometext":
+it is also possible to search through all changes for "sometext":
 
 ```console
 $ git log -S sometext
@@ -135,7 +137,7 @@ This is the recommended mechanism to inspect old code:
 $ git checkout -b branchname somehash
 ```
 
-Example:
+Example (lines starting with "#" are only comments):
 
 ```shell
   # create branch called "older-code" from hash 347e6292419b
@@ -184,7 +186,7 @@ $ git switch --create branchname somehash
     $ git checkout -b exercise
     ```
 
-  Then using the above 5 tools try to:
+  Then using the above toolbox try to:
   1. Find the code line which contains `"No links matched that expression"`.
   2. Find out when this line was last modified. Find the actual commit which modified that line.
      If this line got removed after we have created this exercise, find out when it was removed.
@@ -230,7 +232,7 @@ $ git switch --create branchname somehash
 
 ---
 
-## Finding out when something broke/changed with `git bisect`
+## Finding out when something broke/changed with git bisect
 
 > *But I am sure it used to work! Strange.*
 
