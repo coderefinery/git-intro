@@ -178,7 +178,7 @@ $ git switch --create branchname somehash
 
   Exercise steps:
   - Clone this repository:
-    [https://github.com/tidyverse/rvest](https://github.com/tidyverse/rvest).
+    <https://github.com/networkx/networkx.git>.
     Then step into the new directory and create an exercise branch from the networkx-2.6.3 tag/release:
     ```
     $ git clone https://github.com/networkx/networkx.git
