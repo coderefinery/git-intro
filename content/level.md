@@ -1,4 +1,4 @@
-# Practical advice: how much git is necessary?
+# Practical advice: how much Git is necessary?
 
 ```{instructor-note}
 - 10 min teaching/discussion
