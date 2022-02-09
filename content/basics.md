@@ -263,9 +263,21 @@ If you haven't yet, please try now `git log`:
 ```console
 $ git log
 
-commit d619bf848a3f83f05e8c08c7f4dcda3490cd99d9
+commit ea73a8a9ef9bd5c0aee3f0868d0ebc8457e1f94b
 Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Thu May 4 15:02:56 2017 +0200
+Date:   Wed Feb 9 10:12:39 2022 +0100
+
+    don't forget to enjoy
+
+commit 6316947beb2b7ffa0cc822370cfdd701050227a4
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Wed Feb 9 10:12:30 2022 +0100
+
+    add half an onion
+
+commit 03491ed253ffcee16772e35b1de4efd349711f05
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Wed Feb 9 10:11:30 2022 +0100
 
     adding ingredients and instructions
 ```
