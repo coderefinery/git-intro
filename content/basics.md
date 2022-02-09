@@ -15,7 +15,7 @@
 
 ## What is Git, and what is a Git repository?
 
-- Git is a *version control system*: can record snapshots and track the content of a folder as it changes over time.
+- Git is a version control system: can **record/save snapshots** and track the content of a folder as it changes over time.
 - Every time we **commit** a snapshot, Git records a snapshot of the **entire project**, saves it, and assigns it a version.
 - These snapshots are kept inside a sub-folder called `.git`.
 - If we remove `.git`, we remove the repository and history (but keep the working directory!).
@@ -27,7 +27,8 @@
 ## Recording a snapshot with Git
 
 - Git takes snapshots only if we request it.
-- We will record changes always in two steps (we will later explain why this is a recommended practice):
+- We will record changes always in two steps (we will later explain why this is a recommended practice).
+- Example (we don't need to type yet):
 
 ```console
 $ git add somefile.txt
@@ -57,7 +58,7 @@ shoot button only at the end)
 ## Before we start we need to configure Git
 
 If you haven't already configured Git, please follow the instructions in the
-[Git refresher lesson](https://coderefinery.github.io/git-refresher/01-setup/#configuring-git)
+[installation instructions](https://coderefinery.github.io/installation/shell-and-git/#configuration).
 
 
 ## Type-along: Tracking a guacamole recipe with Git
@@ -71,6 +72,11 @@ The motivation for taking a cooking recipe instead of a program is that everybod
 but not everybody may be able to relate to a program written in e.g. Python or another language.
 
 Let us start.
+
+```{instructor-note}
+Instructors, please encourage now that participants type along.
+```
+
 One of the basic principles of Git is that it is **easy to create repositories**:
 
 ```console
@@ -79,7 +85,7 @@ $ cd recipe
 $ git init
 ```
 
-That's it! We have now created an empty Git repository.
+That's it! With `git init` have now created an empty Git repository.
 
 We will use `git status` a lot to check out what is going on:
 
@@ -93,7 +99,7 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-We will make sense of this information during this morning.
+We will make sense of this information during this workshop.
 
 Let us now **create two files**.
 
@@ -190,30 +196,6 @@ online threads may be confusing.
 Note that help pages also work when you don't have a network connection!
 
 
-### Git history and log
-
-Now try `git log`:
-
-```console
-$ git log
-
-commit d619bf848a3f83f05e8c08c7f4dcda3490cd99d9
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Thu May 4 15:02:56 2017 +0200
-
-    adding ingredients and instructions
-```
-
-- We can browse the development and access each state that we have committed.
-- The long hashes uniquely label a state of the code.
-- They are not just integers counting 1, 2, 3, 4, ... (why?).
-- Output is in reverse chronological order, i.e. newest commits on top.
-- We will use them when comparing versions and when going back in time.
-- `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
-- If the first characters of the hash are unique it is not necessary to type the entire hash.
-- `git log --stat` is nice to show which files have been modified.
-
-
 ## Exercise: record changes
 
 ````{exercise}
@@ -225,6 +207,8 @@ Date:   Thu May 4 15:02:56 2017 +0200
   ```console
   $ git diff
   ```
+
+  You will see (can you identify in there the two added lines?):
 
   ```diff
   diff --git a/ingredients.txt b/ingredients.txt
@@ -265,11 +249,47 @@ Date:   Thu May 4 15:02:56 2017 +0200
   When you are done committing the changes, experiment with these commands:
 
   ```console
-  $ git log    # show commit logs
-  $ git show   # show various types of objects
-  $ git diff   # show changes
+  $ git log
+  $ git log --stat
+  $ git log --oneline
   ```
 ````
+
+
+## Git history and log
+
+If you haven't yet, please try now `git log`:
+
+```console
+$ git log
+
+commit ea73a8a9ef9bd5c0aee3f0868d0ebc8457e1f94b
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Wed Feb 9 10:12:39 2022 +0100
+
+    don't forget to enjoy
+
+commit 6316947beb2b7ffa0cc822370cfdd701050227a4
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Wed Feb 9 10:12:30 2022 +0100
+
+    add half an onion
+
+commit 03491ed253ffcee16772e35b1de4efd349711f05
+Author: Radovan Bast <bast@users.noreply.github.com>
+Date:   Wed Feb 9 10:11:30 2022 +0100
+
+    adding ingredients and instructions
+```
+
+- We can browse the development and access each state that we have committed.
+- The long hashes uniquely label a state of the code.
+- They are not just integers counting 1, 2, 3, 4, ... (why?).
+- Output is in reverse chronological order, i.e. newest commits on top.
+- We will use them when comparing versions and when going back in time.
+- `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
+- If the first characters of the hash are unique it is not necessary to type the entire hash.
+- `git log --stat` is nice to show which files have been modified.
 
 
 ## Optional exercises
@@ -333,13 +353,15 @@ to enable ...
 Convention: **one line summarizing the commit, then one empty line,
 then paragraph(s) with more details in free form, if necessary**.
 
-- Bad commit messages: "fix", "oops", "save work", "foobar", "toto", "qppjdfjd", "".
-- [http://whatthecommit.com](http://whatthecommit.com)
+- **Why something was changed is more important than what has changed.**
+- Cross-reference to issues and discussions if possible/relevant.
+- Bad commit messages: "fix", "oops", "save work"
+- Bad examples: [http://whatthecommit.com](http://whatthecommit.com)
 - Write commit messages in English that will be understood
-  15 years from now by someone else than you.
+  15 years from now by someone else than you. Or by your future you.
 - Many projects start out as projects "just for me" and end up to be successful projects
   that are developed by 50 people over decades.
-- [Commits with multiple authors](https://help.github.com/articles/creating-a-commit-with-multiple-authors/)
+- [Commits with multiple authors](https://help.github.com/articles/creating-a-commit-with-multiple-authors/) are possible.
 
 Good references:
 
@@ -350,12 +372,14 @@ Good references:
 
 ## Ignoring files and paths with .gitignore
 
+```{discussion}
 - Should we add and track all files in a project?
 - How about generated files?
 - Why is it considered a bad idea to commit compiled binaries to version control?
 - What types of generated files do you know?
+```
 
-As a general rule compiled files are not
+Compiled and generated files are not
 committed to version control. There are many reasons for this:
 
 - Your code could be run on different platforms.
@@ -365,21 +389,16 @@ committed to version control. There are many reasons for this:
 
 For this we use `.gitignore` files. Example:
 
-```
+```shell
 # ignore compiled python 2 files
 *.pyc
 # ignore compiled python 3 files
 __pycache__
 ```
 
-`.gitignore` uses something called a
-[shell glob syntax](https://en.wikipedia.org/wiki/Glob_(programming)) for
-determining file patterns to ignore. You can read more about the syntax in the
-[documentation](https://git-scm.com/docs/gitignore).
+An example taken from the [official Git documentation](https://git-scm.com/docs/gitignore):
 
-An example taken from [documentation](https://git-scm.com/docs/gitignore):
-
-```
+```shell
 # ignore objects and archives, anywhere in the tree.
 *.[oa]
 # ignore generated html files,
@@ -390,17 +409,14 @@ An example taken from [documentation](https://git-scm.com/docs/gitignore):
 build/
 ```
 
-You can have `.gitignore` files in lower level directories and they affect the paths
-relatively.
-
-`.gitignore` should be part of the repository (why?).
-
-
-### Clean working area
-
-- Use `git status` a lot.
-- Untracked files belong to .gitignore.
+- `.gitignore` should be part of the repository because we want to make sure that all developers see the same behavior.
 - **All files should be either tracked or ignored**.
+- `.gitignore` uses something called a
+  [shell glob syntax](https://en.wikipedia.org/wiki/Glob_(programming)) for
+  determining file patterns to ignore. You can read more about the syntax in the
+  [documentation](https://git-scm.com/docs/gitignore).
+- You can have `.gitignore` files in lower level directories and they affect the paths
+  relatively.
 
 
 ## Graphical user interfaces
@@ -444,7 +460,7 @@ Git is not ideal for large binary files
 
 ````{challenge} Test your understanding
   Which command(s) below would save the changes of `myfile.txt`
-  to my local Git repository?
+  to an existing local Git repository?
 
   1. ```console
      $ git commit -m "my recent changes"
@@ -463,14 +479,15 @@ Git is not ideal for large binary files
   ```{solution}
 
   1. Would only create a commit if files have already been staged.
-  2. Would try to create a new repository.
-  3. Is correct: first add the file to the staging area, then commit.
+  2. Would try to create a new repository in a folder "myfile.txt".
+  3. **Is correct: first add the file to the staging area, then commit.**
   4. Would try to commit a file "my recent changes" with the message myfile.txt.
   ```
 ````
 
 ```{keypoints}
-- "Initializing a Git repository is simple: `git init`"
+- Initializing a Git repository is simple: `git init`.
 - Commits should be used to tell a story.
 - Git uses the .git folder to store the snapshots.
+- Don't be afraid to stage and commit often. Better too often than not often enough.
 ```
