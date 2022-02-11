@@ -390,6 +390,8 @@ When designing commit message styles consider also these:
 - During code review, you can help each other improving commit messages.
 ```
 
+But remember: it is better to make any commit, than no commit.  Especially in small projects, weight the benefit with the time it takes.
+
 
 ## Ignoring files and paths with .gitignore
 
