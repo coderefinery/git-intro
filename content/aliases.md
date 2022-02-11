@@ -4,14 +4,8 @@
 - Learn to use aliases for most common commands.
 ```
 
-```{instructor-note}
-- 5 min teaching/type-along
-- 5 min exercise
-```
-
-Are you getting tired of typing so much? Git can make aliases that can save you typing.
-
-- These are great because they can save you time typing
+Are you getting tired of typing so much? In Git you can define aliases (shortcuts):
+- These are great because they can save you time typing.
 - But it's easy to forget them, get confused, or be inconsistent with your colleagues.
 
 There is plenty of other configuration for Git, that can make it nicer.
@@ -25,11 +19,12 @@ There is plenty of other configuration for Git, that can make it nicer.
 - Aliases can either be specific to a repository or global.
   - Global aliases help you do the things you are used to across Git projects.
   - Per-project aliases can also be created.
+- Global aliases are stored in `~/.gitconfig`.
 
 
-### Example alias
+## Example alias: git graph
 
-A very useful shortcut which we will use a lot today:
+A very useful shortcut which we use a lot in our workshops:
 
 ```console
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
@@ -37,10 +32,8 @@ $ cd your_git_repository
 $ git graph
 ```
 
-Global aliases are stored in `~/.gitconfig`.
 
-
-### Using external commands
+## Using external commands
 
 It is possible to call external commands using the exclamation mark character "!".
 In this case we create a local alias which is
@@ -52,19 +45,17 @@ $ git config alias.hi '!echo hello'
 $ git hi
 ```
 
-```{discussion} Food for thought: when to alias?
+```{discussion} Food for thought: When to alias?
 - How many times should you wait before aliasing a command?
 - Do you believe a list of generic two-letter acronyms for common commands will
   save your time?
 ```
 
 
-### List of aliases the instructors use
+## List of aliases the instructors use
 
-You are welcome to reuse, suggest, improve.  If you are a beginner, we
-suggest you copy and paste this into your terminal to define a bunch
-of useful stuff.  Reading it (later) will help to understand what
-common commands are - you can see your current aliases in `~/.gitconfig`
+You are welcome to reuse, suggest, improve.
+You can see your current aliases in `~/.gitconfig`.
 
 ```console
 $ git config --global alias.ap "add --patch"
@@ -103,19 +94,18 @@ Here is what they do:
 - `st`: status (obvious)
 - `su`: submodule update (advanced)
 
-`git config --global interactive.singlekey true` will be useful for
-the `p` aliases.
+A useful setting for the `p` aliases:
+```console
+$ git config --global interactive.singlekey true
+```
 
 
-## Advanced git configuration (advanced or home exercise)
+## Advanced aliases
 
 These are advanced aliases and configuration options.  We won't explain them,
 but if you are bored, have some time, or want to go deeper, try to
-figure out what they do.  You might want to check the git manual
+figure out what they do.  You might want to check the Git manual
 pages!
-
-
-### Advanced aliases
 
 ```console
 $ git config --global alias.cif "commit -v -p --fixup"
@@ -135,7 +125,7 @@ $ git config --global alias.recd "log --decorate --patch @{upstream}^^^..HEAD"
 $ git config --global alias.recs "!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD --stat"
 ```
 
-### Advanced git configuration
+## Advanced Git configuration
 
 Besides aliases, you can do plenty of other configuration of `git`.
 Here are some of the most common ones:
@@ -163,7 +153,7 @@ translated to `git@github.com:/username/recipe` using a simple prefix
 matching.
 
 
-### Git-aware bash prompt
+## Git-aware bash prompt
 
 You can make your shell (bash) display contextual information about
 your git state even at all times.  If you are interested, find it on
