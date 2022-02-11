@@ -44,7 +44,6 @@ branching.
    basics
    branches
    conflicts
-   staging-area
    undoing
    remotes
    archaeology
@@ -55,6 +54,7 @@ branching.
    :maxdepth: 1
    :caption: Optional episodes
 
+   staging-area
    interrupted
    aliases
    under-the-hood
