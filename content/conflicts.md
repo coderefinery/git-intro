@@ -12,9 +12,47 @@
 
 ## Conflict resolution
 
-```{figure} img/conflict-resolution/conflict.png
-:alt: Conflict resolution
-:width: 100%
+Imagine we start with the following text file:
+```{code-block}
+2 avocados
+1 tbsp cilantro
+2 tsp salt
+```
+
+On branch A somebody modifies:
+```{code-block}
+---
+emphasize-lines: 1, 3
+---
+1 lime
+2 avocados
+1/2 tbsp cilantro
+2 tsp salt
+```
+
+
+On branch B somebody else modifies:
+```{code-block}
+---
+emphasize-lines: 2, 4
+---
+2 avocados
+2 tbsp cilantro
+2 tsp salt
+1/2 onion
+```
+
+When we try to merge Git will figure out that we want the lime and the onion
+but does not know whether to reduce or increase the amount of cilantro:
+```{code-block}
+---
+emphasize-lines: 3
+---
+1 lime
+2 avocados
+??????????????
+2 tsp salt
+1/2 onion
 ```
 
 Git is very good at resolving modifications when merging branches and
