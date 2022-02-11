@@ -20,7 +20,7 @@ as important - it tells a story about how your code came to be.
 - You often want to see all the related changes together.
 - But you also hardly ever do one thing at once.
 
-Along with your code, git creates a *history* for you, and if your
+Along with your code, Git creates a *history* for you, and if your
 history is clear then you are a long way to organized code.
 
 ````{discussion}
@@ -76,7 +76,7 @@ commit or having one logical change spread over several commits.
 - The staging area isn't the only way to organize your history nicely, some alternatives are discussed at the end of the lesson.
 
 
-## Interactive committing
+## Interactive commits
 
 - The simplest ways to solve this is to do **interactive commits**:
   the `git commit --patch` option (or `git commit -p` for short).
@@ -91,6 +91,9 @@ commit or having one logical change spread over several commits.
   - `q` aborts everything.
   - `?` for more options.
 - The `-p` option is also available on `commit`, `checkout`, `reset`, and `add`.
+
+
+## Exercise: Interactive commits
 
 ```{exercise} Interactive committing
 One option to help us create nice logical commits is to stage *interactively*
@@ -126,10 +129,12 @@ We give two examples and the instructor can pick one or both:
 
   - You're moving and you have a box to pack your things in.
   - You can put stuff into the box, but you can also take stuff out of the box.
-  - You wouldn't want to mix items from the bathroom, kitchen and living room into the same box.
+  - You wouldn't want to mix items from the bathroom, kitchen, and living room
+    into the same box.
   - The box corresponds to the staging area of Git, where you can craft your commits.
   - Committing is like sealing the box and sticking a label on it.
-  - You wouldn't want to label your box with "stuff", but rather give a more descriptive label.
+  - You wouldn't want to label your box with "stuff", but rather give a more
+    descriptive label.
   - See also <https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh>
 
 
@@ -180,14 +185,14 @@ $ git checkout <path>  # check out the latest staged version ( or committed
                        # in latest Git: git restore <path>
 ```
 
-Usage 1: you do various things at once
+**Usage 1: you do various things at once**
 - You do various things at once, you want to commit them separately.
 - `git add` all the parts of each change.
 - `git diff` and `git diff --staged` to ensure you have all the parts.
 - `git commit`.
 - Repeat.
 
-Usage 2: you want to checkpoint
+**Usage 2: you want to checkpoint**
 - You want to save in-progress work before you make a final commit.
 - `git add` every change that improves the code.
 - `git checkout` every change that made things worse.
@@ -198,7 +203,7 @@ Usage 2: you want to checkpoint
 the index and the cache*.
 
 
-### Example workflow
+## Example workflow
 
 ```shell
 $ git add file.py                 # checkpoint 1
@@ -221,10 +226,10 @@ $ git commit                      # commit everything that is staged
 4. Feel some regret and unstage the staged change.
 ```
 
-```{challenge} Test your understanding
-- When is it better to "save" a change as commit, when is it better to "save" it with `git add`?
+```{discussion}
+- When is it better to "save" a change as commit, when is it better to "save"
+  it with `git add`?
 - Is it a problem to commit many small changes?
-- What types of problems can occur in other version control systems without a staging area?
 ```
 
 ```{keypoints}
