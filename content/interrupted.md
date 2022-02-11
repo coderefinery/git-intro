@@ -5,12 +5,13 @@
 ```
 
 ```{instructor-note}
-- 5 min teaching/type-along
+- 10 min teaching/type-along
 - 10 min exercise
 ```
 
 ```{keypoints}
-- There is almost never reason to clone a fresh copy to complete a task that you have in mind.
+- There is almost never reason to clone a fresh copy to complete a task that
+  you have in mind.
 ```
 
 
@@ -87,7 +88,6 @@ Later you can merge it to main or rebase it on top of main and resume work.
 ### Exercise: interrupted work
 
 ```{exercise}
-
 Use one of the strategies above to interrupt some work (recommendation
 if you don't know which: use stashing).  If you don't accomplish all
 of these, it is OK.
@@ -102,8 +102,9 @@ of these, it is OK.
 
 ## Storing various junk you don't need but don't want to get rid of
 
-It happens often that you do something and don't need it, but you don't want
-to lose it right away.  You can use either of the above strategies to
-stash/branch it away: using branches is probably better.  Note that if you
-try to use a branch after a long time, conflicts might get really bad
-but at least you have the data still.
+It happens often that you do something and don't need it, but you don't want to
+lose it right away.  You can use either of the above strategies to stash/branch
+it away: using branches is probably better because branches are less easily
+overlooked if you come back to the repository in few weeks.  Note that if you
+try to use a branch after a long time, conflicts might get really bad but at
+least you have the data still.
