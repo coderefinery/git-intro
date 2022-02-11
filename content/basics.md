@@ -369,6 +369,27 @@ Good references:
 - ["On commit messages"](https://who-t.blogspot.com/2009/12/on-commit-messages.html)
 - ["How to Write a Git Commit Message"](https://chris.beams.io/posts/git-commit/)
 
+```{note}
+A great way to learn how to write commit messages and to get inspired by their
+style choices: **browse repositories of codes that you use/like**:
+
+Some examples (but there are so many good examples):
+- [SciPy](https://github.com/scipy/scipy/commits/main)
+- [NumPy](https://github.com/numpy/numpy/commits/main)
+- [Pandas](https://github.com/pandas-dev/pandas/commits/main)
+- [Julia](https://github.com/JuliaLang/julia/commits/master)
+- [ggplot2](https://github.com/tidyverse/ggplot2/commits/main),
+  compare with their [release
+  notes](https://github.com/tidyverse/ggplot2/releases)
+- [Flask](https://github.com/pallets/flask/commits/main),
+  compare with their [release
+  notes](https://github.com/pallets/flask/blob/main/CHANGES.rst)
+
+When designing commit message styles consider also these:
+- How will you easily generate a changelog or release notes?
+- During code review, you can help each other improving commit messages.
+```
+
 
 ## Ignoring files and paths with .gitignore
 
