@@ -66,6 +66,7 @@ branching.
 
    guide
    reference
+   resources
 
 
 .. note::
