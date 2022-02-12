@@ -228,7 +228,7 @@ Going back to the last staged version:
 (history)         .      (files we see)
 ```
 
-Unstaging changes:
+Unstaging changes with **git restore --staged**:
 ```text
           git restore --staged
              ------------>  project*
