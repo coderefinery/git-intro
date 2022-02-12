@@ -161,60 +161,143 @@ We give two examples and the instructor can pick one or both:
 
 ## Staging area commands
 
-With the **staging area**, there is one middle point before commits.
+The staging area is a middle ground between what you have done to your files
+(the **working directory**) and what you have last committed (the **HEAD commit**).
+Just like the name implies, it lets you prepare (**stage**) what the next commit will be and most importantly give you tools to easily know what is going on.
+This adds some complexity but also adds more flexibility to selectively
+prepare commits since **you can modify and stage several times before committing**.
+
+**git add** stages/prepares for the next commit:
+```text
+                git add
+ [project*]  <------------  project*
+                               ^
+                               | modify with editor
+                               |
+  HEAD            .         project
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+```
+
+**git commit** creates a new commit:
+```text
+
+  HEAD            .         project
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+  HEAD~2          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+```
+
+**git reset --soft HEAD~1** (move HEAD back by one but keep changes and stage
+them) would do the opposite of **git commit**.
+
+Going back to the last staged version:
+```text
+              git restore
+ [project*]  ------------>  project*
+
+
+
+  HEAD            .
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+```
+
+Unstaging changes with **git restore --staged**:
+```text
+          git restore --staged
+             ------------>  project*
+
+
+
+  HEAD            .
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+```
+
+Discarding unstaged changes:
+```text
+
+                            project*
+                               |
+                               | git restore
+                               v
+  HEAD            .         project
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+```
+
+Comparing:
+```text
+                git diff
+ [project*]  <----------->  project*
+    ^                          ^
+    | git diff --staged        | git diff HEAD
+    v                          v
+  HEAD            .
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+```
 
 ```{figure} img/staging-basics.svg
 :alt: Staging basics
 :width: 100%
+
+The different states of the repository and the commands to move from one to
+another.
 ```
 
-Files can be untracked, modified, staged, or committed, and
-we have a variety of commands to go between states:
-
-```shell
-$ git add <path>       # stages all changes in file
-$ git add -p <path>    # stages while letting you choose which lines to take
-$ git commit           # commits the staged change
-$ git diff             # see **unstaged** changes
-$ git diff --staged    # see **staged** changes
-$ git rm               # removes a file
-$ git reset            # unstages staged changes
-                       # in latest Git: git restore --staged <path>
-$ git checkout <path>  # check out the latest staged version ( or committed
-                       # version if file has not been staged )
-                       # in latest Git: git restore <path>
-```
-
-**Usage 1: you do various things at once**
-- You do various things at once, you want to commit them separately.
-- `git add` all the parts of each change.
-- `git diff` and `git diff --staged` to ensure you have all the parts.
-- `git commit`.
-- Repeat.
-
-**Usage 2: you want to checkpoint**
-- You want to save in-progress work before you make a final commit.
-- `git add` every change that improves the code.
-- `git checkout` every change that made things worse.
-- `git commit` as soon as you have created a nice self-contained unit (not too large, not too small).
-- Discuss/think about what is too large or too small.
-
-*Note: the "staging area" has also alternatively been referred to as
-the index and the cache*.
-
-
-## Example workflow
-
-```shell
-$ git add file.py                 # checkpoint 1
-$ git add file.py                 # checkpoint 2
-$ git add another_file.py         # checkpoint 3
-$ git add another_file.py         # checkpoint 4
-# ... further work on another_file.py ...
-$ git diff another_file.py        # diff w.r.t. checkpoint 4
-$ git checkout another_file.py    # oops go back to checkpoint 4
-$ git commit                      # commit everything that is staged
-```
 
 ## Exercise: Using the staging area
 
