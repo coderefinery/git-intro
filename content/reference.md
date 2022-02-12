@@ -4,7 +4,7 @@
 
 * [Interactive git cheatsheet](http://www.ndpsoftware.com/git-cheatsheet.html)
 * [Very detailed 2-page git
-  cheatsheet](https://users.aalto.fi/~darstr1/cheatsheets/git-for-normal-people-cheatsheet_1.0.pdf)
+  cheatsheet](https://aaltoscicomp.github.io/cheatsheets/git-for-normal-people-cheatsheet_1.0.pdf)
 
 
 ## Glossary
