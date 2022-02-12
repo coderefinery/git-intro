@@ -161,8 +161,11 @@ We give two examples and the instructor can pick one or both:
 
 ## Staging area commands
 
-The staging area creates a layer between the working directory and the next
-commit. This adds some complexity but also adds more flexibility to selectively
+The staging area is a middle ground between what you have done to your files
+(the **working directory**) and what you have last committed (the **HEAD commit**).
+Just like the name implies, it lets you prepare (**stage**) what the next commit will be - 
+and most importantly give you tools to easily know what is going on.
+This adds some complexity but also adds more flexibility to selectively
 prepare commits since **you can modify and stage several times before committing**.
 
 **git add** stages/prepares for the next commit:
