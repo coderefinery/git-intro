@@ -109,9 +109,8 @@ Once you click the green "Create repository", you will see a page similar to:
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
 
-To push changes to the project you will either need SSH keys for the SSH
-address (preferred) or you will have to use your GitHub username and password when
-using the HTTPS address.  **If you don't know what to do, use HTTPS.**
+To push changes to the project please **select SSH**.
+For this to work [you will need your SSH keys configured](https://coderefinery.github.io/installation/ssh/).
 
 ---
 
@@ -127,7 +126,7 @@ We now want to try the second option that GitHub suggests:
   need to replace the "user" part and possibly also the repository name**):
 
 ```console
-$ git remote add origin https://github.com/user/recipe.git
+$ git remote add origin git@github.com:user/recipe.git
 $ git branch -M main
 $ git push -u origin main
 ```
@@ -144,7 +143,7 @@ Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-To github.com:bast/recipe.git
+To github.com:user/recipe.git
  * [new branch]      main -> main
 Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
@@ -166,21 +165,19 @@ At this point only a brief demo - if you copy the SSH or HTTPS address, you can 
 (again adapt the "namespace/repository.git" part):
 
 ```console
-$ git clone https://github.com/user/recipe.git
+$ git clone git@github.com:user/recipe.git
 ```
 
 This creates a directory called "recipe" unless it already exists. You can also specify the target directory
 on your computer:
 
 ```console
-$ git clone https://github.com/user/recipe.git myrecipe
+$ git clone git@github.com:user/recipe.git myrecipe
 ```
 
 What just happened? **Think of cloning as downloading the `.git` part to your
 computer**. After downloading the `.git` part the branch pointed to by HEAD is
 automatically checked out.
-
-
 
 ```{keypoints}
 - A repository can have one or multiple remotes (we will revisit these later).
