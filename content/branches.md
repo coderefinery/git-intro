@@ -172,6 +172,8 @@ $ git graph
 - We commit our changes to this branch.
 
 
+(exercise-branches)=
+
 ## Exercise: create and commit to branches
 
 ````{exercise}
@@ -427,7 +429,9 @@ insist using `git branch -D`. Even then your commits will not be lost but you
 may have a hard time finding them as there is no branch pointing to them.
 
 
-## Optional exercises
+(exercise-branches-optional)=
+
+## Optional exercises with branches
 
 The following exercises are advanced, absolutely no problem to postpone them to a
 few months later. If you give them a go, keep in mind that you might run into conflicts,

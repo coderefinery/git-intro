@@ -45,6 +45,7 @@ things.
   you give).
 - The stashes form a stack, so you can stash several batches of modifications.
 
+(exercise-stashing)=
 
 ### Exercise: stashing
 
@@ -84,6 +85,7 @@ $ git checkout temporary     # continue where you left off
 
 Later you can merge it to main or rebase it on top of main and resume work.
 
+(exercise-interrupted-work)=
 
 ### Exercise: interrupted work
 

@@ -66,6 +66,7 @@ branching.
    :maxdepth: 1
    :caption: Reference
 
+   exercises
    guide
    reference
    resources

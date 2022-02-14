@@ -196,6 +196,8 @@ online threads may be confusing.
 Note that help pages also work when you don't have a network connection!
 
 
+(exercise-record-changes)=
+
 ## Exercise: record changes
 
 ````{exercise}
@@ -292,20 +294,13 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 - `git log --stat` is nice to show which files have been modified.
 
 
-## Optional exercises
+(exercise-diff-and-rename)=
+
+## Optional exercises: comparing, renaming, and removing
 
 ```{exercise} Comparing and showing commits
 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
 2. Have a look at specific commits with `git show <hash>`.
-```
-
-```{exercise} Renaming and removing files
-1. Create a new file, `git add` and `git commit` the file.
-2. Rename the file with `git mv` (you will need to `git commit` the rename).
-3. Use `git log --oneline` and `git status`.
-4. Remove the file with `git rm` (again you need to `git commit` the change).
-5. Inspect the history with `git log --stat`. Can you recover the removed file from the Git history?
-   Hint: You can try with a web search for "git checkout removed file from past".
 ```
 
 ````{exercise} Visual diff tools
@@ -334,6 +329,15 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
   $ git config --global diff.tool meld
   ```
 ````
+
+```{exercise} Renaming and removing files
+1. Create a new file, `git add` and `git commit` the file.
+2. Rename the file with `git mv` (you will need to `git commit` the rename).
+3. Use `git log --oneline` and `git status`.
+4. Remove the file with `git rm` (again you need to `git commit` the change).
+5. Inspect the history with `git log --stat`. Can you recover the removed file from the Git history?
+   Hint: You can try with a web search for "git checkout removed file from past".
+```
 
 
 ## Writing useful commit messages

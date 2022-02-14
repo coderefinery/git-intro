@@ -256,8 +256,9 @@ without conflicts and leaves the files with conflicts unstaged.
 - Finally commit the merge with just `git commit` - everything is pre-filled.
 ```
 
+(exercise-conflicts)=
 
-## Exercise
+## Exercise: Create and resolve a conflict
 
 ```{exercise} Exercise: Create another conflict and resolve
 In this exercise, we repeat almost exactly what we did above with a
@@ -273,8 +274,9 @@ different ingredient.
    explain, why it is different this time?
 ```
 
+(exercise-conflicts-optional)=
 
-## Optional exercises
+## Optional exercises with conflict resolution
 
 ```{exercise} Exercise: Conflicts and rebase
 1. Create two branches where you anticipate a conflict.

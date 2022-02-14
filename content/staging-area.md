@@ -93,6 +93,8 @@ commit or having one logical change spread over several commits.
 - The `-p` option is also available on `commit`, `checkout`, `reset`, and `add`.
 
 
+(exercise-interactive-commits)=
+
 ## Exercise: Interactive commits
 
 ```{exercise} Interactive committing
@@ -298,6 +300,7 @@ The different states of the repository and the commands to move from one to
 another.
 ```
 
+(exercise-staging-area)=
 
 ## Exercise: Using the staging area
 

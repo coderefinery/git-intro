@@ -87,6 +87,10 @@ You can revert any commit, no matter how old it is.  It doesn't affect
 other commits you have done since then - but if they touch the same
 code, you may get a conflict (which we'll learn about later).
 
+(exercise-revert)=
+
+### Exercise: Revert a commit
+
 ```{exercise} Exercise: Revert a commit
 - Create a commit.
 - Revert the commit with `git revert`.
@@ -109,6 +113,10 @@ This can also be used to modify the last commit message.
 Note that this **will change the commit hash**. This command **modifies the history**.
 This means that we avoid this command on commits that we have shared with others.
 
+(exercise-amend)=
+
+### Exercise: Modify a previous commit
+
 ```{exercise} Exercise: Modify a previous commit
 1. Make an incomplete change to the recipe or a typo in your change, `git
    add` and `git commit` the incomplete/unsatisfactory change.
@@ -130,6 +138,10 @@ point in the past.
 * Be careful if you do this - it can mess stuff up.  Use `git graph` a
   lot before and after.
 
+
+(exercise-reset)=
+
+### Exercise: Git reset
 
 ````{exercise} Exercise: Destroy our experimentation in this episode
   After we have experimented with reverts and amending, let us destroy

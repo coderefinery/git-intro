@@ -159,6 +159,8 @@ On newer Git versions this is the preferred command:
 $ git switch --create branchname somehash
 ```
 
+(exercise-history)=
+
 ## Exercise: basic archaeology commands
 
 `````{exercise}
@@ -271,6 +273,7 @@ $ git bisect bad
 - This can even be automatized with `git bisect run <script>`.
 - For this you write a script that returns zero/non-zero (success/failure).
 
+(exercise-bisect)=
 
 ## Exercise: Git bisect
 
