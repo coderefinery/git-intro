@@ -14,7 +14,7 @@ Specific motivations:
 - Reproducibility: You can specify exact versions in publications enabling others to reproduce your work,
   and if bugs are found one can find out exactly when it was introduced
 
-Most learners in a CodeRefinery workshop have developed code for a few years. A majority have
+Many learners in a CodeRefinery workshop have developed code for a few years. A majority have
 already encountered Git and have used it to some extent, but in most cases they do not yet feel
 comfortable with it. They lack a good mental model of how Git operates and are afraid of making mistakes.
 Other learners have never used Git before.
@@ -49,17 +49,6 @@ By the end of this lesson, learners should:
 
 ## How to teach this lesson
 
-### Things to prepare
-
-In a typical workshop the optional in-browser episode is not taught.
-**But if you intend to teach it:**
-
-Mirror a fresh https://github.com/coderefinery/example-project
-from https://github.com/bast/example-project.
-
-Do not just fork it since it can confuse users sending pull requests.
-
-
 ### Take first editor steps slowly
 
 Some participants will be new to using a terminal text editor so please open,
@@ -67,46 +56,6 @@ edit, and close the editor (Nano) slowly in first type-along sessions and
 exercises to avoid that participants will fall behind the instructor. At one
 point a student did not follow the file edits of the instructor, and to correct
 the mistake they had to do a manual merge, which they were not ready for.
-
-
-### Different ways to present
-
-The whole lesson covers why you would use git, how to use it, and
-practical tips.  The earlier lessons are long, the later ones go quite
-fast.
-
-The "Basics" section is the core of how to use git, and from there
-sections do just what they say.  "Basics", "Branching
-and merging", and "Conflict resolution" are the shortest basics of git
-(collaboration is another lesson).
-
-"Motivation", "Basics" and "Sharing repositories online" is the
-shortest path to a single-user Dropbox-like usage.
-
-If your audience doesn't need to be taught the "how" and only the
-"why", you can present sections "Motivation" and "Tips", which
-should explain the high-level picture, and they should use git better,
-if they already know the basics.
-
-
-*Optional sections:*
-For a complete beginner exposed to version control the half day schedule is too
-long. These section can be skipped:
-
-- "Using the Git staging area" can be skipped but is somewhat useful.
-  It would also make a good homework or advanced assignment.
-
-- "Git under the hood" can be skipped if time is tight - it is not
-  important to typical use.
-
-- The short section "Sharing repositories online GitHub" is here to
-  give people a very simple taste of remote mirroring, and can be
-  skipped we are exposed to GitHub in another lesson on the same
-  afternoon. Otherwise it can be skipped or moved to another module.
-
-- The "In-browser session" can be taught to audiences who need to be able to
-  commit to existing repositories (e.g. documentation, webpages, ...)
-  but may not want to use command line.
 
 
 ### How to use the exercises
@@ -121,19 +70,6 @@ It's also fine to briefly go though important points from the optional exercises
 too much time on it since everyone will not have attempted them.
 
 
-### Why do we have the "Clean history" section?
-
-We introduce `git reset --hard` in passing in the
-["Clean history"](https://coderefinery.github.io/git-intro/05-undoing/#clean-history) section.
-
-Motivation for this was to allow participants to experiment with the staging
-and "mess things up" but later be able to continue with branching and see the
-same things when inspecting git graph. The reset command is there introduced in
-passing. This can create confusion. But it is also important that participants
-see the same thing as on the big screen (they often notice the tiniest
-differences and ask about it).
-
-
 ### "Test your understanding" exercises
 
 Some episodes have a "test your understanding" exercise at the end which is intended as *formative assessment*,
@@ -143,26 +79,19 @@ giving learners a minute to think about it, and then asking for the right answer
 hands to signal which answer they think is correct.
 
 
-### Conflict resolution
-
-We use screenshots from a violent video game in the section on conflict resolution, but
-it should be emphasized that conflicts are a good thing since otherwise collaborators would
-overwrite each other's changes. Git saves us from this situation by producing conflicts.
-
-
 ### Inspecting history
 
-Key lesson is *how to find when something is broken or what commit has broken the code*.
+Key lesson is *how to find when something is broken or what commit has broken
+the code*.
 
-It can be useful to emphasize that it
-can be really valuable to be able to search through the history of a project
-efficiently to find when bugs were introduced or when something changed and
-why.
-Also show that `git annotate` and `git show` are available
-on GitHub and GitLab.
+It can be useful to emphasize that it can be really valuable to be able to
+search through the history of a project efficiently to find when bugs were
+introduced or when something changed and why.  Also show that `git annotate`
+and `git show` are available on GitHub and GitLab.
 
-When discussing `git annotate` and `git bisect` the "when" is more important than "who". It is not
-to blame anybody but rather to find out whether published results are affected.
+When discussing `git annotate` and `git bisect` the "when" is more important
+than "who". It is not to blame anybody but rather to find out whether published
+results are affected.
 
 Discuss how one would find out this information without version control.
 
@@ -196,15 +125,15 @@ to examples discussed earlier.
 
 The screencasting (shell window cheatsheet) hints have been moved to
 the [presenting
-manual](https://github.com/coderefinery/manuals/blob/master/presenting.md#screencasting).
+manual](https://coderefinery.github.io/manuals/instructor-tech-setup/).
 
 
 ### Create a cheatsheet on the board
 
-Create a "cheatsheet" on the board as you go. After each command is
-introduced, write it on the board. After each module, make sure you
-haven't forgotten anything. Re-create and expand in future git
-lessons.  One strategy is:
+For in-person workshops, create a "cheatsheet" on the board as you go. After
+each command is introduced, write it on the board. After each module, make sure
+you haven't forgotten anything. Re-create and expand in future git lessons.
+One strategy is:
 
 - a common section for basic commands: `init`, `config``clone`, `help`, `stash`
 - info commands, can be run anytime: `status`, `log`, `diff`, `graph`
@@ -225,7 +154,7 @@ etc is good.
 Example cheat sheet.
 ```
 
-We also recommend to draw simple diagrams up on the board (eg: working
+We also recommend to draw simple diagrams up on the board (e.g.: working
 directory - staging area - repository with commands to move between) and keep
 them there for students to refer to.
 
@@ -262,20 +191,3 @@ You probably have a highly optimized bash and git environment - one
 that is different from students.  Move `.gitconfig` and `.bashrc` out
 of the way before you start so that your environment is identical to
 what students have.
-
-
-### Sections to skip when teaching live
-
-The discussion Git vs. Subversion and Git vs. Mercurial in the Motivation section
-is useful to have in the written material but should be skipped during the lesson unless
-there are questions.
-
-Typically only very few learners have background in Subversion or Mercurial and the risk
-is to "waste" 10 minutes on a discussion that nobody can relate to and benefit from.
-
-
-### TODO
-
-`git restore` and `git switch` were added in git 2.23 (released
-2019-08-16).  Sometime much later (2021, 2022, or 2023) perhaps, the
-older alternatives can be demoted or removed.
