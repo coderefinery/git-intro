@@ -21,9 +21,11 @@ So far everything was local and all snapshots, branches, and tags are saved unde
 
 If we remove `.git`, we remove all Git history of a project.
 
+```{discussion}
 - What if the hard disk fails?
 - What if somebody steals my laptop?
 - How can we collaborate with others across the web?
+```
 
 
 ## Remotes
@@ -32,10 +34,8 @@ We will learn how to work with remote repositories in detail in the
 [collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson.
 
 In this section we only want to get a taste to prepare us for other lessons
-where we will employ GitHub.
-
-Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
-to remove it afterwards.
+where we will employ GitHub.  Our goal is to publish our guacamole recipe on
+the web. Don't worry, you will be able to remove it afterwards.
 
 To store your git data on another server, you use **remotes**.
 A remote is a repository on its own, with its own branches
@@ -109,12 +109,12 @@ Once you click the green "Create repository", you will see a page similar to:
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
 
-To push changes to the project please **select SSH**.
-For this to work [you will need your SSH keys configured](https://coderefinery.github.io/installation/ssh/).
-
 ---
 
 ## Pushing our guacamole recipe repository to GitHub
+
+To push changes to the project please **select SSH**.
+For this to work [you will need your SSH keys configured](https://coderefinery.github.io/installation/ssh/).
 
 We now want to try the second option that GitHub suggests:
 
@@ -132,9 +132,9 @@ $ git push -u origin main
 ```
 
 The meaning of the above lines:
-- add a remote reference with the name "origin"
-- rename current branch to "main"
-- push branch "main" to "origin"
+- Add a remote reference with the name "origin"
+- Rename current branch to "main"
+- Push branch "main" to "origin"
 
 You should now see:
 
@@ -182,7 +182,6 @@ automatically checked out.
 ```{keypoints}
 - A repository can have one or multiple remotes (we will revisit these later).
 - Local branches often track remote branches.
-- All this might be a bit nebulous but we will add clarity later this week.
 - A remote serves as a full backup of your work.
-- We'll properly learn how to use these in the next "git collaborative" lesson.
+- We'll properly learn how to use these in the [Collaborative Git lesson](https://coderefinery.github.io/git-collaborative/).
 ```
