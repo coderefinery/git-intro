@@ -161,7 +161,7 @@ $ git switch --create branchname somehash
 
 (exercise-history)=
 
-## Exercise: basic archaeology commands
+## Exercise: Basic archaeology commands
 
 `````{exercise}
   Let us explore the value of these commands in an exercise.  Future

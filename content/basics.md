@@ -198,7 +198,7 @@ Note that help pages also work when you don't have a network connection!
 
 (exercise-record-changes)=
 
-## Exercise: record changes
+## Exercise: Record changes
 
 ````{exercise}
   Add 1/2 onion to `ingredients.txt` and also the instruction

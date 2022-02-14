@@ -47,7 +47,7 @@ things.
 
 (exercise-stashing)=
 
-### Exercise: stashing
+### Exercise: Stashing
 
 ```{exercise}
 1. Make a change.
@@ -87,7 +87,7 @@ Later you can merge it to main or rebase it on top of main and resume work.
 
 (exercise-interrupted-work)=
 
-### Exercise: interrupted work
+### Exercise: Interrupted work
 
 ```{exercise}
 Use one of the strategies above to interrupt some work (recommendation

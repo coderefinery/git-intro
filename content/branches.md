@@ -174,7 +174,7 @@ $ git graph
 
 (exercise-branches)=
 
-## Exercise: create and commit to branches
+## Exercise: Create and commit to branches
 
 ````{exercise}
   In this exercise, you will create another new branch and few more commits.
