@@ -171,37 +171,6 @@ $ git graph
 - The branch `experiment` is two commits ahead of `master`.
 - We commit our changes to this branch.
 
----
-
-````{discussion} Different meanings of "checkout"
-  Depending on the context `git checkout` can do very different actions:
-
-  1) Switch to a branch:
-     ```console
-     $ git checkout <branchname>
-     ```
-
-  2) Bring the working tree to a specific state (commit):
-     ```console
-     $ git checkout <hash>
-     ```
-
-  3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
-     ```console
-     $ git checkout <path/file>
-     ```
-
-  This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
-  Picture `git checkout` as an operation that brings the working tree to a specific state.
-  The state can be a commit or a branch (pointing to a commit).
-
-  In Git 2.23 (2019-08-16) and later this is much nicer:
-  ```console
-  $ git switch <branchname>  # switch to a different branch
-  $ git restore <path/file>  # discard changes in working directory
-  ```
-````
-
 
 ## Exercise: create and commit to branches
 
@@ -597,6 +566,35 @@ No problem: we worked on a branch, branch is deleted, `master` is clean.
   Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
   branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
   don't give the `-b` flag to `git checkout` to create the new branch.
+  ```
+````
+
+````{discussion} Different meanings of "checkout"
+  Depending on the context `git checkout` can do very different actions:
+
+  1) Switch to a branch:
+     ```console
+     $ git checkout <branchname>
+     ```
+
+  2) Bring the working tree to a specific state (commit):
+     ```console
+     $ git checkout <hash>
+     ```
+
+  3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
+     ```console
+     $ git checkout <path/file>
+     ```
+
+  This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
+  Picture `git checkout` as an operation that brings the working tree to a specific state.
+  The state can be a commit or a branch (pointing to a commit).
+
+  In Git 2.23 (2019-08-16) and later this is much nicer:
+  ```console
+  $ git switch <branchname>  # switch to a different branch
+  $ git restore <path/file>  # discard changes in working directory
   ```
 ````
 
