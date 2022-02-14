@@ -44,7 +44,6 @@ branching.
    basics
    branches
    conflicts
-   undoing
    remotes
    archaeology
    level
@@ -55,6 +54,7 @@ branching.
    :caption: Optional episodes
 
    staging-area
+   recovering
    interrupted
    aliases
    under-the-hood
