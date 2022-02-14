@@ -12,7 +12,7 @@
 ```
 
 
-## Conflict resolution
+## Conflicts in Git and why they are good
 
 Imagine we start with the following text file:
 ```{code-block}
@@ -31,7 +31,6 @@ emphasize-lines: 1, 3
 1/2 tbsp cilantro
 2 tsp salt
 ```
-
 
 On branch B somebody else modifies:
 ```{code-block}
@@ -78,6 +77,21 @@ Please remember:
 - You can take human measures to reduce them.
 
 ---
+
+```{discussion} The human side of conflicts
+- What does it mean if two people do the same thing in two different ways?
+- What if you work on the same file but do two different things in the different sections?
+- What if you do something, don't tell someone from 6 months, and then try to combine it with other people's work?
+- How are conflicts avoided in other work? (Only one person working at once?
+  Declaring what you are doing before you start, if there is any chance someone
+  else might do the same thing, helps.)
+- Minor conflicts (two people revise spelling) vs semantic (two people rewrite
+  a function to add two different new features). How did Git solve these in
+  branching/merging easily?
+```
+
+Now we can go to show how Git controls when there is actually a conflict.
+
 
 ## Preparing a conflict
 
