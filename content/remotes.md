@@ -63,36 +63,12 @@ There are different types of remotes:
   cross-university sharing.
 
 
-```{discussion} Why we use GitHub
-One option to host your repository on the web is [GitHub](https://github.com).
-
-GitHub is a for-profit service that hosts remote git repositories for you. It
-offers a nice HTML user interface to browse the repositories and handles many
-things very nicely.
-
-It offers unlimited public and private repositories free of charge and costs
-a monthly fee if you want access to the pro-tools or need more than 3
-collaborators for your private repos. These features had made GitHub very popular
-with many open source providers
-
-CodeRefinery does not in any way endorse the use of GitHub. There are many
-commercial and open-source alternatives, just check the list above.  In the
-end, it is a balance between control and visibility, and we use GitHub because
-you are likely to have to use it for other software anyway.
-
-**Set up GitHub account**:
-By now you should already have set up a GitHub account but if you haven't,
-please do so [here](https://github.com/join). But it is OK if you want to use
-[GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
-[NotABug](https://notabug.org) or another platform instead (although we
-will practice collaborative Git on GitHub tomorrow).
-```
-
-
 ## Type-along: Create a new repository on GitHub
 
 For the rest of this page, we will make a new repository for our
-guacamole recipe on Github, send our code to it, and then see how
+guacamole recipe on GitHub ({ref}`here <index>` we motivate why we demonstrate this
+with GitHub),
+send our code to it, and then see how
 others can get the code from it.
 
 Make sure that you are **logged into GitHub**.
