@@ -16,11 +16,11 @@ Inspecting history:
 - {ref}`exercise-history`
 - {ref}`exercise-bisect`
 
-Using the Git staging area
+Using the Git staging area:
 - {ref}`exercise-interactive-commits`
 - {ref}`exercise-staging-area`
 
-Undoing and recovering
+Undoing and recovering:
 - {ref}`exercise-revert`
 - {ref}`exercise-amend`
 - {ref}`exercise-reset`
