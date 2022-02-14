@@ -21,9 +21,11 @@ So far everything was local and all snapshots, branches, and tags are saved unde
 
 If we remove `.git`, we remove all Git history of a project.
 
+```{discussion}
 - What if the hard disk fails?
 - What if somebody steals my laptop?
 - How can we collaborate with others across the web?
+```
 
 
 ## Remotes
@@ -32,10 +34,8 @@ We will learn how to work with remote repositories in detail in the
 [collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson.
 
 In this section we only want to get a taste to prepare us for other lessons
-where we will employ GitHub.
-
-Our goal is to publish our guacamole recipe on the web. Don't worry, you will be able
-to remove it afterwards.
+where we will employ GitHub.  Our goal is to publish our guacamole recipe on
+the web. Don't worry, you will be able to remove it afterwards.
 
 To store your git data on another server, you use **remotes**.
 A remote is a repository on its own, with its own branches
@@ -63,36 +63,12 @@ There are different types of remotes:
   cross-university sharing.
 
 
-```{discussion} Why we use GitHub
-One option to host your repository on the web is [GitHub](https://github.com).
-
-GitHub is a for-profit service that hosts remote git repositories for you. It
-offers a nice HTML user interface to browse the repositories and handles many
-things very nicely.
-
-It offers unlimited public and private repositories free of charge and costs
-a monthly fee if you want access to the pro-tools or need more than 3
-collaborators for your private repos. These features had made GitHub very popular
-with many open source providers
-
-CodeRefinery does not in any way endorse the use of GitHub. There are many
-commercial and open-source alternatives, just check the list above.  In the
-end, it is a balance between control and visibility, and we use GitHub because
-you are likely to have to use it for other software anyway.
-
-**Set up GitHub account**:
-By now you should already have set up a GitHub account but if you haven't,
-please do so [here](https://github.com/join). But it is OK if you want to use
-[GitLab](https://gitlab.com) or [Bitbucket](https://bitbucket.org) or
-[NotABug](https://notabug.org) or another platform instead (although we
-will practice collaborative Git on GitHub tomorrow).
-```
-
-
 ## Type-along: Create a new repository on GitHub
 
 For the rest of this page, we will make a new repository for our
-guacamole recipe on Github, send our code to it, and then see how
+guacamole recipe on GitHub ({ref}`here <index>` we motivate why we demonstrate this
+with GitHub),
+send our code to it, and then see how
 others can get the code from it.
 
 Make sure that you are **logged into GitHub**.
@@ -133,13 +109,12 @@ Once you click the green "Create repository", you will see a page similar to:
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
 
-To push changes to the project you will either need SSH keys for the SSH
-address (preferred) or you will have to use your GitHub username and password when
-using the HTTPS address.  **If you don't know what to do, use HTTPS.**
-
 ---
 
 ## Pushing our guacamole recipe repository to GitHub
+
+To push changes to the project please **select SSH**.
+For this to work [you will need your SSH keys configured](https://coderefinery.github.io/installation/ssh/).
 
 We now want to try the second option that GitHub suggests:
 
@@ -151,15 +126,15 @@ We now want to try the second option that GitHub suggests:
   need to replace the "user" part and possibly also the repository name**):
 
 ```console
-$ git remote add origin https://github.com/user/recipe.git
+$ git remote add origin git@github.com:user/recipe.git
 $ git branch -M main
 $ git push -u origin main
 ```
 
 The meaning of the above lines:
-- add a remote reference with the name "origin"
-- rename current branch to "main"
-- push branch "main" to "origin"
+- Add a remote reference with the name "origin"
+- Rename current branch to "main"
+- Push branch "main" to "origin"
 
 You should now see:
 
@@ -168,7 +143,7 @@ Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-To github.com:bast/recipe.git
+To github.com:user/recipe.git
  * [new branch]      main -> main
 Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
@@ -190,26 +165,23 @@ At this point only a brief demo - if you copy the SSH or HTTPS address, you can 
 (again adapt the "namespace/repository.git" part):
 
 ```console
-$ git clone https://github.com/user/recipe.git
+$ git clone git@github.com:user/recipe.git
 ```
 
 This creates a directory called "recipe" unless it already exists. You can also specify the target directory
 on your computer:
 
 ```console
-$ git clone https://github.com/user/recipe.git myrecipe
+$ git clone git@github.com:user/recipe.git myrecipe
 ```
 
 What just happened? **Think of cloning as downloading the `.git` part to your
 computer**. After downloading the `.git` part the branch pointed to by HEAD is
 automatically checked out.
 
-
-
 ```{keypoints}
 - A repository can have one or multiple remotes (we will revisit these later).
 - Local branches often track remote branches.
-- All this might be a bit nebulous but we will add clarity later this week.
 - A remote serves as a full backup of your work.
-- We'll properly learn how to use these in the next "git collaborative" lesson.
+- We'll properly learn how to use these in the [Collaborative Git lesson](https://coderefinery.github.io/git-collaborative/).
 ```

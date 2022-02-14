@@ -1,3 +1,5 @@
+.. _index:
+
 Introduction to version control with Git
 ========================================
 
