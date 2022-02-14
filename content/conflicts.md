@@ -1,3 +1,5 @@
+(conflict-resolution)=
+
 # Conflict resolution
 
 ```{objectives}

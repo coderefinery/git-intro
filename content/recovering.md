@@ -163,6 +163,51 @@ point in the past.
 
 ---
 
+## Recovering from committing to the wrong branch
+
+It is easy to forget to create a branch or to create it and forget to switch to
+it when committing changes.
+
+Here we assume that we made a couple of commits but we realize they went to the
+wrong branch.
+
+**Solution 1 using git cherry-pick**:
+1. Make sure that the correct branch exists and if not, create it. Make sure to
+   create it from the commit hash where you wish you had created it from: `git
+   branch $branchname $hash`
+2. Switch to the correct branch.
+3. `git cherry-pick <hash>` can be used to take a specific commit to the
+   current branch. Cherry-pick all commits that should have gone to the correct
+   branch, **from oldest to most recent**.
+4. Rewind the branch that accidentally got wrong commits with `git reset --hard` (see also above).
+
+**Solution 2 using git reset --hard** (makes sense if the correct branch should
+contain all commits of the accidentally modified branch):
+1. Create the correct branch, pointing at the latest commit: `git branch $branchname`.
+2. Check with `git log` or `git graph` that both branches point to the same, latest, commit.
+3. Rewind the branch that accidentally got wrong commits with `git reset --hard` (see also above).
+
+
+## Recovering from merging/pulling into the wrong branch
+
+`git merge`, `git rebase`, and `git pull` modify the **current** branch, never
+the other branch. But sometimes we run this command on the wrong branch.
+
+1. Check with `git log` the commit hash that you would like to rewind the
+   wrongly modified branch to.
+2. Rewind the branch that accidentally got wrong commits with `git reset --hard $hash` (see also above).
+
+
+## Recovering from conflict after git pull
+
+`git pull` can create a conflict since `git pull` always also includes a `git merge` (more about this
+in the [collaborative Git lesson](https://coderefinery.github.io/git-collaborative/)).
+
+The recovery is same as described in {ref}`conflict-resolution`. Either
+resolve conflicts or abort the merge with `git merge --abort`.
+
+---
+
 ````{challenge} Test your understanding
   1. What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
   2. Is it OK to modify commits that nobody has seen yet?
