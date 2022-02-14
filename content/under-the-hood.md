@@ -7,7 +7,7 @@
 
 ```{instructor-note}
 - 10 min teaching/type-along
-- 10 min exercise
+- 15 min exercise
 ```
 
 ```{figure} img/stranger.jpg

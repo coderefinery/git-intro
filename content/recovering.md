@@ -7,7 +7,7 @@
 
 ```{instructor-note}
 - 10 min teaching/type-along
-- 10 min exercise
+- 15 min exercise
 ```
 
 One of the main points of version control is that you can *go back in
