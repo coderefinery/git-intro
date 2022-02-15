@@ -335,8 +335,7 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 2. Rename the file with `git mv` (you will need to `git commit` the rename).
 3. Use `git log --oneline` and `git status`.
 4. Remove the file with `git rm` (again you need to `git commit` the change).
-5. Inspect the history with `git log --stat`. Can you recover the removed file from the Git history?
-   Hint: You can try with a web search for "git checkout removed file from past".
+5. Inspect the history with `git log --stat`.
 ```
 
 
