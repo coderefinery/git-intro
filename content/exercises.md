@@ -27,4 +27,3 @@ Undoing and recovering:
 
 Interrupted work:
 - {ref}`exercise-stashing`
-- {ref}`exercise-interrupted-work`

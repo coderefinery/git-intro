@@ -446,9 +446,20 @@ which we will learn to resolve in the next section.
 4. Merge the new branch to `master`.
 5. Examine the result with `git graph`.
 6. Have you expected the result? Discuss what you see.
+
+  ```{solution}
+  You will see that in this case no merge commit was created and Git merged the
+  two branches by moving (fast-forwarding) the "master" branch (label) three
+  commits forward.
+
+  This was possible since one branch is the ancestor of the other and their
+  developments did not diverge.
+
+  A merge that does not require any merge commit is a fast-forward merge.
+  ```
 ````
 
-```{exercise} Exercise: Rebasing
+````{exercise} Exercise: Rebasing
 As an alternative to merging branches, one can also *rebase* branches.
 Rebasing means that the new commits are *replayed* on top of another branch
 (instead of creating an explicit merge commit).
@@ -458,7 +469,16 @@ Rebasing means that the new commits are *replayed* on top of another branch
 3. Inspect the situation with `git graph`.
 4. Now rebase the new branch on top of `master` by first switching to the new branch, and then `git rebase master`.
 5. Inspect again the situation with `git graph`. Notice that the commit hashes have changed - think about why!
-```
+
+  ```{solution}
+  You will notice two things:
+  - History is now linear and does not contain merge commits.
+  - All the commit hashes that were on the branch that got rebased, have
+    changed. This also demonstrates that `git rebase` is a command that alters
+    history. The commit history looks as if the rebased commits were all done
+    after the `master` commits.
+  ```
+````
 
 
 ## Tags

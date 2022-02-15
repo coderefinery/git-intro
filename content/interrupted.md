@@ -49,7 +49,7 @@ things.
 
 ### Exercise: Stashing
 
-```{exercise}
+````{exercise}
 1. Make a change.
 2. Check status/diff, stash the change, check status/diff again.
 3. Make a separate, unrelated change which doesn't touch the same
@@ -63,7 +63,17 @@ things.
    extra commit.
 7. Advanced: what does `git graph` show when you have something
    stashed?
-```
+
+   ```{solution}
+   5: Yes you can. With `git stash pop <index>` you can decie which stash
+   index to pop.
+
+   6: In this case Git will ask us to resolve the conflict the same way
+   when resolving conflicts between two branches.
+
+   7: It shows an additional commit hash with `refs/stash`.
+   ```
+````
 
 
 ## Option 2: Create branches
@@ -84,22 +94,6 @@ $ git checkout temporary     # continue where you left off
 ```
 
 Later you can merge it to main or rebase it on top of main and resume work.
-
-(exercise-interrupted-work)=
-
-### Exercise: Interrupted work
-
-```{exercise}
-Use one of the strategies above to interrupt some work (recommendation
-if you don't know which: use stashing).  If you don't accomplish all
-of these, it is OK.
-
-1. Optional: Go through the process above.  Start a change, create new
-   branch and store your changes.  Go back to main and fix something
-   else.  Resume your work and merge the new branch.
-2. Discuss how to resume your former work.  Can you git rid of a branch?
-   Continue using it?  etc.
-```
 
 
 ## Storing various junk you don't need but don't want to get rid of

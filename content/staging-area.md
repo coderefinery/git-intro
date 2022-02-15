@@ -97,7 +97,7 @@ commit or having one logical change spread over several commits.
 
 ## Exercise: Interactive commits
 
-```{exercise} Interactive committing
+````{exercise} Interactive committing
 One option to help us create nice logical commits is to stage *interactively*
 with `git commit --patch`:
 
@@ -109,7 +109,13 @@ with `git commit --patch`:
 3. Do it again for the other change.
 4. When you're done, inspect the situation with `git log`, `git status`, `git diff` and `git diff --staged`.
 5. When would this be useful?
-```
+
+  ```{solution}
+  This can be useful if you have several modification in a file (or several
+  files) but you decide that it would be beneficial to save them as two (or
+  more) separate commits.
+  ```
+````
 
 
 ## The staging area

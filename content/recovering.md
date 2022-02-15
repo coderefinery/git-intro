@@ -117,7 +117,7 @@ This means that we avoid this command on commits that we have shared with others
 
 ### Exercise: Modify a previous commit
 
-```{exercise} Exercise: Modify a previous commit
+````{exercise} Exercise: Modify a previous commit
 1. Make an incomplete change to the recipe or a typo in your change, `git
    add` and `git commit` the incomplete/unsatisfactory change.
 2. Inspect the unsatisfactory but committed change with `git show`. Remember
@@ -125,7 +125,13 @@ This means that we avoid this command on commits that we have shared with others
 3. Now complete/fix the change but instead of creating a new commit, add the
    correction to the previous commit with `git add`, followed by `git commit
    --amend`.  What changed?
-```
+
+  ```solution
+  One thing that has changed now is the commit hash. Modifying the previous
+  commit has changed the history. This is OK to do on commits that other people
+  don't depend on yet.
+  ```
+````
 
 
 ## Rewinding branches (modifies history)
