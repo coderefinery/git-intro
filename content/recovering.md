@@ -126,7 +126,7 @@ This means that we avoid this command on commits that we have shared with others
    correction to the previous commit with `git add`, followed by `git commit
    --amend`.  What changed?
 
-  ```solution
+  ```{solution}
   One thing that has changed now is the commit hash. Modifying the previous
   commit has changed the history. This is OK to do on commits that other people
   don't depend on yet.
