@@ -69,6 +69,7 @@ branching.
    exercises
    guide
    reference
+   customizing
    resources
 
 
