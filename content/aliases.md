@@ -153,12 +153,6 @@ translated to `git@github.com:/username/recipe` using a simple prefix
 matching.
 
 
-## Git-aware bash prompt
-
-You can make your shell (bash) display contextual information about
-your git state even at all times.  If you are interested, find it on
-[GitHub](https://github.com/jimeh/git-aware-prompt).
-
 ```{keypoints}
 - If you are frustrated about remembering a command, you should create an alias.
 ```
