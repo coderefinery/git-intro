@@ -275,7 +275,7 @@ $ git bisect bad
 
 (exercise-bisect)=
 
-## Exercise: Git bisect
+## Optional exercise: Git bisect
 
 ````{exercise}
   In this exercise, we use `git bisect` on an example repository.  It
