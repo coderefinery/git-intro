@@ -2,5 +2,5 @@ Sphinx
 sphinx_rtd_theme
 sphinx_rtd_theme_ext_color_contrast
 myst_nb
-sphinx-lesson
+https://github.com/coderefinery/sphinx-lesson/archive/rkdarst/exercise-list.zip
 https://github.com/coderefinery/sphinx-coderefinery-branding/archive/master.zip

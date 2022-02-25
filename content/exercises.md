@@ -27,3 +27,8 @@ Undoing and recovering:
 
 Interrupted work:
 - {ref}`exercise-stashing`
+
+
+
+```{exerciselist}
+```
