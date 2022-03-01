@@ -1,5 +1,7 @@
 # List of exercises
 
+## Summary
+
 Basics:
 - {ref}`exercise-record-changes`
 - {ref}`exercise-diff-and-rename`
@@ -27,3 +29,9 @@ Undoing and recovering:
 
 Interrupted work:
 - {ref}`exercise-stashing`
+
+
+## Full list
+
+```{exerciselist}
+```
