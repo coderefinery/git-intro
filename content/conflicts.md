@@ -104,11 +104,15 @@ decrease the amount of cilantro), and later we will try to merge them
 together.
 
 - Create two branches from `master`: one called `like-cilantro`, one called `dislike-cilantro`:
+  ```console
+  $ git branch like-cilantro master
+  $ git branch dislike-cilantro master
+  ```
 
 - On the two branches make **different modifications** to the amount of the **same ingredient**:
 
 - On the branch `like-cilantro` we have the following change:
-  ```
+  ```console
   $ git diff master like-cilantro
   ```
 
@@ -126,7 +130,7 @@ together.
   ```
 
 - And on the branch `dislike-cilantro` we have the following change:
-  ```
+  ```console
   $ git diff master dislike-cilantro
   ```
 
