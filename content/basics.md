@@ -308,12 +308,12 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 
   On Windows or Linux:
   ```
-  $ git difftool --tool=meld
+  $ git difftool --tool=meld <hash>
   ```
 
   On macOS:
   ```
-  $ git difftool --tool=opendiff
+  $ git difftool --tool=opendiff <hash>
   ```
 
   ```{figure} img/meld.png
