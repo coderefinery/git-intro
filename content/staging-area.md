@@ -215,7 +215,7 @@ prepare commits since **you can modify and stage several times before committing
 (history)         .      (files we see)
 ```
 
-**git reset --soft HEAD~1** (move HEAD back by one but keep changes and stage
+**git reset \\--soft HEAD~1** (move HEAD back by one but keep changes and stage
 them) would do the opposite of **git commit**.
 
 Going back to the last staged version:
@@ -238,7 +238,7 @@ Going back to the last staged version:
 (history)         .      (files we see)
 ```
 
-Unstaging changes with **git restore --staged**:
+Unstaging changes with **git restore \\--staged**:
 ```text
           git restore --staged
              ------------>  project*
