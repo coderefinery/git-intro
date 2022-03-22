@@ -97,7 +97,7 @@ commit or having one logical change spread over several commits.
 
 ## Exercise: Interactive commits
 
-````{exercise} Interactive committing
+````{exercise} Staging-1: Perform an interactive commit
 One option to help us create nice logical commits is to stage *interactively*
 with `git commit --patch`:
 
@@ -310,7 +310,7 @@ another.
 
 ## Exercise: Using the staging area
 
-```{exercise}
+```{exercise} Staging-2: Use the staging area to make a commit in two steps
 1. In your recipe example, make two different changes to
   `ingredients.txt` and `instructions.txt` which do not go together.
 2. Use `git add` to stage one of the changes.
