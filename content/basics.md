@@ -200,7 +200,7 @@ Note that help pages also work when you don't have a network connection!
 
 ## Exercise: Record changes
 
-````{exercise}
+````{exercise} Basic-1: Record changes
   Add 1/2 onion to `ingredients.txt` and also the instruction
   to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
 
@@ -298,12 +298,12 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 
 ## Optional exercises: comparing, renaming, and removing
 
-```{exercise} Comparing and showing commits
+```{exercise} (optional) Basic-2: Comparing and showing commits
 1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
 2. Have a look at specific commits with `git show <hash>`.
 ```
 
-````{exercise} Visual diff tools
+````{exercise} (optional) Basic-3: Visual diff tools
   - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 
   On Windows or Linux:
@@ -330,7 +330,7 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
   ```
 ````
 
-```{exercise} Renaming and removing files
+```{exercise} (optional) Basic-4: Renaming and removing files
 1. Create a new file, `git add` and `git commit` the file.
 2. Rename the file with `git mv` (you will need to `git commit` the rename).
 3. Use `git log --oneline` and `git status`.
@@ -484,7 +484,7 @@ $ git rm      # remove tracked files
 Git is not ideal for large binary files
 (for this consider [http://git-annex.branchable.com](http://git-annex.branchable.com)).
 
-````{challenge} Test your understanding
+````{challenge} Basic-5: Test your understanding
   Which command(s) below would save the changes of `myfile.txt`
   to an existing local Git repository?
 

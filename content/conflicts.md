@@ -278,7 +278,7 @@ without conflicts and leaves the files with conflicts unstaged.
 
 ## Exercise: Create and resolve a conflict
 
-````{exercise} Exercise: Create another conflict and resolve
+````{exercise} Conflict-1: Create another conflict and resolve
 In this exercise, we repeat almost exactly what we did above with a
 different ingredient.
 
@@ -290,36 +290,36 @@ different ingredient.
    branch create another banch `dislike-avocados`, commit again, and try to
    merge both branches into `master` you will not see a conflict. Can you
    explain, why it is different this time?
-   ```{solution}
-   4: No conflict in this case if the change is the same.
+```{solution}
+4: No conflict in this case if the change is the same.
 
-   5: No conflict in this case since in Git history one change happened after the other. The two changes
-      are related and linked by Git history and one is a Git ancestor of the
-      other. Git will assume that since we applied one change after the other,
-      we meant this. There is nothing to resolve.
-   ```
+5: No conflict in this case since in Git history one change happened after the other. The two changes
+   are related and linked by Git history and one is a Git ancestor of the
+   other. Git will assume that since we applied one change after the other,
+   we meant this. There is nothing to resolve.
+```
 ````
 
 (exercise-conflicts-optional)=
 
 ## Optional exercises with conflict resolution
 
-````{exercise} Exercise: Conflicts and rebase
+````{exercise} (optional) Conflict-2: Resolve a conflict when rebasing a branch
 1. Create two branches where you anticipate a conflict.
 2. Try to merge them and observe that indeed they conflict.
 3. Abort the merge with `git merge --abort`.
 4. What do you expect will happen if you rebase one branch on top of the
    other? Do you anticipate a conflict? Try it out.
-   ```{solution}
-   Yes, this will conflict. If it conflicts during a merge, it will also conflict
-   during rebase but the conflict resolution looks slightly different:
-   You still need to look for conflict markers but you tell Git that you resolved
-   a conflict with `git add` and then you continue with `git rebase --continue`.
-   Follow instructions that you get from the Git command line.
-   ```
+```{solution}
+Yes, this will conflict. If it conflicts during a merge, it will also conflict
+during rebase but the conflict resolution looks slightly different:
+You still need to look for conflict markers but you tell Git that you resolved
+a conflict with `git add` and then you continue with `git rebase --continue`.
+Follow instructions that you get from the Git command line.
+```
 ````
 
-````{exercise} Exercise: Resolution using mergetool
+````{exercise} (optional) Conflict-3: Resolve a conflict using mergetool
   - Again create a conflict (for instance disagree on the number of avocados).
   - Stop at this stage:
 

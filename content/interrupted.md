@@ -49,7 +49,7 @@ things.
 
 ### Exercise: Stashing
 
-````{exercise}
+````{exercise} Interrupted-1: Stash some uncommitted work
 1. Make a change.
 2. Check status/diff, stash the change, check status/diff again.
 3. Make a separate, unrelated change which doesn't touch the same
@@ -64,15 +64,15 @@ things.
 7. Advanced: what does `git graph` show when you have something
    stashed?
 
-   ```{solution}
-   5: Yes you can. With `git stash pop <index>` you can decie which stash
-   index to pop.
+```{solution}
+5: Yes you can. With `git stash pop <index>` you can decie which stash
+index to pop.
 
-   6: In this case Git will ask us to resolve the conflict the same way
-   when resolving conflicts between two branches.
+6: In this case Git will ask us to resolve the conflict the same way
+when resolving conflicts between two branches.
 
-   7: It shows an additional commit hash with `refs/stash`.
-   ```
+7: It shows an additional commit hash with `refs/stash`.
+```
 ````
 
 

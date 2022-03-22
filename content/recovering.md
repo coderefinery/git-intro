@@ -91,7 +91,7 @@ code, you may get a conflict (which we'll learn about later).
 
 ### Exercise: Revert a commit
 
-```{exercise} Exercise: Revert a commit
+```{exercise} Undoing-1: Revert a commit
 - Create a commit.
 - Revert the commit with `git revert`.
 - Inspect the history with `git log --oneline`.
@@ -117,7 +117,7 @@ This means that we avoid this command on commits that we have shared with others
 
 ### Exercise: Modify a previous commit
 
-````{exercise} Exercise: Modify a previous commit
+````{exercise} Undoing-2: Modify a previous commit
 1. Make an incomplete change to the recipe or a typo in your change, `git
    add` and `git commit` the incomplete/unsatisfactory change.
 2. Inspect the unsatisfactory but committed change with `git show`. Remember
@@ -149,7 +149,7 @@ point in the past.
 
 ### Exercise: Git reset
 
-````{exercise} Exercise: Destroy our experimentation in this episode
+````{exercise} Undoing-3: Destroy our experimentation in this episode
   After we have experimented with reverts and amending, let us destroy
   all of that and get our repositories to a similar state.
 
@@ -226,7 +226,7 @@ resolve conflicts or abort the merge with `git merge --abort`.
 
 ---
 
-````{challenge} Test your understanding
+````{challenge} Undoing-4: Test your understanding
   1. What happens if you accidentally remove a tracked file with `git rm`, is it gone forever?
   2. Is it OK to modify commits that nobody has seen yet?
   3. What situations would justify to modify the Git history and possibly remove commits?

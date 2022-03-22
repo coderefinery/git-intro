@@ -163,7 +163,7 @@ $ git switch --create branchname somehash
 
 ## Exercise: Basic archaeology commands
 
-`````{exercise}
+`````{exercise} History-1: Explore basic archaeology commands
   Let us explore the value of these commands in an exercise.  Future
   exercises do not depend on this, so it is OK if you do not complete
   it fully.
@@ -277,7 +277,7 @@ $ git bisect bad
 
 ## Optional exercise: Git bisect
 
-````{exercise}
+````{exercise} (optional) History-2: Use git bisect to find the bad commit
   In this exercise, we use `git bisect` on an example repository.  It
   is OK if you do not complete this exercise fully.
 

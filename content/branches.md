@@ -176,7 +176,7 @@ $ git graph
 
 ## Exercise: Create and commit to branches
 
-````{exercise}
+````{exercise} Branch-1: Create and commit to branches
   In this exercise, you will create another new branch and few more commits.
   We will use this in the next section, to practice
   merging.
@@ -437,7 +437,7 @@ The following exercises are advanced, absolutely no problem to postpone them to 
 few months later. If you give them a go, keep in mind that you might run into conflicts,
 which we will learn to resolve in the next section.
 
-````{exercise} Exercise: Encounter a fast-forward merge
+````{exercise} (optional) Branch-2: Perform a fast-forward merge
 1. Create a new branch from `master` and switch to it.
 2. Create a couple of commits on the new branch (for instance edit `README.md`):
    ```{figure} img/gitink/git-pre-ff.svg
@@ -459,7 +459,7 @@ which we will learn to resolve in the next section.
   ```
 ````
 
-````{exercise} Exercise: Rebasing
+````{exercise} (optional) Branch-3: Rebase a branch (instead of merge)
 As an alternative to merging branches, one can also *rebase* branches.
 Rebasing means that the new commits are *replayed* on top of another branch
 (instead of creating an explicit merge commit).
@@ -562,7 +562,7 @@ $ git branch -D wild-idea      # it is gone, off to a new idea
 
 No problem: we worked on a branch, branch is deleted, `master` is clean.
 
-````{challenge} Test your understanding
+````{challenge} Branch-4: Test your understanding
   Which of the following combos (one or more) creates a new branch and makes a commit to it?
   1. ```console
      $ git branch new-branch
