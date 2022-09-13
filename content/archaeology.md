@@ -140,16 +140,16 @@ $ git checkout -b branchname somehash
 Example (lines starting with "#" are only comments):
 
 ```console
-  # create branch called "older-code" from hash 347e6292419b
+$ # create branch called "older-code" from hash 347e6292419b
 $ git checkout -b older-code 347e6292419bd0e4bff077fe971f983932d7a0e9
 
-  # now you can navigate and inspect the code as it was back then
-  # ...
+$ # now you can navigate and inspect the code as it was back then
+$ # ...
 
-  # after we are done we can switch back to "main"
+$ # after we are done we can switch back to "main"
 $ git checkout main
 
-  # if we like we can delete the "older-code" branch
+$ # if we like we can delete the "older-code" branch
 $ git branch -d older-code
 ```
 
@@ -257,17 +257,20 @@ We will probably arrive at a solution which is similar to `git bisect`:
 $ git bisect start
 $ git bisect good f0ea950  # this is a commit that worked
 $ git bisect bad main    # last commit is broken
-  # now compile and/or run
-  # after that decide whether
+
+$ # now compile and/or run
+$ # after that decide whether
 $ git bisect good
-  # or
+$ # or
 $ git bisect bad
-  # now compile and/or run
-  # after that decide whether
+
+$ # now compile and/or run
+$ # after that decide whether
 $ git bisect good
-  # or
+$ # or
 $ git bisect bad
-  # iterate until commit is found
+
+$ # iterate until commit is found
 ```
 
 - This can even be automatized with `git bisect run <script>`.
@@ -335,10 +338,10 @@ $ git bisect bad
   How to navigate to the parent of a commit with hash `somehash`:
 
   ```console
-    # create branch pointing to the parent of somehash
+  $ # create branch pointing to the parent of somehash
   $ git checkout -b branchname somehash~1
 
-    # instead of a tilde you can also use this
+  $ # instead of a tilde you can also use this
   $ git checkout -b branchname somehash^
   ```
 ````
