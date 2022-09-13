@@ -93,7 +93,7 @@ code, you may get a conflict (which we'll learn about later).
 
 ```{exercise} Undoing-1: Revert a commit
 - Create a commit (commit A).
-- Revert the commit with `git revert`(commit B).
+- Revert the commit with `git revert` (commit B).
 - Inspect the history with `git log --oneline`.
 - Now try `git show` on both the reverted(commit A) and the newly created commit(commit B).
 ```
