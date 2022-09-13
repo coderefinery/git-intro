@@ -307,12 +307,12 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
   - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 
   On Windows or Linux:
-  ```
+  ```console
   $ git difftool --tool=meld <hash>
   ```
 
   On macOS:
-  ```
+  ```console
   $ git difftool --tool=opendiff <hash>
   ```
 
@@ -325,7 +325,7 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 
   You probably want to use the same visual diff tool every time and
   you can configure Git for that:
-  ```
+  ```console
   $ git config --global diff.tool meld
   ```
 ````
