@@ -336,6 +336,9 @@ $ git merge less-salt
 ```
 
 ```{figure} img/gitink/git-merge-2.svg
+:alt: Commit graph after merge
+
+Commit graph after merge.
 ```
 
 We can verify the result in the terminal:
@@ -400,6 +403,9 @@ Deleted branch less-salt (was bf59be6).
 This is the result:
 
 ```{figure} img/gitink/git-deleted-branches.svg
+:alt: Commit graph after merged branches were deleted
+
+Commit graph after merged branches were deleted.
 ```
 
 Compare in the terminal:
@@ -422,7 +428,10 @@ $ git graph
 * 2d79e7e adding ingredients and instructions
 ```
 
-As you see only the pointers disappeared, not the commits.
+Comparing figures "Commit graph after merge"
+and "Commit graph after merged branches were deleted",
+we observe that
+only the pointers ("sticky notes") disappeared, not the commits.
 
 Git will not let you delete a branch which has not been reintegrated unless you
 insist using `git branch -D`. Even then your commits will not be lost but you
