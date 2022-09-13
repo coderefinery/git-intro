@@ -92,10 +92,10 @@ code, you may get a conflict (which we'll learn about later).
 ### Exercise: Revert a commit
 
 ```{exercise} Undoing-1: Revert a commit
-- Create a commit.
-- Revert the commit with `git revert`.
+- Create a commit (commit A).
+- Revert the commit with `git revert`(commit B).
 - Inspect the history with `git log --oneline`.
-- Now try `git show` on both the reverted and the newly created commit.
+- Now try `git show` on both the reverted(commit A) and the newly created commit(commit B).
 ```
 
 
