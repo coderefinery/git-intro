@@ -126,9 +126,9 @@ We do the following part together. Encourage participants to type along.
 
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
-```shell
+```console
 $ git branch experiment master   # create branch called "experiment" from master
-                                 # pointing to the present commit
+$                                # pointing to the present commit
 $ git checkout experiment        # switch to branch "experiment"
 $ git branch                     # list all local branches and show on which branch we are
 ```
@@ -547,11 +547,11 @@ $ git checkout -b <name>   # create branch <name> and switch to it
 
 With this there are two typical workflows:
 
-```shell
+```console
 $ git checkout -b new-feature  # create branch, switch to it
 $ git commit                   # work, work, work, ...
-                               # test
-                               # feature is ready
+$                              # test
+$                              # feature is ready
 $ git checkout master          # switch to master
 $ git merge new-feature        # merge work to master
 $ git branch -d new-feature    # remove branch
@@ -560,13 +560,13 @@ $ git branch -d new-feature    # remove branch
 Sometimes you have a wild idea which does not work.
 Or you want some throw-away branch for debugging:
 
-```shell
+```console
 $ git checkout -b wild-idea
-                               # work, work, work, ...
-                               # realize it was a bad idea
+$                              # work, work, work, ...
+$                              # realize it was a bad idea
 $ git checkout master
 $ git branch -D wild-idea      # it is gone, off to a new idea
-                               # -D because we never merged back
+$                              # -D because we never merged back
 ```
 
 No problem: we worked on a branch, branch is deleted, `master` is clean.

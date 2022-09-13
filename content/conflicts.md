@@ -350,19 +350,19 @@ Follow instructions that you get from the Git command line.
 
   To view what will be removed:
 
-  ```
+  ```console
   $ git clean -n
   ```
 
   To remove:
 
-  ```
-  $ git clean -f
+  ```console
+  $ git clean -f
   ```
 
   To configure Git to avoid creating backups at all:
 
-  ```
+  ```console
   $ git config --global mergetool.keepBackup false
   ```
 ````

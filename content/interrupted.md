@@ -84,7 +84,7 @@ Sounds like a good time to make a feature branch.
 
 You basically know how to do this:
 
-```shell
+```console
 $ git checkout -b temporary  # create a branch and switch to it
 $ git add <paths>            # stage changes
 $ git commit                 # commit them
