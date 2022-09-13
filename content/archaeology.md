@@ -205,6 +205,10 @@ $ git switch --create branchname somehash
      ```
      networkx/algorithms/threshold.py:                print("Logic error in degree_correlation", i, rdi)
      ```
+     Maybe you also want to know the line number:
+     ```console
+     $ git grep -n "Logic error in degree_correlation"
+     ```
   2. We use `git annotate`:
      ```console
      $ git annotate networkx/algorithms/threshold.py
