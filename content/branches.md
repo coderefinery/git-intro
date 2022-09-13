@@ -126,7 +126,7 @@ We do the following part together. Encourage participants to type along.
 
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
-```shell
+```console
 $ git branch experiment master   # create branch called "experiment" from master
                                  # pointing to the present commit
 $ git checkout experiment        # switch to branch "experiment"
@@ -538,7 +538,7 @@ $ git checkout -b <name>   # create branch <name> and switch to it
 
 With this there are two typical workflows:
 
-```shell
+```console
 $ git checkout -b new-feature  # create branch, switch to it
 $ git commit                   # work, work, work, ...
                                # test
@@ -551,7 +551,7 @@ $ git branch -d new-feature    # remove branch
 Sometimes you have a wild idea which does not work.
 Or you want some throw-away branch for debugging:
 
-```shell
+```console
 $ git checkout -b wild-idea
                                # work, work, work, ...
                                # realize it was a bad idea

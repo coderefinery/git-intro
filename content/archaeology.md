@@ -13,7 +13,7 @@
 ````{prereq} Preparation
 Please make sure that you do not clone repositories inside an already tracked folder:
 
-```shell
+```console
 $ git status
 ```
 
@@ -139,7 +139,7 @@ $ git checkout -b branchname somehash
 
 Example (lines starting with "#" are only comments):
 
-```shell
+```console
   # create branch called "older-code" from hash 347e6292419b
 $ git checkout -b older-code 347e6292419bd0e4bff077fe971f983932d7a0e9
 
@@ -182,7 +182,7 @@ $ git switch --create branchname somehash
   - Clone this repository:
     <https://github.com/networkx/networkx.git>.
     Then step into the new directory and create an exercise branch from the networkx-2.6.3 tag/release:
-    ```
+    ```console
     $ git clone https://github.com/networkx/networkx.git
     $ cd networkx
     $ git checkout -b exercise networkx-2.6.3
@@ -253,7 +253,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
 - First find out a commit in past when it worked.
 - Then bisect your way until you find the commit that broke it.
 
-```shell
+```console
 $ git bisect start
 $ git bisect good f0ea950  # this is a commit that worked
 $ git bisect bad main    # last commit is broken
@@ -297,7 +297,7 @@ $ git bisect bad
   should produce 3.14 but it does not. The script broke at some point and
   produces 3.57 using the last commit:
 
-  ```
+  ```console
   $ python get_pi.py
 
   3.57
@@ -328,13 +328,13 @@ $ git bisect bad
 
   Finding the first commit:
 
-  ```
+  ```console
   $ git log --oneline | tail -n 1
   ```
 
   How to navigate to the parent of a commit with hash `somehash`:
 
-  ```shell
+  ```console
     # create branch pointing to the parent of somehash
   $ git checkout -b branchname somehash~1
 
