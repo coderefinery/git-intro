@@ -218,7 +218,7 @@ Git inserted resolution markers (the `<<<<<<<`, `>>>>>>>`, and `=======`).
 
 Try also `git diff`:
 
-```
+```console
 $ git diff
 ```
 
