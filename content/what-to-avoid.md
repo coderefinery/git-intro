@@ -13,6 +13,9 @@ commit it at all.
 
 **Commit unrelated changes together**: Makes it difficult to undo changes since
 it can undo also the unrelated change.
+But, this is the counterpoint to the first point: In the end, it is probably better to make big
+ugly commits than to never commit.  This is especially true in in the chaotic early
+phases of small projects.
 
 **Too ambitious branch which risks to never get completed**: The branch will
 never merge back and be so big and so ambitious with too many/big features that
