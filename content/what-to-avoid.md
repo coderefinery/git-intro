@@ -8,6 +8,8 @@ gotchas.
 better to have many OK-ish commits than too few perfect commits.  Too few
 perfect commits are probably too large and make undoing more difficult.  It is
 also easier to combine too small commits than it is to split too large commits.
+The longer you wait because of this, the harder it will be to
+commit it at all.
 
 **Commit unrelated changes together**: Makes it difficult to undo changes since
 it can undo also the unrelated change.
