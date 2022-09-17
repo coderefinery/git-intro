@@ -57,14 +57,14 @@ If you have staged changes, you have at least two options to undo the staging:
 
 - Imagine we made a few commits.
 - We realize that the latest commit `f960dd3` was a mistake and we wish to undo it:
-```console
-$ git log --oneline
+  ```console
+  $ git log --oneline
 
-f960dd3 (HEAD -> master) not sure this is a good idea
-dd4472c we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
-```
+  f960dd3 (HEAD -> master) not sure this is a good idea
+  dd4472c we should not forget to enjoy
+  2bb9bb4 add half an onion
+  2d79e7e adding ingredients and instructions
+  ```
 
 A safe way to undo the commit is to revert the commit with `git revert`:
 ```console

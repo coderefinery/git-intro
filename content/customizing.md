@@ -20,3 +20,11 @@ Here are few example projects that make this possible and easy:
 ## Editors
 
 Here we need more text ...
+
+
+## More useful "diff" output
+
+[Delta](https://github.com/dandavison/delta) is a syntax-highlighting pager for
+git, diff, and grep output.  You can customize how you want to highlight the
+"diff" output.  It allows side-by-side view, word-level diff highlighting,
+improved merge conflict display, and much more.

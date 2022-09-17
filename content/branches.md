@@ -139,25 +139,25 @@ $ git branch                     # list all local branches and show on which bra
 - Verify that you are on the `experiment` branch (note that `git graph` also
   makes it clear what branch you are on: `HEAD -> branchname`):
 
-```console
-$ git branch
+  ```console
+  $ git branch
 
-* experiment
-  master
-```
+  * experiment
+    master
+  ```
 
 - Then add 2 tbsp cilantro **on top** of the `ingredients.txt`:
 
-```{code-block} shell
----
-emphasize-lines: 1
----
-* 2 tbsp cilantro
-* 2 avocados
-* 1 lime
-* 2 tsp salt
-* 1/2 onion
-```
+  ```{code-block} shell
+  ---
+  emphasize-lines: 1
+  ---
+  * 2 tbsp cilantro
+  * 2 avocados
+  * 1 lime
+  * 2 tsp salt
+  * 1/2 onion
+  ```
 
 - Stage this and commit it with the message "let us try with some cilantro".
 - Then reduce the amount of cilantro to 1 tbsp, stage and commit again with "maybe little bit less cilantro".
@@ -194,10 +194,10 @@ $ git graph
   - Create another branch called `less-salt`
     - Note! makes sure you are on master branch when you create the less-salt branch
     - A safer way would be to explicitly mention to create from the master branch
-      as shown below
-  ```console
-  $ git branch less-salt master
-  ```
+      as shown below:
+      ```console
+      $ git branch less-salt master
+      ```
   - Where you reduce the amount of salt.
   - Commit your changes to the `less-salt` branch.
 
@@ -231,11 +231,11 @@ $ git graph
   - Now switch to `master`.
   - Add and commit the following `README.md` to `master`:
 
-  ```markdown
-  # Guacamole recipe
+    ```markdown
+    # Guacamole recipe
 
-  Used in teaching Git.
-  ```
+    Used in teaching Git.
+    ```
 
   Now you should have this situation:
 

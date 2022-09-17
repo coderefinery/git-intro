@@ -125,11 +125,11 @@ We now want to try the second option that GitHub suggests:
 3. Copy paste the three lines to the terminal and execute those, in my case (**you
   need to replace the "user" part and possibly also the repository name**):
 
-```console
-$ git remote add origin git@github.com:user/recipe.git
-$ git branch -M main
-$ git push -u origin main
-```
+  ```console
+  $ git remote add origin git@github.com:user/recipe.git
+  $ git branch -M main
+  $ git push -u origin main
+  ```
 
 The meaning of the above lines:
 - Add a remote reference with the name "origin"
