@@ -188,7 +188,7 @@ $ git graph
 ````{exercise} Branch-1: Create and commit to branches
   In this exercise, you will create another new branch and few more commits.
   We will use this in the next section, to practice
-  merging.
+  merging. **The goal of the exercise is to end up with 3 branches**.
 
   - Change to the branch `master`.
   - Create another branch called `less-salt`
