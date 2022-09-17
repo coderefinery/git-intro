@@ -60,7 +60,7 @@ Isolated tracks of work.
 
 - We see branching points and merging points.
 - Main line development is often called `master` or `main`.
-- Other than this convention there is nothing special about `master`, it is just a branch.
+- Other than this convention there is nothing special about `master` or `main`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
 A group of commits that create a single narrative are called a **branch**.
