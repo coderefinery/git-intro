@@ -25,6 +25,7 @@ the project and the group of collaborators grows.
 **Commit messages what has been changed but do not explain why it has been
 changed**: This is as useful as code comments which describe the "obvious" such
 as "this is a loop" instead of explaining why something is done this way.
+But don't let perfect commit messages stop you from the most important point, committing often (first point).
 
 **Commit huge files**: Huge files get sometimes accidentally added and
 committed which can significantly increase the repository size. Note that a
