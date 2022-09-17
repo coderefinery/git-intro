@@ -10,7 +10,7 @@ done in a course.
 Our philosophy is that we start from own local repository, branching and
 merging (locally), and a brief introduction to pushing to remotes. In
 the separate `collaborative Git
-lesson <https://coderefinery.org/lessons/>`__, we teach more use of
+lesson <https://coderefinery.github.io/git-collaborative/>`__, we teach more use of
 remote repositories and good collaborative workflows. We try to stick to
 simple workflows, just enough for researchers who are not obsessed with
 Git to be able to work well. We try to avoid commands which might get
