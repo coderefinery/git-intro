@@ -164,7 +164,10 @@ emphasize-lines: 1
 
 We have created **two new commits**:
 
-```console
+```{code-block} console
+---
+emphasize-lines: 3-4
+---
 $ git graph
 
 * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
