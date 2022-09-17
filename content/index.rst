@@ -9,7 +9,7 @@ done in a course.
 
 Our philosophy is that we start from own local repository, branching and
 merging (locally), and a brief introduction to pushing to remotes. In
-the separate `collaborative git
+the separate `collaborative Git
 lesson <https://coderefinery.org/lessons/>`__, we teach more use of
 remote repositories and good collaborative workflows. We try to stick to
 simple workflows, just enough for researchers who are not obsessed with
