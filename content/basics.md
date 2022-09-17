@@ -396,6 +396,8 @@ When designing commit message styles consider also these:
 But remember: it is better to make any commit, than no commit.  Especially in small projects, weight the benefit with the time it takes.
 
 
+(gitignore)=
+
 ## Ignoring files and paths with .gitignore
 
 ```{discussion}

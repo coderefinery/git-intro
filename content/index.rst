@@ -70,6 +70,7 @@ branching.
    guide
    reference
    customizing
+   what-to-avoid
    resources
 
 
