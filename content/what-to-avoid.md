@@ -19,7 +19,7 @@ the risk is high that once it is really ready, there are conflicts everywhere.
 **Committing generated files**: See {ref}`gitignore`.
 
 **Over-engineering the branch layout and safeguards in small projects**: This
-may prevent people from contributing. Add more restrictions and safeguards as
+may prevent people from contributing (maybe even including yourself?). Add more restrictions and safeguards as
 the project and the group of collaborators grows.
 
 **Commit messages what has been changed but do not explain why it has been
