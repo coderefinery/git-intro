@@ -52,10 +52,10 @@ different tracks of work**, which can later be merged to create a composite
 version that contains all changes:
 
 ```{figure} img/gitink/git-collaborative.svg
-:alt: Collaborative Git
+:alt: Isolated tracks of work
 :width: 100%
 
-Collaborative Git.
+Isolated tracks of work.
 ```
 
 - We see branching points and merging points.
