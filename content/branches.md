@@ -148,7 +148,10 @@ $ git branch
 
 - Then add 2 tbsp cilantro **on top** of the `ingredients.txt`:
 
-```shell
+```{code-block} shell
+---
+emphasize-lines: 1
+---
 * 2 tbsp cilantro
 * 2 avocados
 * 1 lime
