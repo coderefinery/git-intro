@@ -11,6 +11,12 @@ also easier to combine too small commits than it is to split too large commits.
 The longer you wait because of this, the harder it will be to
 commit it at all.
 
+**Not pulling/rebasing before doing new work**: Few things are worse
+than doing work and then noticing a lot of conflicts because
+un-related work was done in the meantime..  Or noticing that someone
+else has already done it.  This problem is largest when you come back
+to an active project weeks or months later.
+
 **Commit unrelated changes together**: Makes it difficult to undo changes since
 it can undo also the unrelated change.
 But, this is the counterpoint to the first point: In the end, it is probably better to make big
