@@ -131,8 +131,7 @@ We do the following part together. Encourage participants to type along.
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
 ```console
-$ git branch experiment master   # create branch called "experiment" from master
-$                                # pointing to the present commit
+$ git branch experiment master   # creates branch "experiment" from master
 $ git checkout experiment        # switch to branch "experiment"
 $ git branch                     # list all local branches and show on which branch we are
 ```
