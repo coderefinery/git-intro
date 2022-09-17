@@ -291,7 +291,10 @@ Our goal now is to merge `experiment` into `master`.
 
 First we make sure we are on the branch we wish to merge **into**:
 
-```console
+```{code-block} console
+---
+emphasize-lines: 5
+---
 $ git branch
 
   experiment
