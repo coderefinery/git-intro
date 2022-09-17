@@ -262,6 +262,10 @@ $ git graph
 
 ## Merging branches
 
+```{instructor-note}
+We do the rest as type-along. Instructors, encourage learners to type-along.
+```
+
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `master`.
 
