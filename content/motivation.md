@@ -152,8 +152,6 @@ to produce the Event Horizon Telescope images: [https://github.com/achael/eht-im
   - Explore the [repository](https://github.com/achael/eht-imaging).
   - Explore the [history](https://github.com/achael/eht-imaging/commits/main).
   - Note that there are [branches](https://github.com/achael/eht-imaging/network).
-- Reproducibility
-  - Discuss the enormous value of the annotation feature: [example file](https://github.com/achael/eht-imaging/blame/main/ehtim/imaging/starwarps.py).
 - Collaboration
   - You can refer to [code portions](https://github.com/achael/eht-imaging/blob/31361ab62c5718b08612fc75e409795f004f5071/ehtim/imaging/starwarps.py#L66-L75)
     (so much simpler to send a link rather than describe which file to open and where to scroll to).
@@ -161,6 +159,8 @@ to produce the Event Horizon Telescope images: [https://github.com/achael/eht-im
   - See [contributors](https://github.com/achael/eht-imaging/graphs/contributors).
 - Releases
   - Explore the [release history](https://github.com/achael/eht-imaging/releases).
+- Reproducibility
+  - Discuss the **enormous value of the annotation feature**: [example file](https://github.com/achael/eht-imaging/blame/main/ehtim/imaging/starwarps.py).
 
 While some of these are GitHub features, it all can be done on other sites, or
 by yourself without GitHub at all.
