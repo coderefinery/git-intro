@@ -81,6 +81,10 @@ $ git config --global alias.graph "log --all --graph --decorate --oneline"
 ```
 ````
 
+```{instructor-note}
+Instructors, please demonstrate how to set this alias and encourage all to set this.
+```
+
 Let us inspect the project history using the `git graph` alias:
 
 ```console
