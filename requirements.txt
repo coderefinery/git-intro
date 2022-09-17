@@ -2,6 +2,5 @@ Sphinx
 sphinx-book-theme
 myst_nb
 # Remove once new sphinx-copybutton is released ( > 0.5.0)
-git+https://github.com/rkdarst/sphinx-copybutton.git@exclude-unselectable-3
 sphinx-lesson
 https://github.com/coderefinery/sphinx-coderefinery-branding/archive/master.zip
