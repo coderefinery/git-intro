@@ -8,8 +8,8 @@
 ```
 
 ```{instructor-note}
-- 20 min teaching/type-along
-- 15 min exercise
+- 35 min teaching/type-along
+- 20 min exercise
 ```
 
 
@@ -51,7 +51,7 @@ Git staging and committing.
 What do you think will be the outcome if you
 stage a file and then edit it and stage it again, do this several times and
 at the end perform a commit? (think of focusing several scenes and pressing the
-shoot button only at the end)
+shutter at the end)
 ```
 
 
@@ -60,14 +60,18 @@ shoot button only at the end)
 If you haven't already configured Git, please follow the instructions in the
 [installation instructions](https://coderefinery.github.io/installation/shell-and-git/#configuration).
 
+```{instructor-note}
+Instructors might want to show how to set email address and editor.
+```
+
 
 ## Type-along: Tracking a guacamole recipe with Git
 
 We will learn how to initialize a Git repository, how to track changes, and how
 to make delicious guacamole!
 
-This example is inspired by [Byron Smith](http://blog.byronjsmith.com), for original reference, see
-[this thread](http://lists.software-carpentry.org/pipermail/discuss/2016-May/004529.html).
+This example is inspired by [Byron Smith](http://blog.byronjsmith.com) (based
+on a discussion in the Carpentries mailing list).
 The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
 but not everybody may be able to relate to a program written in e.g. Python or another language.
 
@@ -202,7 +206,7 @@ Note that help pages also work when you don't have a network connection!
 
 ````{exercise} Basic-1: Record changes
   Add 1/2 onion to `ingredients.txt` and also the instruction
-  to "enjoy!" to `instructions.txt`. Do not stage the changes yet.
+  to "enjoy!" to `instructions.txt`. Do not stage the changes yet (do not `git add` yet).
 
   When you are done editing the files, try `git diff`:
 
@@ -287,7 +291,7 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 - We can browse the development and access each state that we have committed.
 - The long hashes uniquely label a state of the code.
 - They are not just integers counting 1, 2, 3, 4, ... (why?).
-- Output is in reverse chronological order, i.e. newest commits on top.
+- Output is in reverse chronological order, i.e. **newest commits on top**.
 - We will use them when comparing versions and when going back in time.
 - `git log --oneline` only shows the first 7 characters of the commit hash and is good to get an overview.
 - If the first characters of the hash are unique it is not necessary to type the entire hash.
@@ -344,13 +348,13 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 Using `git log --oneline` we understand that the first line of the commit message is very important.
 
 Good example:
-
-```
+```text
 increase threshold alpha to 2.0
 
 the motivation for this change is
 to enable ...
 ...
+this is based on a discussion in #123
 ```
 
 Convention: **one line summarizing the commit, then one empty line,
@@ -393,7 +397,8 @@ When designing commit message styles consider also these:
 - During code review, you can help each other improving commit messages.
 ```
 
-But remember: it is better to make any commit, than no commit.  Especially in small projects, weight the benefit with the time it takes.
+But remember: it is better to make any commit, than no commit. Especially in small projects.
+**Let not the perfect be the enemy of the good enough**.
 
 
 ## Ignoring files and paths with .gitignore
