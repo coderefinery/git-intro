@@ -257,25 +257,25 @@ We will probably arrive at a solution which is similar to `git bisect`:
 - First find out a commit in past when it worked.
 - Then bisect your way until you find the commit that broke it.
 
-```console
-$ git bisect start
-$ git bisect good f0ea950  # this is a commit that worked
-$ git bisect bad main    # last commit is broken
+  ```console
+  $ git bisect start
+  $ git bisect good f0ea950  # this is a commit that worked
+  $ git bisect bad main    # last commit is broken
 
-$ # now compile and/or run
-$ # after that decide whether
-$ git bisect good
-$ # or
-$ git bisect bad
+  $ # now compile and/or run
+  $ # after that decide whether
+  $ git bisect good
+  $ # or
+  $ git bisect bad
 
-$ # now compile and/or run
-$ # after that decide whether
-$ git bisect good
-$ # or
-$ git bisect bad
+  $ # now compile and/or run
+  $ # after that decide whether
+  $ git bisect good
+  $ # or
+  $ git bisect bad
 
-$ # iterate until commit is found
-```
+  $ # iterate until commit is found
+  ```
 
 - This can even be automatized with `git bisect run <script>`.
 - For this you write a script that returns zero/non-zero (success/failure).

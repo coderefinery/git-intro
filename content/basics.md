@@ -30,13 +30,13 @@
 - We will record changes always in two steps (we will later explain why this is a recommended practice).
 - Example (we don't need to type yet):
 
-```console
-$ git add somefile.txt
-$ git commit
+  ```console
+  $ git add somefile.txt
+  $ git commit
 
-$ git add file.txt anotherfile.txt
-$ git commit
-```
+  $ git add file.txt anotherfile.txt
+  $ git commit
+  ```
 
 - We first focus (`git add`, we "stage" the change), then shoot (`git commit`):
 
