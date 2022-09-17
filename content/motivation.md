@@ -26,7 +26,7 @@
 - Software (this is how it started but Git/GitHub can track a lot more)
 - Scripts
 - Documents (plain text files much better suitable than Word documents)
-- Manuscripts (Git is great for collaborating/sharing LaTeX manuscripts)
+- Manuscripts (Git is great for collaborating/sharing LaTeX or [Quarto](https://quarto.org/) manuscripts)
 - Configuration files
 - Website sources
 - Data
