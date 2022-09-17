@@ -1,6 +1,5 @@
 Sphinx
-sphinx_rtd_theme
-sphinx_rtd_theme_ext_color_contrast
+sphinx-book-theme
 myst_nb
 # Remove once new sphinx-copybutton is released ( > 0.5.0)
 git+https://github.com/rkdarst/sphinx-copybutton.git@exclude-unselectable-3

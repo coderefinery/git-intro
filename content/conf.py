@@ -71,7 +71,7 @@ exclude_patterns = [
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_book_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -81,16 +81,16 @@ html_theme = "sphinx_rtd_theme"
 
 # HTML context:
 from os.path import basename, dirname, realpath
+github_repo = github_repo_name or basename(dirname(realpath(__file__)))
+html_theme_options = {
+    "path_to_docs": conf_py_path[1:],
+    "repository_url": f"https://github.com/{github_user}/{github_repo}/",
+    "use_repository_button": True,
+    "use_edit_page_button": True,
+    "use_issues_button": True,
+    }
 
-html_context = {
-    "display_github": True,
-    "github_user": github_user,
-    # Auto-detect directory name.  This can break, but
-    # useful as a default.
-    "github_repo": github_repo_name or basename(dirname(realpath(__file__))),
-    "github_version": github_version,
-    "conf_py_path": conf_py_path,
-}
+
 
 import os
 if os.environ.get('GITHUB_REF', '') == 'refs/heads/main':
