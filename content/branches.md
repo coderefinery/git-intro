@@ -515,17 +515,19 @@ Rebasing means that the new commits are *replayed* on top of another branch
 - There are two basic types of tags: annotated and lightweight.
 - **Use annotated tags** since they contain the author and can be cryptographically signed using
   GPG, timestamped, and a message attached.
+- It can be useful to think of branches as sticky notes and of tags as
+  [commemorative plaques](https://en.wikipedia.org/wiki/Commemorative_plaque).
 
 Let's add an annotated tag to our current state of the guacamole recipe:
 
 ```console
-$ git tag -a nobel-2020 -m "recipe I made for the 2020 Nobel banquet"
+$ git tag -a nobel-2021 -m "recipe I made for the 2021 Nobel banquet"
 ```
 
 As you may have found out already, `git show` is a very versatile command. Try this:
 
 ```console
-$ git show nobel-2020
+$ git show nobel-2021
 ```
 
 For more information about tags see for example
