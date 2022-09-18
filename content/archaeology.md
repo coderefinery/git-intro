@@ -67,21 +67,9 @@ $ cd networkx
 $ git grep -i fixme
 ```
 
-
-### git log -S: to search through the history of changes
-
 While `git grep` searches the **current state** of the repository,
-it is also possible to search through all changes for "sometext":
-
-```console
-$ git log -S sometext
-```
-
-In the [networkx](https://github.com/networkx/networkx) repository you can try:
-
-```console
-$ git log -S test_weakly_connected_component
-```
+it is also possible to search through all changes with `git log -S sometext`
+which can be useful to find where something got removed.
 
 
 ### git show: to inspect commits
