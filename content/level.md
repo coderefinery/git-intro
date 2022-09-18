@@ -50,6 +50,17 @@
 
 ---
 
+## How large should a commit be?
+
+- Better too small than too large (easier to combine than to split).
+- Often I make a commit at the end of the day (this is a unit I would not like to lose).
+- Smaller sized commits may be easier to review for others than huge commits.
+- Imperfect commits are better than no commits.
+- A commit should not contain unrelated changes to simplify review and possible
+  repair/adjustments/undo later (but again: imperfect commits are better than no commits).
+
+---
+
 ```{keypoints}
 - There is no one size fits all - start simple and grow your project.
 ```
