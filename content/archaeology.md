@@ -67,21 +67,9 @@ $ cd networkx
 $ git grep -i fixme
 ```
 
-
-### git log -S: to search through the history of changes
-
 While `git grep` searches the **current state** of the repository,
-it is also possible to search through all changes for "sometext":
-
-```console
-$ git log -S sometext
-```
-
-In the [networkx](https://github.com/networkx/networkx) repository you can try:
-
-```console
-$ git log -S test_weakly_connected_component
-```
+it is also possible to search through all changes with `git log -S sometext`
+which can be useful to find where something got removed.
 
 
 ### git show: to inspect commits
@@ -255,28 +243,21 @@ note and we will discuss various approaches.
 We will probably arrive at a solution which is similar to `git bisect`:
 
 - First find out a commit in past when it worked.
-- Then bisect your way until you find the commit that broke it.
-
   ```console
   $ git bisect start
   $ git bisect good f0ea950  # this is a commit that worked
-  $ git bisect bad main    # last commit is broken
-
-  $ # now compile and/or run
-  $ # after that decide whether
-  $ git bisect good
-  $ # or
-  $ git bisect bad
-
-  $ # now compile and/or run
-  $ # after that decide whether
-  $ git bisect good
-  $ # or
-  $ git bisect bad
-
-  $ # iterate until commit is found
+  $ git bisect bad main      # last commit is broken
   ```
-
+- Now compile and/or run and/or test and decide whether "good" or "bad".
+- This is how you can tell Git that this was a working commit:
+  ```console
+  $ git bisect good
+  ```
+- And this is how you can tell Git that this was not a working commit:
+  ```console
+  $ git bisect bad
+  ```
+- Then bisect/iterate your way until you find the commit that broke it.
 - This can even be automatized with `git bisect run <script>`.
 - For this you write a script that returns zero/non-zero (success/failure).
 
@@ -340,12 +321,12 @@ We will probably arrive at a solution which is similar to `git bisect`:
   ```
 
   How to navigate to the parent of a commit with hash `somehash`:
-
   ```console
-  $ # create branch pointing to the parent of somehash
   $ git checkout -b branchname somehash~1
+  ```
 
-  $ # instead of a tilde you can also use this
+  Instead of a tilde you can also use this:
+  ```console
   $ git checkout -b branchname somehash^
   ```
 ````
