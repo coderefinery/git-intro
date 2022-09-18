@@ -88,8 +88,7 @@ You basically know how to do this:
 $ git checkout -b temporary  # create a branch and switch to it
 $ git add <paths>            # stage changes
 $ git commit                 # commit them
-$ git checkout main          # back to main
-                             # do your work...
+$ git checkout main          # back to main, continue your work there ...
 $ git checkout temporary     # continue where you left off
 ```
 
