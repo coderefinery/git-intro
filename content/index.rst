@@ -66,12 +66,12 @@ branching.
    :maxdepth: 1
    :caption: Reference
 
-   exercises
-   guide
    reference
    customizing
    what-to-avoid
    resources
+   exercises
+   guide
 
 
 .. admonition:: Why GitHub?
