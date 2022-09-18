@@ -6,7 +6,7 @@
 ```
 
 ```{instructor-note}
-- 20 min teaching/type-along
+- 35 min teaching/type-along
 - 15 min exercise
 ```
 
@@ -52,15 +52,15 @@ different tracks of work**, which can later be merged to create a composite
 version that contains all changes:
 
 ```{figure} img/gitink/git-collaborative.svg
-:alt: Collaborative Git
+:alt: Isolated tracks of work
 :width: 100%
 
-Collaborative Git.
+Isolated tracks of work.
 ```
 
 - We see branching points and merging points.
 - Main line development is often called `master` or `main`.
-- Other than this convention there is nothing special about `master`, it is just a branch.
+- Other than this convention there is nothing special about `master` or `main`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
 A group of commits that create a single narrative are called a **branch**.
@@ -80,6 +80,11 @@ in a later section):
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
 ```
 ````
+
+```{instructor-note}
+Instructors, please demonstrate how to set this alias and encourage all to set this.
+This is very important for this lesson and git-collaborative.
+```
 
 Let us inspect the project history using the `git graph` alias:
 
@@ -127,8 +132,7 @@ We do the following part together. Encourage participants to type along.
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
 ```console
-$ git branch experiment master   # create branch called "experiment" from master
-$                                # pointing to the present commit
+$ git branch experiment master   # creates branch "experiment" from master
 $ git checkout experiment        # switch to branch "experiment"
 $ git branch                     # list all local branches and show on which branch we are
 ```
@@ -145,7 +149,10 @@ $ git branch                     # list all local branches and show on which bra
 
 - Then add 2 tbsp cilantro **on top** of the `ingredients.txt`:
 
-  ```shell
+  ```{code-block} shell
+  ---
+  emphasize-lines: 1
+  ---
   * 2 tbsp cilantro
   * 2 avocados
   * 1 lime
@@ -158,7 +165,10 @@ $ git branch                     # list all local branches and show on which bra
 
 We have created **two new commits**:
 
-```console
+```{code-block} console
+---
+emphasize-lines: 3-4
+---
 $ git graph
 
 * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
@@ -179,7 +189,7 @@ $ git graph
 ````{exercise} Branch-1: Create and commit to branches
   In this exercise, you will create another new branch and few more commits.
   We will use this in the next section, to practice
-  merging.
+  merging. **The goal of the exercise is to end up with 3 branches**.
 
   - Change to the branch `master`.
   - Create another branch called `less-salt`
@@ -253,6 +263,10 @@ $ git graph
 
 ## Merging branches
 
+```{instructor-note}
+We do the rest as type-along. Instructors, encourage learners to type-along.
+```
+
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `master`.
 
@@ -278,7 +292,10 @@ Our goal now is to merge `experiment` into `master`.
 
 First we make sure we are on the branch we wish to merge **into**:
 
-```console
+```{code-block} console
+---
+emphasize-lines: 5
+---
 $ git branch
 
   experiment
@@ -499,17 +516,19 @@ Rebasing means that the new commits are *replayed* on top of another branch
 - There are two basic types of tags: annotated and lightweight.
 - **Use annotated tags** since they contain the author and can be cryptographically signed using
   GPG, timestamped, and a message attached.
+- It can be useful to think of branches as sticky notes and of tags as
+  [commemorative plaques](https://en.wikipedia.org/wiki/Commemorative_plaque).
 
 Let's add an annotated tag to our current state of the guacamole recipe:
 
 ```console
-$ git tag -a nobel-2020 -m "recipe I made for the 2020 Nobel banquet"
+$ git tag -a nobel-2021 -m "recipe I made for the 2021 Nobel banquet"
 ```
 
 As you may have found out already, `git show` is a very versatile command. Try this:
 
 ```console
-$ git show nobel-2020
+$ git show nobel-2021
 ```
 
 For more information about tags see for example
@@ -549,10 +568,8 @@ With this there are two typical workflows:
 
 ```console
 $ git checkout -b new-feature  # create branch, switch to it
-$ git commit                   # work, work, work, ...
-$                              # test
-$                              # feature is ready
-$ git checkout master          # switch to master
+$ git commit                   # work, work, work, ..., and test
+$ git checkout master          # once feature is ready, switch to master
 $ git merge new-feature        # merge work to master
 $ git branch -d new-feature    # remove branch
 ```
@@ -561,12 +578,9 @@ Sometimes you have a wild idea which does not work.
 Or you want some throw-away branch for debugging:
 
 ```console
-$ git checkout -b wild-idea
-$                              # work, work, work, ...
-$                              # realize it was a bad idea
-$ git checkout master
+$ git checkout -b wild-idea    # create branch, switch to it, work, work, work ...
+$ git checkout master          # realize it was a bad idea, back to master
 $ git branch -D wild-idea      # it is gone, off to a new idea
-$                              # -D because we never merged back
 ```
 
 No problem: we worked on a branch, branch is deleted, `master` is clean.
