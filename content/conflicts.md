@@ -58,9 +58,10 @@ emphasize-lines: 3
 
 Git is very good at resolving modifications when merging branches and
 in most cases a `git merge` runs smooth and automatic.
-Then a merge commit appears (unless fast-forward) without you even noticing.
+Then a merge commit appears (unless fast-forward; see {ref}`exercise-branches-optional`) without you even noticing.
 
-But sometimes the **same portion** of the code/text is modified on two branches**in two different ways** and Git issues a **conflict**.
+But sometimes the **same portion** of the code/text is modified on two branches
+**in two different ways** and Git issues a **conflict**.
 Then you need to tell Git which version to keep (**resolve** it).
 
 There are several ways to do that as we will see.
@@ -179,7 +180,10 @@ Automatic merge failed; fix conflicts and then commit the result.
 Without conflict Git would have automatically created a merge commit,
 but since there is a conflict, Git did not commit:
 
-```console
+```{code-block} console
+---
+emphasize-lines: 11
+---
 $ git status
 
 On branch master
@@ -271,7 +275,7 @@ without conflicts and leaves the files with conflicts unstaged.
   (if you use the Emacs editor with a certain plugin the editor may stage the
   change for you after you have removed the conflict markers).
 - Verify the result with `git status`.
-- Finally commit the merge with just `git commit` - everything is pre-filled.
+- Finally commit the merge with only `git commit`. Everything is pre-filled.
 ```
 
 (exercise-conflicts)=
@@ -413,13 +417,13 @@ The repository looks then exactly as it was before the merge.
   - Do not put unrelated changes on the same branch.
 - Collaboration measures
   - Open an issue and discuss with collaborators before starting a long-living
-  - branch.
+    branch.
 - Project layout measures
   - Modifying global data often causes conflicts.
   - Modular programming minimizes risk of conflicts.
 - Technical measures
-  - **Push early and often** - this is one of the happy,
-    rare circumstances when everyone doing the selfish thing (pushing as
+  - **Share your changes early and often** - this is one of the happy,
+    rare circumstances when everyone doing the selfish thing (e.g. `git push` as
     early as practical) results in best case for everyone!
   - Pull/rebase often to keep up to date with upstream.
   - Resolve conflicts early.
