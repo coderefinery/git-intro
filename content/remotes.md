@@ -1,14 +1,13 @@
 # Sharing repositories online
 
 ```{objectives}
-- We get a feeling for remote repositories (more later).
+- We get a feeling for remote repositories ([more later](https://coderefinery.github.io/git-collaborative/)).
 - We are able to publish a repository on the web.
 - We are able to fetch and track a repository from the web.
 ```
 
 ```{instructor-note}
-- 10 min teaching/type-along
-- 15 min exercise
+- 30 min demonstration/type-along
 ```
 
 
@@ -54,11 +53,9 @@ There are different types of remotes:
   set up.
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
 - Another option is [NotABug](https://notabug.org)
-- **We especially encourage course participants to use our new [Nordic
+- We also operate a [Nordic
   research software repository
-  platform](https://source.coderefinery.org)**, for more information
-  see
-  [https://coderefinery.org/repository/](https://coderefinery.org/repository/).
+  platform](https://coderefinery.org/repository/).
   This is GitLab, free for researchers and allows private,
   cross-university sharing.
 
@@ -138,7 +135,7 @@ The meaning of the above lines:
 
 You should now see:
 
-```shell
+```text
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
