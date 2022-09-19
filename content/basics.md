@@ -60,9 +60,20 @@ shutter at the end)
 If you haven't already configured Git, please follow the instructions in the
 [installation instructions](https://coderefinery.github.io/installation/shell-and-git/#configuration).
 
-```{instructor-note}
-Instructors might want to show how to set email address and editor.
+````{instructor-note}
+Instructors might want to show how to set email address and editor:
+
+```console
+$ git config --global user.name "Your Name"
+$ git config --global user.email yourname@example.com
+$ git config --global core.editor nano
 ```
+
+Verify with:
+```console
+$ git config --list
+```
+````
 
 
 ## Type-along: Tracking a guacamole recipe with Git
