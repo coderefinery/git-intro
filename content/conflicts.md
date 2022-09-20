@@ -100,6 +100,22 @@ Now we can go to show how Git controls when there is actually a conflict.
 We do the following together as type-along.
 ```
 
+````{note}
+  **If you got stuck previously or joined later**,
+  you can apply the commands below so that you
+  have everything to be able to continue.
+  But **skip this box if you managed to create branches**.
+
+  ```console
+  $ cd ..  # if you are in a git repository, step out of it
+
+  $ git clone https://github.com/coderefinery/recipe-after-merge.git
+  $ cd recipe-after-merge
+
+  $ git graph
+  ```
+````
+
 We will make two branches, make two conflicting changes (both increase and
 decrease the amount of cilantro), and later we will try to merge them
 together.
