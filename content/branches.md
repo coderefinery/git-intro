@@ -271,7 +271,8 @@ It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `master`.
 
 ````{note}
-  **If you got stuck in the above exercises** you can apply the commands below.
+  **If you got stuck in the above exercises or joined later**,
+  you can apply the commands below.
   But **skip this box if you managed to create branches**.
 
   ```console
