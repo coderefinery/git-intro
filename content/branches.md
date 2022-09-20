@@ -257,7 +257,7 @@ $ git graph
   ```{figure} img/gitink/git-branch-3.svg
   ```
 
-  And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
+  And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe-before-merge/network).
 ````
 
 
@@ -277,8 +277,8 @@ Our goal now is to merge `experiment` into `master`.
   ```console
   $ cd ..  # step out of the current directory
 
-  $ git clone https://github.com/coderefinery/recipe.git recipe-branching
-  $ cd recipe-branching
+  $ git clone https://github.com/coderefinery/recipe-before-merge.git
+  $ cd recipe-before-merge
 
   $ git checkout experiment
   $ git checkout less-salt
