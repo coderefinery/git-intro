@@ -182,7 +182,7 @@ $ git switch --create branchname somehash
   3. Inspect that commit with `git show`.
   4. Create a branch pointing to the past when that commit was created to be
      able to browse and use the code as it was back then.
-  5. How would can you bring the code to the commit precisely before that line was last modified?
+  5. How would you checkout the version of the code right before that line was last modified?
 
   ````{solution}
   1. We use `git grep`:
