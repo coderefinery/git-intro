@@ -68,13 +68,16 @@ There are different branching strategies, but it is useful to think that a branc
 tells the story of a feature, e.g. "fast sequence extraction" or "Python interface" or "fixing bug in
 matrix inversion algorithm".
 
-````{note}
-**A useful alias**
+````{admonition} **An important alias**
+---
+class: important
+---
 
 We will now define an *alias* in Git, to be able to nicely visualize branch
 structure in the terminal without having to remember a long Git command
 (more details about aliases are given
-in a later section):
+in a later section).  **This is extensively used in the rest of this
+and other lessons**:
 
 ```console
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
@@ -82,8 +85,9 @@ $ git config --global alias.graph "log --all --graph --decorate --oneline"
 ````
 
 ```{instructor-note}
-Instructors, please demonstrate how to set this alias and encourage all to set this.
-This is very important for this lesson and git-collaborative.
+Instructors, please demonstrate how to set this alias and ensure that
+all create it. This is very important for this lesson and
+git-collaborative.
 ```
 
 Let us inspect the project history using the `git graph` alias:
