@@ -31,7 +31,7 @@ By the end of this lesson, learners should:
 - be able to set up Git repositories and make commits
 - understand that information on commits, branches etc. are stored under `.git/`, and have a
   mental model of how that relates to the working directory
-- have a mental model of the different stages a file can have in Git (untracked, modified, staged, unmodified)
+- have a mental model of the different states a file can have in Git (untracked, modified, staged, unmodified)
 - know how to write good commit messages
 - have an idea of how the staging area can be used to craft good commits
 - know how to undo commits using `git revert` and discard changes using `git checkout`
