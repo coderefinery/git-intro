@@ -15,7 +15,7 @@
     - 11:05 - 11:15 (10 min) :coffee: :walking: :tea: Break
     - 11:15 - 11:30 (15 min) [Branching and merging - exercises](https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches)
         1. [Create and commit to branches](https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches) Teaching resumed before merging branches.
-        2. [Optional exercies with branches: Fast-forward merge and Rebasing](https://coderefinery.github.io/git-intro/branches/#optional-exercises-with-branches) - if time allows
+        2. [Optional exercises with branches: Fast-forward merge and Rebasing](https://coderefinery.github.io/git-intro/branches/#optional-exercises-with-branches) - if time allows
     - 11:30 - 11:45 (15 min) Summarize branching and merging (type along)
     - 11:45 - 12:00 (15 min) Discuss and demo conflict resolution (no exercise room)
 - 12:00 - 12:10 (10 min) :coffee: :walking: :tea: Break
@@ -41,7 +41,7 @@
         3. [Git reset](https://coderefinery.github.io/git-intro/recovering/#exercise-git-reset)
     - 11:35 - 11:50 (15 min) Summarize undoing and recovering and discussion and mention that staging area exists
     - 11:50 - 12:00 :coffee: :walking: :tea: Break
-    - 12:00 - 12:25 (25 min) [How much Git is neccessary?](https://coderefinery.github.io/git-intro/level/#practical-advice-how-much-git-is-necessary) 
+    - 12:00 - 12:25 (25 min) [How much Git is necessary?](https://coderefinery.github.io/git-intro/level/#practical-advice-how-much-git-is-necessary) 
     - 12:25 - 12:30 (05 min) Feedback & What will we be doing tomorrow?
 
 ## Why we teach this lesson
