@@ -1,5 +1,25 @@
 # Instructor guide
 
+## Schedule
+- 08:50 - 09:00 (10 min) Soft start and icebreaker question
+- 09:00 - 09:20 (20 min) Welcome and practical information
+- Introduction to version control (part 1/2)
+    - 09:20 - 09:35 (15 min) Motivation - teaching & demo
+    - 09:35 - 09:50 (15 min) Basics - teaching & type along
+    - 09:50 - 10:10 (20 min) Basics - exercises
+      1. Record changes
+      2. Optional: Comparing, renaming, and removing - if time allows
+    - 10:10 - 10:25 (15 min) Break
+    - 10:25 - 10:45 (20 min) Basics - History, commit log, ignoring - teaching
+    - 10:45 - 11:05 (20 min) Branching and merging - teaching/type-along
+    - 11:05 - 11:15 (10 min) Break
+    - 11:15 - 11:30 (15 min) Branching and merging - exercises
+    - 11:30 - 11:45 (15 min) Summarize branching and merging (type along)
+    - 11:45 - 12:00 (15 min) Discuss and demo conflict resolution (no exercise room)
+- 12:00 - 12:10 (10 min) Break
+- 12:10 - 12:25 (15 min) Buffer, Q&A session
+- 12:25 - 12:30 ( 5 min) Feedback & What will we be doing tomorrow?
+
 ## Why we teach this lesson
 
 Everyone should be using a version control system for their work, even if they're working alone.
