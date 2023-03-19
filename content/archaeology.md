@@ -156,16 +156,6 @@ $ git switch --create branchname somehash
   exercises do not depend on this, so it is OK if you do not complete
   it fully.
 
-  **In-person workshops**: We recommend that you
-  do this exercise in groups of two and discuss with your neighbors.
-
-  **Video workshops**: We will group you in breakout rooms of ~4 persons where you
-  can work and discuss together. A helper or instructor will pop in to help out.
-  In the group one participant can share their screen and others
-  in the group help out, discuss, and try to follow along.
-  Please write down questions in the collaborative notes.
-  After 15-20 minutes we will bring you back into the main room and discuss.
-
   Exercise steps:
   - Clone this repository:
     <https://github.com/networkx/networkx.git>.
@@ -305,11 +295,6 @@ We will probably arrive at a solution which is similar to `git bisect`:
     Write a script that checks for a correct result and use `git bisect run` to
     find the offending commit automatically
     ([solution - spoiler alert!](https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert)).
-
-  **Video workshops**: We will group you in breakout rooms of ~4 persons where you
-  can work and discuss together. A helper or instructor will pop in to help out.
-  Please write down questions in the collaborative notes.
-  After 15-20 minutes we will bring you back into the main room and discuss.
 
 
   **Hints**
