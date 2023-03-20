@@ -79,6 +79,19 @@ with GitHub),
 send our code to it, and then see how
 others can get the code from it.
 
+````{admonition} If you don't have the recipe repository from previous episodes
+Maybe you joined the workshop later or got stuck somewhere? **No problem**!
+
+**If you don't have the recipe repository from previous episodes**, you can
+clone our version of the repository using:
+```console
+$ git clone https://github.com/coderefinery/recipe-before-merge.git recipe
+```
+
+Now you have a repository called `recipe` on your computer with a couple of
+commits. Further down we will also clarify what `git clone` does.
+````
+
 Make sure that you are **logged into GitHub**.
 
 ```{figure} img/creating-using-web/new-top-left.png
