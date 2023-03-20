@@ -62,7 +62,7 @@ There are different types of remotes:
 
 ## Type-along: Create a new repository on GitHub
 
-```{note}
+```{admonition} We need SSH keys configured for this part to work
 To try this part during exercise or type-along, you need SSH keys configured
 and the public key deposited on GitHub (see our [installation
 instructions](https://coderefinery.github.io/installation/ssh/)).
