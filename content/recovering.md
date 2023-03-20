@@ -29,6 +29,12 @@ But you may need to ask Stack Overflow or your local
 guru... *until that guru becomes you*.
 ```
 
+```{admonition} Nice resource to visually simulate Git operation
+[git-sim](https://github.com/initialcommit-com/git-sim#video-animation-examples)
+is a nice resouce to visually simulate Git operations listed in this episode
+below, in your own repos with a single terminal command.
+```
+
 ---
 
 ## Undoing your recent, uncommitted and unstaged changes (preserves history)
