@@ -248,6 +248,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
   $ git bisect bad
   ```
 - Then bisect/iterate your way until you find the commit that broke it.
+- If you want to go back to start, type `git bisect reset`.
 - This can even be automatized with `git bisect run <script>`.
   For this you write a script that returns zero/non-zero (success/failure).
 
