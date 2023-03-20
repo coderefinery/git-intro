@@ -46,6 +46,13 @@
     - 12:00 - 12:25 (25 min) [How much Git is necessary?](https://coderefinery.github.io/git-intro/level/#practical-advice-how-much-git-is-necessary) 
     - 12:25 - 12:30 (05 min) Feedback & What will we be doing tomorrow?
 
+
+## Installation reminders for each day
+
+- Day 1: git configuration
+- Day 2: need SSH set up (if you don't, sharing repositories online will be demo)
+
+
 ## Why we teach this lesson
 
 Everyone should be using a version control system for their work, even if they're working alone.
