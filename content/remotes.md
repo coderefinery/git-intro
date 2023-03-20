@@ -62,6 +62,17 @@ There are different types of remotes:
 
 ## Type-along: Create a new repository on GitHub
 
+```{note}
+To try this part during exercise or type-along, you need SSH keys configured
+and the public key deposited on GitHub (see our [installation
+instructions](https://coderefinery.github.io/installation/ssh/)).
+
+If you do not have these configured, please watch as we do this episode and you
+can prepare before the [collaborative Git
+lesson](https://coderefinery.github.io/git-collaborative/), where we will need
+this set up.
+```
+
 For the rest of this page, we will make a new repository for our
 guacamole recipe on GitHub ({ref}`here <index>` we motivate why we demonstrate this
 with GitHub),
