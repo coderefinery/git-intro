@@ -31,7 +31,7 @@
     - 09:20 - 09:40 (20 min) Exercise: [Pushing our guacamole recipe repository to GitHub](https://coderefinery.github.io/git-intro/remotes/#pushing-our-guacamole-recipe-repository-to-github)
     - 09:40 - 09:55 (15 min) [Inspecting history - teaching/type-along](https://coderefinery.github.io/git-intro/archaeology/#inspecting-history) 
     - 09:55 - 10:10 :coffee: :walking: :tea: Break
-    - 10:10 - 10:40 (30 min) [Inspecting history - breakout room exercises](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands) 
+    - 10:10 - 10:40 (30 min) [Inspecting history - exercises](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands) 
         1. [Basic archeology commands](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands)
         2. [Optional: Git bisect](https://coderefinery.github.io/git-intro/archaeology/#optional-exercise-git-bisect) - to be done if time allows
     - 10:40 - 10:50 (10 min) Summarize inspecting history
