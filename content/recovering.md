@@ -33,6 +33,11 @@ guru... *until that guru becomes you*.
 
 ## Undoing your recent, uncommitted and unstaged changes (preserves history)
 
+```{note}
+In case `git restore` does not work, your Git version might be older than from 2019.
+On older Git it is `git checkout` instead of `git restore`.
+```
+
 You do some work, and want to **undo your uncommitted and unstaged modifications**.
 You can always do that with:
 
@@ -41,11 +46,6 @@ You can always do that with:
 Or, you can undo things selectively:
 
 - `git restore -p` (decide which portions of changes to undo) or `git restore <path>` (decide which path/file)
-
-```{note}
-In case the above does not work, your Git version might be older than from 2019.
-On older Git it is `git checkout` instead of `git restore`.
-```
 
 If you have staged changes, you have at least two options to undo the staging:
 - `git restore --staged .` followed by `git status` and `git restore .`
