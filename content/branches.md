@@ -274,7 +274,7 @@ We do the rest as type-along. Instructors, encourage learners to type-along.
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `master`.
 
-````{note}
+````{admonition} If you got stuck in the above exercises or joined later
   **If you got stuck in the above exercises or joined later**,
   you can apply the commands below.
   But **skip this box if you managed to create branches**.
@@ -284,6 +284,8 @@ Our goal now is to merge `experiment` into `master`.
 
   $ git clone https://github.com/coderefinery/recipe-before-merge.git
   $ cd recipe-before-merge
+
+  $ git remote remove origin
 
   $ git checkout experiment
   $ git checkout less-salt

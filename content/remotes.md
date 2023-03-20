@@ -83,9 +83,12 @@ others can get the code from it.
 Maybe you joined the workshop later or got stuck somewhere? **No problem**!
 
 **If you don't have the recipe repository from previous episodes**, you can
-clone our version of the repository using:
+clone our version of the repository using (please **skip this if you have the recipe
+repository on your computer already**):
 ```console
 $ git clone https://github.com/coderefinery/recipe-before-merge.git recipe
+$ cd recipe
+$ git remote remove origin
 ```
 
 Now you have a repository called `recipe` on your computer with a couple of
