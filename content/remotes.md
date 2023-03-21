@@ -135,7 +135,7 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 
 ---
 
-## Exercise: Pushing our guacamole recipe repository to GitHub
+## Pushing our guacamole recipe repository to GitHub
 
 To push changes to the project please **select SSH**.
 For this to work [you will need your SSH keys configured](https://coderefinery.github.io/installation/ssh/).
@@ -170,6 +170,16 @@ Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 To github.com:user/recipe.git
  * [new branch]      main -> main
 Branch 'main' set up to track remote branch 'main' from 'origin'.
+```
+
+### Exercise: Push your guacamole recipe to GitHub
+
+```{exercise} Push-1: Push your guacamole recipe to GitHub
+- Go to your recipe directory on your computer.
+- Check that you are in the right place with `git status`.
+- Define the remote with `git remote add origin git@github.com:user/recipe.git`.
+- Rename the current branch to "main", if needed: `git branch -M main`.
+- Push the local branch "main" to the remote: `git push -u origin main`.
 ```
 
 **Reload your GitHub project website and - taa-daa - your commits should now be
