@@ -64,3 +64,9 @@
 ```{keypoints}
 - There is no one size fits all - start simple and grow your project.
 ```
+
+```{discussion}
+How do you [plan to] use Git?
+Advanced users or beginners, please provide your input in the online collaborative document.
+```
+
