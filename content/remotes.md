@@ -86,7 +86,7 @@ Maybe you joined the workshop later or got stuck somewhere? **No problem**!
 clone our version of the repository using (please **skip this if you have the recipe
 repository on your computer already**):
 ```console
-$ git clone https://github.com/coderefinery/recipe-before-merge.git recipe
+$ git clone git@github.com:coderefinery/recipe-before-merge.git recipe
 $ cd recipe
 $ git remote remove origin
 ```
@@ -135,7 +135,7 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 
 ---
 
-## Pushing our guacamole recipe repository to GitHub
+## Exercise: Pushing our guacamole recipe repository to GitHub
 
 To push changes to the project please **select SSH**.
 For this to work [you will need your SSH keys configured](https://coderefinery.github.io/installation/ssh/).
