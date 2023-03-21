@@ -67,6 +67,7 @@
 
 ```{discussion}
 How do you [plan to] use Git?
-Advanced users or beginners, please provide your input in the online collaborative document.
+
+- Advanced users or beginners, please provide your input in the online collaborative document.
 ```
 
