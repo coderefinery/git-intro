@@ -285,11 +285,11 @@ Our goal now is to merge `experiment` into `master`.
   $ git clone https://github.com/coderefinery/recipe-before-merge.git
   $ cd recipe-before-merge
 
-  $ git remote remove origin
-
   $ git checkout experiment
   $ git checkout less-salt
   $ git checkout master
+
+  $ git remote remove origin
 
   $ git graph
   ```
