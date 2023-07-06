@@ -46,6 +46,8 @@ extensions = [
 # jupyter_execute_notebooks = "force"
 jupyter_execute_notebooks = "cache"
 
+copybutton_exclude = '.linenos, .gp'
+
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
 
