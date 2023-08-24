@@ -23,19 +23,18 @@ branching.
 
 .. prereq::
 
-   -  A reasonably recent version of **Git is installed**
+   -  A reasonably recent version of Git is installed **and configured**
       (`installation
       instructions <https://coderefinery.github.io/installation/>`__).
-   -  **Git should be configured prior to the course**
-      following `our installation
-      instructions <https://coderefinery.github.io/installation/>`__.
-   -  A `GitHub <https://github.com>`__ user account (but alternatives
-      exist, see below).
-   -  Being comfortable with the command line. No expertise is required,
-      but the lesson will be mostly taken from the command line.
+   -  For one of the episodes we need a `GitHub <https://github.com>`__ user
+      account (but alternatives exist, see below).
+   -  Being comfortable with the command line. No expertise is required, but
+      the lesson will be mostly taken from the command line (we also have another
+      lesson on `Collaborating and sharing using GitHub without command line
+      <https://coderefinery.github.io/github-without-command-line/>`__).
    -  Students should be familiar with using a **text editor** on their
-      system. Emacs and Vim are excellent choices if you know how to use
-      them but Nano or Notepad on Windows are sufficient.
+      system. If you are new to text editors, we recommend to start with Nano
+      or VS Code.
 
 
 .. toctree::
@@ -100,6 +99,4 @@ branching.
    to host your Git repository on another platform.
 
    Course participants are most welcome to use our `Nordic research
-   software repository platform <https://source.coderefinery.org>`__
-   instead, for more information see
-   https://coderefinery.org/repository/.
+   software repository platform <https://coderefinery.org/repository/>`__.
