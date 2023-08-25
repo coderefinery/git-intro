@@ -1,50 +1,61 @@
 # Instructor guide
 
 ## Schedule Day 1
+
 - 08:50 - 09:00 (10 min) Soft start and icebreaker question
-- 09:00 - 09:15 (15 min) Welcome and practical information
-- Introduction to version control (part 1/2)
-    - 09:15 - 09:30 (15 min) [Motivation - teaching & demo](https://coderefinery.github.io/git-intro/motivation/#motivation)
-    - 09:30 - 09:45 (15 min) [Basics - teaching & type along](https://coderefinery.github.io/git-intro/basics/#basics)
-    - 09:45 - 10:05 (20 min) [Basics - exercises](https://coderefinery.github.io/git-intro/basics/#exercise-record-changes)
-      1. [Record changes](https://coderefinery.github.io/git-intro/basics/#exercise-record-changes)
-      2. [Optional: Comparing, renaming, and removing](https://coderefinery.github.io/git-intro/basics/#optional-exercises-comparing-renaming-and-removing) - if time allows
-    - 10:05 - 10:15 (10 min) :coffee: :walking: :tea: Break
-    - 10:15 - 10:35 (20 min) [Basics - History, commit log, ignoring - teaching](https://coderefinery.github.io/git-intro/basics/#git-history-and-log)
-    - 10:35 - 10:50 (15 min) [Branching and merging - teaching](https://coderefinery.github.io/git-intro/branches/#branching-and-merging)
-    - 10:50 - 11:10 (20 min) [Branching and merging - exercises](https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches)
-        1. [Create and commit to branches](https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches) Teaching resumed before merging branches.
-        2. [Optional exercises with branches: Fast-forward merge and Rebasing](https://coderefinery.github.io/git-intro/branches/#optional-exercises-with-branches) - if time allows
-    - 11:10 - 11:20 (10 min) :coffee: :walking: :tea: Break
-    - 11:20 - 11:35 (15 min) Summarize branching and merging
-    - 11:35 - 11:45 (10 min) [Conflict resolution (teaching)](https://coderefinery.github.io/git-intro/conflicts/)
-    - 11:45 - 12:05 (20 min) [Exercise conflict resolution](https://coderefinery.github.io/git-intro/conflicts/#exercise-create-and-resolve-a-conflict)
-- 12:05 - 12:10 (5 min) :coffee: :walking: :tea: Break
-- 12:10 - 12:25 (15 min) Buffer, Q&A session
-- 12:25 - 12:30 ( 5 min) Feedback & What will we be doing tomorrow?
+- 09:00 - 09:20 (20 min) Welcome and practical information
+
+- Introduction to version control (part 1/4)
+    - 09:20 - 09:35 (15 min) [Motivation](https://coderefinery.github.io/git-intro/motivation/)
+    - 09:35 - 09:50 (15 min) [Basics - teaching, configuration, and type along](https://coderefinery.github.io/git-intro/basics/)
+    - 09:50 - 10:00 (10 min) Break
+    - 10:00 - 10:20 (20 min) [Basics - exercises](https://coderefinery.github.io/git-intro/basics/#exercise-record-changes)
+        1. Record changes
+        2. Optional exercises: Comparing, renaming, and removing
+    - 10:20 - 10:40 (20 min) [Basics - history, commit log, ignoring - teaching](https://coderefinery.github.io/git-intro/basics/#git-history-and-log)
+    - 10:40 - 11:00 (20 min) Exercise (**to be added**)
+
+- Introduction to version control (part 2/4)
+    - 12:00 - 12:15 (15 min) [Branching and merging - teaching](https://coderefinery.github.io/git-intro/branches/)
+    - 12:15 - 12:35 (20 min) [Branching and merging - exercises](https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches)
+        1. Create branches and merge branches
+        2. Optional exercises: Fast-forward merge and rebasing
+    - 12:35 - 12:50 (15 min) Summarize/discuss branching and merging
+    - 12:50 - 13:00 (10 min) Break
+    - 13:00 - 13:20 (20 min) [Conflict resolution (teaching and demo)](https://coderefinery.github.io/git-intro/conflicts/)
+
+- 13:20 - 13:30 (10 min) Q&A, feedback, and what will we be doing tomorrow?
+
 
 ## Schedule Day 2
-* 08:50 - 09:00 (10 min) Soft start and icebreaker question
-* 09:00 - 09:10 (10 min) Recap and Q&A from day 1
-* 09:10 - 12:30 [Introduction to version control (part 2/2)](https://coderefinery.github.io/git-intro/)
-    - 09:10 - 09:20 (10 min) [Sharing repositories online - teaching/type-along](https://coderefinery.github.io/git-intro/remotes/#sharing-repositories-online) 
-    - 09:20 - 09:40 (20 min) Exercise: [Pushing our guacamole recipe repository to GitHub](https://coderefinery.github.io/git-intro/remotes/#pushing-our-guacamole-recipe-repository-to-github)
-    - 09:40 - 09:55 (15 min) [Inspecting history - teaching/type-along](https://coderefinery.github.io/git-intro/archaeology/#inspecting-history) 
-    - 09:55 - 10:10 :coffee: :walking: :tea: Break
-    - 10:10 - 10:40 (30 min) [Inspecting history - exercises](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands) 
+
+- 08:50 - 09:00 (10 min) Soft start and icebreaker question
+- 09:00 - 09:10 (10 min) Recap and Q&A from day 1
+
+- Introduction to version control (part 3/4)
+    - 09:10 - 09:25 (15 min) [Sharing repositories online - teaching/type-along](https://coderefinery.github.io/git-intro/remotes/#sharing-repositories-online)
+    - 09:25 - 09:50 (25 min) Exercise
+        - Set up SSH keys
+        - [Pushing our guacamole recipe repository to GitHub](https://coderefinery.github.io/git-intro/remotes/#pushing-our-guacamole-recipe-repository-to-github)
+        - Clone repository
+    - 09:50 - 10:00 (10 min) Break
+    - 10:00 - 10:15 (15 min) [Inspecting history - teaching/type-along](https://coderefinery.github.io/git-intro/archaeology/#inspecting-history)
+    - 10:15 - 10:45 (30 min) [Inspecting history - exercises](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands)
         1. [Basic archeology commands](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands)
-        2. [Optional: Git bisect](https://coderefinery.github.io/git-intro/archaeology/#optional-exercise-git-bisect) - to be done if time allows
-    - 10:40 - 10:50 (10 min) Summarize inspecting history
-    - 10:50 - 11:05 (15 min) [Undoing and recovering - teaching/type-along](https://coderefinery.github.io/git-intro/recovering/#undoing-and-recovering) 
-    - 11:05 - 11:15 :coffee: :walking: :tea: Break
-    - 11:15 - 11:35 (20 min) [Undoing and recovering - exercises](https://coderefinery.github.io/git-intro/recovering/#exercise-revert-a-commit) 
+        2. [Optional: Git bisect](https://coderefinery.github.io/git-intro/archaeology/#optional-exercise-git-bisect)
+    - 10:45 - 11:00 (15 min) Summarize/discuss inspecting history
+
+- Introduction to version control (part 4/4)
+    - 12:00 - 12:15 (15 min) [Undoing and recovering - teaching/type-along](https://coderefinery.github.io/git-intro/recovering/#undoing-and-recovering)
+    - 12:15 - 12:40 (25 min) [Undoing and recovering - exercises](https://coderefinery.github.io/git-intro/recovering/#exercise-revert-a-commit)
         1. [Revert a commit](https://coderefinery.github.io/git-intro/recovering/#exercise-revert-a-commit)
         2. [Modify a previous commit](https://coderefinery.github.io/git-intro/recovering/#exercise-modify-a-previous-commit)
         3. [Git reset](https://coderefinery.github.io/git-intro/recovering/#exercise-git-reset)
-    - 11:35 - 11:50 (15 min) Summarize undoing and recovering and discussion and mention that staging area exists
-    - 11:50 - 12:00 :coffee: :walking: :tea: Break
-    - 12:00 - 12:25 (25 min) [How much Git is necessary?](https://coderefinery.github.io/git-intro/level/#practical-advice-how-much-git-is-necessary) 
-    - 12:25 - 12:30 (05 min) Feedback & What will we be doing tomorrow?
+    - 12:40 - 11:50 (10 min) Summarize undoing and recovering and discussion and mention that staging area exists
+    - 12:50 - 13:00 (10 min) Break
+    - 13:00 - 13:20 (20 min) [How much Git is necessary?](https://coderefinery.github.io/git-intro/level/#practical-advice-how-much-git-is-necessary)
+
+- 13:20 - 13:30 (10 min) Q&A, feedback, and what will we be doing tomorrow?
 
 
 ## Installation reminders for each day
