@@ -36,7 +36,7 @@ $ git graph
 ## Using external commands
 
 It is possible to call external commands using the exclamation mark character "!".
-In this case we create a local alias which is
+In this example here we create a local alias which is
 stored in `.git/config` and not synchronized with remotes:
 
 ```console
