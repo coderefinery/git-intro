@@ -23,7 +23,7 @@ branching.
 
 .. prereq::
 
-   -  A reasonably recent version of Git is installed **and configured**
+   -  A reasonably recent version of Git (v2.28 or newer) is installed **and configured**
       (`installation
       instructions <https://coderefinery.github.io/installation/>`__).
    -  For one of the episodes we need a `GitHub <https://github.com>`__ user
