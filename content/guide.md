@@ -13,7 +13,7 @@
         1. Record changes
         2. Optional exercises: Comparing, renaming, and removing
     - 10:20 - 10:40 (20 min) [Basics - history, commit log, ignoring - teaching](https://coderefinery.github.io/git-intro/basics/#git-history-and-log)
-    - 10:40 - 11:00 (20 min) Exercise (**to be added**)
+    - 10:40 - 11:00 (20 min) Exercise (**to be added**): something about using history
 
 - Introduction to version control (part 2/4)
     - 12:00 - 12:15 (15 min) [Branching and merging - teaching](https://coderefinery.github.io/git-intro/branches/)
