@@ -1,4 +1,4 @@
 
-           [master,HEAD]
+           [main,HEAD]
             |
 m1----m2----m3

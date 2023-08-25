@@ -1,5 +1,5 @@
 
-           [master]    [experiment]
+           [main]    [experiment]
             |           |
 m1----m2----m3----e1----e2
               \

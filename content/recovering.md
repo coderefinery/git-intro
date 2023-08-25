@@ -66,7 +66,7 @@ If you have staged changes, you have at least two options to undo the staging:
   ```console
   $ git log --oneline
 
-  f960dd3 (HEAD -> master) not sure this is a good idea
+  f960dd3 (HEAD -> main) not sure this is a good idea
   dd4472c we should not forget to enjoy
   2bb9bb4 add half an onion
   2d79e7e adding ingredients and instructions
@@ -82,7 +82,7 @@ The old commit remains in the history:
 ```console
 $ git log --oneline
 
-d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
+d62ad3e (HEAD -> main) Revert "not sure this is a good idea"
 f960dd3 not sure this is a good idea
 dd4472c we should not forget to enjoy
 2bb9bb4 add half an onion
@@ -167,7 +167,7 @@ point in the past.
   ```console
   $ git log --oneline
 
-  d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
+  d62ad3e (HEAD -> main) Revert "not sure this is a good idea"
   f960dd3 not sure this is a good idea
   dd4472c we should not forget to enjoy
   2bb9bb4 add half an onion
@@ -179,7 +179,7 @@ point in the past.
 
   $ git log --oneline
 
-  dd4472c (HEAD -> master) we should not forget to enjoy
+  dd4472c (HEAD -> main) we should not forget to enjoy
   2bb9bb4 add half an onion
   2d79e7e adding ingredients and instructions
   ```

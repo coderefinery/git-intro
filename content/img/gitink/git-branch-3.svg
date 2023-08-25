@@ -353,9 +353,9 @@
                         stroke-miterlimit:4;
                         stroke-opacity:1.0;
                         stroke-dasharray:none"
-                 width="64.0"
+                 width="48.0"
                  height="30.0"
-                 x="164.0"
+                 x="172.0"
                  y="-125.0"
                  ry="0.0" />
            <text style="font-size:12.5px;
@@ -368,8 +368,8 @@
                         fill-opacity:1.0;
                         stroke:none;
                         font-family:DejaVu Sans Mono"
-                 x="171.5"
-                 y="-104.5">master</text>
+                 x="179.5"
+                 y="-104.5">main</text>
            
            <path style="fill:none;
                  stroke:#000000;

@@ -1,5 +1,5 @@
 
-              [master,HEAD]
+              [main,HEAD]
                |
                m4      [experiment]
               /         |

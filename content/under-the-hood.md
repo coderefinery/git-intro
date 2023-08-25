@@ -102,12 +102,12 @@ Let us lift the hood and create few branches manually.  The
 goal of this exercise is to hopefully create an "aha" moment and provide us a
 good understanding of the underlying model.
 
-We are starting from the `master` branch and create an `idea` branch:
+We are starting from the `main` branch and create an `idea` branch:
 
 ```console
 $ git status
 
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
@@ -121,7 +121,7 @@ Switched to a new branch 'idea'
 $ git branch
 
 * idea
-  master
+  main
 ```
 
 Now let us go in:
@@ -133,7 +133,7 @@ $ ls -l
 
 total 8
 -rw------- 1 bast users 41 May  7 11:47 idea
--rw------- 1 bast users 41 May  7 11:47 master
+-rw------- 1 bast users 41 May  7 11:47 main
 ```
 
 Let us check what the `idea` file looks like
@@ -181,7 +181,7 @@ $ git branch
 * idea-3
   idea-4
   idea-5
-  master
+  main
 ```
 
 ```{discussion}

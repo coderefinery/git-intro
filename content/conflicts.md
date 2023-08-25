@@ -120,17 +120,17 @@ We will make two branches, make two conflicting changes (both increase and
 decrease the amount of cilantro), and later we will try to merge them
 together.
 
-- Create two branches from `master`: one called `like-cilantro`, one called `dislike-cilantro`:
+- Create two branches from `main`: one called `like-cilantro`, one called `dislike-cilantro`:
   ```console
-  $ git branch like-cilantro master
-  $ git branch dislike-cilantro master
+  $ git branch like-cilantro main
+  $ git branch dislike-cilantro main
   ```
 
 - On the two branches make **different modifications** to the amount of the **same ingredient**:
 
 - On the branch `like-cilantro` we have the following change:
   ```console
-  $ git diff master like-cilantro
+  $ git diff main like-cilantro
   ```
 
   ```diff
@@ -148,7 +148,7 @@ together.
 
 - And on the branch `dislike-cilantro` we have the following change:
   ```console
-  $ git diff master dislike-cilantro
+  $ git diff main dislike-cilantro
   ```
 
   ```diff
@@ -168,12 +168,12 @@ together.
 ## Merging conflicting changes
 
 What do you expect will happen when we try to merge these two branches into
-master?
+main?
 
 The first merge will work:
 
 ```console
-$ git checkout master
+$ git checkout main
 $ git status
 $ git merge like-cilantro
 
@@ -202,7 +202,7 @@ emphasize-lines: 11
 ---
 $ git status
 
-On branch master
+On branch main
 You have unmerged paths.
   (fix conflicts and run "git commit")
   (use "git merge --abort" to abort the merge)
@@ -308,7 +308,7 @@ different ingredient.
 4. What happens if you apply the same modification on both branches?
 5. If you create a branch `like-avocados`, commit a change, then from this
    branch create another banch `dislike-avocados`, commit again, and try to
-   merge both branches into `master` you will not see a conflict. Can you
+   merge both branches into `main` you will not see a conflict. Can you
    explain, why it is different this time?
 ```{solution}
 4: No conflict in this case if the change is the same.

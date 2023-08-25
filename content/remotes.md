@@ -187,12 +187,6 @@ online!**
 
 What just happened? **Think of publishing a repository as uploading the `.git` part online**.
 
-```{note}
-We could have pushed the `master` branch using `$ git push origin master`,
-without renaming it to `main`. Here we chose to rename the branch to `main` to
-closely follow the instructions from the GitHub web interface.
-```
-
 ---
 
 ## Cloning a repository

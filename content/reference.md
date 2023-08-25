@@ -18,8 +18,13 @@
 * **HEAD**: Pointer to the most recent commit on the current branch.
 * **remote**: Roughly, another server that holds .git.
 * **origin**: Default name for a remote repository.
-* **master**: Default name for main branch. Depending on the configuration and service,
+* **master**: Default name for main branch on Git. Depending on the configuration and service,
               the default branch is sometimes **main**.
+              In this lesson we configure Git so that the default branch is
+              called **main** to be more consistent with GitHub and GitLab.
+* **main**: Default name for main branch on GitLab and GitHub.
+            In this lesson we configure Git so that the default branch is
+            called **main** to be more consistent with GitHub and GitLab.
 
 
 ## Commands we use

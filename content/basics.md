@@ -19,15 +19,15 @@
 - Every time we **commit** a snapshot, Git records a snapshot of the **entire project**, saves it, and assigns it a version.
 - These snapshots are kept inside a sub-folder called `.git`.
 - If we remove `.git`, we remove the repository and history (but keep the working directory!).
-- `.git` uses relative paths - you can move the whole thing somewhere else and it will still work
-- Git doesn't do anything unless you ask it to (it does not record anything automatically).
+- `.git` uses relative paths - you can move the whole thing somewhere else and it will still work.
+- Git doesn't do anything unless you ask it to (it **does not record anything automatically**).
 - Multiple interfaces to Git exist (command line, graphical interfaces, web interfaces).
 
 
 ## Recording a snapshot with Git
 
 - Git takes snapshots only if we request it.
-- We will record changes always in two steps (we will later explain why this is a recommended practice).
+- We will record changes in two steps (we will later explain why this is a recommended practice).
 - Example (we don't need to type yet):
 
   ```console
@@ -38,7 +38,7 @@
   $ git commit
   ```
 
-- We first focus (`git add`, we "stage" the change), then shoot (`git commit`):
+- We first focus (`git add`, we "stage" the change), then record (`git commit`):
 
 ```{figure} img/git_stage_commit.svg
 :alt: Git staging
@@ -55,38 +55,38 @@ shutter at the end)
 ```
 
 
-## Before we start we need to configure Git
+## Configuring Git
 
-If you haven't already configured Git, please follow the instructions in the
-[installation instructions](https://coderefinery.github.io/installation/shell-and-git/#configuration).
-
-````{instructor-note}
-Instructors might want to show how to set email address and editor:
-
+Before we start we need to configure Git.
+This is also part of the 
+[installation instructions](https://coderefinery.github.io/installation/shell-and-git/#configuration)
+but we need to make sure we all have
+set name, email address, editor, and
+default branch:
 ```console
 $ git config --global user.name "Your Name"
 $ git config --global user.email yourname@example.com
 $ git config --global core.editor nano
+$ git config --global init.defaultBranch main
 ```
 
 Verify with:
 ```console
 $ git config --list
 ```
-````
+
+```{instructor-note}
+Instructors, give learners enough time to do the above configuration steps.
+```
 
 
 ## Type-along: Tracking a guacamole recipe with Git
 
 We will learn how to initialize a Git repository, how to track changes, and how
-to make delicious guacamole!
+to make delicious guacamole (inspiration: suggestion by B. Smith in a discussion in the Carpentries mailing list)!
 
-This example is inspired by [Byron Smith](http://blog.byronjsmith.com) (based
-on a discussion in the Carpentries mailing list).
 The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
 but not everybody may be able to relate to a program written in e.g. Python or another language.
-
-Let us start.
 
 ```{instructor-note}
 Instructors, please encourage now that participants type along.
@@ -107,7 +107,7 @@ We will use `git status` a lot to check out what is going on:
 ```console
 $ git status
 
-On branch master
+On branch main
 
 No commits yet
 
@@ -143,7 +143,7 @@ do when you are trying to figure out what to do next:
 ```console
 $ git status
 
-On branch master
+On branch main
 
 No commits yet
 
@@ -167,7 +167,7 @@ $ git add ingredients.txt
 $ git add instructions.txt
 $ git status
 
-On branch master
+On branch main
 
 Initial commit
 
@@ -185,7 +185,7 @@ Let us now commit the change to the repository:
 ```console
 $ git commit -m "adding ingredients and instructions"
 
-[master (root-commit) aa243ea] adding ingredients and instructions
+[main (root-commit) aa243ea] adding ingredients and instructions
  2 files changed, 8 insertions(+)
  create mode 100644 ingredients.txt
  create mode 100644 instructions.txt
