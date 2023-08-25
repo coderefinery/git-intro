@@ -10,6 +10,26 @@
 ```
 
 
+## Commits: keeping track of changes
+
+We will learn how to keep track of changes first in a terminal ([example
+repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
+
+```{figure} img/git-log-terminal.png
+:alt: Screenshot of a git log in terminal
+:width: 80%
+```
+
+Later also via web interface ([example
+repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
+
+```{figure} img/git-log-github.png
+:alt: Screenshot of a git log on GitHub
+:width: 80%
+:class: with-border
+```
+
+
 ## Why do we need to keep track of versions?
 
 Version control is an answer to these questions (do you recognize some of them?):
@@ -29,26 +49,6 @@ Version control is an answer to these questions (do you recognize some of them?)
 - "I am sure it used to work. When did it change?"
 
 - "My laptop is gone. Is my thesis now gone?"
-
-
-## Commits: keeping track of changes
-
-We will learn how to keep track of changes first in a terminal ([example
-repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
-
-```{figure} img/git-log-terminal.png
-:alt: Screenshot of a git log in terminal
-:width: 80%
-```
-
-Later also via web interface ([example
-repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
-
-```{figure} img/git-log-github.png
-:alt: Screenshot of a git log on GitHub
-:width: 80%
-:class: with-border
-```
 
 
 ## Features: roll-back, branching, merging, collaboration
