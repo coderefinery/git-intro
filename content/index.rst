@@ -48,6 +48,7 @@ branching.
    remotes
    archaeology
    level
+   what-to-avoid
 
 
 .. toctree::
@@ -67,7 +68,6 @@ branching.
 
    reference
    customizing
-   what-to-avoid
    resources
    exercises
    guide
