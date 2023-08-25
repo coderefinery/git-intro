@@ -17,11 +17,6 @@ Here are few example projects that make this possible and easy:
 - <https://github.com/magicmonty/bash-git-prompt> (bash and fish)
 
 
-## Editors
-
-Here we need more text ...
-
-
 ## More useful "diff" output
 
 [Delta](https://github.com/dandavison/delta) is a syntax-highlighting pager for
