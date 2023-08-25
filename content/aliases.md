@@ -13,7 +13,7 @@ There is plenty of other configuration for Git, that can make it nicer.
 
 ## Aliases
 
-- Aliases are a simple way to improve the usability of Git: for
+- Aliases offer a way to improve the usability of Git: for
   example `git ci` instead of `git commit`.
 - Aliases are based on simple string replacement in the command.
 - Aliases can either be specific to a repository or global.
@@ -63,8 +63,6 @@ $ git config --global alias.br branch
 $ git config --global alias.ci "commit -v"
 $ git config --global alias.cip "commit --patch -v"
 $ git config --global alias.cl "clone --recursive"
-$ git config --global alias.co checkout
-$ git config --global alias.cop "checkout --patch"
 $ git config --global alias.di diff
 $ git config --global alias.dic "diff --staged --color-words"
 $ git config --global alias.diw "diff --color-words"
@@ -82,8 +80,6 @@ Here is what they do:
 - `ci`: commit (check in), with `-v` option for clarity
 - `cip`: commit, selecting parts individually, interactively.
 - `cl`: clone, init submodules (submodules are an advanced topic)
-- `co`: checkout (obvious)
-- `cop`: checkout, selecting parts individually, interactively.
 - `di`: diff (obvious)
 - `dic`: diff of staging area vs last commit (what is about to be committed)
 - `diw`: a word diff, color.  Useful for small changes.

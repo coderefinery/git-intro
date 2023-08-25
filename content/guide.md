@@ -87,8 +87,8 @@ By the end of this lesson, learners should:
 - have a mental model of the different states a file can have in Git (untracked, modified, staged, unmodified)
 - know how to write good commit messages
 - have an idea of how the staging area can be used to craft good commits
-- know how to undo commits using `git revert` and discard changes using `git checkout`
-- understand that `git checkout` can be dangerous if changes have not been staged
+- know how to undo commits using `git revert` and discard changes using `git restore`
+- understand that `git restore` can be dangerous if changes have not been staged
 - know how to create branches and switch between branches
 - have a mental model of how branches work and get used to thinking of branches in a graphical (tree-structure) way
 - know how to merge branches and understand what that means in terms of combining different modifications
@@ -97,7 +97,6 @@ By the end of this lesson, learners should:
 - be able to set up a repository on GitHub and connect it with local repository
 - push changes to a remote repository
 - know a few ways to search through a repository and its history
-- know about the different meanings of `git checkout`, and realize how they're in fact similar
 
 
 ## How to teach this lesson

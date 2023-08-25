@@ -112,7 +112,7 @@ nothing to commit, working tree clean
 ```
 
 ```console
-$ git checkout -b idea
+$ git switch --create idea
 
 Switched to a new branch 'idea'
 ```

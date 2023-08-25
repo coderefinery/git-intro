@@ -173,7 +173,7 @@ main?
 The first merge will work:
 
 ```console
-$ git checkout main
+$ git switch main
 $ git status
 $ git merge like-cilantro
 

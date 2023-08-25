@@ -137,7 +137,7 @@ Let's create a branch called `experiment` where we add cilantro to `ingredients.
 
 ```console
 $ git branch experiment main     # creates branch "experiment" from "main"
-$ git checkout experiment        # switch to branch "experiment"
+$ git switch experiment          # switch to branch "experiment"
 $ git branch                     # list all local branches and show on which branch we are
 ```
 
@@ -285,9 +285,9 @@ Our goal now is to merge `experiment` into `main`.
   $ git clone https://github.com/coderefinery/recipe-before-merge.git
   $ cd recipe-before-merge
 
-  $ git checkout experiment
-  $ git checkout less-salt
-  $ git checkout main
+  $ git switch experiment
+  $ git switch less-salt
+  $ git switch main
 
   $ git remote remove origin
 
@@ -550,7 +550,7 @@ Let us pause for a moment and recapitulate what we have just learned:
 ```console
 $ git branch               # see where we are
 $ git branch <name>        # create branch <name>
-$ git checkout <name>      # switch to branch <name>
+$ git switch <name>        # switch to branch <name>
 $ git merge <name>         # merge branch <name> (to current branch)
 $ git branch -d <name>     # delete branch <name>
 $ git branch -D <name>     # delete unmerged branch
@@ -560,13 +560,13 @@ Since the following command combo is so frequent:
 
 ```console
 $ git branch <name>        # create branch <name>
-$ git checkout <name>      # switch to branch <name>
+$ git switch <name>        # switch to branch <name>
 ```
 
 There is a shortcut for it:
 
 ```console
-$ git checkout -b <name>   # create branch <name> and switch to it
+$ git switch --create <name>  # create branch <name> and switch to it
 ```
 
 ### Typical workflows
@@ -574,20 +574,20 @@ $ git checkout -b <name>   # create branch <name> and switch to it
 With this there are two typical workflows:
 
 ```console
-$ git checkout -b new-feature  # create branch, switch to it
-$ git commit                   # work, work, work, ..., and test
-$ git checkout main            # once feature is ready, switch to main
-$ git merge new-feature        # merge work to main
-$ git branch -d new-feature    # remove branch
+$ git switch --create new-feature  # create branch, switch to it
+$ git commit                       # work, work, work, ..., and test
+$ git switch main                  # once feature is ready, switch to main
+$ git merge new-feature            # merge work to main
+$ git branch -d new-feature        # remove branch
 ```
 
 Sometimes you have a wild idea which does not work.
 Or you want some throw-away branch for debugging:
 
 ```console
-$ git checkout -b wild-idea    # create branch, switch to it, work, work, work ...
-$ git checkout main            # realize it was a bad idea, back to main
-$ git branch -D wild-idea      # it is gone, off to a new idea
+$ git switch --create wild-idea    # create branch, switch to it, work, work, work ...
+$ git switch main                  # realize it was a bad idea, back to main
+$ git branch -D wild-idea          # it is gone, off to a new idea
 ```
 
 No problem: we worked on a branch, branch is deleted, `main` is clean.
@@ -602,16 +602,16 @@ No problem: we worked on a branch, branch is deleted, `main` is clean.
   2. ```console
      $ git add file.txt
      $ git branch new-branch
-     $ git checkout new-branch
+     $ git switch new-branch
      $ git commit
      ```
   3. ```console
-     $ git checkout -b new-branch
+     $ git switch --create new-branch
      $ git add file.txt
      $ git commit
      ```
   4. ```console
-     $ git checkout new-branch
+     $ git switch new-branch
      $ git add file.txt
      $ git commit
      ```
@@ -619,36 +619,7 @@ No problem: we worked on a branch, branch is deleted, `main` is clean.
   ```{solution}
   Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
   branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
-  don't give the `-b` flag to `git checkout` to create the new branch.
-  ```
-````
-
-````{discussion} Different meanings of "checkout"
-  Depending on the context `git checkout` can do very different actions:
-
-  1) Switch to a branch:
-     ```console
-     $ git checkout <branchname>
-     ```
-
-  2) Bring the working tree to a specific state (commit):
-     ```console
-     $ git checkout <hash>
-     ```
-
-  3) Set a file/path to a specific state (**throws away all unstaged/uncommitted changes**):
-     ```console
-     $ git checkout <path/file>
-     ```
-
-  This is unfortunate from the user's point of view but the way Git is implemented it makes sense.
-  Picture `git checkout` as an operation that brings the working tree to a specific state.
-  The state can be a commit or a branch (pointing to a commit).
-
-  In Git 2.23 (2019-08-16) and later this is much nicer:
-  ```console
-  $ git switch <branchname>  # switch to a different branch
-  $ git restore <path/file>  # discard changes in working directory
+  don't give the `--create` flag to `git switch` to create the new branch.
   ```
 ````
 

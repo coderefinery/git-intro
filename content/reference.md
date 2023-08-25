@@ -53,8 +53,8 @@ General work:
 * `git commit --amend`: amend our last commit
 * `git branch`: show which branch we're on
 * `git branch <name>`: create a new branch called "name"
-* `git checkout <file>`: checkout last committed version of &lt;file&gt;, losing unstaged changes
-* `git checkout -b <branch-name>`: create a new branch and switch to it
+* `git restore <file>`: restore last committed/staged version of &lt;file&gt;, losing unstaged changes
+* `git switch --create <branch-name>`: create a new branch and switch to it
 * `git revert abc123`: create a new commit which reverts commit abc123
 * `git reset --soft abc123`: remove all commits after abc123, but keep their modifications as staged changes
 * `git reset --hard abc123`: remove all commits after abc123, permanently throwing away their changes

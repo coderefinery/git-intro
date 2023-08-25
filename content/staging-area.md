@@ -90,7 +90,7 @@ commit or having one logical change spread over several commits.
     separated by a blank line, split them into separate choices.
   - `q` aborts everything.
   - `?` for more options.
-- The `-p` option is also available on `commit`, `checkout`, `reset`, and `add`.
+- The `-p` option is also available on `commit`, `restore`, `checkout`, `reset`, and `add`.
 
 
 (exercise-interactive-commits)=
@@ -156,7 +156,7 @@ We give two examples and the instructor can pick one or both:
   - What you actually do:
     - Go through the store and put everything you need in your shopping
       basket.
-    - Get to the checkout.  Put your home stuff on the conveyor belt
+    - Get to the check-out.  Put your home stuff on the conveyor belt
       (`git add`).  Check both the belt (`git diff --staged`) and your
       basket (`git diff`) to make sure you got all your home stuff.
     - Pay (`git commit`)
