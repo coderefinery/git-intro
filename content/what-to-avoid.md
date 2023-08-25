@@ -42,3 +42,8 @@ But don't let perfect commit messages stop you from the most important point, co
 committed which can significantly increase the repository size. Note that a
 subsequent `git rm` does not remove the addition from the repository history.
 Code review can help detecting accidental large file additions.
+
+```{discussion}
+Question to all seasoned Git users: What are we missing on this page? Please
+contribute improvements.
+```
