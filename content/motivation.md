@@ -28,28 +28,84 @@ Version control is an answer to these questions (do you recognize some of them?)
 
 - "I am sure it used to work. When did it change?"
 
+- "My laptop is gone. Is my thesis now gone?"
 
 
+## Commits: keeping track of changes
+
+We will learn how to keep track of changes first in a terminal ([example
+repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
+
+```{figure} img/git-log-terminal.png
+:alt: Screenshot of a git log in terminal
+:width: 80%
+```
+
+Later also via web interface ([example
+repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
+
+```{figure} img/git-log-github.png
+:alt: Screenshot of a git log on GitHub
+:width: 80%
+:class: with-border
+```
 
 
+## Features: roll-back, branching, merging, collaboration
 
+- **Roll-back**: you can always go back to a previous version and compare
 
-
-
-
-
-## The essence of version control
-
-- System which **records snapshots** of a project
-- Implements **branching**:
-  - You can work on several feature branches and switch between them
+- **Branching and merging**:
+  - Work on different ideas at the same time
   - Different people can work on the same code/project without interfering
   - You can experiment with an idea and discard it if it turns out to be a bad idea
-- Implements **merging**:
-  - Person A and B's simultaneous work can be easily combined
+
+```{figure} img/octopus.jpeg
+:alt: Branching explained with an octopus
+:width: 80%
+
+Source: <https://twitter.com/jay_gee/status/703360688618536960>
+```
+
+- **Collaboration**: review, compare, share, discuss
+
+- [Example network graph](https://github.com/coderefinery/git-intro/network)
 
 
-### What we typically like to snapshot
+## Reproducibility
+
+- How do you indicate which version of your code you have used in your paper?
+- When you find a bug, how do you know **when precisely** this bug was introduced
+  (Are published results affected? Do you need to inform collaborators or users of your code?).
+
+With version control we can "annotate" code ([browse this example online](https://github.com/networkx/networkx/blame/main/networkx/algorithms/boundary.py)):
+
+```{figure} img/git-annotate.png
+:alt: Example of a git-annotated code with code and history side-by-side
+:width: 100%
+:class: with-border
+
+Example of a git-annotated code with code and history side-by-side.
+```
+
+
+## Talking about code
+
+Which of these two is more practical?
+- "Clone the code, go to the file 'src/util.rs', and search for 'time_iso8601'".
+  Oh! But make sure you use the version from August 2023."
+- Or I can send you a [permalink](https://github.com/NordicHPC/sonar/blob/75daafc86582feb06299d6a47c82112f39888152/src/util.rs#L40-L44):
+
+```{figure} img/code-portion.png
+:alt: Screen-shot of a code portion
+:width: 100%
+:class: with-border
+
+Permalink that points to a code portion.
+```
+
+
+## What we typically like to snapshot
 
 - Software (this is how it started but Git/GitHub can track a lot more)
 - Scripts
@@ -59,31 +115,19 @@ Version control is an answer to these questions (do you recognize some of them?)
 - Website sources
 - Data
 
-
 ````{discussion}
-  Discuss the following directory listing. What possible problems
-  do you anticipate with this kind of "version control":
+  In this example somebody tried to keep track of versions without a version
+  control system tool like Git.  Discuss the following directory listing. What
+  possible problems do you anticipate with this kind of "version control":
   ```shell
-  mylib-1.2.4_18.3.07.tgz         somecode_CP_10.8.07.tgz
-  mylib-1.2.4_27.7.07.tgz         somecode_CP_17.5.07.tgz
-  mylib-1.2.4_29.4.08.tgz         somecode_CP_23.8.07_final.tgz
-  mylib-1.2.4_6.10.07.tgz         somecode_CP_24.5.07.tgz
-  mylib-1.2.5_23.4.08.tgz         somecode_CP_25.5.07.tgz
-  mylib-1.2.5_25.5.07.tgz         somecode_CP_29.5.07.tgz
-  mylib-1.2.5_6.6.07.tgz          somecode_CP_30.5.07.tgz
-  mylib-1.2.5_bexc.tgz            somecode_CP_6.10.07.tgz
-  mylib-1.2.5_d0.tgz              somecode_CP_6.6.07.tgz
-  mylib-1.3.0_4.4.08.tgz          somecode_CP_8.6.07.tgz
-  mylib-1.3.1_4.4.08.tgz          somecode_KT.tgz
-  mylib-1.3.2_22.4.08.tgz         somecode_PI1_2007.tgz
-  mylib-1.3.2_4.4.08.tgz          somecode_PI_2007.tgz
-  mylib-1.3.2_5.4.08.tgz          somecode_PI2_2007.tgz
-  mylib-1.3.3_1.5.08.tgz          somecode_PI_CP_18.3.07.tgz
-  mylib-1.3.3_20.5.08.tgz         somecode_11.5.08.tgz
-  mylib-1.3.3_tstrm_27.6.08.tgz   somecode_15.4.08.tgz
-  mylib-1.3.3_wk_10.8.08.tgz      somecode_17.6.09_unfinished.tgz
-  mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
-  mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
+  myproject-2019.zip
+  myproject-2020-February.zip
+  myproject-2021-August.zip
+  myproject-2023-09-19-working.zip
+  myproject-2023-09-21.zip
+  myproject-2023-09-21-test.zip
+  myproject-2023-09-21-myversion.zip
+  myproject-2023-09-21-newfeature.zip
   ...
   ```
 
@@ -95,49 +139,17 @@ Version control is an answer to these questions (do you recognize some of them?)
 ````
 
 
-## Why version control
-
-### Roll-back functionality
-
-- Mistakes happen - without recorded snapshots you cannot easily undo mistakes and **go back to a working version**.
-
-
-### Branching
-
-- Often you need to work on **several issues/features in one code** - without branching this can be messy and confusing.
-- You can simulate branching by copying the entire code to multiple places but also this will be messy and confusing.
-
-
-### Collaboration
-
-With version control, none of these are needed anymore (or have much simpler answers):
-
-- *"I will just finish my work and then you can start with your changes."*
-- *"Can you please send me the latest version?"*
-- *"You never got the code I send by email? Maybe the spam filter marked it as malicious?"*
-- *"Where is the latest version?"*
-- *"Which version are you using?"*
-- *"Which version have the authors used in the paper I am trying to reproduce?"*
-
-
-### Reproducibility
-
-- How do you indicate which version of your code you have used in your paper?
-- When you find a bug, how do you know **when precisely** this bug was introduced
-  (Are published results affected? Do you need to inform collaborators or users of your code?).
-
-
 ## Difficulties of version control
 
 Despite the benefits, let's be honest, there are some difficulties:
 
 - One more thing to learn (it's probably worth it and will save you more time in the long run; basic career skill).
-- Difficult if some people don't want to use it (in the worst case, you can version control on your side and send them versions).
+- Difficult if your collaborators don't want to use it (in the worst case, you can version control on your side and email them versions).
 - Advanced things can be difficult, but basics are often enough (ask others for help when needed).
 
+---
 
-```{discussion} Why Git?
-We will use [Git](https://git-scm.com) to record snapshots of our work:
+```{discussion} Why Git and not another tool?
 - **Easy to set up**: no server needed.
 - **Very popular**: chances are high you will need to contribute to somebody else's code which is tracked with Git.
 - **Distributed**: good backup, no single point of failure, you can track and
@@ -146,41 +158,8 @@ We will use [Git](https://git-scm.com) to record snapshots of our work:
 - Important **platforms** such as [GitHub](https://github.com), [GitLab](https://gitlab.com), and [Bitbucket](https://bitbucket.org)
   build on top of Git.
 
-However, any version control is better than no version control and it is OK to prefer a different tool than Git.
-
-Other tools:
-- [Subversion](https://subversion.apache.org)
-- [Mercurial](https://www.mercurial-scm.org)
-
-Interesting newcomer:
-- [Pijul](https://pijul.org/)
+However, any version control is better than no version control and it is OK to
+prefer a different tool than Git such as
+[Subversion](https://subversion.apache.org),
+[Mercurial](https://www.mercurial-scm.org), [Pijul](https://pijul.org/), or others.
 ```
-
-
-## A real-life example
-
-Before we create a new repository from scratch and learn how to record changes
-and create and merge branches, let us explore an **existing Git repository** on
-GitHub.  The goal here is not to teach GitHub yet (we will explain some of the
-concepts later), but rather to get a glimpse of the wider picture and see the
-social aspect to know what our end goal is.
-
-As an example we can explore a famous Git repository which was used
-to produce the Event Horizon Telescope images: [https://github.com/achael/eht-imaging](https://github.com/achael/eht-imaging).
-
-- History
-  - Explore the [repository](https://github.com/achael/eht-imaging).
-  - Explore the [history](https://github.com/achael/eht-imaging/commits/main).
-  - Note that there are [branches](https://github.com/achael/eht-imaging/network).
-- Collaboration
-  - You can refer to [code portions](https://github.com/achael/eht-imaging/blob/31361ab62c5718b08612fc75e409795f004f5071/ehtim/imaging/starwarps.py#L66-L75)
-    (so much simpler to send a link rather than describe which file to open and where to scroll to).
-  - Browse the [forks](https://github.com/achael/eht-imaging/network/members).
-  - See [contributors](https://github.com/achael/eht-imaging/graphs/contributors).
-- Releases
-  - Explore the [release history](https://github.com/achael/eht-imaging/releases).
-- Reproducibility
-  - Discuss the **enormous value of the annotation feature**: [example file](https://github.com/achael/eht-imaging/blame/main/ehtim/imaging/starwarps.py).
-
-While some of these are GitHub features, it all can be done on other sites, or
-by yourself without GitHub at all.
