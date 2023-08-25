@@ -1,8 +1,7 @@
 # Git under the hood
 
 ```{objectives}
-- Verify that branches are pointers to commits.
-- Verify that branches are extremely lightweight.
+- Verify that branches are pointers to commits and extremely lightweight.
 ```
 
 ```{instructor-note}
@@ -30,25 +29,24 @@ the hood.
 $ cd .git
 $ ls -l
 
-total 44
--rw------- 1 bast users   36 May  7 11:47 COMMIT_EDITMSG
--rw------- 1 bast users   21 May  7 11:47 HEAD
-drwx------ 2 bast users 4096 May  7 11:46 branches
--rw------- 1 bast users   92 May  7 11:46 config
--rw------- 1 bast users   73 May  7 11:46 description
-drwx------ 2 bast users 4096 May  7 11:46 hooks
--rw------- 1 bast users  225 May  7 11:47 index
-drwx------ 2 bast users 4096 May  7 11:46 info
-drwx------ 3 bast users 4096 May  7 11:47 logs
-drwx------ 8 bast users 4096 May  7 11:47 objects
-drwx------ 4 bast users 4096 May  7 11:46 refs
+drwxr-xr-x   - user 25 Aug 15:51 branches
+.rw-r--r-- 499 user 25 Aug 15:52 COMMIT_EDITMSG
+.rw-r--r--  92 user 25 Aug 15:51 config
+.rw-r--r--  73 user 25 Aug 15:51 description
+.rw-r--r--  21 user 25 Aug 15:51 HEAD
+drwxr-xr-x   - user 25 Aug 15:51 hooks
+.rw-r--r-- 137 user 25 Aug 15:52 index
+drwxr-xr-x   - user 25 Aug 15:51 info
+drwxr-xr-x   - user 25 Aug 15:52 logs
+drwxr-xr-x   - user 25 Aug 15:52 objects
+drwxr-xr-x   - user 25 Aug 15:51 refs
 ```
 
 Git stores everything under the .git folder in your repository. In fact, **the
 .git directory is the Git repository.**
 
 Previously when you wrote the commit messages using your text editor, they
-were in fact saved to COMMIT_EDITMSG.
+were in fact saved to `COMMIT_EDITMSG`.
 
 Each commit in Git is stored as a "blob". This blob contains information about
 the author and the commit message. The blob references another blob that lists
@@ -99,7 +97,7 @@ Then explore the `tree` object, then the `file` object, etc. recursively using t
 ## Demonstration: experimenting with branches
 
 Let us lift the hood and create few branches manually.  The
-goal of this exercise is to hopefully create an "aha" moment and provide us a
+goal of this exercise is to hopefully create an "Aha!" moment and provide us a
 good understanding of the underlying model.
 
 We are starting from the `main` branch and create an `idea` branch:
@@ -131,9 +129,8 @@ $ cd .git
 $ cd refs/heads
 $ ls -l
 
-total 8
--rw------- 1 bast users 41 May  7 11:47 idea
--rw------- 1 bast users 41 May  7 11:47 main
+.rw-r--r-- 41 user 25 Aug 15:54 idea
+.rw-r--r-- 41 user 25 Aug 15:52 main
 ```
 
 Let us check what the `idea` file looks like
@@ -141,7 +138,7 @@ Let us check what the `idea` file looks like
 ```console
 $ cat idea
 
-7f3582dfbad6539cfa60f5b21bfad41d1b58a618
+045e3db14740c60684d745e5fb891ae71e335611
 ```
 
 Now let us replicate this file:
@@ -166,7 +163,6 @@ ref: refs/heads/idea-3
 ```
 
 **Now we are ready for the aha moment!**
-
 First let us go back to the working area:
 ```console
 $ cd ..
