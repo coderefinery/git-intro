@@ -10,7 +10,7 @@
 ```
 
 
-## Commits: keeping track of changes
+## Git is all about keeping track of changes
 
 We will learn how to keep track of changes first in a terminal ([example
 repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
