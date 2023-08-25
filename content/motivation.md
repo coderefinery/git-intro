@@ -10,6 +10,34 @@
 ```
 
 
+## Why do we need to keep track of versions?
+
+Version control is an answer to these questions (do you recognize some of them?):
+
+- "It broke ... hopefully I have a working version somewhere?"
+
+- "Can you please send me the latest version?"
+
+- "Where is the latest version?"
+
+- "Which version are you using?"
+
+- "Which version have the authors used in the paper I am trying to reproduce?"
+
+- "Found a bug! Since when was it there?"
+
+- "I am sure it used to work. When did it change?"
+
+
+
+
+
+
+
+
+
+
+
 ## The essence of version control
 
 - System which **records snapshots** of a project
@@ -99,12 +127,13 @@ With version control, none of these are needed anymore (or have much simpler ans
   (Are published results affected? Do you need to inform collaborators or users of your code?).
 
 
-### Compare with Dropbox or Google Drive
+## Difficulties of version control
 
-- Document/code is in one place, no need to email snapshots.
-- How can you use an old version? Possible to get old versions but in a much less useful way - snapshots of files, not directories.
-- What if you want to work on multiple versions at the same time? Do you make a copy? How do you merge copies?
-- What if you don't have internet?
+Despite the benefits, let's be honest, there are some difficulties:
+
+- One more thing to learn (it's probably worth it and will save you more time in the long run; basic career skill).
+- Difficult if some people don't want to use it (in the worst case, you can version control on your side and send them versions).
+- Advanced things can be difficult, but basics are often enough (ask others for help when needed).
 
 
 ```{discussion} Why Git?
@@ -126,15 +155,6 @@ Other tools:
 Interesting newcomer:
 - [Pijul](https://pijul.org/)
 ```
-
-
-## Difficulties of version control
-
-Despite the benefits, let's be honest, there are some difficulties:
-
-- One more thing to learn (it's probably worth it and will save you more time in the long run; basic career skill).
-- Difficult if some people don't want to use it (in the worst case, you can version control on your side and send them versions).
-- Advanced things can be difficult, a bit too many gotchas (basics are often enough, ask others for help when needed).
 
 
 ## A real-life example
