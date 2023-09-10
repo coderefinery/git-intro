@@ -1,7 +1,7 @@
 .. _index:
 
-Introduction to version control with Git
-========================================
+Introduction to version control with Git - Why we want to track versions and how to go back in time to a working version
+========================================================================================================================
 
 This is the introductory lesson to version control using
 `Git <https://git-scm.com/>`__. It is assumed to be the very first thing
