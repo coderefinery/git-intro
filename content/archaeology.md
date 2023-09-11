@@ -49,7 +49,7 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 - You can try this on some of your GitHub repositories, too!
 
 
-### git grep: to search through the repository
+### `git grep`: to search through the repository
 
 With `git grep` you can find all lines in a repository which contain some string or regular expression.
 This is useful to find out where in the code some variable is used or some error message printed:
@@ -72,7 +72,7 @@ it is also possible to search through all changes with `git log -S sometext`
 which can be useful to find where something got removed.
 
 
-### git show: to inspect commits
+### `git show`: to inspect commits
 
 We have seen this one before already. Using `git show` we can inspect an individual commit if
 we know its hash:
@@ -88,7 +88,7 @@ $ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
 ```
 
 
-### git annotate: to annotate code with commit metadata
+### `git annotate`: to annotate code with commit metadata
 
 Try it out on a file - with `git annotate` you can see line by line who and **when** the line was modified
 last. It also prints the precise hash of the last change which modified each line. Incredibly useful
@@ -116,7 +116,7 @@ Discuss how these two affect the annotation:
 ```
 
 
-### git switch --create: to inspect code in the past
+### `git switch --create`: to inspect code in the past
 
 We can create branches pointing to a commit in the past.
 This is the recommended mechanism to inspect old code:
@@ -211,7 +211,7 @@ $ git switch --create branchname somehash
 
 ---
 
-## Finding out when something broke/changed with git bisect
+## Finding out when something broke/changed with `git bisect`
 
 > *But I am sure it used to work! Strange.*
 
