@@ -141,10 +141,10 @@ $ # if we like we can delete the "older-code" branch
 $ git branch -d older-code
 ```
 
-On newer Git versions this is the preferred command:
+On old Git versions you need to use this:
 
 ```console
-$ git switch --create branchname somehash
+$ git checkout -b BRANCHNAME SOMEHASH
 ```
 
 (exercise-history)=
