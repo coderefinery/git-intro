@@ -55,7 +55,8 @@ Or, you can undo things selectively:
 
 If you have staged changes, you have at least two options to undo the staging:
 - `git restore --staged .` followed by `git status` and `git restore .`
-- `git reset --hard HEAD` throws away everything that is not in last commit (`HEAD`)
+- `git reset --hard HEAD` throws away everything that is not in last
+  commit (`HEAD` - this literal word, this isn't a placeholder)
 
 ---
 

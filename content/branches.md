@@ -27,7 +27,9 @@ Linear Git repository.
 
 - Commits are depicted here as little boxes with abbreviated hashes.
 - Here the branch `main` points to a commit.
-- "HEAD" is the current position (remember the recording head of tape recorders?).
+- "HEAD" is the current position (remember the recording head of tape
+  recorders?). (when we say `HEAD`, we mean those literal letters -
+  this isn't a placeholder for something else)
 - When we talk about branches, we often mean all parent commits, not only the commit pointed to.
 
 
