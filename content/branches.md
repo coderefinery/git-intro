@@ -549,24 +549,24 @@ Let us pause for a moment and recapitulate what we have just learned:
 
 ```console
 $ git branch               # see where we are
-$ git branch <name>        # create branch <name>
-$ git switch <name>        # switch to branch <name>
-$ git merge <name>         # merge branch <name> (to current branch)
-$ git branch -d <name>     # delete branch <name>
-$ git branch -D <name>     # delete unmerged branch
+$ git branch NAME          # create branch NAME
+$ git switch NAME          # switch to branch NAME
+$ git merge NAME           # merge branch NAME (to current branch)
+$ git branch -d NAME       # delete branch NAME
+$ git branch -D NAME       # delete unmerged branch
 ```
 
 Since the following command combo is so frequent:
 
 ```console
-$ git branch <name>        # create branch <name>
-$ git switch <name>        # switch to branch <name>
+$ git branch NAME          # create branch NAME
+$ git switch NAME          # switch to branch NAME
 ```
 
 There is a shortcut for it:
 
 ```console
-$ git switch --create <name>  # create branch <name> and switch to it
+$ git switch --create NAME  # create branch NAME and switch to it
 ```
 
 ### Typical workflows

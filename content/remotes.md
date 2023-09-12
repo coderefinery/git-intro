@@ -147,10 +147,10 @@ We now want to try the second option that GitHub suggests:
 1. Now go to your guacamole repository on your computer.
 2. Check that you are in the right place with `git status`.
 3. Copy paste the three lines to the terminal and execute those, in my case (**you
-  need to replace the "user" part and possibly also the repository name**):
+  need to replace the "USER" part and possibly also the repository name**):
 
   ```console
-  $ git remote add origin git@github.com:user/recipe.git
+  $ git remote add origin git@github.com:USER/recipe.git
   $ git branch -M main
   $ git push -u origin main
   ```
@@ -167,7 +167,7 @@ Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-To github.com:user/recipe.git
+To github.com:USER/recipe.git
  * [new branch]      main -> main
 Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
@@ -177,7 +177,7 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```{exercise} Push-1: Push your guacamole recipe to GitHub
 - Go to your recipe directory on your computer.
 - Check that you are in the right place with `git status`.
-- Define the remote with `git remote add origin git@github.com:user/recipe.git`.
+- Define the remote with `git remote add origin git@github.com:USER/recipe.git`.
 - Rename the current branch to "main", if needed: `git branch -M main`.
 - Push the local branch "main" to the remote: `git push -u origin main`.
 ```
@@ -199,14 +199,14 @@ At this point only a brief demo - if you copy the SSH or HTTPS address, you can 
 (again adapt the "namespace/repository.git" part):
 
 ```console
-$ git clone git@github.com:user/recipe.git
+$ git clone git@github.com:USER/recipe.git
 ```
 
 This creates a directory called "recipe" unless it already exists. You can also specify the target directory
 on your computer:
 
 ```console
-$ git clone git@github.com:user/recipe.git myrecipe
+$ git clone git@github.com:USER/recipe.git myrecipe
 ```
 
 What just happened? **Think of cloning as downloading the `.git` part to your

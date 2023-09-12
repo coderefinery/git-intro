@@ -42,23 +42,23 @@ See our status:
   with `git config --global alias.graph "log --all --graph --decorate --oneline"`
 * `git diff`: show difference between working directory and last commit
 * `git diff --staged`: show difference between staging area and last commit
-* `git show <commit>`: inspect individual commits
+* `git show COMMIT`: inspect individual commits
 
 General work:
 
-* `git add`:
+* `git add FILE`:
   - Add a new file
   - Add a file to staging
 * `git commit`: record a version, add it to current branch
 * `git commit --amend`: amend our last commit
 * `git branch`: show which branch we're on
-* `git branch <name>`: create a new branch called "name"
-* `git restore <file>`: restore last committed/staged version of &lt;file&gt;, losing unstaged changes
-* `git switch --create <branch-name>`: create a new branch and switch to it
-* `git revert abc123`: create a new commit which reverts commit abc123
-* `git reset --soft abc123`: remove all commits after abc123, but keep their modifications as staged changes
-* `git reset --hard abc123`: remove all commits after abc123, permanently throwing away their changes
-* `git merge <branch-name>`: merge branch &lt;branch-name&gt; into current branch
-* `git grep`: search for patterns in tracked files
-* `git annotate`: find out when a specific line got introduced and by whom
+* `git branch NAME`: create a new branch called "name"
+* `git restore FILE`: restore last committed/staged version of FILE, losing unstaged changes
+* `git switch --create BRANCH-NAME`: create a new branch and switch to it
+* `git revert HASH`: create a new commit which reverts commit HASH
+* `git reset --soft HASH`: remove all commits after HASH, but keep their modifications as staged changes
+* `git reset --hard HASH`: remove all commits after HASH, permanently throwing away their changes
+* `git merge BRANCH-NAME`: merge branch BRANCH-NAME into current branch
+* `git grep PATTERN`: search for patterns in tracked files
+* `git annotate FILE`: find out when a specific line got introduced and by whom
 * `git bisect`: find a commit which broke some functionality

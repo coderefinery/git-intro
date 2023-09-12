@@ -65,7 +65,7 @@ things.
    stashed?
 
 ```{solution}
-5: Yes you can. With `git stash pop <index>` you can decie which stash
+5: Yes you can. With `git stash pop INDEX` you can decie which stash
 index to pop.
 
 6: In this case Git will ask us to resolve the conflict the same way
@@ -86,7 +86,7 @@ You basically know how to do this:
 
 ```console
 $ git switch --create temporary  # create a branch and switch to it
-$ git add <paths>                # stage changes
+$ git add PATHS                  # stage changes
 $ git commit                     # commit them
 $ git switch main                # back to main, continue your work there ...
 $ git switch temporary           # continue where you left off
