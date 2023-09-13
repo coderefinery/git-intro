@@ -15,7 +15,8 @@ env:
   # builds and fail on any warnings.
   #SPHINXOPTS: "-W --keep-going -T"
   GENERATE_PDF: true   # to enable, must be 'true' lowercase
-  MULTIBRANCH: true    # same
+  PDF_FILENAME: lesson.pdf
+  MULTIBRANCH: true    # to enable, must be 'true' lowercase
 
 
 jobs:
@@ -91,7 +92,7 @@ jobs:
         run: |
           pip install https://github.com/rkdarst/sphinx_pyppeteer_builder/archive/refs/heads/main.zip
           make pyppeteer
-          mv _build/pyppeteer/*.pdf _build/dirhtml/_static/lesson.pdf
+          mv _build/pyppeteer/*.pdf _build/dirhtml/_static/${PDF_FILENAME}.pdf
 
       # Stage all deployed assets in _gh-pages/ for simplicity, and to
       # prepare to do a multi-branch deployment.
@@ -130,12 +131,14 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     needs: build
+    # This if can't use the env context - find better way later.
+    if: ${{ github.event_name == 'push' }}
     permissions:
       contents: write
-    if: ${{ github.event_name == 'push' }}
 
     steps:
       - uses: actions/download-artifact@v3
+        if: ${{ github.event_name == 'push' && ( env.MULTIBRANCH == 'true' || github.ref == format('refs/heads/{0}', env.DEFAULT_BRANCH )) }}
         with:
           name: gh-pages-build
           path: _gh-pages/
@@ -149,8 +152,7 @@ jobs:
       # https://github.com/peaceiris/actions-gh-pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' }}
-        #if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/$DEFAULT_BRANCH' }}
+        if: ${{ github.event_name == 'push' && ( env.MULTIBRANCH == 'true' || github.ref == format('refs/heads/{0}', env.DEFAULT_BRANCH )) }}
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
