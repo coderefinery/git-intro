@@ -157,6 +157,9 @@ See our [installation
 instructions](https://coderefinery.github.io/installation/ssh/) to
 set up SSH access.
 
+**From now on, if you know that SSH works, you should always select
+SSH as the clone URL from Github, or translate the URL to start with
+the right thing yourself:** `git@github.com:`
 ````
 ````{group-tab} HTTPS
 ```console
@@ -165,6 +168,10 @@ $ git config --get credential.manager
 If it return anything, then the credential manager is probably
 configured and HTTPS cloning will work (but you can't verify it until
 you try using it).
+
+From now on, **if you know that HTTPS works, you should always select
+HTTPS as the clone URL from Github, or translate the URL to start with
+the right thing yourself:** `https://github.com/`
 ````
 `````
 
@@ -252,19 +259,27 @@ Now other people can clone this repository and contribute changes. In the
 we will learn how this works.
 
 At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this
-(again adapt the "namespace/repository.git" part):
+(again adapt the `USER` in the "USER/repository.git" part):
 
 
 `````{tabs}
 ````{group-tab} SSH
 ```console
-$ git clone git@github.com:user/recipe.git
+$ git clone git@github.com:USER/recipe.git
 ```
+
+**From now on, if you are using SSH, you should pay attention and make
+sure your clone URLs start with `git@github.com:` now and in future
+lessons.**
 ````
 ````{group-tab} HTTPS
 ```console
-$ git clone https://github.com/user/recipe.git
+$ git clone https://github.com/USER/recipe.git
 ```
+
+**From now on, if you are using HTTPS, you should pay attention and make
+sure your clone URLs start with `https://github.com/` now and in future
+lessons.**
 ````
 `````
 
