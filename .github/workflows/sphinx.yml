@@ -119,6 +119,7 @@ jobs:
 
       # Save artifact for the next step.
       - uses: actions/upload-artifact@master
+        if: ${{ github.event_name == 'push' }}
         with:
           name: gh-pages-build
           path: _gh-pages/
@@ -131,6 +132,7 @@ jobs:
     needs: build
     permissions:
       contents: write
+    if: ${{ github.event_name == 'push' }}
 
     steps:
       - uses: actions/download-artifact@v3
