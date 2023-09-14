@@ -51,11 +51,12 @@ You can always do that with:
 
 Or, you can undo things selectively:
 
-- `git restore -p` (decide which portions of changes to undo) or `git restore <path>` (decide which path/file)
+- `git restore -p` (decide which portions of changes to undo) or `git restore PATH` (decide which path/file)
 
 If you have staged changes, you have at least two options to undo the staging:
 - `git restore --staged .` followed by `git status` and `git restore .`
-- `git reset --hard HEAD` throws away everything that is not in last commit (`HEAD`)
+- `git reset --hard HEAD` throws away everything that is not in last
+  commit (`HEAD` - this literal word, this isn't a placeholder)
 
 ---
 
@@ -145,7 +146,7 @@ This means that we avoid this command on commits that we have shared with others
 You can **reset branch history** to move your branch back to some
 point in the past.
 
-* `git reset --hard <hash>` will force a branch label to any other point.  All
+* `git reset --hard HASH` will force a branch label to any other point.  All
   other changes are lost (but it is possible to recover if you force reset by mistake).
 * Be careful if you do this - it can mess stuff up.  Use `git graph` a
   lot before and after.
@@ -160,8 +161,8 @@ point in the past.
   all of that and get our repositories to a similar state.
 
   - First, we will look at our history (`git log`/`git graph`) and
-    find the last commit `<hash>` before our tests.
-  - Then, we will `git reset --hard <hash>` to that.
+    find the last commit `HASH` before our tests.
+  - Then, we will `git reset --hard HASH` to that.
   - Then, `git graph` again to see what happened.
 
   ```console
@@ -198,16 +199,16 @@ wrong branch.
 **Solution 1 using git cherry-pick**:
 1. Make sure that the correct branch exists and if not, create it. Make sure to
    create it from the commit hash where you wish you had created it from: `git
-   branch <branchname> <hash>`
+   branch BRANCHNAME HASH`
 2. Switch to the correct branch.
-3. `git cherry-pick <hash>` can be used to take a specific commit to the
+3. `git cherry-pick HASH` can be used to take a specific commit to the
    current branch. Cherry-pick all commits that should have gone to the correct
    branch, **from oldest to most recent**.
 4. Rewind the branch that accidentally got wrong commits with `git reset --hard` (see also above).
 
 **Solution 2 using git reset --hard** (makes sense if the correct branch should
 contain all commits of the accidentally modified branch):
-1. Create the correct branch, pointing at the latest commit: `git branch <branchname>`.
+1. Create the correct branch, pointing at the latest commit: `git branch BRANCHNAME`.
 2. Check with `git log` or `git graph` that both branches point to the same, latest, commit.
 3. Rewind the branch that accidentally got wrong commits with `git reset --hard` (see also above).
 
@@ -219,7 +220,7 @@ the other branch. But sometimes we run this command on the wrong branch.
 
 1. Check with `git log` the commit hash that you would like to rewind the
    wrongly modified branch to.
-2. Rewind the branch that accidentally got wrong commits with `git reset --hard <hash>` (see also above).
+2. Rewind the branch that accidentally got wrong commits with `git reset --hard HASH` (see also above).
 
 
 ## Recovering from conflict after git pull

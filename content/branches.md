@@ -27,7 +27,9 @@ Linear Git repository.
 
 - Commits are depicted here as little boxes with abbreviated hashes.
 - Here the branch `main` points to a commit.
-- "HEAD" is the current position (remember the recording head of tape recorders?).
+- "HEAD" is the current position (remember the recording head of tape
+  recorders?). (when we say `HEAD`, we mean those literal letters -
+  this isn't a placeholder for something else)
 - When we talk about branches, we often mean all parent commits, not only the commit pointed to.
 
 
@@ -549,24 +551,24 @@ Let us pause for a moment and recapitulate what we have just learned:
 
 ```console
 $ git branch               # see where we are
-$ git branch <name>        # create branch <name>
-$ git switch <name>        # switch to branch <name>
-$ git merge <name>         # merge branch <name> (to current branch)
-$ git branch -d <name>     # delete branch <name>
-$ git branch -D <name>     # delete unmerged branch
+$ git branch NAME          # create branch NAME
+$ git switch NAME          # switch to branch NAME
+$ git merge NAME           # merge branch NAME (to current branch)
+$ git branch -d NAME       # delete branch NAME
+$ git branch -D NAME       # delete unmerged branch
 ```
 
 Since the following command combo is so frequent:
 
 ```console
-$ git branch <name>        # create branch <name>
-$ git switch <name>        # switch to branch <name>
+$ git branch NAME          # create branch NAME
+$ git switch NAME          # switch to branch NAME
 ```
 
 There is a shortcut for it:
 
 ```console
-$ git switch --create <name>  # create branch <name> and switch to it
+$ git switch --create NAME  # create branch NAME and switch to it
 ```
 
 ### Typical workflows

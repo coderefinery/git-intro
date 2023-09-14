@@ -55,7 +55,7 @@ With `git grep` you can find all lines in a repository which contain some string
 This is useful to find out where in the code some variable is used or some error message printed:
 
 ```console
-$ git grep sometext
+$ git grep TEXT
 $ git grep "some text with spaces"
 ```
 
@@ -78,7 +78,7 @@ We have seen this one before already. Using `git show` we can inspect an individ
 we know its hash:
 
 ```console
-$ git show somehash
+$ git show HASH
 ```
 
 For instance:
@@ -95,7 +95,7 @@ last. It also prints the precise hash of the last change which modified each lin
 for reproducibility.
 
 ```console
-$ git annotate somefile
+$ git annotate FILE
 ```
 
 Example:
@@ -122,7 +122,7 @@ We can create branches pointing to a commit in the past.
 This is the recommended mechanism to inspect old code:
 
 ```console
-$ git switch --create branchname somehash
+$ git switch --create BRANCHNAME HASH
 ```
 
 Example (lines starting with "#" are only comments):
@@ -249,7 +249,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
   ```
 - Then bisect/iterate your way until you find the commit that broke it.
 - If you want to go back to start, type `git bisect reset`.
-- This can even be automatized with `git bisect run <script>`.
+- This can even be automatized with `git bisect run SCRIPT`.
   For this you write a script that returns zero/non-zero (success/failure).
 
 (exercise-bisect)=
@@ -308,17 +308,17 @@ We will probably arrive at a solution which is similar to `git bisect`:
 
   How to navigate to the parent of a commit with hash `somehash`:
   ```console
-  $ git switch --create branchname somehash~1
+  $ git switch --create BRANCHNAME SOMEHASH~1
   ```
 
   Instead of a tilde you can also use this:
   ```console
-  $ git switch --create branchname somehash^
+  $ git switch --create BRANCHNAME SOMEHASH^
   ```
 ````
 
 ```{keypoints}
 - git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project.
-- `git switch --create <name> <hash>` is the recommended mechanism to inspect old code.
+- `git switch --create NAME HASH` is the recommended mechanism to inspect old code.
 - On newer Git you can use the more intuitive `git switch --create branchname somehash`.
 ```
