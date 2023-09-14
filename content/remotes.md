@@ -130,6 +130,8 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 
 ---
 
+(clone-method)=
+
 ## Authenticating to Github: SSH or HTTPS?
 
 **How does Github know who you are?**  This is hard and there are two
