@@ -31,10 +31,10 @@
 - Example (we don't need to type yet):
 
   ```console
-  $ git add somefile.txt
+  $ git add FILE.txt
   $ git commit
 
-  $ git add file.txt anotherfile.txt
+  $ git add FILE.txt ANOTHERFILE.txt
   $ git commit
   ```
 
@@ -314,8 +314,8 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 ## Optional exercises: comparing, renaming, and removing
 
 ```{exercise} (optional) Basic-2: Comparing and showing commits
-1. Inspect differences between commit hashes with `git diff <hash1> <hash2>`.
-2. Have a look at specific commits with `git show <hash>`.
+1. Inspect differences between commit hashes with `git diff HASH1 HASH2`.
+2. Have a look at specific commits with `git show HASH`.
 ```
 
 ````{exercise} (optional) Basic-3: Visual diff tools
@@ -323,12 +323,12 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 
   On Windows or Linux:
   ```console
-  $ git difftool --tool=meld <hash>
+  $ git difftool --tool=meld HASH
   ```
 
   On macOS:
   ```console
-  $ git difftool --tool=opendiff <hash>
+  $ git difftool --tool=opendiff HASH
   ```
 
   ```{figure} img/meld.png
@@ -478,7 +478,7 @@ But it is also possible to work from within a Git graphical user interface (GUI)
 Now we know how to save snapshots:
 
 ```console
-$ git add <file(s)>
+$ git add FILE(S)
 $ git commit
 ```
 

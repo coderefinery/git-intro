@@ -216,7 +216,8 @@ prepare commits since **you can modify and stage several times before committing
 ```
 
 **git reset \\--soft HEAD~1** (move HEAD back by one but keep changes and stage
-them) would do the opposite of **git commit**.
+them) would do the opposite of **git commit**.  (in this case, `HEAD`
+is literally this - not a replacement)
 
 Going back to the last staged version:
 ```text
