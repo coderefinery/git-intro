@@ -130,6 +130,7 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 
 ---
 
+% This anchor used for linking from other lessons
 (clone-method)=
 
 ## Authenticating to Github: SSH or HTTPS?
