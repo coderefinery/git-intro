@@ -135,10 +135,13 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 **How does Github know who you are?**  This is hard and there are two
 options.
 
-* **SSH** is the classic method, which could have been set up in the
-  [installation instructions](LINK)
+* **SSH** is the classic method, using Secure Shell remote connection
+  keys.
 * **HTTPS** works with the **Git Credential Manager**, which is an
   extra add-on that works easily in Windows and Mac.
+
+Read how to install them from the [installation
+instructions](https://coderefinery.github.io/installation/ssh/).
 
 Test which one you should use:
 
@@ -159,13 +162,14 @@ set up SSH access.
 
 **From now on, if you know that SSH works, you should always select
 SSH as the clone URL from Github, or translate the URL to start with
-the right thing yourself:** `git@github.com:`
+the right thing yourself:** `git@github.com:` (with the trailing
+`:`).
 ````
 ````{group-tab} HTTPS
 ```console
-$ git config --get credential.manager
+$ git config --get credential.helper
 ```
-If it return anything, then the credential manager is probably
+If this shows something, then the credential manager is probably
 configured and HTTPS cloning will work (but you can't verify it until
 you try using it).
 
@@ -176,7 +180,9 @@ the right thing yourself:** `https://github.com/`
 `````
 
 If you do not have these configured, please watch as we do this episode and you
-can prepare before the [collaborative Git
+can check the [installation
+instructions](https://coderefinery.github.io/installation/ssh/)
+prepare before the next [collaborative Git
 lesson](https://coderefinery.github.io/git-collaborative/), where we will need
 one of these set up.
 
