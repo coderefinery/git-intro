@@ -62,15 +62,10 @@ There are different types of remotes:
 
 ## Type-along: Create a new repository on GitHub
 
-```{admonition} We need SSH keys configured for this part to work
-To try this part during exercise or type-along, you need SSH keys configured
-and the public key deposited on GitHub (see our [installation
-instructions](https://coderefinery.github.io/installation/ssh/)).
+```{important}
 
-If you do not have these configured, please watch as we do this episode and you
-can prepare before the [collaborative Git
-lesson](https://coderefinery.github.io/git-collaborative/), where we will need
-this set up.
+Don't do anything yet.  We make a choice in the next section, and then
+do these steps in the following one.
 ```
 
 For the rest of this page, we will make a new repository for our
@@ -135,6 +130,65 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 
 ---
 
+## Authenticating to Github: SSH or HTTPS?
+
+**How does Github know who you are?**  This is hard and there are two
+options.
+
+* **SSH** is the classic method, using Secure Shell remote connection
+  keys.
+* **HTTPS** works with the **Git Credential Manager**, which is an
+  extra add-on that works easily in Windows and Mac.
+
+Read how to install them from the [installation
+instructions](https://coderefinery.github.io/installation/ssh/).
+
+Test which one you should use:
+
+`````{tabs}
+````{group-tab} SSH
+Try this command:
+
+```console
+$ ssh -T git@github.com
+```
+If it returns `Hi USERNAME! You've successfully authenticated, ...`,
+then SSH is configured and the following steps will work with the SSH
+cloning.
+
+See our [installation
+instructions](https://coderefinery.github.io/installation/ssh/) to
+set up SSH access.
+
+**From now on, if you know that SSH works, you should always select
+SSH as the clone URL from Github, or translate the URL to start with
+the right thing yourself:** `git@github.com:` (with the trailing
+`:`).
+````
+````{group-tab} HTTPS
+```console
+$ git config --get credential.helper
+```
+If this shows something, then the credential manager is probably
+configured and HTTPS cloning will work (but you can't verify it until
+you try using it).
+
+From now on, **if you know that HTTPS works, you should always select
+HTTPS as the clone URL from Github, or translate the URL to start with
+the right thing yourself:** `https://github.com/`
+````
+`````
+
+If you do not have these configured, please watch as we do this episode and you
+can check the [installation
+instructions](https://coderefinery.github.io/installation/ssh/)
+prepare before the next [collaborative Git
+lesson](https://coderefinery.github.io/git-collaborative/), where we will need
+one of these set up.
+
+
+---
+
 ## Pushing our guacamole recipe repository to GitHub
 
 To push changes to the project please **select SSH**.
@@ -149,8 +203,23 @@ We now want to try the second option that GitHub suggests:
 3. Copy paste the three lines to the terminal and execute those, in my case (**you
   need to replace the "USER" part and possibly also the repository name**):
 
+
+  `````{tabs}
+  ````{group-tab} SSH
+  See above for if SSH is the right option for you.
   ```console
   $ git remote add origin git@github.com:USER/recipe.git
+  ```
+  ````
+  ````{group-tab} HTTPS
+  See above for if HTTPS is the right option for you.
+  ```console
+  $ git remote add origin https://github.com/USER/recipe.git
+  ```
+  ````
+  `````
+
+  ```console
   $ git branch -M main
   $ git push -u origin main
   ```
@@ -196,18 +265,45 @@ Now other people can clone this repository and contribute changes. In the
 we will learn how this works.
 
 At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this
-(again adapt the "namespace/repository.git" part):
+(again adapt the `USER` in the "USER/repository.git" part):
 
+
+`````{tabs}
+````{group-tab} SSH
 ```console
 $ git clone git@github.com:USER/recipe.git
 ```
 
+**From now on, if you are using SSH, you should pay attention and make
+sure your clone URLs start with `git@github.com:` now and in future
+lessons.**
+````
+````{group-tab} HTTPS
+```console
+$ git clone https://github.com/USER/recipe.git
+```
+
+**From now on, if you are using HTTPS, you should pay attention and make
+sure your clone URLs start with `https://github.com/` now and in future
+lessons.**
+````
+`````
+
 This creates a directory called "recipe" unless it already exists. You can also specify the target directory
 on your computer:
 
+`````{tabs}
+````{group-tab} SSH
 ```console
 $ git clone git@github.com:USER/recipe.git myrecipe
 ```
+````
+````{group-tab} HTTPS
+```console
+$ git clone https://github.com/user/recipe.git myrecipe
+```
+````
+`````
 
 What just happened? **Think of cloning as downloading the `.git` part to your
 computer**. After downloading the `.git` part the branch pointed to by HEAD is
