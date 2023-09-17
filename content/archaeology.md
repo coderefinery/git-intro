@@ -375,7 +375,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
   $ git log --oneline | tail -n 1
   ```
 
-  How to navigate to the parent of a commit with hash `somehash`:
+  How to navigate to the parent of a commit with hash SOMEHASH:
   ```console
   $ git switch --create BRANCHNAME SOMEHASH~1
   ```
