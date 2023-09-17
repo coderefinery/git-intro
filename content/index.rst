@@ -91,7 +91,7 @@ branching.
    `GitLab <https://gitlab.com>`__ and
    `Bitbucket <https://bitbucket.org>`__ allow similar workflows and
    basically everything that we will discuss is transferable. With this
-   material and these exercises we do not endorse the company
+   material and these exercises we do not implicitly endorse the company
    `GitHub <https://github.com>`__. We have chosen to demonstrate a
    number of concepts using examples with
    `GitHub <https://github.com>`__ because it is currently the most
