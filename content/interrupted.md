@@ -45,16 +45,17 @@ things.
   you give).
 - The stashes form a stack, so you can stash several batches of modifications.
 
+
 (exercise-stashing)=
 
 ### Exercise: Stashing
 
 ````{exercise} Interrupted-1: Stash some uncommitted work
 1. Make a change.
-2. Check status/diff, stash the change, check status/diff again.
+2. Check status/diff, stash the change with `git stash`, check status/diff again.
 3. Make a separate, unrelated change which doesn't touch the same
    lines.  Commit this change.
-4. Pop off the stash you saved, check status/diff.
+4. Pop off the stash you saved with `git stash pop`, and check status/diff.
 5. Optional: Do the same but stash twice.  Also check `git stash list`.
    Can you pop the stashes in the opposite order?
 6. Advanced: What happens if stashes conflict with other changes? Make
@@ -89,7 +90,7 @@ $ git switch --create temporary  # create a branch and switch to it
 $ git add PATHS                  # stage changes
 $ git commit                     # commit them
 $ git switch main                # back to main, continue your work there ...
-$ git switch temporary           # continue where you left off
+$ git switch temporary           # continue again on "temporary" where you left off
 ```
 
 Later you can merge it to main or rebase it on top of main and resume work.
