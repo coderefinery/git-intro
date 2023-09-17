@@ -1,8 +1,8 @@
 # Inspecting history
 
 ```{objectives}
-- Quickly find a line of code, find out why it was introduced and when.
-- Quickly find the commit that changed a behavior.
+- Be able find a line of code, find out why it was introduced and when.
+- Be able to quickly find the commit that changed a behavior.
 ```
 
 ```{instructor-note}
@@ -34,9 +34,7 @@ fatal: not a git repository (or any of the parent directories): .git
 First the instructor demonstrates few commands on a real life example
 repository <https://github.com/networkx/networkx> (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
-Later we will practice these in groups in an archaeology exercise (below).
-After demonstrating the command line tools, the instructor can also demonstrate searching, "show" and "annotate"
-in the GitHub browser for this example project.
+Later we will practice these in an archaeology exercise (below).
 ```
 
 
@@ -49,103 +47,174 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 - You can try this on some of your GitHub repositories, too!
 
 
-### `git grep`: to search through the repository
+### Searching text patterns in the repository
 
-With `git grep` you can find all lines in a repository which contain some string or regular expression.
-This is useful to find out where in the code some variable is used or some error message printed:
+`````{tabs}
+  ````{group-tab} Command line
+    With `git grep` you can find all lines in a repository which contain some string or regular expression.
+    This is useful to find out where in the code some variable is used or some error message printed:
 
-```console
-$ git grep TEXT
-$ git grep "some text with spaces"
-```
+    ```console
+    $ git grep TEXT
+    $ git grep "some text with spaces"
+    ```
 
-In the [networkx](https://github.com/networkx/networkx) repository you can try:
+    In the [networkx](https://github.com/networkx/networkx) repository you can try:
 
-```console
-$ git clone https://github.com/networkx/networkx
-$ cd networkx
-$ git grep -i fixme
-```
+    ```console
+    $ git clone https://github.com/networkx/networkx
+    $ cd networkx
+    $ git grep -i fixme
+    ```
 
-While `git grep` searches the **current state** of the repository,
-it is also possible to search through all changes with `git log -S sometext`
-which can be useful to find where something got removed.
+    While `git grep` searches the **current state** of the repository,
+    it is also possible to search through all changes with `git log -S sometext`
+    which can be useful to find where something got removed.
+  ````
+
+  ````{group-tab} Browser (GitHub)
+    We can try the same example in the browser:
+    <https://github.com/search?q=repo%3Anetworkx%2Fnetworkx%20fixme&type=code>
+
+    ```{figure} img/archaeology/search.png
+       :alt: Searching for "fixme" in a GitHub repository
+       :width: 100%
+       :class: with-border
+
+       Searching for "fixme" in a GitHub repository.
+    ```
+  ````
+`````
 
 
-### `git show`: to inspect commits
+### Inspecting individual commits
 
-We have seen this one before already. Using `git show` we can inspect an individual commit if
-we know its hash:
+`````{tabs}
+  ````{group-tab} Command line
+    We have seen this one before already. Using `git show` we can inspect an individual commit if
+    we know its hash:
 
-```console
-$ git show HASH
-```
+    ```console
+    $ git show HASH
+    ```
 
-For instance:
+    For instance:
+    ```console
+    $ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
+    ```
+  ````
 
-```console
-$ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
-```
+  ````{group-tab} Browser (GitHub)
+    We can try the same example in the browser:
+    <https://github.com/networkx/networkx/commit/759d589bdfa61aff99e0535938f14f67b01c83f7>
+
+    ```{figure} img/archaeology/show.png
+       :alt: Inspecting an individual commit on GitHub
+       :width: 100%
+       :class: with-border
+
+       Inspecting an individual commit on GitHub.
+    ```
+  ````
+`````
 
 
-### `git annotate`: to annotate code with commit metadata
+### Line-by-line code annotation with metadata
 
-Try it out on a file - with `git annotate` you can see line by line who and **when** the line was modified
-last. It also prints the precise hash of the last change which modified each line. Incredibly useful
-for reproducibility.
+With `git annotate` you can see line by line who and **when** the line was
+modified last. It also prints the precise hash of the last change which
+modified each line. Incredibly useful for reproducibility.
 
-```console
-$ git annotate FILE
-```
+`````{tabs}
+  ````{group-tab} Command line
+    ```console
+    $ git annotate FILE
+    ```
 
-Example:
+    Example:
+    ```console
+    $ git annotate networkx/convert_matrix.py
+    ```
 
-```console
-$ git annotate networkx/convert_matrix.py
-```
+    If you annotate in a terminal and the file is longer than the screen, Git by default uses the program `less` to
+    scroll the output.
+    Use `/sometext` `<ENTER>` to find "sometext" and you can cycle through the results with `n` (next) and `N` (last).
+    You can also use page up/down to scroll. You can quit with `q`.
+  ````
 
-If you annotate in a terminal and the file is longer than the screen, Git by default uses the program `less` to
-scroll the output.
-Use `/sometext` `<ENTER>` to find "sometext" and you can cycle through the results with `n` (next) and `N` (last).
-You can also use page up/down to scroll. You can quit with `q`.
+  ````{group-tab} Browser (GitHub)
+    We can try the same example in the browser:
+    <https://github.com/networkx/networkx/blame/main/networkx/convert_matrix.py>
+
+    ```{figure} img/archaeology/annotate.png
+       :alt: Screenshot of file annotation on GitHub
+       :width: 100%
+       :class: with-border
+
+       Screenshot of file annotation on GitHub.
+    ```
+  ````
+`````
 
 ```{discussion}
-Discuss how these two affect the annotation:
-- wrapping long lines of text/code into shorter lines
-- autoformatting tools such as `black`
+Discuss how these relatively trivial changes affect the annotation:
+- Wrapping long lines of text/code into shorter lines
+- Auto-formatting tools such as `black`
+- Editors that automatically remove trailing whitespace
 ```
 
 
-### `git switch --create`: to inspect code in the past
+### Inspecting code in the past
 
-We can create branches pointing to a commit in the past.
-This is the recommended mechanism to inspect old code:
+`````{tabs}
+  ````{group-tab} Command line
+    We can create branches pointing to a commit in the past.
+    This is the recommended mechanism to inspect old code:
 
-```console
-$ git switch --create BRANCHNAME HASH
-```
+    ```console
+    $ git switch --create BRANCHNAME HASH
+    ```
 
-Example (lines starting with "#" are only comments):
+    Example (lines starting with "#" are only comments):
 
-```console
-$ # create branch called "older-code" from hash 347e6292419b
-$ git switch --create older-code 347e6292419bd0e4bff077fe971f983932d7a0e9
+    ```console
+    $ # create branch called "older-code" from hash 347e6292419b
+    $ git switch --create older-code 347e6292419bd0e4bff077fe971f983932d7a0e9
 
-$ # now you can navigate and inspect the code as it was back then
-$ # ...
+    $ # now you can navigate and inspect the code as it was back then
+    $ # ...
 
-$ # after we are done we can switch back to "main"
-$ git switch main
+    $ # after we are done we can switch back to "main"
+    $ git switch main
 
-$ # if we like we can delete the "older-code" branch
-$ git branch -d older-code
-```
+    $ # if we like we can delete the "older-code" branch
+    $ git branch -d older-code
+    ```
 
-On old Git versions you need to use this:
+    On old Git versions which do not know the `switch` command (before 2.23), you
+    need to use this instead:
 
-```console
-$ git checkout -b BRANCHNAME SOMEHASH
-```
+    ```console
+    $ git checkout -b BRANCHNAME SOMEHASH
+    ```
+  ````
+
+  ````{group-tab} Browser (GitHub)
+    We now know how to visit a specific commit:
+    <https://github.com/networkx/networkx/commit/347e629>
+
+    Once we are there we can "Browse files" at that point in history.
+
+    ```{figure} img/archaeology/browse-files.png
+       :alt: Browsing code in the past on GitHub
+       :width: 100%
+       :class: with-border
+
+       Browsing code in the past on GitHub.
+    ```
+  ````
+`````
+
 
 (exercise-history)=
 
@@ -175,6 +244,9 @@ $ git checkout -b BRANCHNAME SOMEHASH
   5. How would you bring the code to the version of the code right before that line was last modified?
 
   ````{solution}
+  We provide here a solution for the command line but we also encourage you to
+  try to solve this in the browser.
+
   1. We use `git grep`:
      ```console
      $ git grep "Logic error in degree_correlation"
@@ -213,11 +285,11 @@ $ git checkout -b BRANCHNAME SOMEHASH
 
 ## Finding out when something broke/changed with `git bisect`
 
-> *But I am sure it used to work! Strange.*
+> *"But I am sure it used to work! Strange."*
 
-- Sometimes you realize that something broke.
-- You know that it used to work.
-- You do not know when it broke.
+Sometimes you realize that something broke.
+You know that it used to work.
+You do not know when it broke.
 
 ```{discussion} How would you solve this?
 Before we go on first discuss how you would solve this problem: You know that it worked
@@ -225,9 +297,6 @@ Before we go on first discuss how you would solve this problem: You know that it
 
 - How would you find the commit which changed it?
 - Why could it be useful to know the commit that changed it?
-
-**Video workshops**: Write down ideas on how you would solve it in the collaborative
-note and we will discuss various approaches.
 ```
 
 We will probably arrive at a solution which is similar to `git bisect`:
@@ -320,5 +389,4 @@ We will probably arrive at a solution which is similar to `git bisect`:
 ```{keypoints}
 - git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project.
 - `git switch --create NAME HASH` is the recommended mechanism to inspect old code.
-- On newer Git you can use the more intuitive `git switch --create branchname somehash`.
 ```
