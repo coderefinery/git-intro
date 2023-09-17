@@ -23,9 +23,11 @@ branching.
 
 .. prereq::
 
-   -  A reasonably recent version of Git (v2.28 or newer) is installed **and configured**
-      (`installation
-      instructions <https://coderefinery.github.io/installation/>`__).
+   -  A reasonably recent version of Git (ideal is 2.28 or newer but we
+      recommend at least 2.23) is installed **and configured** (`installation
+      instructions <https://coderefinery.github.io/installation/>`__). But also on older
+      Git (v2.0) the workshop will work and we will offer workarounds for Git below 2.28
+      or 2.23.
    -  For one of the episodes we need a `GitHub <https://github.com>`__ user
       account (but alternatives exist, see below).
    -  Being comfortable with the command line. No expertise is required, but
