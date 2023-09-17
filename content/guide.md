@@ -15,7 +15,7 @@ Times here are in CE(S)T.
         1. Record changes
         2. Optional exercises: Comparing, renaming, and removing
     - 10:20 - 10:40 (20 min) [Basics - history, commit log, ignoring - teaching](https://coderefinery.github.io/git-intro/basics/#git-history-and-log)
-    - 10:40 - 11:00 (20 min) Exercise (**to be added**): something about using history
+    - 10:40 - 11:00 (20 min) [One or several optional exercises](https://coderefinery.github.io/git-intro/basics/#optional-exercises-comparing-renaming-and-removing)
 
 - 11:00 - 12:00: Lunch break
 
