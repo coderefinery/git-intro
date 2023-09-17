@@ -142,13 +142,14 @@ one of these set up.
 
 ---
 
-## Creating a new repository on GitHub
+## Publishing an existing repository from laptop to GitHub
 
-For the rest of this page, we will make a new repository for our
-guacamole recipe on GitHub ({ref}`here <index>` we motivate why we demonstrate this
-with GitHub),
-send our code to it, and then see how
-others can get the code from it.
+```{admonition} If you started in the browser and have nothing on your laptop yet
+It is possible, that you already have a repository on GitHub if you followed
+the examples and exercises in previous episodes in the browser. In this case,
+please watch others publish their repository and try to clone your repository
+to the laptop using instructions at the bottom of this page.
+```
 
 Make sure that you are **logged into GitHub**.
 
@@ -187,13 +188,6 @@ Once you click the green "Create repository", you will see a page similar to:
 
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
-
----
-
-## Pushing our guacamole recipe repository to GitHub
-
-To push changes to the project please **select SSH**.
-For this to work [you will need your SSH keys configured](https://coderefinery.github.io/installation/ssh/).
 
 We now want to try the second option that GitHub suggests:
 
@@ -243,24 +237,13 @@ To github.com:USER/recipe.git
 Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
 
-### Exercise: Push your guacamole recipe to GitHub
-
-```{exercise} Push-1: Push your guacamole recipe to GitHub
-- Go to your recipe directory on your computer.
-- Check that you are in the right place with `git status`.
-- Define the remote with `git remote add origin git@github.com:USER/recipe.git`.
-- Rename the current branch to "main", if needed: `git branch -M main`.
-- Push the local branch "main" to the remote: `git push -u origin main`.
-```
-
-**Reload your GitHub project website and - taa-daa - your commits should now be
-online!**
-
-What just happened? **Think of publishing a repository as uploading the `.git` part online**.
+**Reload your GitHub project website** and - taa-daa - your commits should now be
+online! What just happened? **Think of publishing a repository as uploading
+the `.git` part online**.
 
 ---
 
-## Cloning a repository
+## Cloning a repository from GitHub to laptop
 
 Now other people can clone this repository and contribute changes. In the
 [collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson

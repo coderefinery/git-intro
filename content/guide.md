@@ -42,7 +42,7 @@ Times here are in CE(S)T.
     - 09:10 - 09:25 (15 min) [Sharing repositories online - teaching/type-along](https://coderefinery.github.io/git-intro/remotes/#sharing-repositories-online)
     - 09:25 - 09:50 (25 min) Exercise
         - Set up SSH keys
-        - [Pushing our guacamole recipe repository to GitHub](https://coderefinery.github.io/git-intro/remotes/#pushing-our-guacamole-recipe-repository-to-github)
+        - Pushing our guacamole recipe repository to GitHub
         - Clone repository
     - 09:50 - 10:00 (10 min) Break
     - 10:00 - 10:15 (15 min) [Inspecting history - teaching/type-along](https://coderefinery.github.io/git-intro/archaeology/#inspecting-history)
