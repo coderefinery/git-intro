@@ -144,6 +144,9 @@ One of the basic principles of Git is that it is **easy to create repositories**
        Click on the "plus" symbol on top right, then on "New repository".
     ```
 
+    Another way to create a new repository is to visit
+    <https://github.com/new> directly.
+
     ```{figure} img/basics/new-repo-form.png
        :alt: Searching for "fixme" in a GitHub repository
        :width: 100%
