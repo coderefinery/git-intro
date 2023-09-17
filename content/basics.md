@@ -97,10 +97,11 @@ One of the basic principles of Git is that it is **easy to create repositories**
 ```console
 $ mkdir recipe
 $ cd recipe
-$ git init
+$ git init -b main
 ```
 
-That's it! With `git init` have now created an empty Git repository.
+That's it! With `git init -b main` have now created an empty Git repository
+where `main` is the default branch (more about branches later).
 
 We will use `git status` a lot to check out what is going on:
 
@@ -488,15 +489,15 @@ Every state is then saved and later we will learn how to go back to these "check
 and how to undo things.
 
 ```console
-$ git init    # initialize new repository
-$ git add     # add files or stage file(s)
-$ git commit  # commit staged file(s)
-$ git status  # see what is going on
-$ git log     # see history
-$ git diff    # show unstaged/uncommitted modifications
-$ git show    # show the change for a specific commit
-$ git mv      # move tracked files
-$ git rm      # remove tracked files
+$ git init -b main  # initialize new repository (main is default branch)
+$ git add           # add files or stage file(s)
+$ git commit        # commit staged file(s)
+$ git status        # see what is going on
+$ git log           # see history
+$ git diff          # show unstaged/uncommitted modifications
+$ git show          # show the change for a specific commit
+$ git mv            # move tracked files
+$ git rm            # remove tracked files
 ```
 
 Git is not ideal for large binary files
@@ -530,7 +531,7 @@ Git is not ideal for large binary files
 ````
 
 ```{keypoints}
-- Initializing a Git repository is simple: `git init`.
+- It takes only one command to initialize a Git repository: `git init -b main`.
 - Commits should be used to tell a story.
 - Git uses the .git folder to store the snapshots.
 - Don't be afraid to stage and commit often. Better too often than not often enough.
