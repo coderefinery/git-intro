@@ -2,9 +2,9 @@
 
 ## Other cheatsheets
 
-* [Interactive git cheatsheet](http://www.ndpsoftware.com/git-cheatsheet.html)
-* [Very detailed 2-page git
+* [Detailed 2-page Git
   cheatsheet](https://aaltoscicomp.github.io/cheatsheets/git-the-way-you-need-it-cheatsheet.pdf)
+* [Interactive Git cheatsheet](http://www.ndpsoftware.com/git-cheatsheet.html)
 
 
 ## Glossary
@@ -32,7 +32,7 @@
 Setup:
 
 * `git config`: edit configuration options
-* `git init`: create new repository
+* `git init -b main`: create new repository with `main` as the default branch
 
 See our status:
 
