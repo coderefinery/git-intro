@@ -23,10 +23,10 @@
 
 ### Projects with few persons: changes are reviewed by others
 
-- The `main` branch is write-protected.
 - You create new feature branches for changes.
 - Changes are reviewed before they are merged to the `main` branch
   (more about that in the [collaborative Git lesson](https://coderefinery.github.io/git-collaborative/)).
+- The `main` branch is write-protected and can only be changed with pull requests or merge requests.
 
 
 ### When you distribute releases
@@ -39,7 +39,7 @@
 
 ## How about staging and committing?
 
-- It is OK to start committing directly.
+- It is OK to start committing directly by doing `git commit SOMEFILE`.
 - Commit early and often: rather create too many commits than too few.
   You can always combine commits later.
 - Once you commit, it is very, very hard to really lose your code.
