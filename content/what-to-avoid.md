@@ -13,7 +13,7 @@ commit it at all.
 
 **Not updating your branch before starting new work**: Few things are worse
 than doing work and then noticing a lot of conflicts because
-un-related work was done in the meantime or even before you started.  Or noticing that someone
+unrelated but conflicting work was done in the meantime or even before you started.  Or noticing that someone
 else has already done it.  This problem is largest when you come back
 to an active project weeks or months later.
 
@@ -42,6 +42,7 @@ But don't let perfect commit messages stop you from the most important point, co
 committed which can significantly increase the repository size. Note that a
 subsequent `git rm` does not remove the addition from the repository history.
 Code review can help detecting accidental large file additions.
+You can also add an automated test which checks for file sizes during a pull request or merge request.
 
 ```{discussion}
 Question to all seasoned Git users: What are we missing on this page? Please
