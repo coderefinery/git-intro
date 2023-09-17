@@ -26,17 +26,16 @@ branching.
    -  A reasonably recent version of Git (ideal is 2.28 or newer but we
       recommend at least 2.23) is installed **and configured** (`installation
       instructions <https://coderefinery.github.io/installation/>`__). But also on older
-      Git (v2.0) the workshop will work and we will offer workarounds for Git below 2.28
+      Git (2.0) the workshop will work and we will offer workarounds for Git below 2.28
       or 2.23.
    -  For one of the episodes we need a `GitHub <https://github.com>`__ user
       account (but alternatives exist, see below).
    -  Being comfortable with the command line. No expertise is required, but
-      the lesson will be mostly taken from the command line (we also have another
-      lesson on `Collaborating and sharing using GitHub without command line
-      <https://coderefinery.github.io/github-without-command-line/>`__).
-   -  Students should be familiar with using a **text editor** on their
-      system. If you are new to text editors, we recommend to start with Nano
-      or VS Code.
+      the lesson will be mostly taken from the command line. For most commands, where reasonable,
+      we also offer the possibility to participate through the browser.
+   -  To edit files on the local computer, learners should be familiar with
+      using a **text editor** on their system. If you are new to text editors,
+      we recommend to start with Nano or VS Code.
 
 
 .. toctree::
