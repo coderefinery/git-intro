@@ -476,7 +476,7 @@ The second file is called `instructions.txt` and contains:
 
 (exercise-diff-and-rename)=
 
-## Optional exercises: comparing, renaming, and removing
+## Optional exercises: Comparing changes
 
 ``````{exercise} (optional) Basic-2: Comparing and showing commits
   `````{tabs}
