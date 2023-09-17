@@ -19,7 +19,7 @@
 - Every time we **commit** a snapshot, Git records a snapshot of the **entire project**, saves it, and assigns it a version.
 - These snapshots are kept inside a sub-folder called `.git`.
 - If we remove `.git`, we remove the repository and history (but keep the working directory!).
-- `.git` uses relative paths - you can move the whole thing somewhere else and it will still work.
+- The directory `.git` uses relative paths - you can move the whole repository somewhere else and it will still work.
 - Git doesn't do anything unless you ask it to (it **does not record anything automatically**).
 - Multiple interfaces to Git exist (command line, graphical interfaces, web interfaces).
 
@@ -50,14 +50,14 @@ Git staging and committing.
 ```{discussion} Question for the more advanced participants
 What do you think will be the outcome if you
 stage a file and then edit it and stage it again, do this several times and
-at the end perform a commit? (think of focusing several scenes and pressing the
-shutter at the end)
+at the end perform a commit? Think of focusing several scenes and pressing the
+shutter at the end.
 ```
 
 
-## Configuring Git
+## Configuring Git command line
 
-Before we start we need to configure Git.
+Before we start using Git on the command line, we need to configure Git.
 This is also part of the
 [installation instructions](https://coderefinery.github.io/installation/shell-and-git/#configuration)
 but we need to make sure we all have
@@ -83,222 +83,386 @@ Instructors, give learners enough time to do the above configuration steps.
 ## Type-along: Tracking a guacamole recipe with Git
 
 We will learn how to initialize a Git repository, how to track changes, and how
-to make delicious guacamole (inspiration: suggestion by B. Smith in a discussion in the Carpentries mailing list)!
+to make delicious guacamole! (Inspiration for this example based on a
+suggestion by B. Smith in a discussion in the Carpentries mailing list)
 
 The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
-but not everybody may be able to relate to a program written in e.g. Python or another language.
+but not everybody may be able to relate to a program written in e.g. Python or another specific language.
 
 ```{instructor-note}
 Instructors, please encourage now that participants type along.
 ```
 
+```{note}
+It is possible to go through this lesson in the command line or in the browser
+(on GitHub).
+
+- We recommend to start with the command line but later to also try in the browser.
+- If you get really stuck in the command line, try following in the browser and
+  later you can try to return to the command line.
+```
+
+
+## Creating a repository
+
 One of the basic principles of Git is that it is **easy to create repositories**:
 
-```console
-$ mkdir recipe
-$ cd recipe
-$ git init -b main
-```
+`````{tabs}
+  ````{group-tab} Command line
+    ```console
+    $ mkdir recipe
+    $ cd recipe
+    $ git init -b main
+    ```
 
-That's it! With `git init -b main` have now created an empty Git repository
-where `main` is the default branch (more about branches later).
+    That's it! With `git init -b main` have now created an empty Git repository
+    where `main` is the default branch (more about branches later).
 
-We will use `git status` a lot to check out what is going on:
+    We will use `git status` a lot to check out what is going on:
 
-```console
-$ git status
+    ```console
+    $ git status
 
-On branch main
+    On branch main
 
-No commits yet
+    No commits yet
 
-nothing to commit (create/copy files and use "git add" to track)
-```
+    nothing to commit (create/copy files and use "git add" to track)
+    ```
 
-We will make sense of this information during this workshop.
+    We will make sense of this information during this workshop.
+  ````
+
+  ````{group-tab} Browser (GitHub)
+    First log into GitHub, then follow the screenshots and descriptions below.
+
+    ```{figure} img/basics/new-repo-plus.png
+       :alt: Screenshot on GitHub before a new repository form is opened
+       :width: 100%
+       :class: with-border
+
+       Click on the "plus" symbol on top right, then on "New repository".
+    ```
+
+    ```{figure} img/basics/new-repo-form.png
+       :alt: Searching for "fixme" in a GitHub repository
+       :width: 100%
+       :class: with-border
+
+       Choose a repository name, add a short description, **check "Add a
+       README file"**, finally "Create repository".
+    ```
+
+    After you have clicked "Create repository" you should see a repository overview
+    with one file (README.md) and one commit.
+  ````
+`````
+
+
+## Adding files and committing changes
 
 Let us now **create two files**.
 
-One file is called `instructions.txt` and contains:
+One file is called `ingredients.txt` and contains:
+```shell
+* 2 avocados
+* 1 chili
+* 1 lime
+* 2 tsp salt
+```
 
+The second file is called `instructions.txt` and contains:
 ```shell
 * chop avocados
 * chop onion
+* chop chili
 * squeeze lime
 * add salt
 * and mix well
 ```
 
-The second file is called `ingredients.txt` and contains:
+`````{tabs}
+  ````{group-tab} Command line
+    As mentioned above, in Git you can always check the status of files in your repository using
+    `git status`. It is always a safe command to run and in general a good idea to
+    do when you are trying to figure out what to do next:
 
-```shell
-* 2 avocados
-* 1 lime
-* 2 tsp salt
-```
+    ```console
+    $ git status
 
-As mentioned above, in Git you can always check the status of files in your repository using
-`git status`. It is always a safe command to run and in general a good idea to
-do when you are trying to figure out what to do next:
+    On branch main
 
-```console
-$ git status
+    No commits yet
 
-On branch main
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+        ingredients.txt
+        instructions.txt
 
-No commits yet
+    nothing added to commit but untracked files present (use "git add" to track)
+    ```
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+    The two files are untracked in the repository (directory). You want to **add the files** (focus the camera)
+    to the list of files tracked by Git. Git does not track
+    any files automatically and you need make a conscious decision to add a file. Let's do what
+    Git hints at, and add the files, one by one:
 
-	ingredients.txt
-	instructions.txt
+    ```console
+    $ git add ingredients.txt
+    $ git status
 
-nothing added to commit but untracked files present (use "git add" to track)
-```
+    On branch main
 
-The two files are untracked in the repository (directory). You want to **add the files** (focus the camera)
-to the list of files tracked by Git. Git does not track
-any files automatically and you need make a conscious decision to add a file. Let's do what
-Git hints at and add the files:
+    No commits yet
 
+    Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+        new file:   ingredients.txt
 
-```console
-$ git add ingredients.txt
-$ git add instructions.txt
-$ git status
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+        instructions.txt
+    ```
 
-On branch main
+    Now this change is *staged* and ready to be committed.
+    Let us now commit the change to the repository:
+    ```console
+    $ git commit -m "adding ingredients"
 
-Initial commit
+    [main (root-commit) f146d25] adding ingredients
+     1 file changed, 4 insertions(+)
+     create mode 100644 ingredients.txt
+    ```
 
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
+    Right after we query the status to get this useful command into our muscle memory:
+    ```console
+    $ git status
+    ```
 
-	new file:   ingredients.txt
-	new file:   instructions.txt
-```
+    Now stage and commit also the other file:
+    ```console
+    $ git add instructions.txt
+    $ git commit -m "adding instructions"
+    ```
 
-Now this change is *staged* and ready to be committed.
+    We will add a third file to the repository, `README.md`, containing:
+    ```markdown
+    # recipe
 
-Let us now commit the change to the repository:
+    This is an exercise repository.
+    ```
 
-```console
-$ git commit -m "adding ingredients and instructions"
+    Now stage and commit also the `README.md` file:
+    ```console
+    $ git add README.md
+    $ git commit -m "adding README"
+    ```
 
-[main (root-commit) aa243ea] adding ingredients and instructions
- 2 files changed, 8 insertions(+)
- create mode 100644 ingredients.txt
- create mode 100644 instructions.txt
-```
+    What does the `-m` flag mean? Let us check the help page for that command:
+    ```console
+    $ git help commit
+    ```
 
-Right after we query the status to get this useful command into our muscle memory:
+    You should see a very long help page as the tool is very versatile (press q to quit).
+    Do not worry about this now but keep in mind that you can always read the help files
+    when in doubt. Searching online can also be useful, but choosing search terms
+    to find relevant information takes some practice and discussions in some
+    online threads may be confusing.
+    Note that help pages also work when you don't have a network connection!
+  ````
 
-```console
-$ git status
-```
+  ````{group-tab} Browser (GitHub)
+    ```{figure} img/basics/add-file.png
+       :alt: Screenshot on GitHub before a new file is created
+       :width: 100%
+       :class: with-border
 
-What does the `-m` flag mean? Let us check the help page for that command:
+       Click on "Add file", then "Create new file".
+    ```
 
-```console
-$ git help commit
-```
+    ```{figure} img/basics/edit-file.png
+       :alt: Screenshot on GitHub when editing a file
+       :width: 100%
+       :class: with-border
 
-You should see a very long help page as the tool is very versatile (press q to quit).
-Do not worry about this now but keep in mind that you can always read the help files
-when in doubt. Searching online can also be useful, but choosing search terms
-to find relevant information takes some practice and discussions in some
-online threads may be confusing.
-Note that help pages also work when you don't have a network connection!
+       Edit the file and specify the file name.
+    ```
+
+    ```{figure} img/basics/commit-changes.png
+       :alt: Screenshot on GitHub when editing the commit message
+       :width: 100%
+       :class: with-border
+
+       Before you commit the change, adjust the commit message.
+    ```
+
+    After you have added `ingredients.txt`, add also `instructions.txt` in a similar
+    way.
+
+    We have added two files, each in one commit. However, we ended up with
+    three files and three commits since `README.md` was automatically committed
+    when we created the repository on GitHub.
+  ````
+`````
 
 
 (exercise-record-changes)=
 
 ## Exercise: Record changes
 
-````{exercise} Basic-1: Record changes
+``````{exercise} Basic-1: Record changes
   Add 1/2 onion to `ingredients.txt` and also the instruction
-  to "enjoy!" to `instructions.txt`. Do not stage the changes yet (do not `git add` yet).
+  to "enjoy!" to `instructions.txt`.
 
-  When you are done editing the files, try `git diff`:
+  `````{tabs}
+    ````{group-tab} Command line
+      After modifying the files, do not stage the changes yet (do not `git add`
+      yet).
 
-  ```console
-  $ git diff
-  ```
+      When you are done editing the files, try `git diff`:
+      ```console
+      $ git diff
+      ```
 
-  You will see (can you identify in there the two added lines?):
+      You will see (can you identify in there the two added lines?):
+      ```diff
+      diff --git a/ingredients.txt b/ingredients.txt
+      index 4422a31..ba8854f 100644
+      --- a/ingredients.txt
+      +++ b/ingredients.txt
+      @@ -2,3 +2,4 @@
+       * 1 chili
+       * 1 lime
+       * 2 tsp salt
+      +* 1/2 onion
+      diff --git a/instructions.txt b/instructions.txt
+      index 7811273..2b11074 100644
+      --- a/instructions.txt
+      +++ b/instructions.txt
+      @@ -4,3 +4,4 @@
+       * squeeze lime
+       * add salt
+       * and mix well
+      +* enjoy!
+      ```
 
-  ```diff
-  diff --git a/ingredients.txt b/ingredients.txt
-  index 2607525..ec0abc6 100644
-  --- a/ingredients.txt
-  +++ b/ingredients.txt
-  @@ -1,3 +1,4 @@
-   * 2 avocados
-   * 1 lime
-   * 2 tsp salt
-  +* 1/2 onion
-  diff --git a/instructions.txt b/instructions.txt
-  index 6a8b2af..f7dd63a 100644
-  --- a/instructions.txt
-  +++ b/instructions.txt
-  @@ -3,3 +3,4 @@
-   * squeeze lime
-   * add salt
-   * and mix well
-  +* enjoy!
-  ```
+      Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
+      ```console
+      $ git add ingredients.txt
+      $ git commit -m "add half an onion"
+      $ git add instructions.txt
+      $ git commit                   # <-- we have left out -m "..."
+      ```
 
-  Now first stage and commit each change separately (what happens when we leave out the `-m` flag?):
+      When you leave out the `-m` flag, Git should open an editor where you can edit
+      your commit message. This message will be associated and stored with the
+      changes you made. This message is your chance to explain what you've done and
+      convince others (and your future self) that the changes you made were
+      justified.  Write a message and save and close the file.
 
-  ```console
-  $ git add ingredients.txt
-  $ git commit -m "add half an onion"
-  $ git add instructions.txt
-  $ git commit                   # <-- we have left out -m "..."
-  ```
+      When you are done committing the changes, experiment with these commands:
+      ```console
+      $ git log
+      $ git log --stat
+      $ git log --oneline
+      ```
+    ````
 
-  When you leave out the `-m` flag, Git should open an editor where you can edit
-  your commit message. This message will be associated and stored with the
-  changes you made. This message is your chance to explain what you've done and
-  convince others (and your future self) that the changes you made were
-  justified.  Write a message and save and close the file.
+    ````{group-tab} Browser (GitHub)
+      We can make modifications to a file by clicking on the file and then the
+      pen symbol:
+      ```{figure} img/basics/pen-symbol.png
+         :alt: Screenshot on GitHub before clicking on the pen symbol
+         :width: 100%
+         :class: with-border
 
-  When you are done committing the changes, experiment with these commands:
+         By clicking on the pen symbol we can switch to edit mode.
+      ```
 
-  ```console
-  $ git log
-  $ git log --stat
-  $ git log --oneline
-  ```
-````
+      ```{figure} img/basics/preview.png
+         :alt: Screenshot on GitHub when previewing file changes
+         :width: 100%
+         :class: with-border
+
+         Before committing the change, click on "Preview".
+      ```
+
+      Our goal is to arrive at two new commits:
+      - "add half an onion" (modifying `ingredients.txt`)
+      - "don't forget to enjoy" (modifying `instructions.txt`)
+
+      When you are done committing the changes, try to browse commit history
+      on GitHub.
+    ````
+  `````
+``````
 
 
 ## Git history and log
 
-If you haven't yet, please try now `git log`:
+`````{tabs}
+  ````{group-tab} Command line
+    If you haven't yet, please try now `git log`:
 
-```console
-$ git log
+    ```console
+    $ git log
 
-commit ea73a8a9ef9bd5c0aee3f0868d0ebc8457e1f94b
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Wed Feb 9 10:12:39 2022 +0100
+    commit e7cf023efe382340e5284c278c6ae2c087dd3ff7 (HEAD -> main)
+    Author: Radovan Bast <bast@users.noreply.github.com>
+    Date:   Sun Sep 17 19:12:47 2023 +0200
 
-    don't forget to enjoy
+        don't forget to enjoy
 
-commit 6316947beb2b7ffa0cc822370cfdd701050227a4
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Wed Feb 9 10:12:30 2022 +0100
+    commit 79161b6e67c62ad4688a58c1e54183334611a390
+    Author: Radovan Bast <bast@users.noreply.github.com>
+    Date:   Sun Sep 17 19:12:32 2023 +0200
 
-    add half an onion
+        add half an onion
 
-commit 03491ed253ffcee16772e35b1de4efd349711f05
-Author: Radovan Bast <bast@users.noreply.github.com>
-Date:   Wed Feb 9 10:11:30 2022 +0100
+    commit a3394e39535343c4dae3bb4f703741a31aa8b78a
+    Author: Radovan Bast <bast@users.noreply.github.com>
+    Date:   Sun Sep 17 18:47:14 2023 +0200
 
-    adding ingredients and instructions
-```
+        adding README
+
+    commit 369624674e63de48055a65bf63055bd59c985d22
+    Author: Radovan Bast <bast@users.noreply.github.com>
+    Date:   Sun Sep 17 18:46:58 2023 +0200
+
+        adding instructions
+
+    commit f146d25b94569a15e94d7f0da6f15d7554f76c49
+    Author: Radovan Bast <bast@users.noreply.github.com>
+    Date:   Sun Sep 17 18:35:52 2023 +0200
+
+        adding ingredients
+    ```
+  ````
+
+  ````{group-tab} Browser (GitHub)
+    ```{figure} img/basics/commits.png
+       :alt: Screenshot on GitHub before clicking on commit history
+       :width: 100%
+       :class: with-border
+
+       Click on the history symbol with (here) 5 commits.
+    ```
+
+    ```{figure} img/basics/history.png
+       :alt: Screenshot of GitHub repository commit history
+       :width: 100%
+       :class: with-border
+
+       In this overview you can browse each commit individually.
+    ```
+
+    On GitHub you can also compare arbitrary two commits (replace "USER",
+    "HASH1", and "HASH2"):
+    `https://github.com/USER/recipe/compare/HASH1..HASH2`
+
+    Try it with two of your commits.
+  ````
+`````
 
 - We can browse the development and access each state that we have committed.
 - The long hashes uniquely label a state of the code.
@@ -314,12 +478,26 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
 
 ## Optional exercises: comparing, renaming, and removing
 
-```{exercise} (optional) Basic-2: Comparing and showing commits
-1. Inspect differences between commit hashes with `git diff HASH1 HASH2`.
-2. Have a look at specific commits with `git show HASH`.
-```
+``````{exercise} (optional) Basic-2: Comparing and showing commits
+  `````{tabs}
+    ````{group-tab} Command line
+      1. Have a look at specific commits with `git show HASH`.
+      2. Inspect differences between commit hashes with `git diff HASH1 HASH2`.
+    ````
+
+    ````{group-tab} Browser (GitHub)
+      1. Have a look at specific commits.
+      2. Inspect differences between commits.
+
+      Use the screenshots under "Git history and log".
+    ````
+  `````
+``````
 
 ````{exercise} (optional) Basic-3: Visual diff tools
+  This exercise is only relevant for the command line. In the browser,
+  the preview is already side-by-side and "visual".
+
   - Make further modifications and experiment with `git difftool` (requires installing one of the [visual diff tools](https://coderefinery.github.io/installation/difftools/)):
 
   On Windows or Linux:
@@ -346,18 +524,20 @@ Date:   Wed Feb 9 10:11:30 2022 +0100
   ```
 ````
 
-```{exercise} (optional) Basic-4: Renaming and removing files
-1. Create a new file, `git add` and `git commit` the file.
-2. Rename the file with `git mv` (you will need to `git commit` the rename).
-3. Use `git log --oneline` and `git status`.
-4. Remove the file with `git rm` (again you need to `git commit` the change).
-5. Inspect the history with `git log --stat`.
+```{exercise} (optional) Basic-4: Browser and command line
+You have noticed that it is possible to work either in the command
+line or in the browser. It could help to deepen the understanding
+trying to do the above steps in both.
+
+- If you have managed to do the above in the command line, try now in the browser.
+- If you got stuck in the command line and move to the browser, try now to trouble-shoot the command line Git.
 ```
 
 
 ## Writing useful commit messages
 
-Using `git log --oneline` we understand that the first line of the commit message is very important.
+Using `git log --oneline` or browsing a repository on the web, we better
+understand that the first line of the commit message is very important.
 
 Good example:
 ```text
@@ -427,13 +607,11 @@ But remember: it is better to make any commit, than no commit. Especially in sma
 Compiled and generated files are not
 committed to version control. There are many reasons for this:
 
-- Your code could be run on different platforms.
+- These files can make it more difficult to run on different platforms.
 - These files are automatically generated and thus do not contribute in any meaningful way.
-- The number of changes to track per source code change can increase quickly.
 - When tracking generated files you could see differences in the code although you haven't touched the code.
 
 For this we use `.gitignore` files. Example:
-
 ```shell
 # ignore compiled python 2 files
 *.pyc
@@ -442,7 +620,6 @@ __pycache__
 ```
 
 An example taken from the [official Git documentation](https://git-scm.com/docs/gitignore):
-
 ```shell
 # ignore objects and archives, anywhere in the tree.
 *.[oa]
@@ -460,13 +637,12 @@ build/
   [shell glob syntax](https://en.wikipedia.org/wiki/Glob_(programming)) for
   determining file patterns to ignore. You can read more about the syntax in the
   [documentation](https://git-scm.com/docs/gitignore).
-- You can have `.gitignore` files in lower level directories and they affect the paths
-  relatively.
+- You can have `.gitignore` files in lower level directories and they affect the paths below.
 
 
 ## Graphical user interfaces
 
-We have seen how to make commits directly via the GitHub website, and also via command line.
+We have seen how to make commits in the command line and via the GitHub website.
 But it is also possible to work from within a Git graphical user interface (GUI):
 
 - [GitHub Desktop](https://desktop.github.com)
@@ -496,12 +672,12 @@ $ git status        # see what is going on
 $ git log           # see history
 $ git diff          # show unstaged/uncommitted modifications
 $ git show          # show the change for a specific commit
-$ git mv            # move tracked files
+$ git mv            # move/rename tracked files
 $ git rm            # remove tracked files
 ```
 
 Git is not ideal for large binary files
-(for this consider [http://git-annex.branchable.com](http://git-annex.branchable.com)).
+(for this consider [git-annex](http://git-annex.branchable.com)).
 
 ````{challenge} Basic-5: Test your understanding
   Which command(s) below would save the changes of `myfile.txt`
