@@ -58,7 +58,7 @@ shutter at the end)
 ## Configuring Git
 
 Before we start we need to configure Git.
-This is also part of the 
+This is also part of the
 [installation instructions](https://coderefinery.github.io/installation/shell-and-git/#configuration)
 but we need to make sure we all have
 set name, email address, editor, and
