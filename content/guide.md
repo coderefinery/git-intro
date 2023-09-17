@@ -2,6 +2,8 @@
 
 ## Schedule Day 1
 
+Times here are in CE(S)T.
+
 - 08:50 - 09:00 (10 min) Soft start and icebreaker question
 - 09:00 - 09:20 (20 min) Welcome and practical information
 
@@ -14,6 +16,8 @@
         2. Optional exercises: Comparing, renaming, and removing
     - 10:20 - 10:40 (20 min) [Basics - history, commit log, ignoring - teaching](https://coderefinery.github.io/git-intro/basics/#git-history-and-log)
     - 10:40 - 11:00 (20 min) Exercise (**to be added**): something about using history
+
+- 11:00 - 12:00: Lunch break
 
 - Introduction to version control (part 2/4)
     - 12:00 - 12:15 (15 min) [Branching and merging - teaching](https://coderefinery.github.io/git-intro/branches/)
@@ -28,6 +32,8 @@
 
 
 ## Schedule Day 2
+
+Times here are in CE(S)T.
 
 - 08:50 - 09:00 (10 min) Soft start and icebreaker question
 - 09:00 - 09:10 (10 min) Recap and Q&A from day 1
@@ -44,6 +50,8 @@
         1. [Basic archeology commands](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands)
         2. [Optional: Git bisect](https://coderefinery.github.io/git-intro/archaeology/#optional-exercise-git-bisect)
     - 10:45 - 11:00 (15 min) Summarize/discuss inspecting history
+
+- 11:00 - 12:00: Lunch break
 
 - Introduction to version control (part 4/4)
     - 12:00 - 12:15 (15 min) [Undoing and recovering - teaching/type-along](https://coderefinery.github.io/git-intro/recovering/#undoing-and-recovering)
