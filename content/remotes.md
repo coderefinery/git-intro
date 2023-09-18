@@ -234,6 +234,28 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 online! What just happened? **Think of publishing a repository as uploading
 the `.git` part online**.
 
+
+```{admonition} Troubleshooting
+**error: remote origin already exists.**
+- Explanation: You probably ran a `git remote add origin ...` command, then changed your
+  mind about HTTPS or SSH and then tried to run the other `git remote add
+  origin ...` command but "origin" then already exists.
+- Recovery:
+  - First remove "origin" with `git remote remove origin`
+  - Then run the correct `git remote add origin ...` command
+
+**remote contains work that you do not have**
+- Explanation: You probably clicked on "Add a README file" and now the
+  repository on GitHub is not empty but contains one commit and locally you
+  have a different history. Git now prevents you from accidentally overwriting
+  the history on GitHub.
+- Recovery:
+  - Use `git push --force` instead of `git push`, which will force Git to overwrite the history on GitHub
+  - Note that this is a powerful but also possibly dangerous option but here it
+    helps us. If it's a brand new repo, it probably is fine to do this. For real
+    repositories, don't do this unless you are very sure what is happening.
+```
+
 ---
 
 ## Cloning a repository from GitHub to laptop
