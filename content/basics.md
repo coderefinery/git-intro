@@ -148,7 +148,7 @@ One of the basic principles of Git is that it is **easy to create repositories**
     <https://github.com/new> directly.
 
     ```{figure} img/basics/new-repo-form.png
-       :alt: Searching for "fixme" in a GitHub repository
+       :alt: Screenshot on GitHub just before creating a new repository
        :width: 100%
        :class: with-border
 
