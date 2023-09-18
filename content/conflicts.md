@@ -16,44 +16,52 @@
 
 Imagine we start with the following text file:
 ```{code-block}
-2 avocados
 1 tbsp cilantro
-2 tsp salt
+2 avocados
+1 chili
+1 lime
+1 tsp salt
+1/2 onion
 ```
 
 On branch A somebody modifies:
 ```{code-block}
 ---
-emphasize-lines: 1, 3
+emphasize-lines: 1, 4
 ---
-1 lime
+2 tbsp cilantro
 2 avocados
-1/2 tbsp cilantro
-2 tsp salt
+1 chili
+2 lime
+1 tsp salt
+1/2 onion
 ```
 
 On branch B somebody else modifies:
 ```{code-block}
 ---
-emphasize-lines: 2, 4
+emphasize-lines: 1, 6
 ---
+1/2 tbsp cilantro
 2 avocados
-2 tbsp cilantro
-2 tsp salt
-1/2 onion
+1 chili
+1 lime
+1 tsp salt
+1 onion
 ```
 
-When we try to merge Git will figure out that we want the lime and the onion
+When we try to merge Git will figure out that we 2 limes and an entire onion
 but does not know whether to reduce or increase the amount of cilantro:
 ```{code-block}
 ---
-emphasize-lines: 3
+emphasize-lines: 1
 ---
-1 lime
+?????????????????
 2 avocados
-??????????????
-2 tsp salt
-1/2 onion
+1 chili
+2 lime
+1 tsp salt
+1 onion
 ```
 
 Git is very good at resolving modifications when merging branches and
@@ -97,23 +105,26 @@ Now we can go to show how Git controls when there is actually a conflict.
 ## Preparing a conflict
 
 ```{instructor-note}
-We do the following together as type-along.
+We do the following together as type-along/demo.
 ```
 
-````{note}
+````{admonition} If you got stuck previously or joined later
   **If you got stuck previously or joined later**,
-  you can apply the commands below so that you
-  have everything to be able to continue.
+  you can apply the commands below.
   But **skip this box if you managed to create branches**.
 
   ```console
-  $ cd ..  # if you are in a git repository, step out of it
+  $ cd ..  # step out of the current directory
 
-  $ git clone https://github.com/coderefinery/recipe-after-merge.git
-  $ cd recipe-after-merge
+  $ git clone https://github.com/coderefinery/recipe-before-merge.git
+  $ cd recipe-before-merge
+
+  $ git remote remove origin
 
   $ git graph
   ```
+
+  Or call a helper to un-stuck it for you.
 ````
 
 We will make two branches, make two conflicting changes (both increase and
@@ -135,15 +146,15 @@ together.
 
   ```diff
   diff --git a/ingredients.txt b/ingredients.txt
-  index a83af39..83f2f94 100644
+  index e83294b..6cacd50 100644
   --- a/ingredients.txt
   +++ b/ingredients.txt
   @@ -1,4 +1,4 @@
   -* 1 tbsp cilantro
   +* 2 tbsp cilantro
    * 2 avocados
+   * 1 chili
    * 1 lime
-   * 1 tsp salt
   ```
 
 - And on the branch `dislike-cilantro` we have the following change:
@@ -153,15 +164,15 @@ together.
 
   ```diff
   diff --git a/ingredients.txt b/ingredients.txt
-  index a83af39..2f60e23 100644
+  index e83294b..6484462 100644
   --- a/ingredients.txt
   +++ b/ingredients.txt
   @@ -1,4 +1,4 @@
   -* 1 tbsp cilantro
-  +* 0.5 tbsp cilantro
+  +* 1/2 tbsp cilantro
    * 2 avocados
+   * 1 chili
    * 1 lime
-   * 1 tsp salt
   ```
 
 
@@ -177,7 +188,7 @@ $ git switch main
 $ git status
 $ git merge like-cilantro
 
-Updating 4b3e3cc..55d1ce2
+Updating 4e03d4b..3caa632
 Fast-forward
  ingredients.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -198,18 +209,16 @@ but since there is a conflict, Git did not commit:
 
 ```{code-block} console
 ---
-emphasize-lines: 11
+emphasize-lines: 9
 ---
 $ git status
 
-On branch main
 You have unmerged paths.
   (fix conflicts and run "git commit")
   (use "git merge --abort" to abort the merge)
 
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
-
 	both modified:   ingredients.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -226,9 +235,10 @@ $ cat ingredients.txt
 <<<<<<< HEAD
 * 2 tbsp cilantro
 =======
-* 0.5 tbsp cilantro
+* 1/2 tbsp cilantro
 >>>>>>> dislike-cilantro
 * 2 avocados
+* 1 chili
 * 1 lime
 * 1 tsp salt
 * 1/2 onion
@@ -244,33 +254,30 @@ $ git diff
 
 ```diff
 diff --cc ingredients.txt
-index 83f2f94,2f60e23..0000000
+index 6cacd50,6484462..0000000
 --- a/ingredients.txt
 +++ b/ingredients.txt
-@@@ -1,4 -1,4 +1,8 @@@
+@@@ -1,4 -1,4 +1,10 @@@
 ++<<<<<<< HEAD
  +* 2 tbsp cilantro
 ++=======
-+ * 0.5 tbsp cilantro
++ * 1/2 tbsp cilantro
 ++>>>>>>> dislike-cilantro
   * 2 avocados
+  * 1 chili
   * 1 lime
-  * 1 tsp salt
 ```
 
 `git diff` now only shows the conflicting part, nothing else.
 
-We have to resolve the conflict.
-We will discuss 3 different ways to do this.
 
-
-## Manual resolution
+## Conflict resolution
 
 ```
 <<<<<<< HEAD
 * 2 tbsp cilantro
 =======
-* 0.5 tbsp cilantro
+* 1/2 tbsp cilantro
 >>>>>>> dislike-cilantro
 ```
 
@@ -278,8 +285,7 @@ We have to edit the code/text between the resolution markers.  You
 only have to care about what Git shows you: Git stages all files
 without conflicts and leaves the files with conflicts unstaged.
 
-```{note}
-**Steps to resolve a conflict:**
+```{admonition} Steps to resolve a conflict
 
 - Check status with `git status` and `git diff`.
 - Decide what you keep (the one, the other, or both or something
@@ -343,7 +349,7 @@ Follow instructions that you get from the Git command line.
   - Again create a conflict (for instance disagree on the number of avocados).
   - Stop at this stage:
 
-    ```
+    ```markdown
     Auto-merging ingredients.txt
     CONFLICT (content): Merge conflict in ingredients.txt
     Automatic merge failed; fix conflicts and then commit the result.
@@ -391,21 +397,19 @@ Follow instructions that you get from the Git command line.
 
 ## Using "ours" or "theirs" strategy
 
-- Sometimes you know that you want to keep "ours" version (version on this branch)
+- Sometimes you know that you want to keep "ours" version (version on the branch you are on)
   or "theirs" (version on the merged branch).
 - Then you do not have to resolve conflicts manually.
 - See [merge strategies](https://git-scm.com/docs/merge-strategies).
 
-Example:
-
+Example (merge and in doubt take the changes from current branch):
 ```console
-$ git merge -s recursive -Xours less-avocados  # merge and in doubt take the changes from current branch
+$ git merge -s recursive -Xours less-avocados
 ```
 
-Or:
-
+Or (merge and in doubt take the changes from less-avocados branch):
 ```console
-$ git merge -s recursive -Xtheirs less-avocados  # merge and in doubt take the changes from less-avocados branch
+$ git merge -s recursive -Xtheirs less-avocados
 ```
 
 ---
@@ -436,7 +440,7 @@ The repository looks then exactly as it was before the merge.
     branch.
 - Project layout measures
   - Modifying global data often causes conflicts.
-  - Modular programming minimizes risk of conflicts.
+  - Modular programming reduces this risk.
 - Technical measures
   - **Share your changes early and often** - this is one of the happy,
     rare circumstances when everyone doing the selfish thing (e.g. `git push` as
@@ -445,7 +449,7 @@ The repository looks then exactly as it was before the merge.
   - Resolve conflicts early.
 
 ```{discussion}
-Discuss how Git handles conflicts compared to the Google Drive.
+Discuss how Git handles conflicts compared to services like Google Drive.
 ```
 
 ```{keypoints}
