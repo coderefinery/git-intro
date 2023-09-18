@@ -1,10 +1,10 @@
 
-                         [main,HEAD]
-                          |
-               m4---------m5
-              /          /
-m1----m2----m3----e1----e2
-              \         |
-               l1      [experiment]
-               |
-              [less-salt]
+                                     [main,HEAD]
+                                      |
+                           m6---------m7
+                          /          /
+m1----m2----m3----m4----m5----e1----e2
+                          \         |
+                           l1      [experiment]
+                           |
+                          [less-salt]

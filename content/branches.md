@@ -28,8 +28,8 @@ Linear Git repository.
 - Commits are depicted here as little boxes with abbreviated hashes.
 - Here the branch `main` points to a commit.
 - "HEAD" is the current position (remember the recording head of tape
-  recorders?). (when we say `HEAD`, we mean those literal letters -
-  this isn't a placeholder for something else)
+  recorders?). When we say `HEAD`, we mean those literal letters -
+  this isn't a placeholder for something else.
 - When we talk about branches, we often mean all parent commits, not only the commit pointed to.
 
 
@@ -62,7 +62,7 @@ Isolated tracks of work.
 
 - We see branching points and merging points.
 - Main line development is often called `main` or `master`.
-- Other than this convention there is nothing special about `main` or `master`, it is just a branch.
+- Other than this convention there is nothing special about `main` or `master`, it is a branch like any other.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
 A group of commits that create a single narrative are called a **branch**.
@@ -97,17 +97,20 @@ Let us inspect the project history using the `git graph` alias:
 ```console
 $ git graph
 
-* dd4472c (HEAD -> main) we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+* e7cf023 (HEAD -> main) don't forget to enjoy
+* 79161b6 add half an onion
+* a3394e3 adding README
+* 3696246 adding instructions
+* f146d25 adding ingredients
 ```
 
-- We have three commits and only
+- We have a couple commits and only
   one development line (branch) and this branch is called `main`.
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
 - **Branches are pointers that point to a commit.**
-- Branch `main` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
+- Branch `main` points to a commit (in this example it is `e7cf023efe382340e5284c278c6ae2c087dd3ff7` but on your computer
+  the hash will be different).
 - `HEAD` is another pointer, it points to where we are right now (currently `main`)
 
 
@@ -135,12 +138,13 @@ and how to remove them afterwards.
 We do the following part together. Encourage participants to type along.
 ```
 
-Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
+Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`
+(text after "#" are comments and not part of the command).
 
 ```console
-$ git branch experiment main     # creates branch "experiment" from "main"
-$ git switch experiment          # switch to branch "experiment"
-$ git branch                     # list all local branches and show on which branch we are
+$ git branch experiment main  # creates branch "experiment" from "main"
+$ git switch experiment       # switch to branch "experiment"
+$ git branch                  # list all local branches and show on which branch we are
 ```
 
 - Verify that you are on the `experiment` branch (note that `git graph` also
@@ -161,6 +165,7 @@ $ git branch                     # list all local branches and show on which bra
   ---
   * 2 tbsp cilantro
   * 2 avocados
+  * 1 chili
   * 1 lime
   * 2 tsp salt
   * 1/2 onion
@@ -177,11 +182,13 @@ emphasize-lines: 3-4
 ---
 $ git graph
 
-* 6feb49d (HEAD -> experiment) maybe little bit less cilantro
-* 7cf6d8c let us try with some cilantro
-* dd4472c (main) we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+* bcb8b78 (HEAD -> experiment) maybe little bit less cilantro
+* f6ec7b7 let us try with some cilantro
+* e7cf023 (main) don't forget to enjoy
+* 79161b6 add half an onion
+* a3394e3 adding README
+* 3696246 adding instructions
+* f146d25 adding ingredients
 ```
 
 - The branch `experiment` is two commits ahead of `main`.
@@ -198,14 +205,15 @@ $ git graph
   merging. **The goal of the exercise is to end up with 3 branches**.
 
   - Change to the branch `main`.
-  - Create another branch called `less-salt`
-    - Note! makes sure you are on main branch when you create the less-salt branch
+  - Create another branch called `less-salt`.
+    - Note! makes sure you are on main branch when you create the `less-salt` branch.
     - A safer way would be to explicitly mention to create from the main branch
       as shown below:
       ```console
       $ git branch less-salt main
       ```
-  - Where you reduce the amount of salt.
+  - Switch to the `less-salt` branch.
+  - On the `less-salt` branch reduce the amount of salt.
   - Commit your changes to the `less-salt` branch.
 
   Use the same commands as we used above.
@@ -221,13 +229,15 @@ $ git graph
 
   $ git graph
 
-  * bf59be6 (HEAD -> less-salt) reduce amount of salt
-  | * 6feb49d (experiment) maybe little bit less cilantro
-  | * 7cf6d8c let us try with some cilantro
+  * bf28166 (HEAD -> less-salt) reduce amount of salt
+  | * bcb8b78 (experiment) maybe little bit less cilantro
+  | * f6ec7b7 let us try with some cilantro
   |/
-  * dd4472c (main) we should not forget to enjoy
-  * 2bb9bb4 add half an onion
-  * 2d79e7e adding ingredients and instructions
+  * e7cf023 (main) don't forget to enjoy
+  * 79161b6 add half an onion
+  * a3394e3 adding README
+  * 3696246 adding instructions
+  * f146d25 adding ingredients
   ```
 
   Here is a graphical representation of what we have created:
@@ -236,12 +246,12 @@ $ git graph
   ```
 
   - Now switch to `main`.
-  - Add and commit the following `README.md` to `main`:
+  - In a new commit, improve the `README.md` file (we added the word "Guacamole"):
 
     ```markdown
     # Guacamole recipe
 
-    Used in teaching Git.
+    This is an exercise repository.
     ```
 
   Now you should have this situation:
@@ -249,15 +259,17 @@ $ git graph
   ```console
   $ git graph
 
-  * 40fbb90 (HEAD -> main) draft a readme
-  | * bf59be6 (less-salt) reduce amount of salt
+  * b4af65b (HEAD -> main) improve the documentation
+  | * bf28166 (less-salt) reduce amount of salt
   |/
-  | * 6feb49d (experiment) maybe little bit less cilantro
-  | * 7cf6d8c let us try with some cilantro
+  | * bcb8b78 (experiment) maybe little bit less cilantro
+  | * f6ec7b7 let us try with some cilantro
   |/
-  * dd4472c we should not forget to enjoy
-  * 2bb9bb4 add half an onion
-  * 2d79e7e adding ingredients and instructions
+  * e7cf023 don't forget to enjoy
+  * 79161b6 add half an onion
+  * a3394e3 adding README
+  * 3696246 adding instructions
+  * f146d25 adding ingredients
   ```
 
   ```{figure} img/gitink/git-branch-3.svg
@@ -268,10 +280,6 @@ $ git graph
 
 
 ## Merging branches
-
-```{instructor-note}
-We do the rest as type-along. Instructors, encourage learners to type-along.
-```
 
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `main`.
@@ -321,22 +329,24 @@ $ git merge experiment
 ```{figure} img/gitink/git-merge-1.svg
 ```
 
-We can verify the result in the terminal:
+We can verify the result:
 
 ```console
 $ git graph
 
-*   c43b24c (HEAD -> main) Merge branch 'experiment'
+*   81fcc0c (HEAD -> main) Merge branch 'experiment'
 |\
-| * 6feb49d (experiment) maybe little bit less cilantro
-| * 7cf6d8c let us try with some cilantro
-* | 40fbb90 draft a readme
+| * bcb8b78 (experiment) maybe little bit less cilantro
+| * f6ec7b7 let us try with some cilantro
+* | b4af65b improve the documentation
 |/
-| * bf59be6 (less-salt) reduce amount of salt
+| * bf28166 (less-salt) reduce amount of salt
 |/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+* e7cf023 don't forget to enjoy
+* 79161b6 add half an onion
+* a3394e3 adding README
+* 3696246 adding instructions
+* f146d25 adding ingredients
 ```
 
 What happens internally when you merge two branches is that Git creates a new
@@ -372,19 +382,21 @@ We can verify the result in the terminal:
 ```console
 $ git graph
 
-*   4f00317 (HEAD -> main) Merge branch 'less-salt'
+*   4e03d4b (HEAD -> main) Merge branch 'less-salt'
 |\
-| * bf59be6 (less-salt) reduce amount of salt
-* |   c43b24c Merge branch 'experiment'
+| * bf28166 (less-salt) reduce amount of salt
+* |   81fcc0c Merge branch 'experiment'
 |\ \
-| * | 6feb49d (experiment) maybe little bit less cilantro
-| * | 7cf6d8c let us try with some cilantro
+| * | bcb8b78 (experiment) maybe little bit less cilantro
+| * | f6ec7b7 let us try with some cilantro
 | |/
-* | 40fbb90 draft a readme
+* / b4af65b improve the documentation
 |/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
+* e7cf023 don't forget to enjoy
+* 79161b6 add half an onion
+* a3394e3 adding README
+* 3696246 adding instructions
+* f146d25 adding ingredients
 ```
 
 Observe how Git nicely merged the changed amount of salt and the new ingredient **in the same file
@@ -395,6 +407,7 @@ $ cat ingredients.txt
 
 * 1 tbsp cilantro
 * 2 avocados
+* 1 chili
 * 1 lime
 * 1 tsp salt
 * 1/2 onion
@@ -420,10 +433,8 @@ $ git branch --merged
 This means we can delete the branches:
 
 ```console
-$ git branch -d experiment less-salt
-
-Deleted branch experiment (was 6feb49d).
-Deleted branch less-salt (was bf59be6).
+$ git branch -d experiment
+$ git branch -d less-salt
 ```
 
 This is the result:
@@ -434,29 +445,7 @@ This is the result:
 Commit graph after merged branches were deleted.
 ```
 
-Compare in the terminal:
-
-```console
-$ git graph
-
-*   4f00317 (HEAD -> main) Merge branch 'less-salt'
-|\
-| * bf59be6 reduce amount of salt
-* |   c43b24c Merge branch 'experiment'
-|\ \
-| * | 6feb49d maybe little bit less cilantro
-| * | 7cf6d8c let us try with some cilantro
-| |/
-* | 40fbb90 draft a readme
-|/
-* dd4472c we should not forget to enjoy
-* 2bb9bb4 add half an onion
-* 2d79e7e adding ingredients and instructions
-```
-
-Comparing figures "Commit graph after merge"
-and "Commit graph after merged branches were deleted",
-we observe that
+We observe that when deleting branches,
 only the pointers ("sticky notes") disappeared, not the commits.
 
 Git will not let you delete a branch which has not been reintegrated unless you
@@ -468,7 +457,7 @@ may have a hard time finding them as there is no branch pointing to them.
 
 ## Optional exercises with branches
 
-The following exercises are advanced, absolutely no problem to postpone them to a
+The following exercises are more advanced, absolutely no problem to postpone them to a
 few months later. If you give them a go, keep in mind that you might run into conflicts,
 which we will learn to resolve in the next section.
 
@@ -518,32 +507,33 @@ Rebasing means that the new commits are *replayed* on top of another branch
 
 ## Tags
 
-- A tag is a pointer to a commit but in contrast to a branch it **does not ever move**.
+- A tag is a pointer to a commit but in contrast to a branch it **does not ever
+  move** when creating new commits later.
+- It can be useful to think of branches as sticky notes and of tags as
+  [commemorative plaques](https://en.wikipedia.org/wiki/Commemorative_plaque).
 - We use tags to record particular states or milestones of a project at a given
   point in time, like for instance versions (have a look at [semantic versioning](http://semver.org),
   v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).
 - There are two basic types of tags: annotated and lightweight.
 - **Use annotated tags** since they contain the author and can be cryptographically signed using
   GPG, timestamped, and a message attached.
-- It can be useful to think of branches as sticky notes and of tags as
-  [commemorative plaques](https://en.wikipedia.org/wiki/Commemorative_plaque).
 
 Let's add an annotated tag to our current state of the guacamole recipe:
-
 ```console
-$ git tag -a nobel-2021 -m "recipe I made for the 2021 Nobel banquet"
+$ git tag -a nobel-2023 -m "recipe I made for the 2023 Nobel banquet"
 ```
 
 As you may have found out already, `git show` is a very versatile command. Try this:
 
 ```console
-$ git show nobel-2021
+$ git show nobel-2023
 ```
 
 For more information about tags see for example
 [the Pro Git book](https://git-scm.com/book/en/v2/Git-Basics-Tagging) chapter on the
 subject.
 
+---
 
 ## Summary
 
@@ -555,7 +545,7 @@ $ git branch NAME          # create branch NAME
 $ git switch NAME          # switch to branch NAME
 $ git merge NAME           # merge branch NAME (to current branch)
 $ git branch -d NAME       # delete branch NAME
-$ git branch -D NAME       # delete unmerged branch
+$ git branch -D NAME       # delete unmerged branch NAME
 ```
 
 Since the following command combo is so frequent:
@@ -592,7 +582,7 @@ $ git switch main                  # realize it was a bad idea, back to main
 $ git branch -D wild-idea          # it is gone, off to a new idea
 ```
 
-No problem: we worked on a branch, branch is deleted, `main` is clean.
+---
 
 ````{challenge} Branch-4: Test your understanding
   Which of the following combos (one or more) creates a new branch and makes a commit to it?

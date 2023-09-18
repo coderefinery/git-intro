@@ -8,7 +8,7 @@
                  xmlns="http://www.w3.org/2000/svg"
                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
                  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                 width="160.0"
+                 width="280.0"
                  height="160.0"
                  id="svg2"
                  version="1.1"
@@ -47,9 +47,25 @@
                    transform="translate(-0.0,130.0) rotate(0)"
                    id="layer1">
                    
+           <line x1="196.0"
+                 y1="15.0"
+                 x2="256.0"
+                 y2="15.0"
+                 style="stroke:#000000;
+                        stroke-width:2.5;
+                        stroke-opacity:0.8" />
+           
            <line x1="76.0"
                  y1="15.0"
                  x2="136.0"
+                 y2="15.0"
+                 style="stroke:#000000;
+                        stroke-width:2.5;
+                        stroke-opacity:0.8" />
+           
+           <line x1="136.0"
+                 y1="15.0"
+                 x2="196.0"
                  y2="15.0"
                  style="stroke:#000000;
                         stroke-width:2.5;
@@ -71,7 +87,7 @@
                         stroke-dasharray:none"
                  width="32.0"
                  height="30.0"
-                 x="120.0"
+                 x="180.0"
                  y="0.0"
                  ry="5.0" />
            <text style="font-size:12.5px;
@@ -84,8 +100,32 @@
                         fill-opacity:1.0;
                         stroke:none;
                         font-family:DejaVu Sans Mono"
-                 x="127.5"
-                 y="20.5">m3</text>
+                 x="187.5"
+                 y="20.5">m4</text>
+           
+           <rect style="fill:#9beeae;
+                        stroke:#55A868;
+                        stroke-width:1.25;
+                        stroke-miterlimit:4;
+                        stroke-opacity:1.0;
+                        stroke-dasharray:none"
+                 width="32.0"
+                 height="30.0"
+                 x="240.0"
+                 y="0.0"
+                 ry="5.0" />
+           <text style="font-size:12.5px;
+                        font-style:normal;
+                        font-weight:normal;
+                        line-height:125%%;
+                        letter-spacing:0px;
+                        word-spacing:0px;
+                        fill:#000000;
+                        fill-opacity:1.0;
+                        stroke:none;
+                        font-family:DejaVu Sans Mono"
+                 x="247.5"
+                 y="20.5">m5</text>
            
            <rect style="fill:#9beeae;
                         stroke:#55A868;
@@ -110,6 +150,30 @@
                         font-family:DejaVu Sans Mono"
                  x="67.5"
                  y="20.5">m2</text>
+           
+           <rect style="fill:#9beeae;
+                        stroke:#55A868;
+                        stroke-width:1.25;
+                        stroke-miterlimit:4;
+                        stroke-opacity:1.0;
+                        stroke-dasharray:none"
+                 width="32.0"
+                 height="30.0"
+                 x="120.0"
+                 y="0.0"
+                 ry="5.0" />
+           <text style="font-size:12.5px;
+                        font-style:normal;
+                        font-weight:normal;
+                        line-height:125%%;
+                        letter-spacing:0px;
+                        word-spacing:0px;
+                        fill:#000000;
+                        fill-opacity:1.0;
+                        stroke:none;
+                        font-family:DejaVu Sans Mono"
+                 x="127.5"
+                 y="20.5">m3</text>
            
            <rect style="fill:#9beeae;
                         stroke:#55A868;
@@ -144,7 +208,7 @@
                  marker-end:url(#fullmarker);
                  stroke-miterlimit:4;
                  stroke-dasharray:none"
-                 d="M 136.0,-50.0 136.0,-0.5999999999999996"
+                 d="M 256.0,-50.0 256.0,-0.5999999999999996"
                  inkscape:connector-curvature="0" />
            
            <rect style="fill:#dddddd;
@@ -155,7 +219,7 @@
                         stroke-dasharray:none"
                  width="48.0"
                  height="30.0"
-                 x="112.0"
+                 x="232.0"
                  y="-65.0"
                  ry="0.0" />
            <text style="font-size:12.5px;
@@ -168,7 +232,7 @@
                         fill-opacity:1.0;
                         stroke:none;
                         font-family:DejaVu Sans Mono"
-                 x="119.5"
+                 x="239.5"
                  y="-44.5">main</text>
            
            <path style="fill:none;
@@ -180,7 +244,7 @@
                  marker-end:url(#fullmarker);
                  stroke-miterlimit:4;
                  stroke-dasharray:none"
-                 d="M 136.0,-115.0 136.0,-65.6"
+                 d="M 256.0,-115.0 256.0,-65.6"
                  inkscape:connector-curvature="0" />
            
            <rect style="fill:#dddddd;
@@ -191,7 +255,7 @@
                         stroke-dasharray:none"
                  width="48.0"
                  height="30.0"
-                 x="112.0"
+                 x="232.0"
                  y="-130.0"
                  ry="0.0" />
            <text style="font-size:12.5px;
@@ -204,7 +268,7 @@
                         fill-opacity:1.0;
                         stroke:none;
                         font-family:DejaVu Sans Mono"
-                 x="119.5"
+                 x="239.5"
                  y="-109.5">HEAD</text>
            
                 </g>
