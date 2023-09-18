@@ -124,6 +124,12 @@ and how to remove them afterwards.
 We do the following part together. Encourage participants to type along.
 ```
 
+```{admonition} It is possible to create and merge branches directly on GitHub
+- However, we do not have screenshots for that in this episode
+- But if you prefer to work in the browser, please try it
+- Please contribute screenshots to this lesson
+```
+
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`
 (text after "#" are comments and not part of the command).
 
