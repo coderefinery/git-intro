@@ -7,8 +7,8 @@
 ```
 
 ```{instructor-note}
-- 15 min teaching/type-along
-- 15 min exercise
+- 20 min teaching/type-along
+- 20 min exercise
 ```
 
 

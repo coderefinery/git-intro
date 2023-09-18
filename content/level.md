@@ -1,7 +1,7 @@
 # Practical advice: how much Git is necessary?
 
 ```{instructor-note}
-- 10 min teaching/discussion
+- 20 min teaching/discussion
 ```
 
 
