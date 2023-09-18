@@ -33,7 +33,7 @@ Linear Git repository.
 - When we talk about branches, we often mean all parent commits, not only the commit pointed to.
 
 
-### Now we want to do this:
+**Now we want to do this:**
 
 ```{figure} img/octopus.jpeg
 :alt: Branching explained with an octopus
@@ -113,20 +113,6 @@ $ git graph
   the hash will be different).
 - `HEAD` is another pointer, it points to where we are right now (currently `main`)
 
-
-### On which branch are we?
-
-To see where we are (where HEAD points to) use `git branch`:
-
-```console
-$ git branch
-
-* main
-```
-
-- This command shows where we are, it does not create a branch.
-- There is only `main` and we are on `main` (star represents the `HEAD`).
-
 In the following we will learn how to create branches,
 how to switch between them, how to merge branches,
 and how to remove them afterwards.
@@ -149,13 +135,13 @@ $ git branch                  # list all local branches and show on which branch
 
 - Verify that you are on the `experiment` branch (note that `git graph` also
   makes it clear what branch you are on: `HEAD -> branchname`):
-
   ```console
   $ git branch
 
   * experiment
     main
   ```
+  This command shows where we are, it does not create a branch.
 
 - Then add 2 tbsp cilantro **on top** of the `ingredients.txt`:
 
