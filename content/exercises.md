@@ -8,6 +8,7 @@ Basics:
 
 Branching and merging:
 - {ref}`exercise-branches`
+- {ref}`exercise-branches-merging`
 - {ref}`exercise-branches-optional`
 
 Conflict resolution:
