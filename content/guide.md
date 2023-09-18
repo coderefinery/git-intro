@@ -68,8 +68,8 @@ Times here are in CE(S)T.
 
 ## Installation reminders for each day
 
-- Day 1: git configuration
-- Day 2: need SSH set up (if you don't, sharing repositories online will be demo)
+- Day 1: Git configuration
+- Day 2: SSH set up (if you don't, sharing repositories online will be demo)
 
 
 ## Why we teach this lesson
@@ -206,13 +206,13 @@ each command is introduced, write it on the board. After each module, make sure
 you haven't forgotten anything. Re-create and expand in future git lessons.
 One strategy is:
 
-- a common section for basic commands: `init`, `config``clone`, `help`, `stash`
+- a common section for basic commands: `init`, `config`, `clone`, `help`, `stash`
 - info commands, can be run anytime: `status`, `log`, `diff`, `graph`
 - A section for all the commands that move code from different states:
   `add`, `commit`, etc.  See the visual cheat sheet below.
 
 You can get inspired by http://www.ndpsoftware.com/git-cheatsheet.html
-to make your cheatsheet, but if you show this make it clear there are
+to make your cheat sheet, but if you show this make it clear there are
 far, far more commands on there than you need to know right now., and
 it's probably too confusing to use after this course.  But, the idea
 of commands moving from the "working dir", "staging area", "commits",
