@@ -22,7 +22,7 @@ Modifying history? Isn't a "commit" permanent?
 - But if you have shared that history already, *modifying it can make
   a huge mess*.
 
-```{note}
+```{admonition} It is almost always possible to recover
 As long as you commit something once (or at least `git add` it), you
 can almost always go back to it, no matter what you do.
 But you may need to ask Stack Overflow or your local
@@ -47,9 +47,9 @@ On older Git it is `git checkout` instead of `git restore`.
 You do some work, and want to **undo your uncommitted and unstaged modifications**.
 You can always do that with:
 
-- `git restore .`: (the dot means "here and in all folders below")
+- `git restore .` (the dot means "here and in all folders below")
 
-Or, you can undo things selectively:
+You can also undo things selectively:
 
 - `git restore -p` (decide which portions of changes to undo) or `git restore PATH` (decide which path/file)
 
@@ -62,20 +62,23 @@ If you have staged changes, you have at least two options to undo the staging:
 
 ## Reverting commits (preserves history)
 
-- Imagine we made a few commits.
-- We realize that the latest commit `f960dd3` was a mistake and we wish to undo it:
-  ```console
-  $ git log --oneline
+Imagine we made a few commits.
+We realize that the latest commit `e02efcd` was a mistake and we wish to undo it:
+```console
+$ git log --oneline
 
-  f960dd3 (HEAD -> main) not sure this is a good idea
-  dd4472c we should not forget to enjoy
-  2bb9bb4 add half an onion
-  2d79e7e adding ingredients and instructions
-  ```
+e02efcd (HEAD -> main) not sure this is a good idea
+b4af65b improve the documentation
+e7cf023 don't forget to enjoy
+79161b6 add half an onion
+a3394e3 adding README
+3696246 adding instructions
+f146d25 adding ingredients
+```
 
 A safe way to undo the commit is to revert the commit with `git revert`:
 ```console
-$ git revert f960dd3
+$ git revert e02efcd
 ```
 
 This creates a **new commit** that does the opposite of the reverted commit.
@@ -83,11 +86,14 @@ The old commit remains in the history:
 ```console
 $ git log --oneline
 
-d62ad3e (HEAD -> main) Revert "not sure this is a good idea"
-f960dd3 not sure this is a good idea
-dd4472c we should not forget to enjoy
-2bb9bb4 add half an onion
-2d79e7e adding ingredients and instructions
+d3fc63a (HEAD -> main) Revert "not sure this is a good idea"
+e02efcd not sure this is a good idea
+b4af65b improve the documentation
+e7cf023 don't forget to enjoy
+79161b6 add half an onion
+a3394e3 adding README
+3696246 adding instructions
+f146d25 adding ingredients
 ```
 
 You can revert any commit, no matter how old it is.  It doesn't affect
@@ -168,21 +174,27 @@ point in the past.
   ```console
   $ git log --oneline
 
-  d62ad3e (HEAD -> main) Revert "not sure this is a good idea"
-  f960dd3 not sure this is a good idea
-  dd4472c we should not forget to enjoy
-  2bb9bb4 add half an onion
-  2d79e7e adding ingredients and instructions
+  d3fc63a (HEAD -> main) Revert "not sure this is a good idea"
+  e02efcd not sure this is a good idea
+  b4af65b improve the documentation
+  e7cf023 don't forget to enjoy
+  79161b6 add half an onion
+  a3394e3 adding README
+  3696246 adding instructions
+  f146d25 adding ingredients
 
-  $ git reset --hard dd4472c
+  $ git reset --hard b4af65b
 
-  HEAD is now at dd4472c we should not forget to enjoy
+  HEAD is now at b4af65b improve the documentation
 
   $ git log --oneline
 
-  dd4472c (HEAD -> main) we should not forget to enjoy
-  2bb9bb4 add half an onion
-  2d79e7e adding ingredients and instructions
+  b4af65b (HEAD -> main) improve the documentation
+  e7cf023 don't forget to enjoy
+  79161b6 add half an onion
+  a3394e3 adding README
+  3696246 adding instructions
+  f146d25 adding ingredients
   ```
 ````
 
@@ -223,8 +235,9 @@ the other branch. But sometimes we run this command on the wrong branch.
 2. Rewind the branch that accidentally got wrong commits with `git reset --hard HASH` (see also above).
 
 
-## Recovering from conflict after git pull
+## Recovering from conflict after pulling changes
 
+Pulling changes with
 `git pull` can create a conflict since `git pull` always also includes a `git merge` (more about this
 in the [collaborative Git lesson](https://coderefinery.github.io/git-collaborative/)).
 
@@ -239,7 +252,7 @@ resolve conflicts or abort the merge with `git merge --abort`.
   3. What situations would justify to modify the Git history and possibly remove commits?
 
   ```{solution}
-  1. It is not gone forever since `git rm` creates a new commit. You can simply revert it!
+  1. It is not gone forever since `git rm` creates a new commit. You can revert the commit to get the file back.
   2. If you haven't shared your commits with anyone it can be alright to modify them.
   3. If you have shared your commits with others (e.g. pushed them to GitHub), only extraordinary
      conditions would justify modifying history. For example to remove sensitive or secret information.
