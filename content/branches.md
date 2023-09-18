@@ -278,11 +278,17 @@ $ git graph
   And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe-before-merge/network).
 ````
 
+(exercise-branches-merging)=
 
-## Merging branches
+## Exercise: Merging branches
 
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `main`.
+
+```{exercise} Branch-2: Merge branches
+Merge `experiment` and `less-salt` back into `main` following the lesson below
+until the point where we start deleting branches.
+```
 
 ````{admonition} If you got stuck in the above exercises or joined later
   **If you got stuck in the above exercises or joined later**,
@@ -461,7 +467,7 @@ The following exercises are more advanced, absolutely no problem to postpone the
 few months later. If you give them a go, keep in mind that you might run into conflicts,
 which we will learn to resolve in the next section.
 
-````{exercise} (optional) Branch-2: Perform a fast-forward merge
+````{exercise} (optional) Branch-3: Perform a fast-forward merge
 1. Create a new branch from `main` and switch to it.
 2. Create a couple of commits on the new branch (for instance edit `README.md`):
    ```{figure} img/gitink/git-pre-ff.svg
@@ -483,7 +489,7 @@ which we will learn to resolve in the next section.
   ```
 ````
 
-````{exercise} (optional) Branch-3: Rebase a branch (instead of merge)
+````{exercise} (optional) Branch-4: Rebase a branch (instead of merge)
 As an alternative to merging branches, one can also *rebase* branches.
 Rebasing means that the new commits are *replayed* on top of another branch
 (instead of creating an explicit merge commit).
@@ -584,7 +590,7 @@ $ git branch -D wild-idea          # it is gone, off to a new idea
 
 ---
 
-````{challenge} Branch-4: Test your understanding
+````{challenge} Branch-5: Test your understanding
   Which of the following combos (one or more) creates a new branch and makes a commit to it?
   1. ```console
      $ git branch new-branch
