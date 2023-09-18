@@ -32,14 +32,14 @@ Linear Git repository.
   this isn't a placeholder for something else.
 - When we talk about branches, we often mean all parent commits, not only the commit pointed to.
 
-
 **Now we want to do this:**
 
-```{figure} img/octopus.jpeg
-:alt: Branching explained with an octopus
+```{figure} img/gopher/gophers.png
+:alt: Branching explained with a gopher
 :width: 100%
 
-Source: <https://twitter.com/jay_gee/status/703360688618536960>
+Image created using <https://gopherize.me/>
+([inspiration](https://twitter.com/jay_gee/status/703360688618536960)).
 ```
 
 Software development is often not linear:

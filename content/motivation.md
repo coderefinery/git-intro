@@ -60,11 +60,12 @@ Version control is an answer to these questions (do you recognize some of them?)
   - Different people can work on the same code/project without interfering
   - You can experiment with an idea and discard it if it turns out to be a bad idea
 
-```{figure} img/octopus.jpeg
-:alt: Branching explained with an octopus
-:width: 80%
+```{figure} img/gopher/gophers.png
+:alt: Branching explained with a gopher
+:width: 100%
 
-Source: <https://twitter.com/jay_gee/status/703360688618536960>
+Image created using <https://gopherize.me/>
+([inspiration](https://twitter.com/jay_gee/status/703360688618536960)).
 ```
 
 - **Collaboration**: review, compare, share, discuss
