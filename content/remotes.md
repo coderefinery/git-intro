@@ -152,47 +152,39 @@ please watch others publish their repository and try to clone your repository
 to the laptop using instructions at the bottom of this page.
 ```
 
-Make sure that you are **logged into GitHub**.
+First log into GitHub, then follow the screenshots and descriptions below.
 
-```{figure} img/creating-using-web/new-top-left.png
-:width: 60%
-:class: with-border
+```{figure} img/basics/new-repo-plus.png
+   :alt: Screenshot on GitHub before a new repository form is opened
+   :width: 100%
+   :class: with-border
 
-To create a repository we either click the green button "New" (top left corner).
+   Click on the "plus" symbol on top right, then on "New repository".
 ```
 
-```{figure} img/creating-using-web/new-top-right.png
-:width: 60%
-:class: with-border
+Another way to create a new repository is to visit
+<https://github.com/new> directly.
 
-Or if you see your profile page, there is a "+" menu (top right corner).
-```
+```{figure} img/remotes/new-bare-repo-form.png
+   :alt: Screenshot on GitHub just before a new repository is created
+   :width: 100%
+   :class: with-border
 
-Yet another way to create a new repository is to visit
-[https://github.com/new](https://github.com/new) directly.
-
----
-
-On this page choose a project name.
-For the sake of this exercise **do not select**
-"Initialize this repository with a README" (what will happen if you do?):
-```{figure} img/creating-using-web/creating.png
-:width: 100%
-:class: with-border
+   Choose a repository name, add a short description, but please **do not check** "Add a
+   README file"**. For "Add .gitignore" and "Choose a license" also leave as "None". Finally "Create repository".
 ```
 
 Once you click the green "Create repository", you will see a page similar to:
-```{figure} img/creating-using-web/created.png
-:width: 100%
-:class: with-border
+```{figure} img/remotes/bare-repo.png
+   :alt: Screenshot on GitHub after a bare repository was created
+   :width: 100%
+   :class: with-border
 ```
 
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
 
-We now want to try the second option that GitHub suggests:
-
-> **... or push an existing repository from the command line**
+We now want to follow the "**... or push an existing repository from the command line**:
 
 1. Now go to your guacamole repository on your computer.
 2. Check that you are in the right place with `git status`.
