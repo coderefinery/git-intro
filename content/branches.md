@@ -133,6 +133,11 @@ $ git switch experiment       # switch to branch "experiment"
 $ git branch                  # list all local branches and show on which branch we are
 ```
 
+```{note}
+In case `git switch` does not work, your Git version might be older than from 2019.
+On older Git it is `git checkout` instead of `git switch`.
+```
+
 - Verify that you are on the `experiment` branch (note that `git graph` also
   makes it clear what branch you are on: `HEAD -> branchname`):
   ```console

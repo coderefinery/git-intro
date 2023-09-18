@@ -181,6 +181,11 @@ together.
 What do you expect will happen when we try to merge these two branches into
 main?
 
+```{note}
+In case `git switch` does not work, your Git version might be older than from 2019.
+On older Git it is `git checkout` instead of `git switch`.
+```
+
 The first merge will work:
 
 ```console

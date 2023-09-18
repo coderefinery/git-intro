@@ -234,6 +234,11 @@ Discuss how these relatively trivial changes affect the annotation:
     $ cd networkx
     $ git switch --create exercise networkx-2.6.3
     ```
+    On old Git versions which do not know the `switch` command (before 2.23), you
+    need to use this instead:
+    ```console
+    $ git checkout -b exercise networkx-2.6.3
+    ```
 
   Then using the above toolbox try to:
   1. Find the code line which contains `"Logic error in degree_correlation"`.
