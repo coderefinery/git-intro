@@ -218,7 +218,7 @@ wrong branch.
    branch, **from oldest to most recent**.
 4. Rewind the branch that accidentally got wrong commits with `git reset --hard` (see also above).
 
-**Solution 2 using git reset --hard** (makes sense if the correct branch should
+**Solution 2 using `git reset --hard`** (makes sense if the correct branch should
 contain all commits of the accidentally modified branch):
 1. Create the correct branch, pointing at the latest commit: `git branch BRANCHNAME`.
 2. Check with `git log` or `git graph` that both branches point to the same, latest, commit.
