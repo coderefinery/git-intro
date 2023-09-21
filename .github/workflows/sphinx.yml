@@ -92,7 +92,7 @@ jobs:
         run: |
           pip install https://github.com/rkdarst/sphinx_pyppeteer_builder/archive/refs/heads/main.zip
           make pyppeteer
-          mv _build/pyppeteer/*.pdf _build/dirhtml/_static/${PDF_FILENAME}.pdf
+          mv _build/pyppeteer/*.pdf _build/dirhtml/_static/${PDF_FILENAME}
 
       # Stage all deployed assets in _gh-pages/ for simplicity, and to
       # prepare to do a multi-branch deployment.
