@@ -6,6 +6,7 @@
 #   https://github.com/coderefinery/sphinx-lesson-template/blob/main/.github/workflows/sphinx.yml
 #  https://raw.githubusercontent.com/coderefinery/sphinx-lesson-template/main/.github/workflows/sphinx.yml
 
+
 name: sphinx
 on: [push, pull_request]
 
