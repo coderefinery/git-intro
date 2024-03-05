@@ -35,16 +35,51 @@ branching.
 
 ```{toctree}
 :maxdepth: 1
-:caption: Core episodes
+:caption: Getting started
 
 motivation
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Modifying an existing project
+
+browsing
+commits
+merging
+conflict-resolution
+local-workflow
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Studying an existing project
+
+archaeology
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Sharing your work
+
+sharing
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Finding the balance
+
+level
+what-to-avoid
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Previous episodes (WIP)
+
 basics
 branches
 conflicts
-remotes
-archaeology
-level
-what-to-avoid
 ```
 
 ```{toctree}

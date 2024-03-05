@@ -1,4 +1,4 @@
-# Sharing repositories online
+# How to turn your project to a Git repo and share it
 
 ```{objectives}
 - We get a feeling for remote repositories ([more later](https://coderefinery.github.io/git-collaborative/)).
