@@ -1,36 +1,45 @@
 # Introduction to version control with Git - Why we want to track versions and how to go back in time to a working version
 
 This is the introductory lesson to version control using
-[Git](https://git-scm.com/). It is assumed to be the very first thing
-done in a course.
+[Git](https://git-scm.com/).
 
-Our philosophy is that we start from own local repository, branching and
-merging (locally), and a brief introduction to pushing to remotes. In
-the separate [collaborative Git
-lesson](https://coderefinery.github.io/git-collaborative/), we teach more use of
-remote repositories and good collaborative workflows. We try to stick to
-simple workflows, just enough for researchers who are not obsessed with
-Git to be able to work well. We try to avoid commands which might get
-you into a confusing state.
+We start with an existing repository on the web to visually explain the basic
+concepts of version control On workshop day two we then move to a local
+repository. Our goal there is not only to be able to apply changes to an
+existing repository but to also be able to turn own projects into Git
+repositories and to share them with others.
 
-The goals of the module as a whole are that the user will feel
-comfortable about staging changes, committing them, merging, and
-branching.
+In the separate [collaborative Git
+lesson](https://coderefinery.github.io/git-collaborative/), we teach more use
+of remote repositories and good collaborative workflows. We try to stick to
+simple workflows, just enough for researchers who are not obsessed with Git to
+be able to work well.
+
+The goals of the module as a whole are that the learner will feel comfortable
+about committing changes, branching, and merging.
 
 ```{prereq}
-- A reasonably recent version of Git (ideal is 2.28 or newer but we
-  recommend at least 2.23) is installed **and configured** ([installation
-  instructions](https://coderefinery.github.io/installation/)). But also on older
-  Git (2.0) the workshop will work and we will offer workarounds for Git below 2.28
-  or 2.23.
-- For one of the episodes we need a [GitHub](https://github.com) user
-  account (but alternatives exist, see below).
-- Being comfortable with the command line. No expertise is required, but
-  the lesson will be mostly taken from the command line. For most commands, where reasonable,
-  we also offer the possibility to participate through the browser.
-- To edit files on the local computer, learners should be familiar with
-  using a **text editor** on their system. If you are new to text editors,
-  we recommend to start with Nano or VS Code.
+We offer several options to go through the material: on the web, in an editor,
+or in the terminal.
+
+We recommend to have a [GitHub](https://github.com) account and you can find
+the corresponding setup instructions here:
+<https://coderefinery.github.io/installation/>
+
+**Why GitHub?**
+In this introduction we will use
+[GitHub](https://github.com) but also
+[GitLab](https://gitlab.com) and
+[Bitbucket](https://bitbucket.org) allow similar workflows and
+basically everything that we will discuss is transferable. With this
+material and these exercises we do not implicitly endorse the company
+[GitHub](https://github.com). We have chosen to demonstrate a
+number of concepts using examples with
+[GitHub](https://github.com) because it is currently the most
+popular web platform for hosting Git repositories and the chance is
+high that you will interact with
+[GitHub](https://github.com)-based repositories even if you choose
+to host your Git repository on another platform.
 ```
 
 ```{toctree}
@@ -111,20 +120,4 @@ guide
 All lessons <https://coderefinery.org/lessons/core/>
 CodeRefinery <https://coderefinery.org/>
 Reusing <https://coderefinery.org/lessons/reusing/>
-```
-
-```{admonition} Why GitHub?
-In this introduction we will mention and use
-[GitHub](https://github.com) but also
-[GitLab](https://gitlab.com) and
-[Bitbucket](https://bitbucket.org) allow similar workflows and
-basically everything that we will discuss is transferable. With this
-material and these exercises we do not implicitly endorse the company
-[GitHub](https://github.com). We have chosen to demonstrate a
-number of concepts using examples with
-[GitHub](https://github.com) because it is currently the most
-popular web platform for hosting Git repositories and the chance is
-high that you will interact with
-[GitHub](https://github.com)-based repositories even if you choose
-to host your Git repository on another platform.
 ```
