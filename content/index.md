@@ -4,7 +4,7 @@ This is the introductory lesson to version control using
 [Git](https://git-scm.com/).
 
 We start with an existing repository on the web to visually explain the basic
-concepts of version control On workshop day two we then move to a local
+concepts of version control. We later move to a local
 repository. Our goal there is not only to be able to apply changes to an
 existing repository but to also be able to turn own projects into Git
 repositories and to share them with others.
@@ -19,27 +19,21 @@ The goals of the module as a whole are that the learner will feel comfortable
 about committing changes, branching, and merging.
 
 ```{prereq}
-We offer several options to go through the material: on the web, in an editor,
-or in the terminal.
+We offer several options to go through the material: **on the web, in an editor,
+or in the terminal**.
+Please see the [installation instructions](https://coderefinery.github.io/installation/).
 
-We recommend to have a [GitHub](https://github.com) account and you can find
-the corresponding setup instructions here:
-<https://coderefinery.github.io/installation/>
-
+We recommend to have a [GitHub](https://github.com) account.
 **Why GitHub?**
-In this introduction we will use
-[GitHub](https://github.com) but also
-[GitLab](https://gitlab.com) and
-[Bitbucket](https://bitbucket.org) allow similar workflows and
-basically everything that we will discuss is transferable. With this
-material and these exercises we do not implicitly endorse the company
-[GitHub](https://github.com). We have chosen to demonstrate a
-number of concepts using examples with
-[GitHub](https://github.com) because it is currently the most
-popular web platform for hosting Git repositories and the chance is
-high that you will interact with
-[GitHub](https://github.com)-based repositories even if you choose
-to host your Git repository on another platform.
+Also [GitLab](https://gitlab.com) and [Bitbucket](https://bitbucket.org) would
+allow similar workflows and basically everything that we will discuss is
+transferable. With this material and these exercises we do not implicitly
+endorse the company [GitHub](https://github.com). We have chosen to demonstrate
+a number of concepts using examples with [GitHub](https://github.com) because
+it is currently the most popular web platform for hosting Git repositories and
+the chance is high that you will interact with
+[GitHub](https://github.com)-based repositories even if you choose to host your
+Git repository on another service.
 ```
 
 ```{toctree}
