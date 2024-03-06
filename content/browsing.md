@@ -22,8 +22,9 @@ Then browse the project and explore commits and branches. Take notes and prepare
 1. Browse the commit history: Are commit messages understandable?
 1. Compare the commit history with the network graph ("Insights" -> "Network"). Can you find the branches?
 1. How can you find out when a recipe was last modified?
-1. How many changes did the Guacamole recipe receive? Try to click on some of the commits to see what changed.
-1. Which recipes include "salt"?
+1. How many changes did the Guacamole recipe receive (you find it under "sides")?
+   Try to click on some of the commits to see what changed.
+1. Which recipes include the ingredient "salt"?
 1. In the Guacamole recipe, find out who modified each line last and when
    (click on file, then click "Blame" button). Find out who added the cilantro
    and in which commit.
