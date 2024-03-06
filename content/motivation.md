@@ -34,6 +34,9 @@ The same as above, but the terminal view
 
 ## Why do we need to keep track of versions?
 
+**Problem:: If you have to identify and find your code from 17 days
+ago, can you?**
+
 Version control is an answer to these questions (do you recognize some of them?):
 
 - "It broke ... hopefully I have a working version somewhere?"
@@ -54,6 +57,13 @@ Version control is an answer to these questions (do you recognize some of them?)
 
 
 ## Features: roll-back, branching, merging, collaboration
+
+**Problem: Your code worked two days ago, but is giving an error now.
+You don't know what you changed.**
+
+**Problem: You and your colleague want to work on the same code at the
+same time.**
+
 
 - **Roll-back**: you can always go back to a previous version and compare
 
@@ -77,6 +87,9 @@ Image created using <https://gopherize.me/>
 
 ## Reproducibility
 
+**Problem: Someone asks you about your results from 5 years ago.  Can
+you get the same results now?**
+
 - How do you indicate which version of your code you have used in your paper?
 - When you find a bug, how do you know **when precisely** this bug was introduced
   (Are published results affected? Do you need to inform collaborators or users of your code?).
@@ -93,6 +106,8 @@ Example of a git-annotated code with code and history side-by-side.
 
 
 ## Talking about code
+
+**Problem: You want to show someone a few lines from one of your projects.**
 
 Which of these two is more practical?
 - "Clone the code, go to the file 'src/util.rs', and search for 'time_iso8601'".
