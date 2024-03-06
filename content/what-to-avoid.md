@@ -16,6 +16,7 @@ than doing work and then noticing a lot of conflicts because
 unrelated but conflicting work was done in the meantime or even before you started.  Or noticing that someone
 else has already done it.  This problem is largest when you come back
 to an active project weeks or months later.
+So update your branch before adding new commits.
 
 **Commit unrelated changes together**: Makes it difficult to undo changes since
 it can undo also the unrelated change.
