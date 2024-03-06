@@ -2,7 +2,6 @@
 
 - [Learn Git branching](http://pcottle.github.io/learnGitBranching/)
 - [The entire Pro Git book, written by Scott Chacon and Ben Straub](http://git-scm.com/book)
-- [Learn git one commit at a time](http://gitready.com)
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 - [Commit Often, Perfect Later, Publish Once: Git Best Practices](http://sethrobertson.github.io/GitBestPractices/)
 - [PeepCode Git Internals](https://github.com/pluralsight/git-internals-pdf/releases)
