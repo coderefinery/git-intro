@@ -28,7 +28,7 @@ Then browse the project and explore commits and branches. Take notes and prepare
 1. In the Guacamole recipe, find out who modified each line last and when
    (click on file, then click "Blame" button). Find out who added the cilantro
    and in which commit.
-1. Who all has contributed to the repository?
+1. How many peoeple have contributed to the repository?
 1. Can you use these recipes yourself? Are you allowed to share modifications? (look at the license file)
 1. Browse issues and pull requests, any idea what these might be good for?
 ```
