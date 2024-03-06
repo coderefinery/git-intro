@@ -12,21 +12,18 @@
 
 ## Git is all about keeping track of changes
 
-We will learn how to keep track of changes first in a terminal ([example
-repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
-
-```{figure} img/git-log-terminal.png
-:alt: Screenshot of a git log in terminal
-:width: 80%
-```
-
-Later also via web interface ([example
-repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
-
+We will learn how to keep track of changes first in the web browser
+([example repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
 ```{figure} img/git-log-github.png
 :alt: Screenshot of a git log on GitHub
 :width: 80%
 :class: with-border
+```
+Later also using the terminal or the editor
+([example repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
+```{figure} img/git-log-terminal.png
+:alt: Screenshot of a git log in terminal
+:width: 80%
 ```
 
 
@@ -148,9 +145,9 @@ Despite the benefits, let's be honest, there are some difficulties:
 - Difficult if your collaborators don't want to use it (in the worst case, you can version control on your side and email them versions).
 - Advanced things can be difficult, but basics are often enough (ask others for help when needed).
 
----
 
-```{discussion} Why Git and not another tool?
+## Why Git and not another tool?
+
 - **Easy to set up**: no server needed.
 - **Very popular**: chances are high you will need to contribute to somebody else's code which is tracked with Git.
 - **Distributed**: good backup, no single point of failure, you can track and
@@ -163,4 +160,3 @@ However, any version control is better than no version control and it is OK to
 prefer a different tool than Git such as
 [Subversion](https://subversion.apache.org),
 [Mercurial](https://www.mercurial-scm.org), [Pijul](https://pijul.org/), or others.
-```
