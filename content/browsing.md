@@ -14,3 +14,11 @@
     - Browse issues and pull requests, any idea what these might be good for?
     - Browse commit history: are commit messages understandable?
 ```
+
+```{instructor-note} Preparation for instructors
+- Create an exercise repository from
+  <https://github.com/coderefinery/recipe-book-template> preserving history
+  (this means not by "generating from template")
+- Create one or two issues
+- Create one or two pull requests
+```
