@@ -12,18 +12,23 @@
 
 ## Git is all about keeping track of changes
 
-We will learn how to keep track of changes first in the web browser
-([example repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
+We will learn how to keep track of changes first in the web browser.
+Below are screenshots of **tracked changes with Git**
+(from this [example repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
 ```{figure} img/git-log-github.png
 :alt: Screenshot of a git log on GitHub
 :width: 80%
 :class: with-border
+
+Web browser, Github view
 ```
 Later also using the terminal or the editor
-([example repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
+(the same [example repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):
 ```{figure} img/git-log-terminal.png
 :alt: Screenshot of a git log in terminal
 :width: 80%
+
+The same as above, but the terminal view
 ```
 
 
