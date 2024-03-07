@@ -35,60 +35,12 @@ To do:
 :::
 
 :::{group-tab} Command line
+### Put your project under version control
+
+...
 
 
-## Troubleshooting
-
-**error: remote origin already exists**
-- Explanation: You probably ran a `git remote add origin ...` command, then changed your
-  mind about HTTPS or SSH and then tried to run the other `git remote add
-  origin ...` command but "origin" then already exists.
-- Recovery:
-  - First remove "origin" with `git remote remove origin`
-  - Then run the correct `git remote add origin ...` command
-
-**remote contains work that you do not have**
-- Explanation: You probably clicked on "Add a README file" and now the
-  repository on GitHub is not empty but contains one commit and locally you
-  have a different history. Git now prevents you from accidentally overwriting
-  the history on GitHub.
-- Recovery:
-  - Use `git push --force` instead of `git push`, which will force Git to overwrite the history on GitHub
-  - Note that this is a powerful but also possibly dangerous option but here it
-    helps us. If it's a brand new repo, it probably is fine to do this. For real
-    repositories, don't do this unless you are very sure what is happening.
-:::
-
-::::
-:::::
-
-
-## Remote repositories
-
-We will learn how to work with remote repositories in detail in the
-[collaborative distributed version
-control](https://coderefinery.github.io/git-collaborative/) lesson.  To store
-your git data on another server, you use **remotes**.  A remote is a repository
-on its own, with its own branches We can **push** changes to the remote and
-**pull** from the remote.
-
-You might use remotes to:
-- Back up your own work or make your work findable.
-- To collaborate with other people.
-
-There are different types of remotes:
-- If you have a server you can SSH to, you can use that as a remote.
-- [GitHub](https://github.com) is a popular, closed-source commercial site.
-- [GitLab](https://about.gitlab.com) is a popular, open-core
-  commercial site.  Many universities have their own private GitLab servers
-  set up.
-- [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
-- Another option is [NotABug](https://notabug.org).
-- There are more ...
-
----
-
-## Publishing an existing repository from laptop to GitHub
+### Create an <u>empty</u> repository on GitHub
 
 First log into GitHub, then follow the screenshots and descriptions below.
 
@@ -121,6 +73,11 @@ Once you click the green "Create repository", you will see a page similar to:
 
 What this means is that we have now an empty project with either an HTTPS or an
 SSH address: click on the HTTPS and SSH buttons to see what happens.
+
+
+### Push an existing repository from laptop to GitHub
+
+
 
 We now want to follow the "**... or push an existing repository from the command line**:
 
@@ -168,6 +125,55 @@ To github.com:USER/recipe.git
 Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
 
-**Reload your GitHub project website** and - taa-daa - your commits should now be
-online! What just happened? **Think of publishing a repository as uploading
-the `.git` part online**.
+Reload your GitHub project website and your commits should now be
+online!
+
+
+### Troubleshooting
+
+**error: remote origin already exists**
+- Explanation: You probably ran a `git remote add origin ...` command, then changed your
+  mind about HTTPS or SSH and then tried to run the other `git remote add
+  origin ...` command but "origin" then already exists.
+- Recovery:
+  - First remove "origin" with `git remote remove origin`
+  - Then run the correct `git remote add origin ...` command
+
+**remote contains work that you do not have**
+- Explanation: You probably clicked on "Add a README file" and now the
+  repository on GitHub is not empty but contains one commit and locally you
+  have a different history. Git now prevents you from accidentally overwriting
+  the history on GitHub.
+- Recovery:
+  - Use `git push --force` instead of `git push`, which will force Git to overwrite the history on GitHub
+  - Note that this is a powerful but also possibly dangerous option but here it
+    helps us. If it's a brand new repo, it probably is fine to do this. For real
+    repositories, don't do this unless you are very sure what is happening.
+:::
+
+::::
+:::::
+
+
+## Remote repositories
+
+We will learn how to work with remote repositories in detail in the
+[collaborative distributed version
+control](https://coderefinery.github.io/git-collaborative/) lesson.  To store
+your git data on another server, you use **remotes**.  A remote is a repository
+on its own, with its own branches We can **push** changes to the remote and
+**pull** from the remote.
+
+You might use remotes to:
+- Back up your own work or make your work findable.
+- To collaborate with other people.
+
+There are different types of remotes:
+- If you have a server you can SSH to, you can use that as a remote.
+- [GitHub](https://github.com) is a popular, closed-source commercial site.
+- [GitLab](https://about.gitlab.com) is a popular, open-core
+  commercial site.  Many universities have their own private GitLab servers
+  set up.
+- [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
+- Another option is [NotABug](https://notabug.org).
+- There are more ...
