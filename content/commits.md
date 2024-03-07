@@ -5,6 +5,13 @@ means modifying the files.  In this part, we will make changes in two
 ways: on a branch (which supports multiple lines of work at once), and
 directly on the main branch.
 
+```{objectives}
+* Add new changes to our own copy of the project.
+* Understand adding changes in two separate branches.
+* See how to compare different versions.
+```
+
+
 ```{instructor-note}
 Before starting the exercise session:
 - Show how to verify whether we are on our fork and not on the original repository.
