@@ -124,8 +124,6 @@ Then browse the project and explore commits and branches. Take notes and prepare
    (click on file, then click "Blame" button). Find out who added the cilantro
    and in which commit.
    (Hint: "Blame" view in the file view)
-1. How many people have contributed to the repository?
-   (Hint: under "Insights")
 1. Can you use these recipes yourself? Are you allowed to share
    modifications?
    (Hint: look for a license file)
@@ -302,31 +300,7 @@ $ git blame sides/guacamole.md
 :::::
 
 
-
-### (7) How many people have contributed to the repository?
-
-
-:::::{tabs}
-::::{group-tab} GitHub
-
-Insights → Contributors.  Note that we created a bunch of fake
-contributors, which *don't* show in this view.
-::::
-::::{group-tab} VS Code
-
-Unknown, use the command line method.
-::::
-::::{group-tab} Command line
-
-```
-$ git shortlog --summary --numbered --email --all
-```
-::::
-:::::
-
-
-
-### (8) Can you use these recipes yourself? Are you allowed to share modifications?
+### (7) Can you use these recipes yourself? Are you allowed to share modifications?
 
 * Look at the file `LICENSE`.
 * It says it is "Creative Commons Zero 1.0", which is equivalent to
@@ -340,7 +314,7 @@ $ git shortlog --summary --numbered --email --all
   :::
 
 
-### (9) Browse issues and pull requests in the {term}`upstream` repository
+### (8) Browse issues and pull requests in the {term}`upstream` repository
 
 This can only be done through the GitHub view.  Go to the main
 repository, the one of "CodeRefinery" (not your fork):
