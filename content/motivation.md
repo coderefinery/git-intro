@@ -20,7 +20,7 @@ Below are screenshots of **tracked changes with Git**
 :width: 80%
 :class: with-border
 
-Web browser, Github view
+Web browser, GitHub view
 ```
 Later also using the terminal or the editor
 (the same [example repository](https://github.com/bast/runtest/commits/main/runtest/run.py)):

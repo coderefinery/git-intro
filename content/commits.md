@@ -34,7 +34,7 @@ We will add to this page:
 ### (1) Create a branch and add recipe to the baranch
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 ````
 ````{group-tab} VSCode
 ````
@@ -48,7 +48,7 @@ We will add to this page:
 ### (2) Modify the recipe again
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 ````
 ````{group-tab} VSCode
 ````
@@ -61,7 +61,7 @@ We will add to this page:
 ### (3) Switch to the main branch and modify a recipe there
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 ````
 ````{group-tab} VSCode
 ````
@@ -74,7 +74,7 @@ We will add to this page:
 ### (4) Browse the commits you just made
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 ````
 ````{group-tab} VSCode
 ````
@@ -87,7 +87,7 @@ We will add to this page:
 ### (5) Compare the branches
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 ````
 ````{group-tab} VSCode
 ````
@@ -100,7 +100,7 @@ We will add to this page:
 ### (6) Compare two arbitrary commits
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 ````
 ````{group-tab} VSCode
 ````
@@ -113,7 +113,7 @@ We will add to this page:
 ### (7) Try to rename the branch
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 ````
 ````{group-tab} VSCode
 ````

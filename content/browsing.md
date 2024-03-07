@@ -2,7 +2,7 @@
 
 The first thing most people do is **contribute to an existing
 project**.  This, and following lessons, go over this.  We use an
-an example recipe book on Github.
+an example recipe book on GitHub.
 
 ```{objectives}
 * See a real git repository and understand what is inside of it.
@@ -67,7 +67,7 @@ Then browse the project and explore commits and branches. Take notes and prepare
    Try to click on some of the commits to see what changed.
    (Hint: "History" in the view of a single file.)
 1. Which recipes include the ingredient "salt"?
-   (Hint: the Github search.  From the repository view, it should offer
+   (Hint: the GitHub search.  From the repository view, it should offer
    the filter "repo:coderefinery/recipe-book" by default.  What if you
    add a search term?)
 1. In the Guacamole recipe, find out who modified each line last and when
@@ -89,7 +89,7 @@ Then browse the project and explore commits and branches. Take notes and prepare
 
 ```{note}
 
-In the CodeRefinery workshop itself, we follow the **Github** flow.
+In the CodeRefinery workshop itself, we follow the **GitHub** flow.
 **VSCode** and **Command line** are for reference, for people who
 already know enough to follow.  They do not have full information and
 screenshots, and may not be complete.
@@ -98,15 +98,15 @@ screenshots, and may not be complete.
 First, we need to make our own copy of the repository.  This will
 become important later, when we make our own changes.
 
-1. Go to the repository view on Github (everyone should do this,
+1. Go to the repository view on GitHub (everyone should do this,
    regardless of which flow you are using): <https://github.com/coderefinery/recipe-book>
-1. First, on Github, click the button that says "Fork".
+1. First, on GitHub, click the button that says "Fork".
 1. TODO.
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 You only need to open your own view.  The browser URL should look like
-`https://github.com/USER/recipe-book`, where `USER` is your Github username.
+`https://github.com/USER/recipe-book`, where `USER` is your GitHub username.
 ````
 
 ````{group-tab} VSCode
@@ -158,7 +158,7 @@ The most basic thing to look at is the history of commits.
 * Clicking on a change in the view shows more.
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 
 Click on "History.
 ````
@@ -180,7 +180,7 @@ another.  But if we look at the network view, we see some branches and
 merges.  We'll see how to do these later.
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 
 In a new browser tab, open the "Insights" tab, and click on Network.
 You can hover over the commit dots to see the person who committed and
@@ -210,7 +210,7 @@ We see the history for the whole repository, but we can also see it
 for a single file.
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 
 Navigate to the file view: Main page → sides directory →
 guacamole.md.  Click the "History" button near the top right.
@@ -249,7 +249,7 @@ Version control makes it very easy to find all occurances of a single
 word.  This is useful for things like tracing through code
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 
 We go to the main recipe book view.  We click the Search magnifying
 class at the very top, type "salt" (so that it reads
@@ -282,7 +282,7 @@ $ git grep -C 3 salt     # three lines of context
 This is called the "annotate" or "blame" view.
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 
 From a recipe view, change preview to "Blame" towards the top-left.
 
@@ -310,7 +310,7 @@ $ git blame sides/guacamole.md
 
 
 `````{tabs}
-````{group-tab} Github
+````{group-tab} GitHub
 
 Insights → Contributors.  Note that we created a bunch of fake
 contributors, which *don't* show in this view.
@@ -334,16 +334,16 @@ $ git shortlog --summary --numbered --email --all
 * In all flows, look at the file `LICENSE`.
 * It says it is "Creative Commons Zero 1.0", which is equivalent to
   public domain.  You can use them for anything.
-* Note the Github view of the file `LICENSE` gives a nice summary of what it means.
+* Note the GitHub view of the file `LICENSE` gives a nice summary of what it means.
 
 
 
 ## (9) Browse issues and pull requests
 
-This can only be done through the Github view.  Go to the main
+This can only be done through the GitHub view.  Go to the main
 repository, the one of "CodeRefinery" (not your fork):
 <https://github.com/coderefinery/recipe-book>.  Issues and Pull
-Requests are different for each Github copy.
+Requests are different for each GitHub copy.
 
 * Click on the Issues" tab.  These are notes that people have added,
   which allow discussion about the project.

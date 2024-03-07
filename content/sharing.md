@@ -85,7 +85,7 @@ There are different types of remotes:
 
 ## Authenticating to GitHub: SSH or HTTPS?
 
-**How does Github know who you are?**  This is hard and there are two
+**How does GitHub know who you are?**  This is hard and there are two
 options.
 
 * **SSH** is the classic method, using Secure Shell remote connection
@@ -129,7 +129,7 @@ Test which one you should use:
     you try using it).
 
     From now on, **if you know that HTTPS works, you should always select
-    HTTPS as the clone URL from Github, or translate the URL to start with
+    HTTPS as the clone URL from GitHub, or translate the URL to start with
     the right thing yourself:** `https://github.com/`
   ````
 `````
