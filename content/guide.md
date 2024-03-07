@@ -63,12 +63,6 @@ Times here are in CE(S)T.
 - 13:20 - 13:30 (10 min) Q&A, feedback, and what will we be doing tomorrow?
 
 
-## Installation reminders for each day
-
-- Day 1: Git configuration
-- Day 2: SSH set up (if you don't, sharing repositories online will be demo)
-
-
 ## Why we teach this lesson
 
 Everyone should be using a version control system for their work, even if they're working alone.
