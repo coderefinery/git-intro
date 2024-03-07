@@ -64,7 +64,8 @@ Click on the "+" symbol and then on "Upload files".
 :::{group-tab} VS Code
 In VS Code it only takes few clicks.
 
-First, open the folder in VS Code. Then click on the source control icon:
+First, open the folder in VS Code. My example project here contains two files.
+Then click on the source control icon:
 ```{figure} img/sharing/vscode-start.png
 :alt: Screenshot of VS Code before clicking on the source control icon
 :width: 100%
