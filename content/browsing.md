@@ -351,6 +351,9 @@ Requests are different for each GitHub copy.
 
 ## Summary
 
-Git allowed us to understand this simple project much better than we
-could, if it was just a few files on our own computer.  It was also
-very easy to share with the course.
+- Git allowed us to understand this simple project much better than we
+  could, if it was just a few files on our own computer.
+- It was also very easy to share the project with the course.
+- By forking the repository, we created our own copy. This is
+  important for the next episode, where we will make changes to
+  our copy.
