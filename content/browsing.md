@@ -39,7 +39,12 @@ This will become important later, when we make our own changes.
 
 1. Go to the repository view on GitHub: <https://github.com/coderefinery/recipe-book>
 1. First, on GitHub, click the button that says "Fork".  It is towards
-   the top-right of the screen.
+   the top-right of the screen:
+   :::{figure} img/browsing/forking.png
+   :alt: Screenshot on GitHub before clicking on "Fork"
+   :width: 80%
+   :class: with-border
+   :::
 1. You should shortly be redirected to your copy of the repository.
 
 At all times you should be aware of if you looking at *your* repository
@@ -58,15 +63,15 @@ URL should look like `https://github.com/USER/recipe-book`, where
 
 We need to start by making a copy of this repository locally.
 
-1. Start VS Code
+1. Start VS Code.
 1. If you don't have the default view (you already have a project
-open), go to File → New Window
-1. Under "Start" on the screen, select "Clone Git Repository..."
+open), go to File → New Window.
+1. Under "Start" on the screen, select "Clone Git Repository...".
 1. Paste in this URL: `https://github.com/USER/recipe-book`, where
    `USER` is your username.  You can copy this from the browser.
 1. Browse and select the folder in which you want to clone the
    repository.
-1. Say yes, you want to open this repository
+1. Say yes, you want to open this repository.
 1. Select "Yes, I trust the authors" (the other option works too).
 ::::
 ::::{group-tab} Command line
@@ -77,8 +82,8 @@ comfortable with the command line already.**
 
 We need to start by making a copy of this repository locally.
 
-1. Start the terminal in which you use git (Terminal application, or
-   Git-Bash).
+1. Start the terminal in which you use Git (terminal application, or
+   Git Bash).
 1. Change to the directory where you would want the repository to be
    (`cd ~/code` for example, if the `~/code` directory is where you
    store your files).
@@ -106,12 +111,12 @@ Before starting the exercise session:
 Then browse the project and explore commits and branches. Take notes and prepare questions.
 
 1. Browse the commit history: Are commit messages understandable?
-   (Hint: "Commit history" (like "25 commits") above the file list.)
+   (Hint: "Commit history", the clock symbol, above the file list)
 1. Compare the commit history with the network graph ("Insights" -> "Network"). Can you find the branches?
 1. How can you find out when a recipe was last modified?
 1. How many changes did the Guacamole recipe receive (you find it under "sides")?
    Try to click on some of the commits to see what changed.
-   (Hint: "History" in the view of a single file.)
+   (Hint: "History" in the view of a single file)
 1. Which recipes include the ingredient "salt"?
    (Hint: the GitHub search.  From the repository view, it should offer
    the filter "repo:coderefinery/recipe-book" by default.  What if you
@@ -134,7 +139,6 @@ Then browse the project and explore commits and branches. Take notes and prepare
 The solution below goes over most of the answers, and you are
 encouraged to use it when the hints aren't enough - this is by
 design.
-
 
 
 ## Solution and walk-through
