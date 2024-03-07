@@ -72,7 +72,7 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
     which can be useful to find where something got removed.
   ````
 
-  ````{group-tab} Browser (GitHub)
+  ````{group-tab} GitHub
     We can try the same example in the browser:
     <https://github.com/search?q=repo%3Anetworkx%2Fnetworkx%20fixme&type=code>
 
@@ -104,7 +104,7 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
     ```
   ````
 
-  ````{group-tab} Browser (GitHub)
+  ````{group-tab} GitHub
     We can try the same example in the browser:
     <https://github.com/networkx/networkx/commit/759d589bdfa61aff99e0535938f14f67b01c83f7>
 
@@ -142,7 +142,7 @@ modified each line. Incredibly useful for reproducibility.
     You can also use page up/down to scroll. You can quit with `q`.
   ````
 
-  ````{group-tab} Browser (GitHub)
+  ````{group-tab} GitHub
     We can try the same example in the browser:
     <https://github.com/networkx/networkx/blame/main/networkx/convert_matrix.py>
 
@@ -199,7 +199,7 @@ Discuss how these relatively trivial changes affect the annotation:
     ```
   ````
 
-  ````{group-tab} Browser (GitHub)
+  ````{group-tab} GitHub
     We now know how to visit a specific commit:
     <https://github.com/networkx/networkx/commit/347e629>
 
