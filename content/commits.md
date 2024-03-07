@@ -1,9 +1,18 @@
 # Committing changes
 
+The first and most basic to do is *make changes*.  Making changes
+means modifying the files.  In this part, we will make changes in two
+ways: on a branch (which supports multiple lines of work at once), and
+directly on the main branch.
+
 ```{instructor-note}
 Before starting the exercise session:
 - Show how to verify whether we are on our fork and not on the original repository.
 ```
+
+## Background
+
+
 
 ## Exercise
 
@@ -31,10 +40,36 @@ We will add to this page:
 
 ## Solution
 
-### (1) Create a branch and add recipe to the baranch
+### (1) Create a branch and add recipe to the branch
+
+There is a `main` branch that is default.  We want to create a
+*different* branch for our new commit, because we will *merge* it
+later.
+
+**Commit** is the verb to describe recording more changes, and also
+the name of the thing you make.  A commit is identified by something
+such as `554c187`.
 
 `````{tabs}
 ````{group-tab} GitHub
+1. Make sure that you are in your fork (your username is in the URL).
+1. Where it says "main" at the top left, click, enter a new branch
+   name `new-recipe`, click on the offer to create the new branch
+   ("Create branch new-recipe from main").
+1. Change to some sub-directory, for example `sides`
+1. Make sure you are still on the `new-recipe` branch (it should say
+   it at the top), and click "Add file → Create new file" from the
+   upper right.
+1. Enter a filename where it says "Name your file...", with a `.md` at
+   the end.  Example: `mixed-nuts.md`.
+1. Enter the recipe.  You can use the template below.
+1. Click "Commit changes"
+1. Enter a message if you want, or leave it as default.  Click "Commit
+   changes".
+
+You should appear back at the file browser view, and see your new
+recipe there.
+
 ````
 ````{group-tab} VS Code
 ````
@@ -44,11 +79,33 @@ We will add to this page:
 ````
 `````
 
+A recipe template is below.  This format is called "Markdown", but it
+doesn't matter right now.
+```markdown
+# Recipe name
+
+## Ingredients
+- ingredient 1
+- ingredient 2
+
+## Instructions
+1. Step 1
+2. Step 2
+```
+
+
 
 ### (2) Modify the recipe again
 
 `````{tabs}
 ````{group-tab} GitHub
+This is similar to before, but we click on the existing file to
+modify.
+
+1. Click on your new recipe, for example `mixed-nuts.md`.
+2. Click the edit button, the pencil icon at top-right.
+3. Follow the "Commit changes" instructions as in the previous step.
+
 ````
 ````{group-tab} VS Code
 ````
@@ -62,6 +119,13 @@ We will add to this page:
 
 `````{tabs}
 ````{group-tab} GitHub
+1. Go back to the main repository page (your user's page)
+1. In the branch switch view (top left above the file view), switch to
+   `main`.
+1. Modify another recipe that already exists, following the pattern
+from above.  Don't modify the one you just created (but it shouldn't
+even be visible on the `main` branch).
+
 ````
 ````{group-tab} VS Code
 ````
@@ -73,8 +137,14 @@ We will add to this page:
 
 ### (4) Browse the commits you just made
 
+Let's look at what we did.  Now, the `main` and `new-recipe` branches
+have diverged: both have some modifications.
+
+* **branch**: One line of development
+
 `````{tabs}
 ````{group-tab} GitHub
+Insights tab → Network view (just like we have done before).
 ````
 ````{group-tab} VS Code
 ````
@@ -86,8 +156,15 @@ We will add to this page:
 
 ### (5) Compare the branches
 
+Comparing changes is an important thing we need to do.  When using the
+Github view only, this may not be so common, but we'll show it so that
+it makes sense later on.
+
 `````{tabs}
 ````{group-tab} GitHub
+
+TODO: I can't find this.  Do we click on the defalt proposal there?
+
 ````
 ````{group-tab} VS Code
 ````
@@ -99,8 +176,12 @@ We will add to this page:
 
 ### (6) Compare two arbitrary commits
 
+This is similar to above, but not only between branches.
+
 `````{tabs}
 ````{group-tab} GitHub
+
+TODO: can't find.
 ````
 ````{group-tab} VS Code
 ````
@@ -114,6 +195,9 @@ We will add to this page:
 
 `````{tabs}
 ````{group-tab} GitHub
+
+Branch buton → View all branches → three dots at right side → Rename branch.
+
 ````
 ````{group-tab} VS Code
 ````
@@ -125,3 +209,12 @@ We will add to this page:
 
 
 ## Discussion
+
+In this part, we saw how we can make changes to our files.  We can
+track several lines of work at once (**branches**), and can compare
+their differences.
+
+* You could commit directly to `main` if there is only one single line
+  of work and it's only you.
+* You could commit to branches if there are multiple lines of work at
+  once, and you don't want them to interfere with each other.
