@@ -183,4 +183,8 @@ $ git clone https://github.com/user/recipe.git myrecipe
 
 
 
+## How to compare the graph locally and on GitHub
+
+
+
 ## Summary
