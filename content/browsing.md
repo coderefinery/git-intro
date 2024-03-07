@@ -43,6 +43,7 @@ We will add to this page:
   people than with your own
 * It's easier to get to know your own repositories
 
+
 ## Exercise
 
 Work on this by yourself.  The solution below goes over most of the
@@ -145,8 +146,9 @@ We need to start by making a copy of this repository locally.
 `````
 
 
+## Solution
 
-## (1) Basic browsing
+### (1) Basic browsing
 
 The most basic thing to look at is the history of commits.
 
@@ -173,7 +175,8 @@ Run `git log`.
 ````
 `````
 
-## (2) Compare commit history with network graph
+
+### (2) Compare commit history with network graph
 
 The commit history we saw above looks linear: one commit after
 another.  But if we look at the network view, we see some branches and
@@ -203,8 +206,7 @@ You can view the network graph with `git log --graph --oneline
 `````
 
 
-
-## (3) When was a recipe last modified?
+### (3) When was a recipe last modified?
 
 We see the history for the whole repository, but we can also see it
 for a single file.
@@ -236,14 +238,14 @@ $ git log sides/guacamole.md
 
 
 
-## (4) How many changes did the Guacamole recipe receive?
+### (4) How many changes did the Guacamole recipe receive?
 
 According to the view above, it seems to have five changes (as of
 2024-03-07).  This could change later on.
 
 
 
-## (5) Which recipes include the ingredient "salt" ?
+### (5) Which recipes include the ingredient "salt" ?
 
 Version control makes it very easy to find all occurrences of a single
 word.  This is useful for things like tracing through code
@@ -277,7 +279,7 @@ $ git grep -C 3 salt     # three lines of context
 
 
 
-## (6) Who modified each line last?
+### (6) Who modified each line last?
 
 This is called the "annotate" or "blame" view.
 
@@ -306,7 +308,7 @@ $ git blame sides/guacamole.md
 
 
 
-## (7) How many people have contributed to the repository?
+### (7) How many people have contributed to the repository?
 
 
 `````{tabs}
@@ -329,7 +331,7 @@ $ git shortlog --summary --numbered --email --all
 
 
 
-## (8) Can you use these recipes yourself?
+### (8) Can you use these recipes yourself?
 
 * In all flows, look at the file `LICENSE`.
 * It says it is "Creative Commons Zero 1.0", which is equivalent to
@@ -338,7 +340,7 @@ $ git shortlog --summary --numbered --email --all
 
 
 
-## (9) Browse issues and pull requests
+### (9) Browse issues and pull requests
 
 This can only be done through the GitHub view.  Go to the main
 repository, the one of "CodeRefinery" (not your fork):
@@ -349,7 +351,6 @@ Requests are different for each GitHub copy.
   which allow discussion about the project.
 * Click on the "Pull requests" tab.  This allows anyone to *propose
   changes*, but only the repository owners can accept.
-
 
 
 ## Summary
