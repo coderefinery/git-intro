@@ -82,7 +82,7 @@ As usual, this is basic hints.  You should refer to the solution as needed.
 
    In the pull request verify the target repository and the target
    branch. Make sure that you are merging within your own repository.
-   **Github: By default, it will offer to make the change to the
+   **GitHub: By default, it will offer to make the change to the
    upstream repository, `coderefinery`.  You should change this**, you
    shouldn't contribute your test recipe upstream yet.  Where it says
    `base repository`, select your own user's repository.
@@ -152,7 +152,7 @@ the GitHub flow.
 
 ::::{group-tab} Command line
 Remember, you need to navigate to the `main` branch (different from)
-the Github flow.
+the GitHub flow.
 ::::
 :::::
 

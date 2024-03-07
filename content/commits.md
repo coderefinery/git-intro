@@ -179,7 +179,7 @@ Insights tab → Network view (just like we have done before).
 ### (5) Compare the branches
 
 Comparing changes is an important thing we need to do.  When using the
-Github view only, this may not be so common, but we'll show it so that
+GitHub view only, this may not be so common, but we'll show it so that
 it makes sense later on.
 
 :::::{tabs}
