@@ -1,58 +1,38 @@
 # Copy and browse an existing project
 
 In this episode, we will look at an existing repository to
-understand how all of pieces work.  Along the way, we will make a copy
+understand how all the pieces work together. Along the way, we will make a copy
 (a {term}`fork`) of the {term}`repository` for us, which will be used for our
 own changes in the next episode.
 
-:::{objectives}
-* See a real git repository and understand what is inside of it.
-* Understand how version control allows advanced inspection of a
-  repository.
-* See how git allows multiple people to collaborate easily.
-:::
-
-We will add to this page:
-- intro
-- screenshots
-- tab on how to do this locally
-- hints
-- solution
-- discussion
-- summary
-
-
-## Introduction
-
-* We used to start by directly going and creating a repository.  This
+- We used to start by directly going and creating a repository.  This
   was abstract and hard to understand.
-* Instead, we'll show you all the cool stuff in a git repository
+- Instead, we'll show you all the cool stuff in a git repository
   first, and then start adding files.
-* We use an example recipe book we created just for this course.
-* By the end of the course, you'll know how to contribute your own
+- We use an example recipe book we created just for this course.
+- By the end of the course, you'll know how to contribute your own
   recipes to it.
 
+:::{objectives}
+* See a real Git repository and understand what is inside of it.
+* Understand how version control allows advanced inspection of a
+  repository.
+* See how Git allows multiple people to collaborate easily.
+:::
 
 
 ## GitHub, VS Code, Command line, and more
 
-We offer **three different flows** of how to do this exercise.  For
-the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
-flow** only and recommend you do that.
+We offer **three different flows** of how to do this exercise:
+- **GitHub** (this is the one we will demonstrate)
+- **VS Code** (if you prefer to follow along using an editor)
+- **Command line** (for people comfortable with the command line)
 
 In the future we'll add more flows, for example Jupyter and RStudio.
 
 
 
-## Setup
-
-:::{note}
-
-In the CodeRefinery workshop itself, we follow the **GitHub** flow.
-**VS Code** and **Command line** are for reference, for people who
-already know these tools.  They do not have full information and
-screenshots, and may not be complete yet.
-:::
+## Creating a copy of the repository by "forking"
 
 First, we need to make our own copy of the repository.
 This will become important later, when we make our own changes.
