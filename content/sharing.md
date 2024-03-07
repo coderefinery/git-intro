@@ -89,15 +89,13 @@ Choose "Publish to GitHub".
 In my case I chose to "Publish to GitHub public repository".
 ```
 
-First time you do this, VS Code might ask you to authorize it to access your
-GitHub account by redirecting you to https://github.com/login/oauth/authorize:
 ```{figure} img/sharing/vscode-authorize.png
 :alt: Screenshot of VS Code asking for authorization
 :width: 50%
 :class: with-border
 
 First time you do this you might need to authorize VS Code to access your
-GitHub account.
+GitHub account by redirecting you to https://github.com/login/oauth/authorize.
 ```
 
 ```{figure} img/sharing/vscode-publish-to-github3.png
