@@ -326,16 +326,21 @@ $ git shortlog --summary --numbered --email --all
 
 
 
-### (8) Can you use these recipes yourself?
+### (8) Can you use these recipes yourself? Are you allowed to share modifications?
 
-* In all flows, look at the file `LICENSE`.
+* Look at the file `LICENSE`.
 * It says it is "Creative Commons Zero 1.0", which is equivalent to
   public domain.  You can use them for anything.
-* Note the GitHub view of the file `LICENSE` gives a nice summary of what it means.
+* Note the GitHub view of the file `LICENSE` gives a nice summary of what it
+  means. Try it out:
+  :::{figure} img/browsing/license.png
+  :alt: Screenshot on GitHub summarizing license terms
+  :width: 100%
+  :class: with-border
+  :::
 
 
-
-### (9) Browse issues and pull requests
+### (9) Browse issues and pull requests in the {term}`upstream` repository
 
 This can only be done through the GitHub view.  Go to the main
 repository, the one of "CodeRefinery" (not your fork):
