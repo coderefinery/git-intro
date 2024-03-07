@@ -2,7 +2,8 @@
 
 :::{objectives}
 - Turn our own coding project (small or large) into a Git repository.
-- Be able to publish a repository on the web.
+- Be able to share a repository on the web to have a backup or so that others
+  can reuse and collaborate.
 :::
 
 :::{instructor-note}
@@ -12,66 +13,82 @@
 :::
 
 
-## From our laptops to the web
+## Exercise
 
-We have seen that **creating Git repositories and moving them around is
-relatively simple** and that is great.
+:::::{exercise} Exercise: Turn your project to a Git repo and share it (25 min)
 
-So far, if you only worked in the command line, everything was local and all
-snapshots, branches, and tags are saved under `.git`.
+1. Create a new directory with one or few files in it. This represents our
+   own project. It is not yet a Git repository.
+2. Turn this directory into a Git repository.
+3. Share this repository on GitHub.
 
-If we remove `.git`, we remove all Git history of a project.
+We offer **three different flows** of how to do this exercise.
+::::{tabs}
 
-```{discussion}
-- What if the hard disk fails?
-- What if somebody steals my laptop?
-- How can we collaborate with others across the web?
-```
+:::{group-tab} Only using GitHub
+:::
+
+:::{group-tab} VS Code
+To do:
+- https://github.com/login/oauth/authorize
+- add screenshot about authorizing
+:::
+
+:::{group-tab} Command line
 
 
-## Remotes
+## Troubleshooting
+
+**error: remote origin already exists**
+- Explanation: You probably ran a `git remote add origin ...` command, then changed your
+  mind about HTTPS or SSH and then tried to run the other `git remote add
+  origin ...` command but "origin" then already exists.
+- Recovery:
+  - First remove "origin" with `git remote remove origin`
+  - Then run the correct `git remote add origin ...` command
+
+**remote contains work that you do not have**
+- Explanation: You probably clicked on "Add a README file" and now the
+  repository on GitHub is not empty but contains one commit and locally you
+  have a different history. Git now prevents you from accidentally overwriting
+  the history on GitHub.
+- Recovery:
+  - Use `git push --force` instead of `git push`, which will force Git to overwrite the history on GitHub
+  - Note that this is a powerful but also possibly dangerous option but here it
+    helps us. If it's a brand new repo, it probably is fine to do this. For real
+    repositories, don't do this unless you are very sure what is happening.
+:::
+
+::::
+:::::
+
+
+## Remote repositories
 
 We will learn how to work with remote repositories in detail in the
-[collaborative distributed version control](https://coderefinery.github.io/git-collaborative/) lesson.
-
-In this section we only want to get a taste to prepare us for other lessons
-where we will employ GitHub.  Our goal is to publish our exercise guacamole recipe
-which we prepared in the previous episodes on
-the web. Don't worry, you will be able to remove it afterwards.
-
-To store your git data on another server, you use **remotes**.
-A remote is a repository on its own, with its own branches
-We can **push** changes to the remote and **pull**
-from the remote.
+[collaborative distributed version
+control](https://coderefinery.github.io/git-collaborative/) lesson.  To store
+your git data on another server, you use **remotes**.  A remote is a repository
+on its own, with its own branches We can **push** changes to the remote and
+**pull** from the remote.
 
 You might use remotes to:
-- Back up your own work.
+- Back up your own work or make your work findable.
 - To collaborate with other people.
 
 There are different types of remotes:
-- If you have a server you can ssh to, you can use that as a remote.
+- If you have a server you can SSH to, you can use that as a remote.
 - [GitHub](https://github.com) is a popular, closed-source commercial site.
 - [GitLab](https://about.gitlab.com) is a popular, open-core
   commercial site.  Many universities have their own private GitLab servers
   set up.
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
 - Another option is [NotABug](https://notabug.org).
-- We also operate a [Nordic
-  research software repository
-  platform](https://coderefinery.org/repository/).
-  This is GitLab, free for researchers and allows private,
-  cross-university sharing.
+- There are more ...
 
 ---
 
 ## Publishing an existing repository from laptop to GitHub
-
-```{admonition} If you started in the browser and have nothing on your laptop yet
-It is possible, that you already have a repository on GitHub if you followed
-the examples and exercises in previous episodes in the browser. In this case,
-please watch others publish their repository and try to clone your repository
-to the laptop using instructions at the bottom of this page.
-```
 
 First log into GitHub, then follow the screenshots and descriptions below.
 
@@ -154,35 +171,3 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 **Reload your GitHub project website** and - taa-daa - your commits should now be
 online! What just happened? **Think of publishing a repository as uploading
 the `.git` part online**.
-
-
-```{admonition} Troubleshooting
-**error: remote origin already exists.**
-- Explanation: You probably ran a `git remote add origin ...` command, then changed your
-  mind about HTTPS or SSH and then tried to run the other `git remote add
-  origin ...` command but "origin" then already exists.
-- Recovery:
-  - First remove "origin" with `git remote remove origin`
-  - Then run the correct `git remote add origin ...` command
-
-**remote contains work that you do not have**
-- Explanation: You probably clicked on "Add a README file" and now the
-  repository on GitHub is not empty but contains one commit and locally you
-  have a different history. Git now prevents you from accidentally overwriting
-  the history on GitHub.
-- Recovery:
-  - Use `git push --force` instead of `git push`, which will force Git to overwrite the history on GitHub
-  - Note that this is a powerful but also possibly dangerous option but here it
-    helps us. If it's a brand new repo, it probably is fine to do this. For real
-    repositories, don't do this unless you are very sure what is happening.
-```
-
----
-
-```{keypoints}
-- A repository can have one or multiple remotes (we will revisit these later).
-- Local branches often track remote branches.
-- A remote serves as a full backup of your work.
-- We'll properly learn how to use these in the
-  [collaborative distributed version control](https://coderefinery.github.io/git-collaborative/).
-```
