@@ -245,7 +245,7 @@ According to the view above, it seems to have five changes (as of
 
 ## (5) Which recipes include the ingredient "salt" ?
 
-Version control makes it very easy to find all occurences of a single
+Version control makes it very easy to find all occurrences of a single
 word.  This is useful for things like tracing through code
 
 `````{tabs}
@@ -260,7 +260,7 @@ instance, including the context.
 ````{group-tab} VS Code
 
 If you use the "Search" magnifying class on the left sidebar, and
-search for "Salt" it shows the occurences in every file.  You can
+search for "Salt" it shows the occurrences in every file.  You can
 click to see the usage in context.
 
 ````
