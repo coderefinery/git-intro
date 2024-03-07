@@ -5,17 +5,21 @@ means modifying the files.  In this part, we will make changes in two
 ways: on a branch (which supports multiple lines of work at once), and
 directly on the main branch.
 
-```{objectives}
+:::{objectives}
 * Add new changes to our own copy of the project.
 * Understand adding changes in two separate branches.
 * See how to compare different versions.
-```
+:::
 
 
-```{instructor-note}
+:::{instructor-note}
 Before starting the exercise session:
 - Show how to verify whether we are on our fork and not on the original repository.
+:::
+
+```{highlight} console
 ```
+
 
 ## Background
 
@@ -23,7 +27,12 @@ Before starting the exercise session:
 
 ## Exercise
 
-```{exercise} Exercise: Practice creating commmits and branches (20 min)
+We offer **three different flows** of how to do this exercise.  For
+the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
+flow** only and recommend you do that.
+
+
+:::{exercise} Exercise: Practice creating commmits and branches (20 min)
 Make sure that you work now **on your fork** of the recipe-book repository.
 
 1. First create a branch and then add a recipe to the branch and commit the change.
@@ -33,7 +42,7 @@ Make sure that you work now **on your fork** of the recipe-book repository.
 1. Compare the branch that you created with the `main` branch. Can you find an easy way to see the differences?
 1. Can you find a way to compare versions between two arbitrary commits in the repository?
 1. Try to rename the branch that you created and then browse the network again.
-```
+:::
 
 We will add to this page:
 - intro
@@ -57,8 +66,8 @@ later.
 the name of the thing you make.  A commit is identified by something
 such as `554c187`.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 1. Make sure that you are in your fork (your username is in the URL).
 1. Where it says "main" at the top left, click, enter a new branch
    name `new-recipe`, click on the offer to create the new branch
@@ -77,14 +86,14 @@ such as `554c187`.
 You should appear back at the file browser view, and see your new
 recipe there.
 
-````
-````{group-tab} VS Code
-````
-````{group-tab} Command line
+::::
+::::{group-tab} VS Code
+::::
+::::{group-tab} Command line
 ```
 ```
-````
-`````
+::::
+:::::
 
 A recipe template is below.  This format is called "Markdown", but it
 doesn't matter right now.
@@ -104,8 +113,8 @@ doesn't matter right now.
 
 ### (2) Modify the recipe again
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 This is similar to before, but we click on the existing file to
 modify.
 
@@ -113,19 +122,19 @@ modify.
 2. Click the edit button, the pencil icon at top-right.
 3. Follow the "Commit changes" instructions as in the previous step.
 
-````
-````{group-tab} VS Code
-````
-````{group-tab} Command line
+::::
+::::{group-tab} VS Code
+::::
+::::{group-tab} Command line
 ```
 ```
-````
-`````
+::::
+:::::
 
 ### (3) Switch to the main branch and modify a recipe there
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 1. Go back to the main repository page (your user's page)
 1. In the branch switch view (top left above the file view), switch to
    `main`.
@@ -133,14 +142,14 @@ modify.
 from above.  Don't modify the one you just created (but it shouldn't
 even be visible on the `main` branch).
 
-````
-````{group-tab} VS Code
-````
-````{group-tab} Command line
+::::
+::::{group-tab} VS Code
+::::
+::::{group-tab} Command line
 ```
 ```
-````
-`````
+::::
+:::::
 
 ### (4) Browse the commits you just made
 
@@ -149,17 +158,17 @@ have diverged: both have some modifications.
 
 * **branch**: One line of development
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 Insights tab → Network view (just like we have done before).
-````
-````{group-tab} VS Code
-````
-````{group-tab} Command line
+::::
+::::{group-tab} VS Code
+::::
+::::{group-tab} Command line
 ```
 ```
-````
-`````
+::::
+:::::
 
 ### (5) Compare the branches
 
@@ -167,52 +176,52 @@ Comparing changes is an important thing we need to do.  When using the
 Github view only, this may not be so common, but we'll show it so that
 it makes sense later on.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 TODO: I can't find this.  Do we click on the defalt proposal there?
 
-````
-````{group-tab} VS Code
-````
-````{group-tab} Command line
+::::
+::::{group-tab} VS Code
+::::
+::::{group-tab} Command line
 ```
 ```
-````
-`````
+::::
+:::::
 
 ### (6) Compare two arbitrary commits
 
 This is similar to above, but not only between branches.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 TODO: can't find.
-````
-````{group-tab} VS Code
-````
-````{group-tab} Command line
+::::
+::::{group-tab} VS Code
+::::
+::::{group-tab} Command line
 ```
 ```
-````
-`````
+::::
+:::::
 
 ### (7) Try to rename the branch
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 Branch buton → View all branches → three dots at right side → Rename branch.
 
-````
-````{group-tab} VS Code
-````
-````{group-tab} Command line
+::::
+::::{group-tab} VS Code
+::::
+::::{group-tab} Command line
 ```
 ```
-````
-`````
+::::
+:::::
 
 
 ## Discussion

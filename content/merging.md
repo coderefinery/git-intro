@@ -4,16 +4,20 @@ When different people do different things at the same time, it means we
 have to somehow combine the changes later.  This part goes over that
 **merging**.
 
-```{objectives}
+:::{objectives}
 * Understand that merging is done throguh **pull requests** (= change proposal).
 * Create and merge a pull request within your own repository.
 * Understand (and optionally) do the same for the main public repository.
-```
+:::
 
-```{instructor-note}
+:::{instructor-note}
 Before starting the exercise session:
 - Show how to open a pull request and how it can be accepted (merged).
+:::
+
+```{highlight} console
 ```
+
 
 ## Terminology
 

@@ -4,14 +4,14 @@ The first thing most people do is **contribute to an existing
 project**.  This, and following lessons, go over this.  We use an
 an example recipe book on GitHub.
 
-```{objectives}
+:::{objectives}
 * See a real git repository and understand what is inside of it.
 * Understand how version control allows advanced inspection of a
   repository.
 * See how git allows multiple people to take collaborate.
-```
+:::
 
-```{instructor-note}
+:::{instructor-note}
 Preparation:
 - Create an exercise repository from
   <https://github.com/coderefinery/recipe-book-template> preserving history
@@ -22,7 +22,7 @@ Preparation:
 
 Before starting the exercise session:
 - Show how to fork the repository to own account
-```
+:::
 
 ```{highlight} console
 ```
@@ -54,7 +54,7 @@ We offer **three different flows** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
 flow** only and recommend you do that.
 
-```{exercise} Exercise: Browsing an existing project (25 min)
+:::{exercise} Exercise: Browsing an existing project (25 min)
 First **make a copy** to your own account to work on **by forking**
 <https://github.com/coderefinery/recipe-book>
 
@@ -83,18 +83,18 @@ Then browse the project and explore commits and branches. Take notes and prepare
 1. Browse issues and pull requests, any idea what these might be good
    for?
    (Hint: tabs in the repository view)
-```
+:::
 
 
 ## Setup
 
-```{note}
+:::{note}
 
 In the CodeRefinery workshop itself, we follow the **GitHub** flow.
 **VS Code** and **Command line** are for reference, for people who
 already know enough to follow.  They do not have full information and
 screenshots, and may not be complete.
-```
+:::
 
 First, we need to make our own copy of the repository.  This will
 become important later, when we make our own changes.
@@ -104,13 +104,13 @@ become important later, when we make our own changes.
 1. First, on GitHub, click the button that says "Fork".
 1. TODO.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 You only need to open your own view.  The browser URL should look like
 `https://github.com/USER/recipe-book`, where `USER` is your GitHub username.
-````
+::::
 
-````{group-tab} VS Code
+::::{group-tab} VS Code
 
 We need to start by making a copy of this repository locally.
 
@@ -124,8 +124,8 @@ open), go to File → New Window
    repository.
 1. Say yes, you want to open this repository
 1. Select "Yes, I trust the authors" (the other option works too).
-````
-````{group-tab} Command line
+::::
+::::{group-tab} Command line
 
 **This flow is advanced and we do not include all command line
 information for a new person to do this: you need to be somewhat
@@ -142,8 +142,8 @@ We need to start by making a copy of this repository locally.
    username.  You might need to use a SSH clone command instead of
    HTTPS, depending on your setup.
 1. Change to that directory: `cd recipe-book`
-````
-`````
+::::
+:::::
 
 
 ## Solution
@@ -159,21 +159,21 @@ The most basic thing to look at is the history of commits.
   version as of that change.
 * Clicking on a change in the view shows more.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 Click on "History.
-````
-````{group-tab} VS Code
+::::
+::::{group-tab} VS Code
 
 This can be done from "Timeline", in the bottom of explorer, but only
 for a single file.
-````
-````{group-tab} Command line
+::::
+::::{group-tab} Command line
 
 Run `git log`.
-````
-`````
+::::
+:::::
 
 
 ### (2) Compare commit history with network graph
@@ -182,28 +182,28 @@ The commit history we saw above looks linear: one commit after
 another.  But if we look at the network view, we see some branches and
 merges.  We'll see how to do these later.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 In a new browser tab, open the "Insights" tab, and click on Network.
 You can hover over the commit dots to see the person who committed and
 how they correspond with the commits in the other view.
 
 
-````
-````{group-tab} VS Code
+::::
+::::{group-tab} VS Code
 
 We don't know how to do this.  Try starting a terminal and using the
 "Command Line" option.
 
-````
-````{group-tab} Command line
+::::
+::::{group-tab} Command line
 
 You can view the network graph with `git log --graph --oneline
 --decorate --all`.
 
-````
-`````
+::::
+:::::
 
 
 ### (3) When was a recipe last modified?
@@ -211,20 +211,20 @@ You can view the network graph with `git log --graph --oneline
 We see the history for the whole repository, but we can also see it
 for a single file.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 Navigate to the file view: Main page → sides directory →
 guacamole.md.  Click the "History" button near the top right.
 
-````
-````{group-tab} VS Code
+::::
+::::{group-tab} VS Code
 
 Open sides/guacamole.md file in the editor.  Under the file browser,
 we see a "Timeline" view there.
 
-````
-````{group-tab} Command line
+::::
+::::{group-tab} Command line
 
 The `git log` command can take a filename and provide the log of only
 a single file:
@@ -233,8 +233,8 @@ a single file:
 $ git log sides/guacamole.md
 ```
 
-````
-`````
+::::
+:::::
 
 
 
@@ -250,23 +250,23 @@ According to the view above, it seems to have five changes (as of
 Version control makes it very easy to find all occurrences of a single
 word.  This is useful for things like tracing through code
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 We go to the main recipe book view.  We click the Search magnifying
 class at the very top, type "salt" (so that it reads
 `repo:coderefinery/recipe-book salt`), and click enter.  We see every
 instance, including the context.
 
-````
-````{group-tab} VS Code
+::::
+::::{group-tab} VS Code
 
 If you use the "Search" magnifying class on the left sidebar, and
 search for "Salt" it shows the occurrences in every file.  You can
 click to see the usage in context.
 
-````
-````{group-tab} Command line
+::::
+::::{group-tab} Command line
 
 `grep` is the command line tool that searches for lines matching a term
 
@@ -274,8 +274,8 @@ click to see the usage in context.
 $ git grep salt          # Only the lines
 $ git grep -C 3 salt     # three lines of context
 ```
-````
-`````
+::::
+:::::
 
 
 
@@ -283,18 +283,18 @@ $ git grep -C 3 salt     # three lines of context
 
 This is called the "annotate" or "blame" view.
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 From a recipe view, change preview to "Blame" towards the top-left.
 
-````
-````{group-tab} VS Code
+::::
+::::{group-tab} VS Code
 
 This requires an extension.  We recommend for now you use the command
 line version, after opening a terminal.
-````
-````{group-tab} Command line
+::::
+::::{group-tab} Command line
 
 These two commands are similar but have slightly different output.
 
@@ -303,31 +303,31 @@ $ git annotate sides/guacamole.md
 $ git blame sides/guacamole.md
 ```
 
-````
-`````
+::::
+:::::
 
 
 
 ### (7) How many people have contributed to the repository?
 
 
-`````{tabs}
-````{group-tab} GitHub
+:::::{tabs}
+::::{group-tab} GitHub
 
 Insights → Contributors.  Note that we created a bunch of fake
 contributors, which *don't* show in this view.
-````
-````{group-tab} VS Code
+::::
+::::{group-tab} VS Code
 
 Unknown, use the command line method.
-````
-````{group-tab} Command line
+::::
+::::{group-tab} Command line
 
 ```
 $ git shortlog --summary --numbered --email --all
 ```
-````
-`````
+::::
+:::::
 
 
 
