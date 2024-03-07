@@ -90,7 +90,7 @@ Then browse the project and explore commits and branches. Take notes and prepare
 ```{note}
 
 In the CodeRefinery workshop itself, we follow the **GitHub** flow.
-**VSCode** and **Command line** are for reference, for people who
+**VS Code** and **Command line** are for reference, for people who
 already know enough to follow.  They do not have full information and
 screenshots, and may not be complete.
 ```
@@ -109,11 +109,11 @@ You only need to open your own view.  The browser URL should look like
 `https://github.com/USER/recipe-book`, where `USER` is your GitHub username.
 ````
 
-````{group-tab} VSCode
+````{group-tab} VS Code
 
 We need to start by making a copy of this repository locally.
 
-1. Start VSCode
+1. Start VS Code
 1. If you don't have the default view (you already have a project
 open), go to File → New Window
 1. Under "Start" on the screen, select "Clone Git Repository..."
@@ -162,7 +162,7 @@ The most basic thing to look at is the history of commits.
 
 Click on "History.
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 
 This can be done from "Timeline", in the bottom of explorer, but only
 for a single file.
@@ -188,7 +188,7 @@ how they correspond with the commits in the other view.
 
 
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 
 We don't know how to do this.  Try starting a terminal and using the
 "Command Line" option.
@@ -216,7 +216,7 @@ Navigate to the file view: Main page → sides directory →
 guacamole.md.  Click the "History" button near the top right.
 
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 
 Open sides/guacamole.md file in the editor.  Under the file browser,
 we see a "Timeline" view there.
@@ -257,7 +257,7 @@ class at the very top, type "salt" (so that it reads
 instance, including the context.
 
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 
 If you use the "Search" magnifying class on the left sidebar, and
 search for "Salt" it shows the occurances in every file.  You can
@@ -287,7 +287,7 @@ This is called the "annotate" or "blame" view.
 From a recipe view, change preview to "Blame" towards the top-left.
 
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 
 This requires an extension.  We recommend for now you use the command
 line version, after opening a terminal.
@@ -315,7 +315,7 @@ $ git blame sides/guacamole.md
 Insights → Contributors.  Note that we created a bunch of fake
 contributors, which *don't* show in this view.
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 
 Unknown, use the command line method.
 ````

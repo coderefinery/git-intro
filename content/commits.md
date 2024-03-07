@@ -36,7 +36,7 @@ We will add to this page:
 `````{tabs}
 ````{group-tab} GitHub
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 ````
 ````{group-tab} Command line
 ```
@@ -50,7 +50,7 @@ We will add to this page:
 `````{tabs}
 ````{group-tab} GitHub
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 ````
 ````{group-tab} Command line
 ```
@@ -63,7 +63,7 @@ We will add to this page:
 `````{tabs}
 ````{group-tab} GitHub
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 ````
 ````{group-tab} Command line
 ```
@@ -76,7 +76,7 @@ We will add to this page:
 `````{tabs}
 ````{group-tab} GitHub
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 ````
 ````{group-tab} Command line
 ```
@@ -89,7 +89,7 @@ We will add to this page:
 `````{tabs}
 ````{group-tab} GitHub
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 ````
 ````{group-tab} Command line
 ```
@@ -102,7 +102,7 @@ We will add to this page:
 `````{tabs}
 ````{group-tab} GitHub
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 ````
 ````{group-tab} Command line
 ```
@@ -115,7 +115,7 @@ We will add to this page:
 `````{tabs}
 ````{group-tab} GitHub
 ````
-````{group-tab} VSCode
+````{group-tab} VS Code
 ````
 ````{group-tab} Command line
 ```
