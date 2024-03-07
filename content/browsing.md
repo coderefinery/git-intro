@@ -24,6 +24,8 @@ Before starting the exercise session:
 - Show how to fork the repository to own account
 ```
 
+```{highlight} console
+```
 
 We will add to this page:
 - intro
@@ -173,15 +175,159 @@ Run `git log`.
 
 ## (2) Compare commit history with network graph
 
+The commit history we saw above looks linear: one commit after
+another.  But if we look at the network view, we see some branches and
+merges.  We'll see how to do these later.
+
+`````{tabs}
+````{group-tab} Github
+
+In a new browser tab, open the "Insights" tab, and click on Network.
+You can hover over the commit dots to see the person who committed and
+how they correspond with the commits in the other view.
+
+
+````
+````{group-tab} VSCode
+
+We don't know how to do this.  Try starting a terminal and using the
+"Command Line" option.
+
+````
+````{group-tab} Command line
+
+You can view the network graph with `git log --graph --oneline
+--decorate --all`.
+
+````
+`````
+
+
+
 ## (3) When was a recipe last modified?
+
+We see the history for the whole repository, but we can also see it
+for a single file.
+
+`````{tabs}
+````{group-tab} Github
+
+Navigate to the file view: Main page → sides directory →
+guacamole.md.  Click the "History" button near the top right.
+
+````
+````{group-tab} VSCode
+
+Open sides/guacamole.md file in the editor.  Under the file browser,
+we see a "Timeline" view there.
+
+````
+````{group-tab} Command line
+
+The `git log` command can take a filename and provide the log of only
+a single file:
+
+```
+$ git log sides/guacamole.md
+```
+
+````
+`````
+
+
 
 ## (4) How many changes did the Guacamole recipe receive?
 
+According to the view above, it seems to have five changes (as of
+2024-03-07).  This could change later on.
+
+
+
 ## (5) Which recipes include the ingredient "salt" ?
+
+Version control makes it very easy to find all occurances of a single
+word.  This is useful for things like tracing through code
+
+`````{tabs}
+````{group-tab} Github
+
+We go to the main recipe book view.  We click the Search magnifying
+class at the very top, type "salt" (so that it reads
+`repo:coderefinery/recipe-book salt`), and click enter.  We see every
+instance, including the context.
+
+````
+````{group-tab} VSCode
+
+If you use the "Search" magnifying class on the left sidebar, and
+search for "Salt" it shows the occurances in every file.  You can
+click to see the usage in context.
+
+````
+````{group-tab} Command line
+
+`grep` is the command line tool that searches for lines matching a term
+
+```
+$ git grep salt          # Only the lines
+$ git grep -C 3 salt     # three lines of context
+```
+````
+`````
+
+
 
 ## (6) Who modified each line last?
 
+This is called the "annotate" or "blame" view.
+
+`````{tabs}
+````{group-tab} Github
+
+From a recipe view, change preview to "Blame" towards the top-left.
+
+````
+````{group-tab} VSCode
+
+This requires an extension.  We recommend for now you use the command
+line version, after opening a terminal.
+````
+````{group-tab} Command line
+
+These two commands are similar but have slightly different output.
+
+```
+$ git annotate sides/guacamole.md
+$ git blame sides/guacamole.md
+```
+
+````
+`````
+
+
+
 ## (7) How many people have contributed to the repository?
+
+
+`````{tabs}
+````{group-tab} Github
+
+Insights → Contributors.  Note that we created a bunch of fake
+contributors, which *don't* show in this view.
+````
+````{group-tab} VSCode
+
+Unknown, use the command line method.
+````
+````{group-tab} Command line
+
+```
+$ git shortlog --summary --numbered --email --all
+```
+````
+`````
+
+
 
 ## (8) Can you use these recipes yourself?
 
@@ -207,3 +353,7 @@ Requests are different for each Github copy.
 
 
 ## Summary
+
+Git allowed us to understand this simple project much better than we
+could, if it was just a few files on our own computer.  It was also
+very easy to share with the course.
