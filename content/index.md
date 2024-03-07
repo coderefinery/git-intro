@@ -50,7 +50,6 @@ motivation
 browsing
 commits
 merging
-conflict-resolution
 local-workflow
 ```
 
@@ -78,7 +77,7 @@ what-to-avoid
 
 ```{toctree}
 :maxdepth: 1
-:caption: Previous episodes (WIP)
+:caption: Older episodes
 
 basics
 branches
