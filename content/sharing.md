@@ -1,15 +1,15 @@
 # How to turn your project to a Git repo and share it
 
-```{objectives}
-- We get a feeling for remote repositories ([more later](https://coderefinery.github.io/git-collaborative/)).
-- We are able to publish a repository on the web.
-- We are able to fetch and track a repository from the web.
-```
+:::{objectives}
+- Turn our own coding project (small or large) into a Git repository.
+- Be able to publish a repository on the web.
+:::
 
-```{instructor-note}
-- 15 min demonstration/type-along
+:::{instructor-note}
+- 10 min introduction and setup
 - 25 min exercise
-```
+- 15 min discussion
+:::
 
 
 ## From our laptops to the web
@@ -39,22 +39,6 @@ where we will employ GitHub.  Our goal is to publish our exercise guacamole reci
 which we prepared in the previous episodes on
 the web. Don't worry, you will be able to remove it afterwards.
 
-````{admonition} If you don't have the recipe repository from previous episodes
-Maybe you joined the workshop later or got stuck somewhere? **No problem**!
-
-**If you don't have the recipe repository from previous episodes**, you can
-clone our version of the repository using (please **skip this if you have the recipe
-repository on your computer already**):
-```console
-$ git clone https://github.com/coderefinery/recipe-before-merge.git recipe
-$ cd recipe
-$ git remote remove origin
-```
-
-Now you have a repository called `recipe` on your computer with a couple of
-commits. Further down we will also clarify what `git clone` does.
-````
-
 To store your git data on another server, you use **remotes**.
 A remote is a repository on its own, with its own branches
 We can **push** changes to the remote and **pull**
@@ -77,69 +61,6 @@ There are different types of remotes:
   platform](https://coderefinery.org/repository/).
   This is GitLab, free for researchers and allows private,
   cross-university sharing.
-
----
-
-% This anchor used for linking from other lessons
-(clone-method)=
-
-## Authenticating to GitHub: SSH or HTTPS?
-
-**How does GitHub know who you are?**  This is hard and there are two
-options.
-
-* **SSH** is the classic method, using Secure Shell remote connection
-  keys.
-* **HTTPS** works with the **Git Credential Manager**, which is an
-  extra add-on that works easily in Windows and Mac.
-
-Read how to install them from the [installation
-instructions](https://coderefinery.github.io/installation/ssh/).
-
-Test which one you should use:
-
-`````{tabs}
-  ````{group-tab} SSH
-    Try this command:
-    ```console
-    $ ssh -T git@github.com
-    ```
-
-    If it returns `Hi USERNAME! You've successfully authenticated, ...`,
-    then SSH is configured and the following steps will work with the SSH
-    cloning.
-
-    See our [installation
-    instructions](https://coderefinery.github.io/installation/ssh/) to
-    set up SSH access.
-
-    **From now on, if you know that SSH works, you should always select
-    SSH as the clone URL from GitHub, or translate the URL to start with
-    the right thing yourself:** `git@github.com:` (with the trailing
-    `:`).
-  ````
-  ````{group-tab} HTTPS
-    Try this command:
-    ```console
-    $ git config --get credential.helper
-    ```
-
-    If this shows something, then the credential manager is probably
-    configured and HTTPS cloning will work (but you can't verify it until
-    you try using it).
-
-    From now on, **if you know that HTTPS works, you should always select
-    HTTPS as the clone URL from GitHub, or translate the URL to start with
-    the right thing yourself:** `https://github.com/`
-  ````
-`````
-
-If you do not have these configured, please watch as we do this episode and you
-can check the [installation
-instructions](https://coderefinery.github.io/installation/ssh/)
-before the next [collaborative Git
-lesson](https://coderefinery.github.io/git-collaborative/), where we will need
-one of these set up.
 
 ---
 
