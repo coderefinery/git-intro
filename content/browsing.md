@@ -109,25 +109,25 @@ Before starting the exercise session:
 
 Then browse the project and explore commits and branches. Take notes and prepare questions.
 
-1. Browse the commit history: Are commit messages understandable?
+1. Browse the **commit history**: Are commit messages understandable?
    (Hint: "Commit history", the clock symbol, above the file list)
-1. Compare the commit history with the network graph ("Insights" -> "Network"). Can you find the branches?
-1. How can you find out when a recipe was last modified?
-1. How many changes did the Guacamole recipe receive (you find it under "sides")?
+1. Compare the commit history with the **network graph** ("Insights" -> "Network"). Can you find the branches?
+1. How can you find out when a recipe was **last modified**?
+1. **How many changes** did the Guacamole recipe receive (you find it under "sides")?
    Try to click on some of the commits to see what changed.
    (Hint: "History" in the view of a single file)
-1. Which recipes include the ingredient "salt"?
+1. **Which recipes include the ingredient "salt"**?
    (Hint: the GitHub search.  From the repository view, it should offer
    the filter "repo:coderefinery/recipe-book" by default.  What if you
    add a search term?)
-1. In the Guacamole recipe, find out who modified each line last and when
+1. In the Guacamole recipe, find out **who modified each line last and when**
    (click on file, then click "Blame" button). Find out who added the cilantro
    and in which commit.
    (Hint: "Blame" view in the file view)
-1. Can you use these recipes yourself? Are you allowed to share
-   modifications?
+1. Can you use these recipes yourself? **Are you allowed to share
+   modifications**?
    (Hint: look for a license file)
-1. Browse issues and pull requests in the {term}`upstream` repository (the
+1. **Browse issues and pull requests** in the {term}`upstream` repository (the
    repository you forked from). Any idea what these might be good for?
    (Hint: tabs in the repository view)
 :::
@@ -152,19 +152,25 @@ The most basic thing to look at is the history of commits.
 * Clicking on a change in the view shows more.
 
 :::::{tabs}
+
 ::::{group-tab} GitHub
-
-Click on "History.
+Click on the time symbol in the repository view:
+  :::{figure} img/browsing/history.png
+  :alt: Screenshot on GitHub of where to find the commit history
+  :width: 100%
+  :class: with-border
+  :::
 ::::
-::::{group-tab} VS Code
 
+::::{group-tab} VS Code
 This can be done from "Timeline", in the bottom of explorer, but only
 for a single file.
 ::::
-::::{group-tab} Command line
 
+::::{group-tab} Command line
 Run `git log`.
 ::::
+
 :::::
 
 
@@ -176,25 +182,26 @@ merges.  We'll see how to do these later.
 
 :::::{tabs}
 ::::{group-tab} GitHub
-
-In a new browser tab, open the "Insights" tab, and click on Network.
+In a new browser tab, open the "Insights" tab, and click on "Network".
 You can hover over the commit dots to see the person who committed and
-how they correspond with the commits in the other view.
-
-
+how they correspond with the commits in the other view:
+  :::{figure} img/browsing/network.png
+  :alt: Screenshot on GitHub of the network graph
+  :width: 100%
+  :class: with-border
+  :::
 ::::
-::::{group-tab} VS Code
 
+::::{group-tab} VS Code
 We don't know how to do this.  Try starting a terminal and using the
 "Command Line" option.
-
 ::::
-::::{group-tab} Command line
 
+::::{group-tab} Command line
 You can view the network graph with `git log --graph --oneline
 --decorate --all`.
-
 ::::
+
 :::::
 
 
@@ -204,30 +211,32 @@ We see the history for the whole repository, but we can also see it
 for a single file.
 
 :::::{tabs}
+
 ::::{group-tab} GitHub
-
 Navigate to the file view: Main page → sides directory →
-guacamole.md.  Click the "History" button near the top right.
-
+guacamole.md. Click the "History" button near the top right:
+  :::{figure} img/browsing/file-history.png
+  :alt: Screenshot on GitHub showing the history of a single file
+  :width: 100%
+  :class: with-border
+  :::
 ::::
-::::{group-tab} VS Code
 
+::::{group-tab} VS Code
 Open sides/guacamole.md file in the editor.  Under the file browser,
 we see a "Timeline" view there.
-
 ::::
-::::{group-tab} Command line
 
+::::{group-tab} Command line
 The `git log` command can take a filename and provide the log of only
 a single file:
 
 ```
 $ git log sides/guacamole.md
 ```
-
 ::::
-:::::
 
+:::::
 
 
 ### (4) How many changes did the Guacamole recipe receive?
@@ -236,67 +245,74 @@ According to the view above, it seems to have five changes (as of
 2024-03-07).  This could change later on.
 
 
-
-### (5) Which recipes include the ingredient "salt" ?
+### (5) Which recipes include the ingredient "salt"
 
 Version control makes it very easy to find all occurrences of a single
-word.  This is useful for things like finding where things are
+word. This is useful for things like finding where things are
 defined.
 
 :::::{tabs}
 ::::{group-tab} GitHub
-
 We go to the main recipe book view.  We click the Search magnifying
 class at the very top, type "salt" (so that it reads
 `repo:coderefinery/recipe-book salt`), and click enter.  We see every
-instance, including the context.
-
+instance, including the context:
+  :::{figure} img/browsing/search.png
+  :alt: Screenshot on GitHub performing a search
+  :width: 100%
+  :class: with-border
+  :::
 ::::
+
 ::::{group-tab} VS Code
-
 If you use the "Search" magnifying class on the left sidebar, and
-search for "Salt" it shows the occurrences in every file.  You can
+search for "Salt" it shows the occurrences in every file. You can
 click to see the usage in context.
-
 ::::
+
 ::::{group-tab} Command line
-
 `grep` is the command line tool that searches for lines matching a term
-
 ```
-$ git grep salt          # Only the lines
+$ git grep salt          # only the lines
 $ git grep -C 3 salt     # three lines of context
+$ git grep -i salt       # case insensitive
 ```
 ::::
+
 :::::
 
 
+### (6) Who modified each line last and when?
 
-### (6) Who modified each line last?
-
-This is called the "annotate" or "blame" view.
+This is called the "annotate" or "blame" view. The name "blame"
+is very unfortunate, but it is the standard term for historical reasons
+for this functionality and it is not meant to blame anyone.
 
 :::::{tabs}
+
 ::::{group-tab} GitHub
-
 From a recipe view, change preview to "Blame" towards the top-left.
-
+To get the actual commit, click on the commit message.
+  :::{figure} img/browsing/annotate.png
+  :alt: Screenshot on GitHub showing the "Blame" view
+  :width: 100%
+  :class: with-border
+  :::
 ::::
-::::{group-tab} VS Code
 
+::::{group-tab} VS Code
 This requires an extension.  We recommend for now you use the command
 line version, after opening a terminal.
 ::::
+
 ::::{group-tab} Command line
-
 These two commands are similar but have slightly different output.
-
 ```
 $ git annotate sides/guacamole.md
 $ git blame sides/guacamole.md
 ```
-
 ::::
+
 :::::
 
 
