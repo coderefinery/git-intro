@@ -5,6 +5,8 @@ Before starting the exercise session:
 - Show how to verify whether we are on our fork and not on the original repository.
 ```
 
+## Exercise
+
 ```{exercise} Exercise: Practice creating commmits and branches (20 min)
 Make sure that you work now **on your fork** of the recipe-book repository.
 
@@ -25,3 +27,101 @@ We will add to this page:
 - solution
 - discussion
 - summary
+
+
+## Solution
+
+### (1) Create a branch and add recipe to the baranch
+
+`````{tabs}
+````{group-tab} Github
+````
+````{group-tab} VSCode
+````
+````{group-tab} Command line
+```
+```
+````
+`````
+
+
+### (2) Modify the recipe again
+
+`````{tabs}
+````{group-tab} Github
+````
+````{group-tab} VSCode
+````
+````{group-tab} Command line
+```
+```
+````
+`````
+
+### (3) Switch to the main branch and modify a recipe there
+
+`````{tabs}
+````{group-tab} Github
+````
+````{group-tab} VSCode
+````
+````{group-tab} Command line
+```
+```
+````
+`````
+
+### (4) Browse the commits you just made
+
+`````{tabs}
+````{group-tab} Github
+````
+````{group-tab} VSCode
+````
+````{group-tab} Command line
+```
+```
+````
+`````
+
+### (5) Compare the branches
+
+`````{tabs}
+````{group-tab} Github
+````
+````{group-tab} VSCode
+````
+````{group-tab} Command line
+```
+```
+````
+`````
+
+### (6) Compare two arbitrary commits
+
+`````{tabs}
+````{group-tab} Github
+````
+````{group-tab} VSCode
+````
+````{group-tab} Command line
+```
+```
+````
+`````
+
+### (7) Try to rename the branch
+
+`````{tabs}
+````{group-tab} Github
+````
+````{group-tab} VSCode
+````
+````{group-tab} Command line
+```
+```
+````
+`````
+
+
+## Discussion
