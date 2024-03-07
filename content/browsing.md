@@ -7,7 +7,7 @@ own changes in the next episode.
 
 - We used to start by directly going and creating a repository.  This
   was abstract and hard to understand.
-- Instead, we'll show you all the cool stuff in a git repository
+- Instead, we'll show you all the cool stuff in a Git repository
   first, and then start adding files.
 - We use an example recipe book we created just for this course.
 - By the end of the course, you'll know how to contribute your own
@@ -60,7 +60,6 @@ URL should look like `https://github.com/USER/recipe-book`, where
 ::::
 
 ::::{group-tab} VS Code
-
 We need to start by making a copy of this repository locally.
 
 1. Start VS Code.
@@ -74,8 +73,8 @@ open), go to File → New Window.
 1. Say yes, you want to open this repository.
 1. Select "Yes, I trust the authors" (the other option works too).
 ::::
-::::{group-tab} Command line
 
+::::{group-tab} Command line
 **This flow is advanced and we do not include all command line
 information for a new person to do this: you need to be somewhat
 comfortable with the command line already.**
@@ -130,8 +129,8 @@ Then browse the project and explore commits and branches. Take notes and prepare
 1. Can you use these recipes yourself? Are you allowed to share
    modifications?
    (Hint: look for a license file)
-1. Browse issues and pull requests, any idea what these might be good
-   for?
+1. Browse issues and pull requests in the {term}`upstream` repository (the
+   repository you forked from). Any idea what these might be good for?
    (Hint: tabs in the repository view)
 :::
 
@@ -344,8 +343,9 @@ repository, the one of "CodeRefinery" (not your fork):
 Requests are different for each GitHub copy.
 
 * Click on the "Issues" tab.  These are notes that people have added,
-  which allow discussion about the project.
-* Click on the "Pull requests" tab.  This allows anyone to *propose
+  which allow discussion about the project. Often they are used to communicate
+  problems or ideas.
+* Click on the "Pull requests" tab. This allows anyone to *propose
   changes*, but only the repository owners can accept.
 
 
