@@ -58,11 +58,11 @@ We will add to this page:
 
 ### (1) Create a branch and add recipe to the branch
 
-There is a `main` branch that is default.  We want to create a
+There is a {term}`main` branch that is default.  We want to create a
 *different* branch for our new commit, because we will *merge* it
 later.
 
-**Commit** is the verb to describe recording more changes, and also
+{term}`commit` is the verb to describe recording more changes, and also
 the name of the thing you make.  A commit is identified by something
 such as `554c187`.
 
@@ -156,7 +156,7 @@ even be visible on the `main` branch).
 Let's look at what we did.  Now, the `main` and `new-recipe` branches
 have diverged: both have some modifications.
 
-* **branch**: One line of development
+* {term}`branch`: One line of development
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -227,7 +227,7 @@ Branch buton → View all branches → three dots at right side → Rename branc
 ## Discussion
 
 In this part, we saw how we can make changes to our files.  We can
-track several lines of work at once (**branches**), and can compare
+track several lines of work at once ({term}`branches <branch>`), and can compare
 their differences.
 
 * You could commit directly to `main` if there is only one single line

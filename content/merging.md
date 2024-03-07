@@ -21,7 +21,7 @@ Before starting the exercise session:
 
 ## Terminology
 
-* **upstream**:
+* {term}`upstream`: The original repository from where your code comes
 
 ## Exercise
 

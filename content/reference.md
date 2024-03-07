@@ -9,23 +9,65 @@
 
 ## Glossary
 
-* **working directory/ workspace**: the actual files you see and edit
-* **staging area**: Place files go after `git add` and before `git
-  commit`
-* **hash**: unique reference of any commit or state
-* **branch**: One line of work.  Different branches can exist at the
-  same time and split/merge.
-* **HEAD**: Pointer to the most recent commit on the current branch.
-* **remote**: Roughly, another server that holds .git.
-* **origin**: Default name for a remote repository.
-* **master**: Default name for main branch on Git. Depending on the configuration and service,
-              the default branch is sometimes **main**.
-              In this lesson we configure Git so that the default branch is
-              called **main** to be more consistent with GitHub and GitLab.
-* **main**: Default name for main branch on GitLab and GitHub.
-            In this lesson we configure Git so that the default branch is
-            called **main** to be more consistent with GitHub and GitLab.
+:::::{glossary}
 
+version control system
+   TODO
+
+git
+   TODO
+
+commit
+   As a verb, the process of recording more changes.
+   As a noun, the name of the record of changes.
+   A commit is identified by something such as `554c187`.
+
+working directory
+workspace
+   the actual files you see and edit
+
+staging area
+   Place files go after `git add` and before `git commit`
+
+hash
+   unique reference of any commit or state
+
+branch
+   One line of work.  Different branches can exist at the same time and split/merge.
+
+HEAD
+   Pointer to the most recent commit on the current branch.
+
+remote
+   Roughly, another server that holds .git.
+
+origin
+   Default name for a remote repository.
+
+repository
+   One collection of files managed by Git.
+
+GitHub repository
+   The files from the Git repository, but also other things from
+   GitHub such as access permissions, issues, and pull requests.
+
+upstream
+   The original repository from which the code comes.  If you
+   {term}`fork` the repository, it is your upstream and it is easy to
+   send changes back to there.
+
+master
+   Default name for main branch on Git. Depending on the configuration and service,
+   the default branch is sometimes **main**.
+   In this lesson we configure Git so that the default branch is
+   called **main** to be more consistent with GitHub and GitLab.
+
+main
+   Default name for main branch on GitLab and GitHub.
+   In this lesson we configure Git so that the default branch is
+   called **main** to be more consistent with GitHub and GitLab.
+
+:::::
 
 ## Commands we use
 
