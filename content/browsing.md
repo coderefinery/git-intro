@@ -12,19 +12,6 @@ own changes in the next episode.
 * See how git allows multiple people to collaborate easily.
 :::
 
-:::{instructor-note}
-Preparation:
-- Create an exercise repository from
-  <https://github.com/coderefinery/recipe-book-template> preserving history
-  (this means not using "generating from template")
-- Create one or two issues
-- Create one or two pull requests
-- Try to search for something in the recipe to trigger a search index update
-:::
-
-```{highlight} console
-```
-
 We will add to this page:
 - intro
 - screenshots
@@ -33,7 +20,6 @@ We will add to this page:
 - solution
 - discussion
 - summary
-
 
 
 ## Introduction

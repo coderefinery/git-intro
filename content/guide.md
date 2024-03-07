@@ -1,5 +1,16 @@
 # Instructor guide
 
+
+## Exercise preparation
+
+- Create an exercise repository from
+  <https://github.com/coderefinery/recipe-book-template> preserving history
+  (this means not using "generating from template")
+- Create one or two issues
+- Create one or two pull requests
+- Try to search for something in the recipe to trigger a search index update
+
+
 ## Schedule Day 1
 
 Times here are in CE(S)T.
