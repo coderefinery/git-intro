@@ -20,6 +20,16 @@ Before starting the exercise session:
 ```{highlight} console
 ```
 
+We will add to this page:
+- intro
+- screenshots
+- tab on how to do this locally
+- hints
+- solution
+- discussion
+- summary
+
+
 
 ## Background
 
@@ -44,17 +54,13 @@ Make sure that you work now **on your fork** of the recipe-book repository.
 1. Try to rename the branch that you created and then browse the network again.
 :::
 
-We will add to this page:
-- intro
-- screenshots
-- tab on how to do this locally
-- hints
-- solution
-- discussion
-- summary
+The solution below goes over most of the answers, and you are
+encouraged to use it when the hints aren't enough - this is by
+design.
 
 
-## Solution
+
+## Solution and walk-through
 
 ### (1) Create a branch and add recipe to the branch
 

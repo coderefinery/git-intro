@@ -2,10 +2,10 @@
 
 When different people do different things at the same time, it means we
 have to somehow combine the changes later.  This part goes over that
-**merging**.
+{term}`merging`.
 
 :::{objectives}
-* Understand that merging is done throguh **pull requests** (= change proposal).
+* Understand that merging is done through a {term}`pull request` (= change proposal).
 * Create and merge a pull request within your own repository.
 * Understand (and optionally) do the same for the main public repository.
 :::
@@ -18,10 +18,34 @@ Before starting the exercise session:
 ```{highlight} console
 ```
 
+We will add to this page:
+- intro
+- screenshots
+- tab on how to do this locally
+- hints
+- solution
+- discussion
+- summary
+
+
+
+## Background
+
+* In the last episode, we added a new recipe on a branch.  This allows
+  us to test it before it becomes "live".
+* Now, we want to bring that change into the "main" branch.
+* We find it's not that hard!  But you do have to keep track of the
+  steps and make sure that you work very precisely.
+
+
 
 ## Terminology
 
 * {term}`upstream`: The original repository from where your code comes
+* {term}`pull request`
+* {term}`merge`
+
+
 
 ## Exercise
 
@@ -36,6 +60,9 @@ some GitHub-specific notes, but most is possibly with any flow.
 
 :::::{tabs}
 ::::{group-tab} GitHub
+
+First, we make something called a {term}`pull request`, which allows
+review and commenting before the actual merge.
 
 :::{exercise} Exercise: Merging branches with pull requests (20 min)
 We assume that in the previous exercise you have created a new branch
@@ -79,7 +106,8 @@ As usual, this is basic hints.  You should refer to the solution as needed.
 ::::{group-tab} Local (VS Code, Command line)
 
 When working locally, it's easier to merge branches: we can just do
-the merge, without making a pull request.
+the merge, without making a pull request.  But we don't have that step
+of review and commenting.
 
 :::{exercise}
 
@@ -96,30 +124,16 @@ Then:
    upstream repository.  *This is very complex right now since your
    change has to get to GitHub, and we haven't shown that yet.  We
    don't give a solution for this.*
-
-
 :::
 
 ::::
-
 :::::
-Demo:
-- conflict
-- delete branches
-- create release (or optional exercise step)
 
-We will add to this page:
-- intro
-- screenshots
-- tab on how to do this locally
-- hints
-- solution
-- discussion
-- summary
+The solution below goes over most of the answers, and you are
+encouraged to use it when the hints aren't enough - this is by design.
 
 
-
-## Solution
+## Solution and walk-through
 
 ### (1) Navigate to your branch
 
@@ -237,6 +251,12 @@ a recipe to everyone.
 ::::
 :::::
 
+
+## Demo: resolving a conflict
+
+## Demo: deleting a branch
+
+## Demo: create a release
 
 
 ## Discussion

@@ -1,14 +1,15 @@
 # Copy and browse an existing project
 
-The first thing most people do is **contribute to an existing
-project**.  This, and following lessons, go over this.  We use an
-an example recipe book on GitHub.
+In this episode, we will look at an existing repository to
+understand how all of pieces work.  Along the way, we will make a copy
+(a {term}`fork`) of the {term}`repository` for us, which will be used for our
+own changes in the next episode.
 
 :::{objectives}
 * See a real git repository and understand what is inside of it.
 * Understand how version control allows advanced inspection of a
   repository.
-* See how git allows multiple people to take collaborate.
+* See how git allows multiple people to collaborate easily.
 :::
 
 :::{instructor-note}
@@ -19,9 +20,6 @@ Preparation:
 - Create one or two issues
 - Create one or two pull requests
 - Try to search for something in the recipe to trigger a search index update
-
-Before starting the exercise session:
-- Show how to fork the repository to own account
 :::
 
 ```{highlight} console
@@ -37,26 +35,107 @@ We will add to this page:
 - summary
 
 
+
 ## Introduction
 
-* You will probably interact with more repositories owned by other
-  people than with your own
-* It's easier to get to know your own repositories
+* We used to start by directly going and creating a repository.  This
+  was abstract and hard to understand.
+* Instead, we'll show you all the cool stuff in a git repository
+  first, and then start adding files.
+* We use an example recipe book we created just for this course.
+* By the end of the course, you'll know how to contribute your own
+  recipes to it.
 
 
-## Exercise
 
-Work on this by yourself.  The solution below goes over most of the
-answers, but the hints should get you most of the way.  Refer to the
-solution if you get stuck.
+## GitHub, VS Code, Command line, and more
 
 We offer **three different flows** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
 flow** only and recommend you do that.
 
+In the future we'll add more flows, for example Jupyter and RStudio.
+
+
+
+## Setup
+
+:::{note}
+
+In the CodeRefinery workshop itself, we follow the **GitHub** flow.
+**VS Code** and **Command line** are for reference, for people who
+already know these tools.  They do not have full information and
+screenshots, and may not be complete yet.
+:::
+
+First, we need to make our own copy of the repository.
+This will become important later, when we make our own changes.
+
+1. Go to the repository view on GitHub: <https://github.com/coderefinery/recipe-book>
+1. First, on GitHub, click the button that says "Fork".  It is towards
+   the top-right of the screen.
+1. You should shortly be redirected to your copy of the repository.
+
+At all times you should be aware of if you looking at *your* repository
+or the *CodeRefinery {term}`upstream`*.
+* Your repository: https://github.com/**USERNAME**/recipe-book
+* CodeRefinery repository: https://github.com/**coderefinery**/recipe-book
+
+:::::{tabs}
+::::{group-tab} GitHub
+You only need to open your own view, as described above.  The browser
+URL should look like `https://github.com/USER/recipe-book`, where
+`USER` is your GitHub username.
+::::
+
+::::{group-tab} VS Code
+
+We need to start by making a copy of this repository locally.
+
+1. Start VS Code
+1. If you don't have the default view (you already have a project
+open), go to File → New Window
+1. Under "Start" on the screen, select "Clone Git Repository..."
+1. Paste in this URL: `https://github.com/USER/recipe-book`, where
+   `USER` is your username.  You can copy this from the browser.
+1. Browse and select the folder in which you want to clone the
+   repository.
+1. Say yes, you want to open this repository
+1. Select "Yes, I trust the authors" (the other option works too).
+::::
+::::{group-tab} Command line
+
+**This flow is advanced and we do not include all command line
+information for a new person to do this: you need to be somewhat
+comfortable with the command line already.**
+
+We need to start by making a copy of this repository locally.
+
+1. Start the terminal in which you use git (Terminal application, or
+   Git-Bash).
+1. Change to the directory where you would want the repository to be
+   (`cd ~/code` for example, if the `~/code` directory is where you
+   store your files).
+1. Run the following command: `git clone
+   https://github.com/USER/recipe-book`, where `USER` is your
+   username.  You might need to use a SSH clone command instead of
+   HTTPS, depending on your setup.
+1. Change to that directory: `cd recipe-book`
+::::
+:::::
+
+
+## Exercise
+
+Work on this by yourself or in your team.
+
+:::{instructor-note}
+Before starting the exercise session:
+- Make sure you have shown how to fork the repository to own account
+  (above).
+:::
+
 :::{exercise} Exercise: Browsing an existing project (25 min)
-First **make a copy** to your own account to work on **by forking**
-<https://github.com/coderefinery/recipe-book>
 
 Then browse the project and explore commits and branches. Take notes and prepare questions.
 
@@ -86,67 +165,13 @@ Then browse the project and explore commits and branches. Take notes and prepare
 :::
 
 
-## Setup
-
-:::{note}
-
-In the CodeRefinery workshop itself, we follow the **GitHub** flow.
-**VS Code** and **Command line** are for reference, for people who
-already know enough to follow.  They do not have full information and
-screenshots, and may not be complete.
-:::
-
-First, we need to make our own copy of the repository.  This will
-become important later, when we make our own changes.
-
-1. Go to the repository view on GitHub (everyone should do this,
-   regardless of which flow you are using): <https://github.com/coderefinery/recipe-book>
-1. First, on GitHub, click the button that says "Fork".
-1. TODO.
-
-:::::{tabs}
-::::{group-tab} GitHub
-You only need to open your own view.  The browser URL should look like
-`https://github.com/USER/recipe-book`, where `USER` is your GitHub username.
-::::
-
-::::{group-tab} VS Code
-
-We need to start by making a copy of this repository locally.
-
-1. Start VS Code
-1. If you don't have the default view (you already have a project
-open), go to File → New Window
-1. Under "Start" on the screen, select "Clone Git Repository..."
-1. Paste in this URL: `https://github.com/USER/recipe-book`, where
-   `USER` is your username.  You can copy this from the browser.
-1. Browse and select the folder in which you want to clone the
-   repository.
-1. Say yes, you want to open this repository
-1. Select "Yes, I trust the authors" (the other option works too).
-::::
-::::{group-tab} Command line
-
-**This flow is advanced and we do not include all command line
-information for a new person to do this: you need to be somewhat
-comfortable with the command line already.**
-
-We need to start by making a copy of this repository locally.
-
-1. Start the terminal in which you use git (Terminal application, or
-   Git-Bash).
-1. Change to the directory where you would want the repository to be
-   (`cd code` for example)
-1. Run the following command: `git clone
-   https://github.com/USER/recipe-book`, where `USER` is your
-   username.  You might need to use a SSH clone command instead of
-   HTTPS, depending on your setup.
-1. Change to that directory: `cd recipe-book`
-::::
-:::::
+The solution below goes over most of the answers, and you are
+encouraged to use it when the hints aren't enough - this is by
+design.
 
 
-## Solution
+
+## Solution and walk-through
 
 ### (1) Basic browsing
 
@@ -248,7 +273,8 @@ According to the view above, it seems to have five changes (as of
 ### (5) Which recipes include the ingredient "salt" ?
 
 Version control makes it very easy to find all occurrences of a single
-word.  This is useful for things like tracing through code
+word.  This is useful for things like finding where things are
+defined.
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -347,7 +373,7 @@ repository, the one of "CodeRefinery" (not your fork):
 <https://github.com/coderefinery/recipe-book>.  Issues and Pull
 Requests are different for each GitHub copy.
 
-* Click on the Issues" tab.  These are notes that people have added,
+* Click on the "Issues" tab.  These are notes that people have added,
   which allow discussion about the project.
 * Click on the "Pull requests" tab.  This allows anyone to *propose
   changes*, but only the repository owners can accept.

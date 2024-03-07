@@ -56,6 +56,17 @@ upstream
    {term}`fork` the repository, it is your upstream and it is easy to
    send changes back to there.
 
+fork
+   As a noun: a one person's copy of a repository.
+   As a verb: making that copy.
+   As a verb on GitHub: Making a copy of a repository linked to the
+   original.  It is easy to send changes to the original
+
+pull request
+   A GitHub concept: change proposal.  A proposal to merge one branch
+   into another.  Usually used to contribute code back to
+   {term}`upstream`.
+
 master
    Default name for main branch on Git. Depending on the configuration and service,
    the default branch is sometimes **main**.
@@ -66,6 +77,11 @@ main
    Default name for main branch on GitLab and GitHub.
    In this lesson we configure Git so that the default branch is
    called **main** to be more consistent with GitHub and GitLab.
+
+merge
+merging
+   Bringing changes from one branch into another, either as a noun or
+   verb.
 
 :::::
 
