@@ -28,6 +28,20 @@ fatal: not a git repository (or any of the parent directories): .git
 ::::
 
 
+##  Command line, GitHub, and VS Code
+
+As usual, we offer ways to do this with the command line, VS Code, and
+Github.
+
+* **Command line** is most powerful and relatively easy with this.
+  You may also use it along with other things.  If you haven't tried
+  it yet, we'd recommend you to give it a try.
+* The **GitHub** web interface allows many things to be done, but not
+  everything.
+* **VS Code** allows some of these, but for some it's easier to open
+  the VS Code terminal and run git there.
+
+
 ## Our toolbox for history inspection
 
 :::{instructor-note}
@@ -49,11 +63,13 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 
 ### Searching text patterns in the repository
 
+With `git grep` you can find all lines in a repository which contain some string or regular expression.
+This is useful to find out where in the code some variable is used or
+some error message printed.
+
 :::::{tabs}
   ::::{group-tab} Command line
-    With `git grep` you can find all lines in a repository which contain some string or regular expression.
-    This is useful to find out where in the code some variable is used or some error message printed:
-
+    The Git command is as described above:
     ```console
     $ git grep TEXT
     $ git grep "some text with spaces"
@@ -83,6 +99,16 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 
        Searching for "fixme" in a GitHub repository.
     ```
+  ::::
+
+  ::::{group-tab} VS Code
+    Our example repository is <https://github.com/networkx/networkx>.
+    From a new VS Code window, select "Clone Git repository"and enter
+    that URL.
+
+	Searching with the magnifying glass from the left sidebar is
+	equivalent to `git grep`.
+
   ::::
 :::::
 
@@ -115,6 +141,16 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 
        Inspecting an individual commit on GitHub.
     ```
+  ::::
+
+  ::::{group-tab} VS Code
+    We don't know of a built-in way to see every single Git commit in
+    order (extensions allow this).  You can open the terminal and run
+    the command line option.
+
+	But, if you open single files, a "Timeline" view under the
+    explorer shows changes to *that file*.  You can click on a change
+	to see the details.
   ::::
 :::::
 
@@ -153,6 +189,11 @@ modified each line. Incredibly useful for reproducibility.
 
        Screenshot of file annotation on GitHub.
     ```
+  ::::
+
+  ::::{group-tab} VS Code
+    It seems this needs an extension.  We'd recommend trying the
+    command line method for now.
   ::::
 :::::
 
@@ -213,12 +254,23 @@ Discuss how these relatively trivial changes affect the annotation:
        Browsing code in the past on GitHub.
     ```
   ::::
+
+  ::::{group-tab} VS Code
+    It seems this isn't easy to do built-in.  Luckily, as usual, if
+    you open the terminal and run the command line command, it works
+    with the command line method.  VS Code notices the updated files
+    and lets you examine things.  **Make sure you change back to the
+    main branch when you are done.**
+  ::::
 :::::
 
 
 (exercise-history)=
 
 ## Exercise: Basic archaeology commands
+
+This is described with the command line method, but by looking above
+you can translate to the other options.
 
 :::::{exercise} History-1: Explore basic archaeology commands
   Let us explore the value of these commands in an exercise.  Future
@@ -329,6 +381,8 @@ We will probably arrive at a solution which is similar to `git bisect`:
 (exercise-bisect)=
 
 ## Optional exercise: Git bisect
+
+This only works with the command line.
 
 ::::{exercise} (optional) History-2: Use git bisect to find the bad commit
   In this exercise, we use `git bisect` on an example repository.  It
