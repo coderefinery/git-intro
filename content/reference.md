@@ -73,6 +73,13 @@ pull request
    into another.  Usually used to contribute code back to
    {term}`upstream`.
 
+push
+   Moving changes from your local copy to another copy
+
+pull
+   Getting changes from another copy to your own copy.  `git pull`
+   does this fetch, and also tries to automatically merge.
+
 master
    Default name for main branch on Git. Depending on the configuration and service,
    the default branch is sometimes **main**.

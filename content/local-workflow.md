@@ -39,9 +39,10 @@ do, so now we move to working on your own computer.
 
 ## Basics
 
-- What is VS Code and command line
+- What is VS Code and what is the command line?
+- How to choose.
 - Command line still needed sometimes in VS Code.  Show how it can be
-  accessed.
+  accessed (for the most part you just paste in what you need).
 
 
 
