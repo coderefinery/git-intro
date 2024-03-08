@@ -45,7 +45,13 @@ origin
    Default name for a remote repository.
 
 repository
-   One collection of files managed by Git.
+   One collection of files managed by Git.  It contains entire history
+   of all files managed by git.
+
+clone
+   As a verb, the process of making a copy of a repository locally.
+   It brings in all history and all files.  (As a noun, the copy that
+   was made when cloning).
 
 GitHub repository
    The files from the Git repository, but also other things from
