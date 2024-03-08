@@ -24,6 +24,13 @@
 3. Share this repository on GitHub.
 
 We offer **three different flows** of how to do this exercise.
+* Via **GitHub web interface** works, but uploading files is manual
+  and probably only for special cases.
+* **VS Code** is quite easy, since VS Code can offer to create the
+  GitHub repositories for you.
+* **Command line** works with anything, but you need to create the
+  repository on GitHub and link it yourself.
+
 ::::{tabs}
 
 :::{group-tab} Only using GitHub
@@ -136,7 +143,9 @@ I will first initialize a Git repository in this directory:
 $ git init -b main
 ```
 
-For Git versions older than 2.28, use this instead (and your default branch will then be called `master`):
+If you get an error, use this instead (and your default branch will
+then be called `master`, this will happen for Git versions older than
+2.28):
 ```console
 $ git init
 ```
