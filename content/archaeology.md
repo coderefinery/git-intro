@@ -1,16 +1,16 @@
 # Inspecting history
 
-```{objectives}
+:::{objectives}
 - Be able find a line of code, find out why it was introduced and when.
 - Be able to quickly find the commit that changed a behavior.
-```
+:::
 
-```{instructor-note}
+:::{instructor-note}
 - 30 min teaching/type-along
 - 30 min exercise
-```
+:::
 
-````{prereq} Preparation
+::::{prereq} Preparation
 Please make sure that you do not clone repositories inside an already tracked folder:
 
 ```console
@@ -25,17 +25,17 @@ If you see this message, this is good in this case:
 ```shell
 fatal: not a git repository (or any of the parent directories): .git
 ```
-````
+::::
 
 
 ## Our toolbox for history inspection
 
-```{instructor-note}
+:::{instructor-note}
 First the instructor demonstrates few commands on a real life example
 repository <https://github.com/networkx/networkx> (mentioned in the amazing site [The
 Programming Historian](https://programminghistorian.org/)).
 Later we will practice these in an archaeology exercise (below).
-```
+:::
 
 
 ### Warm-up: ["Git History" browser](https://githistory.xyz/)
@@ -49,8 +49,8 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 
 ### Searching text patterns in the repository
 
-`````{tabs}
-  ````{group-tab} Command line
+:::::{tabs}
+  ::::{group-tab} Command line
     With `git grep` you can find all lines in a repository which contain some string or regular expression.
     This is useful to find out where in the code some variable is used or some error message printed:
 
@@ -70,9 +70,9 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
     While `git grep` searches the **current state** of the repository,
     it is also possible to search through all changes with `git log -S sometext`
     which can be useful to find where something got removed.
-  ````
+  ::::
 
-  ````{group-tab} GitHub
+  ::::{group-tab} GitHub
     We can try the same example in the browser:
     <https://github.com/search?q=repo%3Anetworkx%2Fnetworkx%20fixme&type=code>
 
@@ -83,14 +83,14 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 
        Searching for "fixme" in a GitHub repository.
     ```
-  ````
-`````
+  ::::
+:::::
 
 
 ### Inspecting individual commits
 
-`````{tabs}
-  ````{group-tab} Command line
+:::::{tabs}
+  ::::{group-tab} Command line
     We have seen this one before already. Using `git show` we can inspect an individual commit if
     we know its hash:
 
@@ -102,9 +102,9 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
     ```console
     $ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
     ```
-  ````
+  ::::
 
-  ````{group-tab} GitHub
+  ::::{group-tab} GitHub
     We can try the same example in the browser:
     <https://github.com/networkx/networkx/commit/759d589bdfa61aff99e0535938f14f67b01c83f7>
 
@@ -115,8 +115,8 @@ on the README.rst file of the [networkx](https://github.com/networkx/networkx) r
 
        Inspecting an individual commit on GitHub.
     ```
-  ````
-`````
+  ::::
+:::::
 
 
 ### Line-by-line code annotation with metadata
@@ -125,8 +125,8 @@ With `git annotate` you can see line by line who and **when** the line was
 modified last. It also prints the precise hash of the last change which
 modified each line. Incredibly useful for reproducibility.
 
-`````{tabs}
-  ````{group-tab} Command line
+:::::{tabs}
+  ::::{group-tab} Command line
     ```console
     $ git annotate FILE
     ```
@@ -140,9 +140,9 @@ modified each line. Incredibly useful for reproducibility.
     scroll the output.
     Use `/sometext` `<ENTER>` to find "sometext" and you can cycle through the results with `n` (next) and `N` (last).
     You can also use page up/down to scroll. You can quit with `q`.
-  ````
+  ::::
 
-  ````{group-tab} GitHub
+  ::::{group-tab} GitHub
     We can try the same example in the browser:
     <https://github.com/networkx/networkx/blame/main/networkx/convert_matrix.py>
 
@@ -153,21 +153,21 @@ modified each line. Incredibly useful for reproducibility.
 
        Screenshot of file annotation on GitHub.
     ```
-  ````
-`````
+  ::::
+:::::
 
-```{discussion}
+:::{discussion}
 Discuss how these relatively trivial changes affect the annotation:
 - Wrapping long lines of text/code into shorter lines
 - Auto-formatting tools such as `black`
 - Editors that automatically remove trailing whitespace
-```
+:::
 
 
 ### Inspecting code in the past
 
-`````{tabs}
-  ````{group-tab} Command line
+:::::{tabs}
+  ::::{group-tab} Command line
     We can create branches pointing to a commit in the past.
     This is the recommended mechanism to inspect old code:
 
@@ -197,9 +197,9 @@ Discuss how these relatively trivial changes affect the annotation:
     ```console
     $ git checkout -b BRANCHNAME SOMEHASH
     ```
-  ````
+  ::::
 
-  ````{group-tab} GitHub
+  ::::{group-tab} GitHub
     We now know how to visit a specific commit:
     <https://github.com/networkx/networkx/commit/347e629>
 
@@ -212,15 +212,15 @@ Discuss how these relatively trivial changes affect the annotation:
 
        Browsing code in the past on GitHub.
     ```
-  ````
-`````
+  ::::
+:::::
 
 
 (exercise-history)=
 
 ## Exercise: Basic archaeology commands
 
-`````{exercise} History-1: Explore basic archaeology commands
+:::::{exercise} History-1: Explore basic archaeology commands
   Let us explore the value of these commands in an exercise.  Future
   exercises do not depend on this, so it is OK if you do not complete
   it fully.
@@ -248,7 +248,7 @@ Discuss how these relatively trivial changes affect the annotation:
      able to browse and use the code as it was back then.
   5. How would you bring the code to the version of the code right before that line was last modified?
 
-  ````{solution}
+  ::::{solution}
   We provide here a solution for the command line but we also encourage you to
   try to solve this in the browser.
 
@@ -283,8 +283,8 @@ Discuss how these relatively trivial changes affect the annotation:
      ```console
      $ git switch --create just-before 90544b4fa~1
      ```
-  ````
-`````
+  ::::
+:::::
 
 ---
 
@@ -296,13 +296,13 @@ Sometimes you realize that something broke.
 You know that it used to work.
 You do not know when it broke.
 
-```{discussion} How would you solve this?
+:::{discussion} How would you solve this?
 Before we go on first discuss how you would solve this problem: You know that it worked
 500 commits ago but it does not work now.
 
 - How would you find the commit which changed it?
 - Why could it be useful to know the commit that changed it?
-```
+:::
 
 We will probably arrive at a solution which is similar to `git bisect`:
 
@@ -330,7 +330,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
 
 ## Optional exercise: Git bisect
 
-````{exercise} (optional) History-2: Use git bisect to find the bad commit
+::::{exercise} (optional) History-2: Use git bisect to find the bad commit
   In this exercise, we use `git bisect` on an example repository.  It
   is OK if you do not complete this exercise fully.
 
@@ -389,9 +389,9 @@ We will probably arrive at a solution which is similar to `git bisect`:
   ```console
   $ git switch --create BRANCHNAME SOMEHASH^
   ```
-````
+::::
 
-```{keypoints}
+:::{keypoints}
 - git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project.
 - `git switch --create NAME HASH` is the recommended mechanism to inspect old code.
-```
+:::
