@@ -31,8 +31,9 @@ the risk is high that once it is really ready, there are conflicts everywhere.
 **Committing generated files**: See {ref}`gitignore`.
 
 **Over-engineering the branch layout and safeguards in small projects**: This
-may prevent people from contributing (maybe even including yourself?). Add more restrictions and safeguards as
-the project and the group of collaborators grows.
+may prevent people from contributing (maybe even including yourself?). Add more
+restrictions and safeguards only as the project and the group of collaborators
+grows.
 
 **Commit messages that explain what has been changed but do not explain why it has been
 changed**: This is as useful as code comments which describe the "obvious" such
@@ -45,7 +46,7 @@ subsequent `git rm` does not remove the addition from the repository history.
 Code review can help detecting accidental large file additions.
 You can also add an automated test which checks for file sizes during a pull request or merge request.
 
-```{discussion}
+:::{discussion}
 Question to all seasoned Git users: What are we missing on this page? Please
 contribute improvements.
-```
+:::

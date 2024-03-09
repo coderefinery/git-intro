@@ -1,8 +1,8 @@
 # Practical advice: how much Git is necessary?
 
-```{instructor-note}
+:::{instructor-note}
 - 20 min teaching/discussion
-```
+:::
 
 
 ## What level of branching complexity is necessary for each project?
@@ -14,6 +14,8 @@
 - Use branches for unfinished/untested ideas.
 - Use branches when you are not sure about a change.
 - Use tags to mark important milestones.
+- If you are unsure what to do with unfinished and not working code, commit it
+  to a branch.
 
 
 ### Projects with few persons: you accept things breaking sometimes
@@ -54,12 +56,12 @@
 
 ---
 
-```{keypoints}
+:::{keypoints}
 - There is no one size fits all - start simple and grow your project.
-```
+:::
 
-```{discussion}
+:::{discussion}
 How do you [plan to] use Git?
 
 - Advanced users or beginners, please provide your input in the online collaborative document.
-```
+:::
