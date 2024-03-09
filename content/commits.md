@@ -1,9 +1,9 @@
 # Committing changes
 
-The first and most basic to do is *make changes*.  Making changes
-means modifying the files.  In this part, we will make changes in two
-ways: on a branch (which supports multiple lines of work at once), and
-directly on the main branch.
+The first and most basic to do in Git is *make changes* using commits. Making
+changes means modifying the files. In this part, we will make changes in two
+ways: on a branch (which supports multiple lines of work at once), and directly
+on the "main" branch.
 
 :::{objectives}
 * Add new changes to our own copy of the project.
@@ -12,39 +12,30 @@ directly on the main branch.
 :::
 
 
-:::{instructor-note}
-Before starting the exercise session:
-- Show how to verify whether we are on our fork and not on the original repository.
-:::
-
-```{highlight} console
-```
-
-We will add to this page:
-- intro
-- screenshots
-- tab on how to do this locally
-- hints
-- solution
-- discussion
-- summary
-
-
-
 ## Background
 
+- In the previous episode we have browsed an existing repository and seen commits
+  and branches.
+- Each commit is a snapshot of the entire project at a certain
+  point in time and has a unique identifier ("hash").
+- A branch is a line of development, and the `main` branch or `master` branch
+  are often the default branch in Git.
+- A branch in Git is like a sticky note that is attached to a commit. When we add
+  new commits to a branch, the sticky note moves to the new commit.
+- Tags are a way to mark a specific commit as important, for example a release
+  version. They are also like a sticky note, but they don't move when new
+  commits are added.
 
 
 ## Exercise
 
-We offer **three different flows** of how to do this exercise.  For
+We offer **three different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
-flow** only and recommend you do that.
+path** only and recommend you do that.
 
 
-:::{exercise} Exercise: Practice creating commmits and branches (20 min)
-Make sure that you work now **on your fork** of the recipe-book repository.
-
+:::{exercise} Exercise: Practice creating commits and branches (20 min)
+1. Make sure that you work now **on your fork** of the recipe-book repository.
 1. First create a branch and then add a recipe to the branch and commit the change.
 1. In a new commit, modify the recipe you just added.
 1. Switch to the `main` branch and modify a recipe there.
@@ -52,6 +43,8 @@ Make sure that you work now **on your fork** of the recipe-book repository.
 1. Compare the branch that you created with the `main` branch. Can you find an easy way to see the differences?
 1. Can you find a way to compare versions between two arbitrary commits in the repository?
 1. Try to rename the branch that you created and then browse the network again.
+1. Try to create a tag for one of the commits that you created (on GitHub,
+   create a "release").
 :::
 
 The solution below goes over most of the answers, and you are
@@ -62,7 +55,12 @@ design.
 
 ## Solution and walk-through
 
-### (1) Create a branch and add recipe to the branch
+
+### (1) Make sure you are on your fork
+
+
+
+### (2) Create a branch and add recipe to the branch
 
 There is a {term}`main` branch that is default.  We want to create a
 *different* branch for our new commit, because we will *merge* it
@@ -117,7 +115,7 @@ doesn't matter right now.
 
 
 
-### (2) Modify the recipe again
+### (3) Modify the recipe again
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -137,7 +135,7 @@ modify.
 ::::
 :::::
 
-### (3) Switch to the main branch and modify a recipe there
+### (4) Switch to the main branch and modify a recipe there
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -157,7 +155,7 @@ even be visible on the `main` branch).
 ::::
 :::::
 
-### (4) Browse the commits you just made
+### (5) Browse the commits you just made
 
 Let's look at what we did.  Now, the `main` and `new-recipe` branches
 have diverged: both have some modifications.
@@ -176,7 +174,7 @@ Insights tab → Network view (just like we have done before).
 ::::
 :::::
 
-### (5) Compare the branches
+### (6) Compare the branches
 
 Comparing changes is an important thing we need to do.  When using the
 GitHub view only, this may not be so common, but we'll show it so that
@@ -185,7 +183,7 @@ it makes sense later on.
 :::::{tabs}
 ::::{group-tab} GitHub
 
-TODO: I can't find this.  Do we click on the defalt proposal there?
+TODO: I can't find this.  Do we click on the default proposal there?
 
 ::::
 ::::{group-tab} VS Code
@@ -196,7 +194,7 @@ TODO: I can't find this.  Do we click on the defalt proposal there?
 ::::
 :::::
 
-### (6) Compare two arbitrary commits
+### (7) Compare two arbitrary commits
 
 This is similar to above, but not only between branches.
 
@@ -213,12 +211,12 @@ TODO: can't find.
 ::::
 :::::
 
-### (7) Try to rename the branch
+### (8) Renaming a branch
 
 :::::{tabs}
 ::::{group-tab} GitHub
 
-Branch buton → View all branches → three dots at right side → Rename branch.
+Branch button → View all branches → three dots at right side → Rename branch.
 
 ::::
 ::::{group-tab} VS Code
@@ -228,6 +226,11 @@ Branch buton → View all branches → three dots at right side → Rename branc
 ```
 ::::
 :::::
+
+
+### (9) Creating a tag
+
+
 
 
 ## Discussion
