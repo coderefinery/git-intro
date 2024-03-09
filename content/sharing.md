@@ -295,3 +295,12 @@ There are different types of remotes:
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
 - Another option is [NotABug](https://notabug.org).
 - There are more ...
+
+
+## Is putting software on GitHub/GitLab/... publishing?
+
+It is a good first step but to make your code truly **findable and
+accessible**, condider making your code **citable and persistent**: Get a
+persistent identifier (PID) such as DOI in addition to sharing the code
+publicly, by using services like [Zenodo](https://zenodo.org) or similar
+services.
