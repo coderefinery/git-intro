@@ -1,11 +1,11 @@
 # Copy and browse an existing project
 
-In this episode, we will look at an existing repository to
+In this episode, we will look at an **existing repository** to
 understand how all the pieces work together. Along the way, we will make a copy
 (a {term}`fork`) of the {term}`repository` for us, which will be used for our
 own changes in the next episode.
 
-- We used to start by directly going and creating a repository.  This
+- We used to start by directly going and creating a repository from scratch. This
   was abstract and hard to understand.
 - Instead, we'll show you all the cool stuff in a Git repository
   first, and then start adding files.
@@ -23,13 +23,13 @@ own changes in the next episode.
 
 ## GitHub, VS Code, Command line, and more
 
-We offer **three different flows** of how to do this exercise:
+We offer **three different paths** of how to do this exercise:
 - **GitHub** (this is the one we will demonstrate)
 - **VS Code** (if you prefer to follow along using an editor)
 - **Command line** (for people comfortable with the command line)
 
-In the future we'll add more flows, for example Jupyter and RStudio.
-
+In the future we'll add more paths, for example Jupyter and RStudio
+(contributions welcome!).
 
 
 ## Creating a copy of the repository by "forking"
@@ -48,9 +48,9 @@ This will become important later, when we make our own changes.
 1. You should shortly be redirected to your copy of the repository.
 
 At all times you should be aware of if you looking at *your* repository
-or the *CodeRefinery {term}`upstream`*.
+or the *CodeRefinery {term}`upstream`* repository.
 * Your repository: https://github.com/**USERNAME**/recipe-book
-* CodeRefinery repository: https://github.com/**coderefinery**/recipe-book
+* CodeRefinery upstream repository: https://github.com/**coderefinery**/recipe-book
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -75,8 +75,8 @@ open), go to File → New Window.
 ::::
 
 ::::{group-tab} Command line
-**This flow is advanced and we do not include all command line
-information for a new person to do this: you need to be somewhat
+**This path is advanced and we do not include all command line
+information: you need to be somewhat
 comfortable with the command line already.**
 
 We need to start by making a copy of this repository locally.
@@ -110,7 +110,7 @@ Before starting the exercise session:
 Then browse the project and explore commits and branches. Take notes and prepare questions.
 
 1. Browse the **commit history**: Are commit messages understandable?
-   (Hint: "Commit history", the clock symbol, above the file list)
+   (Hint: "Commit history", the timeline symbol, above the file list)
 1. Compare the commit history with the **network graph** ("Insights" -> "Network"). Can you find the branches?
 1. How can you find out when a recipe was **last modified**?
 1. **How many changes** did the Guacamole recipe receive (you find it under "sides")?
@@ -154,7 +154,7 @@ The most basic thing to look at is the history of commits.
 :::::{tabs}
 
 ::::{group-tab} GitHub
-Click on the time symbol in the repository view:
+Click on the timeline symbol in the repository view:
   :::{figure} img/browsing/history.png
   :alt: Screenshot on GitHub of where to find the commit history
   :width: 100%
@@ -193,13 +193,14 @@ how they correspond with the commits in the other view:
 ::::
 
 ::::{group-tab} VS Code
-We don't know how to do this.  Try starting a terminal and using the
+We don't know how to do this without an extension. Try starting a terminal and using the
 "Command Line" option.
 ::::
 
 ::::{group-tab} Command line
-You can view the network graph with `git log --graph --oneline
---decorate --all`.
+You can view the network graph with:
+```console
+$ git log --graph --oneline --decorate --all
 ::::
 
 :::::
@@ -254,8 +255,7 @@ defined.
 :::::{tabs}
 ::::{group-tab} GitHub
 We go to the main recipe book view.  We click the Search magnifying
-class at the very top, type "salt" (so that it reads
-`repo:coderefinery/recipe-book salt`), and click enter.  We see every
+class at the very top, type "salt", and click enter. We see every
 instance, including the context:
   :::{figure} img/browsing/search.png
   :alt: Screenshot on GitHub performing a search
@@ -320,7 +320,7 @@ $ git blame sides/guacamole.md
 
 * Look at the file `LICENSE`.
 * It says it is "Creative Commons Zero 1.0", which is equivalent to
-  public domain.  You can use them for anything.
+  public domain.  You can use them without conditions.
 * Note the GitHub view of the file `LICENSE` gives a nice summary of what it
   means. Try it out:
   :::{figure} img/browsing/license.png
