@@ -6,7 +6,7 @@
 ```
 
 ```{instructor-note}
-- 15 min teaching/demonstration
+- 15 min discussion/demonstration
 ```
 
 
@@ -34,10 +34,11 @@ The same as above, but the terminal view
 
 ## Why do we need to keep track of versions?
 
-**Problem:: If you have to identify and find your code from 17 days
+**Problem: If you have to identify and find your code from 17 days
 ago, can you?**
 
-Version control is an answer to these questions (do you recognize some of them?):
+Version control is an answer to the following questions (do you recognize some
+of them?):
 
 - "It broke ... hopefully I have a working version somewhere?"
 
@@ -94,7 +95,8 @@ you get the same results now?**
 - When you find a bug, how do you know **when precisely** this bug was introduced
   (Are published results affected? Do you need to inform collaborators or users of your code?).
 
-With version control we can "annotate" code ([browse this example online](https://github.com/networkx/networkx/blame/main/networkx/algorithms/boundary.py)):
+With version control we can "annotate" code
+([browse this example online](https://github.com/networkx/networkx/blame/main/networkx/algorithms/boundary.py)):
 
 ```{figure} img/git-annotate.png
 :alt: Example of a git-annotated code with code and history side-by-side
