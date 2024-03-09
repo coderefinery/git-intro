@@ -4,7 +4,7 @@
 - Turn our own coding project (small or large, finished or unfinished) into a
   Git repository.
 - Be able to share a repository on the web to have a backup or so that others
-  can reuse and collaborate.
+  can reuse and collaborate or even just find it.
 :::
 
 :::{instructor-note}
@@ -19,11 +19,12 @@
 :::::{exercise} Exercise: Turn your project to a Git repo and share it (25 min)
 
 1. Create a new directory called **myproject** with one or few files in it.
-   This represents our own project. It is not yet a Git repository.
-2. Turn this directory into a Git repository.
+   This represents our own project. It is not yet a Git repository. You can try
+   that with your own project or use a simple placeholder example.
+2. Turn this new directory into a Git repository.
 3. Share this repository on GitHub.
 
-We offer **three different flows** of how to do this exercise.
+We offer **three different paths** of how to do this exercise.
 * Via **GitHub web interface** works, but uploading files is manual
   and probably only for special cases.
 * **VS Code** is quite easy, since VS Code can offer to create the
@@ -94,7 +95,8 @@ Choose "Publish to GitHub".
 :width: 100%
 :class: with-border
 
-In my case I chose to "Publish to GitHub public repository".
+In my case I chose to "Publish to GitHub public repository". Here you can also rename
+the repository if needed.
 ```
 
 ```{figure} img/sharing/vscode-authorize.png
@@ -138,25 +140,21 @@ $ ls -l
 .rw-------  21 user  7 Mar 17:36 myscript.py
 ```
 
-I will first initialize a Git repository in this directory:
+I will first initialize a Git repository in this directory.
+If you get an error, try without the `-b main` (and your default branch will
+then be called `master`, this will happen for Git versions older than
+2.28):
 ```console
 $ git init -b main
 ```
 
-If you get an error, use this instead (and your default branch will
-then be called `master`, this will happen for Git versions older than
-2.28):
-```console
-$ git init
-```
-
-Now add and commit two two files to the Git repository:
+Now add and commit the two files to the Git repository:
 ```console
 $ git add LICENSE myscript.py
 $ git commit -m "putting my project under version control"
 ```
 
-If you want to add all files without listing them one by one, you can use `git
+If you want to add all files in one go, you can use `git
 add .` instead of `git add LICENSE myscript.py`.
 
 Now you have a Git repository with one commit. Verify this with `git log`.
@@ -201,8 +199,9 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 We now want to follow the "**... or push an existing repository from the command line**":
 
 1. In your terminal make sure you are still in your myproject directory.
-2. Copy paste the three lines to the terminal and execute those, in my case (**you
-   need to replace the "USER" part and possibly also the repository name**):
+2. Copy paste the three lines below the red arrow to the terminal and execute
+   those, in my case (**you need to replace the "USER" part and possibly also
+   the repository name**):
 
 
 `````{tabs}
@@ -275,6 +274,7 @@ online!
 
 ## Remote repositories
 
+In this exercise we have pushed our local repository to a remote repository.
 We will learn how to work with remote repositories in detail in the
 [collaborative distributed version
 control](https://coderefinery.github.io/git-collaborative/) lesson.  To store
