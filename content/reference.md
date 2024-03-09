@@ -11,11 +11,15 @@
 
 :::::{glossary}
 
+alias
+   With aliases you can define your own shortcuts for Git commands.
+
 version control system
-   TODO
+   A system that records changes to a file or set of files over time so that
+   you can recall specific versions later.
 
 git
-   TODO
+   Implementation of a version control system. Currently the most popular one.
 
 commit
    As a verb, the process of recording more changes.
