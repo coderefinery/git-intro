@@ -1,5 +1,11 @@
 # Introduction to version control with Git - Why we want to track versions and how to go back in time to a working version
 
+```{warning}
+In February and March 2024 we rewrote this lesson from the ground up.
+If you are looking for the previous version, you can browse the
+[2023 version of this lesson](https://coderefinery.github.io/git-intro/branch/2023-version/).
+```
+
 This is the introductory lesson to version control using
 [Git](https://git-scm.com/).
 
