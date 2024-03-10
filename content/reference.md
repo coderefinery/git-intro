@@ -34,10 +34,17 @@ staging area
    Place files go after `git add` and before `git commit`
 
 hash
-   unique reference of any commit or state
+   Unique reference of any commit or state.  Comes from [hash
+   functions](https://en.wikipedia.org/wiki/Hash_function) such as MD5
+   or SHA1.
 
 branch
-   One line of work.  Different branches can exist at the same time and split/merge.
+   One line of work.  Different branches can exist at the same time
+   and split/merge.  Committing on a branch updates that branch.
+
+tag
+   Like a {term}`branch` in that it points to a commit for reference.
+   It is designed to be permanent an not updated.
 
 HEAD
    Pointer to the most recent commit on the current branch.
@@ -50,7 +57,9 @@ origin
 
 repository
    One collection of files managed by Git.  It contains entire history
-   of all files managed by git.
+   of all files managed by git.  GitHub has one repository as one
+   GitHub repository.  VS Code has one repository as one directory you
+   can open.  The command line has one repository as one directory.
 
 clone
    As a verb, the process of making a copy of a repository locally.
@@ -105,6 +114,11 @@ merging
    Bringing changes from one branch into another, either as a noun or
    verb.
 
+VS Code
+   A text editor and development environment by Microsoft.  It's quite
+   popular, partly because it is powerful and easy to use.  [VS
+   Codium](https://vscodium.com/) is the same but without Microsoft
+   tracking.
 :::::
 
 ## Commands we use

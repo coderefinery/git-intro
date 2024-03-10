@@ -1,12 +1,12 @@
 # Committing changes
 
-The first and most basic to do in Git is *make changes* using commits. Making
-changes means modifying the files. In this part, we will make changes in two
+The first and most basic to do in Git is *record changes* using
+commits. In this part, we will record changes in two
 ways: on a branch (which supports multiple lines of work at once), and directly
 on the "main" branch.
 
 :::{objectives}
-* Add new changes to our own copy of the project.
+* Record new changes to our own copy of the project.
 * Understand adding changes in two separate branches.
 * See how to compare different versions.
 :::
@@ -14,15 +14,15 @@ on the "main" branch.
 
 ## Background
 
-- In the previous episode we have browsed an existing repository and seen commits
+- In the previous episode we have browsed an existing {term}`repository` and saw {term}`commits`
   and branches.
 - Each commit is a snapshot of the entire project at a certain
-  point in time and has a unique identifier ("hash").
-- A branch is a line of development, and the `main` branch or `master` branch
+  point in time and has a unique identifier ({term}`hash`) .
+- A {term}`branch` is a line of development, and the `main` branch or `master` branch
   are often the default branch in Git.
 - A branch in Git is like a sticky note that is attached to a commit. When we add
   new commits to a branch, the sticky note moves to the new commit.
-- Tags are a way to mark a specific commit as important, for example a release
+- {term}`Tags <tag>` are a way to mark a specific commit as important, for example a release
   version. They are also like a sticky note, but they don't move when new
   commits are added.
 
@@ -30,7 +30,8 @@ on the "main" branch.
 :alt: Branching explained with a gopher
 :width: 100%
 
-Image created using <https://gopherize.me/>
+What if two people, at the same time, make two different changes?  Git
+can merge them together easily.  Image created using <https://gopherize.me/>
 ([inspiration](https://twitter.com/jay_gee/status/703360688618536960)).
 :::
 
@@ -39,10 +40,12 @@ Image created using <https://gopherize.me/>
 
 We offer **three different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
-path** only and recommend you do that.
+path** only and recommend you do that.  (You can get experience with
+the other paths on day 2)
 
 :::{exercise} Exercise: Practice creating commits and branches (20 min)
-1. Make sure that you work now **on your fork** of the recipe-book repository.
+1. Make sure that you now work **on your fork** of the recipe-book
+   repository (`USER/recipe-book`, *not* `coderefinery/recipe-book`)
 1. First create a branch and then add a recipe to the branch and commit the change.
 1. In a new commit, modify the recipe you just added.
 1. Switch to the `main` branch and modify a recipe there.
@@ -94,8 +97,8 @@ doesn't matter right now.
 ```
 
 There is a {term}`main` branch that is default.  We want to create a
-*different* branch for our new commit, because we will *merge* it later.
-{term}`commit` is the verb to describe recording more changes, and also the
+*different* {term}`branch` for our new commit, because we will *merge* it later.
+{term}`Commit <commit>` is the verb to describe recording more changes, and also the
 name of the thing you make.  A commit is identified by something such as
 `554c187`.
 
@@ -125,6 +128,29 @@ recipe there.
 ::::
 
 ::::{group-tab} VS Code
+1. Make sure that you are on the main branch.
+1. Version control button on left sidebar → Three dots in upper right of source control → Branch → Create branch.
+1. VS Code automatically switches to the new branch.
+
+:::{figure} img/commits/vscode-create-branch.png
+:width: 80%
+:class: with-border
+:alt: VS Code screenshot of create branch
+
+Creating a new branch in vscode
+:::
+
+4. Create a new file, for example `sides/mixed-nuts.md`.
+4. In the version control sidebar, click the `+` sign to add the file for the next commit.
+4. Enter a brief message and click "Commit".
+
+:::{figure} img/commits/vscode-add-and-commit.png
+:alt: Screenshot of VS Code commit process
+:width: 80%
+:class: with-border
+
+Committing a new file in VS Code
+:::
 ::::
 
 ::::{group-tab} Command line
@@ -155,6 +181,7 @@ modify.
 ::::
 
 ::::{group-tab} VS Code
+Repeat as in the previous step.
 ::::
 
 ::::{group-tab} Command line
@@ -183,6 +210,15 @@ message.
 ::::
 
 ::::{group-tab} VS Code
+
+Use the branch selector at the bottom to switch back to the main branch.  Repeat the same steps as above.
+
+:::{figure} img/commits/vscode-change-branch.png
+:class: with-border
+:width: 80%
+:alt: VS Code screenshot
+
+Switching branch via selector at bottom.
 ::::
 
 ::::{group-tab} Command line
@@ -211,15 +247,24 @@ Insights tab → Network view (just like we have done before).
 ::::
 
 ::::{group-tab} VS Code
+This requires an extension.  Opening the VS Code terminal lets you use the command line method.
+
+:::{figure} img/commits/vscode-open-terminal.png
+:class: with-border
+:width: 80%
+:alt: VSCode screenshot as described
+
+View → Terminal will open a terminal at bottom.  This is a normal command line interface and very useful for work.  (Note the git-aware prompt that shows the current branch.  This requires other setup.)
 ::::
 
 ::::{group-tab} Command line
 ```console
-$ git log --graph --oneline --decorate --all
+$ git graph
+$ git log --graph --oneline --decorate --all  # If you didn't define git graph yet.
 ```
 
 In my case I got:
-```{code-block} console
+```{code-block}
 ---
 emphasize-lines: 1-3
 ---
@@ -282,10 +327,11 @@ Please try it out.
 ::::
 
 ::::{group-tab} VS Code
+This seems to require an extension.  We recommend you use the command line method.
 ::::
 
 ::::{group-tab} Command line
-```
+```console
 $ git diff main new-recipe
 ```
 
@@ -316,6 +362,7 @@ Please try it out.
 ::::
 
 ::::{group-tab} VS Code
+Again, we recommend using the Command Line method.
 ::::
 
 ::::{group-tab} Command line
@@ -338,6 +385,7 @@ Branch button → View all branches → three dots at right side → Rename bran
 
 ::::
 ::::{group-tab} VS Code
+Version control sidebar → Three dots (same as in step 2) → Branch → Rename branch.  Make sure you are on the right branch before you start.
 ::::
 
 ::::{group-tab} Command line
@@ -375,10 +423,11 @@ For the purpose of this exercise we can use them interchangeably.
 ::::
 
 ::::{group-tab} VS Code
+Version control sidebar → Three dots (same as in step 2) → Tags → Creat tag.  Make sure you are on the expected commit before you do this.
 ::::
 
 ::::{group-tab} Command line
-Renaming the current branch:
+Creating a tag:
 ```console
 $ git tag -a v1.0 -m "New manuscript version of my recipe for the pre-print"
 ```
