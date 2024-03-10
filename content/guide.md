@@ -16,6 +16,13 @@
 :::
 
 
+## Privacy
+
+When presenting the material in a streamed and recorded workshop, make sure to
+only show the <https://github.com/coderefinery/recipe-book-recorded>
+repository.
+
+
 ## Schedule Day 1
 
 Times here are in CE(S)T.

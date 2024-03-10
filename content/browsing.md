@@ -41,11 +41,13 @@ by git.  A {term}`GitHub repository` is GitHub's copy, which adds
 things like access control.  Each GitHub repository is owned by a user
 or organization, who controls what is in it.
 
-First, we need to make our own copy of the repository
-**coderefinery/recipe-book**. This will become important later, when
-we make our own changes.
+First, we need to make our own copy of the exercise repository. This will
+become important later, when we make our own changes.
 
-1. Go to the repository view on GitHub: <https://github.com/coderefinery/recipe-book>
+1. Go to the repository view on GitHub:
+  - <https://github.com/coderefinery/recipe-book>: you can use this one if you don't want your fork and contributions
+    to be visible on the stream or the recording
+  - <https://github.com/coderefinery/recipe-book-recorded>: we will use this one for the demonstration which is streamed and recorded
 1. First, on GitHub, click the button that says "Fork".  It is towards
    the top-right of the screen:
    :::{figure} img/browsing/forking.png
