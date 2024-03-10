@@ -47,6 +47,7 @@ Git repository on another service.
 :caption: Getting started
 
 motivation
+configuration
 ```
 
 ```{toctree}

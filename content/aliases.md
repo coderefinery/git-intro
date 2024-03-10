@@ -1,3 +1,5 @@
+(aliases)=
+
 # Aliases and configuration
 
 ```{objectives}
