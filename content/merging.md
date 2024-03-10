@@ -1,32 +1,21 @@
 # Merging changes and contributing to the project
 
-When different people do different things at the same time, it means we
-have to somehow combine the changes later.  This part goes over that
-{term}`merging`.
+Git allows us to have different development lines where we can try things out.
+It also allows different people to work on the same project at the same.  This
+means that we have to somehow combine the changes later. In this part we will
+practice this: {term}`merging`.
 
 :::{objectives}
-* Understand that merging is done through a {term}`pull request` (= change proposal).
-* Create and merge a pull request within your own repository.
-* Understand (and optionally) do the same for the main public repository.
+- Understand that on GitHub merging is done through a {term}`pull request`. Think of it as a change proposal.
+- Create and merge a pull request within your own repository.
+- Understand (and optionally) do the same to contribute to the {term}`upstream` public repository.
 :::
 
 :::{instructor-note}
-Before starting the exercise session:
-- Show how to open a pull request and how it can be accepted (merged).
+- 10 min introduction and setup
+- 25 min exercise
+- 15 min discussion
 :::
-
-```{highlight} console
-```
-
-We will add to this page:
-- intro
-- screenshots
-- tab on how to do this locally
-- hints
-- solution
-- discussion
-- summary
-
 
 
 ## Background
@@ -38,25 +27,18 @@ We will add to this page:
   steps and make sure that you work very precisely.
 
 
-
-## Terminology
-
-* {term}`upstream`: The original repository from where your code comes
-* {term}`pull request`
-* {term}`merge`
-
-
-
 ## Exercise
 
-In this exercise, we will show how we can *propose changes* and *merge
-changes* within our own repository.  Optionally, you can propose a
-recipe to the main recipe book - which shows the true purpose of this.
+In this exercise, we will show how we can **propose changes** and **merge
+changes** within our own repository. Optionally, you can propose a recipe to
+the {term}`upstream` recipe book - which shows the true purpose of this.  But
+this is only a preview and we will practice collaboration much more in the
+[collaborative Git lesson](https://coderefinery.github.io/git-collaborative/).
 
-We offer **three different flows** of how to do this exercise.  For
+We offer **three different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
-flow** only and recommend you do that.  The exercise text below has
-some GitHub-specific notes, but most is possibly with any flow.
+path** only and recommend you do that.  The exercise text below has
+some GitHub-specific notes, but most is possibly with any path.
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -70,16 +52,15 @@ with a recipe.  In our previous example, it is called `new-recipe`.
 If not, create it first and add a recipe to your new branch, see
 {doc}`commits`.
 
-As usual, this is basic hints.  You should refer to the solution as needed.
+We provide basic hints. You should refer to the solution as needed.
 
 1. Navigate to your branch from the previous episode
    (Hint: the same branch view we used last time).
 
-1. Begin a the pull request process.
+1. Begin the pull request process.
    (Hint: There is a "Contribute" button in the branch view).
 
-1. Add or modify the pull request message, and verify the other data.
-
+1. Add or modify the pull request title and longer message, and verify the other data.
    In the pull request verify the target repository and the target
    branch. Make sure that you are merging within your own repository.
    **GitHub: By default, it will offer to make the change to the
@@ -93,11 +74,14 @@ As usual, this is basic hints.  You should refer to the solution as needed.
 1. Merge the pull request, or if you are not on GitHub you can merge
    the branch locally. Browse the network again. What has changed?
 
+1. Find out which branches are merged and thus safe to delete. Then remove them
+   and verify that the commits are still there, only the branch labels are
+   gone. (Hint: you can delete branches that have been merged into `main`).
+
 1. Optional: Try to create a new branch with a new change, then open a pull
    request but towards the central repository. We will later merge few of
    those.
-
-   (Hint: this is mostly the same as above, for the GitHub flow.  But,
+   (Hint: this is mostly the same as above, for the GitHub path.  But,
    you set the base repository as CodeRefinery.  You might need to
    compare across forks.)
 :::
@@ -107,19 +91,23 @@ As usual, this is basic hints.  You should refer to the solution as needed.
 
 When working locally, it's easier to merge branches: we can just do
 the merge, without making a pull request.  But we don't have that step
-of review and commenting.
+of review and commenting and possibly adjusting.
 
 :::{exercise}
 
-1. Navigate to the `main` branch that you want to merge the *other*
+1. Switch to the `main` branch that you want to merge the *other*
    branch into. (Note that this is the other way around from the
-   GitHub flow).
+   GitHub path).
 
 Then:
 
-5. Merge the other branch.
+5. Merge the other branch into `main` (which is then your current branch).
 
-6. (optional, very advanced) Try to create a new branch, and make a
+6. Find out which branches are merged and thus safe to delete. Then remove them
+   and verify that the commits are still there, only the branch labels are
+   gone. (Hint: you can delete branches that have been merged into `main`).
+
+7. (optional, advanced) Try to create a new branch, and make a
    GitHub pull request with your recipe, and contribute it to our
    upstream repository.  *This is very complex right now since your
    change has to get to GitHub, and we haven't shown that yet.  We
@@ -147,12 +135,12 @@ frustrated because they forgot this!
 
 ::::{group-tab} VS Code
 Remember, you need to navigate to the `main` branch (different from)
-the GitHub flow.
+the GitHub path.
 ::::
 
 ::::{group-tab} Command line
 Remember, you need to navigate to the `main` branch (different from)
-the GitHub flow.
+the GitHub path.
 ::::
 :::::
 
@@ -178,7 +166,7 @@ n/a
 
 
 
-### (3) Configure the pull request
+### (3) Fill out and verify the pull request
 
 We need to set some basic options.
 
@@ -232,8 +220,14 @@ Now, we do the actual merging.  We see some effects now.
 :::::
 
 
+### (6) Delete merged branches
 
-### (6) Contribute to the original repository with a pull request
+
+Quiz:
+- how to find out which branches are safe to delete?
+
+
+### (7) Contribute to the original repository with a pull request
 
 Remember, this is an advanced step.  If you do this, you are donating
 a recipe to everyone.
@@ -252,18 +246,15 @@ a recipe to everyone.
 :::::
 
 
-## Demo: resolving a conflict
 
-## Demo: deleting a branch
 
-## Demo: create a release
+
+
+## Resolving a conflict (demonstration)
+
 
 
 ## Discussion
-
-Quiz:
-- how to find out which branches are safe to delete?
-
 
 * We were able to merge two branches together.
 * When is this useful?
