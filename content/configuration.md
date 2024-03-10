@@ -137,7 +137,7 @@ Test which one you should use:
     HTTPS checks.
 
     From now on, you should **Select HTTPS as the clone URL from
-    GitHubor, or translate the URL to start with the right thing
+    GitHub, or translate the URL to start with the right thing
     yourself:** `https://github.com/`
 
     If you don't want VS Code to be connected to your GitHub account,
