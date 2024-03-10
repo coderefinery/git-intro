@@ -24,9 +24,11 @@ own changes in the next episode.
 ## GitHub, VS Code, Command line, and more
 
 We offer **three different paths** of how to do this exercise:
-- **GitHub** (this is the one we will demonstrate)
-- **VS Code** (if you prefer to follow along using an editor)
-- **Command line** (for people comfortable with the command line)
+- **GitHub** (this is the one we will demonstrate on day 1)
+- **VS Code** (if you prefer to follow along using an editor; we will
+  do this on day 2)
+- **Command line** (for people comfortable with the command line; you
+  will see more of this on day 2)
 
 In the future we'll add more paths, for example Jupyter and RStudio
 (contributions welcome!).
@@ -34,8 +36,14 @@ In the future we'll add more paths, for example Jupyter and RStudio
 
 ## Creating a copy of the repository by "forking"
 
-First, we need to make our own copy of the repository.
-This will become important later, when we make our own changes.
+A {term}`repository` is a collection of files in one directory tracked
+by git.  A {term}`GitHub repository` is GitHub's copy, which adds
+things like access control.  Each GitHub repository is owned by a user
+or organization, who controls what is in it.
+
+First, we need to make our own copy of the repository
+**coderefinery/recipe-book**. This will become important later, when
+we make our own changes.
 
 1. Go to the repository view on GitHub: <https://github.com/coderefinery/recipe-book>
 1. First, on GitHub, click the button that says "Fork".  It is towards
@@ -45,7 +53,8 @@ This will become important later, when we make our own changes.
    :width: 80%
    :class: with-border
    :::
-1. You should shortly be redirected to your copy of the repository.
+1. You should shortly be redirected to your copy of the repository
+   **YOUR_USER_NAME/recipe-book**.
 
 At all times you should be aware of if you looking at *your* repository
 or the *CodeRefinery {term}`upstream`* repository.
@@ -60,6 +69,8 @@ URL should look like `https://github.com/USER/recipe-book`, where
 ::::
 
 ::::{group-tab} VS Code
+You need to have forked the repository as described above.
+
 We need to start by making a copy of this repository locally.
 
 1. Start VS Code.
@@ -79,7 +90,8 @@ open), go to File → New Window.
 information: you need to be somewhat
 comfortable with the command line already.**
 
-We need to start by making a copy of this repository locally.
+We need to start by making a copy of this repository locally.  You
+need to have forked the repository as described above.
 
 1. Start the terminal in which you use Git (terminal application, or
    Git Bash).
@@ -107,7 +119,9 @@ Before starting the exercise session:
 
 :::{exercise} Exercise: Browsing an existing project (25 min)
 
-Then browse the project and explore commits and branches. Take notes and prepare questions.
+Browse the recipe-book project (introduced above) and explore commits and branches. Take notes
+and prepare questions.  The hints are for the GitHub path in the
+browser.
 
 1. Browse the **commit history**: Are commit messages understandable?
    (Hint: "Commit history", the timeline symbol, above the file list)
@@ -118,7 +132,7 @@ Then browse the project and explore commits and branches. Take notes and prepare
    (Hint: "History" in the view of a single file)
 1. **Which recipes include the ingredient "salt"**?
    (Hint: the GitHub search.  From the repository view, it should offer
-   the filter "repo:coderefinery/recipe-book" by default.  What if you
+   the filter "repo:USER/recipe-book" by default.  What if you
    add a search term?)
 1. In the Guacamole recipe, find out **who modified each line last and when**
    (click on file, then click "Blame" button). Find out who added the cilantro
@@ -178,7 +192,8 @@ Run `git log`.
 
 The commit history we saw above looks linear: one commit after
 another.  But if we look at the network view, we see some branches and
-merges.  We'll see how to do these later.
+merges.  We'll see how to do these later.  This is another one of the
+basic Git views.
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -198,7 +213,12 @@ We don't know how to do this without an extension. Try starting a terminal and u
 ::::
 
 ::::{group-tab} Command line
-You can view the network graph with:
+If you defined the `git graph` alias as in {doc}`configuration`, you
+can view the network graph with:
+```console
+$ git graph
+```
+If not, you can use the basic command:
 ```console
 $ git log --graph --oneline --decorate --all
 ::::
@@ -249,8 +269,8 @@ According to the view above, it seems to have five changes (as of
 ### (5) Which recipes include the ingredient "salt"
 
 Version control makes it very easy to find all occurrences of a single
-word. This is useful for things like finding where things are
-defined.
+word. This is useful for things like finding where functions or
+variables are defined or used.
 
 :::::{tabs}
 ::::{group-tab} GitHub
@@ -272,7 +292,7 @@ click to see the usage in context.
 
 ::::{group-tab} Command line
 `grep` is the command line tool that searches for lines matching a term
-```
+```console
 $ git grep salt          # only the lines
 $ git grep -C 3 salt     # three lines of context
 $ git grep -i salt       # case insensitive
@@ -307,7 +327,7 @@ line version, after opening a terminal.
 
 ::::{group-tab} Command line
 These two commands are similar but have slightly different output.
-```
+```console
 $ git annotate sides/guacamole.md
 $ git blame sides/guacamole.md
 ```
@@ -333,9 +353,10 @@ $ git blame sides/guacamole.md
 ### (8) Browse issues and pull requests in the {term}`upstream` repository
 
 This can only be done through the GitHub view.  Go to the main
-repository, the one of "CodeRefinery" (not your fork):
-<https://github.com/coderefinery/recipe-book>.  Issues and Pull
-Requests are different for each GitHub copy.
+repository **coderefinery/recipe-book**, (not your fork):
+<https://github.com/coderefinery/recipe-book>.  {term}`Issues <issue>`
+and {term}`Pull requests <pull request>` are different for each GitHub
+copy.
 
 * Click on the "Issues" tab.  These are notes that people have added,
   which allow discussion about the project. Often they are used to communicate

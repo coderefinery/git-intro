@@ -72,6 +72,11 @@ fork
    As a verb on GitHub: Making a copy of a repository linked to the
    original.  It is easy to send changes to the original
 
+issue
+   Within a web repository like Github, discussion of a topic, for
+   example a problem or improvement suggestion.  These are a property
+   of the web platform and not of the Git program itself.
+
 pull request
    A GitHub concept: change proposal.  A proposal to merge one branch
    into another.  Usually used to contribute code back to
