@@ -28,7 +28,17 @@ phases of small projects.
 never merge back and be so big and so ambitious with too many/big features that
 the risk is high that once it is really ready, there are conflicts everywhere.
 
-**Committing generated files**: See {ref}`gitignore`.
+**Committing generated files**: Compiled and generated files are not
+committed to version control. There are many reasons for this:
+
+- These files can make it more difficult to run on different platforms.
+- These files are automatically generated and thus do not contribute in any meaningful way.
+- When tracking generated files you could see differences in the code although you haven't touched the code.
+
+For this we use [.gitignore files](https://git-scm.com/docs/gitignore) where
+you can list which files and paths should be ignored by Git. You can also use
+wild-cards to ignore files with a certain extension or files in a certain
+directory.
 
 **Over-engineering the branch layout and safeguards in small projects**: This
 may prevent people from contributing (maybe even including yourself?). Add more

@@ -596,8 +596,6 @@ But remember: it is better to make any commit, than no commit. Especially in sma
 **Let not the perfect be the enemy of the good enough**.
 
 
-(gitignore)=
-
 ## Ignoring files and paths with .gitignore
 
 ```{discussion}
