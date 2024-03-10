@@ -13,9 +13,11 @@ These configuration settings are saved in a file called `.gitconfig` in your
 home directory. If this file exists, editors like VS Code will use this
 configuration.
 
-If you want to see your configuration settings, you can use the command:
+If you want to see your configuration settings, you can use the
+command (`--show-origin` means it shows the file *where* each setting
+is defined):
 ```console
-$ git config --list
+$ git config --list --show-origin
 ```
 
 
