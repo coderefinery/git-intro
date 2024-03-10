@@ -265,9 +265,7 @@ Discuss how these relatively trivial changes affect the annotation:
 :::::
 
 
-(exercise-history)=
-
-## Exercise: Basic archaeology commands
+## Exercise
 
 This is described with the command line method, but by looking above
 you can translate to the other options.
