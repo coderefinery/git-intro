@@ -34,6 +34,9 @@ If you prefer to not use it, you can instead use
 This means that nobody can write to this email address, but GitHub will still
 be able to connect your contributions with your GitHub account.
 
+(Note that these can, in theory, be anything: this is just data, not a
+registration or identity requirement.)
+
 
 ## Default branch name
 
@@ -49,8 +52,7 @@ $ git config --global init.defaultbranch main
 We recommend to define an {term}`alias` in Git, to be able to nicely visualize
 branch structure in the terminal without having to remember a long Git command
 (more details about aliases are given in a later section). This is extensively
-used in the rest of this and other lessons.  The second line sets the default
-branch name:
+used in the rest of this and other lessons:
 ```console
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
 ```
@@ -67,6 +69,11 @@ This may have already been set to something (like VS Code), but if not
 ```console
 $ git config --global core.editor nano
 ```
+
+See `the installation instructions text editor page
+<https://coderefinery.github.io/installation/editors/>`__ gives ways
+to set other editors, or do a web search for "git set editor to
+[editor name]".
 
 
 % This anchor used for linking from other lessons
