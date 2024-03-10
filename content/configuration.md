@@ -1,3 +1,5 @@
+(configuration)=
+
 # Configuring Git command line and editor
 
 We have a longer version of this in the [installation
@@ -70,7 +72,7 @@ $ git config --global core.editor nano
 % This anchor used for linking from other lessons
 (clone-method)=
 
-## Authenticating to GitHub: SSH or HTTPS using VS Code?
+## Authenticating to GitHub: SSH or HTTPS or VS Code?
 
 **How does GitHub know who you are?** There are three options.
 
