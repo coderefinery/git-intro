@@ -25,8 +25,8 @@
 3. Share this repository on GitHub.
 
 We offer **three different paths** of how to do this exercise.
-* Via **GitHub web interface** works, but uploading files is manual
-  and probably only for special cases.
+* Via **GitHub web interface**: easy and can be a good starting point if you are completely
+  new to Git.
 * **VS Code** is quite easy, since VS Code can offer to create the
   GitHub repositories for you.
 * **Command line** works with anything, but you need to create the
