@@ -263,10 +263,20 @@ branch and check that your new recipe is there.
 ::::
 
 ::::{group-tab} VS Code
+Just like with the command line, when we merge we modify our *current* branch.  Verify you are on the `main` branch.
+
+1. Verify current branch at the bottom.
+1. From the version control sidebar → Three dots → Branch → Merge
+1. In the selector that comes up, choose the branch you want to merge *from*.  The commits on that branch will be added to the current branch.
+
+:::{figure} img/merging/vscode-merging.png
+:alt: VSCode screenshot as described
+:width: 80%
+:class: with-border
 ::::
 
 ::::{group-tab} Command line
-On the command line, when we merge, we always modify our current branch.
+On the command line, when we merge, we always modify our *current* branch.
 
 If you are not sure anymore what your current branch is, type:
 ```console
@@ -315,6 +325,7 @@ In the overview we can see that it has been merged and we can delete it:
 ::::
 
 ::::{group-tab} VS Code
+From the source control sidebar, → the three dots (as before) → Branch → Delete Branch.  Select the branch name to delete.
 ::::
 
 ::::{group-tab} Command line
