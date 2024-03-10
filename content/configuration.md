@@ -135,5 +135,12 @@ Test which one you should use:
     VS Code has its own authentication method and the editor will guide you
     through the process. If you are using VS Code, you can skip the SSH and
     HTTPS checks.
+
+    From now on, you should **Select HTTPS as the clone URL from
+    GitHub, or translate the URL to start with the right thing
+    yourself:** `https://github.com/`
+
+    If you don't want VS Code to be connected to your GitHub account,
+    set up and use the SSH method instead.
   ::::
 :::::
