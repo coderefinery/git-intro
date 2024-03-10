@@ -9,6 +9,7 @@
   (this means **not** using "generating from template")
   - <https://github.com/coderefinery/recipe-book>
   - <https://github.com/coderefinery/recipe-book-recorded>
+- You can create these using `git clone --mirror` and `git push --mirror` to make sure to copy all branches.
 - Create one or two issues to both
 - Create one or two pull requests to both
 - In both, try to search for something in the recipes to trigger a search index
