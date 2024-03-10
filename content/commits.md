@@ -26,6 +26,14 @@ on the "main" branch.
   version. They are also like a sticky note, but they don't move when new
   commits are added.
 
+:::{figure} img/gopher/gophers.png
+:alt: Branching explained with a gopher
+:width: 100%
+
+Image created using <https://gopherize.me/>
+([inspiration](https://twitter.com/jay_gee/status/703360688618536960)).
+:::
+
 
 ## Exercise
 
