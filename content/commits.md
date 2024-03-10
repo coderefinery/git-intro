@@ -163,6 +163,9 @@ Modify the file. Then commit the new change:
 $ git add sides/mixed-nuts.md
 $ git commit -m "Short summary of the change"
 ```
+
+Make sure to replace "Short summary of the change" with a meaningful commit
+message.
 ::::
 :::::
 
@@ -187,6 +190,7 @@ First switch to the `main` branch:
 ```console
 $ git switch main
 ```
+
 Then modify a file. Finally `git add` and then commit the change:
 ```console
 $ git commit -m "Short summary of the change"
