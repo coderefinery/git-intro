@@ -373,11 +373,16 @@ request.
 ::::{group-tab} VS Code
 Not described. We will return to this in the [collaborative Git
 lesson](https://coderefinery.github.io/git-collaborative/).
+
+You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `coderefinery/recipe-book`.  Or you do it all through VS Code.
 ::::
 
 ::::{group-tab} Command line
 Not described. We will return to this in the [collaborative Git
 lesson](https://coderefinery.github.io/git-collaborative/).
+
+You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `coderefinery/recipe-book`.
+
 ::::
 :::::
 
@@ -395,9 +400,9 @@ Here we will only demonstrate how to create a conflict and how to resolve it,
 all on GitHub.  Once we understand how this works, we will be more confident to
 resolve conflicts also in the command line.
 
-How to create a conflict (please try this in your own time):
+How to create a conflict (please try this in your own time *and just watch now*):
 - Create a new branch from `main` and on it make a change to a file.
-- On `main`, make a different change to the same file portion.
+- On `main`, make a different change to the same part of the same file.
 - Now try to merge the new branch to `main`. You will get a conflict.
 
 How to resolve conflicts:
