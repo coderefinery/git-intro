@@ -1,14 +1,19 @@
 # Instructor guide
 
 
-## Exercise preparation
+:::warning
+## Exercise preparation: one day before the workshop
 
-- Create an exercise repository from
+- Create two exercise repository from
   <https://github.com/coderefinery/recipe-book-template> preserving history
-  (this means not using "generating from template")
-- Create one or two issues
-- Create one or two pull requests
-- Try to search for something in the recipe to trigger a search index update
+  (this means **not** using "generating from template")
+  - <https://github.com/coderefinery/recipe-book>
+  - <https://github.com/coderefinery/recipe-book-recorded>
+- Create one or two issues to both
+- Create one or two pull requests to both
+- In both, try to search for something in the recipes to trigger a search index
+  update
+:::
 
 
 ## Schedule Day 1
@@ -19,26 +24,19 @@ Times here are in CE(S)T.
 - 09:00 - 09:20 (20 min) Welcome and practical information
 
 - 09:20 - 09:35 (15 min) [Motivation](https://coderefinery.github.io/git-intro/motivation/)
-- 09:35 - 09:50 (15 min) [Basics - configuration and first commits](https://coderefinery.github.io/git-intro/basics/)
-- 09:50 - 10:00 (10 min) Break
-- **10:00 - 10:20 (20 min) [Exercise](https://coderefinery.github.io/git-intro/basics/#exercise-record-changes)**
-    - Record changes
-    - Optional exercises
-- 10:20 - 10:40 (20 min) [Basics - history, commit log, ignoring](https://coderefinery.github.io/git-intro/basics/#git-history-and-log)
-- **10:40 - 11:00 (20 min) [Exercise](https://coderefinery.github.io/git-intro/basics/#optional-exercises-comparing-changes)**
-    - One or all optional exercises
+- 09:35 - 10:00 (25 min) [Copy and browse an existing project](https://coderefinery.github.io/git-intro/browsing/)
 
-- 11:00 - 12:00: Lunch break
+- 10:00 - 10:10 (10 min) Break
 
-- 12:00 - 12:15 (15 min) [Branching and merging](https://coderefinery.github.io/git-intro/branches/)
-- **12:15 - 12:35 (20 min) [Exercise](https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches)**
-    - Branch-1
-    - Branch-2
-- 12:35 - 12:50 (15 min) Summarize/discuss branching and merging
+- 10:10 - 11:00 (50 min) [Committing changes](https://coderefinery.github.io/git-intro/commits/)
+
+- 11:00 - 12:00 (60 min) Break
+
+- 12:00 - 12:50 (50 min) [Merging changes and contributing to the project](https://coderefinery.github.io/git-intro/merging/)
+
 - 12:50 - 13:00 (10 min) Break
-- 13:00 - 13:20 (20 min) [Conflict resolution](https://coderefinery.github.io/git-intro/conflicts/)
 
-- 13:20 - 13:30 (10 min) Q&A, feedback, and what will we be doing tomorrow?
+- 13:00 - 13:30 (20 min) Demonstrating conflict resolution, Q&A, feedback, and what will we be doing tomorrow?
 
 
 ## Schedule Day 2
@@ -46,32 +44,19 @@ Times here are in CE(S)T.
 Times here are in CE(S)T.
 
 - 08:50 - 09:00 (10 min) Soft start and icebreaker question
-- 09:00 - 09:10 (10 min) Recap and Q&A from day 1
+- 09:00 - 09:50 (50 min) [Cloning a Git repository and working locally](https://coderefinery.github.io/git-intro/local-workflow/)
 
-- 09:10 - 09:25 (15 min) [Sharing repositories online](https://coderefinery.github.io/git-intro/remotes/)
-- **09:25 - 09:50 (25 min) Exercise**
-    - Set up SSH keys
-    - Pushing our guacamole recipe repository to GitHub
-    - Clone repository
 - 09:50 - 10:00 (10 min) Break
-- 10:00 - 10:15 (15 min) [Inspecting history](https://coderefinery.github.io/git-intro/archaeology/)
-- **10:15 - 10:45 (30 min) [Exercise](https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands)**
-    - History-1
-    - History-2 is optional
-- 10:45 - 11:00 (15 min) Summarize/discuss inspecting history
 
-- 11:00 - 12:00: Lunch break
+- 10:00 - 11:00 (60 min) [Inspecting history](https://coderefinery.github.io/git-intro/archaeology/)
 
-- 12:00 - 12:15 (15 min) [Undoing and recovering](https://coderefinery.github.io/git-intro/recovering/)
-- **12:15 - 12:40 (25 min) [Exercises](https://coderefinery.github.io/git-intro/recovering/)**
-    - Undoing-1
-    - Undoing-2
-    - Undoing-3
-- 12:40 - 11:50 (10 min) Summarize undoing and recovering and discussion and mention that staging area exists
+- 11:00 - 12:00 (60 min) Break
+
+- 12:00 - 12:50 (50 min) [How to turn your project to a Git repo and share it](https://coderefinery.github.io/git-intro/sharing/)
+
 - 12:50 - 13:00 (10 min) Break
-- 13:00 - 13:20 (20 min) [How much Git is necessary?](https://coderefinery.github.io/git-intro/level/)
 
-- 13:20 - 13:30 (10 min) Q&A, feedback, and what will we be doing tomorrow?
+- 13:00 - 13:30 (20 min) Practical advice, Q&A, feedback, and what will we be doing tomorrow?
 
 
 ## Why we teach this lesson
@@ -94,7 +79,7 @@ comfortable with it. They lack a good mental model of how Git operates and are a
 Other learners have never used Git before.
 This lesson teaches how things are done in Git, which is useful for the newcomers,
 but also how Git operates (e.g. what commits and branches really are) and what are some good
-practices (e.g. how to use the staging area), which is useful for more experienced users.
+practices.
 
 
 ## Intended learning outcomes
@@ -103,56 +88,18 @@ By the end of this lesson, learners should:
 - realize that version control is very important and Git is a valuable tool to learn and use
 - understand that Git is configurable and know how to set basic configurations
 - be able to set up Git repositories and make commits
-- understand that information on commits, branches etc. are stored under `.git/`, and have a
-  mental model of how that relates to the working directory
-- have a mental model of the different states a file can have in Git (untracked, modified, staged, unmodified)
 - know how to write good commit messages
 - have an idea of how the staging area can be used to craft good commits
-- know how to undo commits using `git revert` and discard changes using `git restore`
-- understand that `git restore` can be dangerous if changes have not been staged
 - know how to create branches and switch between branches
 - have a mental model of how branches work and get used to thinking of branches in a graphical (tree-structure) way
 - know how to merge branches and understand what that means in terms of combining different modifications
-- know how to resolve conflicts, or to abort conflicting merges
 - realize that conflicts are generally a good thing since they prevent incorrect merges
 - be able to set up a repository on GitHub and connect it with local repository
 - push changes to a remote repository
 - know a few ways to search through a repository and its history
 
 
-## How to teach this lesson
-
-### Take first editor steps slowly
-
-Some participants will be new to using a terminal text editor so please open,
-edit, and close the editor (Nano) slowly in first type-along sessions and
-exercises to avoid that participants will fall behind the instructor. At one
-point a student did not follow the file edits of the instructor, and to correct
-the mistake they had to do a manual merge, which they were not ready for.
-
-
-### How to use the exercises
-
-Most episodes have standard exercises followed by optional (often more advanced) exercises
-for more experienced learners so they don't get bored waiting for the newcomers.
-The instructor should briefly introduce the exercises and mention that after finishing the
-standard exercise (and indicating that using the green sticky) the learners can move on to the
-optional ones if they wish. When at least half of the learners have raised the green sticky
-the instructor should go through the standard exercise to describe its most important take-home messages.
-It's also fine to briefly go though important points from the optional exercises, but don't spend
-too much time on it since everyone will not have attempted them.
-
-
-### "Test your understanding" exercises
-
-Some episodes have a "test your understanding" exercise at the end which is intended as *formative assessment*,
-i.e. an activity that provides feedback to instructors and learners on whether learning objectives are being met.
-The instructor should end each episode by posing the "test your understanding" multiple-choice question,
-giving learners a minute to think about it, and then asking for the right answer or asking learners to raise their
-hands to signal which answer they think is correct.
-
-
-### Inspecting history
+## Inspecting history
 
 Key lesson is *how to find when something is broken or what commit has broken
 the code*.
