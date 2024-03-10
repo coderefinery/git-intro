@@ -15,7 +15,7 @@ then paragraph(s) with more details in free form, if necessary**.
 
 Good example:
 ```text
-increase alpha to 2.0 for better convergence
+increase alpha to 2.0 for faster convergence
 
 the motivation for this change is
 to enable ...
