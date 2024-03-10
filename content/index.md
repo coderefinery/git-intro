@@ -104,6 +104,7 @@ customizing
 resources
 exercises
 guide
+PDF version <https://coderefinery.github.io/git-intro/lesson.pdf>
 ```
 
 ```{toctree}
