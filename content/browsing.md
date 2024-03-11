@@ -303,6 +303,12 @@ $ git grep -i salt       # case insensitive
 
 :::::
 
+```{warning}
+**Searching in a forked repository will not work instantaneously!**
+
+It usually takes a few minutes before one can search for keywords in a forked repository.
+```
+
 
 ### (6) Who modified each line last and when?
 
