@@ -18,6 +18,7 @@ own changes in the next episode.
 * Understand how version control allows advanced inspection of a
   repository.
 * See how Git allows multiple people to collaborate easily.
+* See the big picture instead of remembering a bunch of commands.
 :::
 
 
@@ -45,9 +46,9 @@ First, we need to make our own copy of the exercise repository. This will
 become important later, when we make our own changes.
 
 1. Go to the repository view on GitHub:
-  - <https://github.com/coderefinery/recipe-book>: you can use this one if you don't want your fork and contributions
-    to be visible on the stream or the recording
-  - <https://github.com/coderefinery/recipe-book-recorded>: we will use this one for the demonstration which is streamed and recorded
+   - <https://github.com/coderefinery/recipe-book>: you can use this one if you don't want your fork and contributions
+     to be visible on the stream or the recording
+   - <https://github.com/coderefinery/recipe-book-recorded>: we will use this one for the demonstration which is streamed and recorded
 1. First, on GitHub, click the button that says "Fork".  It is towards
    the top-right of the screen:
    :::{figure} img/browsing/forking.png
@@ -78,7 +79,8 @@ We need to start by making a copy of this repository locally.
 1. Start VS Code.
 1. If you don't have the default view (you already have a project
 open), go to File → New Window.
-1. Under "Start" on the screen, select "Clone Git Repository...".
+1. Under "Start" on the screen, select "Clone Git Repository...". Alternatively
+   navigate to the "Source Control" tab on the left sidebar and click on the "Clone Repository" button.
 1. Paste in this URL: `https://github.com/USER/recipe-book`, where
    `USER` is your username.  You can copy this from the browser.
 1. Browse and select the folder in which you want to clone the
@@ -184,7 +186,15 @@ for a single file.
 ::::
 
 ::::{group-tab} Command line
-Run `git log`.
+Run:
+```console
+$ git log
+```
+
+Try also:
+```console
+$ git log --oneline
+```
 ::::
 
 :::::
@@ -278,7 +288,14 @@ variables are defined or used.
 ::::{group-tab} GitHub
 We go to the main recipe book view.  We click the Search magnifying
 class at the very top, type "salt", and click enter. We see every
-instance, including the context:
+instance, including the context.
+  ```{admonition} Searching in a forked repository will not work instantaneously!
+
+  It usually takes a few minutes before one can search for keywords in a forked repository
+  since it first needs to build the search index the very first time we search.
+  Start it, continue with other steps, then come back to this.
+  ```
+
   :::{figure} img/browsing/search.png
   :alt: Screenshot on GitHub performing a search
   :width: 100%
@@ -302,12 +319,6 @@ $ git grep -i salt       # case insensitive
 ::::
 
 :::::
-
-```{warning}
-**Searching in a forked repository will not work instantaneously!**
-
-It usually takes a few minutes before one can search for keywords in a forked repository.
-```
 
 
 ### (6) Who modified each line last and when?
