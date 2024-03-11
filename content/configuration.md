@@ -7,7 +7,8 @@ instructions](https://coderefinery.github.io/installation/git-in-terminal/).
 But for clarity, we will review the most important parts here.
 
 You don't need to set these if you work only through the GitHub web interface.
-If you use VS Code, the editor might prompt you to set these up.
+If you use VS Code or other editors or integrated development environments,
+the editor might prompt you to set these up.
 
 These configuration settings are saved in a file called `.gitconfig` in your
 home directory. If this file exists, editors like VS Code will use this
@@ -32,18 +33,19 @@ $ git config --global user.email yourname@example.com
 
 For the email address we recommend to use the one you use for your GitHub account.
 If you prefer to not use it, you can instead use
-`YOUR_GITHUB_USERNAME@users.noreply.github.com` as the email address.
+`YOUR_GITHUB_USERNAME@users.noreply.github.com` as the email address (replace `YOUR_GITHUB_USERNAME`).
 This means that nobody can write to this email address, but GitHub will still
 be able to connect your contributions with your GitHub account.
 
-(Note that these can, in theory, be anything: this is just data, not a
-registration or identity requirement.)
+Note that these can, in theory, be anything: this is just data, not a
+registration or identity requirement.
 
 
 ## Default branch name
 
 The default branch name in Git has been `master` for a long time, but it is
-changing to `main` in many places.  We recommend to set it to `main`:
+changing to `main` in many places.  We recommend to set it to `main` for new
+repositories that you create locally:
 ```console
 $ git config --global init.defaultbranch main
 ```
@@ -52,9 +54,7 @@ $ git config --global init.defaultbranch main
 ## Useful alias for the command line
 
 We recommend to define an {term}`alias` in Git, to be able to nicely visualize
-branch structure in the terminal without having to remember a long Git command
-(more details about aliases are given in a later section). This is extensively
-used in the rest of this and other lessons:
+branch structure in the terminal without having to remember a long Git command:
 ```console
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
 ```
@@ -64,7 +64,8 @@ We have an own section about aliases: {ref}`aliases`.
 
 ## Default text editor for commit messages
 
-Git sometimes needs to start a text editor for you to enter messages.
+Git sometimes needs to start a text editor for you to enter messages (unless you create
+commits from inside an editor or on the web).
 This may have already been set to something (like VS Code), but if not
 `nano` is usually a safe choice:
 
@@ -72,8 +73,7 @@ This may have already been set to something (like VS Code), but if not
 $ git config --global core.editor nano
 ```
 
-See `the installation instructions text editor page
-<https://coderefinery.github.io/installation/editors/>`__ gives ways
+The [installation instructions text editor page](https://coderefinery.github.io/installation/editors/) gives ways
 to set other editors, or do a web search for "git set editor to
 [editor name]".
 
@@ -83,8 +83,7 @@ to set other editors, or do a web search for "git set editor to
 
 ## Authenticating to GitHub: SSH or HTTPS or VS Code?
 
-**How does GitHub know who you are?** There are three options.
-
+**How does GitHub know who you are?** There are three options:
 - **SSH** is the classic method, using [Secure Shell
   Protocol](https://en.wikipedia.org/wiki/Secure_Shell) remote connection
   keys.
