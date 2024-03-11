@@ -24,14 +24,14 @@
    This represents our own project. It is not yet a Git repository. You can try
    that with your own project or use a simple placeholder example.
 2. Turn this new directory into a Git repository.
-3. Share this repository on GitHub.
+3. Share this repository on GitHub (or GitLab, since it really works the same).
 
 We offer **three different paths** of how to do this exercise.
 * Via **GitHub web interface**: easy and can be a good starting point if you are completely
   new to Git.
 * **VS Code** is quite easy, since VS Code can offer to create the
   GitHub repositories for you.
-* **Command line** works with anything, but you need to create the
+* **Command line**: you need to create the
   repository on GitHub and link it yourself.
 
 ::::{tabs}
@@ -89,7 +89,7 @@ Open the folder in VS Code. Then click on the source control icon.
 :width: 100%
 :class: with-border
 
-Choose "Publish to GitHub".
+Choose "Publish to GitHub". In this case I never even clicked on "Initialize Repository".
 ```
 
 ```{figure} img/sharing/vscode-publish-to-github2.png
@@ -122,13 +122,7 @@ After it is published, click on "Open on GitHub".
 :::{group-tab} Command line
 ### Make sure your Git is configured
 
-First, make sure your Git is configured. If you haven't done this before, you
-need to set your name and email address. This is used for the commits you make.
-
-```console
-$ git config --global user.name "Your Name"
-$ git config --global user.email yourname@example.org
-```
+We have an own section on this: {ref}`configuration`.
 
 
 ### Put your project under version control
@@ -174,7 +168,7 @@ First log into GitHub, then follow the screenshots and descriptions below.
 Click on the "plus" symbol on top right, then on "New repository".
 ```
 
-Then:
+Then create an empty repository without any files and without any commits:
 ```{figure} img/sharing/create-repository.png
 :alt: Screenshot on GitHub just before a new repository is created
 :width: 100%
@@ -197,14 +191,12 @@ SSH address: click on the HTTPS and SSH buttons to see what happens.
 
 ### Push an existing repository from your computer to GitHub
 
-
 We now want to follow the "**... or push an existing repository from the command line**":
 
 1. In your terminal make sure you are still in your myproject directory.
 2. Copy paste the three lines below the red arrow to the terminal and execute
    those, in my case (**you need to replace the "USER" part and possibly also
    the repository name**):
-
 
 `````{tabs}
   ````{group-tab} SSH
