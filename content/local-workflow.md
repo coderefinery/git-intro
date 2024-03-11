@@ -44,7 +44,7 @@ seem familiar, from the browser-based exercises we did yesterday.
 We offer the **Command Line and VS Code** paths for this exercise.
 GitHub isn't an option in this episode, since that is what we already
 demonstrated in {doc}`commits` and {doc}`merging` and since the point of this
-episode is to work locally.
+episode is to work **locally**.
 
 It is also possible to use the command line (terminal) from inside VS Code.
 
@@ -131,6 +131,12 @@ Create a new branch called `another-recipe` from `main` and switch to it:
 ```console
 $ git switch --create another-recipe main
 ```
+
+If you leave out the last argument, it will create a branch from the current
+branch:
+```console
+$ git switch --create another-recipe
+```
 ::::
 
 ::::{group-tab} VS Code
@@ -189,6 +195,11 @@ If you are not sure anymore what your current branch is, type:
 $ git branch
 ```
 
+Another way to find out where we are in Git:
+```console
+$ git status
+```
+
 In this case we merge the `another-recipe` branch into our current branch:
 ```console
 $ git merge another-recipe
@@ -207,6 +218,14 @@ $ git merge another-recipe
 ```console
 $ git log --graph --oneline --decorate --all
 ```
+
+We recommend to define an {term}`alias` in Git, to be able to nicely visualize
+branch structure in the terminal without having to remember a long Git command:
+```console
+$ git config --global alias.graph "log --all --graph --decorate --oneline"
+```
+Then you can just type `git graph` from there on. We have an own section about
+aliases: {ref}`aliases`.
 
 Compare this with the graph on GitHub: Insights tab → Network view (just like
 we have done before).
@@ -279,10 +298,11 @@ $ git branch alex/fruit-salad
 
 ## Summary
 
-- When we clone a repository, we get a full backup of the repository, including all history.
+- When we clone a repository, we get a full backup of the repository, including
+  all history: all commits, branches, and tags.
 - Yesterday we learned about branches and commits, and now we created and used them locally.
-- Creating local branches and commits does not automatically modify the remote
-  repository. To "push" our local changes to the remote repository, we have to actively
+- **Creating local branches and commits does not automatically modify the remote
+  repository**. To "push" our local changes to the remote repository, we have to actively
   "push" them there. We will practice this in a later episode:
   {ref}`sharing-repositories`
 - Remote branches and local branches are not the same thing. If we want to
