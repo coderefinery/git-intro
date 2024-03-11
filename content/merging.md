@@ -8,7 +8,8 @@ practice this: {term}`merging`.
 :::{objectives}
 - Understand that on GitHub merging is done through a {term}`pull request`. Think of it as a change proposal.
 - Create and merge a pull request within your own repository.
-- Understand (and optionally) do the same to contribute to the {term}`upstream` public repository.
+- Understand (and optionally) do the same across repositories, to contribute to
+  the {term}`upstream` public repository.
 :::
 
 :::{instructor-note}
@@ -23,7 +24,7 @@ practice this: {term}`merging`.
 * In the last episode, we added a new recipe on a branch.  This allows
   us to test it before it becomes "live".
 * Now, we want to bring that change into the "main" branch.
-* We find it's not that hard!  But you do have to keep track of the
+* We will find it's not that hard!  But you do have to keep track of the
   steps and make sure that you work very precisely.
 
 
@@ -131,7 +132,7 @@ frustrated because they forgot this!
 
 :::::{tabs}
 ::::{group-tab} GitHub
-On GitHub make sure you are on the branch you want to merge from:
+On GitHub make sure you are on the branch you want to merge **from**:
    :::{figure} img/merging/github-navigate-to-branch.png
    :alt: Screenshot on GitHub where we navigate to the branch we wish to merge.
    :width: 80%
@@ -140,12 +141,12 @@ On GitHub make sure you are on the branch you want to merge from:
 ::::
 
 ::::{group-tab} VS Code
-Remember, you need to switch to the `main` branch.
+Remember, you need to switch to the `main` branch, the branch we want to merge **to**.
 This is different from the GitHub path.
 ::::
 
 ::::{group-tab} Command line
-Remember, you need to switch to the `main` branch.
+Remember, you need to switch to the `main` branch, the branch we want to merge **to**.
 This is different from the GitHub path:
 ```console
 $ git switch main
@@ -282,6 +283,10 @@ If you are not sure anymore what your current branch is, type:
 ```console
 $ git branch
 ```
+... or equally useful to see where we are right now:
+```console
+$ git status
+```
 
 In this case we merge the `new-recipe` branch into our current branch:
 ```console
@@ -319,13 +324,13 @@ But what if we forgot? Then navigate to the branch view:
 In the overview we can see that it has been merged and we can delete it:
    :::{figure} img/merging/github-branches-overview.png
    :alt: Screenshot on GitHub where we see an overview of branches and can delete them.
-   :width: 80%
+   :width: 100%
    :class: with-border
    :::
 ::::
 
 ::::{group-tab} VS Code
-From the source control sidebar, → the three dots (as before) → Branch → Delete Branch.  Select the branch name to delete.
+From the Source Control sidebar → the three dots (as before) → Branch → Delete Branch.  Select the branch name to delete.
 ::::
 
 ::::{group-tab} Command line
@@ -408,8 +413,10 @@ How to create a conflict (please try this in your own time *and just watch now*)
 How to resolve conflicts:
 - On GitHub, you can resolve conflicts by clicking on the "Resolve conflicts"
   button. This will open a text editor where you can choose which changes to
-  keep. After resolving the conflict, you can commit the changes and merge the
-  pull request. Make sure to remove the conflict markers.
+  keep.
+  Make sure to remove the conflict markers.
+  After resolving the conflict, you can commit the changes and merge the
+  pull request.
 - Sometimes a conflict is between your change and somebody else's change. In
   that case, you might have to discuss with the other person which changes to
   keep.
