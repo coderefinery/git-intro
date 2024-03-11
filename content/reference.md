@@ -82,7 +82,7 @@ fork
    original.  It is easy to send changes to the original
 
 issue
-   Within a web repository like Github, discussion of a topic, for
+   Within a web repository like GitHub, discussion of a topic, for
    example a problem or improvement suggestion.  These are a property
    of the web platform and not of the Git program itself.
 
