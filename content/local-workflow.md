@@ -119,6 +119,12 @@ on your computer (in this case "my-recipe-book"):
 ::::::
 
 ::::::{group-tab} VS Code
+Under "Start" on the screen, select "Clone Git Repository...".
+
+Alternatively navigate to the "Source Control" tab on the left sidebar and
+click on the "Clone Repository" button.
+
+Paste in this URL: `https://github.com/USER/recipe-book` (replace `USER`)
 ::::::
 :::::::
 
@@ -140,6 +146,16 @@ $ git switch --create another-recipe
 ::::
 
 ::::{group-tab} VS Code
+1. Make sure that you are on the main branch.
+1. Source Control button on left sidebar → Three dots in upper right of source control → Branch → Create Branch.
+1. VS Code automatically switches to the new branch.
+
+:::{figure} img/commits/vscode-create-branch.png
+:width: 80%
+:class: with-border
+:alt: VS Code screenshot of create branch
+
+Creating a new branch in VS Code.
 ::::
 :::::
 
@@ -160,6 +176,17 @@ and to replace "Short summary of the change" with a meaningful commit message.
 ::::
 
 ::::{group-tab} VS Code
+1. Create a new file.
+1. In the version control sidebar, click the `+` sign to add the file for the next commit.
+1. Enter a brief message and click "Commit".
+
+:::{figure} img/commits/vscode-add-and-commit.png
+:alt: Screenshot of VS Code commit process
+:width: 80%
+:class: with-border
+
+Committing a new file in VS Code.
+:::
 ::::
 :::::
 
@@ -180,6 +207,15 @@ $ git commit -m "Short summary of the change"
 ::::
 
 ::::{group-tab} VS Code
+Use the branch selector at the bottom to switch back to the main branch.
+Repeat the same steps as above.
+
+:::{figure} img/commits/vscode-change-branch.png
+:class: with-border
+:width: 80%
+:alt: VS Code screenshot
+
+Switching branch via selector at bottom.
 ::::
 :::::
 
@@ -207,6 +243,16 @@ $ git merge another-recipe
 ::::
 
 ::::{group-tab} VS Code
+Just like with the command line, when we merge we modify our *current* branch.  Verify you are on the `main` branch.
+
+1. Verify current branch at the bottom.
+1. From the version control sidebar → Three dots → Branch → Merge
+1. In the selector that comes up, choose the branch you want to merge *from*.  The commits on that branch will be added to the current branch.
+
+:::{figure} img/merging/vscode-merging.png
+:alt: VSCode screenshot as described
+:width: 80%
+:class: with-border
 ::::
 :::::
 
@@ -235,6 +281,14 @@ commits on GitHub.
 ::::
 
 ::::{group-tab} VS Code
+This requires an extension.  Opening the VS Code terminal lets you use the command line method.
+
+:::{figure} img/commits/vscode-open-terminal.png
+:class: with-border
+:width: 80%
+:alt: VS Code screenshot as described
+
+View → Terminal will open a terminal at bottom.  This is a normal command line interface and very useful for work.  (Note the git-aware prompt that shows the current branch.  This requires other setup.)
 ::::
 :::::
 
@@ -292,6 +346,12 @@ $ git branch alex/fruit-salad
 ::::
 
 ::::{group-tab} VS Code
+To create a local branch from a remote branch:
+
+Source Control button on left sidebar → Three dots in upper right of source control → Branch → 
+"Create Branch From ...".
+
+Then select the remote branch you want to create a local branch from.
 ::::
 :::::
 

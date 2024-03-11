@@ -210,7 +210,6 @@ message.
 ::::
 
 ::::{group-tab} VS Code
-
 Use the branch selector at the bottom to switch back to the main branch.  Repeat the same steps as above.
 
 :::{figure} img/commits/vscode-change-branch.png
