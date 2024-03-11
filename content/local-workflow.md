@@ -5,7 +5,7 @@ with repositories on GitHub. This might not be what you usually
 do, so now we move to working on your own computer.
 
 :::{objectives}
-- We are able to clone and modify a repository from the web.
+- We are able to clone a repository from the web and modify it locally.
 - We can do the same things we did before (commit, branch, merge), but locally.
 - We get a feeling for remote repositories ([more later](https://coderefinery.github.io/git-collaborative/)).
 :::
@@ -24,6 +24,8 @@ do, so now we move to working on your own computer.
 - Contains the complete history of all changes (commits) to these files and directories.
 - Each commit is a snapshot of the entire project at a certain point in time and has a unique identifier ("hash").
 - Sometimes it contains multiple branches and tags.
+- All the commits and history of a local repository are stored in a directory
+  called `.git` which is located at the root of the repository.
 
 **Cloning**:
 - Copying (downloading) the entire repository with all commits, branches, and tags to your computer.
