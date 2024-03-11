@@ -14,7 +14,7 @@ on the "main" branch.
 
 ## Background
 
-- In the previous episode we have browsed an existing {term}`repository` and saw {term}`commits`
+- In the previous episode we have browsed an existing {term}`repository` and saw {term}`commits <commit>`
   and branches.
 - Each commit is a snapshot of the entire project at a certain
   point in time and has a unique identifier ({term}`hash`) .
