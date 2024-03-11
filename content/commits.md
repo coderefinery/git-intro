@@ -1,9 +1,9 @@
 # Committing changes
 
-The first and most basic to do in Git is *record changes* using
+The first and most basic task to do in Git is *record changes* using
 commits. In this part, we will record changes in two
-ways: on a branch (which supports multiple lines of work at once), and directly
-on the "main" branch.
+ways: on a new branch (which supports multiple lines of work at once), and directly
+on the "main" branch (which happens to be the default branch here).
 
 :::{objectives}
 * Record new changes to our own copy of the project.
@@ -46,7 +46,7 @@ the other paths on day 2)
 :::{exercise} Exercise: Practice creating commits and branches (20 min)
 1. Make sure that you now work **on your fork** of the recipe-book
    repository (`USER/recipe-book`, *not* `coderefinery/recipe-book`)
-1. First create a branch and then add a recipe to the branch and commit the change.
+1. First create a new branch and then add a recipe to the branch and commit the change.
 1. In a new commit, modify the recipe you just added.
 1. Switch to the `main` branch and modify a recipe there.
 1. Browse the network and locate the commits that you just created ("Insights" -> "Network").
@@ -80,7 +80,7 @@ You want to see your username in the URL and you want to see the "forked from
 ### (2) Create a branch and add a recipe to the branch
 
 A recipe template is below.  This format is called "Markdown", but it
-doesn't matter right now.
+doesn't matter right now. You don't have to use this particular template.
 ```markdown
 # Recipe name
 
@@ -114,7 +114,7 @@ name of the thing you make.  A commit is identified by something such as
    :::
 1. Change to some sub-directory, for example `sides`
 1. Make sure you are still on the `new-recipe` branch (it should say
-   it at the top), and click "Add file → Create new file" from the
+   it at the top), and click "Add file" → "Create new file" from the
    upper right.
 1. Enter a filename where it says "Name your file...", with a `.md` at
    the end.  Example: `mixed-nuts.md`.
@@ -137,7 +137,7 @@ recipe there.
 :class: with-border
 :alt: VS Code screenshot of create branch
 
-Creating a new branch in vscode
+Creating a new branch in VS Code.
 :::
 
 4. Create a new file, for example `sides/mixed-nuts.md`.
@@ -149,7 +149,7 @@ Creating a new branch in vscode
 :width: 80%
 :class: with-border
 
-Committing a new file in VS Code
+Committing a new file in VS Code.
 :::
 ::::
 
@@ -252,7 +252,7 @@ This requires an extension.  Opening the VS Code terminal lets you use the comma
 :::{figure} img/commits/vscode-open-terminal.png
 :class: with-border
 :width: 80%
-:alt: VSCode screenshot as described
+:alt: VS Code screenshot as described
 
 View → Terminal will open a terminal at bottom.  This is a normal command line interface and very useful for work.  (Note the git-aware prompt that shows the current branch.  This requires other setup.)
 ::::
