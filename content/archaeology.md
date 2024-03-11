@@ -7,34 +7,17 @@
 
 :::{instructor-note}
 - 30 min teaching/type-along
-- 30 min exercise
+- 20 min exercise
 :::
 
-::::{prereq} Preparation
-Please make sure that you do not clone repositories inside an already tracked folder:
 
-```console
-$ git status
-```
-
-If you are inside an existing Git repository, step out of it.
-You need to find a different location since we will clone a new repository.
-
-If you see this message, this is good in this case:
-
-```shell
-fatal: not a git repository (or any of the parent directories): .git
-```
-::::
-
-
-##  Command line, GitHub, and VS Code
+## Command line, GitHub, and VS Code
 
 As usual, we offer ways to do this with the command line, VS Code, and
-Github.
+GitHub.
 
 * **Command line** is most powerful and relatively easy with this.
-  You may also use it along with other things.  If you haven't tried
+  You may also use it along with other things. If you haven't tried
   it yet, we'd recommend you to give it a try.
 * The **GitHub** web interface allows many things to be done, but not
   everything.
@@ -103,12 +86,11 @@ some error message printed.
 
   ::::{group-tab} VS Code
     Our example repository is <https://github.com/networkx/networkx>.
-    From a new VS Code window, select "Clone Git repository"and enter
+    From a new VS Code window, select "Clone Git repository" and enter
     that URL.
 
 	Searching with the magnifying glass from the left sidebar is
 	equivalent to `git grep`.
-
   ::::
 :::::
 
@@ -256,11 +238,9 @@ Discuss how these relatively trivial changes affect the annotation:
   ::::
 
   ::::{group-tab} VS Code
-    It seems this isn't easy to do built-in.  Luckily, as usual, if
-    you open the terminal and run the command line command, it works
-    with the command line method.  VS Code notices the updated files
-    and lets you examine things.  **Make sure you change back to the
-    main branch when you are done.**
+    Switch to "Source Control", then the "..." menu, then "Branch", then "Create new branch from..." and now you can type a commit identifier (hash).
+
+    Make sure you change back to the main branch when you are done.
   ::::
 :::::
 
@@ -270,33 +250,87 @@ Discuss how these relatively trivial changes affect the annotation:
 This is described with the command line method, but by looking above
 you can translate to the other options.
 
-:::::{exercise} History-1: Explore basic archaeology commands
+:::::{exercise} Exercise: Explore basic archaeology commands (20 min)
   Let us explore the value of these commands in an exercise.  Future
   exercises do not depend on this, so it is OK if you do not complete
   it fully.
 
   Exercise steps:
+  - **Make sure you are not inside another Git repository** when running this
+    exercise. If you are, first step "outside" of it.
+    We want to avoid creating a Git repository inside another Git repository.
+    :::::{tabs}
+      ::::{group-tab} Command line
+        You can check if you are inside a Git repository with:
+        ```console
+        $ git status
+
+        fatal: not a git repository (or any of the parent directories): .git
+        ```
+        You want to see the above message which tells us that this is not a Git repository.
+      ::::
+
+      ::::{group-tab} GitHub
+        This is not a problem in the GitHub web interface since we are not
+        creating a new local repository.
+      ::::
+
+      ::::{group-tab} VS Code
+        "File" -> "New Window".
+      ::::
+    :::::
+
   - Clone this repository:
     <https://github.com/networkx/networkx.git>.
-    Then step into the new directory and create an exercise branch from the networkx-2.6.3 tag/release:
-    ```console
-    $ git clone https://github.com/networkx/networkx.git
-    $ cd networkx
-    $ git switch --create exercise networkx-2.6.3
-    ```
-    On old Git versions which do not know the `switch` command (before 2.23), you
-    need to use this instead:
-    ```console
-    $ git checkout -b exercise networkx-2.6.3
-    ```
+    :::::{tabs}
+      ::::{group-tab} Command line
+        ```console
+        $ git clone https://github.com/networkx/networkx.git
+        ```
+      ::::
+
+      ::::{group-tab} GitHub
+        Nothing to clone. We will try to inspect the repository directly on GitHub.
+      ::::
+
+      ::::{group-tab} VS Code
+        From a new VS Code window, select "Clone Git repository" and enter
+        that URL.
+      ::::
+    :::::
+
+  - Then let us all **make sure we are working on a well-defined version** of the repository.
+    :::::{tabs}
+      ::::{group-tab} Command line
+        Step into the new directory and create an exercise branch from the
+        networkx-2.6.3 tag/release:
+        ```console
+        $ cd networkx
+        $ git switch --create exercise networkx-2.6.3
+        ```
+        On old Git versions which do not know the `switch` command (before 2.23), you
+        need to use this instead:
+        ```console
+        $ git checkout -b exercise networkx-2.6.3
+        ```
+      ::::
+
+      ::::{group-tab} GitHub
+        We can visit the version directly: <https://github.com/networkx/networkx/tree/networkx-2.6.3>
+      ::::
+
+      ::::{group-tab} VS Code
+        Switch to "Source Control", then the "..." menu, then "Branch", then "Create new branch from..." and select "networkx-2.6.3".
+      ::::
+    :::::
 
   Then using the above toolbox try to:
   1. Find the code line which contains `"Logic error in degree_correlation"`.
-  2. Find out when this line was last modified or added. Find the actual commit which modified that line.
-  3. Inspect that commit with `git show`.
-  4. Create a branch pointing to the past when that commit was created to be
+  1. Find out when this line was last modified or added. Find the actual commit which modified that line.
+  1. Inspect that commit with `git show`.
+  1. Create a branch pointing to the past when that commit was created to be
      able to browse and use the code as it was back then.
-  5. How would you bring the code to the version of the code right before that line was last modified?
+  1. How would you bring the code to the version of the code right before that line was last modified?
 
   ::::{solution}
   We provide here a solution for the command line but we also encourage you to
@@ -340,6 +374,8 @@ you can translate to the other options.
 
 ## Finding out when something broke/changed with `git bisect`
 
+This only works with the command line.
+
 > *"But I am sure it used to work! Strange."*
 
 Sometimes you realize that something broke.
@@ -375,6 +411,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
 - If you want to go back to start, type `git bisect reset`.
 - This can even be automatized with `git bisect run SCRIPT`.
   For this you write a script that returns zero/non-zero (success/failure).
+
 
 (exercise-bisect)=
 
@@ -443,7 +480,9 @@ This only works with the command line.
   ```
 ::::
 
-:::{keypoints}
-- git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project.
-- `git switch --create NAME HASH` is the recommended mechanism to inspect old code.
-:::
+
+## Summary
+
+- git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project on the command line.
+- `git switch --create NAME HASH` is the recommended mechanism to inspect old code on the command line.
+- Most of these commands can be used in the GitHub web interface (except `git bisect`).
