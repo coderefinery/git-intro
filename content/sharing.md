@@ -262,6 +262,33 @@ online!
     repositories, don't do this unless you are very sure what is happening.
 :::
 
+:::{group-tab} RStudio
+
+This is not fully explained, because a lot of it is similar to the "Command line" method (and an RStudio expert could help us some).  The main differeences are:
+
+### Put your project under version conrol
+
+1. Tools → Version control → Project setup → Version conrol system = Git.
+1. Select "Yes" for "do you want to initialize a new git repository for this project.
+1. Select yes to restart the project with RStudio.
+1. Switch to branch `main` to have you branch named that.
+
+### Create an <u>empty</u> repository on GitHub
+
+Same as command line
+
+### Push an existing repository from your computer to GitHub
+
+1. Under the "Create new branch" button → "Add Remote"
+1. Remote name: `origin`
+1. Remote URL: as in command line (remember to select SSH or HTTPS as you have configured your RStudio)
+1. The "Push" (up arrow) button will send changes on your current branch to the remote.  The "Pull" (down arrow) will get changes from the remote.
+
+### Troubleshooting
+
+Same as command line
+
+:::
 ::::
 :::::
 
