@@ -119,10 +119,13 @@ on your computer (in this case "my-recipe-book"):
 ::::::
 
 ::::::{group-tab} VS Code
-Under "Start" on the screen, select "Clone Git Repository...".
+Start a new window.
+
+If you have the "Welcome" tab when you start a new window: Under "Start" on the screen, select "Clone Git Repository...".
 
 Alternatively navigate to the "Source Control" tab on the left sidebar and
-click on the "Clone Repository" button.
+click on the "Clone Repository" button.  You need to have started a
+brand new window that's not part of a project.
 
 Paste in this URL: `https://github.com/USER/recipe-book` (replace `USER`)
 ::::::
