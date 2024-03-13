@@ -172,7 +172,7 @@ Creating a new branch in VS Code.
 ::::
 
 ::::{group-tab} RStudio
-The main way to control git is via teh Git tab in the right side
+The main way to control git is via the Git tab in the right side
 panel: it's a tab along with "Environment", "History", etc.  This will
 be called the "Git tab".
 
@@ -235,7 +235,7 @@ Committing a new file in VS Code.
 :width: 80%
 :class: with-border
 
-Staging and commiting file in RStudio.
+Staging and committing file in RStudio.
 :::
 
 The commit message corresponds to what you would see on the command line (we haven't learned these diff commands yet, but are mentioned in {doc}`staging-area`):
