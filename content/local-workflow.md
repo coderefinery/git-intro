@@ -119,7 +119,17 @@ on your computer (in this case "my-recipe-book"):
 ::::::
 
 ::::::{group-tab} VS Code
-Start a new window.
+Instesd click connect to 
+![image](https://github.com/coderefinery/git-intro/assets/162412802/72ffcb6f-3416-4c22-973f-a7191720d046)
+
+Then open remote reprository 
+![image](https://github.com/coderefinery/git-intro/assets/162412802/238b4685-37c0-417f-886c-a962fa6bb445)
+Then open reprosintory 
+![image](https://github.com/coderefinery/git-intro/assets/162412802/e4c14920-6648-4eb9-b543-84e82edf4cd3)
+And you chosing reåerpsintory
+![image](https://github.com/coderefinery/git-intro/assets/162412802/5339dd49-eddf-48c4-bf03-3cddd52626f6)
+
+
 
 If you have the "Welcome" tab when you start a new window: Under "Start" on the screen, select "Clone Git Repository...".
 
