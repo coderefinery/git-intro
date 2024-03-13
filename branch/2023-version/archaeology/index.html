@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspecting history &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=187304be"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=582ca9e2"></script>
+        <script src="../_static/minipres.js?v=a0d29692"></script>
+        <script src="../_static/tabs.js?v=3030b3cb"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Practical advice: how much Git is necessary?" href="../level/" />
+    <link rel="prev" title="Sharing repositories online" href="../remotes/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Core episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../remotes/">Sharing repositories online</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Inspecting history</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#our-toolbox-for-history-inspection">Our toolbox for history inspection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#warm-up-git-history-browser">Warm-up: “Git History” browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searching-text-patterns-in-the-repository">Searching text patterns in the repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inspecting-individual-commits">Inspecting individual commits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-by-line-code-annotation-with-metadata">Line-by-line code annotation with metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inspecting-code-in-the-past">Inspecting code in the past</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-basic-archaeology-commands">Exercise: Basic archaeology commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-out-when-something-broke-changed-with-git-bisect">Finding out when something broke/changed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-exercise-git-bisect">Optional exercise: Git bisect</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: how much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Inspecting history</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/archaeology.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="inspecting-history">
+<h1>Inspecting history<a class="headerlink" href="#inspecting-history" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Be able find a line of code, find out why it was introduced and when.</p></li>
+<li><p>Be able to quickly find the commit that changed a behavior.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>30 min teaching/type-along</p></li>
+<li><p>30 min exercise</p></li>
+</ul>
+</div>
+<div class="admonition-preparation prerequisites admonition" id="prerequisites-0">
+<p class="admonition-title">Preparation</p>
+<p>Please make sure that you do not clone repositories inside an already tracked folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>If you are inside an existing Git repository, step out of it.
+You need to find a different location since we will clone a new repository.</p>
+<p>If you see this message, this is good in this case:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>fatal:<span class="w"> </span>not<span class="w"> </span>a<span class="w"> </span>git<span class="w"> </span>repository<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>any<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>parent<span class="w"> </span>directories<span class="o">)</span>:<span class="w"> </span>.git
+</pre></div>
+</div>
+</div>
+<section id="our-toolbox-for-history-inspection">
+<h2>Our toolbox for history inspection<a class="headerlink" href="#our-toolbox-for-history-inspection" title="Link to this heading"></a></h2>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-1">
+<p class="admonition-title">Instructor note</p>
+<p>First the instructor demonstrates few commands on a real life example
+repository <a class="reference external" href="https://github.com/networkx/networkx">https://github.com/networkx/networkx</a> (mentioned in the amazing site <a class="reference external" href="https://programminghistorian.org/">The
+Programming Historian</a>).
+Later we will practice these in an archaeology exercise (below).</p>
+</div>
+<section id="warm-up-git-history-browser">
+<h3>Warm-up: <a class="reference external" href="https://githistory.xyz/">“Git History” browser</a><a class="headerlink" href="#warm-up-git-history-browser" title="Link to this heading"></a></h3>
+<p>As a warm-up we can try the <a class="reference external" href="https://githistory.xyz/">“Git History” browser</a>
+on the README.rst file of the <a class="reference external" href="https://github.com/networkx/networkx">networkx</a> repository:</p>
+<ul class="simple">
+<li><p>Visit and browse <a class="reference external" href="https://github.githistory.xyz/networkx/networkx/blob/main/README.rst">https://github.githistory.xyz/networkx/networkx/blob/main/README.rst</a> (use left/right keys).</p></li>
+<li><p>You can try this on some of your GitHub repositories, too!</p></li>
+</ul>
+</section>
+<section id="searching-text-patterns-in-the-repository">
+<h3>Searching text patterns in the repository<a class="headerlink" href="#searching-text-patterns-in-the-repository" title="Link to this heading"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-0-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-0-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>With <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">grep</span></code> you can find all lines in a repository which contain some string or regular expression.
+This is useful to find out where in the code some variable is used or some error message printed:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span>TEXT
+<span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;some text with spaces&quot;</span>
+</pre></div>
+</div>
+<p>In the <a class="reference external" href="https://github.com/networkx/networkx">networkx</a> repository you can try:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/networkx/networkx
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>networkx
+<span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>fixme
+</pre></div>
+</div>
+<p>While <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">grep</span></code> searches the <strong>current state</strong> of the repository,
+it is also possible to search through all changes with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">-S</span> <span class="pre">sometext</span></code>
+which can be useful to find where something got removed.</p>
+</div><div aria-labelledby="tab-0-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><p>We can try the same example in the browser:
+<a class="reference external" href="https://github.com/search?q=repo%3Anetworkx%2Fnetworkx%20fixme&amp;amp;type=code">https://github.com/search?q=repo%3Anetworkx%2Fnetworkx fixme&amp;type=code</a></p>
+<figure class="align-default" id="id1">
+<a class="with-border reference internal image-reference" href="../_images/search.png"><img alt="Searching for &quot;fixme&quot; in a GitHub repository" class="with-border" src="../_images/search.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Searching for “fixme” in a GitHub repository.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></div>
+</section>
+<section id="inspecting-individual-commits">
+<h3>Inspecting individual commits<a class="headerlink" href="#inspecting-individual-commits" title="Link to this heading"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-1-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-1-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>We have seen this one before already. Using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> we can inspect an individual commit if
+we know its hash:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>show<span class="w"> </span>HASH
+</pre></div>
+</div>
+<p>For instance:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>show<span class="w"> </span>759d589bdfa61aff99e0535938f14f67b01c83f7
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><p>We can try the same example in the browser:
+<a class="reference external" href="https://github.com/networkx/networkx/commit/759d589bdfa61aff99e0535938f14f67b01c83f7">https://github.com/networkx/networkx/commit/759d589bdfa61aff99e0535938f14f67b01c83f7</a></p>
+<figure class="align-default" id="id2">
+<a class="with-border reference internal image-reference" href="../_images/show.png"><img alt="Inspecting an individual commit on GitHub" class="with-border" src="../_images/show.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Inspecting an individual commit on GitHub.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></div>
+</section>
+<section id="line-by-line-code-annotation-with-metadata">
+<h3>Line-by-line code annotation with metadata<a class="headerlink" href="#line-by-line-code-annotation-with-metadata" title="Link to this heading"></a></h3>
+<p>With <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">annotate</span></code> you can see line by line who and <strong>when</strong> the line was
+modified last. It also prints the precise hash of the last change which
+modified each line. Incredibly useful for reproducibility.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-2-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-2-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>annotate<span class="w"> </span>FILE
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>annotate<span class="w"> </span>networkx/convert_matrix.py
+</pre></div>
+</div>
+<p>If you annotate in a terminal and the file is longer than the screen, Git by default uses the program <code class="docutils literal notranslate"><span class="pre">less</span></code> to
+scroll the output.
+Use <code class="docutils literal notranslate"><span class="pre">/sometext</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;ENTER&gt;</span></code> to find “sometext” and you can cycle through the results with <code class="docutils literal notranslate"><span class="pre">n</span></code> (next) and <code class="docutils literal notranslate"><span class="pre">N</span></code> (last).
+You can also use page up/down to scroll. You can quit with <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+</div><div aria-labelledby="tab-2-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><p>We can try the same example in the browser:
+<a class="reference external" href="https://github.com/networkx/networkx/blame/main/networkx/convert_matrix.py">https://github.com/networkx/networkx/blame/main/networkx/convert_matrix.py</a></p>
+<figure class="align-default" id="id3">
+<a class="with-border reference internal image-reference" href="../_images/annotate.png"><img alt="Screenshot of file annotation on GitHub" class="with-border" src="../_images/annotate.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Screenshot of file annotation on GitHub.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></div>
+<div class="admonition-discussion discussion important admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<p>Discuss how these relatively trivial changes affect the annotation:</p>
+<ul class="simple">
+<li><p>Wrapping long lines of text/code into shorter lines</p></li>
+<li><p>Auto-formatting tools such as <code class="docutils literal notranslate"><span class="pre">black</span></code></p></li>
+<li><p>Editors that automatically remove trailing whitespace</p></li>
+</ul>
+</div>
+</section>
+<section id="inspecting-code-in-the-past">
+<h3>Inspecting code in the past<a class="headerlink" href="#inspecting-code-in-the-past" title="Link to this heading"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-3-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-3-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>We can create branches pointing to a commit in the past.
+This is the recommended mechanism to inspect old code:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>BRANCHNAME<span class="w"> </span>HASH
+</pre></div>
+</div>
+<p>Example (lines starting with “#” are only comments):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="c1"># create branch called &quot;older-code&quot; from hash 347e6292419b</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>older-code<span class="w"> </span>347e6292419bd0e4bff077fe971f983932d7a0e9
+
+<span class="gp">$ </span><span class="c1"># now you can navigate and inspect the code as it was back then</span>
+<span class="gp">$ </span><span class="c1"># ...</span>
+
+<span class="gp">$ </span><span class="c1"># after we are done we can switch back to &quot;main&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>main
+
+<span class="gp">$ </span><span class="c1"># if we like we can delete the &quot;older-code&quot; branch</span>
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>older-code
+</pre></div>
+</div>
+<p>On old Git versions which do not know the <code class="docutils literal notranslate"><span class="pre">switch</span></code> command (before 2.23), you
+need to use this instead:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>BRANCHNAME<span class="w"> </span>SOMEHASH
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><p>We now know how to visit a specific commit:
+<a class="reference external" href="https://github.com/networkx/networkx/commit/347e629">https://github.com/networkx/networkx/commit/347e629</a></p>
+<p>Once we are there we can “Browse files” at that point in history.</p>
+<figure class="align-default" id="id4">
+<a class="with-border reference internal image-reference" href="../_images/browse-files.png"><img alt="Browsing code in the past on GitHub" class="with-border" src="../_images/browse-files.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Browsing code in the past on GitHub.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></div>
+</section>
+</section>
+<section id="exercise-basic-archaeology-commands">
+<span id="exercise-history"></span><h2>Exercise: Basic archaeology commands<a class="headerlink" href="#exercise-basic-archaeology-commands" title="Link to this heading"></a></h2>
+<div class="admonition-history-1-explore-basic-archaeology-commands exercise important admonition" id="exercise-0">
+<p class="admonition-title">History-1: Explore basic archaeology commands</p>
+<p>Let us explore the value of these commands in an exercise.  Future
+exercises do not depend on this, so it is OK if you do not complete
+it fully.</p>
+<p>Exercise steps:</p>
+<ul>
+<li><p>Clone this repository:
+<a class="reference external" href="https://github.com/networkx/networkx.git">https://github.com/networkx/networkx.git</a>.
+Then step into the new directory and create an exercise branch from the networkx-2.6.3 tag/release:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/networkx/networkx.git
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>networkx
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>exercise<span class="w"> </span>networkx-2.6.3
+</pre></div>
+</div>
+<p>On old Git versions which do not know the <code class="docutils literal notranslate"><span class="pre">switch</span></code> command (before 2.23), you
+need to use this instead:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>exercise<span class="w"> </span>networkx-2.6.3
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Then using the above toolbox try to:</p>
+<ol class="arabic simple">
+<li><p>Find the code line which contains <code class="docutils literal notranslate"><span class="pre">&quot;Logic</span> <span class="pre">error</span> <span class="pre">in</span> <span class="pre">degree_correlation&quot;</span></code>.</p></li>
+<li><p>Find out when this line was last modified or added. Find the actual commit which modified that line.</p></li>
+<li><p>Inspect that commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code>.</p></li>
+<li><p>Create a branch pointing to the past when that commit was created to be
+able to browse and use the code as it was back then.</p></li>
+<li><p>How would you bring the code to the version of the code right before that line was last modified?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>We provide here a solution for the command line but we also encourage you to
+try to solve this in the browser.</p>
+<ol class="arabic">
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">grep</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Logic error in degree_correlation&quot;</span>
+</pre></div>
+</div>
+<p>This gives the output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">networkx</span><span class="o">/</span><span class="n">algorithms</span><span class="o">/</span><span class="n">threshold</span><span class="o">.</span><span class="n">py</span><span class="p">:</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logic error in degree_correlation&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">rdi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Maybe you also want to know the line number:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Logic error in degree_correlation&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">annotate</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>annotate<span class="w"> </span>networkx/algorithms/threshold.py
+</pre></div>
+</div>
+<p>Then search for “Logic error” by typing “/Logic error” followed by Enter.
+The last commit that modified it was <code class="docutils literal notranslate"><span class="pre">90544b4fa</span></code> (unless that line changed since).</p>
+</li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>show<span class="w"> </span>90544b4fa
+</pre></div>
+</div>
+</li>
+<li><p>Create a branch pointing to that commit (here we called the branch “past-code”):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>past-code<span class="w"> </span>90544b4fa
+</pre></div>
+</div>
+</li>
+<li><p>This is a compact way to access the first parent of <code class="docutils literal notranslate"><span class="pre">90544b4fa</span></code> (here we
+called the branch “just-before”):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>just-before<span class="w"> </span>90544b4fa~1
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="finding-out-when-something-broke-changed-with-git-bisect">
+<h2>Finding out when something broke/changed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code><a class="headerlink" href="#finding-out-when-something-broke-changed-with-git-bisect" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p><em>“But I am sure it used to work! Strange.”</em></p>
+</div></blockquote>
+<p>Sometimes you realize that something broke.
+You know that it used to work.
+You do not know when it broke.</p>
+<div class="admonition-how-would-you-solve-this discussion important admonition" id="discussion-1">
+<p class="admonition-title">How would you solve this?</p>
+<p>Before we go on first discuss how you would solve this problem: You know that it worked
+500 commits ago but it does not work now.</p>
+<ul class="simple">
+<li><p>How would you find the commit which changed it?</p></li>
+<li><p>Why could it be useful to know the commit that changed it?</p></li>
+</ul>
+</div>
+<p>We will probably arrive at a solution which is similar to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code>:</p>
+<ul>
+<li><p>First find out a commit in past when it worked.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>bisect<span class="w"> </span>start
+<span class="gp">$ </span>git<span class="w"> </span>bisect<span class="w"> </span>good<span class="w"> </span>f0ea950<span class="w">  </span><span class="c1"># this is a commit that worked</span>
+<span class="gp">$ </span>git<span class="w"> </span>bisect<span class="w"> </span>bad<span class="w"> </span>main<span class="w">      </span><span class="c1"># last commit is broken</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now compile and/or run and/or test and decide whether “good” or “bad”.</p></li>
+<li><p>This is how you can tell Git that this was a working commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>bisect<span class="w"> </span>good
+</pre></div>
+</div>
+</li>
+<li><p>And this is how you can tell Git that this was not a working commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>bisect<span class="w"> </span>bad
+</pre></div>
+</div>
+</li>
+<li><p>Then bisect/iterate your way until you find the commit that broke it.</p></li>
+<li><p>If you want to go back to start, type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">reset</span></code>.</p></li>
+<li><p>This can even be automatized with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">run</span> <span class="pre">SCRIPT</span></code>.
+For this you write a script that returns zero/non-zero (success/failure).</p></li>
+</ul>
+</section>
+<section id="optional-exercise-git-bisect">
+<span id="exercise-bisect"></span><h2>Optional exercise: Git bisect<a class="headerlink" href="#optional-exercise-git-bisect" title="Link to this heading"></a></h2>
+<div class="admonition-optional-history-2-use-git-bisect-to-find-the-bad-commit exercise important admonition" id="exercise-1">
+<p class="admonition-title">(optional) History-2: Use git bisect to find the bad commit</p>
+<p>In this exercise, we use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> on an example repository.  It
+is OK if you do not complete this exercise fully.</p>
+<p>Begin by cloning <a class="reference external" href="https://github.com/coderefinery/git-bisect-exercise">https://github.com/coderefinery/git-bisect-exercise</a>.</p>
+<p><strong>Motivation</strong></p>
+<p>The motivation for this exercise is to be able to do archaeology with Git on a
+source code where the bug is difficult to see visually. <strong>Finding the offending
+commit is often more than half the debugging</strong>.</p>
+<p><strong>Background</strong></p>
+<p>The script <code class="docutils literal notranslate"><span class="pre">get_pi.py</span></code> approximates pi using terms of the Nilakantha series. It
+should produce 3.14 but it does not. The script broke at some point and
+produces 3.57 using the last commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>get_pi.py
+
+<span class="go">3.57</span>
+</pre></div>
+</div>
+<p>At some point within the 500 first commits, an error was introduced. The only
+thing we know is that the first commit worked correctly.</p>
+<p><strong>Your task</strong></p>
+<ul class="simple">
+<li><p>Clone this repository and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> to find the commit which
+broke the computation
+(<a class="reference external" href="https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert">solution - spoiler alert!</a>).</p></li>
+<li><p>Once you have found the offending commit, also practice navigating to the last good commit.</p></li>
+<li><p>Bonus exercise:
+Write a script that checks for a correct result and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">run</span></code> to
+find the offending commit automatically
+(<a class="reference external" href="https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert">solution - spoiler alert!</a>).</p></li>
+</ul>
+<p><strong>Hints</strong></p>
+<p>Finding the first commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<p>How to navigate to the parent of a commit with hash SOMEHASH:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>BRANCHNAME<span class="w"> </span>SOMEHASH~1
+</pre></div>
+</div>
+<p>Instead of a tilde you can also use this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>BRANCHNAME<span class="w"> </span>SOMEHASH^
+</pre></div>
+</div>
+</div>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>git log/grep/annotate/show/bisect is a powerful combination when doing archaeology in a project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">--create</span> <span class="pre">NAME</span> <span class="pre">HASH</span></code> is the recommended mechanism to inspect old code.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../remotes/" class="btn btn-neutral float-left" title="Sharing repositories online" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../level/" class="btn btn-neutral float-right" title="Practical advice: how much Git is necessary?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
