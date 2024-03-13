@@ -101,6 +101,10 @@ If you are unsure whether you are using SSH or HTTPS, please read {ref}`clone-me
     ::::
   :::::
 
+
+I justed wanted to add sometimes there are tab which may confuse new users in vscode ![image](https://github.com/coderefinery/git-intro/assets/162412802/19618a8e-bab4-405a-9c6f-e77d32faefe3). It would be nice to have it explained 
+
+
 This creates a directory called "recipe-book" unless it already exists. You can also specify the target directory
 on your computer (in this case "my-recipe-book"):
   :::::{tabs}
