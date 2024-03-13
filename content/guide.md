@@ -1,8 +1,8 @@
 # Instructor guide
 
 
-:::warning
-## Exercise preparation: one day before the workshop
+:::{warning}
+**Exercise preparation: one day before the workshop**
 
 - Create two exercise repository from
   <https://github.com/coderefinery/recipe-book-template> preserving history
