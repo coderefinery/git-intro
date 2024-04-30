@@ -48,10 +48,10 @@ Git stores everything under the .git folder in your repository. In fact, **the
 Previously when you wrote the commit messages using your text editor, they
 were in fact saved to `COMMIT_EDITMSG`.
 
-Each commit in Git is stored as a "blob". This blob contains information about
-the author and the commit message. The blob references another blob that lists
-the files present in the directory at the time and references blobs that record
-the state of each file.
+Each commit in Git is stored as an object. This object contains information about
+the author and the commit message. The commit object references a tree object that lists
+the files present in the directory at the time and references blobs objects (that record
+the state of each file) or other tree objects.
 
 Commits are referenced by a SHA-1 hash (a 40-character hexadecimal string).
 
