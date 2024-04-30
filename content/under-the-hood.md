@@ -180,6 +180,57 @@ $ git branch
   main
 ```
 
+## Demonstration: If you add it, you don't lose it (for a while)
+
+A common way to (apparently) lose work
+is to use `git add` indiscriminately.
+
+You make some changes to a file, 
+(let us call this version A)
+you `git add` them,
+then you make some other changes 
+(let us call this version B)
+and you `git add` those again.
+
+Now version A is apparently lost,
+and if we realize that we need it back
+we typically click nervously on the "undo" arrow of our editor.
+
+But fear not! Try this.
+1. Create a file named `test-add` with the following command:
+```
+echo 'Once a file has been git added, it is hard to lose!' > test-add
+```
+1. Add it to the repository
+```console
+$ git add test-add
+```
+1. Now change the content of the file to be 
+```
+Ops
+```
+1. And repeat the add command
+```console
+$ git add test-add
+```
+1. Apparently we have lost the previous version of the file.
+But it is actually there, stored in a *dangling* blob object
+(which is not referenced by any other objects)
+We can see this with the command `fsck`:
+```console
+$ git fsck
+Checking object directories: 100% (256/256), done.
+dangling blob dc3b15f60045eea7a87639436ed75021130579e0
+```
+We can see the content of that blob 
+by passing its hash (shortened for convenience) 
+to the `git cat-file -p` command:
+```console
+$ git cat-file -p dc3b
+Once a file has been git added, it is hard to lose!
+```
+
+
 ```{discussion}
 Discuss the findings with other course participants.
 ```
