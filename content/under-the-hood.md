@@ -49,9 +49,10 @@ Previously when you wrote the commit messages using your text editor, they
 were in fact saved to `COMMIT_EDITMSG`.
 
 Each commit in Git is stored as an object. This object contains information about
-the author and the commit message. The commit object references a tree object that lists
-the files present in the directory at the time and references blobs objects (that record
-the state of each file) or other tree objects.
+the author and the commit message. A *commit object* references a *tree object* that lists
+the files present in the directory at the time.
+Tree objects reference *blob* objects (that record the state of each file)
+or other tree objects.
 
 Commits are referenced by a SHA-1 hash (a 40-character hexadecimal string).
 
@@ -62,10 +63,10 @@ Commits are referenced by a SHA-1 hash (a 40-character hexadecimal string).
 States of a Git file. Image from the [Pro Git book](https://git-scm.com/book/). License CC BY 3.0.
 ```
 
-Once you have several commits, each commit blob also links to the hash of the
-previous commit. The commits form a [directed acyclic
-graph](http://eagain.net/articles/git-for-computer-scientists/) (do not worry
-if the term is not familiar).
+Once you have several commits, each commit object also links to the hash of the
+previous commit(s) (there is more than one previous commit for for merge commits).
+The commits form a [directed acyclic graph](http://eagain.net/articles/git-for-computer-scientists/)
+(do not worry if the term is not familiar).
 
 ```{figure} img/commits-and-parents.png
 :alt: A commit and its parents
