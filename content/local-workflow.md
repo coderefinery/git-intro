@@ -453,6 +453,17 @@ The branch picker also lists branches on remotes.  If you click on of them, it w
 ::::
 
 :::::
+## git remote -v
+Since there was a talk of how to use it in VSCODE on the lesson , i did it before 
+
+Open your project in Visual Studio Code.
+Open the Source Control view by clicking on the source control icon in the Activity Bar on the side of the window.!
+
+At the top of the Source Control view, there should be a list of branches and a button that says "master or main" (or the name of your current branch). Click on the button to open the Git menu. ![image](https://github.com/coderefinery/git-intro/assets/162412802/23e36e00-31bc-4a23-9e1d-50aa614aa7e4)
+
+From the Git menu, you can click on Repository Remotes to view the remote repositories associated with your local repository. ![image](https://github.com/coderefinery/git-intro/assets/162412802/88a94484-f2aa-4dc1-96ed-5ffbfa511199)
+
+Hope its helpfull
 
 
 ## Summary
