@@ -53,7 +53,7 @@ $ git config --global init.defaultbranch main
 
 ## Useful alias for the command line
 
-We recommend to define an {term}`alias` in Git, to be able to nicely visualize
+We recommend to define an {term}`alias` (shortcut) in Git, to be able to nicely visualize
 branch structure in the terminal without having to remember a long Git command:
 ```console
 $ git config --global alias.graph "log --all --graph --decorate --oneline"
@@ -83,7 +83,7 @@ to set other editors, or do a web search for "git set editor to
 
 ## Authenticating to GitHub: SSH or HTTPS or VS Code?
 
-**How does GitHub know who you are?** There are three options:
+**How does GitHub know who you are?** We discuss here three options:
 - **SSH** is the classic method, using [Secure Shell
   Protocol](https://en.wikipedia.org/wiki/Secure_Shell) remote connection
   keys.
@@ -112,7 +112,7 @@ Test which one you should use:
     instructions](https://coderefinery.github.io/installation/ssh/) to
     set up SSH access.
 
-    **From now on, if you know that SSH works, you should always select
+    From now on, **if you know that SSH works, you should always select
     SSH as the clone URL from GitHub, or translate the URL to start with
     the right thing yourself:** `git@github.com:` (with the `:`).
   ::::
@@ -137,7 +137,7 @@ Test which one you should use:
     through the process. If you are using VS Code, you can skip the SSH and
     HTTPS checks.
 
-    From now on, you should **Select HTTPS as the clone URL from
+    From now on, you should **select HTTPS as the clone URL from
     GitHub, or translate the URL to start with the right thing
     yourself:** `https://github.com/`
 
