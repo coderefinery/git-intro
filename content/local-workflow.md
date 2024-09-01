@@ -128,6 +128,9 @@ click on the "Clone Repository" button.  You need to have started a
 brand new window that's not part of a project.
 
 Paste in this URL: `https://github.com/USER/recipe-book` (replace `USER`)
+
+If you are asked whether you want to open the cloned repository or to add it to the current workspace,
+select "Open".
 ::::::
 
 ::::::{group-tab} RStudio
