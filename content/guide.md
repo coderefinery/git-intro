@@ -31,20 +31,21 @@ Times here are in CE(S)T.
 - 08:50 - 09:00 (10 min) Soft start and icebreaker question
 - 09:00 - 09:20 (20 min) Welcome and practical information
 
-- 09:20 - 09:35 (15 min) [Motivation](https://coderefinery.github.io/git-intro/motivation/)
-- 09:35 - 10:00 (25 min) [Copy and browse an existing project](https://coderefinery.github.io/git-intro/browsing/)
+- 09:20 - 09:25 (05 min) [Intro to day](https://coderefinery.github.io/git-intro/)
+- 09:25 - 09:35 (10 min) [Motivation](https://coderefinery.github.io/git-intro/motivation/)
+- 09:35 - 10:05 (30 min) [Copy and browse an existing project](https://coderefinery.github.io/git-intro/browsing/)
 
-- 10:00 - 10:10 (10 min) Break
+- 10:05 - 10:15 (10 min) Break
 
-- 10:10 - 11:00 (50 min) [Committing changes](https://coderefinery.github.io/git-intro/commits/)
+- 10:15 - 11:00 (45 min) [Committing changes](https://coderefinery.github.io/git-intro/commits/)
 
-- 11:00 - 12:00 (60 min) Break
+- 11:00 - 12:00 (60 min) Lunch Break
 
-- 12:00 - 12:50 (50 min) [Merging changes and contributing to the project](https://coderefinery.github.io/git-intro/merging/)
+- 12:00 - 12:50 (50 min) Recap + [Merging changes and contributing to the project](https://coderefinery.github.io/git-intro/merging/)
 
 - 12:50 - 13:00 (10 min) Break
 
-- 13:00 - 13:30 (20 min) Demonstrating conflict resolution, Q&A, feedback, and what will we be doing tomorrow?
+- 13:00 - 13:30 (30 min) Demonstrating conflict resolution, Q&A, feedback, and what will we be doing tomorrow?
 
 
 ## Schedule Day 2
@@ -52,11 +53,13 @@ Times here are in CE(S)T.
 Times here are in CE(S)T.
 
 - 08:50 - 09:00 (10 min) Soft start and icebreaker question
-- 09:00 - 09:50 (50 min) [Cloning a Git repository and working locally](https://coderefinery.github.io/git-intro/local-workflow/)
 
-- 09:50 - 10:00 (10 min) Break
+- 09:00 - 09:10 (10 min) Recap
+- 09:10 - 10:00 (50 min) [Cloning a Git repository and working locally](https://coderefinery.github.io/git-intro/local-workflow/)
 
-- 10:00 - 11:00 (60 min) [Inspecting history](https://coderefinery.github.io/git-intro/archaeology/)
+- 10:00 - 10:10 (10 min) Break
+
+- 10:10 - 11:00 (50 min) [Inspecting history](https://coderefinery.github.io/git-intro/archaeology/)
 
 - 11:00 - 12:00 (60 min) Break
 
@@ -64,7 +67,7 @@ Times here are in CE(S)T.
 
 - 12:50 - 13:00 (10 min) Break
 
-- 13:00 - 13:30 (20 min) Practical advice, Q&A, feedback, and what will we be doing tomorrow?
+- 13:00 - 13:30 (30 min) [Practical advise](https://coderefinery.github.io/git-intro/level/), Q&A, feedback, and what will we be doing tomorrow?
 
 
 ## Why we teach this lesson
