@@ -29,8 +29,8 @@ repository.
 Times here are in CE(S)T.
 
 - 08:50 - 09:00 (10 min) Soft start and icebreaker question
-- 09:00 - 09:20 (20 min) Welcome and practical information
 
+- 09:00 - 09:20 (20 min) Welcome and practical information
 - 09:20 - 09:25 (05 min) [Intro to day](https://coderefinery.github.io/git-intro/)
 - 09:25 - 09:35 (10 min) [Motivation](https://coderefinery.github.io/git-intro/motivation/)
 - 09:35 - 10:05 (30 min) [Copy and browse an existing project](https://coderefinery.github.io/git-intro/browsing/)
