@@ -422,7 +422,7 @@ For the purpose of this exercise we can use them interchangeably.
 ::::
 
 ::::{group-tab} VS Code
-Version control sidebar → Three dots (same as in step 2) → Tags → Creat tag.  Make sure you are on the expected commit before you do this.
+Version control sidebar → Three dots (same as in step 2) → Tags → Create tag.  Make sure you are on the expected commit before you do this.
 ::::
 
 ::::{group-tab} Command line
