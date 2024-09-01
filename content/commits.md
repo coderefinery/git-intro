@@ -450,3 +450,7 @@ their differences.
 - In Git, commits form a so-called "graph". Branches are tags in Git function
   like sticky notes that stick to specific commits. What this means for us is
   that it does not cost any significant disk space to create new branches.
+- Not all files should be added to Git. For example, temporary files or
+  files with sensitive information or files which are generated as part of
+  the build process should not be added to Git. For this we use
+  `.gitignore` (more about this later: {ref}`what-to-avoid`).

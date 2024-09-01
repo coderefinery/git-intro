@@ -1,3 +1,5 @@
+(what-to-avoid)=
+
 # What to avoid
 
 
