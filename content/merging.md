@@ -6,7 +6,7 @@ means that we have to somehow combine the changes later. In this part we will
 practice this: {term}`merging`.
 
 :::{objectives}
-- Understand that on GitHub merging is done through a {term}`pull request`. Think of it as a change proposal.
+- Understand that on GitHub merging is done through a {term}`pull request`. Think of it as a **change proposal**.
 - Create and merge a pull request within your own repository.
 - Understand (and optionally) do the same across repositories, to contribute to
   the {term}`upstream` public repository.
@@ -25,7 +25,7 @@ practice this: {term}`merging`.
   us to test it before it becomes "live".
 * Now, we want to bring that change into the "main" branch.
 * We will find it's not that hard!  But you do have to keep track of the
-  steps and make sure that you work very precisely.
+  steps and make sure that you are careful about where a change is added.
 
 
 ## Exercise
@@ -50,22 +50,22 @@ review and commenting before the actual merge.
 :::{exercise} Exercise: Merging branches with pull requests (20 min)
 We assume that in the previous exercise you have created a new branch
 with a recipe.  In our previous example, it is called `new-recipe`.
-If not, create it first and add a recipe to your new branch, see
+If not, create the branch first and add a recipe to your new branch, see
 {doc}`commits`.
 
 We provide basic hints. You should refer to the solution as needed.
 
 1. Navigate to your branch from the previous episode
-   (Hint: the same branch view we used last time).
+   (hint: the same branch view we used last time).
 
-1. Begin the pull request process.
-   (Hint: There is a "Contribute" button in the branch view).
+1. Begin the pull request process
+   (hint: There is a "Contribute" button in the branch view).
 
 1. Add or modify the pull request title and description, and verify the other data.
    In the pull request verify the target repository and the target
    branch. Make sure that you are merging within your own repository.
    **GitHub: By default, it will offer to make the change to the
-   upstream repository, `coderefinery`.  You should change this**, you
+   upstream repository, `cr-workshop-exercises`.  You should change this**, you
    shouldn't contribute your test recipe upstream yet.  Where it says
    `base repository`, select your own user's repository.
 
@@ -77,7 +77,7 @@ We provide basic hints. You should refer to the solution as needed.
 
 1. Find out which branches are merged and thus safe to delete. Then remove them
    and verify that the commits are still there, only the branch labels are
-   gone. (Hint: you can delete branches that have been merged into `main`).
+   gone (hint: you can delete branches that have been merged into `main`).
 
 1. Optional: Try to create a new branch with a new change, then open a pull
    request but towards the central repository. We will later merge few of

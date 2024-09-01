@@ -22,7 +22,7 @@ GitHub.
 * The **GitHub** web interface allows many things to be done, but not
   everything.
 * **VS Code** allows some of these, but for some it's easier to open
-  the VS Code terminal and run git there.
+  the VS Code terminal and run Git there.
 
 
 ## Our toolbox for history inspection
@@ -200,8 +200,7 @@ modified each line. Incredibly useful for reproducibility.
 
 :::::
 
-:::{discussion}
-Discuss how these relatively trivial changes affect the annotation:
+:::{discussion} Discuss how these relatively trivial changes affect the annotation
 - Wrapping long lines of text/code into shorter lines
 - Auto-formatting tools such as `black`
 - Editors that automatically remove trailing whitespace
@@ -221,17 +220,17 @@ Discuss how these relatively trivial changes affect the annotation:
 
     Example (lines starting with "#" are only comments):
 
-    ```console
-    $ # create branch called "older-code" from hash 347e6292419b
+    ```bash
+    # create branch called "older-code" from hash 347e6292419b
     $ git switch --create older-code 347e6292419bd0e4bff077fe971f983932d7a0e9
 
-    $ # now you can navigate and inspect the code as it was back then
-    $ # ...
+    # now you can navigate and inspect the code as it was back then
+    # ...
 
-    $ # after we are done we can switch back to "main"
+    # after we are done we can switch back to "main"
     $ git switch main
 
-    $ # if we like we can delete the "older-code" branch
+    # if we like we can delete the "older-code" branch
     $ git branch -d older-code
     ```
 
@@ -271,9 +270,6 @@ Discuss how these relatively trivial changes affect the annotation:
 
 
 ## Exercise
-
-This is described with the command line method, but by looking above
-you can translate to the other options.
 
 :::::{exercise} Exercise: Explore basic archaeology commands (20 min)
   Let us explore the value of these commands in an exercise.  Future
@@ -375,7 +371,7 @@ you can translate to the other options.
   Then using the above toolbox try to:
   1. Find the code line which contains `"Logic error in degree_correlation"`.
   1. Find out when this line was last modified or added. Find the actual commit which modified that line.
-  1. Inspect that commit with `git show`.
+  1. Inspect the commit. What is the commit change? What is the commit metadata?
   1. Create a branch pointing to the past when that commit was created to be
      able to browse and use the code as it was back then.
   1. How would you bring the code to the version of the code right before that line was last modified?
@@ -422,13 +418,11 @@ you can translate to the other options.
 
 ## Finding out when something broke/changed with `git bisect`
 
-This only works with the command line.
+This section only works with the command line.
 
-> *"But I am sure it used to work! Strange."*
-
-Sometimes you realize that something broke.
-You know that it used to work.
-You do not know when it broke.
+*"But I am sure it used to work! Strange."* - Sometimes you realize that
+something broke.  You know that it used to work.  You do not know **when precisely** it
+broke.
 
 :::{discussion} How would you solve this?
 Before we go on first discuss how you would solve this problem: You know that it worked
@@ -467,7 +461,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
 
 This only works with the command line.
 
-::::{exercise} (optional) History-2: Use git bisect to find the bad commit
+::::{exercise} (optional) Use git bisect to find the bad commit
   In this exercise, we use `git bisect` on an example repository.  It
   is OK if you do not complete this exercise fully.
 

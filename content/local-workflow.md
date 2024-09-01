@@ -6,7 +6,7 @@ do, so now we move to working on your own computer.
 
 :::{objectives}
 - We are able to clone a repository from the web and modify it locally.
-- We can do the same things we did before (commit, branch, merge), but locally.
+- We can do the same things we did before (commit, branch, merge), but **locally**.
 - We get a feeling for remote repositories ([more later](https://coderefinery.github.io/git-collaborative/)).
 :::
 
@@ -29,7 +29,7 @@ do, so now we move to working on your own computer.
 
 **Cloning**:
 - Copying (downloading) the entire repository with all commits, branches, and tags to your computer.
-- It is a full backup of the repository, including all history.
+- It is a **full backup** of the repository, including all history.
 - You can then work on your local clone of the repository.
 - Changes on local clone will not automatically appear in the repository where
   we cloned from. We have to actively "push" them there (we will practice this
@@ -82,7 +82,7 @@ since we don't plan to push changes back (for step 8 it might be easier to use t
 - Or first fork the original repository and then clone your fork.
 
 The examples below assume you are cloning the original repository. If you are cloning your fork, you should
-replace `coderefinery` with your GitHub username.
+replace `cr-workshop-exercises` with your GitHub username.
 
 :::::::{tabs}
 ::::::{group-tab} Command line
@@ -234,7 +234,7 @@ Committing a new file in VS Code.
 
 1. One creates the file in the normal way,
 1. In the git tab, one uses the checkbox under "Staged" to add mark the file as {term}`staged <staging area>`, which means it will be committed next.
-1. Click the checkmarks to commit.  A new window will be opened.
+1. Click the check-mark to commit.  A new window will be opened.
 
 :::{figure} img/commits/rstudio-committing.png
 :alt: Screenshot of RStudio commit process
