@@ -39,7 +39,7 @@ Times here are in CE(S)T.
 
 - 10:15 - 11:00 (45 min) [Committing changes](https://coderefinery.github.io/git-intro/commits/)
 
-- 11:00 - 12:00 (60 min) Lunch Break
+- 11:00 - 12:00 (60 min) Break
 
 - 12:00 - 12:50 (50 min) Recap + [Merging changes and contributing to the project](https://coderefinery.github.io/git-intro/merging/)
 
