@@ -1,26 +1,38 @@
 # Instructor guide
 
 
-:::{warning}
-**Exercise preparation: one day before the workshop**
+## Exercise preparation
 
-- Create two exercise repository from
-  <https://github.com/coderefinery/recipe-book-template> preserving history
-  (this means **not** using "generating from template")
-  - <https://github.com/coderefinery/recipe-book>
-  - <https://github.com/coderefinery/recipe-book-recorded>
-- You can create these using `git clone --mirror` and `git push --mirror` to make sure to copy all branches.
-- Create one or two issues to both
-- Create one or two pull requests to both
-- In both, try to search for something in the recipes to trigger a search index
-  update
+:::{warning}
+Do this at least one day before the workshop!
 :::
+
+- Create two exercise repositories from
+  <https://github.com/cr-workshop-exercises/recipe-book-template> **preserving history**
+  (this means **not** using "generating from template")
+  - <https://github.com/cr-workshop-exercises/recipe-book>
+  - <https://github.com/cr-workshop-exercises/recipe-book-recorded>
+- You can create these using `git clone --mirror` and `git push --mirror` to make sure to copy **all branches**:
+  ```console
+  $ git clone --mirror git@github.com:cr-workshop-exercises/recipe-book-template.git
+  $ cd recipe-book-template.git
+  $ git push --mirror git@github.com:cr-workshop-exercises/recipe-book-recorded.git
+  $ git push --mirror git@github.com:cr-workshop-exercises/recipe-book.git
+  ```
+- Reason why we create it under <https://github.com/cr-workshop-exercises> and not under
+  <https://github.com/coderefinery> is that we otherwise get a 100 pull requests over the next few weeks
+  which masks "real" pull requests from the project and the side effect would be that nobody then reviews
+  any "real" pull requests anymore.
+- Create one or two issues to both.
+- Create one or two pull requests to both.
+- In both, try to search for something in the recipes to trigger a search index
+  update.
 
 
 ## Privacy
 
 When presenting the material in a streamed and recorded workshop, make sure to
-only show the <https://github.com/coderefinery/recipe-book-recorded>
+only show the <https://github.com/cr-workshop-exercises/recipe-book-recorded>
 repository.
 
 

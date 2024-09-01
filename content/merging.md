@@ -381,14 +381,14 @@ request.
 Not described. We will return to this in the [collaborative Git
 lesson](https://coderefinery.github.io/git-collaborative/).
 
-You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `coderefinery/recipe-book`.  Or you do it all through VS Code.
+You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `cr-workshop-exercises/recipe-book`.  Or you do it all through VS Code.
 ::::
 
 ::::{group-tab} Command line
 Not described. We will return to this in the [collaborative Git
 lesson](https://coderefinery.github.io/git-collaborative/).
 
-You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `coderefinery/recipe-book`.
+You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `cr-workshop-exercises/recipe-book`.
 
 ::::
 :::::

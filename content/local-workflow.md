@@ -78,7 +78,7 @@ We have an own section for this: {ref}`configuration`.
 Now you need to decide which repository you want to clone. All of these options will work for this exercise
 since we don't plan to push changes back (for step 8 it might be easier to use the original repository):
 - Clone the recipe book from your fork.
-- Or clone the recipe book from the original repository: <https://github.com/coderefinery/recipe-book>
+- Or clone the recipe book from the original repository: <https://github.com/cr-workshop-exercises/recipe-book>
 - Or first fork the original repository and then clone your fork.
 
 The examples below assume you are cloning the original repository. If you are cloning your fork, you should
@@ -90,13 +90,13 @@ If you are unsure whether you are using SSH or HTTPS, please read {ref}`clone-me
   :::::{tabs}
     ::::{group-tab} SSH
       ```console
-      $ git clone git@github.com:coderefinery/recipe-book.git
+      $ git clone git@github.com:cr-workshop-exercises/recipe-book.git
       ```
     ::::
 
     ::::{group-tab} HTTPS
       ```console
-      $ git clone https://github.com/coderefinery/recipe-book.git
+      $ git clone https://github.com/cr-workshop-exercises/recipe-book.git
       ```
     ::::
   :::::
@@ -106,13 +106,13 @@ on your computer (in this case "my-recipe-book"):
   :::::{tabs}
     ::::{group-tab} SSH
       ```console
-      $ git clone git@github.com:coderefinery/recipe-book.git my-recipe-book
+      $ git clone git@github.com:cr-workshop-exercises/recipe-book.git my-recipe-book
       ```
     ::::
 
     ::::{group-tab} HTTPS
       ```console
-      $ git clone https://github.com/coderefinery/recipe-book.git my-recipe-book
+      $ git clone https://github.com/cr-workshop-exercises/recipe-book.git my-recipe-book
       ```
     ::::
   :::::
@@ -403,7 +403,7 @@ $ git branch
 ```
 
 But where are the remote branches? We expect to see [a couple of
-them](https://github.com/coderefinery/recipe-book/branches/all).
+them](https://github.com/cr-workshop-exercises/recipe-book/branches/all).
 
 We can see them by asking for all branches (your output might vary depending on
 where you cloned from):

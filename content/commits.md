@@ -45,7 +45,7 @@ the other paths on day 2)
 
 :::{exercise} Exercise: Practice creating commits and branches (20 min)
 1. Make sure that you now work **on your fork** of the recipe-book
-   repository (`USER/recipe-book`, *not* `coderefinery/recipe-book`)
+   repository (`USER/recipe-book`, *not* `cr-workshop-exercises/recipe-book`)
 1. First create a new branch and then add a recipe to the branch and commit the change.
 1. In a new commit, modify the recipe you just added.
 1. Switch to the `main` branch and modify a recipe there.
