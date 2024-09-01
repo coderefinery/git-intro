@@ -77,7 +77,7 @@ html_theme = "sphinx_rtd_theme"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ['css']
+html_static_path = ['css']
 
 
 # HTML context:
@@ -98,3 +98,6 @@ if os.environ.get('GITHUB_REF', '') == 'refs/heads/main':
     html_js_files = [
         ('https://plausible.cs.aalto.fi/js/script.js', {"data-domain": "coderefinery.github.io", "defer": "defer"}),
     ]
+
+def setup(app):
+    app.add_css_file("style.css")
