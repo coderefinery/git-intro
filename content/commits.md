@@ -1,6 +1,6 @@
 # Committing changes
 
-The first and most basic task to do in Git is *record changes* using
+The first and most basic task to do in Git is **record changes** using
 commits. In this part, we will record changes in two
 ways: on a new branch (which supports multiple lines of work at once), and directly
 on the "main" branch (which happens to be the default branch here).
@@ -40,8 +40,9 @@ can merge them together easily.  Image created using <https://gopherize.me/>
 
 We offer **three different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
-path** only and recommend you do that.  (You can get experience with
-the other paths on day 2)
+path** only and recommend you do that
+(you can get experience with
+the other paths on day 2).
 
 :::{exercise} Exercise: Practice creating commits and branches (20 min)
 1. Make sure that you now work **on your fork** of the recipe-book
@@ -112,7 +113,7 @@ name of the thing you make.  A commit is identified by something such as
    :width: 60%
    :class: with-border
    :::
-1. Change to some sub-directory, for example `sides`
+1. Change to some sub-directory, for example `sides`.
 1. Make sure you are still on the `new-recipe` branch (it should say
    it at the top), and click "Add file" → "Create new file" from the
    upper right.
@@ -316,13 +317,9 @@ it makes sense later on.
 :::::{tabs}
 
 ::::{group-tab} GitHub
-Next to the branch name switcher, click on "Branches" to get an overview.
-
-Another way to compare branches or commits on GitHub is to adjust the following URL:
-`https://github.com/USER/recipe-book/compare/VERSION1..VERSION2`
-
-Replace `USER` with your username and `VERSION1` and `VERSION2` with a commit hash or branch name.
-Please try it out.
+A nice way to compare braches is to add `/compare` to the URL of the repository,
+for example (replace USER):
+`https://github.com/USER/recipe-book/compare`
 ::::
 
 ::::{group-tab} VS Code
@@ -353,7 +350,8 @@ This is similar to above, but not only between branches.
 
 :::::{tabs}
 ::::{group-tab} GitHub
-Like above, one can compare commits on GitHub by adjusting the following URL:
+Following the `/compare`-trick above, one can compare commits on GitHub by
+adjusting the following URL:
 `https://github.com/USER/recipe-book/compare/VERSION1..VERSION2`
 
 Replace `USER` with your username and `VERSION1` and `VERSION2` with a commit hash or branch name.
