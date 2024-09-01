@@ -264,11 +264,13 @@ online!
 
 :::{group-tab} RStudio
 
-This is not fully explained, because a lot of it is similar to the "Command line" method (and an RStudio expert could help us some).  The main differeences are:
+This is not fully explained, because a lot of it is similar to the "Command
+line" method (and an RStudio expert could help us some).  The main differences
+are:
 
-### Put your project under version conrol
+### Put your project under version control
 
-1. Tools → Version control → Project setup → Version conrol system = Git.
+1. Tools → Version control → Project setup → Version control system = Git.
 1. Select "Yes" for "do you want to initialize a new git repository for this project.
 1. Select yes to restart the project with RStudio.
 1. Switch to branch `main` to have you branch named that.
@@ -295,19 +297,20 @@ Same as command line
 
 ## Remote repositories
 
-In this exercise we have pushed our local repository to a remote repository.
-We will learn how to work with remote repositories in detail in the
-[collaborative distributed version
-control](https://coderefinery.github.io/git-collaborative/) lesson.  To store
-your git data on another server, you use **remotes**.  A remote is a repository
-on its own, with its own branches. We can **push** changes to the remote and
-**pull** from the remote.
+In this exercise we have pushed our local repository to a remote
+repository.  You can learn how to work with remote repositories in
+detail in the [collaborative distributed version
+control](https://coderefinery.github.io/git-collaborative/) lesson.  
+
+To store your Git data on another server, you use **remotes**.  A
+remote is a repository on its own, with its own branches. We can
+**push** changes to the remote and **pull** from the remote.
 
 You might use remotes to:
 - Back up your own work or make your work findable.
 - To collaborate with other people.
 
-There are different types of remotes:
+There are services that can be a remote:
 - If you have a server you can SSH to, you can use that as a remote.
 - [GitHub](https://github.com) is a popular, closed-source commercial site.
 - [GitLab](https://about.gitlab.com) is a popular, open-core
@@ -321,7 +324,7 @@ There are different types of remotes:
 ## Is putting software on GitHub/GitLab/... publishing?
 
 It is a good first step but to make your code truly **findable and
-accessible**, condider making your code **citable and persistent**: Get a
+accessible**, consider making your code **citable and persistent**: Get a
 persistent identifier (PID) such as DOI in addition to sharing the code
 publicly, by using services like [Zenodo](https://zenodo.org) or similar
 services.
