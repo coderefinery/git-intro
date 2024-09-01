@@ -452,3 +452,5 @@ their differences.
   files with sensitive information or files which are generated as part of
   the build process should not be added to Git. For this we use
   `.gitignore` (more about this later: {ref}`what-to-avoid`).
+- Unsure on which branch you are or what state the repository is in?
+  On the command line, use `git status` frequently to get a quick overview.

@@ -1,8 +1,17 @@
-# Practical advice: how much Git is necessary?
+# Practical advice: How much Git is necessary?
 
 :::{instructor-note}
 - 20 min teaching/discussion
 :::
+
+
+## Working on the command line? Use "git status" all the time
+
+Unsure on which branch you are or what state the repository is in?  On the
+command line, use `git status` frequently to get a quick overview.
+The `git status` command is one of the most useful commands in Git
+to inform about which branch we are on, what we are about to commit,
+which files might not be tracked, etc.
 
 
 ## Writing useful commit messages
