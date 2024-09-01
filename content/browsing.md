@@ -17,22 +17,22 @@ own changes in the next episode.
 * See a real Git repository and understand what is inside of it.
 * Understand how version control allows advanced inspection of a
   repository.
-* See how Git allows multiple people to collaborate easily.
-* See the big picture instead of remembering a bunch of commands.
+* See how Git allows multiple people to collaborate relatively easily.
+* **See the big picture** instead of remembering a bunch of commands.
 :::
 
 
 ## GitHub, VS Code, Command line, and more
 
-We offer **three different paths** of how to do this exercise:
+We offer **three different paths** for this exercise:
 - **GitHub** (this is the one we will demonstrate on day 1)
 - **VS Code** (if you prefer to follow along using an editor; we will
-  do this on day 2)
+  return to this on day 2)
 - **Command line** (for people comfortable with the command line; you
   will see more of this on day 2)
 
 In the future we'll add more paths, for example Jupyter and RStudio
-(contributions welcome!).
+([contributions welcome!](https://github.com/coderefinery/git-intro/issues/458)).
 
 
 ## Creating a copy of the repository by "forking"
@@ -40,9 +40,9 @@ In the future we'll add more paths, for example Jupyter and RStudio
 A {term}`repository` is a collection of files in one directory tracked
 by git.  A {term}`GitHub repository` is GitHub's copy, which adds
 things like access control.  Each GitHub repository is owned by a user
-or organization, who controls what is in it.
+or organization, who controls access.
 
-First, we need to make our own copy of the exercise repository. This will
+First, we need to make **our own copy** of the exercise repository. This will
 become important later, when we make our own changes.
 
 1. Go to the repository view on GitHub:
@@ -57,11 +57,11 @@ become important later, when we make our own changes.
    :class: with-border
    :::
 1. You should shortly be redirected to your copy of the repository
-   **YOUR_USER_NAME/recipe-book**.
+   **USER/recipe-book**.
 
 At all times you should be aware of if you looking at *your* repository
 or the *CodeRefinery {term}`upstream`* repository.
-* Your repository: https://github.com/**USERNAME**/recipe-book
+* Your repository: https://github.com/**USER**/recipe-book
 * CodeRefinery upstream repository: https://github.com/**cr-workshop-exercises**/recipe-book
 
 :::::{tabs}
@@ -116,9 +116,9 @@ need to have forked the repository as described above.
 Work on this by yourself or in your team.
 
 :::{instructor-note}
-Before starting the exercise session:
-- Make sure you have shown how to fork the repository to own account
-  (above).
+Before starting the exercise session show
+how to fork the repository to own account
+(above).
 :::
 
 :::{exercise} Exercise: Browsing an existing project (25 min)
@@ -225,7 +225,7 @@ We don't know how to do this without an extension. Try starting a terminal and u
 ::::
 
 ::::{group-tab} Command line
-If you defined the `git graph` alias as in {doc}`configuration`, you
+If you defined the `git graph` alias (shortcut) as in {doc}`configuration`, you
 can view the network graph with:
 ```console
 $ git graph
@@ -305,7 +305,7 @@ instance, including the context.
 
 ::::{group-tab} VS Code
 If you use the "Search" magnifying class on the left sidebar, and
-search for "Salt" it shows the occurrences in every file. You can
+search for "salt" it shows the occurrences in every file. You can
 click to see the usage in context.
 ::::
 
@@ -388,7 +388,7 @@ copy.
 
 - Git allowed us to understand this simple project much better than we
   could, if it was just a few files on our own computer.
-- It was also very easy to share the project with the course.
+- It was easy to share the project with the course.
 - By forking the repository, we created our own copy. This is
   important for the next episode, where we will make changes to
   our copy.
