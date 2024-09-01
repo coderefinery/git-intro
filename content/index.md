@@ -1,30 +1,29 @@
 # Introduction to version control with Git - Why we want to track versions and how to go back in time to a working version
 
-```{warning}
-In February and March 2024 we rewrote this lesson from the ground up.
+:::{admonition} We rewrote this lesson in February and March 2024
 If you are looking for the previous version, you can browse the
 [2023 version of this lesson](https://coderefinery.github.io/git-intro/branch/2023-version/).
-```
+:::
 
 This is the introductory lesson to version control using
 [Git](https://git-scm.com/).
 
-We start with an existing repository on the web to visually explain the basic
+We start with an **existing repository on the web** to visually explain the basic
 concepts of version control. We later move to a local
 repository. Our goal there is not only to be able to apply changes to an
 existing repository but to also be able to turn own projects into Git
 repositories and to share them with others.
 
 In the separate [collaborative Git
-lesson](https://coderefinery.github.io/git-collaborative/), we teach more use
-of remote repositories and good collaborative workflows. We try to stick to
-simple workflows, just enough for researchers who are not obsessed with Git to
-be able to work well.
+lesson](https://coderefinery.github.io/git-collaborative/), we focus more on
+the collaboration and the use of remote repositories. We try to stick to simple
+workflows, just enough for researchers who are not obsessed with Git to be able
+to work well.
 
 The goals of the module as a whole are that the learner will feel comfortable
 about committing changes, branching, and merging.
 
-```{prereq}
+:::{prereq}
 We offer several options to go through the material: **on the web, in an editor,
 or in the terminal**.
 Please see the [installation instructions](https://coderefinery.github.io/installation/).
@@ -40,7 +39,7 @@ it is currently the most popular web platform for hosting Git repositories and
 the chance is high that you will interact with
 [GitHub](https://github.com)-based repositories even if you choose to host your
 Git repository on another service.
-```
+:::
 
 ```{toctree}
 :maxdepth: 1
