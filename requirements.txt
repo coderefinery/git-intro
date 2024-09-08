@@ -1,5 +1,5 @@
-sphinx < 8.0
-sphinx_rtd_theme
+sphinx
+sphinx_rtd_theme >= 2.0
 sphinx_rtd_theme_ext_color_contrast
 myst_nb
 # Remove once new sphinx-copybutton is released ( > 0.5.0)
