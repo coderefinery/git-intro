@@ -36,6 +36,15 @@ the {term}`upstream` recipe book - which shows the true purpose of this.  But
 this is only a preview and we will practice collaboration much more in the
 [collaborative Git lesson](https://coderefinery.github.io/git-collaborative/).
 
+
+:::{figure} img/illustrations/merging.png
+:alt: Illustration of what we want to achieve in this exercise
+:width: 60%
+
+Illustration of what we want to achieve in this exercise.
+:::
+
+
 We offer **three different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
 path** only and recommend you do that.  The exercise text below has

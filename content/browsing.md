@@ -42,6 +42,13 @@ by git.  A {term}`GitHub repository` is GitHub's copy, which adds
 things like access control.  Each GitHub repository is owned by a user
 or organization, who controls access.
 
+:::{figure} img/illustrations/fork.png
+:alt: Illustration of forking a repository on GitHub
+:width: 60%
+
+Illustration of forking a repository on GitHub.
+:::
+
 First, we need to make **our own copy** of the exercise repository. This will
 become important later, when we make our own changes.
 

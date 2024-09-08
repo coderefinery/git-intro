@@ -19,6 +19,14 @@ do, so now we move to working on your own computer.
 
 ## What is in a Git repository and what are we cloning?
 
+:::{figure} img/illustrations/clone.png
+:alt: Illustration of cloning a repository to a local computer
+:width: 60%
+
+Illustration of cloning a repository to a local computer.
+:::
+
+
 **Git repository**:
 - Contains all the files and directories of a project.
 - Contains the complete history of all changes (commits) to these files and directories.

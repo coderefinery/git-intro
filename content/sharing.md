@@ -18,6 +18,15 @@
 
 ## Exercise
 
+
+:::{figure} img/illustrations/sharing.png
+:alt: Illustration of how we turn a project into a Git repository and share it
+:width: 100%
+
+From a bunch of files to a local repository which we then share on GitHub.
+:::
+
+
 :::::{exercise} Exercise: Turn your project to a Git repo and share it (25 min)
 
 1. Create a new directory called **myproject** with one or few files in it.

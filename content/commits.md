@@ -38,6 +38,14 @@ can merge them together easily.  Image created using <https://gopherize.me/>
 
 ## Exercise
 
+:::{figure} img/illustrations/branches.png
+:alt: Illustration of what we want to achieve in this exercise
+:width: 60%
+
+Illustration of what we want to achieve in this exercise.
+:::
+
+
 We offer **three different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
 path** only and recommend you do that
