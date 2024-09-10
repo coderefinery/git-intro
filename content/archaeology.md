@@ -271,7 +271,7 @@ modified each line. Incredibly useful for reproducibility.
 
 ## Exercise
 
-:::::{exercise} Exercise: Explore basic archaeology commands (20 min)
+:::::::{exercise} Exercise: Explore basic archaeology commands (20 min)
   Let us explore the value of these commands in an exercise.  Future
   exercises do not depend on this, so it is OK if you do not complete
   it fully.
@@ -376,43 +376,64 @@ modified each line. Incredibly useful for reproducibility.
      able to browse and use the code as it was back then.
   1. How would you bring the code to the version of the code right before that line was last modified?
 
-  ::::{solution}
-  We provide here a solution for the command line but we also encourage you to
-  try to solve this in the browser.
+  ::::::{solution}
 
-  1. We use `git grep`:
-     ```console
-     $ git grep "Logic error in degree_correlation"
-     ```
-     This gives the output:
-     ```
-     networkx/algorithms/threshold.py:                print("Logic error in degree_correlation", i, rdi)
-     ```
-     Maybe you also want to know the line number:
-     ```console
-     $ git grep -n "Logic error in degree_correlation"
-     ```
-  2. We use `git annotate`:
-     ```console
-     $ git annotate networkx/algorithms/threshold.py
-     ```
-     Then search for "Logic error" by typing "/Logic error" followed by Enter.
-     The last commit that modified it was `90544b4fa` (unless that line changed since).
-  3. We use `git show`:
-     ```console
-     $ git show 90544b4fa
-     ```
-  4. Create a branch pointing to that commit (here we called the branch "past-code"):
-     ```console
-     $ git branch past-code 90544b4fa
-     ```
-  5. This is a compact way to access the first parent of `90544b4fa` (here we
-     called the branch "just-before"):
-     ```console
-     $ git switch --create just-before 90544b4fa~1
-     ```
-  ::::
-:::::
+    :::::{tabs}
+      ::::{group-tab} Command line
+        1. We use `git grep`:
+           ```console
+           $ git grep "Logic error in degree_correlation"
+           ```
+           This gives the output:
+           ```
+           networkx/algorithms/threshold.py:                print("Logic error in degree_correlation", i, rdi)
+           ```
+           Maybe you also want to know the line number:
+           ```console
+           $ git grep -n "Logic error in degree_correlation"
+           ```
+        2. We use `git annotate`:
+           ```console
+           $ git annotate networkx/algorithms/threshold.py
+           ```
+           Then search for "Logic error" by typing "/Logic error" followed by Enter.
+           The last commit that modified it was `90544b4fa` (unless that line changed since).
+        3. We use `git show`:
+           ```console
+           $ git show 90544b4fa
+           ```
+        4. Create a branch pointing to that commit (here we called the branch "past-code"):
+           ```console
+           $ git branch past-code 90544b4fa
+           ```
+        5. This is a compact way to access the first parent of `90544b4fa` (here we
+           called the branch "just-before"):
+           ```console
+           $ git switch --create just-before 90544b4fa~1
+           ```
+      ::::
+  
+      ::::{group-tab} GitHub
+        1. On top of <https://github.com/networkx/networkx> click on the
+           magnifying glass and search for "Logic error in degree_correlation".
+           This tells us that the file `networkx/algorithms/threshold.py`
+           contains this line and you can click on the file.
+           This brings you to <https://github.com/networkx/networkx/blob/409979eff35f02eff54f4eea3731736bd431dc2e/networkx/algorithms/threshold.py#L550>.
+        2. Click on the "Blame" button. Left next to the highlighted line you see
+           the commit which modified it last.
+        3. You can click on the commit (open in new browser tab) which brings you
+           to <https://github.com/networkx/networkx/commit/90544b4fa5a7397a86e69ebf5778f4a0f6eafe1e>.
+        4. Let's skip creating the branch on GitHub. Instead, we can browse the
+           project at this version:
+           <https://github.com/networkx/networkx/tree/90544b4>.
+        5. Go back to the "Blame" view for the file `networkx/algorithms/threshold.py`:
+           <https://github.com/networkx/networkx/blame/409979eff35f02eff54f4eea3731736bd431dc2e/networkx/algorithms/threshold.py#L550>.
+           Navigate to the symbol "Blame prior to change ..." which you find next to the commit message that modified this line.
+      ::::
+    :::::
+
+  ::::::
+:::::::
 
 ---
 
