@@ -27,6 +27,8 @@ about committing changes, branching, and merging.
 We offer several options to go through the material: **on the web, in an editor,
 or in the terminal**.
 Please see the [installation instructions](https://coderefinery.github.io/installation/).
+If you wish to follow in the terminal and are new to the command line, we
+recorded a [short shell crash course](https://youtu.be/xbTTDLA3txI).
 
 We recommend to have a [GitHub](https://github.com) account.
 **Why GitHub?**
@@ -105,6 +107,7 @@ under-the-hood
 :maxdepth: 1
 :caption: Reference
 
+Shell crash course <https://youtu.be/xbTTDLA3txI>
 reference
 customizing
 resources
