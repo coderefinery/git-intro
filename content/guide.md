@@ -12,6 +12,9 @@ Do this at least one day before the workshop!
   (this means **not** using "generating from template")
   - <https://github.com/cr-workshop-exercises/recipe-book>
   - <https://github.com/cr-workshop-exercises/recipe-book-recorded>
+- **You probably need to re-created them before the workshop even though they might already exist**
+  from a previous workshop. Motivation: the repositories from a previous workshop probably carry issues
+  and pull requests and the network graph will differ from what you want to show.
 - You can create these using `git clone --mirror` and `git push --mirror` to make sure to copy **all branches**:
   ```console
   $ git clone --mirror git@github.com:cr-workshop-exercises/recipe-book-template.git
