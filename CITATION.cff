@@ -23,8 +23,8 @@ authors:
 title: "Introduction to version control"
 type: "data"
 abstract: "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects."
-version: 2025-02-26
-date-released: 2025-02-26
+version: 2025-03-19
+date-released: 2025-03-19
 url: "https://coderefinery.github.io/git-intro/"
 license: CC-BY-4.0
 repository-code: "https://github.com/coderefinery/git-intro"
