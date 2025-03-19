@@ -19,8 +19,8 @@ sys.path.insert(0, os.path.abspath("."))
 # -- Project information -----------------------------------------------------
 
 project = "Introduction to version control with Git"
-copyright = "CodeRefinery project"
-author = "CodeRefinery project"
+copyright = "CodeRefinery contributors"
+author = "CodeRefinery contributors"
 github_user = "coderefinery"
 github_repo_name = "git-intro"  # auto-detected from dirname if blank
 github_version = "main"
