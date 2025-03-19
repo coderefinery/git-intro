@@ -16,6 +16,8 @@ authors:
   given-names: "Bjørn"
 - family-names: "Andrei"
   given-names: "Constantin-Octavian"
+- family-names: "Suvilehto"
+  given-names: "Jyry"
 title: "Introduction to version control"
 type: "data"
 abstract: "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects."
