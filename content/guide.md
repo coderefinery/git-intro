@@ -17,7 +17,7 @@ Do this at least one day before the workshop!
   and pull requests and the network graph will differ from what you want to show.
 - You can create these using `git clone --mirror` and `git push --mirror` to make sure to copy **all branches**:
   ```console
-  $ git clone --mirror git@github.com:cr-workshop-exercises/recipe-book-template.git
+  $ git clone --mirror git@github.com:coderefinery/recipe-book-template.git
   $ cd recipe-book-template.git
   $ git push --mirror git@github.com:cr-workshop-exercises/recipe-book-recorded.git
   $ git push --mirror git@github.com:cr-workshop-exercises/recipe-book.git
