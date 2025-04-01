@@ -1,4 +1,4 @@
-# Committing changes
+# Recording changes
 
 The first and most basic task to do in Git is **record changes** using
 commits. In this part, we will record changes in two
