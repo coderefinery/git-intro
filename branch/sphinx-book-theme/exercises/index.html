@@ -1,0 +1,1219 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>List of exercises &#8212; Introduction to version control with Git  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/minipres.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Instructor guide" href="../guide/" />
+    <link rel="prev" title="Other resources" href="../resources/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introduction to version control with Git  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core episodes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../remotes/">Sharing repositories online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: how much Git is necessary?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro/edit/main/content/exercises.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro/issues/new?title=Issue%20on%20page%20%2Fexercises.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercises.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>List of exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-list">Full list</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="list-of-exercises">
+<h1>List of exercises<a class="headerlink" href="#list-of-exercises" title="Permalink to this heading">#</a></h1>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>Basics:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../basics/#exercise-record-changes"><span class="std std-ref">Exercise: Record changes</span></a></p></li>
+<li><p><a class="reference internal" href="../basics/#exercise-diff-and-rename"><span class="std std-ref">Optional exercises: comparing, renaming, and removing</span></a></p></li>
+</ul>
+<p>Branching and merging:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../branches/#exercise-branches"><span class="std std-ref">Exercise: Create and commit to branches</span></a></p></li>
+<li><p><a class="reference internal" href="../branches/#exercise-branches-optional"><span class="std std-ref">Optional exercises with branches</span></a></p></li>
+</ul>
+<p>Conflict resolution:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../conflicts/#exercise-conflicts"><span class="std std-ref">Exercise: Create and resolve a conflict</span></a></p></li>
+<li><p><a class="reference internal" href="../conflicts/#exercise-conflicts-optional"><span class="std std-ref">Optional exercises with conflict resolution</span></a></p></li>
+</ul>
+<p>Inspecting history:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../archaeology/#exercise-history"><span class="std std-ref">Exercise: Basic archaeology commands</span></a></p></li>
+<li><p><a class="reference internal" href="../archaeology/#exercise-bisect"><span class="std std-ref">Optional exercise: Git bisect</span></a></p></li>
+</ul>
+<p>Using the Git staging area:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../staging-area/#exercise-interactive-commits"><span class="std std-ref">Exercise: Interactive commits</span></a></p></li>
+<li><p><a class="reference internal" href="../staging-area/#exercise-staging-area"><span class="std std-ref">Exercise: Using the staging area</span></a></p></li>
+</ul>
+<p>Undoing and recovering:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../recovering/#exercise-revert"><span class="std std-ref">Exercise: Revert a commit</span></a></p></li>
+<li><p><a class="reference internal" href="../recovering/#exercise-amend"><span class="std std-ref">Exercise: Modify a previous commit</span></a></p></li>
+<li><p><a class="reference internal" href="../recovering/#exercise-reset"><span class="std std-ref">Exercise: Git reset</span></a></p></li>
+</ul>
+<p>Interrupted work:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../interrupted/#exercise-stashing"><span class="std std-ref">Exercise: Stashing</span></a></p></li>
+</ul>
+</section>
+<section id="full-list">
+<h2>Full list<a class="headerlink" href="#full-list" title="Permalink to this heading">#</a></h2>
+<p>This is a list of all exercises and solutions in this lesson, mainly
+as a reference for helpers and instructors.  This list is
+automatically generated from all of the other pages in the lesson.
+Any single teaching event will probably cover only a subset of these,
+depending on their interests.</p>
+<section id="motivation">
+<h3>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../motivation/#solution-0">In motivation.md:</a></p>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>Giving a version to a collaborator and merging changes later with own
+changes sounds like lots of work.</p></li>
+<li><p>What if you discover a bug and want to know since when the bug existed?</p></li>
+</ul>
+</div>
+</section>
+<section id="basics">
+<h3>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../basics/#exercise-0">In basics.md:</a></p>
+<div class="admonition-basic-1-record-changes exercise important admonition" id="exercise-0">
+<p class="admonition-title">Basic-1: Record changes</p>
+<p>Add 1/2 onion to <code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code> and also the instruction
+to “enjoy!” to <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code>. Do not stage the changes yet (do not <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> yet).</p>
+<p>When you are done editing the files, try <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff
+</pre></div>
+</div>
+<p>You will see (can you identify in there the two added lines?):</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/ingredients.txt b/ingredients.txt</span>
+<span class="gh">index 2607525..ec0abc6 100644</span>
+<span class="gd">--- a/ingredients.txt</span>
+<span class="gi">+++ b/ingredients.txt</span>
+<span class="gu">@@ -1,3 +1,4 @@</span>
+<span class="w"> </span>* 2 avocados
+<span class="w"> </span>* 1 lime
+<span class="w"> </span>* 2 tsp salt
+<span class="gi">+* 1/2 onion</span>
+<span class="gh">diff --git a/instructions.txt b/instructions.txt</span>
+<span class="gh">index 6a8b2af..f7dd63a 100644</span>
+<span class="gd">--- a/instructions.txt</span>
+<span class="gi">+++ b/instructions.txt</span>
+<span class="gu">@@ -3,3 +3,4 @@</span>
+<span class="w"> </span>* squeeze lime
+<span class="w"> </span>* add salt
+<span class="w"> </span>* and mix well
+<span class="gi">+* enjoy!</span>
+</pre></div>
+</div>
+<p>Now first stage and commit each change separately (what happens when we leave out the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag?):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>ingredients.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add half an onion&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>instructions.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w">                   </span><span class="c1"># &lt;-- we have left out -m &quot;...&quot;</span>
+</pre></div>
+</div>
+<p>When you leave out the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag, Git should open an editor where you can edit
+your commit message. This message will be associated and stored with the
+changes you made. This message is your chance to explain what you’ve done and
+convince others (and your future self) that the changes you made were
+justified.  Write a message and save and close the file.</p>
+<p>When you are done committing the changes, experiment with these commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log
+<span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--stat
+<span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="../basics/#exercise-1">In basics.md:</a></p>
+<div class="admonition-optional-basic-2-comparing-and-showing-commits exercise important admonition" id="exercise-1">
+<p class="admonition-title">(optional) Basic-2: Comparing and showing commits</p>
+<ol class="arabic simple">
+<li><p>Inspect differences between commit hashes with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">&lt;hash1&gt;</span> <span class="pre">&lt;hash2&gt;</span></code>.</p></li>
+<li><p>Have a look at specific commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">&lt;hash&gt;</span></code>.</p></li>
+</ol>
+</div>
+<p><a class="reference external" href="../basics/#exercise-2">In basics.md:</a></p>
+<div class="admonition-optional-basic-3-visual-diff-tools exercise important admonition" id="exercise-2">
+<p class="admonition-title">(optional) Basic-3: Visual diff tools</p>
+<ul class="simple">
+<li><p>Make further modifications and experiment with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span></code> (requires installing one of the <a class="reference external" href="https://coderefinery.github.io/installation/difftools/">visual diff tools</a>):</p></li>
+</ul>
+<p>On Windows or Linux:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>difftool<span class="w"> </span>--tool<span class="o">=</span>meld<span class="w"> </span>&lt;hash&gt;
+</pre></div>
+</div>
+<p>On macOS:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>difftool<span class="w"> </span>--tool<span class="o">=</span>opendiff<span class="w"> </span>&lt;hash&gt;
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/meld.png"><img alt="Git difftool using meld" src="../_images/meld.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Git difftool using meld.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You probably want to use the same visual diff tool every time and
+you can configure Git for that:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>diff.tool<span class="w"> </span>meld
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="../basics/#exercise-3">In basics.md:</a></p>
+<div class="admonition-optional-basic-4-renaming-and-removing-files exercise important admonition" id="exercise-3">
+<p class="admonition-title">(optional) Basic-4: Renaming and removing files</p>
+<ol class="arabic simple">
+<li><p>Create a new file, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> the file.</p></li>
+<li><p>Rename the file with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span></code> (you will need to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> the rename).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Remove the file with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code> (again you need to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> the change).</p></li>
+<li><p>Inspect the history with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--stat</span></code>.</p></li>
+</ol>
+</div>
+<p><a class="reference external" href="../basics/#exercise-4">In basics.md:</a></p>
+<div class="admonition-basic-5-test-your-understanding exercise important admonition" id="exercise-4">
+<p class="admonition-title">Basic-5: Test your understanding</p>
+<p>Which command(s) below would save the changes of <code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>
+to an existing local Git repository?</p>
+<ol class="arabic">
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>init<span class="w"> </span>myfile.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>myfile.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span>myfile.txt<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>Would only create a commit if files have already been staged.</p></li>
+<li><p>Would try to create a new repository in a folder “myfile.txt”.</p></li>
+<li><p><strong>Is correct: first add the file to the staging area, then commit.</strong></p></li>
+<li><p>Would try to commit a file “my recent changes” with the message myfile.txt.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="branching-and-merging">
+<h3>Branching and merging<a class="headerlink" href="#branching-and-merging" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../branches/#exercise-0">In branches.md:</a></p>
+<div class="admonition-branch-1-create-and-commit-to-branches exercise important admonition" id="exercise-0">
+<p class="admonition-title">Branch-1: Create and commit to branches</p>
+<p>In this exercise, you will create another new branch and few more commits.
+We will use this in the next section, to practice
+merging. <strong>The goal of the exercise is to end up with 3 branches</strong>.</p>
+<ul>
+<li><p>Change to the branch <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p>Create another branch called <code class="docutils literal notranslate"><span class="pre">less-salt</span></code></p>
+<ul>
+<li><p>Note! makes sure you are on master branch when you create the less-salt branch</p></li>
+<li><p>A safer way would be to explicitly mention to create from the master branch
+as shown below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>less-salt<span class="w"> </span>master
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Where you reduce the amount of salt.</p></li>
+<li><p>Commit your changes to the <code class="docutils literal notranslate"><span class="pre">less-salt</span></code> branch.</p></li>
+</ul>
+<p>Use the same commands as we used above.</p>
+<p>We now have three branches (in this case <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> points to <code class="docutils literal notranslate"><span class="pre">less-salt</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch
+
+<span class="go">  experiment</span>
+<span class="go">* less-salt</span>
+<span class="go">  master</span>
+
+<span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="go">* bf59be6 (HEAD -&gt; less-salt) reduce amount of salt</span>
+<span class="go">| * 6feb49d (experiment) maybe little bit less cilantro</span>
+<span class="go">| * 7cf6d8c let us try with some cilantro</span>
+<span class="go">|/</span>
+<span class="go">* dd4472c (master) we should not forget to enjoy</span>
+<span class="go">* 2bb9bb4 add half an onion</span>
+<span class="go">* 2d79e7e adding ingredients and instructions</span>
+</pre></div>
+</div>
+<p>Here is a graphical representation of what we have created:</p>
+<figure class="align-default">
+<img alt="../_images/git-branch-2.svg" src="../_images/git-branch-2.svg" /></figure>
+<ul>
+<li><p>Now switch to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p>Add and commit the following <code class="docutils literal notranslate"><span class="pre">README.md</span></code> to <code class="docutils literal notranslate"><span class="pre">master</span></code>:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Guacamole recipe</span>
+
+Used in teaching Git.
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Now you should have this situation:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="go">* 40fbb90 (HEAD -&gt; master) draft a readme</span>
+<span class="go">| * bf59be6 (less-salt) reduce amount of salt</span>
+<span class="go">|/</span>
+<span class="go">| * 6feb49d (experiment) maybe little bit less cilantro</span>
+<span class="go">| * 7cf6d8c let us try with some cilantro</span>
+<span class="go">|/</span>
+<span class="go">* dd4472c we should not forget to enjoy</span>
+<span class="go">* 2bb9bb4 add half an onion</span>
+<span class="go">* 2d79e7e adding ingredients and instructions</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../_images/git-branch-3.svg" src="../_images/git-branch-3.svg" /></figure>
+<p>And for comparison this is how it looks <a class="reference external" href="https://github.com/coderefinery/recipe-before-merge/network">on GitHub</a>.</p>
+</div>
+<p><a class="reference external" href="../branches/#exercise-1">In branches.md:</a></p>
+<div class="admonition-optional-branch-2-perform-a-fast-forward-merge exercise important admonition" id="exercise-1">
+<p class="admonition-title">(optional) Branch-2: Perform a fast-forward merge</p>
+<ol class="arabic">
+<li><p>Create a new branch from <code class="docutils literal notranslate"><span class="pre">master</span></code> and switch to it.</p></li>
+<li><p>Create a couple of commits on the new branch (for instance edit <code class="docutils literal notranslate"><span class="pre">README.md</span></code>):</p>
+<figure class="align-default">
+<img alt="../_images/git-pre-ff.svg" src="../_images/git-pre-ff.svg" /></figure>
+</li>
+<li><p>Now switch to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p>Merge the new branch to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p>Examine the result with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>.</p></li>
+<li><p>Have you expected the result? Discuss what you see.</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>You will see that in this case no merge commit was created and Git merged the
+two branches by moving (fast-forwarding) the “master” branch (label) three
+commits forward.</p>
+<p>This was possible since one branch is the ancestor of the other and their
+developments did not diverge.</p>
+<p>A merge that does not require any merge commit is a fast-forward merge.</p>
+</div>
+</div>
+<p><a class="reference external" href="../branches/#exercise-2">In branches.md:</a></p>
+<div class="admonition-optional-branch-3-rebase-a-branch-instead-of-merge exercise important admonition" id="exercise-2">
+<p class="admonition-title">(optional) Branch-3: Rebase a branch (instead of merge)</p>
+<p>As an alternative to merging branches, one can also <em>rebase</em> branches.
+Rebasing means that the new commits are <em>replayed</em> on top of another branch
+(instead of creating an explicit merge commit).
+<strong>Note that rebasing changes history and should not be done on public commits!</strong></p>
+<ol class="arabic simple">
+<li><p>Create a new branch, and make a couple of commits on it.</p></li>
+<li><p>Switch back to <code class="docutils literal notranslate"><span class="pre">master</span></code>, and make a couple of commits on it.</p></li>
+<li><p>Inspect the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>.</p></li>
+<li><p>Now rebase the new branch on top of <code class="docutils literal notranslate"><span class="pre">master</span></code> by first switching to the new branch, and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">master</span></code>.</p></li>
+<li><p>Inspect again the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>. Notice that the commit hashes have changed - think about why!</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-1">
+<p class="admonition-title">Solution</p>
+<p>You will notice two things:</p>
+<ul class="simple">
+<li><p>History is now linear and does not contain merge commits.</p></li>
+<li><p>All the commit hashes that were on the branch that got rebased, have
+changed. This also demonstrates that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span></code> is a command that alters
+history. The commit history looks as if the rebased commits were all done
+after the <code class="docutils literal notranslate"><span class="pre">master</span></code> commits.</p></li>
+</ul>
+</div>
+</div>
+<p><a class="reference external" href="../branches/#exercise-3">In branches.md:</a></p>
+<div class="admonition-branch-4-test-your-understanding exercise important admonition" id="exercise-3">
+<p class="admonition-title">Branch-4: Test your understanding</p>
+<p>Which of the following combos (one or more) creates a new branch and makes a commit to it?</p>
+<ol class="arabic">
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-2">
+<p class="admonition-title">Solution</p>
+<p>Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
+branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
+don’t give the <code class="docutils literal notranslate"><span class="pre">-b</span></code> flag to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to create the new branch.</p>
+</div>
+</div>
+</section>
+<section id="conflict-resolution">
+<h3>Conflict resolution<a class="headerlink" href="#conflict-resolution" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../conflicts/#exercise-0">In conflicts.md:</a></p>
+<div class="admonition-conflict-1-create-another-conflict-and-resolve exercise important admonition" id="exercise-0">
+<p class="admonition-title">Conflict-1: Create another conflict and resolve</p>
+<p>In this exercise, we repeat almost exactly what we did above with a
+different ingredient.</p>
+<ol class="arabic simple">
+<li><p>Create two branches before making any modifications.</p></li>
+<li><p>Again modify some ingredient on both branches.</p></li>
+<li><p>Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.</p></li>
+<li><p>What happens if you apply the same modification on both branches?</p></li>
+<li><p>If you create a branch <code class="docutils literal notranslate"><span class="pre">like-avocados</span></code>, commit a change, then from this
+branch create another banch <code class="docutils literal notranslate"><span class="pre">dislike-avocados</span></code>, commit again, and try to
+merge both branches into <code class="docutils literal notranslate"><span class="pre">master</span></code> you will not see a conflict. Can you
+explain, why it is different this time?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>4: No conflict in this case if the change is the same.</p>
+<p>5: No conflict in this case since in Git history one change happened after the other. The two changes
+are related and linked by Git history and one is a Git ancestor of the
+other. Git will assume that since we applied one change after the other,
+we meant this. There is nothing to resolve.</p>
+</div>
+</div>
+<p><a class="reference external" href="../conflicts/#exercise-1">In conflicts.md:</a></p>
+<div class="admonition-optional-conflict-2-resolve-a-conflict-when-rebasing-a-branch exercise important admonition" id="exercise-1">
+<p class="admonition-title">(optional) Conflict-2: Resolve a conflict when rebasing a branch</p>
+<ol class="arabic simple">
+<li><p>Create two branches where you anticipate a conflict.</p></li>
+<li><p>Try to merge them and observe that indeed they conflict.</p></li>
+<li><p>Abort the merge with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--abort</span></code>.</p></li>
+<li><p>What do you expect will happen if you rebase one branch on top of the
+other? Do you anticipate a conflict? Try it out.</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-1">
+<p class="admonition-title">Solution</p>
+<p>Yes, this will conflict. If it conflicts during a merge, it will also conflict
+during rebase but the conflict resolution looks slightly different:
+You still need to look for conflict markers but you tell Git that you resolved
+a conflict with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then you continue with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--continue</span></code>.
+Follow instructions that you get from the Git command line.</p>
+</div>
+</div>
+<p><a class="reference external" href="../conflicts/#exercise-2">In conflicts.md:</a></p>
+<div class="admonition-optional-conflict-3-resolve-a-conflict-using-mergetool exercise important admonition" id="exercise-2">
+<p class="admonition-title">(optional) Conflict-3: Resolve a conflict using mergetool</p>
+<ul>
+<li><p>Again create a conflict (for instance disagree on the number of avocados).</p></li>
+<li><p>Stop at this stage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Auto</span><span class="o">-</span><span class="n">merging</span> <span class="n">ingredients</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">CONFLICT</span> <span class="p">(</span><span class="n">content</span><span class="p">):</span> <span class="n">Merge</span> <span class="n">conflict</span> <span class="ow">in</span> <span class="n">ingredients</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Automatic</span> <span class="n">merge</span> <span class="n">failed</span><span class="p">;</span> <span class="n">fix</span> <span class="n">conflicts</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">commit</span> <span class="n">the</span> <span class="n">result</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Instead of resolving the conflict manually, use a visual tool
+(requires installing one of the <a class="reference external" href="https://coderefinery.github.io/installation/difftools/">visual diff tools</a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>mergetool
+</pre></div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/mergetool.png"><img alt="Conflict resolution using mergetool" src="../_images/mergetool.png" style="width: 100%;" /></a>
+</figure>
+</li>
+<li><p>Your current branch is left, the branch you merge is right, result is in the middle.</p></li>
+<li><p>After you are done, close and commit, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is not needed when using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mergetool</span></code>.</p></li>
+</ul>
+<p>If you have not instructed Git to avoid creating backups when using mergetool, then to be on
+the safe side there will be additional temporary files created. To remove those  you can do
+a git clean after the merging.</p>
+<p>To view what will be removed:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clean<span class="w"> </span>-n
+</pre></div>
+</div>
+<p>To remove:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clean<span class="w"> </span>-f
+</pre></div>
+</div>
+<p>To configure Git to avoid creating backups at all:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>mergetool.keepBackup<span class="w"> </span><span class="nb">false</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="sharing-repositories-online">
+<h3>Sharing repositories online<a class="headerlink" href="#sharing-repositories-online" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../remotes/#exercise-0">In remotes.md:</a></p>
+<div class="admonition-push-1-push-your-guacamole-recipe-to-github exercise important admonition" id="exercise-0">
+<p class="admonition-title">Push-1: Push your guacamole recipe to GitHub</p>
+<ul class="simple">
+<li><p>Go to your recipe directory on your computer.</p></li>
+<li><p>Check that you are in the right place with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Define the remote with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">git&#64;github.com:user/recipe.git</span></code>.</p></li>
+<li><p>Rename the current branch to “main”, if needed: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-M</span> <span class="pre">main</span></code>.</p></li>
+<li><p>Push the local branch “main” to the remote: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</p></li>
+</ul>
+</div>
+</section>
+<section id="inspecting-history">
+<h3>Inspecting history<a class="headerlink" href="#inspecting-history" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../archaeology/#exercise-0">In archaeology.md:</a></p>
+<div class="admonition-history-1-explore-basic-archaeology-commands exercise important admonition" id="exercise-0">
+<p class="admonition-title">History-1: Explore basic archaeology commands</p>
+<p>Let us explore the value of these commands in an exercise.  Future
+exercises do not depend on this, so it is OK if you do not complete
+it fully.</p>
+<p>Exercise steps:</p>
+<ul>
+<li><p>Clone this repository:
+<a class="github reference external" href="https://github.com/networkx/networkx.git">networkx/networkx.git</a>.
+Then step into the new directory and create an exercise branch from the networkx-2.6.3 tag/release:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/networkx/networkx.git
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>networkx
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>exercise<span class="w"> </span>networkx-2.6.3
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Then using the above toolbox try to:</p>
+<ol class="arabic simple">
+<li><p>Find the code line which contains <code class="docutils literal notranslate"><span class="pre">&quot;Logic</span> <span class="pre">error</span> <span class="pre">in</span> <span class="pre">degree_correlation&quot;</span></code>.</p></li>
+<li><p>Find out when this line was last modified or added. Find the actual commit which modified that line.</p></li>
+<li><p>Inspect that commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code>.</p></li>
+<li><p>Create a branch pointing to the past when that commit was created to be
+able to browse and use the code as it was back then.</p></li>
+<li><p>How would you checkout the version of the code right before that line was last modified?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<ol class="arabic">
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">grep</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Logic error in degree_correlation&quot;</span>
+</pre></div>
+</div>
+<p>This gives the output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">networkx</span><span class="o">/</span><span class="n">algorithms</span><span class="o">/</span><span class="n">threshold</span><span class="o">.</span><span class="n">py</span><span class="p">:</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logic error in degree_correlation&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">rdi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Maybe you also want to know the line number:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Logic error in degree_correlation&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">annotate</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>annotate<span class="w"> </span>networkx/algorithms/threshold.py
+</pre></div>
+</div>
+<p>Then search for “Logic error” by typing “/Logic error” followed by Enter.
+The last commit that modified it was <code class="docutils literal notranslate"><span class="pre">90544b4fa</span></code> (unless that line changed since).</p>
+</li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>show<span class="w"> </span>90544b4fa
+</pre></div>
+</div>
+</li>
+<li><p>Create a branch pointing to that commit (here we called the branch “past-code”):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>past-code<span class="w"> </span>90544b4fa
+</pre></div>
+</div>
+</li>
+<li><p>This is a compact way to access the first parent of <code class="docutils literal notranslate"><span class="pre">90544b4fa</span></code> (here we
+called the branch “just-before”):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>just-before<span class="w"> </span>90544b4fa~1
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<p><a class="reference external" href="../archaeology/#exercise-1">In archaeology.md:</a></p>
+<div class="admonition-optional-history-2-use-git-bisect-to-find-the-bad-commit exercise important admonition" id="exercise-1">
+<p class="admonition-title">(optional) History-2: Use git bisect to find the bad commit</p>
+<p>In this exercise, we use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> on an example repository.  It
+is OK if you do not complete this exercise fully.</p>
+<p>Begin by cloning <a class="github reference external" href="https://github.com/coderefinery/git-bisect-exercise">coderefinery/git-bisect-exercise</a>.</p>
+<p><strong>Motivation</strong></p>
+<p>The motivation for this exercise is to be able to do archaeology with Git on a
+source code where the bug is difficult to see visually. <strong>Finding the offending
+commit is often more than half the debugging</strong>.</p>
+<p><strong>Background</strong></p>
+<p>The script <code class="docutils literal notranslate"><span class="pre">get_pi.py</span></code> approximates pi using terms of the Nilakantha series. It
+should produce 3.14 but it does not. The script broke at some point and
+produces 3.57 using the last commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>get_pi.py
+
+<span class="go">3.57</span>
+</pre></div>
+</div>
+<p>At some point within the 500 first commits, an error was introduced. The only
+thing we know is that the first commit worked correctly.</p>
+<p><strong>Your task</strong></p>
+<ul class="simple">
+<li><p>Clone this repository and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> to find the commit which
+broke the computation
+(<a class="reference external" href="https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert">solution - spoiler alert!</a>).</p></li>
+<li><p>Once you have found the offending commit, also practice navigating to the last good commit.</p></li>
+<li><p>Bonus exercise:
+Write a script that checks for a correct result and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">run</span></code> to
+find the offending commit automatically
+(<a class="reference external" href="https://github.com/coderefinery/git-bisect-exercise#solutions-spoiler-alert">solution - spoiler alert!</a>).</p></li>
+</ul>
+<p><strong>Hints</strong></p>
+<p>Finding the first commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<p>How to navigate to the parent of a commit with hash <code class="docutils literal notranslate"><span class="pre">somehash</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branchname<span class="w"> </span>somehash~1
+</pre></div>
+</div>
+<p>Instead of a tilde you can also use this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branchname<span class="w"> </span>somehash^
+</pre></div>
+</div>
+</div>
+</section>
+<section id="using-the-git-staging-area">
+<h3>Using the Git staging area<a class="headerlink" href="#using-the-git-staging-area" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../staging-area/#exercise-0">In staging-area.md:</a></p>
+<div class="admonition-staging-1-perform-an-interactive-commit exercise important admonition" id="exercise-0">
+<p class="admonition-title">Staging-1: Perform an interactive commit</p>
+<p>One option to help us create nice logical commits is to stage <em>interactively</em>
+with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--patch</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Make two changes in <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code>, at the top and bottom
+of the file.
+<strong>Make sure that they are separated by at least several unmodified lines.</strong></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--patch</span></code>.  Using the keystrokes above, commit one of
+the changes.</p></li>
+<li><p>Do it again for the other change.</p></li>
+<li><p>When you’re done, inspect the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--staged</span></code>.</p></li>
+<li><p>When would this be useful?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>This can be useful if you have several modification in a file (or several
+files) but you decide that it would be beneficial to save them as two (or
+more) separate commits.</p>
+</div>
+</div>
+<p><a class="reference external" href="../staging-area/#exercise-1">In staging-area.md:</a></p>
+<div class="admonition-staging-2-use-the-staging-area-to-make-a-commit-in-two-steps exercise important admonition" id="exercise-1">
+<p class="admonition-title">Staging-2: Use the staging area to make a commit in two steps</p>
+<ol class="arabic simple">
+<li><p>In your recipe example, make two different changes to
+<code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code> which do not go together.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to stage one of the changes.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see what’s going on, and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--staged</span></code> to see the changes.</p></li>
+<li><p>Feel some regret and unstage the staged change.</p></li>
+</ol>
+</div>
+</section>
+<section id="undoing-and-recovering">
+<h3>Undoing and recovering<a class="headerlink" href="#undoing-and-recovering" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../recovering/#exercise-0">In recovering.md:</a></p>
+<div class="admonition-undoing-1-revert-a-commit exercise important admonition" id="exercise-0">
+<p class="admonition-title">Undoing-1: Revert a commit</p>
+<ul class="simple">
+<li><p>Create a commit (commit A).</p></li>
+<li><p>Revert the commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code> (commit B).</p></li>
+<li><p>Inspect the history with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span></code>.</p></li>
+<li><p>Now try <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> on both the reverted (commit A) and the newly created commit (commit B).</p></li>
+</ul>
+</div>
+<p><a class="reference external" href="../recovering/#exercise-1">In recovering.md:</a></p>
+<div class="admonition-undoing-2-modify-a-previous-commit exercise important admonition" id="exercise-1">
+<p class="admonition-title">Undoing-2: Modify a previous commit</p>
+<ol class="arabic simple">
+<li><p>Make an incomplete change to the recipe or a typo in your change, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> the incomplete/unsatisfactory change.</p></li>
+<li><p>Inspect the unsatisfactory but committed change with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code>. Remember
+or write down the commit hash.</p></li>
+<li><p>Now complete/fix the change but instead of creating a new commit, add the
+correction to the previous commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code>.  What changed?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>One thing that has changed now is the commit hash. Modifying the previous
+commit has changed the history. This is OK to do on commits that other people
+don’t depend on yet.</p>
+</div>
+</div>
+<p><a class="reference external" href="../recovering/#exercise-2">In recovering.md:</a></p>
+<div class="admonition-undoing-3-destroy-our-experimentation-in-this-episode exercise important admonition" id="exercise-2">
+<p class="admonition-title">Undoing-3: Destroy our experimentation in this episode</p>
+<p>After we have experimented with reverts and amending, let us destroy
+all of that and get our repositories to a similar state.</p>
+<ul class="simple">
+<li><p>First, we will look at our history (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>/<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>) and
+find the last commit <code class="docutils literal notranslate"><span class="pre">&lt;hash&gt;</span></code> before our tests.</p></li>
+<li><p>Then, we will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">&lt;hash&gt;</span></code> to that.</p></li>
+<li><p>Then, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> again to see what happened.</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+
+<span class="go">d62ad3e (HEAD -&gt; master) Revert &quot;not sure this is a good idea&quot;</span>
+<span class="go">f960dd3 not sure this is a good idea</span>
+<span class="go">dd4472c we should not forget to enjoy</span>
+<span class="go">2bb9bb4 add half an onion</span>
+<span class="go">2d79e7e adding ingredients and instructions</span>
+
+<span class="gp">$ </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>dd4472c
+
+<span class="go">HEAD is now at dd4472c we should not forget to enjoy</span>
+
+<span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+
+<span class="go">dd4472c (HEAD -&gt; master) we should not forget to enjoy</span>
+<span class="go">2bb9bb4 add half an onion</span>
+<span class="go">2d79e7e adding ingredients and instructions</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="../recovering/#exercise-3">In recovering.md:</a></p>
+<div class="admonition-undoing-4-test-your-understanding exercise important admonition" id="exercise-3">
+<p class="admonition-title">Undoing-4: Test your understanding</p>
+<ol class="arabic simple">
+<li><p>What happens if you accidentally remove a tracked file with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>, is it gone forever?</p></li>
+<li><p>Is it OK to modify commits that nobody has seen yet?</p></li>
+<li><p>What situations would justify to modify the Git history and possibly remove commits?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-1">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>It is not gone forever since <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code> creates a new commit. You can simply revert it!</p></li>
+<li><p>If you haven’t shared your commits with anyone it can be alright to modify them.</p></li>
+<li><p>If you have shared your commits with others (e.g. pushed them to GitHub), only extraordinary
+conditions would justify modifying history. For example to remove sensitive or secret information.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="interrupted-work">
+<h3>Interrupted work<a class="headerlink" href="#interrupted-work" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="../interrupted/#exercise-0">In interrupted.md:</a></p>
+<div class="admonition-interrupted-1-stash-some-uncommitted-work exercise important admonition" id="exercise-0">
+<p class="admonition-title">Interrupted-1: Stash some uncommitted work</p>
+<ol class="arabic simple">
+<li><p>Make a change.</p></li>
+<li><p>Check status/diff, stash the change, check status/diff again.</p></li>
+<li><p>Make a separate, unrelated change which doesn’t touch the same
+lines.  Commit this change.</p></li>
+<li><p>Pop off the stash you saved, check status/diff.</p></li>
+<li><p>Optional: Do the same but stash twice.  Also check <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">list</span></code>.
+Can you pop the stashes in the opposite order?</p></li>
+<li><p>Advanced: What happens if stashes conflict with other changes? Make
+a change and stash it.  Modify the same line or one right above or
+below.  Pop the stash back.  Resolve the conflict.  Note there is no
+extra commit.</p></li>
+<li><p>Advanced: what does <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> show when you have something
+stashed?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>5: Yes you can. With <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span> <span class="pre">&lt;index&gt;</span></code> you can decie which stash
+index to pop.</p>
+<p>6: In this case Git will ask us to resolve the conflict the same way
+when resolving conflicts between two branches.</p>
+<p>7: It shows an additional commit hash with <code class="docutils literal notranslate"><span class="pre">refs/stash</span></code>.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../resources/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Other resources</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../guide/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Instructor guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-list">Full list</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CodeRefinery team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright CodeRefinery team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
