@@ -8,7 +8,7 @@
 
 
 name: sphinx
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 env:
   DEFAULT_BRANCH: "main"
@@ -100,14 +100,15 @@ jobs:
       - name: Generate PDF
         if: ${{ env.GENERATE_PDF == 'true' }}
         run: |
-          pip install https://github.com/rkdarst/sphinx_pyppeteer_builder/archive/refs/heads/main.zip
+          #pip install https://github.com/rkdarst/sphinx_pyppeteer_builder/archive/refs/heads/main.zip
+          pip install sphinx_pyppeteer_builder
           make pyppeteer
           mv _build/pyppeteer/*.pdf _build/dirhtml/${PDF_FILENAME}
 
       # Stage all deployed assets in _gh-pages/ for simplicity, and to
       # prepare to do a multi-branch deployment.
       - name: Copy deployment data to _gh-pages/
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         run:
           rsync -a _build/dirhtml/ _gh-pages/
 
@@ -116,7 +117,7 @@ jobs:
       # https://github.com/coderefinery/gh-pages-multibranch
       - name: gh-pages multibranch
         uses: coderefinery/gh-pages-multibranch@main
-        if: ${{ github.event_name == 'push' && env.MULTIBRANCH == 'true' }}
+        if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && env.MULTIBRANCH == 'true' }}
         with:
           directory: _gh-pages/
           default_branch: ${{ env.DEFAULT_BRANCH }}
@@ -124,13 +125,13 @@ jobs:
 
       # Add the .nojekyll file
       - name: nojekyll
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         run: |
           touch _gh-pages/.nojekyll
 
       # Save artifact for the next step.
       - uses: actions/upload-artifact@v4
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         with:
           name: gh-pages-build
           path: _gh-pages/
@@ -142,13 +143,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     # This if can't use the env context - find better way later.
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
     permissions:
       contents: write
 
     steps:
       - uses: actions/download-artifact@v4
-        if: ${{ github.event_name == 'push' && ( env.MULTIBRANCH == 'true' || github.ref == format('refs/heads/{0}', env.DEFAULT_BRANCH )) }}
+        if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && ( env.MULTIBRANCH == 'true' || github.ref == format('refs/heads/{0}', env.DEFAULT_BRANCH )) }}
         with:
           name: gh-pages-build
           path: _gh-pages/
@@ -162,7 +163,7 @@ jobs:
       # https://github.com/peaceiris/actions-gh-pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' && ( env.MULTIBRANCH == 'true' || github.ref == format('refs/heads/{0}', env.DEFAULT_BRANCH )) }}
+        if: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && ( env.MULTIBRANCH == 'true' || github.ref == format('refs/heads/{0}', env.DEFAULT_BRANCH )) }}
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
