@@ -326,7 +326,7 @@ There are services that can be a remote:
   commercial site.  Many universities have their own private GitLab servers
   set up.
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
-- Another option is [NotABug](https://notabug.org).
+- Another option is [Codeberg](https://codeberg.org/) -- a German nonprofit organization specialized in open-source software development services.
 - There are more ...
 
 
