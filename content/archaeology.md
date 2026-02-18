@@ -62,8 +62,14 @@ some error message printed.
 
     ```console
     $ git clone https://github.com/networkx/networkx
+    Cloning into 'networkx'...
+
     $ cd networkx
+
     $ git grep -i fixme
+    doc/developer/release.rst:        # FIXME - use eol_banner.html
+    networkx/algorithms/isomorphism/tests/test_common.py:        # FIXME: check why fails ismags but not vf2
+    networkx/algorithms/shortest_paths/tests/test_weighted.py:        # FIXME nx.goldberg_radzik(D, 1)
     ```
 
     While `git grep` searches the **current state** of the repository,
@@ -115,6 +121,18 @@ some error message printed.
     For instance:
     ```console
     $ git show 759d589bdfa61aff99e0535938f14f67b01c83f7
+    commit 759d589bdfa61aff99e0535938f14f67b01c83f7
+    Author: Sanghack Lee <sanghack.lee@gmail.com>
+    Date:   Sun Mar 8 22:01:38 2020 -0400
+
+        Fix return values when drawing empty nodes and edges  #3833 (#3854)
+
+    diff --git a/networkx/drawing/nx_pylab.py b/networkx/drawing/nx_pylab.py
+    index 4b2f34bed..1421b055b 100644
+    --- a/networkx/drawing/nx_pylab.py
+    +++ b/networkx/drawing/nx_pylab.py
+    ...
+
     ```
   ::::
 
