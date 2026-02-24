@@ -46,7 +46,7 @@ Illustration of what we want to achieve in this exercise.
 :::
 
 
-We offer **three different paths** of how to do this exercise.  For
+We offer **four different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
 path** only and recommend you do that
 (you can get experience with
@@ -174,6 +174,40 @@ $ git add sides/mixed-nuts.md
 $ git commit -m "Add mixed nuts recipe"
 ```
 ::::
+
+::::{group-tab} RStudio
+1. In the Git tab of the Environment panel (upper right), click New Branch.
+1. In the pop-up fill in the branch name, e.g. "new-recipe", untick the box in front of Sync branch with remote
+to avoid the branch to be pushed to GitHub right away.
+1. Click Create and RStudio will automatically switch to the new branch.
+
+    :::{figure} img/commits/rstudio-create-branch.png
+    :width: 80%
+    :class: with-border
+    :alt: RStudio screenshot of create branch
+    :::
+
+1. Create a new file, for example `sides/mixed-nuts.md`. Remember to save any changes to your file before commiting.
+1. In the Git tab in the Environment panel (upper right) check the box in front of the file you just created, then 
+   click Commit in the tab menu-bar to open the Git Changes window.
+
+    :::{figure} img/commits/rstudio-add-commit.png
+    :alt: Screenshot of RStudio commit process in the main window
+    :width: 80%
+    :class: with-border
+    :::
+
+1. In the Changes window, check that your new file is selected (ticked), write a short commit message, and finally 
+   click "Commit"
+    
+    :::{figure} img/commits/rstudio-commit-changes.png
+    :alt: Screenshot of RStudio commit process in the changes window
+    :width: 80%
+    :class: with-border
+    :::
+
+::::
+
 :::::
 
 
@@ -203,6 +237,12 @@ $ git commit -m "Short summary of the change"
 Make sure to replace "Short summary of the change" with a meaningful commit
 message.
 ::::
+
+::::{group-tab} RStudio
+Make some changes to the recipe you created in the step above. Then follow the same instructions as above starting 
+from step 5.
+::::
+
 :::::
 
 
@@ -240,6 +280,18 @@ Then modify a file. Finally `git add` and then commit the change:
 $ git commit -m "Short summary of the change"
 ```
 ::::
+
+::::{group-tab} RStudio
+In the Git tab of the Environment panel (upper right), click your current branch name, here "new-recipe" and then 
+choose the "main" branch.
+
+:::{figure} img/commits/rstudio-switch.png
+:class: with-border
+:width: 100%
+:alt:  Screenshot showing how to switch branch in RStudio
+::::
+
+Modify another recipe and commit your changes.
 :::::
 
 
@@ -313,6 +365,18 @@ emphasize-lines: 1-3
 * 084a1ea starting with an almost empty readme
 ```
 ::::
+
+::::{group-tab} RStudio
+1. Open the history window like you did during the previous lesson.
+2. Select "(All branches)" in the branch selector drop-down menu to see all the commits on all branches.
+    :::{figure} img/commits/rstudio-history-all-branches.png
+    :class: with-border
+    :width: 80%
+    :alt: Screenshot of the History window in RStudio showing all branches and all commits
+> **NOTE:** If you don't see the branch selector when you first open the History window, try to switch from the History 
+> view to the Changes view and back. 
+::::
+
 :::::
 
 
@@ -349,6 +413,12 @@ Try also this if you only want to see the file names that are different:
 $ git diff --name-only main new-recipe
 ```
 ::::
+
+::::{group-tab} RStudio
+This doesn't seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and follow 
+the "Command line" path instructions.
+::::
+
 :::::
 
 
@@ -378,6 +448,12 @@ $ git log --oneline
 
 Then try to compare any two commit identifiers with `git diff`.
 ::::
+
+::::{group-tab} RStudio
+Again, this doesn't seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and 
+follow the "Command line" path instructions.
+::::
+
 :::::
 
 
@@ -404,6 +480,12 @@ Renaming a different branch:
 $ git branch -m new-recipe better-recipe
 ```
 ::::
+
+::::{group-tab} RStudio
+Again, this doesn't seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and 
+follow the "Command line" path instructions.
+::::
+
 :::::
 
 
@@ -437,6 +519,12 @@ Creating a tag:
 $ git tag -a v1.0 -m "New manuscript version of my recipe for the pre-print"
 ```
 ::::
+
+::::{group-tab} RStudio
+Again, this doesn't seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and 
+follow the "Command line" path instructions.
+::::
+
 :::::
 
 

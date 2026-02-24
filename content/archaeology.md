@@ -162,7 +162,7 @@ some error message printed.
   ::::{group-tab} RStudio
   The graph view lets you select certain commits for viewing.  The search box lets you search for a certain commit by hash.
 
-  :::{figure} img/commits/rstudio-graph-view.png
+  :::{figure} img/archaeology/rstudio-graph-view.png
   :class: with-border
   :width: 80%
   :alt: RStudio screenshot as described
