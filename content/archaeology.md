@@ -477,7 +477,7 @@ We will probably arrive at a solution which is similar to `git bisect`:
   ```console
   $ git bisect start
   $ git bisect good f0ea950  # this is a commit that worked
-  $ git bisect bad main      # last commit is broken
+  $ git bisect bad master    # last commit is broken
   ```
 - Now compile and/or run and/or test and decide whether "good" or "bad".
 - This is how you can tell Git that this was a working commit:
