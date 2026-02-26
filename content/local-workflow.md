@@ -241,7 +241,7 @@ Committing a new file in VS Code.
 
 ::::{group-tab} RStudio
 
-1. Create a new file the usual way. Remember to save any changes to your file before commiting.
+1. Create a new file the usual way. Remember to save any changes to your file before committing.
 1. In the Git tab in the Environment panel (upper right) check the box in front of the file you just created, then 
    click Commit in the tab menu-bar to open the Git Changes window.
 

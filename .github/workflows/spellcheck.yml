@@ -1,4 +1,4 @@
-name: Spelling Erros Check
+name: Check spelling errors
 
 on: [push]
 
