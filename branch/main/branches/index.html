@@ -1,0 +1,765 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branching and merging &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Conflict resolution" href="../conflicts/" />
+    <link rel="prev" title="Basics" href="../basics/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Branching and merging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#motivation-for-branches">Motivation for branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-and-working-with-branches">Creating and working with branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-create-and-commit-to-branches">Exercise: Create and commit to branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-merging-branches">Exercise: Merging branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-branches-safely">Deleting branches safely</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-exercises-with-branches">Optional exercises with branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tags">Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#typical-workflows">Typical workflows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Branching and merging</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/branches.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="branching-and-merging">
+<h1>Branching and merging<a class="headerlink" href="#branching-and-merging" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Be able to create and merge branches.</p></li>
+<li><p>Know the difference between a branch and a tag.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>30 min teaching/type-along</p></li>
+<li><p>20 min exercise</p></li>
+</ul>
+</div>
+<section id="motivation-for-branches">
+<h2>Motivation for branches<a class="headerlink" href="#motivation-for-branches" title="Link to this heading"></a></h2>
+<p>In the previous section we tracked a guacamole recipe with Git.</p>
+<p>Up until now our repository had only one branch with one commit coming
+after the other:</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/git-branch-1.svg"><img alt="Linear Git repository" src="../_images/git-branch-1.svg" style="width: 40%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Linear Git repository.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Commits are depicted here as little boxes with abbreviated hashes.</p></li>
+<li><p>Here the branch <code class="docutils literal notranslate"><span class="pre">main</span></code> points to a commit.</p></li>
+<li><p>“HEAD” is the current position (remember the recording head of tape
+recorders?). When we say <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>, we mean those literal letters -
+this isn’t a placeholder for something else.</p></li>
+<li><p>When we talk about branches, we often mean all parent commits, not only the commit pointed to.</p></li>
+</ul>
+<p><strong>Now we want to do this:</strong></p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/gophers.png"><img alt="Branching explained with a gopher" src="../_images/gophers.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Image created using <a class="reference external" href="https://gopherize.me/">https://gopherize.me/</a>
+(<a class="reference external" href="https://twitter.com/jay_gee/status/703360688618536960">inspiration</a>).</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Software development is often not linear:</p>
+<ul class="simple">
+<li><p>We typically need at least one version of the code to “work” (to compile, to give expected results, …).</p></li>
+<li><p>At the same time we work on new features, often several features concurrently.
+Often they are unfinished.</p></li>
+<li><p>We need to be able to separate different lines of work really well.</p></li>
+</ul>
+<p>The strength of version control is that it permits the researcher to <strong>isolate
+different tracks of work</strong>, which can later be merged to create a composite
+version that contains all changes:</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/git-collaborative.svg"><img alt="Isolated tracks of work" src="../_images/git-collaborative.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Isolated tracks of work.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>We see branching points and merging points.</p></li>
+<li><p>Main line development is often called <code class="docutils literal notranslate"><span class="pre">main</span></code> or <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p>Other than this convention there is nothing special about <code class="docutils literal notranslate"><span class="pre">main</span></code> or <code class="docutils literal notranslate"><span class="pre">master</span></code>, it is a branch like any other.</p></li>
+<li><p>Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).</p></li>
+</ul>
+<p>A group of commits that create a single narrative are called a <strong>branch</strong>.
+There are different branching strategies, but it is useful to think that a branch
+tells the story of a feature, e.g. “fast sequence extraction” or “Python interface” or “fixing bug in
+matrix inversion algorithm”.</p>
+<div class="important admonition">
+<p class="admonition-title"><strong>An important alias</strong></p>
+<p>We will now define an <em>alias</em> in Git, to be able to nicely visualize branch
+structure in the terminal without having to remember a long Git command
+(more details about aliases are given
+in a later section).  <strong>This is extensively used in the rest of this
+and other lessons</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.graph<span class="w"> </span><span class="s2">&quot;log --all --graph --decorate --oneline&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-1">
+<p class="admonition-title">Instructor note</p>
+<p>Instructors, please demonstrate how to set this alias and ensure that
+all create it. This is very important for this lesson and
+git-collaborative.</p>
+</div>
+<p>Let us inspect the project history using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> alias:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="go">* e7cf023 (HEAD -&gt; main) don&#39;t forget to enjoy</span>
+<span class="go">* 79161b6 add half an onion</span>
+<span class="go">* a3394e3 adding README</span>
+<span class="go">* 3696246 adding instructions</span>
+<span class="go">* f146d25 adding ingredients</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>We have a couple commits and only
+one development line (branch) and this branch is called <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Commits are states characterized by a 40-character hash (checksum).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> print abbreviations of these checksums.</p></li>
+<li><p><strong>Branches are pointers that point to a commit.</strong></p></li>
+<li><p>Branch <code class="docutils literal notranslate"><span class="pre">main</span></code> points to a commit (in this example it is <code class="docutils literal notranslate"><span class="pre">e7cf023efe382340e5284c278c6ae2c087dd3ff7</span></code> but on your computer
+the hash will be different).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is another pointer, it points to where we are right now (currently <code class="docutils literal notranslate"><span class="pre">main</span></code>)</p></li>
+</ul>
+<p>In the following we will learn how to create branches,
+how to switch between them, how to merge branches,
+and how to remove them afterwards.</p>
+</section>
+<section id="creating-and-working-with-branches">
+<h2>Creating and working with branches<a class="headerlink" href="#creating-and-working-with-branches" title="Link to this heading"></a></h2>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-2">
+<p class="admonition-title">Instructor note</p>
+<p>We do the following part together. Encourage participants to type along.</p>
+</div>
+<div class="admonition-it-is-possible-to-create-and-merge-branches-directly-on-github admonition">
+<p class="admonition-title">It is possible to create and merge branches directly on GitHub</p>
+<ul class="simple">
+<li><p>However, we do not have screenshots for that in this episode</p></li>
+<li><p>But if you prefer to work in the browser, please try it</p></li>
+<li><p>Please contribute screenshots to this lesson</p></li>
+</ul>
+</div>
+<p>Let’s create a branch called <code class="docutils literal notranslate"><span class="pre">experiment</span></code> where we add cilantro to <code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code>
+(text after “#” are comments and not part of the command).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>experiment<span class="w"> </span>main<span class="w">  </span><span class="c1"># creates branch &quot;experiment&quot; from &quot;main&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>experiment<span class="w">       </span><span class="c1"># switch to branch &quot;experiment&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w">                  </span><span class="c1"># list all local branches and show on which branch we are</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> does not work, your Git version might be older than from 2019.
+On older Git it is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code>.</p>
+</div>
+<ul>
+<li><p>Verify that you are on the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> branch (note that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> also
+makes it clear what branch you are on: <code class="docutils literal notranslate"><span class="pre">HEAD</span> <span class="pre">-&gt;</span> <span class="pre">branchname</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch
+
+<span class="go">* experiment</span>
+<span class="go">  main</span>
+</pre></div>
+</div>
+<p>This command shows where we are, it does not create a branch.</p>
+</li>
+<li><p>Then add 2 tbsp cilantro <strong>on top</strong> of the <code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="hll">*<span class="w"> </span><span class="m">2</span><span class="w"> </span>tbsp<span class="w"> </span>cilantro
+</span>*<span class="w"> </span><span class="m">2</span><span class="w"> </span>avocados
+*<span class="w"> </span><span class="m">1</span><span class="w"> </span>chili
+*<span class="w"> </span><span class="m">1</span><span class="w"> </span>lime
+*<span class="w"> </span><span class="m">2</span><span class="w"> </span>tsp<span class="w"> </span>salt
+*<span class="w"> </span><span class="m">1</span>/2<span class="w"> </span>onion
+</pre></div>
+</div>
+</li>
+<li><p>Stage this and commit it with the message “let us try with some cilantro”.</p></li>
+<li><p>Then reduce the amount of cilantro to 1 tbsp, stage and commit again with “maybe little bit less cilantro”.</p></li>
+</ul>
+<p>We have created <strong>two new commits</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="hll"><span class="go">* bcb8b78 (HEAD -&gt; experiment) maybe little bit less cilantro</span>
+</span><span class="hll"><span class="go">* f6ec7b7 let us try with some cilantro</span>
+</span><span class="go">* e7cf023 (main) don&#39;t forget to enjoy</span>
+<span class="go">* 79161b6 add half an onion</span>
+<span class="go">* a3394e3 adding README</span>
+<span class="go">* 3696246 adding instructions</span>
+<span class="go">* f146d25 adding ingredients</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The branch <code class="docutils literal notranslate"><span class="pre">experiment</span></code> is two commits ahead of <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>We commit our changes to this branch.</p></li>
+</ul>
+</section>
+<section id="exercise-create-and-commit-to-branches">
+<span id="exercise-branches"></span><h2>Exercise: Create and commit to branches<a class="headerlink" href="#exercise-create-and-commit-to-branches" title="Link to this heading"></a></h2>
+<div class="admonition-branch-1-create-and-commit-to-branches exercise important admonition" id="exercise-0">
+<p class="admonition-title">Branch-1: Create and commit to branches</p>
+<p>In this exercise, you will create another new branch and few more commits.
+We will use this in the next section, to practice
+merging. <strong>The goal of the exercise is to end up with 3 branches</strong>.</p>
+<ul>
+<li><p>Change to the branch <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Create another branch called <code class="docutils literal notranslate"><span class="pre">less-salt</span></code>.</p>
+<ul>
+<li><p>Note! makes sure you are on main branch when you create the <code class="docutils literal notranslate"><span class="pre">less-salt</span></code> branch.</p></li>
+<li><p>A safer way would be to explicitly mention to create from the main branch
+as shown below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>less-salt<span class="w"> </span>main
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Switch to the <code class="docutils literal notranslate"><span class="pre">less-salt</span></code> branch.</p></li>
+<li><p>On the <code class="docutils literal notranslate"><span class="pre">less-salt</span></code> branch reduce the amount of salt.</p></li>
+<li><p>Commit your changes to the <code class="docutils literal notranslate"><span class="pre">less-salt</span></code> branch.</p></li>
+</ul>
+<p>Use the same commands as we used above.</p>
+<p>We now have three branches (in this case <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> points to <code class="docutils literal notranslate"><span class="pre">less-salt</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch
+
+<span class="go">  experiment</span>
+<span class="go">* less-salt</span>
+<span class="go">  main</span>
+
+<span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="go">* bf28166 (HEAD -&gt; less-salt) reduce amount of salt</span>
+<span class="go">| * bcb8b78 (experiment) maybe little bit less cilantro</span>
+<span class="go">| * f6ec7b7 let us try with some cilantro</span>
+<span class="go">|/</span>
+<span class="go">* e7cf023 (main) don&#39;t forget to enjoy</span>
+<span class="go">* 79161b6 add half an onion</span>
+<span class="go">* a3394e3 adding README</span>
+<span class="go">* 3696246 adding instructions</span>
+<span class="go">* f146d25 adding ingredients</span>
+</pre></div>
+</div>
+<p>Here is a graphical representation of what we have created:</p>
+<figure class="align-default">
+<img alt="../_images/git-branch-2.svg" src="../_images/git-branch-2.svg" />
+</figure>
+<ul>
+<li><p>Now switch to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>In a new commit, improve the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file (we added the word “Guacamole”):</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Guacamole recipe</span>
+
+This is an exercise repository.
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Now you should have this situation:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="go">* b4af65b (HEAD -&gt; main) improve the documentation</span>
+<span class="go">| * bf28166 (less-salt) reduce amount of salt</span>
+<span class="go">|/</span>
+<span class="go">| * bcb8b78 (experiment) maybe little bit less cilantro</span>
+<span class="go">| * f6ec7b7 let us try with some cilantro</span>
+<span class="go">|/</span>
+<span class="go">* e7cf023 don&#39;t forget to enjoy</span>
+<span class="go">* 79161b6 add half an onion</span>
+<span class="go">* a3394e3 adding README</span>
+<span class="go">* 3696246 adding instructions</span>
+<span class="go">* f146d25 adding ingredients</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../_images/git-branch-3.svg" src="../_images/git-branch-3.svg" />
+</figure>
+<p>And for comparison this is how it looks <a class="reference external" href="https://github.com/coderefinery/recipe-before-merge/network">on GitHub</a>.</p>
+</div>
+</section>
+<section id="exercise-merging-branches">
+<span id="exercise-branches-merging"></span><h2>Exercise: Merging branches<a class="headerlink" href="#exercise-merging-branches" title="Link to this heading"></a></h2>
+<p>It turned out that our experiment with cilantro was a good idea.
+Our goal now is to merge <code class="docutils literal notranslate"><span class="pre">experiment</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<div class="admonition-branch-2-merge-branches exercise important admonition" id="exercise-1">
+<p class="admonition-title">Branch-2: Merge branches</p>
+<p>Merge <code class="docutils literal notranslate"><span class="pre">experiment</span></code> and <code class="docutils literal notranslate"><span class="pre">less-salt</span></code> back into <code class="docutils literal notranslate"><span class="pre">main</span></code> following the lesson below
+until the point where we start deleting branches.</p>
+</div>
+<div class="admonition-if-you-got-stuck-in-the-above-exercises-or-joined-later admonition">
+<p class="admonition-title">If you got stuck in the above exercises or joined later</p>
+<p><strong>If you got stuck in the above exercises or joined later</strong>,
+you can apply the commands below.
+But <strong>skip this box if you managed to create branches</strong>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>..<span class="w">  </span><span class="c1"># step out of the current directory</span>
+
+<span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/coderefinery/recipe-before-merge.git
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>recipe-before-merge
+
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>experiment
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>less-salt
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>main
+
+<span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
+
+<span class="gp">$ </span>git<span class="w"> </span>graph
+</pre></div>
+</div>
+<p>Or call a helper to un-stuck it for you.</p>
+</div>
+<p>First we make sure we are on the branch we wish to merge <strong>into</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch
+
+<span class="go">  experiment</span>
+<span class="go">  less-salt</span>
+<span class="hll"><span class="go">* main</span>
+</span></pre></div>
+</div>
+<p>Then we merge <code class="docutils literal notranslate"><span class="pre">experiment</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>experiment
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../_images/git-merge-1.svg" src="../_images/git-merge-1.svg" />
+</figure>
+<p>We can verify the result:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="go">*   81fcc0c (HEAD -&gt; main) Merge branch &#39;experiment&#39;</span>
+<span class="go">|\</span>
+<span class="go">| * bcb8b78 (experiment) maybe little bit less cilantro</span>
+<span class="go">| * f6ec7b7 let us try with some cilantro</span>
+<span class="go">* | b4af65b improve the documentation</span>
+<span class="go">|/</span>
+<span class="go">| * bf28166 (less-salt) reduce amount of salt</span>
+<span class="go">|/</span>
+<span class="go">* e7cf023 don&#39;t forget to enjoy</span>
+<span class="go">* 79161b6 add half an onion</span>
+<span class="go">* a3394e3 adding README</span>
+<span class="go">* 3696246 adding instructions</span>
+<span class="go">* f146d25 adding ingredients</span>
+</pre></div>
+</div>
+<p>What happens internally when you merge two branches is that Git creates a new
+commit, attempts to incorporate changes from both branches and records the
+state of all files in the new commit. While a regular commit has one parent, a
+merge commit has two (or more) parents.</p>
+<p>To view the branches that are merged into the current branch we can use the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>--merged
+
+<span class="go">  experiment</span>
+<span class="go">* main</span>
+</pre></div>
+</div>
+<p>We are also happy with the work on the <code class="docutils literal notranslate"><span class="pre">less-salt</span></code> branch. Let us merge that
+one, too, into <code class="docutils literal notranslate"><span class="pre">main</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w">  </span><span class="c1"># make sure you are on main</span>
+<span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>less-salt
+</pre></div>
+</div>
+<figure class="align-default" id="id4">
+<img alt="Commit graph after merge" src="../_images/git-merge-2.svg" />
+<figcaption>
+<p><span class="caption-text">Commit graph after merge.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>We can verify the result in the terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+
+<span class="go">*   4e03d4b (HEAD -&gt; main) Merge branch &#39;less-salt&#39;</span>
+<span class="go">|\</span>
+<span class="go">| * bf28166 (less-salt) reduce amount of salt</span>
+<span class="go">* |   81fcc0c Merge branch &#39;experiment&#39;</span>
+<span class="go">|\ \</span>
+<span class="go">| * | bcb8b78 (experiment) maybe little bit less cilantro</span>
+<span class="go">| * | f6ec7b7 let us try with some cilantro</span>
+<span class="go">| |/</span>
+<span class="go">* / b4af65b improve the documentation</span>
+<span class="go">|/</span>
+<span class="go">* e7cf023 don&#39;t forget to enjoy</span>
+<span class="go">* 79161b6 add half an onion</span>
+<span class="go">* a3394e3 adding README</span>
+<span class="go">* 3696246 adding instructions</span>
+<span class="go">* f146d25 adding ingredients</span>
+</pre></div>
+</div>
+<p>Observe how Git nicely merged the changed amount of salt and the new ingredient <strong>in the same file
+without us merging it manually</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cat<span class="w"> </span>ingredients.txt
+
+<span class="go">* 1 tbsp cilantro</span>
+<span class="go">* 2 avocados</span>
+<span class="go">* 1 chili</span>
+<span class="go">* 1 lime</span>
+<span class="go">* 1 tsp salt</span>
+<span class="go">* 1/2 onion</span>
+</pre></div>
+</div>
+<p>If the same file is changed in both branches, Git attempts to incorporate both
+changes into the merged file. If the changes overlap then the user has to
+manually <em>settle merge conflicts</em> (we will do that later).</p>
+</section>
+<section id="deleting-branches-safely">
+<h2>Deleting branches safely<a class="headerlink" href="#deleting-branches-safely" title="Link to this heading"></a></h2>
+<p>Both feature branches are merged:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>--merged
+
+<span class="go">  experiment</span>
+<span class="go">  less-salt</span>
+<span class="go">* main</span>
+</pre></div>
+</div>
+<p>This means we can delete the branches:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>experiment
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>less-salt
+</pre></div>
+</div>
+<p>This is the result:</p>
+<figure class="align-default" id="id5">
+<img alt="Commit graph after merged branches were deleted" src="../_images/git-deleted-branches.svg" />
+<figcaption>
+<p><span class="caption-text">Commit graph after merged branches were deleted.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>We observe that when deleting branches,
+only the pointers (“sticky notes”) disappeared, not the commits.</p>
+<p>Git will not let you delete a branch which has not been reintegrated unless you
+insist using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-D</span></code>. Even then your commits will not be lost but you
+may have a hard time finding them as there is no branch pointing to them.</p>
+</section>
+<section id="optional-exercises-with-branches">
+<span id="exercise-branches-optional"></span><h2>Optional exercises with branches<a class="headerlink" href="#optional-exercises-with-branches" title="Link to this heading"></a></h2>
+<p>The following exercises are more advanced, absolutely no problem to postpone them to a
+few months later. If you give them a go, keep in mind that you might run into conflicts,
+which we will learn to resolve in the next section.</p>
+<div class="admonition-optional-branch-3-perform-a-fast-forward-merge exercise important admonition" id="exercise-2">
+<p class="admonition-title">(optional) Branch-3: Perform a fast-forward merge</p>
+<ol class="arabic">
+<li><p>Create a new branch from <code class="docutils literal notranslate"><span class="pre">main</span></code> and switch to it.</p></li>
+<li><p>Create a couple of commits on the new branch (for instance edit <code class="docutils literal notranslate"><span class="pre">README.md</span></code>):</p>
+<figure class="align-default">
+<img alt="../_images/git-pre-ff.svg" src="../_images/git-pre-ff.svg" />
+</figure>
+</li>
+<li><p>Now switch to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Merge the new branch to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Examine the result with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>.</p></li>
+<li><p>Have you expected the result? Discuss what you see.</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>You will see that in this case no merge commit was created and Git merged the
+two branches by moving (fast-forwarding) the “main” branch (label) three
+commits forward.</p>
+<p>This was possible since one branch is the ancestor of the other and their
+developments did not diverge.</p>
+<p>A merge that does not require any merge commit is a fast-forward merge.</p>
+</div>
+</div>
+<div class="admonition-optional-branch-4-rebase-a-branch-instead-of-merge exercise important admonition" id="exercise-3">
+<p class="admonition-title">(optional) Branch-4: Rebase a branch (instead of merge)</p>
+<p>As an alternative to merging branches, one can also <em>rebase</em> branches.
+Rebasing means that the new commits are <em>replayed</em> on top of another branch
+(instead of creating an explicit merge commit).
+<strong>Note that rebasing changes history and should not be done on public commits!</strong></p>
+<ol class="arabic simple">
+<li><p>Create a new branch, and make a couple of commits on it.</p></li>
+<li><p>Switch back to <code class="docutils literal notranslate"><span class="pre">main</span></code>, and make a couple of commits on it.</p></li>
+<li><p>Inspect the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>.</p></li>
+<li><p>Now rebase the new branch on top of <code class="docutils literal notranslate"><span class="pre">main</span></code> by first switching to the new branch, and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">main</span></code>.</p></li>
+<li><p>Inspect again the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>. Notice that the commit hashes have changed - think about why!</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-1">
+<p class="admonition-title">Solution</p>
+<p>You will notice two things:</p>
+<ul class="simple">
+<li><p>History is now linear and does not contain merge commits.</p></li>
+<li><p>All the commit hashes that were on the branch that got rebased, have
+changed. This also demonstrates that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span></code> is a command that alters
+history. The commit history looks as if the rebased commits were all done
+after the <code class="docutils literal notranslate"><span class="pre">main</span></code> commits.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="tags">
+<h2>Tags<a class="headerlink" href="#tags" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>A tag is a pointer to a commit but in contrast to a branch it <strong>does not ever
+move</strong> when creating new commits later.</p></li>
+<li><p>It can be useful to think of branches as sticky notes and of tags as
+<a class="reference external" href="https://en.wikipedia.org/wiki/Commemorative_plaque">commemorative plaques</a>.</p></li>
+<li><p>We use tags to record particular states or milestones of a project at a given
+point in time, like for instance versions (have a look at <a class="reference external" href="http://semver.org">semantic versioning</a>,
+v1.0.3 is easier to understand and remember than 64441c1934def7d91ff0b66af0795749d5f1954a).</p></li>
+<li><p>There are two basic types of tags: annotated and lightweight.</p></li>
+<li><p><strong>Use annotated tags</strong> since they contain the author and can be cryptographically signed using
+GPG, timestamped, and a message attached.</p></li>
+</ul>
+<p>Let’s add an annotated tag to our current state of the guacamole recipe:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>nobel-2023<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;recipe I made for the 2023 Nobel banquet&quot;</span>
+</pre></div>
+</div>
+<p>As you may have found out already, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> is a very versatile command. Try this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>show<span class="w"> </span>nobel-2023
+</pre></div>
+</div>
+<p>For more information about tags see for example
+<a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">the Pro Git book</a> chapter on the
+subject.</p>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>Let us pause for a moment and recapitulate what we have just learned:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w">               </span><span class="c1"># see where we are</span>
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>NAME<span class="w">          </span><span class="c1"># create branch NAME</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>NAME<span class="w">          </span><span class="c1"># switch to branch NAME</span>
+<span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>NAME<span class="w">           </span><span class="c1"># merge branch NAME (to current branch)</span>
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>NAME<span class="w">       </span><span class="c1"># delete branch NAME</span>
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>NAME<span class="w">       </span><span class="c1"># delete unmerged branch NAME</span>
+</pre></div>
+</div>
+<p>Since the following command combo is so frequent:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>NAME<span class="w">          </span><span class="c1"># create branch NAME</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>NAME<span class="w">          </span><span class="c1"># switch to branch NAME</span>
+</pre></div>
+</div>
+<p>There is a shortcut for it:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>NAME<span class="w">  </span><span class="c1"># create branch NAME and switch to it</span>
+</pre></div>
+</div>
+<section id="typical-workflows">
+<h3>Typical workflows<a class="headerlink" href="#typical-workflows" title="Link to this heading"></a></h3>
+<p>With this there are two typical workflows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>new-feature<span class="w">  </span><span class="c1"># create branch, switch to it</span>
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w">                       </span><span class="c1"># work, work, work, ..., and test</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>main<span class="w">                  </span><span class="c1"># once feature is ready, switch to main</span>
+<span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>new-feature<span class="w">            </span><span class="c1"># merge work to main</span>
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>new-feature<span class="w">        </span><span class="c1"># remove branch</span>
+</pre></div>
+</div>
+<p>Sometimes you have a wild idea which does not work.
+Or you want some throw-away branch for debugging:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>wild-idea<span class="w">    </span><span class="c1"># create branch, switch to it, work, work, work ...</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>main<span class="w">                  </span><span class="c1"># realize it was a bad idea, back to main</span>
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>wild-idea<span class="w">          </span><span class="c1"># it is gone, off to a new idea</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="admonition-branch-5-test-your-understanding exercise important admonition" id="exercise-4">
+<p class="admonition-title">Branch-5: Test your understanding</p>
+<p>Which of the following combos (one or more) creates a new branch and makes a commit to it?</p>
+<ol class="arabic">
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>new-branch
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>file.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-2">
+<p class="admonition-title">Solution</p>
+<p>Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
+branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
+don’t give the <code class="docutils literal notranslate"><span class="pre">--create</span></code> flag to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> to create the new branch.</p>
+</div>
+</div>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>A branch is a division unit of work, to be merged with other units of work.</p></li>
+<li><p>A tag is a pointer to a moment in the history of a project.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../basics/" class="btn btn-neutral float-left" title="Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../conflicts/" class="btn btn-neutral float-right" title="Conflict resolution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to turn your project to a Git repo and share it &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script src="../_static/tabs.js?v=3030b3cb"></script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Practical advice: How much Git is necessary?" href="../level/" />
+    <link rel="prev" title="Inspecting history" href="../archaeology/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to turn your project to a Git repo and share it</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exercise">Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remote-repositories">Remote repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-putting-software-on-github-gitlab-publishing">Is putting software on GitHub/GitLab/… publishing?</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to turn your project to a Git repo and share it</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/sharing.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-turn-your-project-to-a-git-repo-and-share-it">
+<span id="sharing-repositories"></span><h1>How to turn your project to a Git repo and share it<a class="headerlink" href="#how-to-turn-your-project-to-a-git-repo-and-share-it" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Turn our own coding project (small or large, finished or unfinished) into a
+Git repository.</p></li>
+<li><p>Be able to share a repository on the web to have a backup or so that others
+can reuse and collaborate or even just find it.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>10 min introduction and setup</p></li>
+<li><p>25 min exercise</p></li>
+<li><p>15 min discussion</p></li>
+</ul>
+</div>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/sharing.png"><img alt="Illustration of how we turn a project into a Git repository and share it" src="../_images/sharing.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">From a bunch of files to a local repository which we then share on GitHub.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition-exercise-turn-your-project-to-a-git-repo-and-share-it-25-min exercise important admonition" id="exercise-0">
+<p class="admonition-title">Exercise: Turn your project to a Git repo and share it (25 min)</p>
+<ol class="arabic simple">
+<li><p>Create a new directory called <strong>myproject</strong> with one or few files in it.
+This represents our own project. It is not yet a Git repository. You can try
+that with your own project or use a simple placeholder example.</p></li>
+<li><p>Turn this new directory into a Git repository.</p></li>
+<li><p>Share this repository on GitHub (or GitLab, since it really works the same).</p></li>
+</ol>
+<p>We offer <strong>three different paths</strong> of how to do this exercise.</p>
+<ul class="simple">
+<li><p>Via <strong>GitHub web interface</strong>: easy and can be a good starting point if you are completely
+new to Git.</p></li>
+<li><p><strong>VS Code</strong> is quite easy, since VS Code can offer to create the
+GitHub repositories for you.</p></li>
+<li><p><strong>Command line</strong>: you need to create the
+repository on GitHub and link it yourself.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-T25seSB1c2luZyBHaXRIdWI=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-T25seSB1c2luZyBHaXRIdWI=" name="T25seSB1c2luZyBHaXRIdWI=" role="tab" tabindex="0">Only using GitHub</button><button aria-controls="panel-0-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-0-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-0-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-0-T25seSB1c2luZyBHaXRIdWI=" class="sphinx-tabs-panel group-tab" id="panel-0-T25seSB1c2luZyBHaXRIdWI=" name="T25seSB1c2luZyBHaXRIdWI=" role="tabpanel" tabindex="0"><p class="rubric" id="create-an-repository-on-github">Create an repository on GitHub</p>
+<p>First log into GitHub, then follow the screenshots and descriptions below.</p>
+<figure class="align-default" id="id6">
+<a class="with-border reference internal image-reference" href="../_images/new-repository.png"><img alt="Screenshot on GitHub before a new repository form is opened" class="with-border" src="../_images/new-repository.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Click on the “plus” symbol on top right, then on “New repository”.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Then:</p>
+<figure class="align-default" id="id7">
+<a class="with-border reference internal image-reference" href="../_images/create-repository-with-readme.png"><img alt="Screenshot on GitHub just before a new repository is created" class="with-border" src="../_images/create-repository-with-readme.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Choose a repository name, add a short description, and in this case <strong>make sure to check</strong> “Add a
+README file”. Finally “Create repository”.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p class="rubric" id="upload-your-files">Upload your files</p>
+<p>Now that the repository is created, you can upload your files:</p>
+<figure class="align-default" id="id8">
+<a class="with-border reference internal image-reference" href="../_images/upload-files.png"><img alt="Screenshot on GitHub just before uploading files" class="with-border" src="../_images/upload-files.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Click on the “+” symbol and then on “Upload files”.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><div aria-labelledby="tab-0-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>In VS Code it only takes few clicks.</p>
+<p>First, open the folder in VS Code. My example project here contains two files.
+Then click on the source control icon:</p>
+<figure class="align-default" id="id9">
+<a class="with-border reference internal image-reference" href="../_images/vscode-start.png"><img alt="Screenshot of VS Code before clicking on the source control icon" class="with-border" src="../_images/vscode-start.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Open the folder in VS Code. Then click on the source control icon.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id10">
+<a class="with-border reference internal image-reference" href="../_images/vscode-publish-to-github1.png"><img alt="Screenshot of VS Code before publishing to GitHub" class="with-border" src="../_images/vscode-publish-to-github1.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Choose “Publish to GitHub”. In this case I never even clicked on “Initialize Repository”.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<a class="with-border reference internal image-reference" href="../_images/vscode-publish-to-github2.png"><img alt="Screenshot of VS Code before publishing to GitHub" class="with-border" src="../_images/vscode-publish-to-github2.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">In my case I chose to “Publish to GitHub public repository”. Here you can also rename
+the repository if needed.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id12">
+<a class="with-border reference internal image-reference" href="../_images/vscode-authorize.png"><img alt="Screenshot of VS Code asking for authorization" class="with-border" src="../_images/vscode-authorize.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">First time you do this you might need to authorize VS Code to access your
+GitHub account by redirecting you to https://github.com/login/oauth/authorize.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id13">
+<a class="with-border reference internal image-reference" href="../_images/vscode-publish-to-github3.png"><img alt="Screenshot of VS Code after publishing to GitHub" class="with-border" src="../_images/vscode-publish-to-github3.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">After it is published, click on “Open on GitHub”.</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><div aria-labelledby="tab-0-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p class="rubric" id="make-sure-your-git-is-configured">Make sure your Git is configured</p>
+<p>We have an own section on this: <a class="reference internal" href="../configuration/#configuration"><span class="std std-ref">Configuring Git command line and editor</span></a>.</p>
+<p class="rubric" id="put-your-project-under-version-control">Put your project under version control</p>
+<p>My example project here consists of two files. Replace this with your own
+example files:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>-l
+
+<span class="go">.rw------- 19k user  7 Mar 17:36 LICENSE</span>
+<span class="go">.rw-------  21 user  7 Mar 17:36 myscript.py</span>
+</pre></div>
+</div>
+<p>I will first initialize a Git repository in this directory.
+If you get an error, try without the <code class="docutils literal notranslate"><span class="pre">-b</span> <span class="pre">main</span></code> (and your default branch will
+then be called <code class="docutils literal notranslate"><span class="pre">master</span></code>, this will happen for Git versions older than
+2.28):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>init<span class="w"> </span>-b<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Now add and commit the two files to the Git repository:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>LICENSE<span class="w"> </span>myscript.py
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;putting my project under version control&quot;</span>
+</pre></div>
+</div>
+<p>If you want to add all files in one go, you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">LICENSE</span> <span class="pre">myscript.py</span></code>.</p>
+<p>Now you have a Git repository with one commit. Verify this with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.
+But it’s still only on your computer. Let’s put it on GitHub next.</p>
+<p class="rubric" id="create-an-empty-repository-on-github">Create an <u>empty</u> repository on GitHub</p>
+<p>First log into GitHub, then follow the screenshots and descriptions below.</p>
+<figure class="align-default" id="id14">
+<a class="with-border reference internal image-reference" href="../_images/new-repository.png"><img alt="Screenshot on GitHub before a new repository form is opened" class="with-border" src="../_images/new-repository.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Click on the “plus” symbol on top right, then on “New repository”.</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Then create an empty repository without any files and without any commits:</p>
+<figure class="align-default" id="id15">
+<a class="with-border reference internal image-reference" href="../_images/create-repository.png"><img alt="Screenshot on GitHub just before a new repository is created" class="with-border" src="../_images/create-repository.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Choose a repository name, add a short description, but please <strong>do not check</strong> “Add a
+README file”. For “Add .gitignore” and “Choose a license” also leave as “None”. Finally “Create repository”.</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once you click the green “Create repository”, you will see a page similar to:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/bare-repository.png"><img alt="Screenshot on GitHub after a bare repository was created" class="with-border" src="../_images/bare-repository.png" style="width: 100%;" />
+</a>
+</figure>
+<p>What this means is that we have now an empty project with either an HTTPS or an
+SSH address: click on the HTTPS and SSH buttons to see what happens.</p>
+<p class="rubric" id="push-an-existing-repository-from-your-computer-to-github">Push an existing repository from your computer to GitHub</p>
+<p>We now want to follow the “<strong>… or push an existing repository from the command line</strong>”:</p>
+<ol class="arabic simple">
+<li><p>In your terminal make sure you are still in your myproject directory.</p></li>
+<li><p>Copy paste the three lines below the red arrow to the terminal and execute
+those, in my case (<strong>you need to replace the “USER” part and possibly also
+the repository name</strong>):</p></li>
+</ol>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-U1NI" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-U1NI" name="U1NI" role="tab" tabindex="0">SSH</button><button aria-controls="panel-1-SFRUUFM=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-SFRUUFM=" name="SFRUUFM=" role="tab" tabindex="-1">HTTPS</button></div><div aria-labelledby="tab-1-U1NI" class="sphinx-tabs-panel group-tab" id="panel-1-U1NI" name="U1NI" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:USER/myproject.git
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-SFRUUFM=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-SFRUUFM=" name="SFRUUFM=" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/USER/myproject.git
+</pre></div>
+</div>
+</div></div>
+<p>Then:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+<span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>The meaning of the above lines:</p>
+<ul class="simple">
+<li><p>Add a remote reference with the name “origin”</p></li>
+<li><p>Rename current branch to “main”</p></li>
+<li><p>Push branch “main” to “origin”</p></li>
+</ul>
+<p>You should now see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 6.08 KiB | 6.08 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:USER/myproject.git
+ * [new branch]      main -&gt; main
+branch &#39;main&#39; set up to track &#39;origin/main&#39;.
+</pre></div>
+</div>
+<p>Reload your GitHub project website and your commits should now be
+online!</p>
+<p class="rubric" id="troubleshooting">Troubleshooting</p>
+<p><strong>error: remote origin already exists</strong></p>
+<ul class="simple">
+<li><p>Explanation: You probably ran a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">...</span></code> command, then changed your
+mind about HTTPS or SSH and then tried to run the other <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">...</span></code> command but “origin” then already exists.</p></li>
+<li><p>Recovery:</p>
+<ul>
+<li><p>First remove “origin” with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">remove</span> <span class="pre">origin</span></code></p></li>
+<li><p>Then run the correct <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">...</span></code> command</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>remote contains work that you do not have</strong></p>
+<ul class="simple">
+<li><p>Explanation: You probably clicked on “Add a README file” and now the
+repository on GitHub is not empty but contains one commit and locally you
+have a different history. Git now prevents you from accidentally overwriting
+the history on GitHub.</p></li>
+<li><p>Recovery:</p>
+<ul>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--force</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>, which will force Git to overwrite the history on GitHub</p></li>
+<li><p>Note that this is a powerful but also possibly dangerous option but here it
+helps us. If it’s a brand new repo, it probably is fine to do this. For real
+repositories, don’t do this unless you are very sure what is happening.</p></li>
+</ul>
+</li>
+</ul>
+</div><div aria-labelledby="tab-0-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>This is not fully explained, because a lot of it is similar to the “Command
+line” method (and an RStudio expert could help us some).  The main differences
+are:</p>
+<p class="rubric" id="id1">Put your project under version control</p>
+<ol class="arabic simple">
+<li><p>Tools → Version control → Project setup → Version control system = Git.</p></li>
+<li><p>Select “Yes” for “do you want to initialize a new git repository for this project.</p></li>
+<li><p>Select yes to restart the project with RStudio.</p></li>
+<li><p>Switch to branch <code class="docutils literal notranslate"><span class="pre">main</span></code> to have you branch named that.</p></li>
+</ol>
+<p class="rubric" id="id2">Create an <u>empty</u> repository on GitHub</p>
+<p>Same as command line</p>
+<p class="rubric" id="id3">Push an existing repository from your computer to GitHub</p>
+<ol class="arabic simple">
+<li><p>Under the “Create new branch” button → “Add Remote”</p></li>
+<li><p>Remote name: <code class="docutils literal notranslate"><span class="pre">origin</span></code></p></li>
+<li><p>Remote URL: as in command line (remember to select SSH or HTTPS as you have configured your RStudio)</p></li>
+<li><p>The “Push” (up arrow) button will send changes on your current branch to the remote.  The “Pull” (down arrow) will get changes from the remote.</p></li>
+</ol>
+<p class="rubric" id="id4">Troubleshooting</p>
+<p>Same as command line</p>
+</div></div>
+</div>
+</section>
+<section id="remote-repositories">
+<h2>Remote repositories<a class="headerlink" href="#remote-repositories" title="Link to this heading"></a></h2>
+<p>In this exercise we have pushed our local repository to a remote
+repository.  You can learn how to work with remote repositories in
+detail in the <a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative distributed version
+control</a> lesson.</p>
+<p>To store your Git data on another server, you use <strong>remotes</strong>.  A
+remote is a repository on its own, with its own branches. We can
+<strong>push</strong> changes to the remote and <strong>pull</strong> from the remote.</p>
+<p>You might use remotes to:</p>
+<ul class="simple">
+<li><p>Back up your own work or make your work findable.</p></li>
+<li><p>To collaborate with other people.</p></li>
+</ul>
+<p>There are services that can be a remote:</p>
+<ul class="simple">
+<li><p>If you have a server you can SSH to, you can use that as a remote.</p></li>
+<li><p><a class="reference external" href="https://github.com">GitHub</a> is a popular, closed-source commercial site.</p></li>
+<li><p><a class="reference external" href="https://about.gitlab.com">GitLab</a> is a popular, open-core
+commercial site.  Many universities have their own private GitLab servers
+set up.</p></li>
+<li><p><a class="reference external" href="https://bitbucket.org">Bitbucket</a> is yet another popular commercial site.</p></li>
+<li><p>Another option is <a class="reference external" href="https://codeberg.org/">Codeberg</a> – a German nonprofit organization specialized in open-source software development services.</p></li>
+<li><p>There are more …</p></li>
+</ul>
+</section>
+<section id="is-putting-software-on-github-gitlab-publishing">
+<h2>Is putting software on GitHub/GitLab/… publishing?<a class="headerlink" href="#is-putting-software-on-github-gitlab-publishing" title="Link to this heading"></a></h2>
+<p>It is a good first step but to make your code truly <strong>findable and
+accessible</strong>, consider making your code <strong>citable and persistent</strong>: Get a
+persistent identifier (PID) such as DOI in addition to sharing the code
+publicly, by using services like <a class="reference external" href="https://zenodo.org">Zenodo</a> or similar
+services.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../archaeology/" class="btn btn-neutral float-left" title="Inspecting history" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../level/" class="btn btn-neutral float-right" title="Practical advice: How much Git is necessary?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

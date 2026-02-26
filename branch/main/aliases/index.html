@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aliases and configuration &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Git under the hood" href="../under-the-hood/" />
+    <link rel="prev" title="Interrupted work" href="../interrupted/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Aliases and configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-alias-git-graph">Example alias: git graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-external-commands">Using external commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-of-aliases-the-instructors-use">List of aliases the instructors use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-aliases">Advanced aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-git-configuration">Advanced Git configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Aliases and configuration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/aliases.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="aliases-and-configuration">
+<span id="aliases"></span><h1>Aliases and configuration<a class="headerlink" href="#aliases-and-configuration" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Learn to use aliases for most common commands.</p></li>
+</ul>
+</div>
+<p>Are you getting tired of typing so much? In Git you can define aliases (shortcuts):</p>
+<ul class="simple">
+<li><p>These are great because they can save you time typing.</p></li>
+<li><p>But it’s easy to forget them, get confused, or be inconsistent with your colleagues.</p></li>
+</ul>
+<p>There is plenty of other configuration for Git, that can make it nicer.</p>
+<section id="id1">
+<h2>Aliases<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Aliases offer a way to improve the usability of Git: for
+example <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ci</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p></li>
+<li><p>Aliases are based on simple string replacement in the command.</p></li>
+<li><p>Aliases can either be specific to a repository or global.</p>
+<ul>
+<li><p>Global aliases help you do the things you are used to across Git projects.</p></li>
+<li><p>Per-project aliases can also be created.</p></li>
+</ul>
+</li>
+<li><p>Global aliases are stored in <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>.</p></li>
+</ul>
+</section>
+<section id="example-alias-git-graph">
+<h2>Example alias: git graph<a class="headerlink" href="#example-alias-git-graph" title="Link to this heading"></a></h2>
+<p>A very useful shortcut which we use a lot in our workshops:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.graph<span class="w"> </span><span class="s2">&quot;log --all --graph --decorate --oneline&quot;</span>
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>your_git_repository
+<span class="gp">$ </span>git<span class="w"> </span>graph
+</pre></div>
+</div>
+</section>
+<section id="using-external-commands">
+<h2>Using external commands<a class="headerlink" href="#using-external-commands" title="Link to this heading"></a></h2>
+<p>It is possible to call external commands using the exclamation mark character “!”.
+In this example here we create a local alias which is
+stored in <code class="docutils literal notranslate"><span class="pre">.git/config</span></code> and not synchronized with remotes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>your_git_repository
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>alias.hi<span class="w"> </span><span class="s1">&#39;!echo hello&#39;</span>
+<span class="gp">$ </span>git<span class="w"> </span>hi
+</pre></div>
+</div>
+<div class="admonition-food-for-thought-when-to-alias discussion important admonition" id="discussion-0">
+<p class="admonition-title">Food for thought: When to alias?</p>
+<ul class="simple">
+<li><p>How many times should you wait before aliasing a command?</p></li>
+<li><p>Do you believe a list of generic two-letter acronyms for common commands will
+save your time?</p></li>
+</ul>
+</div>
+</section>
+<section id="list-of-aliases-the-instructors-use">
+<h2>List of aliases the instructors use<a class="headerlink" href="#list-of-aliases-the-instructors-use" title="Link to this heading"></a></h2>
+<p>You are welcome to reuse, suggest, improve.
+You can see your current aliases in <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.ap<span class="w"> </span><span class="s2">&quot;add --patch&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.br<span class="w"> </span>branch
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.ci<span class="w"> </span><span class="s2">&quot;commit -v&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.cip<span class="w"> </span><span class="s2">&quot;commit --patch -v&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.cl<span class="w"> </span><span class="s2">&quot;clone --recursive&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.di<span class="w"> </span>diff
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.dic<span class="w"> </span><span class="s2">&quot;diff --staged --color-words&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.diw<span class="w"> </span><span class="s2">&quot;diff --color-words&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.dis<span class="w"> </span><span class="s2">&quot;!git --no-pager diff --stat&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.fe<span class="w"> </span>fetch
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.graph<span class="w"> </span><span class="s2">&quot;log --all --graph --decorate --oneline&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.rem<span class="w"> </span>remote
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.st<span class="w"> </span>status
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.su<span class="w"> </span><span class="s2">&quot;submodule update --init --recursive&quot;</span>
+</pre></div>
+</div>
+<p>Here is what they do:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ap</span></code>: add, selecting parts individually, interactively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">br</span></code>: branch (obvious)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ci</span></code>: commit (check in), with <code class="docutils literal notranslate"><span class="pre">-v</span></code> option for clarity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cip</span></code>: commit, selecting parts individually, interactively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cl</span></code>: clone, init submodules (submodules are an advanced topic)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">di</span></code>: diff (obvious)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dic</span></code>: diff of staging area vs last commit (what is about to be committed)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diw</span></code>: a word diff, color.  Useful for small changes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dis</span></code>: a “diffstat”: what files are changed, not contents</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fe</span></code>: fetch (obvious)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">graph</span></code>: show whole git graph (so useful, some of us call it <code class="docutils literal notranslate"><span class="pre">l</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rem</span></code>: remote (obvious)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">st</span></code>: status (obvious)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">su</span></code>: submodule update (advanced)</p></li>
+</ul>
+<p>A useful setting for the <code class="docutils literal notranslate"><span class="pre">p</span></code> aliases:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>interactive.singlekey<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-aliases">
+<h2>Advanced aliases<a class="headerlink" href="#advanced-aliases" title="Link to this heading"></a></h2>
+<p>These are advanced aliases and configuration options.  We won’t explain them,
+but if you are bored, have some time, or want to go deeper, try to
+figure out what they do.  You might want to check the Git manual
+pages!</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.cif<span class="w"> </span><span class="s2">&quot;commit -v -p --fixup&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.rb<span class="w"> </span><span class="s2">&quot;rebase --autosquash&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.rbi<span class="w"> </span><span class="s2">&quot;rebase --interactive --autosquash&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.rbis<span class="w"> </span><span class="s2">&quot;rebase --interactive --autosquash --autostash&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.rbs<span class="w"> </span><span class="s2">&quot;rebase --autosquash --autostash&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.rec<span class="w"> </span><span class="s2">&quot;!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.ls-ignored<span class="w"> </span><span class="s2">&quot;ls-files -o -i --exclude-standard&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.new<span class="w"> </span><span class="s2">&quot;log HEAD..HEAD@{upstream}&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.news<span class="w"> </span><span class="s2">&quot;log --stat HEAD..HEAD@{upstream}&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.newd<span class="w"> </span><span class="s2">&quot;log --patch --color-words HEAD..HEAD@{upstream}&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.newdi<span class="w"> </span><span class="s2">&quot;diff --color-words HEAD...HEAD@{upstream}&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.rec<span class="w"> </span><span class="s2">&quot;!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.reca<span class="w"> </span><span class="s2">&quot;!git --no-pager log --oneline --graph --decorate -n10 --all&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.recd<span class="w"> </span><span class="s2">&quot;log --decorate --patch @{upstream}^^^..HEAD&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.recs<span class="w"> </span><span class="s2">&quot;!git --no-pager log --oneline --graph --decorate @{upstream}^^^..HEAD --stat&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-git-configuration">
+<h2>Advanced Git configuration<a class="headerlink" href="#advanced-git-configuration" title="Link to this heading"></a></h2>
+<p>Besides aliases, you can do plenty of other configuration of <code class="docutils literal notranslate"><span class="pre">git</span></code>.
+Here are some of the most common ones:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>interactive.singlekey<span class="w"> </span><span class="nb">true</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.pager<span class="w"> </span><span class="s2">&quot;less -RS&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.excludesfile<span class="w"> </span>~/.gitignore
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>merge.conflictstyle<span class="w"> </span>diff3
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>diff.wordRegex<span class="w"> </span><span class="s2">&quot;[a-zA-Z0-9_]+|[^[:space:]]&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>diff.mnemonicPrefix<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>Do you get tired of typing and copying and pasting your remote names
+all the time, like <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:myusername</span></code>?  You can create remote
+aliases like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>url.git@github.com:.insteadOf<span class="w"> </span>gh:
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>url.git@github.com:/username/.insteadOf<span class="w"> </span>ghu:
+</pre></div>
+</div>
+<p>Then, when you add a remote <code class="docutils literal notranslate"><span class="pre">ghu:recipe</span></code>, it will automatically be
+translated to <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:/username/recipe</span></code> using a simple prefix
+matching.</p>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>If you are frustrated about remembering a command, you should create an alias.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../interrupted/" class="btn btn-neutral float-left" title="Interrupted work" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../under-the-hood/" class="btn btn-neutral float-right" title="Git under the hood" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

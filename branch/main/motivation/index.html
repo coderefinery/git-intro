@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motivation &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Configuring Git command line and editor" href="../configuration/" />
+    <link rel="prev" title="Introduction to version control with Git - Why we want to track versions and how to go back in time to a working version" href="../" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Motivation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#git-is-all-about-keeping-track-of-changes">Git is all about keeping track of changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-do-we-need-to-keep-track-of-versions">Why do we need to keep track of versions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features-roll-back-branching-merging-collaboration">Features: roll-back, branching, merging, collaboration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reproducibility">Reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#talking-about-code">Talking about code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-we-typically-like-to-snapshot">What we typically like to snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#difficulties-of-version-control">Difficulties of version control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-git-and-not-another-tool">Why Git and not another tool?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Motivation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/motivation.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="motivation">
+<h1>Motivation<a class="headerlink" href="#motivation" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Make sure nobody leaves the workshop without starting to use some form of version control.</p></li>
+<li><p>Discuss the reasons why we advocate distributed version control.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>15 min discussion/demonstration</p></li>
+</ul>
+</div>
+<section id="git-is-all-about-keeping-track-of-changes">
+<h2>Git is all about keeping track of changes<a class="headerlink" href="#git-is-all-about-keeping-track-of-changes" title="Link to this heading"></a></h2>
+<p>We will learn how to keep track of changes first in the web browser.
+Below are screenshots of <strong>tracked changes with Git</strong>
+(from this <a class="reference external" href="https://github.com/bast/runtest/commits/main/runtest/run.py">example repository</a>):</p>
+<figure class="align-default" id="id1">
+<a class="with-border reference internal image-reference" href="../_images/git-log-github.png"><img alt="Screenshot of a git log on GitHub" class="with-border" src="../_images/git-log-github.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Web browser, GitHub view</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Later also using the terminal or the editor
+(the same <a class="reference external" href="https://github.com/bast/runtest/commits/main/runtest/run.py">example repository</a>):</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/git-log-terminal.png"><img alt="Screenshot of a git log in terminal" src="../_images/git-log-terminal.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The same as above, but the terminal view</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="why-do-we-need-to-keep-track-of-versions">
+<h2>Why do we need to keep track of versions?<a class="headerlink" href="#why-do-we-need-to-keep-track-of-versions" title="Link to this heading"></a></h2>
+<p><strong>Problem: If you have to identify and find your code from 17 days
+ago, can you?</strong></p>
+<p>Version control is an answer to the following questions (do you recognize some
+of them?):</p>
+<ul class="simple">
+<li><p>“It broke … hopefully I have a working version somewhere?”</p></li>
+<li><p>“Can you please send me the latest version?”</p></li>
+<li><p>“Where is the latest version?”</p></li>
+<li><p>“Which version are you using?”</p></li>
+<li><p>“Which version have the authors used in the paper I am trying to reproduce?”</p></li>
+<li><p>“Found a bug! Since when was it there?”</p></li>
+<li><p>“I am sure it used to work. When did it change?”</p></li>
+<li><p>“My laptop is gone. Is my thesis now gone?”</p></li>
+</ul>
+</section>
+<section id="features-roll-back-branching-merging-collaboration">
+<h2>Features: roll-back, branching, merging, collaboration<a class="headerlink" href="#features-roll-back-branching-merging-collaboration" title="Link to this heading"></a></h2>
+<p><strong>Problem: Your code worked two days ago, but is giving an error now.
+You don’t know what you changed.</strong></p>
+<p><strong>Problem: You and your colleague want to work on the same code at the
+same time.</strong></p>
+<ul class="simple">
+<li><p><strong>Roll-back</strong>: you can always go back to a previous version and compare</p></li>
+<li><p><strong>Branching and merging</strong>:</p>
+<ul>
+<li><p>Work on different ideas at the same time</p></li>
+<li><p>Different people can work on the same code/project without interfering</p></li>
+<li><p>You can experiment with an idea and discard it if it turns out to be a bad idea</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/gophers.png"><img alt="Branching explained with a gopher" src="../_images/gophers.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Image created using <a class="reference external" href="https://gopherize.me/">https://gopherize.me/</a>
+(<a class="reference external" href="https://twitter.com/jay_gee/status/703360688618536960">inspiration</a>).</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Collaboration</strong>: review, compare, share, discuss</p></li>
+<li><p><a class="reference external" href="https://github.com/coderefinery/git-intro/network">Example network graph</a></p></li>
+</ul>
+</section>
+<section id="reproducibility">
+<h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Link to this heading"></a></h2>
+<p><strong>Problem: Someone asks you about your results from 5 years ago.  Can
+you get the same results now?</strong></p>
+<ul class="simple">
+<li><p>How do you indicate which version of your code you have used in your paper?</p></li>
+<li><p>When you find a bug, how do you know <strong>when precisely</strong> this bug was introduced
+(Are published results affected? Do you need to inform collaborators or users of your code?).</p></li>
+</ul>
+<p>With version control we can “annotate” code
+(<a class="reference external" href="https://github.com/networkx/networkx/blame/main/networkx/algorithms/boundary.py">browse this example online</a>):</p>
+<figure class="align-default" id="id4">
+<a class="with-border reference internal image-reference" href="../_images/git-annotate.png"><img alt="Example of a git-annotated code with code and history side-by-side" class="with-border" src="../_images/git-annotate.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Example of a git-annotated code with code and history side-by-side.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="talking-about-code">
+<h2>Talking about code<a class="headerlink" href="#talking-about-code" title="Link to this heading"></a></h2>
+<p><strong>Problem: You want to show someone a few lines from one of your projects.</strong></p>
+<p>Which of these two is more practical?</p>
+<ul class="simple">
+<li><p>“Clone the code, go to the file ‘src/util.rs’, and search for ‘time_iso8601’”.
+Oh! But make sure you use the version from August 2023.”</p></li>
+<li><p>Or I can send you a <a class="reference external" href="https://github.com/NordicHPC/sonar/blob/75daafc86582feb06299d6a47c82112f39888152/src/util.rs#L40-L44">permalink</a>:</p></li>
+</ul>
+<figure class="align-default" id="id5">
+<a class="with-border reference internal image-reference" href="../_images/code-portion.png"><img alt="Screen-shot of a code portion" class="with-border" src="../_images/code-portion.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Permalink that points to a code portion.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="what-we-typically-like-to-snapshot">
+<h2>What we typically like to snapshot<a class="headerlink" href="#what-we-typically-like-to-snapshot" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Software (this is how it started but Git/GitHub can track a lot more)</p></li>
+<li><p>Scripts</p></li>
+<li><p>Documents (plain text files much better suitable than Word documents)</p></li>
+<li><p>Manuscripts (Git is great for collaborating/sharing LaTeX or <a class="reference external" href="https://quarto.org/">Quarto</a> manuscripts)</p></li>
+<li><p>Configuration files</p></li>
+<li><p>Website sources</p></li>
+<li><p>Data</p></li>
+</ul>
+<div class="admonition-discussion discussion important admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<p>In this example somebody tried to keep track of versions without a version
+control system tool like Git.  Discuss the following directory listing. What
+possible problems do you anticipate with this kind of “version control”:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>myproject-2019.zip
+myproject-2020-February.zip
+myproject-2021-August.zip
+myproject-2023-09-19-working.zip
+myproject-2023-09-21.zip
+myproject-2023-09-21-test.zip
+myproject-2023-09-21-myversion.zip
+myproject-2023-09-21-newfeature.zip
+...
+(100 more files like these)
+</pre></div>
+</div>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>Giving a version to a collaborator and merging changes later with own
+changes sounds like lots of work.</p></li>
+<li><p>What if you discover a bug and want to know since when the bug existed?</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="difficulties-of-version-control">
+<h2>Difficulties of version control<a class="headerlink" href="#difficulties-of-version-control" title="Link to this heading"></a></h2>
+<p>Despite the benefits, let’s be honest, there are some difficulties:</p>
+<ul class="simple">
+<li><p>One more thing to learn (it’s probably worth it and will save you more time in the long run; basic career skill).</p></li>
+<li><p>Difficult if your collaborators don’t want to use it (in the worst case, you
+can version control <strong>on your side</strong> and email them versions).</p></li>
+<li><p>Advanced things can be difficult, but basics are often enough (ask others for help when needed).</p></li>
+</ul>
+</section>
+<section id="why-git-and-not-another-tool">
+<h2>Why Git and not another tool?<a class="headerlink" href="#why-git-and-not-another-tool" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Easy to set up</strong>: no server needed.</p></li>
+<li><p><strong>Very popular</strong>: chances are high you will need to contribute to somebody else’s code which is tracked with Git.</p></li>
+<li><p><strong>Distributed</strong>: good backup, no single point of failure, you can track and
+clean-up changes offline, simplifies collaboration model for open-source
+projects.</p></li>
+<li><p>Important <strong>platforms</strong> such as <a class="reference external" href="https://github.com">GitHub</a>, <a class="reference external" href="https://gitlab.com">GitLab</a>, and <a class="reference external" href="https://bitbucket.org">Bitbucket</a>
+build on top of Git.</p></li>
+</ul>
+<p>However, any version control is better than no version control and it is OK to
+prefer a different tool than Git such as
+<a class="reference external" href="https://subversion.apache.org">Subversion</a>,
+<a class="reference external" href="https://www.mercurial-scm.org">Mercurial</a>, <a class="reference external" href="https://pijul.org/">Pijul</a>, or others.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../" class="btn btn-neutral float-left" title="Introduction to version control with Git - Why we want to track versions and how to go back in time to a working version" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../configuration/" class="btn btn-neutral float-right" title="Configuring Git command line and editor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

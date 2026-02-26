@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring Git command line and editor &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script src="../_static/tabs.js?v=3030b3cb"></script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Copy and browse an existing project" href="../browsing/" />
+    <link rel="prev" title="Motivation" href="../motivation/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring Git command line and editor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#name-and-email-address-for-git-commit-metadata">Name and email address for Git commit metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#default-branch-name">Default branch name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-alias-for-the-command-line">Useful alias for the command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#default-text-editor-for-commit-messages">Default text editor for commit messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authenticating-to-github-ssh-or-https-or-vs-code">Authenticating to GitHub: SSH or HTTPS or VS Code?</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuring Git command line and editor</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/configuration.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuring-git-command-line-and-editor">
+<span id="configuration"></span><h1>Configuring Git command line and editor<a class="headerlink" href="#configuring-git-command-line-and-editor" title="Link to this heading"></a></h1>
+<p>We have a longer version of this in the <a class="reference external" href="https://coderefinery.github.io/installation/git-in-terminal/">installation
+instructions</a>.
+But for clarity, we will review the most important parts here.</p>
+<p>You don’t need to set these if you work only through the GitHub web interface.
+If you use VS Code or other editors or integrated development environments,
+the editor might prompt you to set these up.</p>
+<p>These configuration settings are saved in a file called <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> in your
+home directory. If this file exists, editors like VS Code will use this
+configuration.</p>
+<p>If you want to see your configuration settings, you can use the
+command (<code class="docutils literal notranslate"><span class="pre">--show-origin</span></code> means it shows the file <em>where</em> each setting
+is defined):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--list<span class="w"> </span>--show-origin
+</pre></div>
+</div>
+<section id="name-and-email-address-for-git-commit-metadata">
+<h2>Name and email address for Git commit metadata<a class="headerlink" href="#name-and-email-address-for-git-commit-metadata" title="Link to this heading"></a></h2>
+<p>Git commits carry metadata about the author and two things you will always need
+to define somewhere are:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>yourname@example.com
+</pre></div>
+</div>
+<p>For the email address we recommend to use the one you use for your GitHub account.
+If you prefer to not use it, you can instead use
+<code class="docutils literal notranslate"><span class="pre">YOUR_GITHUB_USERNAME&#64;users.noreply.github.com</span></code> as the email address (replace <code class="docutils literal notranslate"><span class="pre">YOUR_GITHUB_USERNAME</span></code>).
+This means that nobody can write to this email address, but GitHub will still
+be able to connect your contributions with your GitHub account.</p>
+<p>Note that these can, in theory, be anything: this is just data, not a
+registration or identity requirement.</p>
+</section>
+<section id="default-branch-name">
+<h2>Default branch name<a class="headerlink" href="#default-branch-name" title="Link to this heading"></a></h2>
+<p>The default branch name in Git has been <code class="docutils literal notranslate"><span class="pre">master</span></code> for a long time, but it is
+changing to <code class="docutils literal notranslate"><span class="pre">main</span></code> in many places.  We recommend to set it to <code class="docutils literal notranslate"><span class="pre">main</span></code> for new
+repositories that you create locally:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultbranch<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+<section id="useful-alias-for-the-command-line">
+<h2>Useful alias for the command line<a class="headerlink" href="#useful-alias-for-the-command-line" title="Link to this heading"></a></h2>
+<p>We recommend to define an <a class="reference internal" href="../reference/#term-alias"><span class="xref std std-term">alias</span></a> (shortcut) in Git, to be able to nicely visualize
+branch structure in the terminal without having to remember a long Git command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.graph<span class="w"> </span><span class="s2">&quot;log --all --graph --decorate --oneline&quot;</span>
+</pre></div>
+</div>
+<p>We have an own section about aliases: <a class="reference internal" href="../aliases/#aliases"><span class="std std-ref">Aliases and configuration</span></a>.</p>
+</section>
+<section id="default-text-editor-for-commit-messages">
+<h2>Default text editor for commit messages<a class="headerlink" href="#default-text-editor-for-commit-messages" title="Link to this heading"></a></h2>
+<p>Git sometimes needs to start a text editor for you to enter messages (unless you create
+commits from inside an editor or on the web).
+This may have already been set to something (like VS Code), but if not
+<code class="docutils literal notranslate"><span class="pre">nano</span></code> is usually a safe choice:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>nano
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://coderefinery.github.io/installation/editors/">installation instructions text editor page</a> gives ways
+to set other editors, or do a web search for “git set editor to
+[editor name]”.</p>
+</section>
+<section id="authenticating-to-github-ssh-or-https-or-vs-code">
+<span id="clone-method"></span><h2>Authenticating to GitHub: SSH or HTTPS or VS Code?<a class="headerlink" href="#authenticating-to-github-ssh-or-https-or-vs-code" title="Link to this heading"></a></h2>
+<p><strong>How does GitHub know who you are?</strong> We discuss here three options:</p>
+<ul class="simple">
+<li><p><strong>SSH</strong> is the classic method, using <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Shell">Secure Shell
+Protocol</a> remote connection
+keys.</p></li>
+<li><p><strong>HTTPS</strong> works with the <strong>Git Credential Manager</strong>, which is an
+extra add-on that works easily in Windows and Mac.</p></li>
+<li><p><strong>VS Code</strong> editor can authenticate with GitHub using its own
+authentication method.</p></li>
+</ul>
+<p>Read how to install them from the <a class="reference external" href="https://coderefinery.github.io/installation/ssh/">installation
+instructions</a>.</p>
+<p>Test which one you should use:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-Q29tbWFuZCBsaW5lOiBTU0g=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-Q29tbWFuZCBsaW5lOiBTU0g=" name="Q29tbWFuZCBsaW5lOiBTU0g=" role="tab" tabindex="0">Command line: SSH</button><button aria-controls="panel-0-Q29tbWFuZCBsaW5lOiBIVFRQUw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Q29tbWFuZCBsaW5lOiBIVFRQUw==" name="Q29tbWFuZCBsaW5lOiBIVFRQUw==" role="tab" tabindex="-1">Command line: HTTPS</button><button aria-controls="panel-0-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button></div><div aria-labelledby="tab-0-Q29tbWFuZCBsaW5lOiBTU0g=" class="sphinx-tabs-panel group-tab" id="panel-0-Q29tbWFuZCBsaW5lOiBTU0g=" name="Q29tbWFuZCBsaW5lOiBTU0g=" role="tabpanel" tabindex="0"><p>Try this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</pre></div>
+</div>
+<p>If it returns <code class="docutils literal notranslate"><span class="pre">Hi</span> <span class="pre">USERNAME!</span> <span class="pre">You've</span> <span class="pre">successfully</span> <span class="pre">authenticated,</span> <span class="pre">...</span></code>,
+then SSH is configured and the following steps will work with the SSH
+cloning.</p>
+<p>See our <a class="reference external" href="https://coderefinery.github.io/installation/ssh/">installation
+instructions</a> to
+set up SSH access.</p>
+<p>From now on, <strong>if you know that SSH works, you should always select
+SSH as the clone URL from GitHub, or translate the URL to start with
+the right thing yourself:</strong> <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:</span></code> (with the <code class="docutils literal notranslate"><span class="pre">:</span></code>).</p>
+</div><div aria-labelledby="tab-0-Q29tbWFuZCBsaW5lOiBIVFRQUw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Q29tbWFuZCBsaW5lOiBIVFRQUw==" name="Q29tbWFuZCBsaW5lOiBIVFRQUw==" role="tabpanel" tabindex="0"><p>Try this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--get<span class="w"> </span>credential.helper
+</pre></div>
+</div>
+<p>If this shows something, then the credential manager is probably
+configured and HTTPS cloning will work (but you can’t verify it until
+you try using it).</p>
+<p>From now on, <strong>if you know that HTTPS works, you should always select
+HTTPS as the clone URL from GitHub, or translate the URL to start with
+the right thing yourself:</strong> <code class="docutils literal notranslate"><span class="pre">https://github.com/</span></code></p>
+</div><div aria-labelledby="tab-0-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>VS Code has its own authentication method and the editor will guide you
+through the process. If you are using VS Code, you can skip the SSH and
+HTTPS checks.</p>
+<p>From now on, you should <strong>select HTTPS as the clone URL from
+GitHub, or translate the URL to start with the right thing
+yourself:</strong> <code class="docutils literal notranslate"><span class="pre">https://github.com/</span></code></p>
+<p>If you don’t want VS Code to be connected to your GitHub account,
+set up and use the SSH method instead.</p>
+</div></div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../motivation/" class="btn btn-neutral float-left" title="Motivation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../browsing/" class="btn btn-neutral float-right" title="Copy and browse an existing project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

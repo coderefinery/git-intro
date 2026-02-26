@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick reference &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Customizing Git" href="../customizing/" />
+    <link rel="prev" title="Git under the hood" href="../under-the-hood/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#other-cheatsheets">Other cheatsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands-we-use">Commands we use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quick reference</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/reference.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-reference">
+<h1>Quick reference<a class="headerlink" href="#quick-reference" title="Link to this heading"></a></h1>
+<section id="other-cheatsheets">
+<h2>Other cheatsheets<a class="headerlink" href="#other-cheatsheets" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aaltoscicomp.github.io/cheatsheets/git-the-way-you-need-it-cheatsheet.pdf">Detailed 2-page Git
+cheatsheet</a></p></li>
+<li><p><a class="reference external" href="http://www.ndpsoftware.com/git-cheatsheet.html">Interactive Git cheatsheet</a></p></li>
+</ul>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading"></a></h2>
+<dl class="simple glossary">
+<dt id="term-alias">alias<a class="headerlink" href="#term-alias" title="Link to this term"></a></dt><dd><p>With aliases you can define your own shortcuts for Git commands.</p>
+</dd>
+<dt id="term-version-control-system">version control system<a class="headerlink" href="#term-version-control-system" title="Link to this term"></a></dt><dd><p>A system that records changes to a file or set of files over time so that
+you can recall specific versions later.</p>
+</dd>
+<dt id="term-git">git<a class="headerlink" href="#term-git" title="Link to this term"></a></dt><dd><p>Implementation of a version control system. Currently the most popular one.</p>
+</dd>
+<dt id="term-commit">commit<a class="headerlink" href="#term-commit" title="Link to this term"></a></dt><dd><p>As a verb, the process of recording more changes.
+As a noun, the name of the record of changes.
+A commit is identified by something such as <code class="docutils literal notranslate"><span class="pre">554c187</span></code>.</p>
+</dd>
+<dt id="term-working-directory">working directory<a class="headerlink" href="#term-working-directory" title="Link to this term"></a></dt><dt id="term-workspace">workspace<a class="headerlink" href="#term-workspace" title="Link to this term"></a></dt><dd><p>the actual files you see and edit</p>
+</dd>
+<dt id="term-staging-area">staging area<a class="headerlink" href="#term-staging-area" title="Link to this term"></a></dt><dd><p>Place files go after <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and before <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></p>
+</dd>
+<dt id="term-hash">hash<a class="headerlink" href="#term-hash" title="Link to this term"></a></dt><dd><p>Unique reference of any commit or state.  Comes from <a class="reference external" href="https://en.wikipedia.org/wiki/Hash_function">hash
+functions</a> such as MD5
+or SHA1.</p>
+</dd>
+<dt id="term-branch">branch<a class="headerlink" href="#term-branch" title="Link to this term"></a></dt><dd><p>One line of work.  Different branches can exist at the same time
+and split/merge.  Committing on a branch updates that branch.</p>
+</dd>
+<dt id="term-tag">tag<a class="headerlink" href="#term-tag" title="Link to this term"></a></dt><dd><p>Like a <a class="reference internal" href="#term-branch"><span class="xref std std-term">branch</span></a> in that it points to a commit for reference.
+It is designed to be permanent an not updated.</p>
+</dd>
+<dt id="term-HEAD">HEAD<a class="headerlink" href="#term-HEAD" title="Link to this term"></a></dt><dd><p>Pointer to the most recent commit on the current branch.</p>
+</dd>
+<dt id="term-remote">remote<a class="headerlink" href="#term-remote" title="Link to this term"></a></dt><dd><p>Roughly, another server that holds .git.</p>
+</dd>
+<dt id="term-origin">origin<a class="headerlink" href="#term-origin" title="Link to this term"></a></dt><dd><p>Default name for a remote repository.</p>
+</dd>
+<dt id="term-repository">repository<a class="headerlink" href="#term-repository" title="Link to this term"></a></dt><dd><p>One collection of files managed by Git.  It contains entire history
+of all files managed by git.  GitHub has one repository as one
+GitHub repository.  VS Code has one repository as one directory you
+can open.  The command line has one repository as one directory.</p>
+</dd>
+<dt id="term-clone">clone<a class="headerlink" href="#term-clone" title="Link to this term"></a></dt><dd><p>As a verb, the process of making a copy of a repository locally.
+It brings in all history and all files.  (As a noun, the copy that
+was made when cloning).</p>
+</dd>
+<dt id="term-GitHub-repository">GitHub repository<a class="headerlink" href="#term-GitHub-repository" title="Link to this term"></a></dt><dd><p>The files from the Git repository, but also other things from
+GitHub such as access permissions, issues, and pull requests.</p>
+</dd>
+<dt id="term-upstream">upstream<a class="headerlink" href="#term-upstream" title="Link to this term"></a></dt><dd><p>The original repository from which the code comes.  If you
+<a class="reference internal" href="#term-fork"><span class="xref std std-term">fork</span></a> the repository, it is your upstream and it is easy to
+send changes back to there.</p>
+</dd>
+<dt id="term-fork">fork<a class="headerlink" href="#term-fork" title="Link to this term"></a></dt><dd><p>As a noun: a one person’s copy of a repository.
+As a verb: making that copy.
+As a verb on GitHub: Making a copy of a repository linked to the
+original.  It is easy to send changes to the original</p>
+</dd>
+<dt id="term-issue">issue<a class="headerlink" href="#term-issue" title="Link to this term"></a></dt><dd><p>Within a web repository like GitHub, discussion of a topic, for
+example a problem or improvement suggestion.  These are a property
+of the web platform and not of the Git program itself.</p>
+</dd>
+<dt id="term-pull-request">pull request<a class="headerlink" href="#term-pull-request" title="Link to this term"></a></dt><dd><p>A GitHub concept: change proposal.  A proposal to merge one branch
+into another.  Usually used to contribute code back to
+<a class="reference internal" href="#term-upstream"><span class="xref std std-term">upstream</span></a>.</p>
+</dd>
+<dt id="term-push">push<a class="headerlink" href="#term-push" title="Link to this term"></a></dt><dd><p>Moving changes from your local copy to another copy</p>
+</dd>
+<dt id="term-pull">pull<a class="headerlink" href="#term-pull" title="Link to this term"></a></dt><dd><p>Getting changes from another copy to your own copy.  <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>
+does this fetch, and also tries to automatically merge.</p>
+</dd>
+<dt id="term-master">master<a class="headerlink" href="#term-master" title="Link to this term"></a></dt><dd><p>Default name for main branch on Git. Depending on the configuration and service,
+the default branch is sometimes <strong>main</strong>.
+In this lesson we configure Git so that the default branch is
+called <strong>main</strong> to be more consistent with GitHub and GitLab.</p>
+</dd>
+<dt id="term-main">main<a class="headerlink" href="#term-main" title="Link to this term"></a></dt><dd><p>Default name for main branch on GitLab and GitHub.
+In this lesson we configure Git so that the default branch is
+called <strong>main</strong> to be more consistent with GitHub and GitLab.</p>
+</dd>
+<dt id="term-merge">merge<a class="headerlink" href="#term-merge" title="Link to this term"></a></dt><dt id="term-merging">merging<a class="headerlink" href="#term-merging" title="Link to this term"></a></dt><dd><p>Bringing changes from one branch into another, either as a noun or
+verb.</p>
+</dd>
+<dt id="term-VS-Code">VS Code<a class="headerlink" href="#term-VS-Code" title="Link to this term"></a></dt><dd><p>A text editor and development environment by Microsoft.  It’s quite
+popular, partly because it is powerful and easy to use.  <a class="reference external" href="https://vscodium.com/">VS
+Codium</a> is the same but without Microsoft
+tracking.</p>
+</dd>
+</dl>
+</section>
+<section id="commands-we-use">
+<h2>Commands we use<a class="headerlink" href="#commands-we-use" title="Link to this heading"></a></h2>
+<p>Setup:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code>: edit configuration options</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">-b</span> <span class="pre">main</span></code>: create new repository with <code class="docutils literal notranslate"><span class="pre">main</span></code> as the default branch</p></li>
+</ul>
+<p>See our status:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>: see status of files - use often!</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>: see history of commits and their messages, newest first</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>: see a detailed graph of commits.  Create this command
+with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">alias.graph</span> <span class="pre">&quot;log</span> <span class="pre">--all</span> <span class="pre">--graph</span> <span class="pre">--decorate</span> <span class="pre">--oneline&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>: show difference between working directory and last commit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--staged</span></code>: show difference between staging area and last commit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">COMMIT</span></code>: inspect individual commits</p></li>
+</ul>
+<p>General work:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">FILE</span></code>:</p>
+<ul>
+<li><p>Add a new file</p></li>
+<li><p>Add a file to staging</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>: record a version, add it to current branch</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code>: amend our last commit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>: show which branch we’re on</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">NAME</span></code>: create a new branch called “name”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">FILE</span></code>: restore last committed/staged version of FILE, losing unstaged changes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">--create</span> <span class="pre">BRANCH-NAME</span></code>: create a new branch and switch to it</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HASH</span></code>: create a new commit which reverts commit HASH</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--soft</span> <span class="pre">HASH</span></code>: remove all commits after HASH, but keep their modifications as staged changes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HASH</span></code>: remove all commits after HASH, permanently throwing away their changes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">BRANCH-NAME</span></code>: merge branch BRANCH-NAME into current branch</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">grep</span> <span class="pre">PATTERN</span></code>: search for patterns in tracked files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">annotate</span> <span class="pre">FILE</span></code>: find out when a specific line got introduced and by whom</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code>: find a commit which broke some functionality</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../under-the-hood/" class="btn btn-neutral float-left" title="Git under the hood" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../customizing/" class="btn btn-neutral float-right" title="Customizing Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

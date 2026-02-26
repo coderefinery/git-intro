@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conflict resolution &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Using the Git staging area" href="../staging-area/" />
+    <link rel="prev" title="Branching and merging" href="../branches/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Conflict resolution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conflicts-in-git-and-why-they-are-good">Conflicts in Git and why they are good</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparing-a-conflict">Preparing a conflict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merging-conflicting-changes">Merging conflicting changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Conflict resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-create-and-resolve-a-conflict">Exercise: Create and resolve a conflict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-exercises-with-conflict-resolution">Optional exercises with conflict resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-ours-or-theirs-strategy">Using “ours” or “theirs” strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aborting-a-conflicting-merge">Aborting a conflicting merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avoiding-conflicts">Avoiding conflicts</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Conflict resolution</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/conflicts.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="conflict-resolution">
+<span id="id1"></span><h1>Conflict resolution<a class="headerlink" href="#conflict-resolution" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Understand merge conflicts sufficiently well to be able to fix them.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>20 min teaching/type-along</p></li>
+<li><p>20 min exercise</p></li>
+</ul>
+</div>
+<section id="conflicts-in-git-and-why-they-are-good">
+<h2>Conflicts in Git and why they are good<a class="headerlink" href="#conflicts-in-git-and-why-they-are-good" title="Link to this heading"></a></h2>
+<p>Imagine we start with the following text file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="n">tbsp</span> <span class="n">cilantro</span>
+<span class="mi">2</span> <span class="n">avocados</span>
+<span class="mi">1</span> <span class="n">chili</span>
+<span class="mi">1</span> <span class="n">lime</span>
+<span class="mi">1</span> <span class="n">tsp</span> <span class="n">salt</span>
+<span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">onion</span>
+</pre></div>
+</div>
+<p>On branch A somebody modifies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="mi">2</span> <span class="n">tbsp</span> <span class="n">cilantro</span>
+</span><span class="mi">2</span> <span class="n">avocados</span>
+<span class="mi">1</span> <span class="n">chili</span>
+<span class="hll"><span class="mi">2</span> <span class="n">lime</span>
+</span><span class="mi">1</span> <span class="n">tsp</span> <span class="n">salt</span>
+<span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">onion</span>
+</pre></div>
+</div>
+<p>On branch B somebody else modifies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">tbsp</span> <span class="n">cilantro</span>
+</span><span class="mi">2</span> <span class="n">avocados</span>
+<span class="mi">1</span> <span class="n">chili</span>
+<span class="mi">1</span> <span class="n">lime</span>
+<span class="mi">1</span> <span class="n">tsp</span> <span class="n">salt</span>
+<span class="hll"><span class="mi">1</span> <span class="n">onion</span>
+</span></pre></div>
+</div>
+<p>When we try to merge Git will figure out that we 2 limes and an entire onion
+but does not know whether to reduce or increase the amount of cilantro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="hll">?????????????????
+</span>2 avocados
+1 chili
+2 lime
+1 tsp salt
+1 onion
+</pre></div>
+</div>
+<p>Git is very good at resolving modifications when merging branches and
+in most cases a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> runs smooth and automatic.
+Then a merge commit appears (unless fast-forward; see <a class="reference internal" href="../branches/#exercise-branches-optional"><span class="std std-ref">Optional exercises with branches</span></a>) without you even noticing.</p>
+<p>But sometimes the <strong>same portion</strong> of the code/text is modified on two branches
+<strong>in two different ways</strong> and Git issues a <strong>conflict</strong>.
+Then you need to tell Git which version to keep (<strong>resolve</strong> it).</p>
+<p>There are several ways to do that as we will see.</p>
+<p>Please remember:</p>
+<ul class="simple">
+<li><p>It is good that Git conflicts exist: Git will not silently overwrite one of
+two differing modifications.</p></li>
+<li><p>Conflicts may look scary, but are not that bad after a little bit of
+practice. Also they are luckily rare.</p></li>
+<li><p>Don’t be afraid of Git because of conflicts. You may not meet some conflicts
+using other systems because you simply can’t do the kinds of things you do
+in Git.</p></li>
+<li><p>You can take human measures to reduce them.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition-the-human-side-of-conflicts discussion important admonition" id="discussion-0">
+<p class="admonition-title">The human side of conflicts</p>
+<ul class="simple">
+<li><p>What does it mean if two people do the same thing in two different ways?</p></li>
+<li><p>What if you work on the same file but do two different things in the different sections?</p></li>
+<li><p>What if you do something, don’t tell someone from 6 months, and then try to combine it with other people’s work?</p></li>
+<li><p>How are conflicts avoided in other work? (Only one person working at once?
+Declaring what you are doing before you start, if there is any chance someone
+else might do the same thing, helps.)</p></li>
+<li><p>Minor conflicts (two people revise spelling) vs semantic (two people rewrite
+a function to add two different new features). How did Git solve these in
+branching/merging easily?</p></li>
+</ul>
+</div>
+<p>Now we can go to show how Git controls when there is actually a conflict.</p>
+</section>
+<section id="preparing-a-conflict">
+<h2>Preparing a conflict<a class="headerlink" href="#preparing-a-conflict" title="Link to this heading"></a></h2>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-1">
+<p class="admonition-title">Instructor note</p>
+<p>We do the following together as type-along/demo.</p>
+</div>
+<div class="admonition-if-you-got-stuck-previously-or-joined-later admonition">
+<p class="admonition-title">If you got stuck previously or joined later</p>
+<p><strong>If you got stuck previously or joined later</strong>,
+you can apply the commands below.
+But <strong>skip this box if you managed to create branches</strong>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>..<span class="w">  </span><span class="c1"># step out of the current directory</span>
+
+<span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/coderefinery/recipe-before-merge.git
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>recipe-before-merge
+
+<span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
+
+<span class="gp">$ </span>git<span class="w"> </span>graph
+</pre></div>
+</div>
+<p>Or call a helper to un-stuck it for you.</p>
+</div>
+<p>We will make two branches, make two conflicting changes (both increase and
+decrease the amount of cilantro), and later we will try to merge them
+together.</p>
+<ul>
+<li><p>Create two branches from <code class="docutils literal notranslate"><span class="pre">main</span></code>: one called <code class="docutils literal notranslate"><span class="pre">like-cilantro</span></code>, one called <code class="docutils literal notranslate"><span class="pre">dislike-cilantro</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>like-cilantro<span class="w"> </span>main
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>dislike-cilantro<span class="w"> </span>main
+</pre></div>
+</div>
+</li>
+<li><p>On the two branches make <strong>different modifications</strong> to the amount of the <strong>same ingredient</strong>:</p></li>
+<li><p>On the branch <code class="docutils literal notranslate"><span class="pre">like-cilantro</span></code> we have the following change:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff<span class="w"> </span>main<span class="w"> </span>like-cilantro
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/ingredients.txt b/ingredients.txt</span>
+<span class="gh">index e83294b..6cacd50 100644</span>
+<span class="gd">--- a/ingredients.txt</span>
+<span class="gi">+++ b/ingredients.txt</span>
+<span class="gu">@@ -1,4 +1,4 @@</span>
+<span class="gd">-* 1 tbsp cilantro</span>
+<span class="gi">+* 2 tbsp cilantro</span>
+<span class="w"> </span>* 2 avocados
+<span class="w"> </span>* 1 chili
+<span class="w"> </span>* 1 lime
+</pre></div>
+</div>
+</li>
+<li><p>And on the branch <code class="docutils literal notranslate"><span class="pre">dislike-cilantro</span></code> we have the following change:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff<span class="w"> </span>main<span class="w"> </span>dislike-cilantro
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/ingredients.txt b/ingredients.txt</span>
+<span class="gh">index e83294b..6484462 100644</span>
+<span class="gd">--- a/ingredients.txt</span>
+<span class="gi">+++ b/ingredients.txt</span>
+<span class="gu">@@ -1,4 +1,4 @@</span>
+<span class="gd">-* 1 tbsp cilantro</span>
+<span class="gi">+* 1/2 tbsp cilantro</span>
+<span class="w"> </span>* 2 avocados
+<span class="w"> </span>* 1 chili
+<span class="w"> </span>* 1 lime
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="merging-conflicting-changes">
+<h2>Merging conflicting changes<a class="headerlink" href="#merging-conflicting-changes" title="Link to this heading"></a></h2>
+<p>What do you expect will happen when we try to merge these two branches into
+main?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> does not work, your Git version might be older than from 2019.
+On older Git it is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code>.</p>
+</div>
+<p>The first merge will work:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>main
+<span class="gp">$ </span>git<span class="w"> </span>status
+<span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>like-cilantro
+
+<span class="go">Updating 4e03d4b..3caa632</span>
+<span class="go">Fast-forward</span>
+<span class="go"> ingredients.txt | 2 +-</span>
+<span class="go"> 1 file changed, 1 insertion(+), 1 deletion(-)</span>
+</pre></div>
+</div>
+<p>But the second will fail:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>dislike-cilantro
+
+<span class="go">Auto-merging ingredients.txt</span>
+<span class="go">CONFLICT (content): Merge conflict in ingredients.txt</span>
+<span class="go">Automatic merge failed; fix conflicts and then commit the result.</span>
+</pre></div>
+</div>
+<p>Without conflict Git would have automatically created a merge commit,
+but since there is a conflict, Git did not commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
+
+<span class="go">You have unmerged paths.</span>
+<span class="go">  (fix conflicts and run &quot;git commit&quot;)</span>
+<span class="go">  (use &quot;git merge --abort&quot; to abort the merge)</span>
+
+<span class="go">Unmerged paths:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)</span>
+<span class="hll"><span class="go">	both modified:   ingredients.txt</span>
+</span>
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
+</pre></div>
+</div>
+<p>Git won’t decide which to take and we need to decide.  Observe how Git gives
+us clear instructions on how to move forward.</p>
+<p>Let us inspect the conflicting file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cat<span class="w"> </span>ingredients.txt
+
+<span class="go">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="go">* 2 tbsp cilantro</span>
+<span class="go">=======</span>
+<span class="go">* 1/2 tbsp cilantro</span>
+<span class="go">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dislike-cilantro</span>
+<span class="go">* 2 avocados</span>
+<span class="go">* 1 chili</span>
+<span class="go">* 1 lime</span>
+<span class="go">* 1 tsp salt</span>
+<span class="go">* 1/2 onion</span>
+</pre></div>
+</div>
+<p>Git inserted resolution markers (the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">=======</span></code>).</p>
+<p>Try also <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --cc ingredients.txt</span>
+<span class="gh">index 6cacd50,6484462..0000000</span>
+<span class="gd">--- a/ingredients.txt</span>
+<span class="gi">+++ b/ingredients.txt</span>
+<span class="gu">@@@ -1,4 -1,4 +1,10 @@@</span>
+<span class="gi">++&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="w"> </span>+* 2 tbsp cilantro
+<span class="gi">++=======</span>
+<span class="gi">+ * 1/2 tbsp cilantro</span>
+<span class="gi">++&gt;&gt;&gt;&gt;&gt;&gt;&gt; dislike-cilantro</span>
+<span class="w"> </span> * 2 avocados
+<span class="w"> </span> * 1 chili
+<span class="w"> </span> * 1 lime
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> now only shows the conflicting part, nothing else.</p>
+</section>
+<section id="id2">
+<h2>Conflict resolution<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+<span class="o">*</span> <span class="mi">2</span> <span class="n">tbsp</span> <span class="n">cilantro</span>
+<span class="o">=======</span>
+<span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">tbsp</span> <span class="n">cilantro</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">dislike</span><span class="o">-</span><span class="n">cilantro</span>
+</pre></div>
+</div>
+<p>We have to edit the code/text between the resolution markers.  You
+only have to care about what Git shows you: Git stages all files
+without conflicts and leaves the files with conflicts unstaged.</p>
+<div class="admonition-steps-to-resolve-a-conflict admonition">
+<p class="admonition-title">Steps to resolve a conflict</p>
+<ul class="simple">
+<li><p>Check status with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>.</p></li>
+<li><p>Decide what you keep (the one, the other, or both or something
+else).  Edit the file to do this.</p>
+<ul>
+<li><p>Remove the resolution markers, if not already done.</p></li>
+<li><p>The file(s) should now look exactly how you want them.</p></li>
+</ul>
+</li>
+<li><p>Check status with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>.</p></li>
+<li><p>Tell Git that you have resolved the conflict with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">ingredients.txt</span></code>
+(if you use the Emacs editor with a certain plugin the editor may stage the
+change for you after you have removed the conflict markers).</p></li>
+<li><p>Verify the result with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Finally commit the merge with only <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>. Everything is pre-filled.</p></li>
+</ul>
+</div>
+</section>
+<section id="exercise-create-and-resolve-a-conflict">
+<span id="exercise-conflicts"></span><h2>Exercise: Create and resolve a conflict<a class="headerlink" href="#exercise-create-and-resolve-a-conflict" title="Link to this heading"></a></h2>
+<div class="admonition-conflict-1-create-another-conflict-and-resolve exercise important admonition" id="exercise-0">
+<p class="admonition-title">Conflict-1: Create another conflict and resolve</p>
+<p>In this exercise, we repeat almost exactly what we did above with a
+different ingredient.</p>
+<ol class="arabic simple">
+<li><p>Create two branches before making any modifications.</p></li>
+<li><p>Again modify some ingredient on both branches.</p></li>
+<li><p>Merge one, merge the other and observe a conflict, resolve the conflict and commit the merge.</p></li>
+<li><p>What happens if you apply the same modification on both branches?</p></li>
+<li><p>If you create a branch <code class="docutils literal notranslate"><span class="pre">like-avocados</span></code>, commit a change, then from this
+branch create another banch <code class="docutils literal notranslate"><span class="pre">dislike-avocados</span></code>, commit again, and try to
+merge both branches into <code class="docutils literal notranslate"><span class="pre">main</span></code> you will not see a conflict. Can you
+explain, why it is different this time?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>4: No conflict in this case if the change is the same.</p>
+<p>5: No conflict in this case since in Git history one change happened after the other. The two changes
+are related and linked by Git history and one is a Git ancestor of the
+other. Git will assume that since we applied one change after the other,
+we meant this. There is nothing to resolve.</p>
+</div>
+</div>
+</section>
+<section id="optional-exercises-with-conflict-resolution">
+<span id="exercise-conflicts-optional"></span><h2>Optional exercises with conflict resolution<a class="headerlink" href="#optional-exercises-with-conflict-resolution" title="Link to this heading"></a></h2>
+<div class="admonition-optional-conflict-2-resolve-a-conflict-when-rebasing-a-branch exercise important admonition" id="exercise-1">
+<p class="admonition-title">(optional) Conflict-2: Resolve a conflict when rebasing a branch</p>
+<ol class="arabic simple">
+<li><p>Create two branches where you anticipate a conflict.</p></li>
+<li><p>Try to merge them and observe that indeed they conflict.</p></li>
+<li><p>Abort the merge with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--abort</span></code>.</p></li>
+<li><p>What do you expect will happen if you rebase one branch on top of the
+other? Do you anticipate a conflict? Try it out.</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-1">
+<p class="admonition-title">Solution</p>
+<p>Yes, this will conflict. If it conflicts during a merge, it will also conflict
+during rebase but the conflict resolution looks slightly different:
+You still need to look for conflict markers but you tell Git that you resolved
+a conflict with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then you continue with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--continue</span></code>.
+Follow instructions that you get from the Git command line.</p>
+</div>
+</div>
+<div class="admonition-optional-conflict-3-resolve-a-conflict-using-mergetool exercise important admonition" id="exercise-2">
+<p class="admonition-title">(optional) Conflict-3: Resolve a conflict using mergetool</p>
+<ul>
+<li><p>Again create a conflict (for instance disagree on the number of avocados).</p></li>
+<li><p>Stop at this stage:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Auto-merging ingredients.txt
+CONFLICT (content): Merge conflict in ingredients.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</pre></div>
+</div>
+</li>
+<li><p>Instead of resolving the conflict manually, use a visual tool
+(requires installing one of the <a class="reference external" href="https://coderefinery.github.io/installation/difftools/">visual diff tools</a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>mergetool
+</pre></div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/mergetool.png"><img alt="Conflict resolution using mergetool" src="../_images/mergetool.png" style="width: 100%;" />
+</a>
+</figure>
+</li>
+<li><p>Your current branch is left, the branch you merge is right, result is in the middle.</p></li>
+<li><p>After you are done, close and commit, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is not needed when using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mergetool</span></code>.</p></li>
+</ul>
+<p>If you have not instructed Git to avoid creating backups when using mergetool, then to be on
+the safe side there will be additional temporary files created. To remove those  you can do
+a git clean after the merging.</p>
+<p>To view what will be removed:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clean<span class="w"> </span>-n
+</pre></div>
+</div>
+<p>To remove:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clean<span class="w"> </span>-f
+</pre></div>
+</div>
+<p>To configure Git to avoid creating backups at all:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>mergetool.keepBackup<span class="w"> </span><span class="nb">false</span>
+</pre></div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="using-ours-or-theirs-strategy">
+<h2>Using “ours” or “theirs” strategy<a class="headerlink" href="#using-ours-or-theirs-strategy" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Sometimes you know that you want to keep “ours” version (version on the branch you are on)
+or “theirs” (version on the merged branch).</p></li>
+<li><p>Then you do not have to resolve conflicts manually.</p></li>
+<li><p>See <a class="reference external" href="https://git-scm.com/docs/merge-strategies">merge strategies</a>.</p></li>
+</ul>
+<p>Example (merge and in doubt take the changes from current branch):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>recursive<span class="w"> </span>-Xours<span class="w"> </span>less-avocados
+</pre></div>
+</div>
+<p>Or (merge and in doubt take the changes from less-avocados branch):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>recursive<span class="w"> </span>-Xtheirs<span class="w"> </span>less-avocados
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="aborting-a-conflicting-merge">
+<h2>Aborting a conflicting merge<a class="headerlink" href="#aborting-a-conflicting-merge" title="Link to this heading"></a></h2>
+<p>Sometimes you get a merge conflict but realize that you can’t solve it without
+talking to a colleague (who created the other change) first. What to do?</p>
+<p>You can abort the merge and postponing conflict resolution by resetting the
+repository to <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> (last committed state):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>--abort
+</pre></div>
+</div>
+<p>The repository looks then exactly as it was before the merge.</p>
+</section>
+<hr class="docutils" />
+<section id="avoiding-conflicts">
+<h2>Avoiding conflicts<a class="headerlink" href="#avoiding-conflicts" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Human measures</p>
+<ul>
+<li><p>Think and plan to which branch you will commit to.</p></li>
+<li><p>Do not put unrelated changes on the same branch.</p></li>
+</ul>
+</li>
+<li><p>Collaboration measures</p>
+<ul>
+<li><p>Open an issue and discuss with collaborators before starting a long-living
+branch.</p></li>
+</ul>
+</li>
+<li><p>Project layout measures</p>
+<ul>
+<li><p>Modifying global data often causes conflicts.</p></li>
+<li><p>Modular programming reduces this risk.</p></li>
+</ul>
+</li>
+<li><p>Technical measures</p>
+<ul>
+<li><p><strong>Share your changes early and often</strong> - this is one of the happy,
+rare circumstances when everyone doing the selfish thing (e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> as
+early as practical) results in best case for everyone!</p></li>
+<li><p>Pull/rebase often to keep up to date with upstream.</p></li>
+<li><p>Resolve conflicts early.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition-discussion discussion important admonition" id="discussion-1">
+<p class="admonition-title">Discussion</p>
+<p>Discuss how Git handles conflicts compared to services like Google Drive.</p>
+</div>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>Conflicts often appear because of not enough communication or not optimal
+branching strategy.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../branches/" class="btn btn-neutral float-left" title="Branching and merging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../staging-area/" class="btn btn-neutral float-right" title="Using the Git staging area" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

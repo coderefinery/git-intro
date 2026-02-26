@@ -1,0 +1,626 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recording changes &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script src="../_static/tabs.js?v=3030b3cb"></script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Merging changes and contributing to the project" href="../merging/" />
+    <link rel="prev" title="Copy and browse an existing project" href="../browsing/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Recording changes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise">Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solution-and-walk-through">Solution and walk-through</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#make-sure-you-are-on-your-fork">(1) Make sure you are on your fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-branch-and-add-a-recipe-to-the-branch">(2) Create a branch and add a recipe to the branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modify-the-recipe-with-a-new-commit">(3) Modify the recipe with a new commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switch-to-the-main-branch-and-modify-a-recipe-there">(4) Switch to the main branch and modify a recipe there</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#browse-the-commits-you-just-made">(5) Browse the commits you just made</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compare-the-branches">(6) Compare the branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compare-two-arbitrary-commits">(7) Compare two arbitrary commits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renaming-a-branch">(8) Renaming a branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-tag">(9) Creating a tag</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#discussion">Discussion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Recording changes</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/commits.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="recording-changes">
+<h1>Recording changes<a class="headerlink" href="#recording-changes" title="Link to this heading"></a></h1>
+<p>The first and most basic task to do in Git is <strong>record changes</strong> using
+commits. In this part, we will record changes in two
+ways: on a new branch (which supports multiple lines of work at once), and directly
+on the “main” branch (which happens to be the default branch here).</p>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Record new changes to our own copy of the project.</p></li>
+<li><p>Understand adding changes in two separate branches.</p></li>
+<li><p>See how to compare different versions.</p></li>
+</ul>
+</div>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In the previous episode we have browsed an existing <a class="reference internal" href="../reference/#term-repository"><span class="xref std std-term">repository</span></a> and saw <a class="reference internal" href="../reference/#term-commit"><span class="xref std std-term">commits</span></a>
+and branches.</p></li>
+<li><p>Each commit is a snapshot of the entire project at a certain
+point in time and has a unique identifier (<a class="reference internal" href="../reference/#term-hash"><span class="xref std std-term">hash</span></a>) .</p></li>
+<li><p>A <a class="reference internal" href="../reference/#term-branch"><span class="xref std std-term">branch</span></a> is a line of development, and the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch or <code class="docutils literal notranslate"><span class="pre">master</span></code> branch
+are often the default branch in Git.</p></li>
+<li><p>A branch in Git is like a sticky note that is attached to a commit. When we add
+new commits to a branch, the sticky note moves to the new commit.</p></li>
+<li><p><a class="reference internal" href="../reference/#term-tag"><span class="xref std std-term">Tags</span></a> are a way to mark a specific commit as important, for example a release
+version. They are also like a sticky note, but they don’t move when new
+commits are added.</p></li>
+</ul>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/gophers.png"><img alt="Branching explained with a gopher" src="../_images/gophers.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">What if two people, at the same time, make two different changes?  Git
+can merge them together easily.  Image created using <a class="reference external" href="https://gopherize.me/">https://gopherize.me/</a>
+(<a class="reference external" href="https://twitter.com/jay_gee/status/703360688618536960">inspiration</a>).</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/branches.png"><img alt="Illustration of what we want to achieve in this exercise" src="../_images/branches.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Illustration of what we want to achieve in this exercise.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>We offer <strong>four different paths</strong> of how to do this exercise.  For
+the CodeRefinery workshop day 1, we use and demonstrate the <strong>GitHub
+path</strong> only and recommend you do that
+(you can get experience with
+the other paths on day 2).</p>
+<div class="admonition-exercise-practice-creating-commits-and-branches-20-min exercise important admonition" id="exercise-0">
+<p class="admonition-title">Exercise: Practice creating commits and branches (20 min)</p>
+<ol class="arabic simple">
+<li><p>Make sure that you now work <strong>on your fork</strong> of the recipe-book
+repository (<code class="docutils literal notranslate"><span class="pre">USER/recipe-book</span></code>, <em>not</em> <code class="docutils literal notranslate"><span class="pre">cr-workshop-exercises/recipe-book</span></code>)</p></li>
+<li><p>First create a new branch and then add a recipe to the branch and commit the change.</p></li>
+<li><p>In a new commit, modify the recipe you just added.</p></li>
+<li><p>Switch to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and modify a recipe there.</p></li>
+<li><p>Browse the network and locate the commits that you just created (“Insights” -&gt; “Network”).</p></li>
+<li><p>Compare the branch that you created with the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Can you find an easy way to see the differences?</p></li>
+<li><p>Can you find a way to compare versions between two arbitrary commits in the repository?</p></li>
+<li><p>Try to rename the branch that you created and then browse the network again.</p></li>
+<li><p>Try to create a tag for one of the commits that you created (on GitHub,
+create a “release”).</p></li>
+</ol>
+</div>
+<p>The solution below goes over most of the answers, and you are
+encouraged to use it when the hints aren’t enough - this is by
+design.</p>
+</section>
+<section id="solution-and-walk-through">
+<h2>Solution and walk-through<a class="headerlink" href="#solution-and-walk-through" title="Link to this heading"></a></h2>
+<section id="make-sure-you-are-on-your-fork">
+<h3>(1) Make sure you are on your fork<a class="headerlink" href="#make-sure-you-are-on-your-fork" title="Link to this heading"></a></h3>
+<figure class="align-default" id="id3">
+<a class="with-border reference internal image-reference" href="../_images/fork1.png"><img alt="Screenshot on GitHub where we verify that we are on our fork." class="with-border" src="../_images/fork1.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">You want to see your username in the URL and you want to see the “forked from
+…” part.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="create-a-branch-and-add-a-recipe-to-the-branch">
+<h3>(2) Create a branch and add a recipe to the branch<a class="headerlink" href="#create-a-branch-and-add-a-recipe-to-the-branch" title="Link to this heading"></a></h3>
+<p>A recipe template is below.  This format is called “Markdown”, but it
+doesn’t matter right now. You don’t have to use this particular template.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Recipe name</span>
+
+<span class="gu">## Ingredients</span>
+
+<span class="k">-</span><span class="w"> </span>Ingredient 1
+<span class="k">-</span><span class="w"> </span>Ingredient 2
+
+
+<span class="gu">## Instructions</span>
+
+<span class="k">-</span><span class="w"> </span>Step 1
+<span class="k">-</span><span class="w"> </span>Step 2
+</pre></div>
+</div>
+<p>There is a <a class="reference internal" href="../reference/#term-main"><span class="xref std std-term">main</span></a> branch that is default.  We want to create a
+<em>different</em> <a class="reference internal" href="../reference/#term-branch"><span class="xref std std-term">branch</span></a> for our new commit, because we will <em>merge</em> it later.
+<a class="reference internal" href="../reference/#term-commit"><span class="xref std std-term">Commit</span></a> is the verb to describe recording more changes, and also the
+name of the thing you make.  A commit is identified by something such as
+<code class="docutils literal notranslate"><span class="pre">554c187</span></code>.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-0-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-0-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-0-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-0-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-0-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><ol class="arabic">
+<li><p>Where it says “main” at the top left, click, enter a new branch
+name <code class="docutils literal notranslate"><span class="pre">new-recipe</span></code>, click on the offer to create the new branch
+(“Create branch new-recipe from main”).</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/github-create-branch.png"><img alt="Screenshot on GitHub where we create a new branch." class="with-border" src="../_images/github-create-branch.png" style="width: 60%;" />
+</a>
+</figure>
+</li>
+<li><p>Change to some sub-directory, for example <code class="docutils literal notranslate"><span class="pre">sides</span></code>.</p></li>
+<li><p>Make sure you are still on the <code class="docutils literal notranslate"><span class="pre">new-recipe</span></code> branch (it should say
+it at the top), and click “Add file” → “Create new file” from the
+upper right.</p></li>
+<li><p>Enter a filename where it says “Name your file…”, with a <code class="docutils literal notranslate"><span class="pre">.md</span></code> at
+the end.  Example: <code class="docutils literal notranslate"><span class="pre">mixed-nuts.md</span></code>.</p></li>
+<li><p>Enter the recipe.  You can use the template above.</p></li>
+<li><p>Click “Commit changes”</p></li>
+<li><p>Enter a commit message. Then click “Commit
+changes”.</p></li>
+</ol>
+<p>You should appear back at the file browser view, and see your new
+recipe there.</p>
+</div><div aria-labelledby="tab-0-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<li><p>Make sure that you are on the main branch.</p></li>
+<li><p>Version control button on left sidebar → Three dots in upper right of source control → Branch → Create branch.</p></li>
+<li><p>VS Code automatically switches to the new branch.</p></li>
+</ol>
+<figure class="align-default" id="id4">
+<a class="with-border reference internal image-reference" href="../_images/vscode-create-branch.png"><img alt="VS Code screenshot of create branch" class="with-border" src="../_images/vscode-create-branch.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Creating a new branch in VS Code.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Create a new file, for example <code class="docutils literal notranslate"><span class="pre">sides/mixed-nuts.md</span></code>.</p></li>
+<li><p>In the version control sidebar, click the <code class="docutils literal notranslate"><span class="pre">+</span></code> sign to add the file for the next commit.</p></li>
+<li><p>Enter a brief message and click “Commit”.</p></li>
+</ol>
+<figure class="align-default" id="id5">
+<a class="with-border reference internal image-reference" href="../_images/vscode-add-and-commit.png"><img alt="Screenshot of VS Code commit process" class="with-border" src="../_images/vscode-add-and-commit.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Committing a new file in VS Code.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><div aria-labelledby="tab-0-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>Create a new branch called <code class="docutils literal notranslate"><span class="pre">new-recipe</span></code> from <code class="docutils literal notranslate"><span class="pre">main</span></code> and switch to it:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>new-recipe<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Then create the new file. Finally add and commit the file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>sides/mixed-nuts.md
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add mixed nuts recipe&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><ol class="arabic">
+<li><p>In the Git tab of the Environment panel (upper right), click New Branch.</p></li>
+<li><p>In the pop-up fill in the branch name, e.g. “new-recipe”, untick the box in front of Sync branch with remote
+to avoid the branch to be pushed to GitHub right away.</p></li>
+<li><p>Click Create and RStudio will automatically switch to the new branch.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/rstudio-create-branch.png"><img alt="RStudio screenshot of create branch" class="with-border" src="../_images/rstudio-create-branch.png" style="width: 80%;" />
+</a>
+</figure>
+</li>
+<li><p>Create a new file, for example <code class="docutils literal notranslate"><span class="pre">sides/mixed-nuts.md</span></code>. Remember to save any changes to your file before committing.</p></li>
+<li><p>In the Git tab in the Environment panel (upper right) check the box in front of the file you just created, then
+click Commit in the tab menu-bar to open the Git Changes window.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/rstudio-add-commit.png"><img alt="Screenshot of RStudio commit process in the main window" class="with-border" src="../_images/rstudio-add-commit.png" style="width: 80%;" />
+</a>
+</figure>
+</li>
+<li><p>In the Changes window, check that your new file is selected (ticked), write a short commit message, and finally
+click “Commit”</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/rstudio-commit-changes.png"><img alt="Screenshot of RStudio commit process in the changes window" class="with-border" src="../_images/rstudio-commit-changes.png" style="width: 80%;" />
+</a>
+</figure>
+</li>
+</ol>
+</div></div>
+</section>
+<section id="modify-the-recipe-with-a-new-commit">
+<h3>(3) Modify the recipe with a new commit<a class="headerlink" href="#modify-the-recipe-with-a-new-commit" title="Link to this heading"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-1-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-1-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-1-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-1-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-1-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>This is similar to before, but we click on the existing file to
+modify.</p>
+<ol class="arabic simple">
+<li><p>Click on your new recipe, for example <code class="docutils literal notranslate"><span class="pre">mixed-nuts.md</span></code>.</p></li>
+<li><p>Click the edit button, the pencil icon at top-right.</p></li>
+<li><p>Follow the “Commit changes” instructions as in the previous step.</p></li>
+</ol>
+</div><div aria-labelledby="tab-1-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>Repeat as in the previous step.</p>
+</div><div aria-labelledby="tab-1-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>Modify the file. Then commit the new change:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>sides/mixed-nuts.md
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Short summary of the change&quot;</span>
+</pre></div>
+</div>
+<p>Make sure to replace “Short summary of the change” with a meaningful commit
+message.</p>
+</div><div aria-labelledby="tab-1-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>Make some changes to the recipe you created in the step above. Then follow the same instructions as above starting
+from step 5.</p>
+</div></div>
+</section>
+<section id="switch-to-the-main-branch-and-modify-a-recipe-there">
+<h3>(4) Switch to the main branch and modify a recipe there<a class="headerlink" href="#switch-to-the-main-branch-and-modify-a-recipe-there" title="Link to this heading"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-2-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-2-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-2-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-2-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-2-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<li><p>Go back to the main repository page (your user’s page).</p></li>
+<li><p>In the branch switch view (top left above the file view), switch to
+<code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Modify another recipe that already exists, following the pattern
+from above. Don’t modify the one you just created (but it shouldn’t
+even be visible on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch).</p></li>
+</ol>
+</div><div aria-labelledby="tab-2-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>Use the branch selector at the bottom to switch back to the main branch.  Repeat the same steps as above.</p>
+<figure class="align-default" id="id6">
+<a class="with-border reference internal image-reference" href="../_images/vscode-change-branch.png"><img alt="VS Code screenshot" class="with-border" src="../_images/vscode-change-branch.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Switching branch via selector at bottom.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><div aria-labelledby="tab-2-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>First switch to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Then modify a file. Finally <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and then commit the change:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Short summary of the change&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>In the Git tab of the Environment panel (upper right), click your current branch name, here “new-recipe” and then
+choose the “main” branch.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/rstudio-switch.png"><img alt="Screenshot showing how to switch branch in RStudio" class="with-border" src="../_images/rstudio-switch.png" style="width: 100%;" />
+</a>
+</figure>
+</div><p>Modify another recipe and commit your changes.</p>
+</div>
+</section>
+<section id="browse-the-commits-you-just-made">
+<h3>(5) Browse the commits you just made<a class="headerlink" href="#browse-the-commits-you-just-made" title="Link to this heading"></a></h3>
+<p>Let’s look at what we did.  Now, the <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">new-recipe</span></code> branches
+have diverged: both have some modifications. Try to find the commits
+you created.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-3-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-3-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-3-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-3-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-3-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>Insights tab → Network view (just like we have done before).</p>
+</div><div aria-labelledby="tab-3-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>This requires an extension.  Opening the VS Code terminal lets you use the command line method.</p>
+<figure class="align-default" id="id7">
+<a class="with-border reference internal image-reference" href="../_images/vscode-open-terminal.png"><img alt="VS Code screenshot as described" class="with-border" src="../_images/vscode-open-terminal.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">View → Terminal will open a terminal at bottom.  This is a normal command line interface and very useful for work.  (Note the git-aware prompt that shows the current branch.  This requires other setup.)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><div aria-labelledby="tab-3-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+<span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline<span class="w"> </span>--decorate<span class="w"> </span>--all<span class="w">  </span><span class="c1"># If you didn&#39;t define git graph yet.</span>
+</pre></div>
+</div>
+<p>In my case I got:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="hll">* b4de93b (HEAD -&gt; main) add spring onion to poke
+</span><span class="hll">| * dc5d6f0 (origin/new-recipe, new-recipe) adding chocolate to the mixed nuts recipe
+</span><span class="hll">| * b4035e3 add mixed nuts recipe
+</span>|/
+*   554c187 (origin/main, origin/HEAD) Merge branch &#39;alex/fruit-salad&#39;
+|\
+| * 89d5ef9 fruit salad: instructions
+| * 3bd2468 fruit salad: ingredients
+* | 8bcb766 a todo note to not forget the instructions
+|/
+* b950c5c just fixing capitalization
+* d18035e fix formatting
+* 7051cca add some cilantro
+* ae19e81 add categories for easier browsing
+* a6fe629 we also need salad
+* 30b89c4 document what this is about
+*   fd12dc1 Merge branch &#39;radovan/lasagna&#39;
+|\
+| * 7753d43 vegetarian lasagna: instructions
+| * aa0473e vegetarian lasagna: ingredients
+* |   1e5a24a Merge branch &#39;radovan/poke&#39;
+|\ \
+| * | 5aa6687 oh no! forgot onion - adding
+| * | cc84e4f working on a poke recipe
+| |/
+* | 9500901 a classic pumpkin pie recipe - yum!
+* | 34ce939 drafting a recipe for a pasta, so far only ingredients
+* | 28e5f26 recipe for a mushroom soup
+|/
+* a550963 reduce amount of salt
+* f2d6d58 don&#39;t forget to enjoy
+* 1fde064 add half an onion
+* 4c1873e drafting a guacamole recipe
+* 2992443 this will be licensed under CC0
+* 084a1ea starting with an almost empty readme
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><ol class="arabic">
+<li><p>Open the history window like you did during the previous lesson.</p></li>
+<li><p>Select “(All branches)” in the branch selector drop-down menu to see all the commits on all branches.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/rstudio-history-all-branches.png"><img alt="Screenshot of the History window in RStudio showing all branches and all commits" class="with-border" src="../_images/rstudio-history-all-branches.png" style="width: 80%;" />
+</a>
+</figure>
+</li>
+</ol>
+<blockquote>
+<div><p><strong>NOTE:</strong> If you don’t see the branch selector when you first open the History window, try to switch from the History
+view to the Changes view and back.</p>
+</div></blockquote>
+</div></div>
+</section>
+<section id="compare-the-branches">
+<h3>(6) Compare the branches<a class="headerlink" href="#compare-the-branches" title="Link to this heading"></a></h3>
+<p>Comparing changes is an important thing we need to do.  When using the
+GitHub view only, this may not be so common, but we’ll show it so that
+it makes sense later on.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-4-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-4-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-4-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-4-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-4-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-4-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>A nice way to compare braches is to add <code class="docutils literal notranslate"><span class="pre">/compare</span></code> to the URL of the repository,
+for example (replace USER):
+<code class="docutils literal notranslate"><span class="pre">https://github.com/USER/recipe-book/compare</span></code></p>
+</div><div aria-labelledby="tab-4-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>This seems to require an extension.  We recommend you use the command line method.</p>
+</div><div aria-labelledby="tab-4-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff<span class="w"> </span>main<span class="w"> </span>new-recipe
+</pre></div>
+</div>
+<p>Try also the other way around:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff<span class="w"> </span>new-recipe<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Try also this if you only want to see the file names that are different:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff<span class="w"> </span>--name-only<span class="w"> </span>main<span class="w"> </span>new-recipe
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>This doesn’t seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and follow
+the “Command line” path instructions.</p>
+</div></div>
+</section>
+<section id="compare-two-arbitrary-commits">
+<h3>(7) Compare two arbitrary commits<a class="headerlink" href="#compare-two-arbitrary-commits" title="Link to this heading"></a></h3>
+<p>This is similar to above, but not only between branches.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-5-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-5-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-5-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-5-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-5-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>Following the <code class="docutils literal notranslate"><span class="pre">/compare</span></code>-trick above, one can compare commits on GitHub by
+adjusting the following URL:
+<code class="docutils literal notranslate"><span class="pre">https://github.com/USER/recipe-book/compare/VERSION1..VERSION2</span></code></p>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">USER</span></code> with your username and <code class="docutils literal notranslate"><span class="pre">VERSION1</span></code> and <code class="docutils literal notranslate"><span class="pre">VERSION2</span></code> with a commit hash or branch name.
+Please try it out.</p>
+</div><div aria-labelledby="tab-5-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>Again, we recommend using the Command Line method.</p>
+</div><div aria-labelledby="tab-5-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>First try this to get a short overview of the commits:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</pre></div>
+</div>
+<p>Then try to compare any two commit identifiers with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>.</p>
+</div><div aria-labelledby="tab-5-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>Again, this doesn’t seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and
+follow the “Command line” path instructions.</p>
+</div></div>
+</section>
+<section id="renaming-a-branch">
+<h3>(8) Renaming a branch<a class="headerlink" href="#renaming-a-branch" title="Link to this heading"></a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-6-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-6-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-6-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-6-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-6-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-6-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>Branch button → View all branches → three dots at right side → Rename branch.</p>
+</div><div aria-labelledby="tab-6-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>Version control sidebar → Three dots (same as in step 2) → Branch → Rename branch.  Make sure you are on the right branch before you start.</p>
+</div><div aria-labelledby="tab-6-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>Renaming the current branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>better-recipe
+</pre></div>
+</div>
+<p>Renaming a different branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>new-recipe<span class="w"> </span>better-recipe
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-6-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>Again, this doesn’t seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and
+follow the “Command line” path instructions.</p>
+</div></div>
+</section>
+<section id="creating-a-tag">
+<h3>(9) Creating a tag<a class="headerlink" href="#creating-a-tag" title="Link to this heading"></a></h3>
+<p>Tags are a way to mark a specific commit as important, for example a release
+version. They are also like a sticky note, but they don’t move when new
+commits are added.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-7-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-7-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-7-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-7-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-7-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-7-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-7-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-7-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-7-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-7-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>Click on the branch switcher, and then on “Tags”, then on “View all tags”, then
+“Create a new release”:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/github-create-tag.png"><img alt="Screenshot on GitHub where we create a new tag." class="with-border" src="../_images/github-create-tag.png" style="width: 60%;" />
+</a>
+</figure>
+<p>What GitHub calls releases are actually tags in Git with additional metadata.
+For the purpose of this exercise we can use them interchangeably.</p>
+</div><div aria-labelledby="tab-7-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-7-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>Version control sidebar → Three dots (same as in step 2) → Tags → Create tag.  Make sure you are on the expected commit before you do this.</p>
+</div><div aria-labelledby="tab-7-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-7-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>Creating a tag:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;New manuscript version of my recipe for the pre-print&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-7-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-7-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>Again, this doesn’t seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and
+follow the “Command line” path instructions.</p>
+</div></div>
+</section>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading"></a></h2>
+<p>In this part, we saw how we can make changes to our files.
+With <a class="reference internal" href="../reference/#term-branch"><span class="xref std std-term">branches</span></a>, we can
+track several lines of work at once, and can compare
+their differences.</p>
+<ul class="simple">
+<li><p>You could commit directly to <code class="docutils literal notranslate"><span class="pre">main</span></code> if there is only one single line
+of work and it’s only you.</p></li>
+<li><p>You could commit to branches if there are multiple lines of work at
+once, and you don’t want them to interfere with each other.</p></li>
+<li><p>Tags are useful to mark a specific commit as important, for example a
+release version.</p></li>
+<li><p>In Git, commits form a so-called “graph”. Branches are tags in Git function
+like sticky notes that stick to specific commits. What this means for us is
+that it does not cost any significant disk space to create new branches.</p></li>
+<li><p>Not all files should be added to Git. For example, temporary files or
+files with sensitive information or files which are generated as part of
+the build process should not be added to Git. For this we use
+<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (more about this later: <a class="reference internal" href="../what-to-avoid/#what-to-avoid"><span class="std std-ref">What to avoid</span></a>).</p></li>
+<li><p>Unsure on which branch you are or what state the repository is in?
+On the command line, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> frequently to get a quick overview.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../browsing/" class="btn btn-neutral float-left" title="Copy and browse an existing project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../merging/" class="btn btn-neutral float-right" title="Merging changes and contributing to the project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interrupted work &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Aliases and configuration" href="../aliases/" />
+    <link rel="prev" title="Undoing and recovering" href="../recovering/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Interrupted work</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frequent-situation-interrupted-work">Frequent situation: interrupted work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-1-stashing">Option 1: Stashing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exercise-stashing">Exercise: Stashing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#option-2-create-branches">Option 2: Create branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storing-various-junk-you-don-t-need-but-don-t-want-to-get-rid-of">Storing various junk you don’t need but don’t want to get rid of</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Interrupted work</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/interrupted.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="interrupted-work">
+<h1>Interrupted work<a class="headerlink" href="#interrupted-work" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Learn to switch context or abort work without panicking.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>10 min teaching/type-along</p></li>
+<li><p>15 min exercise</p></li>
+</ul>
+</div>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>There is almost never reason to clone a fresh copy to complete a task that
+you have in mind.</p></li>
+</ul>
+</div>
+<section id="frequent-situation-interrupted-work">
+<h2>Frequent situation: interrupted work<a class="headerlink" href="#frequent-situation-interrupted-work" title="Link to this heading"></a></h2>
+<p>We all wish that we could write beautiful perfect code. But the real world is
+much more chaotic:</p>
+<ul class="simple">
+<li><p>You are in the middle of a “Jackson-Pollock-style” debugging spree with 27 modified files
+and debugging prints everywhere.</p></li>
+<li><p>Your colleague comes in and wants you to fix/commit something right now.</p></li>
+<li><p>What to do?</p></li>
+</ul>
+<p>Git provides lots of ways to switch tasks without ruining everything.</p>
+</section>
+<section id="option-1-stashing">
+<h2>Option 1: Stashing<a class="headerlink" href="#option-1-stashing" title="Link to this heading"></a></h2>
+<p>The <strong>stash</strong> is the first and easiest place to temporarily “stash”
+things.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> will put working directory and staging area changes
+away.  Your code will be same as last commit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code> will return to the state you were before. Can give it a list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">list</span></code> will list the current stashes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">save</span> <span class="pre">NAME</span></code> is like the first, but will give it a name.
+Useful if it might last a while.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">save</span> <span class="pre">[-p]</span> <span class="pre">[filename]</span></code> will stash certain files files
+and/or by patches.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">drop</span></code> will drop the most recent stash (or whichever stash
+you give).</p></li>
+<li><p>The stashes form a stack, so you can stash several batches of modifications.</p></li>
+</ul>
+<section id="exercise-stashing">
+<span id="id1"></span><h3>Exercise: Stashing<a class="headerlink" href="#exercise-stashing" title="Link to this heading"></a></h3>
+<div class="admonition-interrupted-1-stash-some-uncommitted-work exercise important admonition" id="exercise-0">
+<p class="admonition-title">Interrupted-1: Stash some uncommitted work</p>
+<ol class="arabic simple">
+<li><p>Make a change.</p></li>
+<li><p>Check status/diff, stash the change with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code>, check status/diff again.</p></li>
+<li><p>Make a separate, unrelated change which doesn’t touch the same
+lines.  Commit this change.</p></li>
+<li><p>Pop off the stash you saved with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code>, and check status/diff.</p></li>
+<li><p>Optional: Do the same but stash twice.  Also check <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">list</span></code>.
+Can you pop the stashes in the opposite order?</p></li>
+<li><p>Advanced: What happens if stashes conflict with other changes? Make
+a change and stash it.  Modify the same line or one right above or
+below.  Pop the stash back.  Resolve the conflict.  Note there is no
+extra commit.</p></li>
+<li><p>Advanced: what does <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> show when you have something
+stashed?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>5: Yes you can. With <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span> <span class="pre">INDEX</span></code> you can decie which stash
+index to pop.</p>
+<p>6: In this case Git will ask us to resolve the conflict the same way
+when resolving conflicts between two branches.</p>
+<p>7: It shows an additional commit hash with <code class="docutils literal notranslate"><span class="pre">refs/stash</span></code>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="option-2-create-branches">
+<h2>Option 2: Create branches<a class="headerlink" href="#option-2-create-branches" title="Link to this heading"></a></h2>
+<p>You can use branches almost like you have already been doing if you
+need to save some work.  You need to do something else for a bit?
+Sounds like a good time to make a feature branch.</p>
+<p>You basically know how to do this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>--create<span class="w"> </span>temporary<span class="w">  </span><span class="c1"># create a branch and switch to it</span>
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>PATHS<span class="w">                  </span><span class="c1"># stage changes</span>
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w">                     </span><span class="c1"># commit them</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>main<span class="w">                </span><span class="c1"># back to main, continue your work there ...</span>
+<span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>temporary<span class="w">           </span><span class="c1"># continue again on &quot;temporary&quot; where you left off</span>
+</pre></div>
+</div>
+<p>Later you can merge it to main or rebase it on top of main and resume work.</p>
+</section>
+<section id="storing-various-junk-you-don-t-need-but-don-t-want-to-get-rid-of">
+<h2>Storing various junk you don’t need but don’t want to get rid of<a class="headerlink" href="#storing-various-junk-you-don-t-need-but-don-t-want-to-get-rid-of" title="Link to this heading"></a></h2>
+<p>It happens often that you do something and don’t need it, but you don’t want to
+lose it right away.  You can use either of the above strategies to stash/branch
+it away: using branches is probably better because branches are less easily
+overlooked if you come back to the repository in few weeks.  Note that if you
+try to use a branch after a long time, conflicts might get really bad but at
+least you have the data still.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../recovering/" class="btn btn-neutral float-left" title="Undoing and recovering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../aliases/" class="btn btn-neutral float-right" title="Aliases and configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

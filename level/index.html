@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practical advice: How much Git is necessary? &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="What to avoid" href="../what-to-avoid/" />
+    <link rel="prev" title="How to turn your project to a Git repo and share it" href="../sharing/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/">Copy and browse an existing project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Practical advice: How much Git is necessary?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#working-on-the-command-line-use-git-status-all-the-time">Working on the command line? Use “git status” all the time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-useful-commit-messages">Writing useful commit messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-level-of-branching-complexity-is-necessary-for-each-project">What level of branching complexity is necessary for each project?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-about-staging-and-committing">How about staging and committing?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-large-should-a-commit-be">How large should a commit be?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Practical advice: How much Git is necessary?</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/level.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="practical-advice-how-much-git-is-necessary">
+<h1>Practical advice: How much Git is necessary?<a class="headerlink" href="#practical-advice-how-much-git-is-necessary" title="Link to this heading"></a></h1>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>20 min teaching/discussion</p></li>
+</ul>
+</div>
+<section id="working-on-the-command-line-use-git-status-all-the-time">
+<h2>Working on the command line? Use “git status” all the time<a class="headerlink" href="#working-on-the-command-line-use-git-status-all-the-time" title="Link to this heading"></a></h2>
+<p>Unsure on which branch you are or what state the repository is in?  On the
+command line, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> frequently to get a quick overview.
+The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command is one of the most useful commands in Git
+to inform about which branch we are on, what we are about to commit,
+which files might not be tracked, etc.</p>
+</section>
+<section id="writing-useful-commit-messages">
+<h2>Writing useful commit messages<a class="headerlink" href="#writing-useful-commit-messages" title="Link to this heading"></a></h2>
+<p>Useful commit messages summarize the change and provide context.</p>
+<p>If you need a commit message that is longer than one line,
+then the convention is: <strong>one line summarizing the commit, then one empty line,
+then paragraph(s) with more details in free form, if necessary</strong>.</p>
+<p>Good example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>increase alpha to 2.0 for faster convergence
+
+the motivation for this change is
+to enable ...
+...
+(more context)
+...
+this is based on a discussion in #123
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Why something was changed is more important than what has changed.</strong></p></li>
+<li><p>Cross-reference to issues and discussions if possible/relevant.</p></li>
+<li><p>Bad commit messages: “fix”, “oops”, “save work”</p></li>
+<li><p>Bad examples: <a class="reference external" href="http://whatthecommit.com">http://whatthecommit.com</a></p></li>
+<li><p>Write commit messages in English that will be understood
+15 years from now by someone else than you. Or by your future you.</p></li>
+<li><p>Many projects start out as projects “just for me” and end up to be successful projects
+that are developed by 50 people over decades.</p></li>
+<li><p><a class="reference external" href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">Commits with multiple authors</a> are possible.</p></li>
+</ul>
+<p>Good references:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fatbusinessman.com/2019/my-favourite-git-commit">“My favourite Git commit”</a></p></li>
+<li><p><a class="reference external" href="https://who-t.blogspot.com/2009/12/on-commit-messages.html">“On commit messages”</a></p></li>
+<li><p><a class="reference external" href="https://chris.beams.io/posts/git-commit/">“How to Write a Git Commit Message”</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A great way to learn how to write commit messages and to get inspired by their
+style choices: <strong>browse repositories of codes that you use/like</strong>:</p>
+<p>Some examples (but there are so many good examples):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/scipy/scipy/commits/main">SciPy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/numpy/numpy/commits/main">NumPy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pandas-dev/pandas/commits/main">Pandas</a></p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaLang/julia/commits/master">Julia</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tidyverse/ggplot2/commits/main">ggplot2</a>,
+compare with their <a class="reference external" href="https://github.com/tidyverse/ggplot2/releases">release
+notes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pallets/flask/commits/main">Flask</a>,
+compare with their <a class="reference external" href="https://github.com/pallets/flask/blob/main/CHANGES.rst">release
+notes</a></p></li>
+</ul>
+<p>When designing commit message styles consider also these:</p>
+<ul class="simple">
+<li><p>How will you easily generate a changelog or release notes?</p></li>
+<li><p>During code review, you can help each other improving commit messages.</p></li>
+</ul>
+</div>
+<p>But remember: it is better to make any commit, than no commit. Especially in small projects.
+<strong>Let not the perfect be the enemy of the good enough</strong>.</p>
+</section>
+<section id="what-level-of-branching-complexity-is-necessary-for-each-project">
+<h2>What level of branching complexity is necessary for each project?<a class="headerlink" href="#what-level-of-branching-complexity-is-necessary-for-each-project" title="Link to this heading"></a></h2>
+<p><strong>Simple personal projects</strong>:</p>
+<ul class="simple">
+<li><p>Typically start with just the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+<li><p>Use branches for unfinished/untested ideas.</p></li>
+<li><p>Use branches when you are not sure about a change.</p></li>
+<li><p>Use tags to mark important milestones.</p></li>
+<li><p>If you are unsure what to do with unfinished and not working code, commit it
+to a branch.</p></li>
+</ul>
+<p><strong>Projects with few persons: you accept things breaking sometimes</strong></p>
+<ul class="simple">
+<li><p>It might be reasonable to commit to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and feature branches.</p></li>
+</ul>
+<p><strong>Projects with few persons: changes are reviewed by others</strong></p>
+<ul class="simple">
+<li><p>You create new feature branches for changes.</p></li>
+<li><p>Changes are reviewed before they are merged to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch
+(more about that in the <a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative Git lesson</a>).</p></li>
+<li><p>Consider to write-protect the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch so that it can only be changed
+with pull requests or merge requests.</p></li>
+</ul>
+</section>
+<section id="how-about-staging-and-committing">
+<h2>How about staging and committing?<a class="headerlink" href="#how-about-staging-and-committing" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Commit early and often: rather create too many commits than too few.
+You can always combine commits later.</p></li>
+<li><p>Once you commit, it is very, very hard to really lose your code.</p></li>
+<li><p>Always fully commit (or stash) before you do dangerous things, so that you know you are safe.
+Otherwise it can be hard to recover.</p></li>
+<li><p>Later you can start using the staging area (where you first stage and then commit in a second step).</p></li>
+<li><p>Later start using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-p</span></code> and/or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-p</span></code>.</p></li>
+</ul>
+</section>
+<section id="how-large-should-a-commit-be">
+<h2>How large should a commit be?<a class="headerlink" href="#how-large-should-a-commit-be" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Better too small than too large (easier to combine than to split).</p></li>
+<li><p>Often I make a commit at the end of the day (this is a unit I would not like to lose).</p></li>
+<li><p>Smaller sized commits may be easier to review for others than huge commits.</p></li>
+<li><p>Imperfect commits are better than no commits.</p></li>
+<li><p>A commit should not contain unrelated changes to simplify review and possible
+repair/adjustments/undo later (but again: imperfect commits are better than no commits).</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>There is no one size fits all - start simple and grow your project.</p></li>
+</ul>
+</div>
+<div class="admonition-discussion discussion important admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<p>How do you [plan to] use Git?</p>
+<ul class="simple">
+<li><p>Advanced users or beginners, please provide your input in the online collaborative document.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../sharing/" class="btn btn-neutral float-left" title="How to turn your project to a Git repo and share it" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../what-to-avoid/" class="btn btn-neutral float-right" title="What to avoid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

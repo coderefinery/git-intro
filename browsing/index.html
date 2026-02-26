@@ -1,0 +1,576 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copy and browse an existing project &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=e9df6548" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=791bfbd6" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=187304be"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=582ca9e2"></script>
+      <script src="../_static/minipres.js?v=a0d29692"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script src="../_static/tabs.js?v=3030b3cb"></script>
+      <script data-domain="coderefinery.github.io" defer="defer" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Recording changes" href="../commits/" />
+    <link rel="prev" title="Configuring Git command line and editor" href="../configuration/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuring Git command line and editor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modifying an existing project</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Copy and browse an existing project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#github-vs-code-command-line-and-more">GitHub, VS Code, Command line, and more</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-copy-of-the-repository-by-forking">Creating a copy of the repository by “forking”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise">Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solution-and-walk-through">Solution and walk-through</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-browsing">(1) Basic browsing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compare-commit-history-with-network-graph">(2) Compare commit history with network graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#when-was-a-recipe-last-modified">(3) When was a recipe last modified?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-many-changes-did-the-guacamole-recipe-receive">(4) How many changes did the Guacamole recipe receive?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#which-recipes-include-the-ingredient-salt">(5) Which recipes include the ingredient “salt”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#who-modified-each-line-last-and-when">(6) Who modified each line last and when?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-you-use-these-recipes-yourself-are-you-allowed-to-share-modifications">(7) Can you use these recipes yourself? Are you allowed to share modifications?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#browse-issues-and-pull-requests-in-the-upstream-repository">(8) Browse issues and pull requests in the <span class="xref std std-term">upstream</span> repository</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commits/">Recording changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merging/">Merging changes and contributing to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local-workflow/">Cloning a Git repository and working locally</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Studying an existing project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sharing your work</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sharing/">How to turn your project to a Git repo and share it</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Finding the balance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: How much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Older episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://youtu.be/xbTTDLA3txI">Shell crash course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.github.io/git-intro/lesson.pdf">PDF version</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Copy and browse an existing project</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/browsing.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="copy-and-browse-an-existing-project">
+<h1>Copy and browse an existing project<a class="headerlink" href="#copy-and-browse-an-existing-project" title="Link to this heading"></a></h1>
+<p>In this episode, we will look at an <strong>existing repository</strong> to
+understand how all the pieces work together. Along the way, we will make a copy
+(a <a class="reference internal" href="../reference/#term-fork"><span class="xref std std-term">fork</span></a>) of the <a class="reference internal" href="../reference/#term-repository"><span class="xref std std-term">repository</span></a> for us, which will be used for our
+own changes in the next episode.</p>
+<ul class="simple">
+<li><p>We used to start by directly going and creating a repository from scratch. This
+was abstract and hard to understand.</p></li>
+<li><p>Instead, we’ll show you all the cool stuff in a Git repository
+first, and then start adding files.</p></li>
+<li><p>We use an example recipe book we created just for this course.</p></li>
+<li><p>By the end of the course, you’ll know how to contribute your own
+recipes to it.</p></li>
+</ul>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>See a real Git repository and understand what is inside of it.</p></li>
+<li><p>Understand how version control allows advanced inspection of a
+repository.</p></li>
+<li><p>See how Git allows multiple people to collaborate relatively easily.</p></li>
+<li><p><strong>See the big picture</strong> instead of remembering a bunch of commands.</p></li>
+</ul>
+</div>
+<section id="github-vs-code-command-line-and-more">
+<h2>GitHub, VS Code, Command line, and more<a class="headerlink" href="#github-vs-code-command-line-and-more" title="Link to this heading"></a></h2>
+<p>We offer <strong>four different paths</strong> for this exercise:</p>
+<ul class="simple">
+<li><p><strong>GitHub</strong> (this is the one we will demonstrate on day 1)</p></li>
+<li><p><strong>VS Code</strong> (if you prefer to follow along using an editor; we will
+return to this on day 2)</p></li>
+<li><p><strong>RStudio</strong> (if you prefer to follow along using an editor; we will
+return to this on day 2)</p></li>
+<li><p><strong>Command line</strong> (for people comfortable with the command line; you
+will see more of this on day 2)</p></li>
+</ul>
+<p>In the future we’ll add more paths, for example Jupyter
+(<a class="reference external" href="https://github.com/coderefinery/git-intro/issues/458">contributions welcome!</a>).</p>
+</section>
+<section id="creating-a-copy-of-the-repository-by-forking">
+<h2>Creating a copy of the repository by “forking”<a class="headerlink" href="#creating-a-copy-of-the-repository-by-forking" title="Link to this heading"></a></h2>
+<p>A <a class="reference internal" href="../reference/#term-repository"><span class="xref std std-term">repository</span></a> is a collection of files in one directory tracked
+by git.  A <a class="reference internal" href="../reference/#term-GitHub-repository"><span class="xref std std-term">GitHub repository</span></a> is GitHub’s copy, which adds
+things like access control.  Each GitHub repository is owned by a user
+or organization, who controls access.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/fork.png"><img alt="Illustration of forking a repository on GitHub" src="../_images/fork.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Illustration of forking a repository on GitHub.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>First, we need to make <strong>our own copy</strong> of the exercise repository. This will
+become important later, when we make our own changes.</p>
+<ol class="arabic">
+<li><p>Go to the repository view on GitHub:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/cr-workshop-exercises/recipe-book">https://github.com/cr-workshop-exercises/recipe-book</a>: you can use this one if you don’t want your fork and contributions
+to be visible on the stream or the recording</p></li>
+<li><p><a class="reference external" href="https://github.com/cr-workshop-exercises/recipe-book-recorded">https://github.com/cr-workshop-exercises/recipe-book-recorded</a>: we will use this one for the demonstration which is streamed and recorded</p></li>
+</ul>
+</li>
+<li><p>First, on GitHub, click the button that says “Fork”.  It is towards
+the top-right of the screen:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/forking.png"><img alt="Screenshot on GitHub before clicking on &quot;Fork&quot;" class="with-border" src="../_images/forking.png" style="width: 80%;" />
+</a>
+</figure>
+</li>
+<li><p>You should shortly be redirected to your copy of the repository
+<strong>USER/recipe-book</strong>.</p></li>
+</ol>
+<p>At all times you should be aware of if you are looking at <em>your</em> repository
+or the <em>CodeRefinery <a class="reference internal" href="../reference/#term-upstream"><span class="xref std std-term">upstream</span></a></em> repository.</p>
+<ul class="simple">
+<li><p>Your repository: https://github.com/<strong>USER</strong>/recipe-book</p></li>
+<li><p>CodeRefinery upstream repository: https://github.com/<strong>cr-workshop-exercises</strong>/recipe-book</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-0-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-0-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-0-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-0-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-0-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>You only need to open your own view, as described above.  The browser
+URL should look like <code class="docutils literal notranslate"><span class="pre">https://github.com/USER/recipe-book</span></code>, where
+<code class="docutils literal notranslate"><span class="pre">USER</span></code> is your GitHub username.</p>
+</div><div aria-labelledby="tab-0-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>You need to have forked the repository as described above.</p>
+<p>We need to start by making a copy of this repository locally.</p>
+<ol class="arabic simple">
+<li><p>Start VS Code.</p></li>
+<li><p>If you don’t have the default view (you already have a project
+open), go to File → New Window.</p></li>
+<li><p>Under “Start” on the screen, select “Clone Git Repository…”. Alternatively
+navigate to the “Source Control” tab on the left sidebar and click on the “Clone Repository” button.</p></li>
+<li><p>Paste in this URL: <code class="docutils literal notranslate"><span class="pre">https://github.com/USER/recipe-book</span></code>, where
+<code class="docutils literal notranslate"><span class="pre">USER</span></code> is your username.  You can copy this from the browser.</p></li>
+<li><p>Browse and select the folder in which you want to clone the
+repository.</p></li>
+<li><p>Say yes, you want to open this repository.</p></li>
+<li><p>Select “Yes, I trust the authors” (the other option works too).</p></li>
+</ol>
+</div><div aria-labelledby="tab-0-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p><strong>This path is advanced and we do not include all command line
+information: you need to be somewhat
+comfortable with the command line already.</strong></p>
+<p>We need to start by making a copy of this repository locally.  You
+need to have forked the repository as described above.</p>
+<ol class="arabic simple">
+<li><p>Start the terminal in which you use Git (terminal application, or
+Git Bash).</p></li>
+<li><p>Change to the directory where you would want the repository to be
+(<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/code</span></code> for example, if the <code class="docutils literal notranslate"><span class="pre">~/code</span></code> directory is where you
+store your files).</p></li>
+<li><p>Run the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/USER/recipe-book</span></code>, where <code class="docutils literal notranslate"><span class="pre">USER</span></code> is your
+username.  You might need to use a SSH clone command instead of
+HTTPS, depending on your setup.</p></li>
+<li><p>Change to that directory: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">recipe-book</span></code></p></li>
+</ol>
+</div><div aria-labelledby="tab-0-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>You need to have forked the repository as described above.</p>
+<p>We need to start by making a copy of this repository locally.</p>
+<ol class="arabic simple">
+<li><p>Start RStudio.</p></li>
+<li><p>Go to “File” → “New Project…”</p></li>
+<li><p>Choose “Version Control”, and then “Git”</p></li>
+<li><p>In the “Repository URL” field, paste in this URL: <code class="docutils literal notranslate"><span class="pre">https://github.com/USER/recipe-book</span></code>, where
+<code class="docutils literal notranslate"><span class="pre">USER</span></code> is your username.  You can copy this from the browser.</p></li>
+<li><p>You can change the “Project directory name” if you want but that is not mandatory.
+By default, it will use the repository name from the URL.</p></li>
+<li><p>Click “Create Project”</p></li>
+</ol>
+</div></div>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading"></a></h2>
+<p>Work on this by yourself or in your team.</p>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<p>Before starting the exercise session show
+how to fork the repository to own account
+(above).</p>
+</div>
+<div class="admonition-exercise-browsing-an-existing-project-25-min exercise important admonition" id="exercise-0">
+<p class="admonition-title">Exercise: Browsing an existing project (25 min)</p>
+<p>Browse the recipe-book project (introduced above) and explore commits and branches. Take notes
+and prepare questions.  The hints are for the GitHub path in the
+browser.</p>
+<ol class="arabic simple">
+<li><p>Browse the <strong>commit history</strong>: Are commit messages understandable?
+(Hint: “Commit history”, the timeline symbol, above the file list)</p></li>
+<li><p>Compare the commit history with the <strong>network graph</strong> (“Insights” -&gt; “Network”). Can you find the branches?</p></li>
+<li><p>How can you find out when a recipe was <strong>last modified</strong>?</p></li>
+<li><p><strong>How many changes</strong> did the Guacamole recipe receive (you find it under “sides”)?
+Try to click on some of the commits to see what changed.
+(Hint: “History” in the view of a single file)</p></li>
+<li><p><strong>Which recipes include the ingredient “salt”</strong>?
+(Hint: the GitHub search.  From the repository view, it should offer
+the filter “repo:USER/recipe-book” by default.  What if you
+add a search term?)</p></li>
+<li><p>In the Guacamole recipe, find out <strong>who modified each line last and when</strong>
+(click on file, then click “Blame” button). Find out who added the cilantro
+and in which commit.
+(Hint: “Blame” view in the file view)</p></li>
+<li><p>Can you use these recipes yourself? <strong>Are you allowed to share
+modifications</strong>?
+(Hint: look for a license file)</p></li>
+<li><p><strong>Browse issues and pull requests</strong> in the <a class="reference internal" href="../reference/#term-upstream"><span class="xref std std-term">upstream</span></a> repository (the
+repository you forked from). Any idea what these might be good for?
+(Hint: tabs in the repository view)</p></li>
+</ol>
+</div>
+<p>The solution below goes over most of the answers, and you are
+encouraged to use it when the hints aren’t enough - this is by
+design.</p>
+</section>
+<section id="solution-and-walk-through">
+<h2>Solution and walk-through<a class="headerlink" href="#solution-and-walk-through" title="Link to this heading"></a></h2>
+<section id="basic-browsing">
+<h3>(1) Basic browsing<a class="headerlink" href="#basic-browsing" title="Link to this heading"></a></h3>
+<p>The most basic thing to look at is the history of commits.</p>
+<ul class="simple">
+<li><p>This is visible from a button in the repository view.  We see every
+change, when, and who has committed.</p></li>
+<li><p>Every change has a unique identifier, such as <code class="docutils literal notranslate"><span class="pre">554c187</span></code>.  This can
+be used to identify both this change, and the whole project’s
+version as of that change.</p></li>
+<li><p>Clicking on a change in the view shows more.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-1-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-1-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-1-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-1-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-1-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>Click on the timeline symbol in the repository view:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/history1.png"><img alt="Screenshot on GitHub of where to find the commit history" class="with-border" src="../_images/history1.png" style="width: 100%;" />
+</a>
+</figure>
+</div><div aria-labelledby="tab-1-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>This can be done from “Timeline”, in the bottom of explorer, but only
+for a single file.</p>
+</div><div aria-labelledby="tab-1-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>Run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log
+</pre></div>
+</div>
+<p>Try also:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>This can be done from “History”, in the top right panel of explorer. This will open a pop-up window
+from which you can explore the history of commits.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/history_RStudio.png"><img alt="Screenshot of RStudio of where to find the commit history" class="with-border" src="../_images/history_RStudio.png" style="width: 100%;" />
+</a>
+</figure>
+</div></div>
+</section>
+<section id="compare-commit-history-with-network-graph">
+<h3>(2) Compare commit history with network graph<a class="headerlink" href="#compare-commit-history-with-network-graph" title="Link to this heading"></a></h3>
+<p>The commit history we saw above looks linear: one commit after
+another.  But if we look at the network view, we see some branches and
+merges.  We’ll see how to do these later.  This is another one of the
+basic Git views.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-2-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-2-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-2-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-2-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-2-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>In a new browser tab, open the “Insights” tab, and click on “Network”.
+You can hover over the commit dots to see the person who committed and
+how they correspond with the commits in the other view:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/network.png"><img alt="Screenshot on GitHub of the network graph" class="with-border" src="../_images/network.png" style="width: 100%;" />
+</a>
+</figure>
+</div><div aria-labelledby="tab-2-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>We don’t know how to do this without an extension. Try starting a terminal and using the
+“Command Line” option.</p>
+</div><div aria-labelledby="tab-2-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>If you defined the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> alias (shortcut) as in <a class="reference internal" href="../configuration/"><span class="doc">Configuring Git command line and editor</span></a>, you
+can view the network graph with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>graph
+</pre></div>
+</div>
+<p>If not, you can use the basic command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline<span class="w"> </span>--decorate<span class="w"> </span>--all
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>This can be viewed in the same “History” tab that we just looked at. The branch network can be seen on the left of
+the commit list, and individual commits can be clicked to see the person who committed and what changes they did.</p>
+<figure class="align-default">
+<img alt="../_images/network_RStudio.png" src="../_images/network_RStudio.png" />
+</figure>
+</div></div>
+</section>
+<section id="when-was-a-recipe-last-modified">
+<h3>(3) When was a recipe last modified?<a class="headerlink" href="#when-was-a-recipe-last-modified" title="Link to this heading"></a></h3>
+<p>We see the history for the whole repository, but we can also see it
+for a single file.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-3-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-3-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-3-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-3-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-3-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>Navigate to the file view: Main page → sides directory →
+guacamole.md. Click the “History” button near the top right:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/file-history.png"><img alt="Screenshot on GitHub showing the history of a single file" class="with-border" src="../_images/file-history.png" style="width: 100%;" />
+</a>
+</figure>
+</div><div aria-labelledby="tab-3-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>Open sides/guacamole.md file in the editor.  Under the file browser,
+we see a “Timeline” view there.</p>
+</div><div aria-labelledby="tab-3-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command can take a filename and provide the log of only
+a single file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log sides/guacamole.md
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>Open the file in the main editor window, and navigate to the “Version control” menu (Git icon in the toolbar right
+below the main menu bar), then select “Log of guacamole.md”</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/file-history_RStudio_menu.png"><img alt="Screenshot of RStudio of where to find the file history" class="with-border" src="../_images/file-history_RStudio_menu.png" style="width: 100%;" />
+</a>
+</figure>
+<p>This will open a pop-up window showing all commits that modified the “Guacamole.md” file.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/file-history_RStudio_view.png"><img alt="Screenshot of RStudio showing history of the guacamole.md file" class="with-border" src="../_images/file-history_RStudio_view.png" style="width: 100%;" />
+</a>
+</figure>
+</div></div>
+</section>
+<section id="how-many-changes-did-the-guacamole-recipe-receive">
+<h3>(4) How many changes did the Guacamole recipe receive?<a class="headerlink" href="#how-many-changes-did-the-guacamole-recipe-receive" title="Link to this heading"></a></h3>
+<p>According to the view above, it seems to have five changes (as of
+2024-03-07).  This could change later on.</p>
+</section>
+<section id="which-recipes-include-the-ingredient-salt">
+<h3>(5) Which recipes include the ingredient “salt”<a class="headerlink" href="#which-recipes-include-the-ingredient-salt" title="Link to this heading"></a></h3>
+<p>Version control makes it very easy to find all occurrences of a single
+word. This is useful for things like finding where functions or
+variables are defined or used.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-4-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-4-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-4-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-4-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-4-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-4-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>We go to the main recipe book view.  We click the Search magnifying
+class at the very top, type “salt”, and click enter. We see every
+instance, including the context.</p>
+<div class="admonition-searching-in-a-forked-repository-will-not-work-instantaneously admonition">
+<p class="admonition-title">Searching in a forked repository will not work instantaneously!</p>
+<p>It usually takes a few minutes before one can search for keywords in a forked repository
+since it first needs to build the search index the very first time we search.
+Start it, continue with other steps, then come back to this.</p>
+</div>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/search1.png"><img alt="Screenshot on GitHub performing a search" class="with-border" src="../_images/search1.png" style="width: 100%;" />
+</a>
+</figure>
+</div><div aria-labelledby="tab-4-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>If you use the “Search” magnifying class on the left sidebar, and
+search for “salt” it shows the occurrences in every file. You can
+click to see the usage in context.</p>
+</div><div aria-labelledby="tab-4-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p><code class="docutils literal notranslate"><span class="pre">grep</span></code> is the command line tool that searches for lines matching a term</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span>salt<span class="w">          </span><span class="c1"># only the lines</span>
+<span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span>-C<span class="w"> </span><span class="m">3</span><span class="w"> </span>salt<span class="w">     </span><span class="c1"># three lines of context</span>
+<span class="gp">$ </span>git<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>salt<span class="w">       </span><span class="c1"># case insensitive</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>Go to Edit → Find in Files… (ctrl+shift+F) and type salt in the Find field. It will by default search for salt in
+all files in the recipe-book directory. Press Find button at the bottom of the pop-up window. It will show all
+occurrences in every file in a Find in Files tab in the Console panel.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/search_RStudio.png"><img alt="Screenshot of the Find in Files tab in RStudio showing all &quot;salt&quot; occurrences in every file" class="with-border" src="../_images/search_RStudio.png" style="width: 100%;" />
+</a>
+</figure>
+</div></div>
+</section>
+<section id="who-modified-each-line-last-and-when">
+<h3>(6) Who modified each line last and when?<a class="headerlink" href="#who-modified-each-line-last-and-when" title="Link to this heading"></a></h3>
+<p>This is called the “annotate” or “blame” view. The name “blame”
+is very unfortunate, but it is the standard term for historical reasons
+for this functionality and it is not meant to blame anyone.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-R2l0SHVi" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-R2l0SHVi" name="R2l0SHVi" role="tab" tabindex="0">GitHub</button><button aria-controls="panel-5-VlMgQ29kZQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tab" tabindex="-1">VS Code</button><button aria-controls="panel-5-Q29tbWFuZCBsaW5l" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="-1">Command line</button><button aria-controls="panel-5-UlN0dWRpbw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tab" tabindex="-1">RStudio</button></div><div aria-labelledby="tab-5-R2l0SHVi" class="sphinx-tabs-panel group-tab" id="panel-5-R2l0SHVi" name="R2l0SHVi" role="tabpanel" tabindex="0"><p>From a recipe view, change preview to “Blame” towards the top-left.
+To get the actual commit, click on the commit message.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/annotate1.png"><img alt="Screenshot on GitHub showing the &quot;Blame&quot; view" class="with-border" src="../_images/annotate1.png" style="width: 100%;" />
+</a>
+</figure>
+</div><div aria-labelledby="tab-5-VlMgQ29kZQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-VlMgQ29kZQ==" name="VlMgQ29kZQ==" role="tabpanel" tabindex="0"><p>This requires an extension.  We recommend for now you use the command
+line version, after opening a terminal.</p>
+</div><div aria-labelledby="tab-5-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>These two commands are similar but have slightly different output.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>annotate<span class="w"> </span>sides/guacamole.md
+<span class="gp">$ </span>git<span class="w"> </span>blame<span class="w"> </span>sides/guacamole.md
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-UlN0dWRpbw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-UlN0dWRpbw==" name="UlN0dWRpbw==" role="tabpanel" tabindex="0"><p>Open the file in the main editor window, and navigate to the “Version control” menu (Git icon in the toolbar right
+below the main menu bar), then select “Blame “guacamole.md” on GitHub”. This will open a GitHub page in your
+web-browser with the same view as shown in the GitHub tab.</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/annotate_RStudio.png"><img alt="Screenshot of RStudio of where to find the file history" class="with-border" src="../_images/annotate_RStudio.png" style="width: 100%;" />
+</a>
+</figure>
+</div></div>
+</section>
+<section id="can-you-use-these-recipes-yourself-are-you-allowed-to-share-modifications">
+<h3>(7) Can you use these recipes yourself? Are you allowed to share modifications?<a class="headerlink" href="#can-you-use-these-recipes-yourself-are-you-allowed-to-share-modifications" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Look at the file <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>.</p></li>
+<li><p>It says it is “Creative Commons Zero 1.0”, which is equivalent to
+public domain.  You can use them without conditions.</p></li>
+<li><p>Note the GitHub view of the file <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> gives a nice summary of what it
+means. Try it out:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/license.png"><img alt="Screenshot on GitHub summarizing license terms" class="with-border" src="../_images/license.png" style="width: 100%;" />
+</a>
+</figure>
+</li>
+</ul>
+</section>
+<section id="browse-issues-and-pull-requests-in-the-upstream-repository">
+<h3>(8) Browse issues and pull requests in the <a class="reference internal" href="../reference/#term-upstream"><span class="xref std std-term">upstream</span></a> repository<a class="headerlink" href="#browse-issues-and-pull-requests-in-the-upstream-repository" title="Link to this heading"></a></h3>
+<p>This can only be done through the GitHub view.  Go to the main
+repository <strong>cr-workshop-exercises/recipe-book</strong>, (not your fork):
+<a class="reference external" href="https://github.com/cr-workshop-exercises/recipe-book">https://github.com/cr-workshop-exercises/recipe-book</a>.  <a class="reference internal" href="../reference/#term-issue"><span class="xref std std-term">Issues</span></a>
+and <a class="reference internal" href="../reference/#term-pull-request"><span class="xref std std-term">Pull requests</span></a> are different for each GitHub
+copy.</p>
+<ul class="simple">
+<li><p>Click on the “Issues” tab.  These are notes that people have added,
+which allow discussion about the project. Often they are used to communicate
+problems or ideas.</p></li>
+<li><p>Click on the “Pull requests” tab. This allows anyone to <em>propose
+changes</em>, but only the repository owners can accept.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Git allowed us to understand this simple project much better than we
+could, if it was just a few files on our own computer.</p></li>
+<li><p>It was easy to share the project with the course.</p></li>
+<li><p>By forking the repository, we created our own copy. This is
+important for the next episode, where we will make changes to
+our copy.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../configuration/" class="btn btn-neutral float-left" title="Configuring Git command line and editor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../commits/" class="btn btn-neutral float-right" title="Recording changes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
