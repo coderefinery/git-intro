@@ -49,12 +49,12 @@ Illustration of cloning a repository to a local computer.
 Work on this by yourself or in your teams. Conceptually this episode should
 seem familiar, from the browser-based exercises we did yesterday.
 
-We offer the **Command Line and VS Code** paths for this exercise.
+We offer the **Command Line, VS Code and RStudio** paths for this exercise.
 GitHub isn't an option in this episode, since that is what we already
 demonstrated in {doc}`commits` and {doc}`merging` and since the point of this
 episode is to work **locally**.
 
-It is also possible to use the command line (terminal) from inside VS Code.
+It is also possible to use the command line (terminal) from inside VS Code or RStudio.
 
 ```{exercise} Exercise: Cloning a Git repository and working locally (25 min)
 1. {ref}`Configure Git command line and editor <configuration>` if you haven't done that already.
@@ -142,15 +142,19 @@ select "Open".
 ::::::
 
 ::::::{group-tab} RStudio
-(This pathway is in draft stage: we don't have screenshots yet.)
 
-You can clone a repository via File → New Project → Version Control →
-Git.
+The easiest way to clone the repository via RStudio is to create a new project.
 
-Enter the repository URL: see "command line" instructions for hints
-here.  RStudio, like most things, uses regular Git in the background
-so all the same command line choices apply: see part (1).  We'd
-recommend SSH if possible.
+1. Start RStudio if not already open.
+1. Go to "File" → "New Project..." 
+1. Choose "Version Control", and then "Git"
+1. In the "Repository URL" field, paste in this URL: `https://github.com/USER/recipe-book`, replace
+   `USER` as needed. You can also get the URL from your browser.
+1. You can change the "Project directory name" if you want but that is not mandatory. 
+   By default, it will use the repository name from the URL.
+1. Click "Create Project" 
+::::
+
 ::::::
 
 :::::::
@@ -186,13 +190,11 @@ Creating a new branch in VS Code.
 ::::
 
 ::::{group-tab} RStudio
-The main way to control git is via the Git tab in the right side
-panel: it's a tab along with "Environment", "History", etc.  This will
-be called the "Git tab".
 
-From the git tab, branches are controlled on the right side of the
-icon bar.  The purple button allows creating branches and the drop-down next to it allows switching.  If you select "Sync branch with remote", it will push that branch (with no commits on it) to the remote immediately.
-
+1. In the Git tab of the Environment panel (upper right), click New Branch.
+1. In the pop-up fill in the branch name, e.g. "new-recipe", untick the box in front of Sync branch with remote
+to avoid the branch to be pushed to GitHub right away.
+1. Click Create and RStudio will automatically switch to the new branch.
 
 ```{figure} img/commits/rstudio-create-branch.png
 :width: 80%
@@ -201,7 +203,6 @@ icon bar.  The purple button allows creating branches and the drop-down next to 
 
 Creating a branch in RStudio
 ```
-
 
 ::::
 
@@ -240,26 +241,24 @@ Committing a new file in VS Code.
 
 ::::{group-tab} RStudio
 
-1. One creates the file in the normal way,
-1. In the git tab, one uses the checkbox under "Staged" to add mark the file as {term}`staged <staging area>`, which means it will be committed next.
-1. Click the check-mark to commit.  A new window will be opened.
+1. Create a new file the usual way. Remember to save any changes to your file before commiting.
+1. In the Git tab in the Environment panel (upper right) check the box in front of the file you just created, then 
+   click Commit in the tab menu-bar to open the Git Changes window.
 
-:::{figure} img/commits/rstudio-committing.png
-:alt: Screenshot of RStudio commit process
-:width: 80%
-:class: with-border
+    :::{figure} img/commits/rstudio-add-commit.png
+    :alt: Screenshot of RStudio commit process in the main window
+    :width: 80%
+    :class: with-border
+    :::
 
-Staging and committing file in RStudio.
-:::
-
-The commit message corresponds to what you would see on the command line (we haven't learned these diff commands yet, but are mentioned in {doc}`staging-area`):
-
-:::{figure} img/commits/rstudio-commit-message.png
-:alt: Screenshot of RStudio commit message entry
-:width: 80%
-:class: with-border
-::::
-
+1. In the Changes window, check that your new file is selected (ticked), write a short commit message, and finally 
+   click "Commit"
+    
+    :::{figure} img/commits/rstudio-commit-changes.png
+    :alt: Screenshot of RStudio commit process in the changes window
+    :width: 80%
+    :class: with-border
+    :::
 
 :::::
 
@@ -292,9 +291,16 @@ Switching branch via selector at bottom.
 ::::
 
 ::::{group-tab} RStudio
-Switch to the `main` branch again, via the branch switcher right next to the "create new branch" button (see step (3)).
+In the Git tab of the Environment panel (upper right), click your current branch name, here "new-recipe" and then 
+choose the "main" branch.
 
-Commit like before.
+:::{figure} img/commits/rstudio-switch.png
+:class: with-border
+:width: 100%
+:alt:  Screenshot showing how to switch branch in RStudio
+::::
+
+Modify another recipe and commit your changes.
 ::::
 
 
@@ -337,7 +343,8 @@ Just like with the command line, when we merge we modify our *current* branch.  
 ::::
 
 ::::{group-tab} RStudio
-It doesn't seem theer is a graphical way to do this.  Luckily, like usual, via the Terminal you can use the "Command line" method.
+This doesn't seem possible in RStudio without an add-in.
+Luckily, like previously, via the Terminal tab you can use the "Command line" method.
 ::::
 
 :::::
@@ -379,21 +386,19 @@ View → Terminal will open a terminal at bottom.  This is a normal command line
 ::::{group-tab} RStudio
 You can find a graph view in RStudio, but it doesn't seem you can compare arbitrary commits without an extension.  Luckily, the command line method works, as usual.
 
-1. From the git tab,
-1. Select the clock icon to go to "History" view
-1. Select "(all branches)" to see full graph (equivalent of `--all` in the command line)
-
-:::{figure} img/commits/rstudio-graph-view.png
-:class: with-border
-:width: 80%
-:alt: RStudio screenshot as described
-::::
+1. Open the history window like you did during the previous lesson.
+2. Select "(All branches)" in the branch selector drop-down menu to see all the commits on all branches.
+    :::{figure} img/commits/rstudio-history-all-branches.png
+    :class: with-border
+    :width: 80%
+    :alt: Screenshot of the History window in RStudio showing all branches and all commits
+> **NOTE:** If you don't see the branch selector when you first open the History window, try to switch from the History 
+> view to the Changes view and back.
 
 Compare this with the graph on GitHub: Insights tab → Network view (just like
 we have done before).
 The result is that we should not be able to see the new branch and the new
 commits on GitHub (since we haven't pushed it to GitHub yet - it is only local work so far).
-
 
 :::::
 
@@ -460,7 +465,15 @@ Then select the remote branch you want to create a local branch from.
 ::::
 
 ::::{group-tab} RStudio
-The branch picker also lists branches on remotes.  If you click on of them, it will create a local branch and track it.
+The branch picker also lists branches on remotes.  If you click on one of them, it will create a local branch and 
+track it.
+
+:::{figure} img/commits/rstudio-remote-branches.png
+  :alt: Screenshot of RStudio of where to find the commit history
+  :width:100%
+  :class: with-border
+:::
+
 ::::
 
 :::::
