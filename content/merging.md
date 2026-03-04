@@ -45,7 +45,7 @@ Illustration of what we want to achieve in this exercise.
 :::
 
 
-We offer **three different paths** of how to do this exercise.  For
+We offer **four different paths** of how to do this exercise.  For
 the CodeRefinery workshop day 1, we use and demonstrate the **GitHub
 path** only and recommend you do that.  The exercise text below has
 some GitHub-specific notes, but most is possibly with any path.
@@ -97,7 +97,7 @@ We provide basic hints. You should refer to the solution as needed.
 :::
 ::::
 
-::::{group-tab} Local (VS Code, Command line)
+::::{group-tab} Local (VS Code, Command line, RStudio)
 
 When working locally, it's easier to merge branches: we can just do
 the merge, without making a pull request.  But we don't have that step
@@ -161,6 +161,12 @@ This is different from the GitHub path:
 $ git switch main
 ```
 ::::
+
+::::{group-tab} RStudio
+Remember, you need to switch to the `main` branch, the branch we want to merge **to**.
+This is different from the GitHub path.
+::::
+
 :::::
 
 
@@ -193,6 +199,13 @@ we don't cover that here.
 
 If you are working locally, continue to step 5.
 ::::
+::::{group-tab} RStudio
+It is possible to open pull requests from the terminal, but 
+we don't cover that here.
+
+If you are working locally, continue to step 5.
+::::
+
 :::::
 
 
@@ -227,6 +240,11 @@ If you are working locally, continue to step 5.
 ::::{group-tab} Command line
 If you are working locally, continue to step 5.
 ::::
+
+::::{group-tab} RStudio
+If you are working locally, continue to step 5.
+::::
+
 :::::
 
 
@@ -259,6 +277,15 @@ we don't cover that here.
 
 If you are working locally, continue to step 5.
 ::::
+
+::::{group-tab} RStudio
+It is possible to create pull requests from the terminal, but 
+we don't cover that here.
+
+If you are working locally, continue to step 5.
+::::
+
+
 :::::
 
 
@@ -304,6 +331,12 @@ In this case we merge the `new-recipe` branch into our current branch:
 $ git merge new-recipe
 ```
 ::::
+
+::::{group-tab} RStudio
+This doesn't seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and follow 
+the "Command line" path instructions.
+::::
+
 :::::
 
 
@@ -364,6 +397,12 @@ $ git branch
 $ git log --oneline
 ```
 ::::
+
+::::{group-tab} RStudio
+This doesn't seem possible in RStudio without an add-in. We recommend that you use the Terminal in RStudio and follow 
+the "Command line" path instructions.
+::::
+
 :::::
 
 
@@ -400,6 +439,15 @@ lesson](https://coderefinery.github.io/git-collaborative/).
 You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `cr-workshop-exercises/recipe-book`.
 
 ::::
+
+::::{group-tab} RStudio
+Not described. We will return to this in the [collaborative Git
+lesson](https://coderefinery.github.io/git-collaborative/).
+
+You would create a new branch locally like above, {term}`push` it to GitHub to your own user's repository `USER/recipe-book`, then go to GitHub and open a pull request *to* `cr-workshop-exercises/recipe-book`.
+
+::::
+
 :::::
 
 
