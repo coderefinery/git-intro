@@ -8,7 +8,10 @@ But for clarity, we will review the most important parts here.
 
 You don't need to set these if you work only through the GitHub web interface.
 If you use VS Code or other editors or integrated development environments,
-the editor might prompt you to set these up.
+the editor might prompt you to set these up. If you use RStudio, you can carry 
+out the configuration in RStudio (see the RStudio tab in the section [Authenticating 
+to GitHub](https://coderefinery.github.io/git-intro/configuration/#authenticating-to-github-ssh-or-https-or-vs-code)
+below).
 
 These configuration settings are saved in a file called `.gitconfig` in your
 home directory. If this file exists, editors like VS Code will use this
@@ -81,9 +84,9 @@ to set other editors, or do a web search for "git set editor to
 % This anchor used for linking from other lessons
 (clone-method)=
 
-## Authenticating to GitHub: SSH or HTTPS or VS Code?
+## Authenticating to GitHub: SSH or HTTPS or VS Code or RStudio?
 
-**How does GitHub know who you are?** We discuss here three options:
+**How does GitHub know who you are?** We discuss here four options:
 - **SSH** is the classic method, using [Secure Shell
   Protocol](https://en.wikipedia.org/wiki/Secure_Shell) remote connection
   keys.
@@ -91,6 +94,8 @@ to set other editors, or do a web search for "git set editor to
   extra add-on that works easily in Windows and Mac.
 - **VS Code** editor can authenticate with GitHub using its own
   authentication method.
+- **RStudio** can handle authentication via HTTPS or SSH. 
+    Here, the RStudio instructions cover using **HTTPS**.
 
 Read how to install them from the [installation
 instructions](https://coderefinery.github.io/installation/ssh/).
@@ -143,5 +148,26 @@ Test which one you should use:
 
     If you don't want VS Code to be connected to your GitHub account,
     set up and use the SSH method instead.
+  ::::
+  
+  ::::{group-tab} RStudio
+    See our [installation instructions](https://coderefinery.github.io/installation/ssh/)
+    for how to run the GitHub configuration directly in RStudio using commands 
+    in the R package `usethis` and how to test that everything worked. These 
+    instructions use **HTTPS** for authentication.
+    
+    After the configuration, you should **select HTTPS as the clone URL from
+    GitHub, or translate the URL to start with the right thing
+    yourself:** `https://github.com/`
+    
+    To set your default branch name in Git to `main` in RStudio, run
+    
+    ```r
+    usethis::git_default_branch_configure()
+    ```
+
+    Any configuration steps above that are not covered in the RStudio instructions 
+    can be run in the Terminal tab of RStudio's console panel.
+
   ::::
 :::::
