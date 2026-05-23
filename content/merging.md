@@ -1,7 +1,7 @@
 # Merging changes and contributing to the project
 
 Git allows us to have different development lines where we can try things out.
-It also allows different people to work on the same project at the same.  This
+It also allows different people to work on the same project at the same time.  This
 means that we have to somehow combine the changes later. In this part we will
 practice this: {term}`merging`.
 
