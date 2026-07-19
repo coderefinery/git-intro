@@ -1,7 +1,6 @@
 # Configuration file for the Sphinx documentation builder.
 #
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
+# For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Path setup --------------------------------------------------------------
@@ -10,13 +9,13 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-
-sys.path.insert(0, os.path.abspath("."))
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "Introduction to version control with Git"
 copyright = "CodeRefinery contributors"
@@ -27,6 +26,7 @@ github_version = "main"
 conf_py_path = "/content/"  # with leading and trailing slash
 
 # -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -40,14 +40,19 @@ extensions = [
     "sphinx_coderefinery_branding",
 ]
 
-# MyST extensions
+# Settings for myst_nb:
+# https://myst-nb.readthedocs.io/en/latest/computation/execute.html#notebook-execution-modes
+#nb_execution_mode = "off"
+#nb_execution_mode = "auto"   # *only* execute if at least one output is missing.
+#nb_execution_mode = "force"
+nb_execution_mode = "cache"
+
+# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
     "colon_fence",  # ::: can be used instead of ``` for better rendering
 ]
-# Settings for myst_nb:
-# https://myst-nb.readthedocs.io/en/latest/use/execute.html#triggering-notebook-execution
-nb_execution_mode = "cache"
 
+# Settings for sphinx-copybutton
 copybutton_exclude = ".linenos, .gp"
 
 # Add any paths that contain templates here, relative to this directory.
@@ -69,11 +74,16 @@ exclude_patterns = [
 
 
 # -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
+html_theme_options = {
+    #"prev_next_buttons_location": False,
+    "style_external_links": True,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
