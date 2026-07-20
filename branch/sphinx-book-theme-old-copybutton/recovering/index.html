@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Undoing and recovering &#8212; Introduction to version control with Git  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/minipres.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Interrupted work" href="../interrupted/" />
+    <link rel="prev" title="Using the Git staging area" href="../staging-area/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to version control with Git  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Core episodes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../motivation/">
+   Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basics/">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../branches/">
+   Branching and merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conflicts/">
+   Conflict resolution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../remotes/">
+   Sharing repositories online
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../archaeology/">
+   Inspecting history
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../level/">
+   Practical advice: how much Git is necessary?
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Optional episodes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../staging-area/">
+   Using the Git staging area
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Undoing and recovering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../interrupted/">
+   Interrupted work
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aliases/">
+   Aliases and configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../under-the-hood/">
+   Git under the hood
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/">
+   List of exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide/">
+   Instructor guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/">
+   Quick reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../customizing/">
+   Customizing Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/">
+   Other resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/recovering.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#undoing-your-recent-uncommitted-and-unstaged-changes-preserves-history">
+   Undoing your recent, uncommitted and unstaged changes (preserves history)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reverting-commits-preserves-history">
+   Reverting commits (preserves history)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-revert-a-commit">
+     Exercise: Revert a commit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-to-the-previous-commit-modifies-history">
+   Adding to the previous commit (modifies history)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-modify-a-previous-commit">
+     Exercise: Modify a previous commit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rewinding-branches-modifies-history">
+   Rewinding branches (modifies history)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-git-reset">
+     Exercise: Git reset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recovering-from-committing-to-the-wrong-branch">
+   Recovering from committing to the wrong branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recovering-from-merging-pulling-into-the-wrong-branch">
+   Recovering from merging/pulling into the wrong branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recovering-from-conflict-after-git-pull">
+   Recovering from conflict after git pull
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Undoing and recovering</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#undoing-your-recent-uncommitted-and-unstaged-changes-preserves-history">
+   Undoing your recent, uncommitted and unstaged changes (preserves history)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reverting-commits-preserves-history">
+   Reverting commits (preserves history)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-revert-a-commit">
+     Exercise: Revert a commit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-to-the-previous-commit-modifies-history">
+   Adding to the previous commit (modifies history)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-modify-a-previous-commit">
+     Exercise: Modify a previous commit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rewinding-branches-modifies-history">
+   Rewinding branches (modifies history)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-git-reset">
+     Exercise: Git reset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recovering-from-committing-to-the-wrong-branch">
+   Recovering from committing to the wrong branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recovering-from-merging-pulling-into-the-wrong-branch">
+   Recovering from merging/pulling into the wrong branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recovering-from-conflict-after-git-pull">
+   Recovering from conflict after git pull
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="undoing-and-recovering">
+<h1>Undoing and recovering<a class="headerlink" href="#undoing-and-recovering" title="Permalink to this headline">#</a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Learn to undo changes safely</p></li>
+<li><p>See when undone changes are permanently deleted and when they can be retrieved</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>10 min teaching/type-along</p></li>
+<li><p>15 min exercise</p></li>
+</ul>
+</div>
+<p>One of the main points of version control is that you can <em>go back in
+time to recover</em>.  Unlike this xkcd comic implies: <a class="reference external" href="https://xkcd.com/1597/">https://xkcd.com/1597/</a></p>
+<p>In this episode we show a couple of commands that can be used to undo mistakes.
+We also list a couple of common mistakes and discuss how to recover from them.
+Some commands preserve the commit history and some modify commit history.
+Modifying history? Isn’t a “commit” permanent?</p>
+<ul class="simple">
+<li><p>You can modify old commit history.</p></li>
+<li><p>But if you have shared that history already, <em>modifying it can make
+a huge mess</em>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As long as you commit something once (or at least <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> it), you
+can almost always go back to it, no matter what you do.
+But you may need to ask Stack Overflow or your local
+guru… <em>until that guru becomes you</em>.</p>
+</div>
+<hr class="docutils" />
+<section id="undoing-your-recent-uncommitted-and-unstaged-changes-preserves-history">
+<h2>Undoing your recent, uncommitted and unstaged changes (preserves history)<a class="headerlink" href="#undoing-your-recent-uncommitted-and-unstaged-changes-preserves-history" title="Permalink to this headline">#</a></h2>
+<p>You do some work, and want to <strong>undo your uncommitted and unstaged modifications</strong>.
+You can always do that with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">.</span></code>: (the dot means “here and in all folders below”)</p></li>
+</ul>
+<p>Or, you can undo things selectively:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">-p</span></code> (decide which portions of changes to undo) or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">&lt;path&gt;</span></code> (decide which path/file)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case the above does not work, your Git version might be older than from 2019.
+On older Git it is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>.</p>
+</div>
+<p>If you have staged changes, you have at least two options to undo the staging:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">--staged</span> <span class="pre">.</span></code> followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD</span></code> throws away everything that is not in last commit (<code class="docutils literal notranslate"><span class="pre">HEAD</span></code>)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="reverting-commits-preserves-history">
+<h2>Reverting commits (preserves history)<a class="headerlink" href="#reverting-commits-preserves-history" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Imagine we made a few commits.</p></li>
+<li><p>We realize that the latest commit <code class="docutils literal notranslate"><span class="pre">f960dd3</span></code> was a mistake and we wish to undo it:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git log --oneline
+
+<span class="go">f960dd3 (HEAD -&gt; master) not sure this is a good idea</span>
+<span class="go">dd4472c we should not forget to enjoy</span>
+<span class="go">2bb9bb4 add half an onion</span>
+<span class="go">2d79e7e adding ingredients and instructions</span>
+</pre></div>
+</div>
+<p>A safe way to undo the commit is to revert the commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git revert f960dd3
+</pre></div>
+</div>
+<p>This creates a <strong>new commit</strong> that does the opposite of the reverted commit.
+The old commit remains in the history:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git log --oneline
+
+<span class="go">d62ad3e (HEAD -&gt; master) Revert &quot;not sure this is a good idea&quot;</span>
+<span class="go">f960dd3 not sure this is a good idea</span>
+<span class="go">dd4472c we should not forget to enjoy</span>
+<span class="go">2bb9bb4 add half an onion</span>
+<span class="go">2d79e7e adding ingredients and instructions</span>
+</pre></div>
+</div>
+<p>You can revert any commit, no matter how old it is.  It doesn’t affect
+other commits you have done since then - but if they touch the same
+code, you may get a conflict (which we’ll learn about later).</p>
+<section id="exercise-revert-a-commit">
+<span id="exercise-revert"></span><h3>Exercise: Revert a commit<a class="headerlink" href="#exercise-revert-a-commit" title="Permalink to this headline">#</a></h3>
+<div class="admonition-undoing-1-revert-a-commit exercise important admonition" id="exercise-0">
+<p class="admonition-title">Undoing-1: Revert a commit</p>
+<ul class="simple">
+<li><p>Create a commit (commit A).</p></li>
+<li><p>Revert the commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code> (commit B).</p></li>
+<li><p>Inspect the history with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span></code>.</p></li>
+<li><p>Now try <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> on both the reverted (commit A) and the newly created commit (commit B).</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="adding-to-the-previous-commit-modifies-history">
+<h2>Adding to the previous commit (modifies history)<a class="headerlink" href="#adding-to-the-previous-commit-modifies-history" title="Permalink to this headline">#</a></h2>
+<p>Sometimes we commit but realize we forgot something.
+We can amend to the last commit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit --amend
+</pre></div>
+</div>
+<p>This can also be used to modify the last commit message.</p>
+<p>Note that this <strong>will change the commit hash</strong>. This command <strong>modifies the history</strong>.
+This means that we avoid this command on commits that we have shared with others.</p>
+<section id="exercise-modify-a-previous-commit">
+<span id="exercise-amend"></span><h3>Exercise: Modify a previous commit<a class="headerlink" href="#exercise-modify-a-previous-commit" title="Permalink to this headline">#</a></h3>
+<div class="admonition-undoing-2-modify-a-previous-commit exercise important admonition" id="exercise-1">
+<p class="admonition-title">Undoing-2: Modify a previous commit</p>
+<ol class="arabic simple">
+<li><p>Make an incomplete change to the recipe or a typo in your change, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> the incomplete/unsatisfactory change.</p></li>
+<li><p>Inspect the unsatisfactory but committed change with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code>. Remember
+or write down the commit hash.</p></li>
+<li><p>Now complete/fix the change but instead of creating a new commit, add the
+correction to the previous commit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code>.  What changed?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>One thing that has changed now is the commit hash. Modifying the previous
+commit has changed the history. This is OK to do on commits that other people
+don’t depend on yet.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="rewinding-branches-modifies-history">
+<h2>Rewinding branches (modifies history)<a class="headerlink" href="#rewinding-branches-modifies-history" title="Permalink to this headline">#</a></h2>
+<p>You can <strong>reset branch history</strong> to move your branch back to some
+point in the past.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">&lt;hash&gt;</span></code> will force a branch label to any other point.  All
+other changes are lost (but it is possible to recover if you force reset by mistake).</p></li>
+<li><p>Be careful if you do this - it can mess stuff up.  Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> a
+lot before and after.</p></li>
+</ul>
+<section id="exercise-git-reset">
+<span id="exercise-reset"></span><h3>Exercise: Git reset<a class="headerlink" href="#exercise-git-reset" title="Permalink to this headline">#</a></h3>
+<div class="admonition-undoing-3-destroy-our-experimentation-in-this-episode exercise important admonition" id="exercise-2">
+<p class="admonition-title">Undoing-3: Destroy our experimentation in this episode</p>
+<p>After we have experimented with reverts and amending, let us destroy
+all of that and get our repositories to a similar state.</p>
+<ul class="simple">
+<li><p>First, we will look at our history (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>/<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>) and
+find the last commit <code class="docutils literal notranslate"><span class="pre">&lt;hash&gt;</span></code> before our tests.</p></li>
+<li><p>Then, we will <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">&lt;hash&gt;</span></code> to that.</p></li>
+<li><p>Then, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> again to see what happened.</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git log --oneline
+
+<span class="go">d62ad3e (HEAD -&gt; master) Revert &quot;not sure this is a good idea&quot;</span>
+<span class="go">f960dd3 not sure this is a good idea</span>
+<span class="go">dd4472c we should not forget to enjoy</span>
+<span class="go">2bb9bb4 add half an onion</span>
+<span class="go">2d79e7e adding ingredients and instructions</span>
+
+<span class="gp">$ </span>git reset --hard dd4472c
+
+<span class="go">HEAD is now at dd4472c we should not forget to enjoy</span>
+
+<span class="gp">$ </span>git log --oneline
+
+<span class="go">dd4472c (HEAD -&gt; master) we should not forget to enjoy</span>
+<span class="go">2bb9bb4 add half an onion</span>
+<span class="go">2d79e7e adding ingredients and instructions</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="recovering-from-committing-to-the-wrong-branch">
+<h2>Recovering from committing to the wrong branch<a class="headerlink" href="#recovering-from-committing-to-the-wrong-branch" title="Permalink to this headline">#</a></h2>
+<p>It is easy to forget to create a branch or to create it and forget to switch to
+it when committing changes.</p>
+<p>Here we assume that we made a couple of commits but we realize they went to the
+wrong branch.</p>
+<p><strong>Solution 1 using git cherry-pick</strong>:</p>
+<ol class="arabic simple">
+<li><p>Make sure that the correct branch exists and if not, create it. Make sure to
+create it from the commit hash where you wish you had created it from: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;branchname&gt;</span> <span class="pre">&lt;hash&gt;</span></code></p></li>
+<li><p>Switch to the correct branch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span> <span class="pre">&lt;hash&gt;</span></code> can be used to take a specific commit to the
+current branch. Cherry-pick all commits that should have gone to the correct
+branch, <strong>from oldest to most recent</strong>.</p></li>
+<li><p>Rewind the branch that accidentally got wrong commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></code> (see also above).</p></li>
+</ol>
+<p><strong>Solution 2 using git reset –hard</strong> (makes sense if the correct branch should
+contain all commits of the accidentally modified branch):</p>
+<ol class="arabic simple">
+<li><p>Create the correct branch, pointing at the latest commit: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;branchname&gt;</span></code>.</p></li>
+<li><p>Check with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> that both branches point to the same, latest, commit.</p></li>
+<li><p>Rewind the branch that accidentally got wrong commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span></code> (see also above).</p></li>
+</ol>
+</section>
+<section id="recovering-from-merging-pulling-into-the-wrong-branch">
+<h2>Recovering from merging/pulling into the wrong branch<a class="headerlink" href="#recovering-from-merging-pulling-into-the-wrong-branch" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> modify the <strong>current</strong> branch, never
+the other branch. But sometimes we run this command on the wrong branch.</p>
+<ol class="arabic simple">
+<li><p>Check with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> the commit hash that you would like to rewind the
+wrongly modified branch to.</p></li>
+<li><p>Rewind the branch that accidentally got wrong commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">&lt;hash&gt;</span></code> (see also above).</p></li>
+</ol>
+</section>
+<section id="recovering-from-conflict-after-git-pull">
+<h2>Recovering from conflict after git pull<a class="headerlink" href="#recovering-from-conflict-after-git-pull" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> can create a conflict since <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> always also includes a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> (more about this
+in the <a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative Git lesson</a>).</p>
+<p>The recovery is same as described in <a class="reference internal" href="../conflicts/#conflict-resolution"><span class="std std-ref">Conflict resolution</span></a>. Either
+resolve conflicts or abort the merge with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--abort</span></code>.</p>
+<hr class="docutils" />
+<div class="admonition-undoing-4-test-your-understanding exercise important admonition" id="exercise-3">
+<p class="admonition-title">Undoing-4: Test your understanding</p>
+<ol class="arabic simple">
+<li><p>What happens if you accidentally remove a tracked file with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>, is it gone forever?</p></li>
+<li><p>Is it OK to modify commits that nobody has seen yet?</p></li>
+<li><p>What situations would justify to modify the Git history and possibly remove commits?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-1">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>It is not gone forever since <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code> creates a new commit. You can simply revert it!</p></li>
+<li><p>If you haven’t shared your commits with anyone it can be alright to modify them.</p></li>
+<li><p>If you have shared your commits with others (e.g. pushed them to GitHub), only extraordinary
+conditions would justify modifying history. For example to remove sensitive or secret information.</p></li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../staging-area/" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Using the Git staging area</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../interrupted/" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Interrupted work</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By CodeRefinery team<br/>
+  
+      &copy; Copyright CodeRefinery team.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

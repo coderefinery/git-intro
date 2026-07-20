@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharing repositories online &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=187304be"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=582ca9e2"></script>
+        <script src="../_static/minipres.js?v=a0d29692"></script>
+        <script src="../_static/tabs.js?v=3030b3cb"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Inspecting history" href="../archaeology/" />
+    <link rel="prev" title="Conflict resolution" href="../conflicts/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Core episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sharing repositories online</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#from-our-laptops-to-the-web">From our laptops to the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remotes">Remotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authenticating-to-github-ssh-or-https">Authenticating to GitHub: SSH or HTTPS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publishing-an-existing-repository-from-laptop-to-github">Publishing an existing repository from laptop to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-a-repository-from-github-to-laptop">Cloning a repository from GitHub to laptop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: how much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sharing repositories online</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/remotes.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sharing-repositories-online">
+<h1>Sharing repositories online<a class="headerlink" href="#sharing-repositories-online" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>We get a feeling for remote repositories (<a class="reference external" href="https://coderefinery.github.io/git-collaborative/">more later</a>).</p></li>
+<li><p>We are able to publish a repository on the web.</p></li>
+<li><p>We are able to fetch and track a repository from the web.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>15 min demonstration/type-along</p></li>
+<li><p>25 min exercise</p></li>
+</ul>
+</div>
+<section id="from-our-laptops-to-the-web">
+<h2>From our laptops to the web<a class="headerlink" href="#from-our-laptops-to-the-web" title="Link to this heading"></a></h2>
+<p>We have seen that <strong>creating Git repositories and moving them around is
+relatively simple</strong> and that is great.</p>
+<p>So far, if you only worked in the command line, everything was local and all
+snapshots, branches, and tags are saved under <code class="docutils literal notranslate"><span class="pre">.git</span></code>.</p>
+<p>If we remove <code class="docutils literal notranslate"><span class="pre">.git</span></code>, we remove all Git history of a project.</p>
+<div class="admonition-discussion discussion important admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<ul class="simple">
+<li><p>What if the hard disk fails?</p></li>
+<li><p>What if somebody steals my laptop?</p></li>
+<li><p>How can we collaborate with others across the web?</p></li>
+</ul>
+</div>
+</section>
+<section id="remotes">
+<h2>Remotes<a class="headerlink" href="#remotes" title="Link to this heading"></a></h2>
+<p>We will learn how to work with remote repositories in detail in the
+<a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative distributed version control</a> lesson.</p>
+<p>In this section we only want to get a taste to prepare us for other lessons
+where we will employ GitHub.  Our goal is to publish our exercise guacamole recipe
+which we prepared in the previous episodes on
+the web. Don’t worry, you will be able to remove it afterwards.</p>
+<div class="admonition-if-you-don-t-have-the-recipe-repository-from-previous-episodes admonition">
+<p class="admonition-title">If you don’t have the recipe repository from previous episodes</p>
+<p>Maybe you joined the workshop later or got stuck somewhere? <strong>No problem</strong>!</p>
+<p><strong>If you don’t have the recipe repository from previous episodes</strong>, you can
+clone our version of the repository using (please <strong>skip this if you have the recipe
+repository on your computer already</strong>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/coderefinery/recipe-before-merge.git<span class="w"> </span>recipe
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>recipe
+<span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
+</pre></div>
+</div>
+<p>Now you have a repository called <code class="docutils literal notranslate"><span class="pre">recipe</span></code> on your computer with a couple of
+commits. Further down we will also clarify what <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> does.</p>
+</div>
+<p>To store your git data on another server, you use <strong>remotes</strong>.
+A remote is a repository on its own, with its own branches
+We can <strong>push</strong> changes to the remote and <strong>pull</strong>
+from the remote.</p>
+<p>You might use remotes to:</p>
+<ul class="simple">
+<li><p>Back up your own work.</p></li>
+<li><p>To collaborate with other people.</p></li>
+</ul>
+<p>There are different types of remotes:</p>
+<ul class="simple">
+<li><p>If you have a server you can ssh to, you can use that as a remote.</p></li>
+<li><p><a class="reference external" href="https://github.com">GitHub</a> is a popular, closed-source commercial site.</p></li>
+<li><p><a class="reference external" href="https://about.gitlab.com">GitLab</a> is a popular, open-core
+commercial site.  Many universities have their own private GitLab servers
+set up.</p></li>
+<li><p><a class="reference external" href="https://bitbucket.org">Bitbucket</a> is yet another popular commercial site.</p></li>
+<li><p>Another option is <a class="reference external" href="https://notabug.org">NotABug</a>.</p></li>
+<li><p>We also operate a <a class="reference external" href="https://coderefinery.org/repository/">Nordic
+research software repository
+platform</a>.
+This is GitLab, free for researchers and allows private,
+cross-university sharing.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="authenticating-to-github-ssh-or-https">
+<span id="clone-method"></span><h2>Authenticating to GitHub: SSH or HTTPS?<a class="headerlink" href="#authenticating-to-github-ssh-or-https" title="Link to this heading"></a></h2>
+<p><strong>How does Github know who you are?</strong>  This is hard and there are two
+options.</p>
+<ul class="simple">
+<li><p><strong>SSH</strong> is the classic method, using Secure Shell remote connection
+keys.</p></li>
+<li><p><strong>HTTPS</strong> works with the <strong>Git Credential Manager</strong>, which is an
+extra add-on that works easily in Windows and Mac.</p></li>
+</ul>
+<p>Read how to install them from the <a class="reference external" href="https://coderefinery.github.io/installation/ssh/">installation
+instructions</a>.</p>
+<p>Test which one you should use:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-U1NI" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-U1NI" name="U1NI" role="tab" tabindex="0">SSH</button><button aria-controls="panel-0-SFRUUFM=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-SFRUUFM=" name="SFRUUFM=" role="tab" tabindex="-1">HTTPS</button></div><div aria-labelledby="tab-0-U1NI" class="sphinx-tabs-panel group-tab" id="panel-0-U1NI" name="U1NI" role="tabpanel" tabindex="0"><p>Try this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</pre></div>
+</div>
+<p>If it returns <code class="docutils literal notranslate"><span class="pre">Hi</span> <span class="pre">USERNAME!</span> <span class="pre">You've</span> <span class="pre">successfully</span> <span class="pre">authenticated,</span> <span class="pre">...</span></code>,
+then SSH is configured and the following steps will work with the SSH
+cloning.</p>
+<p>See our <a class="reference external" href="https://coderefinery.github.io/installation/ssh/">installation
+instructions</a> to
+set up SSH access.</p>
+<p><strong>From now on, if you know that SSH works, you should always select
+SSH as the clone URL from GitHub, or translate the URL to start with
+the right thing yourself:</strong> <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:</span></code> (with the trailing
+<code class="docutils literal notranslate"><span class="pre">:</span></code>).</p>
+</div><div aria-labelledby="tab-0-SFRUUFM=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-SFRUUFM=" name="SFRUUFM=" role="tabpanel" tabindex="0"><p>Try this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--get<span class="w"> </span>credential.helper
+</pre></div>
+</div>
+<p>If this shows something, then the credential manager is probably
+configured and HTTPS cloning will work (but you can’t verify it until
+you try using it).</p>
+<p>From now on, <strong>if you know that HTTPS works, you should always select
+HTTPS as the clone URL from Github, or translate the URL to start with
+the right thing yourself:</strong> <code class="docutils literal notranslate"><span class="pre">https://github.com/</span></code></p>
+</div></div>
+<p>If you do not have these configured, please watch as we do this episode and you
+can check the <a class="reference external" href="https://coderefinery.github.io/installation/ssh/">installation
+instructions</a>
+before the next <a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative Git
+lesson</a>, where we will need
+one of these set up.</p>
+</section>
+<hr class="docutils" />
+<section id="publishing-an-existing-repository-from-laptop-to-github">
+<h2>Publishing an existing repository from laptop to GitHub<a class="headerlink" href="#publishing-an-existing-repository-from-laptop-to-github" title="Link to this heading"></a></h2>
+<div class="admonition-if-you-started-in-the-browser-and-have-nothing-on-your-laptop-yet admonition">
+<p class="admonition-title">If you started in the browser and have nothing on your laptop yet</p>
+<p>It is possible, that you already have a repository on GitHub if you followed
+the examples and exercises in previous episodes in the browser. In this case,
+please watch others publish their repository and try to clone your repository
+to the laptop using instructions at the bottom of this page.</p>
+</div>
+<p>First log into GitHub, then follow the screenshots and descriptions below.</p>
+<figure class="align-default" id="id1">
+<a class="with-border reference internal image-reference" href="../_images/new-repo-plus.png"><img alt="Screenshot on GitHub before a new repository form is opened" class="with-border" src="../_images/new-repo-plus.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Click on the “plus” symbol on top right, then on “New repository”.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Another way to create a new repository is to visit
+<a class="reference external" href="https://github.com/new">https://github.com/new</a> directly.</p>
+<figure class="align-default" id="id2">
+<a class="with-border reference internal image-reference" href="../_images/new-bare-repo-form.png"><img alt="Screenshot on GitHub just before a new repository is created" class="with-border" src="../_images/new-bare-repo-form.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Choose a repository name, add a short description, but please <strong>do not check</strong> “Add a
+README file”**. For “Add .gitignore” and “Choose a license” also leave as “None”. Finally “Create repository”.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once you click the green “Create repository”, you will see a page similar to:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/bare-repo.png"><img alt="Screenshot on GitHub after a bare repository was created" class="with-border" src="../_images/bare-repo.png" style="width: 100%;" /></a>
+</figure>
+<p>What this means is that we have now an empty project with either an HTTPS or an
+SSH address: click on the HTTPS and SSH buttons to see what happens.</p>
+<p>We now want to follow the “<strong>… or push an existing repository from the command line</strong>:</p>
+<ol class="arabic simple">
+<li><p>Now go to your guacamole repository on your computer.</p></li>
+<li><p>Check that you are in the right place with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Copy paste the three lines to the terminal and execute those, in my case (<strong>you
+need to replace the “USER” part and possibly also the repository name</strong>):</p></li>
+</ol>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-U1NI" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-U1NI" name="U1NI" role="tab" tabindex="0">SSH</button><button aria-controls="panel-1-SFRUUFM=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-SFRUUFM=" name="SFRUUFM=" role="tab" tabindex="-1">HTTPS</button></div><div aria-labelledby="tab-1-U1NI" class="sphinx-tabs-panel group-tab" id="panel-1-U1NI" name="U1NI" role="tabpanel" tabindex="0"><p>See above for if SSH is the right option for you.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:USER/recipe.git
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-SFRUUFM=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-SFRUUFM=" name="SFRUUFM=" role="tabpanel" tabindex="0"><p>See above for if HTTPS is the right option for you.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/USER/recipe.git
+</pre></div>
+</div>
+</div></div>
+<p>Then:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+<span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>The meaning of the above lines:</p>
+<ul class="simple">
+<li><p>Add a remote reference with the name “origin”</p></li>
+<li><p>Rename current branch to “main”</p></li>
+<li><p>Push branch “main” to “origin”</p></li>
+</ul>
+<p>You should now see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:USER/recipe.git
+ * [new branch]      main -&gt; main
+Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;origin&#39;.
+</pre></div>
+</div>
+<p><strong>Reload your GitHub project website</strong> and - taa-daa - your commits should now be
+online! What just happened? <strong>Think of publishing a repository as uploading
+the <code class="docutils literal notranslate"><span class="pre">.git</span></code> part online</strong>.</p>
+<div class="admonition-troubleshooting admonition">
+<p class="admonition-title">Troubleshooting</p>
+<p><strong>error: remote origin already exists.</strong></p>
+<ul class="simple">
+<li><p>Explanation: You probably ran a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">...</span></code> command, then changed your
+mind about HTTPS or SSH and then tried to run the other <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">...</span></code> command but “origin” then already exists.</p></li>
+<li><p>Recovery:</p>
+<ul>
+<li><p>First remove “origin” with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">remove</span> <span class="pre">origin</span></code></p></li>
+<li><p>Then run the correct <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">...</span></code> command</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>remote contains work that you do not have</strong></p>
+<ul class="simple">
+<li><p>Explanation: You probably clicked on “Add a README file” and now the
+repository on GitHub is not empty but contains one commit and locally you
+have a different history. Git now prevents you from accidentally overwriting
+the history on GitHub.</p></li>
+<li><p>Recovery:</p>
+<ul>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--force</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>, which will force Git to overwrite the history on GitHub</p></li>
+<li><p>Note that this is a powerful but also possibly dangerous option but here it
+helps us. If it’s a brand new repo, it probably is fine to do this. For real
+repositories, don’t do this unless you are very sure what is happening.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="cloning-a-repository-from-github-to-laptop">
+<h2>Cloning a repository from GitHub to laptop<a class="headerlink" href="#cloning-a-repository-from-github-to-laptop" title="Link to this heading"></a></h2>
+<p>Now other people can clone this repository and contribute changes. In the
+<a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative distributed version control</a> lesson
+we will learn how this works.</p>
+<p>At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this
+(again adapt the <code class="docutils literal notranslate"><span class="pre">USER</span></code> in the “USER/repository.git” part):</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-U1NI" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-U1NI" name="U1NI" role="tab" tabindex="0">SSH</button><button aria-controls="panel-2-SFRUUFM=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-SFRUUFM=" name="SFRUUFM=" role="tab" tabindex="-1">HTTPS</button></div><div aria-labelledby="tab-2-U1NI" class="sphinx-tabs-panel group-tab" id="panel-2-U1NI" name="U1NI" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:USER/recipe.git
+</pre></div>
+</div>
+<p><strong>From now on, if you are using SSH, you should pay attention and make
+sure your clone URLs start with <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:</span></code> now and in future
+lessons.</strong></p>
+</div><div aria-labelledby="tab-2-SFRUUFM=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-SFRUUFM=" name="SFRUUFM=" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/USER/recipe.git
+</pre></div>
+</div>
+<p><strong>From now on, if you are using HTTPS, you should pay attention and make
+sure your clone URLs start with <code class="docutils literal notranslate"><span class="pre">https://github.com/</span></code> now and in future
+lessons.</strong></p>
+</div></div>
+<p>This creates a directory called “recipe” unless it already exists. You can also specify the target directory
+on your computer:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-U1NI" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-U1NI" name="U1NI" role="tab" tabindex="0">SSH</button><button aria-controls="panel-3-SFRUUFM=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-SFRUUFM=" name="SFRUUFM=" role="tab" tabindex="-1">HTTPS</button></div><div aria-labelledby="tab-3-U1NI" class="sphinx-tabs-panel group-tab" id="panel-3-U1NI" name="U1NI" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:USER/recipe.git<span class="w"> </span>myrecipe
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-SFRUUFM=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-SFRUUFM=" name="SFRUUFM=" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/user/recipe.git<span class="w"> </span>myrecipe
+</pre></div>
+</div>
+</div></div>
+<p>What just happened? <strong>Think of cloning as downloading the <code class="docutils literal notranslate"><span class="pre">.git</span></code> part to your
+computer</strong>. After downloading the <code class="docutils literal notranslate"><span class="pre">.git</span></code> part, the default branch (the branch pointed to by HEAD) is
+automatically checked out.</p>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>A repository can have one or multiple remotes (we will revisit these later).</p></li>
+<li><p>Local branches often track remote branches.</p></li>
+<li><p>A remote serves as a full backup of your work.</p></li>
+<li><p>We’ll properly learn how to use these in the
+<a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative distributed version control</a>.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../conflicts/" class="btn btn-neutral float-left" title="Conflict resolution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../archaeology/" class="btn btn-neutral float-right" title="Inspecting history" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
