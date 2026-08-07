@@ -1,0 +1,32 @@
+name: Generate metadata files
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - metadata.yml
+
+jobs:
+  generate:
+    name: Generate CITATION.cff and bioschemas.yml
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Generate CITATION.cff and bioschemas.yml
+        run: python .github/scripts/generate_metadata_files.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CITATION.cff bioschemas.yml
+          git diff --staged --quiet || git commit -m "Regenerate CITATION.cff and bioschemas.yml from metadata.yml"
+          git push
