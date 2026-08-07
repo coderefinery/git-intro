@@ -1,0 +1,27 @@
+name: Publish Release to Zenodo
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  zenodo:
+    runs-on: ubuntu-latest
+    environment: Zenodo
+
+    permissions:
+      contents: read
+
+    env:
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_CONCEPT_ID: ${{ vars.ZENODO_CONCEPT_ID }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          pip install requests pyyaml
+
+      - name: Create Zenodo deposition
+        run: python .github/scripts/publish_to_zenodo.py
