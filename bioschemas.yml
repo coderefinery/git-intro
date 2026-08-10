@@ -45,6 +45,18 @@
         {
             "@type": "Person",
             "name": "Elke Fasshauer"
+        },
+        {
+            "@type": "Person",
+            "name": "Heli Juottonen"
+        },
+        {
+            "@type": "Person",
+            "name": "Aur\u00e9lie Vancraeyenest"
+        },
+        {
+            "@type": "Person",
+            "name": "Blazej Baczkowski"
         }
     ],
     "about": "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects.",
