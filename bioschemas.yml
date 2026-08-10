@@ -3,7 +3,7 @@
     "@type": "LearningResource",
     "@id": "https://coderefinery.github.io/git-intro",
     "description": "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects.",
-    "keywords": ", ",
+    "keywords": "version control, git",
     "name": "Introduction to version control - CodeRefinery lesson",
     "author": [
         {
