@@ -1,0 +1,121 @@
+# Master metadata for this lesson.
+#
+# CITATION.cff and bioschemas.yml are both generated from this file by
+# generate_metadata_files.py upon push to main, and publish_to_zenodo.py reads it
+# directly too. Edit this file, not the generated ones, it will generate CITATION.cff and bioschemas.yml upcon push to main branch.
+#
+# All values are quoted deliberately, so they always load as plain
+# strings (not YAML dates/numbers) - see version below.
+
+
+# Text. Base lesson title. " - CodeRefinery lesson" is appended
+# automatically when generating CITATION.cff/bioschemas.yml and when
+# publishing to Zenodo - do not include it here.
+title: "Introduction to version control"
+
+# Text. Used as CITATION.cff's abstract, bioschemas' description/about,
+# and the start of the Zenodo description.
+abstract: "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects."
+
+# Text (ISO 8601 date, YYYY-MM-DD), quoted so it isn't parsed as a
+# YAML date. Used in CITATION.cff, bioschemas.yml, and the Zenodo
+# deposit. Also used as CITATION.cff's date-released, since for this
+# lesson the two always match - there's no separate date-released field.
+version: "2026-08-10"
+
+# Text. The concept DOI, which stays constant across all versions -
+# Zenodo assigns the version-specific DOI itself. Used in bioschemas.yml
+# as identifier (https://doi.org/<doi>).
+doi: "10.5281/zenodo.16925023"
+
+# Text (URL). The lesson's rendered website. Used as bioschemas' @id/url
+# and linked in the Zenodo description.
+url: "https://coderefinery.github.io/git-intro"
+
+# Text (SPDX license identifier, e.g. CC-BY-4.0). Converted to a full
+# license URL for bioschemas.yml via SPDX_LICENSE_URLS in
+# generate_metadata_files.py; passed through as-is to CITATION.cff and
+# Zenodo.
+license: "CC-BY-4.0"
+
+# Text (URL). Source repository, linked in the Zenodo description and
+# included in CITATION.cff.
+repository-code: "https://github.com/coderefinery/git-intro"
+
+# List of Text. Not used in CITATION.cff. Comma-joined for
+# bioschemas.yml's keywords string, and used as Zenodo's keywords list.
+keywords:
+  - ""
+  - ""
+ 
+
+# Text or DefinedTerm per schema.org. bioschemas.yml only. E.g.
+# "Beginner", "Intermediate", "Advanced".
+educationalLevel: "Beginner"
+
+# Text (BCP47 language tag, e.g. "en-UK"). bioschemas.yml only. Not the
+# same format Zenodo's own "language" field would expect (ISO 639-2/3),
+# so this isn't reused for the Zenodo deposit.
+inLanguage: "en-UK"
+
+# Text. bioschemas.yml only. Learning outcomes / what this lesson
+# teaches.
+teaches: ""
+
+# URL or CreativeWork per schema.org. bioschemas.yml only. The
+# collection/series this lesson belongs to.
+isPartOf: "https://coderefinery.org"
+
+# Audience (structured object) per schema.org - NOT plain Text, even
+# though it's currently stored and emitted as a bare string. bioschemas.yml
+# only. 
+audience: ""
+
+# Text, DefinedTerm, or URL per schema.org. bioschemas.yml only.
+# Prerequisites/prior knowledge needed. 
+competencyRequired: ""
+
+# Text per schema.org. bioschemas.yml only. Describes accessibility
+# features of the material. 
+accessibilitySummary: ""
+
+# Text or DefinedTerm per schema.org. bioschemas.yml only. E.g.
+# "lesson", "exercise", "video". 
+learningResourceType: "lesson"
+
+# Disabled for now. List of CFF-style entries, same shape as authors
+# below: either {name: "Org"} for organizations, or {family-names,
+# given-names, orcid (optional)} for people. When enabled: mapped to
+# CITATION.cff's contact field, bioschemas.yml's maintainer property,
+# and Zenodo's contributors (as ContactPerson).
+# maintainers:
+# - family-names: ""
+#   given-names: ""
+
+# List of CFF-style author entries: either {name: "Org"} for
+# organizations, or {family-names, given-names, orcid (optional)} for
+# people. orcid, if given, must be the full https://orcid.org/... URL -
+# publish_to_zenodo.py strips that prefix before sending it to Zenodo.
+# Used for CITATION.cff authors, bioschemas.yml's author list
+# (mapped to Person/Organization), and Zenodo's creators.
+authors:
+- name: "CodeRefinery"
+- family-names: "Bast"
+  given-names: "Radovan"
+- family-names: "Wikfeldt"
+  given-names: "Kjartan Thor"
+- family-names: "Darst"
+  given-names: "Richard"
+- family-names: "Razick"
+  given-names: "Sabry"
+- family-names: "Iusan"
+  given-names: "Diana"
+- family-names: "Lindi"
+  given-names: "Bjørn"
+- family-names: "Andrei"
+  given-names: "Constantin-Octavian"
+- family-names: "Suvilehto"
+  given-names: "Jyry"
+- family-names: "Fasshauer"
+  given-names: "Elke"
+

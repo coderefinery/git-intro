@@ -8,4 +8,5 @@ jupyter_execute
 /.ccls-cache/
 /content/.auctex-auto/
 /content/code/*/solution/build*
-.*.sw? 
+.*.sw?
+*DS_Store 
