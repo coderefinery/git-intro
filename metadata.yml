@@ -21,12 +21,12 @@ abstract: "Why we want to track versions and how to go back in time to a working
 # YAML date. Used in CITATION.cff, bioschemas.yml, and the Zenodo
 # deposit. Also used as CITATION.cff's date-released, since for this
 # lesson the two always match - there's no separate date-released field.
-version: "2026-08-07"
+version: "2026-08-10"
 
 # Text. The concept DOI, which stays constant across all versions -
 # Zenodo assigns the version-specific DOI itself. Used in bioschemas.yml
 # as identifier (https://doi.org/<doi>).
-doi: ""
+doi: "10.5281/zenodo.16925023"
 
 # Text (URL). The lesson's rendered website. Used as bioschemas' @id/url
 # and linked in the Zenodo description.
