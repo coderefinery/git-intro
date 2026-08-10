@@ -1,0 +1,63 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "LearningResource",
+    "@id": "https://coderefinery.github.io/git-intro",
+    "description": "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects.",
+    "keywords": ", ",
+    "name": "Introduction to version control - CodeRefinery lesson",
+    "author": [
+        {
+            "@type": "Organization",
+            "name": "CodeRefinery"
+        },
+        {
+            "@type": "Person",
+            "name": "Radovan Bast"
+        },
+        {
+            "@type": "Person",
+            "name": "Kjartan Thor Wikfeldt"
+        },
+        {
+            "@type": "Person",
+            "name": "Richard Darst"
+        },
+        {
+            "@type": "Person",
+            "name": "Sabry Razick"
+        },
+        {
+            "@type": "Person",
+            "name": "Diana Iusan"
+        },
+        {
+            "@type": "Person",
+            "name": "Bj\u00f8rn Lindi"
+        },
+        {
+            "@type": "Person",
+            "name": "Constantin-Octavian Andrei"
+        },
+        {
+            "@type": "Person",
+            "name": "Jyry Suvilehto"
+        },
+        {
+            "@type": "Person",
+            "name": "Elke Fasshauer"
+        }
+    ],
+    "about": "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects.",
+    "audience": "",
+    "competencyRequired": "",
+    "educationalLevel": "Beginner",
+    "identifier": "https://doi.org/10.5281/zenodo.16925023",
+    "inLanguage": "en-UK",
+    "learningResourceType": "lesson",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "teaches": "",
+    "url": "https://coderefinery.github.io/git-intro",
+    "accessibilitySummary": "",
+    "isPartOf": "https://coderefinery.org",
+    "version": "2026-08-10"
+}
