@@ -323,7 +323,7 @@ modified each line. Incredibly useful for reproducibility.
   ::::
 
   ::::{group-tab} GitLab
-    We can visit our the commit again <https://gitlab.com/ase/ase/-/commit/fd0bd0df7aabe7977d48d72824b846535d15592a>
+    We can visit the commit again <https://gitlab.com/ase/ase/-/commit/fd0bd0df7aabe7977d48d72824b846535d15592a>
 
     Once we are there we can "Browse files" at that point in history.
 
@@ -442,7 +442,7 @@ modified each line. Incredibly useful for reproducibility.
       ::::
 
       ::::{group-tab} GitLab
-        We can visit the version directly: <https://gitlab.com/ase/ase/-/tree/3.26.0?ref_type=tags> in this case **version 3.26.0***.
+        We can visit the version directly: <https://gitlab.com/ase/ase/-/tree/3.26.0?ref_type=tags> in this case **version 3.26.0**.
       ::::
 
       ::::{group-tab} VS Code
@@ -527,7 +527,7 @@ modified each line. Incredibly useful for reproducibility.
            Clicking the line in the result brings you to <https://gitlab.com/ase/ase/-/blob/3.26.0/ase/filters.py#L436>
         2. Click on the "Blame" button. Next to the line of code referred to by the comment you see the commit which modified it last.
         3. You can click on the commit which brings you to <https://gitlab.com/ase/ase/-/commit/98513a30cad6cc067e47d97561b5e228ced4c96d>
-        4. Let's skip creating the branch on GitHub. Instead, we can browse the
+        4. Let's skip creating the branch on GitLab. Instead, we can browse the
            project at this version:
            <https://gitlab.com/ase/ase/-/tree/98513a30cad6cc067e47d97561b5e228ced4c96d>.
         5. Go back to the "Blame" view for the file `ase/filters.py`:

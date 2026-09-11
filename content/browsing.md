@@ -115,7 +115,7 @@ URL should look like `https://github.com/USER/recipe-book`, where
 ::::{group-tab} GitLab
 You only need to open your own view, as described above.  The browser
 URL should look like `https://gitlab.com/USER/recipe-book`, where
-`USER` is your GitHub username.
+`USER` is your GitLab username.
 ::::
 
 ::::{group-tab} VS Code
@@ -452,7 +452,7 @@ instance, including the context.
 ::::
 
 ::::{group-tab} GitLab
-Go to the main page for the recipe book repository and use the search bar at the top of the page for search for `salt` and select "Search for ``salt`` in... **Recipe Book**", and then select "Code". GitLab shows each match with its file and context.
+Go to the main page for the recipe book repository and use the search bar at the top of the page to search for `salt` and select "Search for ``salt`` in... **Recipe Book**", and then select "Code". GitLab shows each match with its file and context.
 
 :::{figure} img/gitlab/browsing-search-start.png
 :alt: Searching for “salt” within a GitLab project.

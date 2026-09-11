@@ -576,7 +576,7 @@ For the purpose of this exercise we can use them interchangeably.
 ::::
 
 ::::{group-tab} GitLab
-In the canonical recipe-book project, from the sidebar open "Code" then "Tags", then click the "New tag" button, enter the tag name and target revision, then create the tag.
+In your fork of the recipe-book project, from the sidebar open "Code" then "Tags", then click the "New tag" button, enter the tag name and target revision, then create the tag.
 
 :::{figure} img/gitlab/commits-create-tag-annotated.png
 :alt: Creating a tag from the GitLab tags page.
