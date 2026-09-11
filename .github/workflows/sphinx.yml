@@ -155,6 +155,9 @@ jobs:
     if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
     permissions:
       contents: write
+      actions: read        # read the artifact timestamp
+      issues: write        # comment on pull requests
+      pull-requests: write # comment on pull requests
 
     steps:
       - uses: actions/download-artifact@v6
@@ -178,3 +181,64 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _gh-pages/
           force_orphan: true
+
+      # The gh-pages multibranch build above publishes this branch to
+      #   <site>/branch/<branch>/
+      # (with '/' in the branch name replaced by '--').  Tell the pull
+      # request about it, replacing any comment from an earlier build.
+      # This only applies if a multibranch build actually happened,
+      # which is the same condition as the multibranch step above.
+      - name: Find pull request for this branch
+        id: pr
+        if: ${{ env.MULTIBRANCH == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          number=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
+                             --head "$GITHUB_REF_NAME" --json number \
+                             --jq '.[0].number // empty')
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      - name: Gather preview link and artifact timestamp
+        id: preview
+        if: ${{ env.MULTIBRANCH == 'true' && steps.pr.outputs.number != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Same URL as the one gh-pages-multibranch reports (this
+          # repository has no CNAME).
+          brdir="${GITHUB_REF_NAME//\//--}"
+          echo "url=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/branch/${brdir}/" >> "$GITHUB_OUTPUT"
+          # Timestamp of the build artifact we just deployed.
+          artifact_timestamp=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" \
+                                   --jq '.artifacts[] | select(.name == "gh-pages-build") | .created_at')
+          echo "artifact_timestamp=$artifact_timestamp" >> "$GITHUB_OUTPUT"
+
+      # https://github.com/peter-evans/find-comment
+      - name: Find earlier preview comment
+        id: find-comment
+        if: ${{ env.MULTIBRANCH == 'true' && steps.pr.outputs.number != '' }}
+        uses: peter-evans/find-comment@v3
+        with:
+          issue-number: ${{ steps.pr.outputs.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: '<!-- preview-link -->'
+
+      - name: Delete earlier preview comment
+        if: ${{ steps.find-comment.outputs.comment-id != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --method DELETE "repos/${GITHUB_REPOSITORY}/issues/comments/${{ steps.find-comment.outputs.comment-id }}"
+
+      # https://github.com/peter-evans/create-or-update-comment
+      - name: Comment preview link on pull request
+        if: ${{ env.MULTIBRANCH == 'true' && steps.pr.outputs.number != '' }}
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ steps.pr.outputs.number }}
+          body: |
+            <!-- preview-link -->
+            :book: Preview of this branch: <${{ steps.preview.outputs.url }}>
+
+            Built at ${{ steps.preview.outputs.artifact_timestamp }} (artifact timestamp).
