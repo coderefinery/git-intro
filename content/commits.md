@@ -76,6 +76,8 @@ design.
 
 ### (1) Make sure you are on your fork
 
+:::::{tabs}
+::::{group-tab} GitHub
 :::{figure} img/commits/fork.png
 :alt: Screenshot on GitHub where we verify that we are on our fork.
 :width: 60%
@@ -84,6 +86,19 @@ design.
 You want to see your username in the URL and you want to see the "forked from
 ..." part.
 :::
+::::
+
+::::{group-tab} GitLab
+:::{figure} img/gitlab/confirm-fork-annotated.png
+:alt: Screenshot on GitLab where we verify that we are on our fork.
+:width: 60%
+:class: with-border
+
+You should see your username in the URL, your name in the navigation, and you want to see the "forked from
+..." info box.
+:::
+::::
+:::::
 
 
 ### (2) Create a branch and add a recipe to the branch
@@ -131,6 +146,24 @@ name of the thing you make.  A commit is identified by something such as
 1. Click "Commit changes"
 1. Enter a commit message. Then click "Commit
    changes".
+
+You should appear back at the file browser view, and see your new
+recipe there.
+::::
+
+::::{group-tab} GitLab
+1. From the menu click "Code" then "Branches" from the submenu. Next press the "New branch" button in the top right.
+:::{figure} img/gitlab/commits-create-branch-annotated.png
+:alt: Creating a branch from the GitLab branches page.
+:width: 60%
+:class: with-border
+
+Creating a branch from the GitLab branches page.
+:::
+1. Enter `new-recipe` into the "Branch name" textbox, and select `main` from the "Create from" dropdown then press "Create branch".
+1. Open the `sides` directory and press the "+" button and then "New file".
+1. Name the file, enter the recipe, then press the "Commit changes".
+1. Enter a commit message and click "Commit changes".
 
 You should appear back at the file browser view, and see your new
 recipe there.
@@ -223,6 +256,15 @@ modify.
 3. Follow the "Commit changes" instructions as in the previous step.
 ::::
 
+::::{group-tab} GitLab
+This is similar to before, but we click on the existing file to
+modify.
+
+1. Click on your new recipe, for example `mixed-nuts.md`.
+1. Click "Edit" then "Edit single file".
+1. Follow the "Commit changes" instructions as in the previous step.
+::::
+
 ::::{group-tab} VS Code
 Repeat as in the previous step.
 ::::
@@ -253,6 +295,14 @@ from step 5.
 1. Go back to the main repository page (your user's page).
 1. In the branch switch view (top left above the file view), switch to
    `main`.
+1. Modify another recipe that already exists, following the pattern
+   from above. Don't modify the one you just created (but it shouldn't
+   even be visible on the `main` branch).
+::::
+
+::::{group-tab} GitLab
+1. Go back to the main repository page (your user's page).
+1. Use the branch selector to switch to `main`.
 1. Modify another recipe that already exists, following the pattern
    from above. Don't modify the one you just created (but it shouldn't
    even be visible on the `main` branch).
@@ -304,6 +354,10 @@ you created.
 :::::{tabs}
 ::::{group-tab} GitHub
 Insights tab → Network view (just like we have done before).
+::::
+
+::::{group-tab} GitLab
+From the sidebar open "Code" then "Repository graph" to see commits and how `main` and `new-recipe` have diverged.
 ::::
 
 ::::{group-tab} VS Code
@@ -394,6 +448,10 @@ for example (replace USER):
 `https://github.com/USER/recipe-book/compare`
 ::::
 
+::::{group-tab} GitLab
+From the sidebar click "Code" then "Compare revisions", select `main` as the source and `new-recipe` as the target (or reverse them to change the direction), then click "Compare".
+::::
+
 ::::{group-tab} VS Code
 This seems to require an extension.  We recommend you use the command line method.
 ::::
@@ -436,6 +494,10 @@ Replace `USER` with your username and `VERSION1` and `VERSION2` with a commit ha
 Please try it out.
 ::::
 
+::::{group-tab} GitLab
+From the sidebar click "Code" then "Compare revisions" and enter the two commit hashes as the source and target revisions.
+::::
+
 ::::{group-tab} VS Code
 Again, we recommend using the Command Line method.
 ::::
@@ -464,6 +526,10 @@ follow the "Command line" path instructions.
 
 Branch button → View all branches → three dots at right side → Rename branch.
 
+::::
+
+::::{group-tab} GitLab
+From the sidebar click "Code" then "Branches", find the branch, open its actions menu, and select "Rename branch".
 ::::
 ::::{group-tab} VS Code
 Version control sidebar → Three dots (same as in step 2) → Branch → Rename branch.  Make sure you are on the right branch before you start.
@@ -507,6 +573,18 @@ Click on the branch switcher, and then on "Tags", then on "View all tags", then
 
 What GitHub calls releases are actually tags in Git with additional metadata.
 For the purpose of this exercise we can use them interchangeably.
+::::
+
+::::{group-tab} GitLab
+In the canonical recipe-book project, from the sidebar open "Code" then "Tags", then click the "New tag" button, enter the tag name and target revision, then create the tag.
+
+:::{figure} img/gitlab/commits-create-tag-annotated.png
+:alt: Creating a tag from the GitLab tags page.
+:width: 60%
+:class: with-border
+
+Creating a tag from the GitLab tags page.
+:::
 ::::
 
 ::::{group-tab} VS Code
