@@ -124,6 +124,10 @@ By the end of this lesson, learners should:
 - push changes to a remote repository
 - know a few ways to search through a repository and its history
 
+## Note on GitHub and GitLab
+
+The main aim of providing instruction for GitLab is to demonstrate that the Git concepts are transferable to different code forges as well as for extra reference material or alternative exercise material for interested students. The GitHub part of the lesson is more mature and with GitHub remaining the household name, it is expected that teachers will mostly follow the GitHub track over the GitLab one. On the other hand, people are likely to encounter GitLab at some point, especially considering institutional GitLab instances are somewhat popular. One possibility is to flag up the transferability of skills and the availability of the GitLab instructions early on and then later on switch to GitLab for a short/limited part of the lesson.
+
 
 ## Inspecting history
 
