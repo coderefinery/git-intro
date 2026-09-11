@@ -452,14 +452,22 @@ instance, including the context.
 ::::
 
 ::::{group-tab} GitLab
-Use the project search field, search for `salt`, and select "Code". GitLab shows each match with its file and context.
+Go to the main page for the recipe book repository and use the search bar at the top of the page for search for `salt` and select "Search for ``salt`` in... **Recipe Book**", and then select "Code". GitLab shows each match with its file and context.
 
-:::{figure} img/gitlab/browsing-search-annotated.png
+:::{figure} img/gitlab/browsing-search-start.png
 :alt: Searching for “salt” within a GitLab project.
 :width: 100%
 :class: with-border
 
 Searching for “salt” within a GitLab project.
+:::
+
+:::{figure} img/gitlab/browsing-search-annotated.png
+:alt: Results for “salt” within the Recipe Book GitLab project.
+:width: 100%
+:class: with-border
+
+Results for “salt” within the Recipe Book GitLab project.
 :::
 ::::
 
