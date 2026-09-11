@@ -470,7 +470,7 @@ track it.
 
 :::{figure} img/commits/rstudio-remote-branches.png
   :alt: Screenshot of RStudio of where to find the commit history
-  :width:100%
+  :width: 100%
   :class: with-border
 :::
 

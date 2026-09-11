@@ -90,6 +90,28 @@ some error message printed.
     ```
   ::::
 
+  ::::{group-tab} GitLab
+    We can see a similar example but with the ASE repository instead of NetworkX at [https://gitlab.com/search?...](https://gitlab.com/search?search=fixme&nav_source=navbar&project_id=470007&group_id=293845&search_code=true&repository_ref=master).
+
+    This search result page is accessible by first going to the [ASE repository page](https://gitlab.com/ase/ase) and then using the search bar at the top of the page:
+
+    :::{figure} img/gitlab/archaeology-search-start.png
+    :alt: Searching for “fixme” in the ASE GitLab repository.
+    :width: 100%
+    :class: with-border
+
+    Searching for "fixme" in the ASE GitLab repository.
+    :::
+
+    :::{figure} img/gitlab/archaeology-search-results.png
+    :alt: Results for “fixme” in the ASE GitLab repository.
+    :width: 100%
+    :class: with-border
+
+    Results for "fixme" in the ASE GitLab repository.
+    :::
+  ::::
+
   ::::{group-tab} VS Code
     Our example repository is <https://github.com/networkx/networkx>.
     From a new VS Code window, select "Clone Git repository" and enter
@@ -149,6 +171,18 @@ some error message printed.
     ```
   ::::
 
+  ::::{group-tab} GitLab
+    We can look at another ASE example <https://gitlab.com/ase/ase/-/commit/fd0bd0df7aabe7977d48d72824b846535d15592a> (this commit switches some lines from using string to using Python's pathlib)
+
+    :::{figure} img/gitlab/archaeology-show.png
+    :alt: Inspecting an individual commit on GitLab.
+    :width: 100%
+    :class: with-border
+
+    Inspecting an individual commit on GitLab.
+    :::
+  ::::
+
   ::::{group-tab} VS Code
     We don't know of a built-in way to see every single Git commit in
     order (extensions allow this).  You can open the terminal and run
@@ -205,6 +239,19 @@ modified each line. Incredibly useful for reproducibility.
 
        Screenshot of file annotation on GitHub.
     ```
+  ::::
+
+  ::::{group-tab} GitLab
+    In the ASE project, this file:
+    <https://gitlab.com/ase/ase/-/blob/master/ase/geometry/geometry.py>
+
+    :::{figure} img/gitlab/archaeology-annotate.png
+    :alt: Opening the blame view for a file on GitLab.
+    :width: 100%
+    :class: with-border
+
+    Opening the blame view for a file on GitLab.
+    :::
   ::::
 
   ::::{group-tab} VS Code
@@ -275,6 +322,20 @@ modified each line. Incredibly useful for reproducibility.
     ```
   ::::
 
+  ::::{group-tab} GitLab
+    We can visit the commit again <https://gitlab.com/ase/ase/-/commit/fd0bd0df7aabe7977d48d72824b846535d15592a>
+
+    Once we are there we can "Browse files" at that point in history.
+
+    :::{figure} img/gitlab/archaeology-browse-files.png
+    :alt: Browsing the repository files at an earlier GitLab commit.
+    :width: 100%
+    :class: with-border
+
+    Browsing the repository files at an earlier GitLab commit.
+    :::
+  ::::
+
   ::::{group-tab} VS Code
     Switch to "Source Control", then the "..." menu, then "Branch", then "Create new branch from..." and now you can type a commit identifier (hash).
 
@@ -314,6 +375,10 @@ modified each line. Incredibly useful for reproducibility.
         creating a new local repository.
       ::::
 
+      ::::{group-tab} GitLab
+        No local repository is needed for this path; inspect <https://gitlab.com/obob/pymatreader> directly.
+      ::::
+
       ::::{group-tab} VS Code
         **Warning: many of these exercise tasks aren't possible in the VS Code interface without extensions.  You can use VS Code to clone the project, but be prepared to start the terminal to do the main tasks.**
 
@@ -339,6 +404,10 @@ modified each line. Incredibly useful for reproducibility.
 
       ::::{group-tab} GitHub
         Nothing to clone. We will try to inspect the repository directly on GitHub.
+      ::::
+
+      ::::{group-tab} GitLab
+        Nothing to clone. We will try to inspect the repository directly on GitLab.
       ::::
 
       ::::{group-tab} VS Code
@@ -372,6 +441,10 @@ modified each line. Incredibly useful for reproducibility.
         We can visit the version directly: <https://github.com/networkx/networkx/tree/networkx-2.6.3>
       ::::
 
+      ::::{group-tab} GitLab
+        We can visit the version directly: <https://gitlab.com/ase/ase/-/tree/3.26.0?ref_type=tags> in this case **version 3.26.0**.
+      ::::
+
       ::::{group-tab} VS Code
         Switch to "Source Control", then the "..." menu, then "Branch", then "Create new branch from..." and select "networkx-2.6.3".
       ::::
@@ -387,7 +460,7 @@ modified each line. Incredibly useful for reproducibility.
     :::::
 
   Then using the above toolbox try to:
-  1. Find the code line which contains `"Logic error in degree_correlation"`.
+  1. Find the code line which contains `"Logic error in degree_correlation"`. (For GitLab/ASE find the code referred to by the comment `"Set the positions from the ones passed in"`.)
   1. Find out when this line was last modified or added. Find the actual commit which modified that line.
   1. Inspect the commit. What is the commit change? What is the commit metadata?
   1. Create a branch pointing to the past when that commit was created to be
@@ -446,6 +519,19 @@ modified each line. Incredibly useful for reproducibility.
            <https://github.com/networkx/networkx/tree/90544b4>.
         5. Go back to the "Blame" view for the file `networkx/algorithms/threshold.py`:
            <https://github.com/networkx/networkx/blame/409979eff35f02eff54f4eea3731736bd431dc2e/networkx/algorithms/threshold.py#L550>.
+           Navigate to the symbol "Blame prior to change ..." which you find next to the commit message that modified this line.
+      ::::
+
+      ::::{group-tab} GitLab
+        1. Go to <https://gitlab.com/ase/ase/-/tree/3.26.0?ref_type=tags>, click on the search bar and search for "Set the positions from the ones passed in"
+           Clicking the line in the result brings you to <https://gitlab.com/ase/ase/-/blob/3.26.0/ase/filters.py#L436>
+        2. Click on the "Blame" button. Next to the line of code referred to by the comment you see the commit which modified it last.
+        3. You can click on the commit which brings you to <https://gitlab.com/ase/ase/-/commit/98513a30cad6cc067e47d97561b5e228ced4c96d>
+        4. Let's skip creating the branch on GitLab. Instead, we can browse the
+           project at this version:
+           <https://gitlab.com/ase/ase/-/tree/98513a30cad6cc067e47d97561b5e228ced4c96d>.
+        5. Go back to the "Blame" view for the file `ase/filters.py`:
+           <https://gitlab.com/ase/ase/-/blob/3.26.0/ase/filters.py?blame=1#L436>.
            Navigate to the symbol "Blame prior to change ..." which you find next to the commit message that modified this line.
       ::::
     :::::

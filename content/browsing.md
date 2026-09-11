@@ -53,6 +53,9 @@ Illustration of forking a repository on GitHub.
 First, we need to make **our own copy** of the exercise repository. This will
 become important later, when we make our own changes.
 
+:::::{tabs}
+::::{group-tab} GitHub
+
 1. Go to the repository view on GitHub:
    - <https://github.com/cr-workshop-exercises/recipe-book>: you can use this one if you don't want your fork and contributions
      to be visible on the stream or the recording
@@ -72,11 +75,47 @@ or the *CodeRefinery {term}`upstream`* repository.
 * Your repository: https://github.com/**USER**/recipe-book
 * CodeRefinery upstream repository: https://github.com/**cr-workshop-exercises**/recipe-book
 
+::::
+
+::::{group-tab} GitLab
+
+1. Go to the repository view on GitLab at <https://gitlab.com/cr-workshop-exercises/recipe-book>
+1. First, on GitLab, click the button that says "Fork".  It is towards
+   the top-right of the screen:
+   :::{figure} img/gitlab/fork-annotated.png
+   :alt: Screenshot on GitLab before clicking on "Fork"
+   :width: 80%
+   :class: with-border
+   :::
+1. Then select your username in the "namespace" dropdown (everything else can be left as-is) and click the "Fork Project" button:
+   :::{figure} img/gitlab/fork-dialog-annotated.png
+   :alt: Screenshot on GitLab before clicking on "Fork"
+   :width: 80%
+   :class: with-border
+   :::
+1. You should shortly be redirected to your copy of the repository
+   **USER/recipe-book**.
+
+At all times you should be aware of if you are looking at *your* repository
+or the *CodeRefinery {term}`upstream`* repository.
+* Your repository: https://gitlab.com/**USER**/recipe-book
+* CodeRefinery upstream repository: https://gitlab.com/**cr-workshop-exercises**/recipe-book
+
+::::
+
+:::::
+
 :::::{tabs}
 ::::{group-tab} GitHub
 You only need to open your own view, as described above.  The browser
 URL should look like `https://github.com/USER/recipe-book`, where
 `USER` is your GitHub username.
+::::
+
+::::{group-tab} GitLab
+You only need to open your own view, as described above.  The browser
+URL should look like `https://gitlab.com/USER/recipe-book`, where
+`USER` is your GitLab username.
 ::::
 
 ::::{group-tab} VS Code
@@ -204,6 +243,18 @@ Click on the timeline symbol in the repository view:
   :::
 ::::
 
+::::{group-tab} GitLab
+From the left sidebar click on "Code" then "Commits". Select a commit to inspect its author, date, message, and changes.
+
+:::{figure} img/gitlab/browsing-history-annotated.png
+:alt: Opening the commit history of a GitLab project.
+:width: 100%
+:class: with-border
+
+Opening the commit history of a GitLab project.
+:::
+::::
+
 ::::{group-tab} VS Code
 This can be done from "Timeline", in the bottom of explorer, but only
 for a single file.
@@ -253,6 +304,18 @@ how they correspond with the commits in the other view:
   :::
 ::::
 
+::::{group-tab} GitLab
+From the left sidebar click on "Code" then "Repository graph". Hover over commit nodes to inspect branches, merges, authors, and messages.
+
+:::{figure} img/gitlab/browsing-network-annotated.png
+:alt: Opening the repository graph on GitLab.
+:width: 100%
+:class: with-border
+
+Opening the repository graph on GitLab.
+:::
+::::
+
 ::::{group-tab} VS Code
 We don't know how to do this without an extension. Try starting a terminal and using the
 "Command Line" option.
@@ -275,10 +338,10 @@ This can be viewed in the same "History" tab that we just looked at. The branch 
 the commit list, and individual commits can be clicked to see the person who committed and what changes they did.
 
 :::{figure} img/browsing/network_RStudio.png
-  :alt: Screenshot of RStudio of where to find the commit history
-  :width:100%
-  :class: with-border
-  :::
+:alt: Screenshot of RStudio of where to find the commit history
+:width: 100%
+:class: with-border
+:::
 
 ::::
 :::::
@@ -299,6 +362,26 @@ guacamole.md. Click the "History" button near the top right:
   :width: 100%
   :class: with-border
   :::
+::::
+
+::::{group-tab} GitLab
+Using the file browser open `sides` and then `guacamole.md`, then select "History".
+
+:::{figure} img/gitlab/browsing-file-history-annotated.png
+:alt: Opening the history of one file on GitLab.
+:width: 100%
+:class: with-border
+
+Opening the history of one file on GitLab.
+:::
+
+:::{figure} img/gitlab/history.png
+:alt: The list of commits in a single file's history shown on GitLab.
+:width: 100%
+:class: with-border
+
+The list of commits in a single file's history shown on GitLab.
+:::
 ::::
 
 ::::{group-tab} VS Code
@@ -368,6 +451,26 @@ instance, including the context.
   :::
 ::::
 
+::::{group-tab} GitLab
+Go to the main page for the recipe book repository and use the search bar at the top of the page to search for `salt` and select "Search for ``salt`` in... **Recipe Book**", and then select "Code". GitLab shows each match with its file and context.
+
+:::{figure} img/gitlab/browsing-search-start.png
+:alt: Searching for “salt” within a GitLab project.
+:width: 100%
+:class: with-border
+
+Searching for “salt” within a GitLab project.
+:::
+
+:::{figure} img/gitlab/browsing-search-annotated.png
+:alt: Results for “salt” within the Recipe Book GitLab project.
+:width: 100%
+:class: with-border
+
+Results for “salt” within the Recipe Book GitLab project.
+:::
+::::
+
 ::::{group-tab} VS Code
 If you use the "Search" magnifying class on the left sidebar, and
 search for "salt" it shows the occurrences in every file. You can
@@ -416,6 +519,18 @@ To get the actual commit, click on the commit message.
   :::
 ::::
 
+::::{group-tab} GitLab
+Open the recipe file and select "Blame". Click a commit (labelled with a date) beside a line to inspect the change that last modified it.
+
+:::{figure} img/gitlab/browsing-annotate-annotated.png
+:alt: Opening the blame view for a file on GitLab.
+:width: 100%
+:class: with-border
+
+Opening the blame view for a file on GitLab.
+:::
+::::
+
 ::::{group-tab} VS Code
 This requires an extension.  We recommend for now you use the command
 line version, after opening a terminal.
@@ -459,7 +574,11 @@ web-browser with the same view as shown in the GitHub tab.
 
 ### (8) Browse issues and pull requests in the {term}`upstream` repository
 
-This can only be done through the GitHub view.  Go to the main
+This can only be done through the GitHub/GitLab view.
+
+:::::{tabs}
+::::{group-tab} GitHub
+Go to the main
 repository **cr-workshop-exercises/recipe-book**, (not your fork):
 <https://github.com/cr-workshop-exercises/recipe-book>.  {term}`Issues <issue>`
 and {term}`Pull requests <pull request>` are different for each GitHub
@@ -470,6 +589,23 @@ copy.
   problems or ideas.
 * Click on the "Pull requests" tab. This allows anyone to *propose
   changes*, but only the repository owners can accept.
+::::
+
+::::{group-tab} GitLab
+
+Go to the main
+repository **cr-workshop-exercises/recipe-book**, (not your fork):
+<https://gitlab.com/cr-workshop-exercises/recipe-book>.
+"Work items" are analogous to {term}`Issues <issue>`
+and "Merge requests" to {term}`Pull requests <pull request>`.
+
+* From the sidebar click on "Plan" then "Work items". These are notes that people have added,
+  which allow discussion about the project. Often they are used to communicate
+  problems or ideas.
+* From the sidebar click on "Code" then "Merge requests". This allows anyone to *propose
+  changes*, but only the repository owners can accept.
+
+::::
 
 
 ## Summary
