@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using the Git staging area &#8212; Introduction to version control with Git  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/minipres.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Undoing and recovering" href="../recovering/" />
+    <link rel="prev" title="Practical advice: how much Git is necessary?" href="../level/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to version control with Git  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Core episodes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../motivation/">
+   Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basics/">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../branches/">
+   Branching and merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conflicts/">
+   Conflict resolution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../remotes/">
+   Sharing repositories online
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../archaeology/">
+   Inspecting history
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../level/">
+   Practical advice: how much Git is necessary?
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Optional episodes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Using the Git staging area
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../recovering/">
+   Undoing and recovering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../interrupted/">
+   Interrupted work
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aliases/">
+   Aliases and configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../under-the-hood/">
+   Git under the hood
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/">
+   List of exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide/">
+   Instructor guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/">
+   Quick reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../customizing/">
+   Customizing Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/">
+   Other resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/staging-area.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commit-history-is-telling-a-story">
+   Commit history is telling a story
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-commits">
+   Interactive commits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-interactive-commits">
+   Exercise: Interactive commits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-staging-area">
+   The staging area
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#staging-area-commands">
+   Staging area commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-using-the-staging-area">
+   Exercise: Using the staging area
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Using the Git staging area</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commit-history-is-telling-a-story">
+   Commit history is telling a story
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-commits">
+   Interactive commits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-interactive-commits">
+   Exercise: Interactive commits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-staging-area">
+   The staging area
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#staging-area-commands">
+   Staging area commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-using-the-staging-area">
+   Exercise: Using the staging area
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="using-the-git-staging-area">
+<h1>Using the Git staging area<a class="headerlink" href="#using-the-git-staging-area" title="Permalink to this headline">#</a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Learn how to tell a story with your commit history.</p></li>
+<li><p>Demystify the Git staging area.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>10 min teaching/type-along</p></li>
+<li><p>10 min exercise</p></li>
+</ul>
+</div>
+<section id="commit-history-is-telling-a-story">
+<h2>Commit history is telling a story<a class="headerlink" href="#commit-history-is-telling-a-story" title="Permalink to this headline">#</a></h2>
+<p>Your <em>current code</em> is very important, but the <em>history</em> can be just
+as important - it tells a story about how your code came to be.</p>
+<ul class="simple">
+<li><p>Each individual line of code rarely stands alone.</p></li>
+<li><p>You often want to see all the related changes together.</p></li>
+<li><p>But you also hardly ever do one thing at once.</p></li>
+</ul>
+<p>Along with your code, Git creates a <em>history</em> for you, and if your
+history is clear then you are a long way to organized code.</p>
+<div class="admonition-discussion discussion attention admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<p>Here are five types of history.  What are the advantages and
+disadvantages of each, when you look at it later?</p>
+<p><strong>Example 1</strong>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>b135ec8 add features A, B, and C
+</pre></div>
+</div>
+<p><strong>Example 2</strong> (newest commit is on top):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>6f0d49f implement feature C
+fee1807 implement feature B
+6fe2f23 implement feature A
+</pre></div>
+</div>
+<p><strong>Example 3</strong>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ab990f4 saving three months of miscellaneous work I forgot to commit
+</pre></div>
+</div>
+<p><strong>Example 4</strong> (newest commit is on top):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>bf39f9d more work on feature B
+45831a5 removing debug prints <span class="k">for</span> feature A and add new file
+bddb280 more work on feature B and make feature A compile again
+72d78e7 feature A did not work and started work on feature B
+b135ec8 now feature A should work
+72e0211 another fix to make it compile
+61dd3a3 forgot file and bugfix
+49dc419 wip <span class="o">(</span>work <span class="k">in</span> progress<span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>Example 5</strong> (newest commit is on top):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>1949dc4 Work of <span class="m">2020</span>-04-07
+a361dd3 Work of <span class="m">2020</span>-04-06
+1172e02 Work of <span class="m">2020</span>-04-03
+e772d78 Work of <span class="m">2020</span>-04-02
+</pre></div>
+</div>
+<p>Discuss these examples. Can you anticipate problems?</p>
+</div>
+<p>We want to have nice commits.  But we also want to “save often”
+(checkpointing) - how can we have both?</p>
+<ul class="simple">
+<li><p>We will now learn to create nice commits using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--patch</span></code> and/or the staging area.</p></li>
+<li><p>Staging addresses the issue of having unrelated changes in the same
+commit or having one logical change spread over several commits.</p></li>
+<li><p>The staging area isn’t the only way to organize your history nicely, some alternatives are discussed at the end of the lesson.</p></li>
+</ul>
+</section>
+<section id="interactive-commits">
+<h2>Interactive commits<a class="headerlink" href="#interactive-commits" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The simplest ways to solve this is to do <strong>interactive commits</strong>:
+the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--patch</span></code> option (or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-p</span></code> for short).</p></li>
+<li><p>It will present you with every change you have made individually,
+and you can decide which ones to commit right now.</p></li>
+<li><p>Reference and key commands</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--patch</span></code> to start the interactive commit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> to use the change</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> to skip the change</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code> (split) if there are several changes grouped together, but
+separated by a blank line, split them into separate choices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code> aborts everything.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code> for more options.</p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">-p</span></code> option is also available on <code class="docutils literal notranslate"><span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">checkout</span></code>, <code class="docutils literal notranslate"><span class="pre">reset</span></code>, and <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p></li>
+</ul>
+</section>
+<section id="exercise-interactive-commits">
+<span id="id1"></span><h2>Exercise: Interactive commits<a class="headerlink" href="#exercise-interactive-commits" title="Permalink to this headline">#</a></h2>
+<div class="admonition-staging-1-perform-an-interactive-commit exercise important admonition" id="exercise-0">
+<p class="admonition-title">Staging-1: Perform an interactive commit</p>
+<p>One option to help us create nice logical commits is to stage <em>interactively</em>
+with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--patch</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Make two changes in <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code>, at the top and bottom
+of the file.
+<strong>Make sure that they are separated by at least several unmodified lines.</strong></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--patch</span></code>.  Using the keystrokes above, commit one of
+the changes.</p></li>
+<li><p>Do it again for the other change.</p></li>
+<li><p>When you’re done, inspect the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--staged</span></code>.</p></li>
+<li><p>When would this be useful?</p></li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<p>This can be useful if you have several modification in a file (or several
+files) but you decide that it would be beneficial to save them as two (or
+more) separate commits.</p>
+</div>
+</div>
+</section>
+<section id="the-staging-area">
+<h2>The staging area<a class="headerlink" href="#the-staging-area" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The interactive commits above are great, but what if there are so
+many changes that you can’t sort them out in one shot?</p></li>
+<li><p>What if you make progress and want to record it somehow, but it’s
+not ready to be committed?</p></li>
+<li><p>The <strong>staging area</strong> is a place to record things before committing.</p></li>
+</ul>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-1">
+<p class="admonition-title">Instructor note</p>
+<p>We give two examples and the instructor can pick one or both:</p>
+<ul class="simple">
+<li><p>Analogy using moving boxes</p></li>
+<li><p>Analogy using shopping receipts</p></li>
+</ul>
+</div>
+<div class="admonition-discussion discussion attention admonition" id="discussion-1">
+<p class="admonition-title">Discussion</p>
+<p><strong>Analogy using moving boxes</strong></p>
+<ul class="simple">
+<li><p>You’re moving and you have a box to pack your things in.</p></li>
+<li><p>You can put stuff into the box, but you can also take stuff out of the box.</p></li>
+<li><p>You wouldn’t want to mix items from the bathroom, kitchen, and living room
+into the same box.</p></li>
+<li><p>The box corresponds to the staging area of Git, where you can craft your commits.</p></li>
+<li><p>Committing is like sealing the box and sticking a label on it.</p></li>
+<li><p>You wouldn’t want to label your box with “stuff”, but rather give a more
+descriptive label.</p></li>
+<li><p>See also <a class="reference external" href="https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh">https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh</a></p></li>
+</ul>
+<p><strong>Analogy using shopping receipts</strong></p>
+<ul class="simple">
+<li><p>You need to go shopping and buy some stuff for work and for home.
+You need two separate receipts.</p></li>
+<li><p>Bad idea: go through the store get home stuff, pay, start at the
+beginning and go through the store again.  This is inefficient and
+annoying.</p></li>
+<li><p>What you actually do:</p>
+<ul>
+<li><p>Go through the store and put everything you need in your shopping
+basket.</p></li>
+<li><p>Get to the checkout.  Put your home stuff on the conveyor belt
+(<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>).  Check both the belt (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--staged</span></code>) and your
+basket (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>) to make sure you got all your home stuff.</p></li>
+<li><p>Pay (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>)</p></li>
+<li><p>Repeat for work stuff.</p></li>
+</ul>
+</li>
+</ul>
+<p>In order to keep organized, you have to use multiple locations to
+stage things in sequence.</p>
+</div>
+</section>
+<section id="staging-area-commands">
+<h2>Staging area commands<a class="headerlink" href="#staging-area-commands" title="Permalink to this headline">#</a></h2>
+<p>The staging area is a middle ground between what you have done to your files
+(the <strong>working directory</strong>) and what you have last committed (the <strong>HEAD commit</strong>).
+Just like the name implies, it lets you prepare (<strong>stage</strong>) what the next commit will be and most importantly give you tools to easily know what is going on.
+This adds some complexity but also adds more flexibility to selectively
+prepare commits since <strong>you can modify and stage several times before committing</strong>.</p>
+<p><strong>git add</strong> stages/prepares for the next commit:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                git add
+ [project*]  &lt;------------  project*
+                               ^
+                               | modify with editor
+                               |
+  HEAD            .         project
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+</pre></div>
+</div>
+<p><strong>git commit</strong> creates a new commit:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  HEAD            .         project
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+  HEAD~2          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+</pre></div>
+</div>
+<p><strong>git reset --soft HEAD~1</strong> (move HEAD back by one but keep changes and stage
+them) would do the opposite of <strong>git commit</strong>.</p>
+<p>Going back to the last staged version:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>              git restore
+ [project*]  ------------&gt;  project*
+
+
+
+  HEAD            .
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+</pre></div>
+</div>
+<p>Unstaging changes with <strong>git restore --staged</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>          git restore --staged
+             ------------&gt;  project*
+
+
+
+  HEAD            .
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+</pre></div>
+</div>
+<p>Discarding unstaged changes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                            project*
+                               |
+                               | git restore
+                               v
+  HEAD            .         project
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+</pre></div>
+</div>
+<p>Comparing:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                git diff
+ [project*]  &lt;-----------&gt;  project*
+    ^                          ^
+    | git diff --staged        | git diff HEAD
+    v                          v
+  HEAD            .
+    |             .
+    |             .
+    |             .
+  HEAD~1          .
+    |             .
+    |             .
+    |             .
+                  .
+  .git            .     working directory
+(history)         .      (files we see)
+</pre></div>
+</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/staging-basics.svg"><img alt="Staging basics" src="../_images/staging-basics.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-text">The different states of the repository and the commands to move from one to
+another.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="exercise-using-the-staging-area">
+<span id="exercise-staging-area"></span><h2>Exercise: Using the staging area<a class="headerlink" href="#exercise-using-the-staging-area" title="Permalink to this headline">#</a></h2>
+<div class="admonition-staging-2-use-the-staging-area-to-make-a-commit-in-two-steps exercise important admonition" id="exercise-1">
+<p class="admonition-title">Staging-2: Use the staging area to make a commit in two steps</p>
+<ol class="arabic simple">
+<li><p>In your recipe example, make two different changes to
+<code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code> which do not go together.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to stage one of the changes.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see what’s going on, and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--staged</span></code> to see the changes.</p></li>
+<li><p>Feel some regret and unstage the staged change.</p></li>
+</ol>
+</div>
+<div class="admonition-discussion discussion attention admonition" id="discussion-2">
+<p class="admonition-title">Discussion</p>
+<ul class="simple">
+<li><p>When is it better to “save” a change as commit, when is it better to “save”
+it with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>?</p></li>
+<li><p>Is it a problem to commit many small changes?</p></li>
+</ul>
+</div>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>The staging area helps us to create well-defined commits.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../level/" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Practical advice: how much Git is necessary?</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../recovering/" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Undoing and recovering</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By CodeRefinery team<br/>
+  
+      &copy; Copyright CodeRefinery team.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

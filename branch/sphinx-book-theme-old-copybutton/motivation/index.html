@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Motivation &#8212; Introduction to version control with Git  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/minipres.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Basics" href="../basics/" />
+    <link rel="prev" title="Introduction to version control with Git" href="../" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to version control with Git  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Core episodes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basics/">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../branches/">
+   Branching and merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conflicts/">
+   Conflict resolution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../remotes/">
+   Sharing repositories online
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../archaeology/">
+   Inspecting history
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../level/">
+   Practical advice: how much Git is necessary?
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Optional episodes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../staging-area/">
+   Using the Git staging area
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../recovering/">
+   Undoing and recovering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../interrupted/">
+   Interrupted work
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aliases/">
+   Aliases and configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../under-the-hood/">
+   Git under the hood
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/">
+   List of exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide/">
+   Instructor guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/">
+   Quick reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../customizing/">
+   Customizing Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/">
+   Other resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/motivation.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-essence-of-version-control">
+   The essence of version control
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-we-typically-like-to-snapshot">
+     What we typically like to snapshot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-version-control">
+   Why version control
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roll-back-functionality">
+     Roll-back functionality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#branching">
+     Branching
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility">
+     Reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-with-dropbox-or-google-drive">
+     Compare with Dropbox or Google Drive
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#difficulties-of-version-control">
+   Difficulties of version control
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-real-life-example">
+   A real-life example
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Motivation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-essence-of-version-control">
+   The essence of version control
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-we-typically-like-to-snapshot">
+     What we typically like to snapshot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-version-control">
+   Why version control
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roll-back-functionality">
+     Roll-back functionality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#branching">
+     Branching
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility">
+     Reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-with-dropbox-or-google-drive">
+     Compare with Dropbox or Google Drive
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#difficulties-of-version-control">
+   Difficulties of version control
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-real-life-example">
+   A real-life example
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="motivation">
+<h1>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Make sure nobody leaves the workshop without starting to use some form of version control.</p></li>
+<li><p>Discuss the reasons why we advocate distributed version control.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>15 min teaching/demonstration</p></li>
+</ul>
+</div>
+<section id="the-essence-of-version-control">
+<h2>The essence of version control<a class="headerlink" href="#the-essence-of-version-control" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>System which <strong>records snapshots</strong> of a project</p></li>
+<li><p>Implements <strong>branching</strong>:</p>
+<ul>
+<li><p>You can work on several feature branches and switch between them</p></li>
+<li><p>Different people can work on the same code/project without interfering</p></li>
+<li><p>You can experiment with an idea and discard it if it turns out to be a bad idea</p></li>
+</ul>
+</li>
+<li><p>Implements <strong>merging</strong>:</p>
+<ul>
+<li><p>Person A and B’s simultaneous work can be easily combined</p></li>
+</ul>
+</li>
+</ul>
+<section id="what-we-typically-like-to-snapshot">
+<h3>What we typically like to snapshot<a class="headerlink" href="#what-we-typically-like-to-snapshot" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Software (this is how it started but Git/GitHub can track a lot more)</p></li>
+<li><p>Scripts</p></li>
+<li><p>Documents (plain text files much better suitable than Word documents)</p></li>
+<li><p>Manuscripts (Git is great for collaborating/sharing LaTeX manuscripts)</p></li>
+<li><p>Configuration files</p></li>
+<li><p>Website sources</p></li>
+<li><p>Data</p></li>
+</ul>
+<div class="admonition-discussion discussion attention admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<p>Discuss the following directory listing. What possible problems
+do you anticipate with this kind of “version control”:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mylib-1.2.4_18.3.07.tgz         somecode_CP_10.8.07.tgz
+mylib-1.2.4_27.7.07.tgz         somecode_CP_17.5.07.tgz
+mylib-1.2.4_29.4.08.tgz         somecode_CP_23.8.07_final.tgz
+mylib-1.2.4_6.10.07.tgz         somecode_CP_24.5.07.tgz
+mylib-1.2.5_23.4.08.tgz         somecode_CP_25.5.07.tgz
+mylib-1.2.5_25.5.07.tgz         somecode_CP_29.5.07.tgz
+mylib-1.2.5_6.6.07.tgz          somecode_CP_30.5.07.tgz
+mylib-1.2.5_bexc.tgz            somecode_CP_6.10.07.tgz
+mylib-1.2.5_d0.tgz              somecode_CP_6.6.07.tgz
+mylib-1.3.0_4.4.08.tgz          somecode_CP_8.6.07.tgz
+mylib-1.3.1_4.4.08.tgz          somecode_KT.tgz
+mylib-1.3.2_22.4.08.tgz         somecode_PI1_2007.tgz
+mylib-1.3.2_4.4.08.tgz          somecode_PI_2007.tgz
+mylib-1.3.2_5.4.08.tgz          somecode_PI2_2007.tgz
+mylib-1.3.3_1.5.08.tgz          somecode_PI_CP_18.3.07.tgz
+mylib-1.3.3_20.5.08.tgz         somecode_11.5.08.tgz
+mylib-1.3.3_tstrm_27.6.08.tgz   somecode_15.4.08.tgz
+mylib-1.3.3_wk_10.8.08.tgz      somecode_17.6.09_unfinished.tgz
+mylib-1.3.3_wk_11.8.08.tgz      somecode_19.7.09.tgz
+mylib-1.3.3_wk_13.8.08.tgz      somecode-20.7.09.tgz
+...
+</pre></div>
+</div>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p>Giving a version to a collaborator and merging changes later with own
+changes sounds like lots of work.</p></li>
+<li><p>What if you discover a bug and want to know since when the bug existed?</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="why-version-control">
+<h2>Why version control<a class="headerlink" href="#why-version-control" title="Permalink to this headline">#</a></h2>
+<section id="roll-back-functionality">
+<h3>Roll-back functionality<a class="headerlink" href="#roll-back-functionality" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Mistakes happen - without recorded snapshots you cannot easily undo mistakes and <strong>go back to a working version</strong>.</p></li>
+</ul>
+</section>
+<section id="branching">
+<h3>Branching<a class="headerlink" href="#branching" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Often you need to work on <strong>several issues/features in one code</strong> - without branching this can be messy and confusing.</p></li>
+<li><p>You can simulate branching by copying the entire code to multiple places but also this will be messy and confusing.</p></li>
+</ul>
+</section>
+<section id="collaboration">
+<h3>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this headline">#</a></h3>
+<p>With version control, none of these are needed anymore (or have much simpler answers):</p>
+<ul class="simple">
+<li><p><em>“I will just finish my work and then you can start with your changes.”</em></p></li>
+<li><p><em>“Can you please send me the latest version?”</em></p></li>
+<li><p><em>“Where is the latest version?”</em></p></li>
+<li><p><em>“Which version are you using?”</em></p></li>
+<li><p><em>“Which version have the authors used in the paper I am trying to reproduce?”</em></p></li>
+</ul>
+</section>
+<section id="reproducibility">
+<h3>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>How do you indicate which version of your code you have used in your paper?</p></li>
+<li><p>When you find a bug, how do you know <strong>when precisely</strong> this bug was introduced
+(Are published results affected? Do you need to inform collaborators or users of your code?).</p></li>
+</ul>
+</section>
+<section id="compare-with-dropbox-or-google-drive">
+<h3>Compare with Dropbox or Google Drive<a class="headerlink" href="#compare-with-dropbox-or-google-drive" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Document/code is in one place, no need to email snapshots.</p></li>
+<li><p>How can you use an old version? Possible to get old versions but in a much less useful way - snapshots of files, not directories.</p></li>
+<li><p>What if you want to work on multiple versions at the same time? Do you make a copy? How do you merge copies?</p></li>
+<li><p>What if you don’t have internet?</p></li>
+</ul>
+<div class="admonition-why-git discussion attention admonition" id="discussion-1">
+<p class="admonition-title">Why Git?</p>
+<p>We will use <a class="reference external" href="https://git-scm.com">Git</a> to record snapshots of our work:</p>
+<ul class="simple">
+<li><p><strong>Easy to set up</strong>: no server needed.</p></li>
+<li><p><strong>Very popular</strong>: chances are high you will need to contribute to somebody else’s code which is tracked with Git.</p></li>
+<li><p><strong>Distributed</strong>: good backup, no single point of failure, you can track and
+clean-up changes offline, simplifies collaboration model for open-source
+projects.</p></li>
+<li><p>Important <strong>platforms</strong> such as <a class="reference external" href="https://github.com">GitHub</a>, <a class="reference external" href="https://gitlab.com">GitLab</a>, and <a class="reference external" href="https://bitbucket.org">Bitbucket</a>
+build on top of Git.</p></li>
+</ul>
+<p>However, any version control is better than no version control and it is OK to prefer a different tool than Git.</p>
+<p>Other tools:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://subversion.apache.org">Subversion</a></p></li>
+<li><p><a class="reference external" href="https://www.mercurial-scm.org">Mercurial</a></p></li>
+</ul>
+<p>Interesting newcomer:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pijul.org/">Pijul</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="difficulties-of-version-control">
+<h2>Difficulties of version control<a class="headerlink" href="#difficulties-of-version-control" title="Permalink to this headline">#</a></h2>
+<p>Despite the benefits, let’s be honest, there are some difficulties:</p>
+<ul class="simple">
+<li><p>One more thing to learn (it’s probably worth it and will save you more time in the long run; basic career skill).</p></li>
+<li><p>Difficult if some people don’t want to use it (in the worst case, you can version control on your side and send them versions).</p></li>
+<li><p>Advanced things can be difficult, a bit too many gotchas (basics are often enough, ask others for help when needed).</p></li>
+</ul>
+</section>
+<section id="a-real-life-example">
+<h2>A real-life example<a class="headerlink" href="#a-real-life-example" title="Permalink to this headline">#</a></h2>
+<p>Before we create a new repository from scratch and learn how to record changes
+and create and merge branches, let us explore an <strong>existing Git repository</strong> on
+GitHub.  The goal here is not to teach GitHub yet (we will explain some of the
+concepts later), but rather to get a glimpse of the wider picture and see the
+social aspect to know what our end goal is.</p>
+<p>As an example we can explore a famous Git repository which was used
+to produce the Event Horizon Telescope images: <a class="reference external" href="https://github.com/achael/eht-imaging">https://github.com/achael/eht-imaging</a>.</p>
+<ul class="simple">
+<li><p>History</p>
+<ul>
+<li><p>Explore the <a class="reference external" href="https://github.com/achael/eht-imaging">repository</a>.</p></li>
+<li><p>Explore the <a class="reference external" href="https://github.com/achael/eht-imaging/commits/main">history</a>.</p></li>
+<li><p>Note that there are <a class="reference external" href="https://github.com/achael/eht-imaging/network">branches</a>.</p></li>
+</ul>
+</li>
+<li><p>Reproducibility</p>
+<ul>
+<li><p>Discuss the enormous value of the annotation feature: <a class="reference external" href="https://github.com/achael/eht-imaging/blame/main/ehtim/imaging/starwarps.py">example file</a>.</p></li>
+</ul>
+</li>
+<li><p>Collaboration</p>
+<ul>
+<li><p>You can refer to <a class="reference external" href="https://github.com/achael/eht-imaging/blob/31361ab62c5718b08612fc75e409795f004f5071/ehtim/imaging/starwarps.py#L66-L75">code portions</a>
+(so much simpler to send a link rather than describe which file to open and where to scroll to).</p></li>
+<li><p>Browse the <a class="reference external" href="https://github.com/achael/eht-imaging/network/members">forks</a>.</p></li>
+<li><p>See <a class="reference external" href="https://github.com/achael/eht-imaging/graphs/contributors">contributors</a>.</p></li>
+</ul>
+</li>
+<li><p>Releases</p>
+<ul>
+<li><p>Explore the <a class="reference external" href="https://github.com/achael/eht-imaging/releases">release history</a>.</p></li>
+</ul>
+</li>
+</ul>
+<p>While some of these are GitHub features, it all can be done on other sites, or
+by yourself without GitHub at all.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to version control with Git</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../basics/" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Basics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By CodeRefinery team<br/>
+  
+      &copy; Copyright CodeRefinery team.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
