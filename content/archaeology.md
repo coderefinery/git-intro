@@ -11,15 +11,15 @@
 :::
 
 
-## Command line, GitHub, and VS Code
+## Command line, GitHub/GitLab, and VS Code
 
 As usual, we offer ways to do this with the command line, VS Code, and
-GitHub.
+GitHub/GitLab.
 
 * **Command line** is most powerful and relatively easy with this.
   You may also use it along with other things. If you haven't tried
   it yet, we'd recommend you to give it a try.
-* The **GitHub** web interface allows many things to be done, but not
+* The **GitHub/GitLab** web interface allows many things to be done, but not
   everything.
 * **VS Code** allows some of these, but for some it's easier to open
   the VS Code terminal and run Git there.
@@ -38,10 +38,10 @@ Later we will practice these in an archaeology exercise (below).
 ### Warm-up: ["Git History" browser](https://githistory.xyz/)
 
 As a warm-up we can try the ["Git History" browser](https://githistory.xyz/)
-on the README.rst file of the [networkx](https://github.com/networkx/networkx) repository:
+on the README.rst file of the [networkx](https://github.com/networkx/networkx) repository (or the [ASE](https://gitlab.com/ase/ase/) repository on GitLab):
 
-- Visit and browse <https://github.githistory.xyz/networkx/networkx/blob/main/README.rst> (use left/right keys).
-- You can try this on some of your GitHub repositories, too!
+- Visit and browse <https://github.githistory.xyz/networkx/networkx/blob/main/README.rst> (GitHub) or <https://gitlab.githistory.xyz/ase/ase/blob/master/README.rst> (GitLab). Use left/right keys to move through the history of the README.
+- You can try this on some of your GitHub/GitLab repositories, too!
 
 
 ### Searching text patterns in the repository
