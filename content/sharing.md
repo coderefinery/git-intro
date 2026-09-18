@@ -35,13 +35,17 @@ From a bunch of files to a local repository which we then share on GitHub.
 2. Turn this new directory into a Git repository.
 3. Share this repository on GitHub (or GitLab, since it really works the same).
 
-We offer **three different paths** of how to do this exercise.
+We offer **five different paths** of how to do this exercise.
 * Via **GitHub web interface**: easy and can be a good starting point if you are completely
   new to Git.
+* Via **GitLab web interface**: similar to the GitHub path; create a blank
+  project, initialize it with a README file, and upload your project files.
 * **VS Code** is quite easy, since VS Code can offer to create the
   GitHub repositories for you.
 * **Command line**: you need to create the
   repository on GitHub and link it yourself.
+* **RStudio**: initialize Git for your project, connect it to an empty
+  repository on GitHub or GitLab, and use RStudio's Push and Pull buttons.
 
 ::::{tabs}
 
@@ -79,6 +83,33 @@ Now that the repository is created, you can upload your files:
 Click on the "+" symbol and then on "Upload files".
 ```
 :::
+
+:::{group-tab} GitLab
+**Create a repository on GitLab**
+First log in to GitLab, then follow the screenshots and descriptions below.
+```{figure} img/gitlab/sharing-projects-annotated.png
+:alt: Screenshot on GitLab where we start creating a new project.
+:width: 100%
+:class: with-border
+```
+After clicking "Create project", click "Create blank project".
+
+```{figure} img/gitlab/sharing-create-project-annotated.png
+:alt: Screenshot on GitLab where we create a new project.
+:width: 100%
+:class: with-border
+```
+*Choose a project name, add your username under "project URL, choose "Public", and add a README file. Finally "Create project".*
+
+**Upload your files**
+Now that the project is created, you can upload your files:
+```{figure} img/gitlab/sharing-upload-file-annotated.png
+:alt: Screenshot on GitLab where we upload files.
+:width: 100%
+:class: with-border
+```
+:::
+
 
 :::{group-tab} VS Code
 In VS Code it only takes few clicks.

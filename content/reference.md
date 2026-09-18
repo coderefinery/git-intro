@@ -114,6 +114,9 @@ merging
    Bringing changes from one branch into another, either as a noun or
    verb.
 
+merge request
+   A GitLab concept equivalent to {term}`pull request` on GitHub.
+
 VS Code
    A text editor and development environment by Microsoft.  It's quite
    popular, partly because it is powerful and easy to use.  [VS
