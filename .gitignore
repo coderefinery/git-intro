@@ -2,6 +2,7 @@ _build/
 build/
 .ipynb_checkpoints
 /venv*
+/.venv/
 .jupyter_cache
 jupyter_execute
 /content/__pycache__/
