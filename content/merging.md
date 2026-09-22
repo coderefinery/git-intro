@@ -264,7 +264,7 @@ Things to check:
 
 ::::{group-tab} GitLab
 Things to check:
-- Base repository: this should be your own
+- Target project: this should be your own
 - Title: make it descriptive
 - Description: make it informative
 - Scroll down to see commits: are these the ones you want to merge?
