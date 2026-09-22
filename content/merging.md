@@ -103,7 +103,7 @@ We assume that you have created a new branch with a recipe.
 
 1. Navigate to your branch.
 2. Click "Create merge request" in the upper right in the branch view.
-3. Provide a title and a description for the merge request. Make sure to merge with your own repository: click "Change branches" and choose your own fork to be the target branch.
+3. Provide a title and a description for the merge request. Make sure to merge with your own repository: click "Change branches", choose your own fork as the target project, and choose its `main` branch as the target branch.
 4. Create the merge request by clicking "Create merge request".
 5. Merge the merge request.
 6. Find out which branches are merged and thus safe to delete.
