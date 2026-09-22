@@ -494,7 +494,7 @@ request.
 ::::
 
 ::::{group-tab} GitLab
-Now you know how to create branches and open a merge request. Try to open a merge request with a new change but this time the base repository should be the upstream one. This means that you send a merge request across repositories: from your own fork to the original repository.
+Now you know how to create branches and open a merge request. Try to open a merge request with a new change but this time set the target project to the upstream repository. This means that you send a merge request across repositories: from your own fork to the original repository.
 
 Another thing that is different is that you might not have permission to merge the merge request. This means that someone with permission needs to review and approve your merge request.
 ::::
