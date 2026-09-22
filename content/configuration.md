@@ -6,11 +6,11 @@ We have a longer version of this in the [installation
 instructions](https://coderefinery.github.io/installation/git-in-terminal/).
 But for clarity, we will review the most important parts here.
 
-You don't need to set these if you work only through the GitHub web interface.
+You don't need to set these if you work only through the GitHub or GitLab web interface.
 If you use VS Code or other editors or integrated development environments,
 the editor might prompt you to set these up. If you use RStudio, you can carry 
 out the configuration in RStudio (see the RStudio tab in the section [Authenticating 
-to GitHub](https://coderefinery.github.io/git-intro/configuration/#authenticating-to-github-ssh-or-https-or-vs-code)
+to GitHub or GitLab](clone-method)
 below).
 
 These configuration settings are saved in a file called `.gitconfig` in your
@@ -34,11 +34,17 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email yourname@example.com
 ```
 
-For the email address we recommend to use the one you use for your GitHub account.
-If you prefer to not use it, you can instead use
-`YOUR_GITHUB_USERNAME@users.noreply.github.com` as the email address (replace `YOUR_GITHUB_USERNAME`).
-This means that nobody can write to this email address, but GitHub will still
-be able to connect your contributions with your GitHub account.
+For the email address we recommend using the one associated with your GitHub
+or GitLab account. If you prefer not to expose your personal email address,
+you can instead use the privacy-preserving no-reply address provided by the
+service:
+
+- GitHub: Copy the exact address shown in your [email settings](https://github.com/settings/emails).
+- GitLab: In your profile settings, select **Use a private email** as the commit email and copy the generated address.
+
+The address may contain an account-specific ID, username, or other details, so
+do not try to construct it yourself. This allows the service to connect your
+contributions with your account without exposing your personal email address.
 
 Note that these can, in theory, be anything: this is just data, not a
 registration or identity requirement.
@@ -84,9 +90,9 @@ to set other editors, or do a web search for "git set editor to
 % This anchor used for linking from other lessons
 (clone-method)=
 
-## Authenticating to GitHub: SSH or HTTPS or VS Code or RStudio?
+## Authenticating to GitHub or GitLab: SSH or HTTPS or VS Code or RStudio?
 
-**How does GitHub know who you are?** We discuss here four options:
+**How does the hosting service know who you are?** We discuss here four options:
 - **SSH** is the classic method, using [Secure Shell
   Protocol](https://en.wikipedia.org/wiki/Secure_Shell) remote connection
   keys.
@@ -104,7 +110,9 @@ Test which one you should use:
 
 :::::{tabs}
   ::::{group-tab} Command line: SSH
-    Try this command:
+    Try one of these commands, depending on where your repository is hosted:
+
+    **GitHub:**
     ```console
     $ ssh -T git@github.com
     ```
@@ -113,13 +121,21 @@ Test which one you should use:
     then SSH is configured and the following steps will work with the SSH
     cloning.
 
+    **GitLab:**
+    ```console
+    $ ssh -T git@gitlab.com
+    ```
+
+    If it returns `Welcome to GitLab, @USERNAME!`, then SSH is configured
+    and the following steps will work with SSH cloning.
+
+    From now on, **if you know that SSH works, select SSH as the clone URL
+    from the service hosting your repository.** GitHub URLs start with
+    `git@github.com:` and GitLab URLs start with `git@gitlab.com:`.
+
     See our [installation
     instructions](https://coderefinery.github.io/installation/ssh/) to
     set up SSH access.
-
-    From now on, **if you know that SSH works, you should always select
-    SSH as the clone URL from GitHub, or translate the URL to start with
-    the right thing yourself:** `git@github.com:` (with the `:`).
   ::::
 
   ::::{group-tab} Command line: HTTPS
@@ -133,32 +149,32 @@ Test which one you should use:
     you try using it).
 
     From now on, **if you know that HTTPS works, you should always select
-    HTTPS as the clone URL from GitHub, or translate the URL to start with
-    the right thing yourself:** `https://github.com/`
+    HTTPS as the clone URL from your hosting service, or translate the URL
+    to start with the right thing yourself:** `https://github.com/` or
+    `https://gitlab.com/`
   ::::
 
   ::::{group-tab} VS Code
-    VS Code has its own authentication method and the editor will guide you
-    through the process. If you are using VS Code, you can skip the SSH and
-    HTTPS checks.
+    VS Code has its own authentication method for GitHub and GitLab
+    integrations, and the editor or its extension will guide you through the
+    process. If you are using VS Code, you can skip the SSH and HTTPS checks.
 
     From now on, you should **select HTTPS as the clone URL from
-    GitHub, or translate the URL to start with the right thing
-    yourself:** `https://github.com/`
+    GitHub or GitLab, or translate the URL to start with the right thing
+    yourself:** `https://github.com/` or `https://gitlab.com/`
 
-    If you don't want VS Code to be connected to your GitHub account,
+    If you don't want VS Code to be connected to your GitHub or GitLab account,
     set up and use the SSH method instead.
   ::::
   
   ::::{group-tab} RStudio
     See our [installation instructions](https://coderefinery.github.io/installation/ssh/)
-    for how to run the GitHub configuration directly in RStudio using commands 
-    in the R package `usethis` and how to test that everything worked. These 
-    instructions use **HTTPS** for authentication.
+    for how to configure SSH or HTTPS authentication. In RStudio, these steps
+    can be run in the Terminal tab of the console panel.
     
     After the configuration, you should **select HTTPS as the clone URL from
-    GitHub, or translate the URL to start with the right thing
-    yourself:** `https://github.com/`
+    GitHub or GitLab, or translate the URL to start with the right thing
+    yourself:** `https://github.com/` or `https://gitlab.com/`
     
     To set your default branch name in Git to `main` in RStudio, run
     

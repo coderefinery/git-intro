@@ -6,8 +6,8 @@ means that we have to somehow combine the changes later. In this part we will
 practice this: {term}`merging`.
 
 :::{objectives}
-- Understand that on GitHub merging is done through a {term}`pull request`. Think of it as a **change proposal**.
-- Create and merge a pull request within your own repository.
+- Understand that on GitHub merging is done through a {term}`pull request`. The equivalent on GitLab is called a {term}`merge request`. Think of it as a **change proposal**.
+- Create and merge a pull/merge request within your own repository.
 - Understand (and optionally) do the same across repositories, to contribute to
   the {term}`upstream` public repository.
 :::
@@ -97,6 +97,18 @@ We provide basic hints. You should refer to the solution as needed.
 :::
 ::::
 
+::::{group-tab} GitLab
+:::{exercise} Exercise: Merging branches with merge requests
+We assume that you have created a new branch with a recipe.
+
+1. Navigate to your branch.
+2. Click "Create merge request" in the upper right in the branch view.
+3. Provide a title and a description for the merge request. Make sure to merge with your own repository: click "Change branches", choose your own fork as the target project, and choose its `main` branch as the target branch.
+4. Create the merge request by clicking "Create merge request".
+5. Merge the merge request.
+6. Find out which branches are merged and thus safe to delete.
+::::
+
 ::::{group-tab} Local (VS Code, Command line, RStudio)
 
 When working locally, it's easier to merge branches: we can just do
@@ -149,6 +161,15 @@ On GitHub make sure you are on the branch you want to merge **from**:
    :::
 ::::
 
+::::{group-tab} GitLab
+On GitLab make sure you are on the branch you want to merge **from**:
+   :::{figure} img/gitlab/merging-navigate-branch-annotated.png
+   :alt: Screenshot on Gitlab where we navigate to the branch we wish to merge.
+   :width: 80%
+   :class: with-border
+   :::
+::::
+
 ::::{group-tab} VS Code
 Remember, you need to switch to the `main` branch, the branch we want to merge **to**.
 This is different from the GitHub path.
@@ -181,6 +202,14 @@ branches together.  We start the process of making one.
 ::::{group-tab} GitHub
    :::{figure} img/merging/github-contribute.png
    :alt: Screenshot on GitHub where we get to the pull request process.
+   :width: 80%
+   :class: with-border
+   :::
+::::
+
+::::{group-tab} GitLab
+   :::{figure} img/gitlab/merging-open-merge-request-annotated.png
+   :alt: Screenshot on GitLab where we get to the merge request process.
    :width: 80%
    :class: with-border
    :::
@@ -233,6 +262,27 @@ Things to check:
    :::
 ::::
 
+::::{group-tab} GitLab
+Things to check:
+- Target project: this should be your own
+- Title: make it descriptive
+- Description: make it informative
+- Scroll down to see commits: are these the ones you want to merge?
+- Scroll down to see the changes: are these the ones you want to merge?
+
+   :::{figure} img/gitlab/merging-change-branches-annotated.png
+   :alt: Screenshot on GitLab where we change branches.
+   :width: 80%
+   :class: with-border
+   :::
+
+   :::{figure} img/gitlab/merging-choose-target-branch-annotated.png
+   :alt: Screenshot on GitLab where we change target branch.
+   :width: 80%
+   :class: with-border
+   :::
+::::
+
 ::::{group-tab} VS Code
 If you are working locally, continue to step 5.
 ::::
@@ -248,10 +298,10 @@ If you are working locally, continue to step 5.
 :::::
 
 
-### (4) Create the pull request
+### (4) Create the pull/merge request
 
-We actually create the pull request.  Don't forget to navigate to the Network
-view after opening the pull request.  Note that the changes proposed in the
+We actually create the pull/merge request.  Don't forget to navigate to the Network
+view after opening the pull/merge request.  Note that the changes proposed in the
 pull request are not yet merged.
 
 :::::{tabs}
@@ -262,6 +312,10 @@ If you click on the little arrow next to "Create pull request", you can also
 see the option to "Create draft pull request". This will be interesting later
 when collaborating with others. It allows you to open a pull request that is
 not ready to be merged yet, but you want to show it to others and get feedback.
+::::
+
+::::{group-tab} GitLab
+Click on the black button "Create merge request". Below the title of the merge request you can choose "Mark as draft". This will be useful when collaborating with others. It allows you to open a merge request that is not ready to be merged yet, but you want to show it to others and get feedback.
 ::::
 
 ::::{group-tab} VS Code
@@ -299,6 +353,10 @@ Review it again (commits and changes), and then click "Merge pull request".
 
 After merging, verify the network view. Also navigate then to your "main"
 branch and check that your new recipe is there.
+::::
+
+::::{group-tab} GitLab
+Review the merge request (commits and changes) and click "Merge". When merging, you can choose to delete the source branch at the same time.
 ::::
 
 ::::{group-tab} VS Code
@@ -373,6 +431,16 @@ In the overview we can see that it has been merged and we can delete it:
    :::
 ::::
 
+::::{group-tab} GitLab
+One way to delete the branch is to check off "delete source branch" before merging. If you forgot to do so, you can delete the branch afterwards. Click on "branches" and find the branch that you want to delete. Click on the three dots to the right and choose "Delete branch".
+   :::{figure} img/gitlab/merging-delete-source-branch-annotated.png
+   :alt: Screenshot on Gitlab where we delete branch.
+   :width: 80%
+   :class: with-border
+   :::
+::::
+
+
 ::::{group-tab} VS Code
 From the Source Control sidebar → the three dots (as before) → Branch → Delete Branch.  Select the branch name to delete.
 ::::
@@ -425,6 +493,12 @@ merge the pull request.  We can then together review and browse the pull
 request.
 ::::
 
+::::{group-tab} GitLab
+Now you know how to create branches and open a merge request. Try to open a merge request with a new change but this time set the target project to the upstream repository. This means that you send a merge request across repositories: from your own fork to the original repository.
+
+Another thing that is different is that you might not have permission to merge the merge request. This means that someone with permission needs to review and approve your merge request.
+::::
+
 ::::{group-tab} VS Code
 Not described. We will return to this in the [collaborative Git
 lesson](https://coderefinery.github.io/git-collaborative/).
@@ -470,7 +544,7 @@ How to create a conflict (please try this in your own time *and just watch now*)
 - Now try to merge the new branch to `main`. You will get a conflict.
 
 How to resolve conflicts:
-- On GitHub, you can resolve conflicts by clicking on the "Resolve conflicts"
+- On GitHub and GitLab, you can resolve conflicts by clicking on the "Resolve conflicts"
   button. This will open a text editor where you can choose which changes to
   keep.
   Make sure to remove the conflict markers.
