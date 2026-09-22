@@ -7,7 +7,7 @@ practice this: {term}`merging`.
 
 :::{objectives}
 - Understand that on GitHub merging is done through a {term}`pull request`. The equivalent on GitLab is called a {term}`merge request`. Think of it as a **change proposal**.
-- Create and merge a pull request within your own repository.
+- Create and merge a pull/merge request within your own repository.
 - Understand (and optionally) do the same across repositories, to contribute to
   the {term}`upstream` public repository.
 :::
