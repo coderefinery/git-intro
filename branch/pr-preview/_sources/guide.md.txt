@@ -1,0 +1,239 @@
+# Instructor guide
+
+
+## Exercise preparation
+
+:::{warning}
+Do this at least one day before the workshop!
+:::
+
+- Create two exercise repositories from
+  <https://github.com/cr-workshop-exercises/recipe-book-template> **preserving history**
+  (this means **not** using "generating from template")
+  - <https://github.com/cr-workshop-exercises/recipe-book>
+  - <https://github.com/cr-workshop-exercises/recipe-book-recorded>
+- **You probably need to re-created them before the workshop even though they might already exist**
+  from a previous workshop. Motivation: the repositories from a previous workshop probably carry issues
+  and pull requests and the network graph will differ from what you want to show.
+- You can create these using `git clone --mirror` and `git push --mirror` to make sure to copy **all branches**:
+  ```console
+  $ git clone --mirror git@github.com:coderefinery/recipe-book-template.git
+  $ cd recipe-book-template.git
+  $ git push --mirror git@github.com:cr-workshop-exercises/recipe-book-recorded.git
+  $ git push --mirror git@github.com:cr-workshop-exercises/recipe-book.git
+  ```
+- Reason why we create it under <https://github.com/cr-workshop-exercises> and not under
+  <https://github.com/coderefinery> is that we otherwise get a 100 pull requests over the next few weeks
+  which masks "real" pull requests from the project and the side effect would be that nobody then reviews
+  any "real" pull requests anymore.
+- Create one or two issues to both.
+- Create one or two pull requests to both.
+- In both, try to search for something in the recipes to trigger a search index
+  update.
+
+
+## Privacy
+
+When presenting the material in a streamed and recorded workshop, make sure to
+only show the <https://github.com/cr-workshop-exercises/recipe-book-recorded>
+repository.
+
+
+## Schedule Day 1
+
+Times here are in CE(S)T.
+
+- 08:50 - 09:00 (10 min) Soft start and icebreaker question
+
+- 09:00 - 09:20 (20 min) Welcome and practical information
+- 09:20 - 09:25 (05 min) [Intro to day](https://coderefinery.github.io/git-intro/)
+- 09:25 - 09:35 (10 min) [Motivation](https://coderefinery.github.io/git-intro/motivation/)
+- 09:35 - 10:05 (30 min) [Copy and browse an existing project](https://coderefinery.github.io/git-intro/browsing/)
+
+- 10:05 - 10:15 (10 min) Break
+
+- 10:15 - 11:00 (45 min) [Committing changes](https://coderefinery.github.io/git-intro/commits/)
+
+- 11:00 - 12:00 (60 min) Break
+
+- 12:00 - 12:50 (50 min) Recap + [Merging changes and contributing to the project](https://coderefinery.github.io/git-intro/merging/)
+
+- 12:50 - 13:00 (10 min) Break
+
+- 13:00 - 13:30 (30 min) Demonstrating conflict resolution, Q&A, feedback, and what will we be doing tomorrow?
+
+
+## Schedule Day 2
+
+Times here are in CE(S)T.
+
+- 08:50 - 09:00 (10 min) Soft start and icebreaker question
+
+- 09:00 - 09:10 (10 min) Recap
+- 09:10 - 10:00 (50 min) [Cloning a Git repository and working locally](https://coderefinery.github.io/git-intro/local-workflow/)
+
+- 10:00 - 10:10 (10 min) Break
+
+- 10:10 - 11:00 (50 min) [Inspecting history](https://coderefinery.github.io/git-intro/archaeology/)
+
+- 11:00 - 12:00 (60 min) Break
+
+- 12:00 - 12:50 (50 min) [How to turn your project to a Git repo and share it](https://coderefinery.github.io/git-intro/sharing/)
+
+- 12:50 - 13:00 (10 min) Break
+
+- 13:00 - 13:30 (30 min) [Practical advise](https://coderefinery.github.io/git-intro/level/), Q&A, feedback, and what will we be doing tomorrow?
+
+
+## Why we teach this lesson
+
+Everyone should be using a version control system for their work, even if they're working alone.
+There are many version control systems out there, but Git is an industry standard and even if one uses another
+system chances are high one still encounters Git repositories.
+
+Specific motivations:
+- Code easily becomes a disaster without version control
+- Mistakes happen - Git offers roll-back functionality and easy backup mechanism
+- One often needs to work on multiple things in parallel - branches solve that problem
+- Git enables people to collaborate on code or text without stepping on each other's toes
+- Reproducibility: You can specify exact versions in publications enabling others to reproduce your work,
+  and if bugs are found one can find out exactly when it was introduced
+
+Many learners in a CodeRefinery workshop have developed code for a few years. A majority have
+already encountered Git and have used it to some extent, but in most cases they do not yet feel
+comfortable with it. They lack a good mental model of how Git operates and are afraid of making mistakes.
+Other learners have never used Git before.
+This lesson teaches how things are done in Git, which is useful for the newcomers,
+but also how Git operates (e.g. what commits and branches really are) and what are some good
+practices.
+
+
+## Intended learning outcomes
+
+By the end of this lesson, learners should:
+- realize that version control is very important and Git is a valuable tool to learn and use
+- understand that Git is configurable and know how to set basic configurations
+- be able to set up Git repositories and make commits
+- know how to write good commit messages
+- have an idea of how the staging area can be used to craft good commits
+- know how to create branches and switch between branches
+- have a mental model of how branches work and get used to thinking of branches in a graphical (tree-structure) way
+- know how to merge branches and understand what that means in terms of combining different modifications
+- realize that conflicts are generally a good thing since they prevent incorrect merges
+- be able to set up a repository on GitHub and connect it with local repository
+- push changes to a remote repository
+- know a few ways to search through a repository and its history
+
+
+## Inspecting history
+
+Key lesson is *how to find when something is broken or what commit has broken
+the code*.
+
+It can be useful to emphasize that it can be really valuable to be able to
+search through the history of a project efficiently to find when bugs were
+introduced or when something changed and why.  Also show that `git annotate`
+and `git show` are available on GitHub and GitLab.
+
+When discussing `git annotate` and `git bisect` the "when" is more important
+than "who". It is not to blame anybody but rather to find out whether published
+results are affected.
+
+Discuss how one would find out this information without version control.
+
+**Questions to involve participants:**
+
+- Have you ever found a bug in your code and wondered whether it has affected published results?
+- Have you ever wondered when, and by whom, a particular line of code was introduced?
+- Have you ever found out that a code behaves differently than it used to but you are not sure when
+  precisely this changed?
+
+
+**Confusion during `git bisect` exercise:**
+
+Learners may get stuck in the `git bisect` exercise if they incorrectly assign a commit
+as *bad* or *good*.
+To leave the bisect mode and return to the commit before `git bisect start` was issued,
+one can do
+```shell
+$ git bisect reset
+```
+and start over if needed.
+
+
+### Live better than reading the website material
+
+It is better to demonstrate the commands live and type-along. Ideally connecting
+to examples discussed earlier.
+
+
+### Log your history in a separate window
+
+The screencasting (shell window cheatsheet) hints have been moved to
+the [presenting
+manual](https://coderefinery.github.io/manuals/instructor-tech-setup/).
+
+
+### Create a cheatsheet on the board
+
+For in-person workshops, create a "cheatsheet" on the board as you go. After
+each command is introduced, write it on the board. After each module, make sure
+you haven't forgotten anything. Re-create and expand in future git lessons.
+One strategy is:
+
+- a common section for basic commands: `init`, `config`, `clone`, `help`, `stash`
+- info commands, can be run anytime: `status`, `log`, `diff`, `graph`
+- A section for all the commands that move code from different states:
+  `add`, `commit`, etc.  See the visual cheat sheet below.
+
+You can get inspired by http://www.ndpsoftware.com/git-cheatsheet.html
+to make your cheat sheet, but if you show this make it clear there are
+far, far more commands on there than you need to know right now., and
+it's probably too confusing to use after this course.  But, the idea
+of commands moving from the "working dir", "staging area", "commits",
+etc is good.
+
+```{figure} img/cheat-sheet.jpg
+:alt: Example cheat sheet
+:width: 100%
+
+Example cheat sheet.
+```
+
+We also recommend to draw simple diagrams up on the board (e.g.: working
+directory - staging area - repository with commands to move between) and keep
+them there for students to refer to.
+
+
+### Draw a graph on the board
+
+Draw the standard commit graphs on the board early on - you know, the
+thing in all the diagrams.  Keep it updated all the time.  After the
+first few samples, you can basically keep using the same graph the
+whole lesson.  When you are introducing new commands, explain and
+update the graph first, then run `git graph`, then do the command,
+then look at `git graph` again.
+
+
+### Repeat the following points
+
+- Always check `git status`, `git diff`, and `git graph` (our alias) before and
+  after every command until you get used to things. These give you a clear view
+  into what is going on, the key to knowing what you are doing.  Even
+  after you are used to things... anytime you do something you do
+  infrequently, it's good to check.
+
+- `git graph` is a direct representation of what we are drawing on the
+  board and should constantly be compared to it.
+
+- Once you `git add` something, it's almost impossible to lose it.
+  This is used all the time, for example once you commit or even add
+  it is hard to lose.  Commit before you merge or rebase. And so on.
+
+
+### Start from identical environment
+
+You probably have a highly optimized bash and git environment - one
+that is different from students.  Move `.gitconfig` and `.bashrc` out
+of the way before you start so that your environment is identical to
+what students have.
