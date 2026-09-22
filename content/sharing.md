@@ -99,7 +99,7 @@ After clicking "Create project", click "Create blank project".
 :width: 100%
 :class: with-border
 ```
-*Choose a project name, add your username under "project URL, choose "Public", and add a README file. Finally "Create project".*
+*Choose a project name, add your username under "project URL", choose "Public", and add a README file. Finally "Create project".*
 
 **Upload your files**
 Now that the project is created, you can upload your files:
