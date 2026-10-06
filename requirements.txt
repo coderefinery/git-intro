@@ -6,3 +6,4 @@ myst_nb
 git+https://github.com/rkdarst/sphinx-copybutton.git@exclude-unselectable-3
 sphinx-lesson
 https://github.com/coderefinery/sphinx-coderefinery-branding/archive/master.zip
+sphinx-bioschemas
