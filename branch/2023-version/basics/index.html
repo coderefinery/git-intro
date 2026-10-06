@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basics &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=187304be"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=582ca9e2"></script>
+        <script src="../_static/minipres.js?v=a0d29692"></script>
+        <script src="../_static/tabs.js?v=3030b3cb"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Branching and merging" href="../branches/" />
+    <link rel="prev" title="Motivation" href="../motivation/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Core episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-git-and-what-is-a-git-repository">What is Git, and what is a Git repository?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recording-a-snapshot-with-git">Recording a snapshot with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-git-command-line">Configuring Git command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-along-tracking-a-guacamole-recipe-with-git">Type-along: Tracking a guacamole recipe with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-repository">Creating a repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-files-and-committing-changes">Adding files and committing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-record-changes">Exercise: Record changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git-history-and-log">Git history and log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-exercises-comparing-changes">Optional exercises: Comparing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-useful-commit-messages">Writing useful commit messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ignoring-files-and-paths-with-gitignore">Ignoring files and paths with .gitignore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphical-user-interfaces">Graphical user interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../remotes/">Sharing repositories online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: how much Git is necessary?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Basics</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/basics.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Link to this heading"></a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Learn to create Git repositories and make commits.</p></li>
+<li><p>Get a grasp of the structure of a repository.</p></li>
+<li><p>Learn how to inspect the project history.</p></li>
+<li><p>Learn how to write useful commit log messages.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>35 min teaching/type-along</p></li>
+<li><p>40 min exercise</p></li>
+</ul>
+</div>
+<section id="what-is-git-and-what-is-a-git-repository">
+<h2>What is Git, and what is a Git repository?<a class="headerlink" href="#what-is-git-and-what-is-a-git-repository" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Git is a version control system: can <strong>record/save snapshots</strong> and track the content of a folder as it changes over time.</p></li>
+<li><p>Every time we <strong>commit</strong> a snapshot, Git records a snapshot of the <strong>entire project</strong>, saves it, and assigns it a version.</p></li>
+<li><p>These snapshots are kept inside a sub-folder called <code class="docutils literal notranslate"><span class="pre">.git</span></code>.</p></li>
+<li><p>If we remove <code class="docutils literal notranslate"><span class="pre">.git</span></code>, we remove the repository and history (but keep the working directory!).</p></li>
+<li><p>The directory <code class="docutils literal notranslate"><span class="pre">.git</span></code> uses relative paths - you can move the whole repository somewhere else and it will still work.</p></li>
+<li><p>Git doesn’t do anything unless you ask it to (it <strong>does not record anything automatically</strong>).</p></li>
+<li><p>Multiple interfaces to Git exist (command line, graphical interfaces, web interfaces).</p></li>
+</ul>
+</section>
+<section id="recording-a-snapshot-with-git">
+<h2>Recording a snapshot with Git<a class="headerlink" href="#recording-a-snapshot-with-git" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Git takes snapshots only if we request it.</p></li>
+<li><p>We will record changes in two steps (we will later explain why this is a recommended practice).</p></li>
+<li><p>Example (we don’t need to type yet):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>FILE.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>FILE.txt<span class="w"> </span>ANOTHERFILE.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+</li>
+<li><p>We first focus (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, we “stage” the change), then record (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>):</p></li>
+</ul>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/git_stage_commit.svg"><img alt="Git staging" src="../_images/git_stage_commit.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-text">Git staging and committing.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition-question-for-the-more-advanced-participants discussion important admonition" id="discussion-0">
+<p class="admonition-title">Question for the more advanced participants</p>
+<p>What do you think will be the outcome if you
+stage a file and then edit it and stage it again, do this several times and
+at the end perform a commit? Think of focusing several scenes and pressing the
+shutter at the end.</p>
+</div>
+</section>
+<section id="configuring-git-command-line">
+<h2>Configuring Git command line<a class="headerlink" href="#configuring-git-command-line" title="Link to this heading"></a></h2>
+<p>Before we start using Git on the command line, we need to configure Git.
+This is also part of the
+<a class="reference external" href="https://coderefinery.github.io/installation/shell-and-git/#configuration">installation instructions</a>
+but we need to make sure we all have
+set name, email address, editor, and
+default branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>yourname@example.com
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span>nano
+<span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Verify with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--list
+</pre></div>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-1">
+<p class="admonition-title">Instructor note</p>
+<p>Instructors, give learners enough time to do the above configuration steps.</p>
+</div>
+</section>
+<section id="type-along-tracking-a-guacamole-recipe-with-git">
+<h2>Type-along: Tracking a guacamole recipe with Git<a class="headerlink" href="#type-along-tracking-a-guacamole-recipe-with-git" title="Link to this heading"></a></h2>
+<p>We will learn how to initialize a Git repository, how to track changes, and how
+to make delicious guacamole! (Inspiration for this example based on a
+suggestion by B. Smith in a discussion in the Carpentries mailing list)</p>
+<p>The motivation for taking a cooking recipe instead of a program is that everybody can relate to cooking
+but not everybody may be able to relate to a program written in e.g. Python or another specific language.</p>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-2">
+<p class="admonition-title">Instructor note</p>
+<p>Instructors, please encourage now that participants type along.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to go through this lesson in the command line or in the browser
+(on GitHub).</p>
+<ul class="simple">
+<li><p>We recommend to start with the command line but later to also try in the browser.</p></li>
+<li><p>If you get really stuck in the command line, try following in the browser and
+later you can try to return to the command line.</p></li>
+</ul>
+</div>
+</section>
+<section id="creating-a-repository">
+<h2>Creating a repository<a class="headerlink" href="#creating-a-repository" title="Link to this heading"></a></h2>
+<p>One of the basic principles of Git is that it is <strong>easy to create repositories</strong>:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-0-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-0-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-0-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>recipe
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>recipe
+<span class="gp">$ </span>git<span class="w"> </span>init<span class="w"> </span>-b<span class="w"> </span>main
+</pre></div>
+</div>
+<p>That’s it! With <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">-b</span> <span class="pre">main</span></code> have now created an empty Git repository
+where <code class="docutils literal notranslate"><span class="pre">main</span></code> is the default branch (more about branches later).</p>
+<p>We will use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> a lot to check out what is going on:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
+
+<span class="go">On branch main</span>
+
+<span class="go">No commits yet</span>
+
+<span class="go">nothing to commit (create/copy files and use &quot;git add&quot; to track)</span>
+</pre></div>
+</div>
+<p>We will make sense of this information during this workshop.</p>
+</div><div aria-labelledby="tab-0-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><p>First log into GitHub, then follow the screenshots and descriptions below.</p>
+<figure class="align-default" id="id3">
+<a class="with-border reference internal image-reference" href="../_images/new-repo-plus.png"><img alt="Screenshot on GitHub before a new repository form is opened" class="with-border" src="../_images/new-repo-plus.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Click on the “plus” symbol on top right, then on “New repository”.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Another way to create a new repository is to visit
+<a class="reference external" href="https://github.com/new">https://github.com/new</a> directly.</p>
+<figure class="align-default" id="id4">
+<a class="with-border reference internal image-reference" href="../_images/new-repo-form.png"><img alt="Screenshot on GitHub just before creating a new repository" class="with-border" src="../_images/new-repo-form.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Choose a repository name, add a short description, <strong>check “Add a
+README file”</strong>, finally “Create repository”.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>After you have clicked “Create repository” you should see a repository overview
+with one file (README.md) and one commit.</p>
+</div></div>
+</section>
+<section id="adding-files-and-committing-changes">
+<h2>Adding files and committing changes<a class="headerlink" href="#adding-files-and-committing-changes" title="Link to this heading"></a></h2>
+<p>Let us now <strong>create two files</strong>.</p>
+<p>One file is called <code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code> and contains:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>*<span class="w"> </span><span class="m">2</span><span class="w"> </span>avocados
+*<span class="w"> </span><span class="m">1</span><span class="w"> </span>chili
+*<span class="w"> </span><span class="m">1</span><span class="w"> </span>lime
+*<span class="w"> </span><span class="m">2</span><span class="w"> </span>tsp<span class="w"> </span>salt
+</pre></div>
+</div>
+<p>The second file is called <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code> and contains:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>*<span class="w"> </span>chop<span class="w"> </span>avocados
+*<span class="w"> </span>chop<span class="w"> </span>onion
+*<span class="w"> </span>chop<span class="w"> </span>chili
+*<span class="w"> </span>squeeze<span class="w"> </span>lime
+*<span class="w"> </span>add<span class="w"> </span>salt
+*<span class="w"> </span>and<span class="w"> </span>mix<span class="w"> </span>well
+</pre></div>
+</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-1-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-1-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-1-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>As mentioned above, in Git you can always check the status of files in your repository using
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>. It is always a safe command to run and in general a good idea to
+do when you are trying to figure out what to do next:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
+
+<span class="go">On branch main</span>
+
+<span class="go">No commits yet</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">    ingredients.txt</span>
+<span class="go">    instructions.txt</span>
+
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</pre></div>
+</div>
+<p>The two files are untracked in the repository (directory). You want to <strong>add the files</strong> (focus the camera)
+to the list of files tracked by Git. Git does not track
+any files automatically and you need make a conscious decision to add a file. Let’s do what
+Git hints at, and add the files, one by one:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>ingredients.txt
+<span class="gp">$ </span>git<span class="w"> </span>status
+
+<span class="go">On branch main</span>
+
+<span class="go">No commits yet</span>
+
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">    new file:   ingredients.txt</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">    instructions.txt</span>
+</pre></div>
+</div>
+<p>Now this change is <em>staged</em> and ready to be committed.
+Let us now commit the change to the repository:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;adding ingredients&quot;</span>
+
+<span class="go">[main (root-commit) f146d25] adding ingredients</span>
+<span class="go"> 1 file changed, 4 insertions(+)</span>
+<span class="go"> create mode 100644 ingredients.txt</span>
+</pre></div>
+</div>
+<p>Right after we query the status to get this useful command into our muscle memory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>Now stage and commit also the other file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>instructions.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;adding instructions&quot;</span>
+</pre></div>
+</div>
+<p>We will add a third file to the repository, <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, containing:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># recipe</span>
+
+This is an exercise repository.
+</pre></div>
+</div>
+<p>Now stage and commit also the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>README.md
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;adding README&quot;</span>
+</pre></div>
+</div>
+<p>What does the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag mean? Let us check the help page for that command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span><span class="nb">help</span><span class="w"> </span>commit
+</pre></div>
+</div>
+<p>You should see a very long help page as the tool is very versatile (press q to quit).
+Do not worry about this now but keep in mind that you can always read the help files
+when in doubt. Searching online can also be useful, but choosing search terms
+to find relevant information takes some practice and discussions in some
+online threads may be confusing.
+Note that help pages also work when you don’t have a network connection!</p>
+</div><div aria-labelledby="tab-1-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><figure class="align-default" id="id5">
+<a class="with-border reference internal image-reference" href="../_images/add-file.png"><img alt="Screenshot on GitHub before a new file is created" class="with-border" src="../_images/add-file.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Click on “Add file”, then “Create new file”.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<a class="with-border reference internal image-reference" href="../_images/edit-file.png"><img alt="Screenshot on GitHub when editing a file" class="with-border" src="../_images/edit-file.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Edit the file and specify the file name.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
+<a class="with-border reference internal image-reference" href="../_images/commit-changes.png"><img alt="Screenshot on GitHub when editing the commit message" class="with-border" src="../_images/commit-changes.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Before you commit the change, adjust the commit message.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>After you have added <code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code>, add also <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code> in a similar
+way.</p>
+<p>We have added two files, each in one commit. However, we ended up with
+three files and three commits since <code class="docutils literal notranslate"><span class="pre">README.md</span></code> was automatically committed
+when we created the repository on GitHub.</p>
+</div></div>
+</section>
+<section id="exercise-record-changes">
+<span id="id1"></span><h2>Exercise: Record changes<a class="headerlink" href="#exercise-record-changes" title="Link to this heading"></a></h2>
+<div class="admonition-basic-1-record-changes exercise important admonition" id="exercise-0">
+<p class="admonition-title">Basic-1: Record changes</p>
+<p>Add 1/2 onion to <code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code> and also the instruction
+to “enjoy!” to <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code>.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-2-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-2-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-2-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>After modifying the files, do not stage the changes yet (do not <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>
+yet).</p>
+<p>When you are done editing the files, try <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>diff
+</pre></div>
+</div>
+<p>You will see (can you identify in there the two added lines?):</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/ingredients.txt b/ingredients.txt</span>
+<span class="gh">index 4422a31..ba8854f 100644</span>
+<span class="gd">--- a/ingredients.txt</span>
+<span class="gi">+++ b/ingredients.txt</span>
+<span class="gu">@@ -2,3 +2,4 @@</span>
+<span class="w"> </span>* 1 chili
+<span class="w"> </span>* 1 lime
+<span class="w"> </span>* 2 tsp salt
+<span class="gi">+* 1/2 onion</span>
+<span class="gh">diff --git a/instructions.txt b/instructions.txt</span>
+<span class="gh">index 7811273..2b11074 100644</span>
+<span class="gd">--- a/instructions.txt</span>
+<span class="gi">+++ b/instructions.txt</span>
+<span class="gu">@@ -4,3 +4,4 @@</span>
+<span class="w"> </span>* squeeze lime
+<span class="w"> </span>* add salt
+<span class="w"> </span>* and mix well
+<span class="gi">+* enjoy!</span>
+</pre></div>
+</div>
+<p>Now first stage and commit each change separately (what happens when we leave out the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag?):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>ingredients.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add half an onion&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>instructions.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w">                   </span><span class="c1"># &lt;-- we have left out -m &quot;...&quot;</span>
+</pre></div>
+</div>
+<p>When you leave out the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag, Git should open an editor where you can edit
+your commit message. This message will be associated and stored with the
+changes you made. This message is your chance to explain what you’ve done and
+convince others (and your future self) that the changes you made were
+justified.  Write a message and save and close the file.</p>
+<p>When you are done committing the changes, experiment with these commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log
+<span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--stat
+<span class="gp">$ </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><p>We can make modifications to a file by clicking on the file and then the
+pen symbol:</p>
+<figure class="align-default" id="id8">
+<a class="with-border reference internal image-reference" href="../_images/pen-symbol.png"><img alt="Screenshot on GitHub before clicking on the pen symbol" class="with-border" src="../_images/pen-symbol.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">By clicking on the pen symbol we can switch to edit mode.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id9">
+<a class="with-border reference internal image-reference" href="../_images/preview.png"><img alt="Screenshot on GitHub when previewing file changes" class="with-border" src="../_images/preview.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Before committing the change, click on “Preview”.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Our goal is to arrive at two new commits:</p>
+<ul class="simple">
+<li><p>“add half an onion” (modifying <code class="docutils literal notranslate"><span class="pre">ingredients.txt</span></code>)</p></li>
+<li><p>“don’t forget to enjoy” (modifying <code class="docutils literal notranslate"><span class="pre">instructions.txt</span></code>)</p></li>
+</ul>
+<p>When you are done committing the changes, try to browse commit history
+on GitHub.</p>
+</div></div>
+</div>
+</section>
+<section id="git-history-and-log">
+<h2>Git history and log<a class="headerlink" href="#git-history-and-log" title="Link to this heading"></a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-3-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-3-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-3-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><p>If you haven’t yet, please try now <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log
+
+<span class="go">commit e7cf023efe382340e5284c278c6ae2c087dd3ff7 (HEAD -&gt; main)</span>
+<span class="go">Author: Radovan Bast &lt;bast@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Sun Sep 17 19:12:47 2023 +0200</span>
+
+<span class="go">    don&#39;t forget to enjoy</span>
+
+<span class="go">commit 79161b6e67c62ad4688a58c1e54183334611a390</span>
+<span class="go">Author: Radovan Bast &lt;bast@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Sun Sep 17 19:12:32 2023 +0200</span>
+
+<span class="go">    add half an onion</span>
+
+<span class="go">commit a3394e39535343c4dae3bb4f703741a31aa8b78a</span>
+<span class="go">Author: Radovan Bast &lt;bast@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Sun Sep 17 18:47:14 2023 +0200</span>
+
+<span class="go">    adding README</span>
+
+<span class="go">commit 369624674e63de48055a65bf63055bd59c985d22</span>
+<span class="go">Author: Radovan Bast &lt;bast@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Sun Sep 17 18:46:58 2023 +0200</span>
+
+<span class="go">    adding instructions</span>
+
+<span class="go">commit f146d25b94569a15e94d7f0da6f15d7554f76c49</span>
+<span class="go">Author: Radovan Bast &lt;bast@users.noreply.github.com&gt;</span>
+<span class="go">Date:   Sun Sep 17 18:35:52 2023 +0200</span>
+
+<span class="go">    adding ingredients</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><figure class="align-default" id="id10">
+<a class="with-border reference internal image-reference" href="../_images/commits.png"><img alt="Screenshot on GitHub before clicking on commit history" class="with-border" src="../_images/commits.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Click on the history symbol with (here) 5 commits.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<a class="with-border reference internal image-reference" href="../_images/history.png"><img alt="Screenshot of GitHub repository commit history" class="with-border" src="../_images/history.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">In this overview you can browse each commit individually.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>On GitHub you can also compare arbitrary two commits (replace “USER”,
+“HASH1”, and “HASH2”):
+<code class="docutils literal notranslate"><span class="pre">https://github.com/USER/recipe/compare/HASH1..HASH2</span></code></p>
+<p>Try it with two of your commits.</p>
+</div></div>
+<ul class="simple">
+<li><p>We can browse the development and access each state that we have committed.</p></li>
+<li><p>The long hashes uniquely label a state of the code.</p></li>
+<li><p>They are not just integers counting 1, 2, 3, 4, … (why?).</p></li>
+<li><p>Output is in reverse chronological order, i.e. <strong>newest commits on top</strong>.</p></li>
+<li><p>We will use them when comparing versions and when going back in time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span></code> only shows the first 7 characters of the commit hash and is good to get an overview.</p></li>
+<li><p>If the first characters of the hash are unique it is not necessary to type the entire hash.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--stat</span></code> is nice to show which files have been modified.</p></li>
+</ul>
+</section>
+<section id="optional-exercises-comparing-changes">
+<span id="exercise-diff-and-rename"></span><h2>Optional exercises: Comparing changes<a class="headerlink" href="#optional-exercises-comparing-changes" title="Link to this heading"></a></h2>
+<div class="admonition-optional-basic-2-comparing-and-showing-commits exercise important admonition" id="exercise-1">
+<p class="admonition-title">(optional) Basic-2: Comparing and showing commits</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-Q29tbWFuZCBsaW5l" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-4-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tab" tabindex="0">Command line</button><button aria-controls="panel-4-QnJvd3NlciAoR2l0SHViKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tab" tabindex="-1">Browser (GitHub)</button></div><div aria-labelledby="tab-4-Q29tbWFuZCBsaW5l" class="sphinx-tabs-panel group-tab" id="panel-4-Q29tbWFuZCBsaW5l" name="Q29tbWFuZCBsaW5l" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<li><p>Have a look at specific commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">HASH</span></code>.</p></li>
+<li><p>Inspect differences between commit hashes with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HASH1</span> <span class="pre">HASH2</span></code>.</p></li>
+</ol>
+</div><div aria-labelledby="tab-4-QnJvd3NlciAoR2l0SHViKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-QnJvd3NlciAoR2l0SHViKQ==" name="QnJvd3NlciAoR2l0SHViKQ==" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<li><p>Have a look at specific commits.</p></li>
+<li><p>Inspect differences between commits.</p></li>
+</ol>
+<p>Use the screenshots under “Git history and log”.</p>
+</div></div>
+</div>
+<div class="admonition-optional-basic-3-visual-diff-tools exercise important admonition" id="exercise-2">
+<p class="admonition-title">(optional) Basic-3: Visual diff tools</p>
+<p>This exercise is only relevant for the command line. In the browser,
+the preview is already side-by-side and “visual”.</p>
+<ul class="simple">
+<li><p>Make further modifications and experiment with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span></code> (requires installing one of the <a class="reference external" href="https://coderefinery.github.io/installation/difftools/">visual diff tools</a>):</p></li>
+</ul>
+<p>On Windows or Linux:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>difftool<span class="w"> </span>--tool<span class="o">=</span>meld<span class="w"> </span>HASH
+</pre></div>
+</div>
+<p>On macOS:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>difftool<span class="w"> </span>--tool<span class="o">=</span>opendiff<span class="w"> </span>HASH
+</pre></div>
+</div>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="../_images/meld.png"><img alt="Git difftool using meld" src="../_images/meld.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Git difftool using meld.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>You probably want to use the same visual diff tool every time and
+you can configure Git for that:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>diff.tool<span class="w"> </span>meld
+</pre></div>
+</div>
+</div>
+<div class="admonition-optional-basic-4-browser-and-command-line exercise important admonition" id="exercise-3">
+<p class="admonition-title">(optional) Basic-4: Browser and command line</p>
+<p>You have noticed that it is possible to work either in the command
+line or in the browser. It could help to deepen the understanding
+trying to do the above steps in both.</p>
+<ul class="simple">
+<li><p>If you have managed to do the above in the command line, try now in the browser.</p></li>
+<li><p>If you got stuck in the command line and move to the browser, try now to trouble-shoot the command line Git.</p></li>
+</ul>
+</div>
+</section>
+<section id="writing-useful-commit-messages">
+<h2>Writing useful commit messages<a class="headerlink" href="#writing-useful-commit-messages" title="Link to this heading"></a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span></code> or browsing a repository on the web, we better
+understand that the first line of the commit message is very important.</p>
+<p>Good example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>increase threshold alpha to 2.0
+
+the motivation for this change is
+to enable ...
+...
+this is based on a discussion in #123
+</pre></div>
+</div>
+<p>Convention: <strong>one line summarizing the commit, then one empty line,
+then paragraph(s) with more details in free form, if necessary</strong>.</p>
+<ul class="simple">
+<li><p><strong>Why something was changed is more important than what has changed.</strong></p></li>
+<li><p>Cross-reference to issues and discussions if possible/relevant.</p></li>
+<li><p>Bad commit messages: “fix”, “oops”, “save work”</p></li>
+<li><p>Bad examples: <a class="reference external" href="http://whatthecommit.com">http://whatthecommit.com</a></p></li>
+<li><p>Write commit messages in English that will be understood
+15 years from now by someone else than you. Or by your future you.</p></li>
+<li><p>Many projects start out as projects “just for me” and end up to be successful projects
+that are developed by 50 people over decades.</p></li>
+<li><p><a class="reference external" href="https://help.github.com/articles/creating-a-commit-with-multiple-authors/">Commits with multiple authors</a> are possible.</p></li>
+</ul>
+<p>Good references:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fatbusinessman.com/2019/my-favourite-git-commit">“My favourite Git commit”</a></p></li>
+<li><p><a class="reference external" href="https://who-t.blogspot.com/2009/12/on-commit-messages.html">“On commit messages”</a></p></li>
+<li><p><a class="reference external" href="https://chris.beams.io/posts/git-commit/">“How to Write a Git Commit Message”</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A great way to learn how to write commit messages and to get inspired by their
+style choices: <strong>browse repositories of codes that you use/like</strong>:</p>
+<p>Some examples (but there are so many good examples):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/scipy/scipy/commits/main">SciPy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/numpy/numpy/commits/main">NumPy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pandas-dev/pandas/commits/main">Pandas</a></p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaLang/julia/commits/master">Julia</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tidyverse/ggplot2/commits/main">ggplot2</a>,
+compare with their <a class="reference external" href="https://github.com/tidyverse/ggplot2/releases">release
+notes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pallets/flask/commits/main">Flask</a>,
+compare with their <a class="reference external" href="https://github.com/pallets/flask/blob/main/CHANGES.rst">release
+notes</a></p></li>
+</ul>
+<p>When designing commit message styles consider also these:</p>
+<ul class="simple">
+<li><p>How will you easily generate a changelog or release notes?</p></li>
+<li><p>During code review, you can help each other improving commit messages.</p></li>
+</ul>
+</div>
+<p>But remember: it is better to make any commit, than no commit. Especially in small projects.
+<strong>Let not the perfect be the enemy of the good enough</strong>.</p>
+</section>
+<section id="ignoring-files-and-paths-with-gitignore">
+<span id="gitignore"></span><h2>Ignoring files and paths with .gitignore<a class="headerlink" href="#ignoring-files-and-paths-with-gitignore" title="Link to this heading"></a></h2>
+<div class="admonition-discussion discussion important admonition" id="discussion-1">
+<p class="admonition-title">Discussion</p>
+<ul class="simple">
+<li><p>Should we add and track all files in a project?</p></li>
+<li><p>How about generated files?</p></li>
+<li><p>Why is it considered a bad idea to commit compiled binaries to version control?</p></li>
+<li><p>What types of generated files do you know?</p></li>
+</ul>
+</div>
+<p>Compiled and generated files are not
+committed to version control. There are many reasons for this:</p>
+<ul class="simple">
+<li><p>These files can make it more difficult to run on different platforms.</p></li>
+<li><p>These files are automatically generated and thus do not contribute in any meaningful way.</p></li>
+<li><p>When tracking generated files you could see differences in the code although you haven’t touched the code.</p></li>
+</ul>
+<p>For this we use <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> files. Example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># ignore compiled python 2 files</span>
+*.pyc
+<span class="c1"># ignore compiled python 3 files</span>
+__pycache__
+</pre></div>
+</div>
+<p>An example taken from the <a class="reference external" href="https://git-scm.com/docs/gitignore">official Git documentation</a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># ignore objects and archives, anywhere in the tree.</span>
+*.<span class="o">[</span>oa<span class="o">]</span>
+<span class="c1"># ignore generated html files,</span>
+*.html
+<span class="c1"># except foo.html which is maintained by hand</span>
+!foo.html
+<span class="c1"># ignore everything under build directory</span>
+build/
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> should be part of the repository because we want to make sure that all developers see the same behavior.</p></li>
+<li><p><strong>All files should be either tracked or ignored</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> uses something called a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Glob_(programming)">shell glob syntax</a> for
+determining file patterns to ignore. You can read more about the syntax in the
+<a class="reference external" href="https://git-scm.com/docs/gitignore">documentation</a>.</p></li>
+<li><p>You can have <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> files in lower level directories and they affect the paths below.</p></li>
+</ul>
+</section>
+<section id="graphical-user-interfaces">
+<h2>Graphical user interfaces<a class="headerlink" href="#graphical-user-interfaces" title="Link to this heading"></a></h2>
+<p>We have seen how to make commits in the command line and via the GitHub website.
+But it is also possible to work from within a Git graphical user interface (GUI):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://desktop.github.com">GitHub Desktop</a></p></li>
+<li><p><a class="reference external" href="https://www.sourcetreeapp.com">SourceTree</a></p></li>
+<li><p><a class="reference external" href="https://git-scm.com/downloads/guis">List of third-party GUIs</a></p></li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>Now we know how to save snapshots:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>FILE<span class="o">(</span>S<span class="o">)</span>
+<span class="gp">$ </span>git<span class="w"> </span>commit
+</pre></div>
+</div>
+<p>And this is what we do as we program.</p>
+<p>Every state is then saved and later we will learn how to go back to these “checkpoints”
+and how to undo things.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>init<span class="w"> </span>-b<span class="w"> </span>main<span class="w">  </span><span class="c1"># initialize new repository (main is default branch)</span>
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w">           </span><span class="c1"># add files or stage file(s)</span>
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w">        </span><span class="c1"># commit staged file(s)</span>
+<span class="gp">$ </span>git<span class="w"> </span>status<span class="w">        </span><span class="c1"># see what is going on</span>
+<span class="gp">$ </span>git<span class="w"> </span>log<span class="w">           </span><span class="c1"># see history</span>
+<span class="gp">$ </span>git<span class="w"> </span>diff<span class="w">          </span><span class="c1"># show unstaged/uncommitted modifications</span>
+<span class="gp">$ </span>git<span class="w"> </span>show<span class="w">          </span><span class="c1"># show the change for a specific commit</span>
+<span class="gp">$ </span>git<span class="w"> </span>mv<span class="w">            </span><span class="c1"># move/rename tracked files</span>
+<span class="gp">$ </span>git<span class="w"> </span>rm<span class="w">            </span><span class="c1"># remove tracked files</span>
+</pre></div>
+</div>
+<p>Git is not ideal for large binary files
+(for this consider <a class="reference external" href="http://git-annex.branchable.com">git-annex</a>).</p>
+<div class="admonition-basic-5-test-your-understanding exercise important admonition" id="exercise-4">
+<p class="admonition-title">Basic-5: Test your understanding</p>
+<p>Which command(s) below would save the changes of <code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>
+to an existing local Git repository?</p>
+<ol class="arabic">
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>init<span class="w"> </span>myfile.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>myfile.txt
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span>myfile.txt<span class="w"> </span><span class="s2">&quot;my recent changes&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition-solution solution important dropdown admonition" id="solution-0">
+<p class="admonition-title">Solution</p>
+<ol class="arabic simple">
+<li><p>Would only create a commit if files have already been staged.</p></li>
+<li><p>Would try to create a new repository in a folder “myfile.txt”.</p></li>
+<li><p><strong>Is correct: first add the file to the staging area, then commit.</strong></p></li>
+<li><p>Would try to commit a file “my recent changes” with the message myfile.txt.</p></li>
+</ol>
+</div>
+</div>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>It takes only one command to initialize a Git repository: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">-b</span> <span class="pre">main</span></code>.</p></li>
+<li><p>Commits should be used to tell a story.</p></li>
+<li><p>Git uses the .git folder to store the snapshots.</p></li>
+<li><p>Don’t be afraid to stage and commit often. Better too often than not often enough.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../motivation/" class="btn btn-neutral float-left" title="Motivation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../branches/" class="btn btn-neutral float-right" title="Branching and merging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

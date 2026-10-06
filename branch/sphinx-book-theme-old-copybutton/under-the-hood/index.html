@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Git under the hood &#8212; Introduction to version control with Git  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/minipres.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="List of exercises" href="../exercises/" />
+    <link rel="prev" title="Aliases and configuration" href="../aliases/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to version control with Git  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Core episodes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../motivation/">
+   Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basics/">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../branches/">
+   Branching and merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conflicts/">
+   Conflict resolution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../remotes/">
+   Sharing repositories online
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../archaeology/">
+   Inspecting history
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../level/">
+   Practical advice: how much Git is necessary?
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Optional episodes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../staging-area/">
+   Using the Git staging area
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../recovering/">
+   Undoing and recovering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../interrupted/">
+   Interrupted work
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aliases/">
+   Aliases and configuration
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Git under the hood
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exercises/">
+   List of exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../guide/">
+   Instructor guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/">
+   Quick reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../customizing/">
+   Customizing Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/">
+   Other resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/under-the-hood.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#down-the-rabbit-hole">
+   Down the rabbit hole
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-is-basically-a-content-addressed-storage-system">
+   Git is basically a content-addressed storage system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demonstration-experimenting-with-branches">
+   Demonstration: experimenting with branches
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Git under the hood</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#down-the-rabbit-hole">
+   Down the rabbit hole
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-is-basically-a-content-addressed-storage-system">
+   Git is basically a content-addressed storage system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demonstration-experimenting-with-branches">
+   Demonstration: experimenting with branches
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="git-under-the-hood">
+<h1>Git under the hood<a class="headerlink" href="#git-under-the-hood" title="Permalink to this headline">#</a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Verify that branches are pointers to commits.</p></li>
+<li><p>Verify that branches are extremely lightweight.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>10 min teaching/type-along</p></li>
+<li><p>15 min exercise</p></li>
+</ul>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/stranger.jpg"><img alt="Git under the hood" src="../_images/stranger.jpg" style="width: 100%;" /></a>
+</figure>
+<section id="down-the-rabbit-hole">
+<h2>Down the rabbit hole<a class="headerlink" href="#down-the-rabbit-hole" title="Permalink to this headline">#</a></h2>
+<p>When working with Git, <strong>you will never need to go inside .git</strong>, but in this
+exercise we will, in order to learn about how branches are implemented in Git.</p>
+<p>For this exercise create a new repository and commit a couple of changes.</p>
+<p>Now that we’ve made a couple of commits let us look at what is happening under
+the hood.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> .git
+<span class="gp">$ </span>ls -l
+
+<span class="go">total 44</span>
+<span class="go">-rw------- 1 bast users   36 May  7 11:47 COMMIT_EDITMSG</span>
+<span class="go">-rw------- 1 bast users   21 May  7 11:47 HEAD</span>
+<span class="go">drwx------ 2 bast users 4096 May  7 11:46 branches</span>
+<span class="go">-rw------- 1 bast users   92 May  7 11:46 config</span>
+<span class="go">-rw------- 1 bast users   73 May  7 11:46 description</span>
+<span class="go">drwx------ 2 bast users 4096 May  7 11:46 hooks</span>
+<span class="go">-rw------- 1 bast users  225 May  7 11:47 index</span>
+<span class="go">drwx------ 2 bast users 4096 May  7 11:46 info</span>
+<span class="go">drwx------ 3 bast users 4096 May  7 11:47 logs</span>
+<span class="go">drwx------ 8 bast users 4096 May  7 11:47 objects</span>
+<span class="go">drwx------ 4 bast users 4096 May  7 11:46 refs</span>
+</pre></div>
+</div>
+<p>Git stores everything under the .git folder in your repository. In fact, <strong>the
+.git directory is the Git repository.</strong></p>
+<p>Previously when you wrote the commit messages using your text editor, they
+were in fact saved to COMMIT_EDITMSG.</p>
+<p>Each commit in Git is stored as a “blob”. This blob contains information about
+the author and the commit message. The blob references another blob that lists
+the files present in the directory at the time and references blobs that record
+the state of each file.</p>
+<p>Commits are referenced by a SHA-1 hash (a 40-character hexadecimal string).</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/commit-and-tree.png"><img alt="A commit inside Git" src="../_images/commit-and-tree.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">States of a Git file. Image from the <a class="reference external" href="https://git-scm.com/book/">Pro Git book</a>. License CC BY 3.0.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once you have several commits, each commit blob also links to the hash of the
+previous commit. The commits form a <a class="reference external" href="http://eagain.net/articles/git-for-computer-scientists/">directed acyclic
+graph</a> (do not worry
+if the term is not familiar).</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/commits-and-parents.png"><img alt="A commit and its parents" src="../_images/commits-and-parents.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">A commit and its parents. Image from the <a class="reference external" href="https://git-scm.com/book/">Pro Git book</a>. License CC BY 3.0.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>All branches and tags in Git are pointers to commits.</p>
+</section>
+<section id="git-is-basically-a-content-addressed-storage-system">
+<h2>Git is basically a content-addressed storage system<a class="headerlink" href="#git-is-basically-a-content-addressed-storage-system" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>CAS: <a class="reference external" href="https://en.wikipedia.org/wiki/Content-addressable_storage">“mechanism for storing information that can be retrieved based on its content, not its storage location”</a></p></li>
+<li><p>Content address is the content digest (SHA-1 checksum)</p></li>
+<li><p>Stored data does not change - so when we modify commits, we always create new
+commits.  Git doesn’t delete these right away, which is why it is <em>very hard
+to lose data if you commit it once</em>.</p></li>
+</ul>
+<p>Let us poke a bit into raw objects! Start with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git cat-file -p HEAD
+</pre></div>
+</div>
+<p>Then explore the <code class="docutils literal notranslate"><span class="pre">tree</span></code> object, then the <code class="docutils literal notranslate"><span class="pre">file</span></code> object, etc. recursively using the hashes you see.</p>
+</section>
+<section id="demonstration-experimenting-with-branches">
+<h2>Demonstration: experimenting with branches<a class="headerlink" href="#demonstration-experimenting-with-branches" title="Permalink to this headline">#</a></h2>
+<p>Let us lift the hood and create few branches manually.  The
+goal of this exercise is to hopefully create an “aha” moment and provide us a
+good understanding of the underlying model.</p>
+<p>We are starting from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch and create an <code class="docutils literal notranslate"><span class="pre">idea</span></code> branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git status
+
+<span class="go">On branch master</span>
+<span class="go">nothing to commit, working tree clean</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git checkout -b idea
+
+<span class="go">Switched to a new branch &#39;idea&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git branch
+
+<span class="go">* idea</span>
+<span class="go">  master</span>
+</pre></div>
+</div>
+<p>Now let us go in:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> .git
+<span class="gp">$ </span><span class="nb">cd</span> refs/heads
+<span class="gp">$ </span>ls -l
+
+<span class="go">total 8</span>
+<span class="go">-rw------- 1 bast users 41 May  7 11:47 idea</span>
+<span class="go">-rw------- 1 bast users 41 May  7 11:47 master</span>
+</pre></div>
+</div>
+<p>Let us check what the <code class="docutils literal notranslate"><span class="pre">idea</span></code> file looks like
+(do not worry if the hash is different):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cat idea
+
+<span class="go">7f3582dfbad6539cfa60f5b21bfad41d1b58a618</span>
+</pre></div>
+</div>
+<p>Now let us replicate this file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cp idea idea-2
+<span class="gp">$ </span>cp idea idea-3
+<span class="gp">$ </span>cp idea idea-4
+<span class="gp">$ </span>cp idea idea-5
+</pre></div>
+</div>
+<p>Let us go up two levels and inspect the file <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ../..
+<span class="gp">$ </span>cat HEAD
+
+<span class="go">ref: refs/heads/idea</span>
+</pre></div>
+</div>
+<p>Let us open this file and change it to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span><span class="p">:</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">idea</span><span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p><strong>Now we are ready for the aha moment!</strong></p>
+<p>First let us go back to the working area:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p>Now - on which branch are we?</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git branch
+
+<span class="go">  idea</span>
+<span class="go">  idea-2</span>
+<span class="go">* idea-3</span>
+<span class="go">  idea-4</span>
+<span class="go">  idea-5</span>
+<span class="go">  master</span>
+</pre></div>
+</div>
+<div class="admonition-discussion discussion attention admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<p>Discuss the findings with other course participants.</p>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../aliases/" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Aliases and configuration</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../exercises/" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">List of exercises</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By CodeRefinery team<br/>
+  
+      &copy; Copyright CodeRefinery team.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
