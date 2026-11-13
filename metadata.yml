@@ -15,13 +15,15 @@ title: "Introduction to version control"
 
 # Text. Used as CITATION.cff's abstract, bioschemas' description/about,
 # and the start of the Zenodo description.
-abstract: "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects."
+abstract: >
+  Why we want to track versions and how to go back in time to a working version. 
+  This lesson brings you from zero to using Git and GitHub for own projects.
 
 # Text (ISO 8601 date, YYYY-MM-DD), quoted so it isn't parsed as a
 # YAML date. Used in CITATION.cff, bioschemas.yml, and the Zenodo
 # deposit. Also used as CITATION.cff's date-released, since for this
 # lesson the two always match - there's no separate date-released field.
-version: "2026-08-10"
+version: "2026-11-13"
 
 # Text. The concept DOI, which stays constant across all versions -
 # Zenodo assigns the version-specific DOI itself. Used in bioschemas.yml
@@ -60,7 +62,13 @@ inLanguage: "en-UK"
 
 # Text. bioschemas.yml only. Learning outcomes / what this lesson
 # teaches.
-teaches: ""
+teaches: >
+  Understand the fundamentals of Git version control,
+  including creating repositories, tracking changes,
+  staging and committing files, exploring version history,
+  comparing changes, and working with branches.
+  Learn how to use Git to manage code and collaborate
+  effectively on software projects.
 
 # URL or CreativeWork per schema.org. bioschemas.yml only. The
 # collection/series this lesson belongs to.
@@ -69,28 +77,35 @@ isPartOf: "https://coderefinery.org"
 # Audience (structured object) per schema.org - NOT plain Text, even
 # though it's currently stored and emitted as a bare string. bioschemas.yml
 # only. 
-audience: ""
+audience: "Researcher"
 
 # Text, DefinedTerm, or URL per schema.org. bioschemas.yml only.
 # Prerequisites/prior knowledge needed. 
-competencyRequired: ""
+competencyRequired: >
+  Basic familiarity with using a computer, navigating
+  files and directories, and working with a command-line
+  interface. No prior experience with Git is required.
 
 # Text per schema.org. bioschemas.yml only. Describes accessibility
 # features of the material. 
-accessibilitySummary: ""
+accessibilitySummary: "Short image descriptions are present"
 
 # Text or DefinedTerm per schema.org. bioschemas.yml only. E.g.
 # "lesson", "exercise", "video". 
 learningResourceType: "lesson"
 
-# Disabled for now. List of CFF-style entries, same shape as authors
+# List of CFF-style entries, same shape as authors
 # below: either {name: "Org"} for organizations, or {family-names,
 # given-names, orcid (optional)} for people. When enabled: mapped to
 # CITATION.cff's contact field, bioschemas.yml's maintainer property,
 # and Zenodo's contributors (as ContactPerson).
 # maintainers:
-# - family-names: ""
-#   given-names: ""
+- family-names: "Hemanadhan"
+  given-names: "Myneni"
+  orcid: "https://orcid.org/0000-0003-2498-3841"
+- family-names: "Iusan"
+  given-names: "Diana"
+  orcid: "https://orcid.org/0000-0001-7467-9317"
 
 # List of CFF-style author entries: either {name: "Org"} for
 # organizations, or {family-names, given-names, orcid (optional)} for
