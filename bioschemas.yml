@@ -2,7 +2,7 @@
     "@context": "https://schema.org/",
     "@type": "LearningResource",
     "@id": "https://coderefinery.github.io/git-intro",
-    "description": "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects.",
+    "description": "Why we want to track versions and how to go back in time to a working version.  This lesson brings you from zero to using Git and GitHub for own projects.\n",
     "keywords": "version control, git",
     "name": "Introduction to version control - CodeRefinery lesson",
     "author": [
@@ -59,17 +59,17 @@
             "name": "Blazej Baczkowski"
         }
     ],
-    "about": "Why we want to track versions and how to go back in time to a working version. This lesson brings you from zero to using Git and GitHub for own projects.",
-    "audience": "",
-    "competencyRequired": "",
+    "about": "Why we want to track versions and how to go back in time to a working version.  This lesson brings you from zero to using Git and GitHub for own projects.\n",
+    "audience": "Researcher",
+    "competencyRequired": "Basic familiarity with using a computer, navigating files and directories, and working with a command-line interface. No prior experience with Git is required.\n",
     "educationalLevel": "Beginner",
     "identifier": "https://doi.org/10.5281/zenodo.16925023",
     "inLanguage": "en-UK",
     "learningResourceType": "lesson",
     "license": "https://creativecommons.org/licenses/by/4.0/",
-    "teaches": "",
+    "teaches": "Understand the fundamentals of Git version control, including creating repositories, tracking changes, staging and committing files, exploring version history, comparing changes, and working with branches. Learn how to use Git to manage code and collaborate effectively on software projects.\n",
     "url": "https://coderefinery.github.io/git-intro",
-    "accessibilitySummary": "",
+    "accessibilitySummary": "Short image descriptions are present",
     "isPartOf": "https://coderefinery.org",
-    "version": "2026-08-10"
+    "version": "2026-11-13"
 }

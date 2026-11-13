@@ -28,11 +28,20 @@ authors:
   given-names: Blazej
 title: Introduction to version control - CodeRefinery lesson
 type: dataset
-abstract: Why we want to track versions and how to go back in time to a working version.
-  This lesson brings you from zero to using Git and GitHub for own projects.
-version: '2026-08-10'
+abstract: 'Why we want to track versions and how to go back in time to a working version.  This
+  lesson brings you from zero to using Git and GitHub for own projects.
+
+  '
+version: '2026-11-13'
 doi: 10.5281/zenodo.16925023
-date-released: '2026-08-10'
+date-released: '2026-11-13'
 url: https://coderefinery.github.io/git-intro
 license: CC-BY-4.0
 repository-code: https://github.com/coderefinery/git-intro
+contact:
+- family-names: Hemanadhan
+  given-names: Myneni
+  orcid: https://orcid.org/0000-0003-2498-3841
+- family-names: Iusan
+  given-names: Diana
+  orcid: https://orcid.org/0000-0001-7467-9317
