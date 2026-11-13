@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Instructor guide &#8212; Introduction to version control with Git  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/minipres.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="prev" title="List of exercises" href="../exercises/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introduction to version control with Git  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core episodes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../remotes/">Sharing repositories online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: how much Git is necessary?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Instructor guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro/edit/main/content/guide.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro/issues/new?title=Issue%20on%20page%20%2Fguide.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/guide.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Instructor guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-day-1">Schedule Day 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-day-2">Schedule Day 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-reminders-for-each-day">Installation reminders for each day</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-we-teach-this-lesson">Why we teach this lesson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">Intended learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-teach-this-lesson">How to teach this lesson</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-first-editor-steps-slowly">Take first editor steps slowly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-exercises">How to use the exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-understanding-exercises">“Test your understanding” exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-history">Inspecting history</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#live-better-than-reading-the-website-material">Live better than reading the website material</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-your-history-in-a-separate-window">Log your history in a separate window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-cheatsheet-on-the-board">Create a cheatsheet on the board</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-a-graph-on-the-board">Draw a graph on the board</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeat-the-following-points">Repeat the following points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-from-identical-environment">Start from identical environment</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="instructor-guide">
+<h1>Instructor guide<a class="headerlink" href="#instructor-guide" title="Permalink to this heading">#</a></h1>
+<section id="schedule-day-1">
+<h2>Schedule Day 1<a class="headerlink" href="#schedule-day-1" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>08:50 - 09:00 (10 min) Soft start and icebreaker question</p></li>
+<li><p>09:00 - 09:15 (15 min) Welcome and practical information</p></li>
+<li><p>Introduction to version control (part 1/2)</p>
+<ul>
+<li><p>09:15 - 09:30 (15 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/motivation/#motivation">Motivation - teaching &amp; demo</a></p></li>
+<li><p>09:30 - 09:45 (15 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/basics/#basics">Basics - teaching &amp; type along</a></p></li>
+<li><p>09:45 - 10:05 (20 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/basics/#exercise-record-changes">Basics - exercises</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/basics/#exercise-record-changes">Record changes</a></p></li>
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/basics/#optional-exercises-comparing-renaming-and-removing">Optional: Comparing, renaming, and removing</a> - if time allows</p></li>
+</ol>
+</li>
+<li><p>10:05 - 10:15 (10 min) :coffee: :walking: :tea: Break</p></li>
+<li><p>10:15 - 10:35 (20 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/basics/#git-history-and-log">Basics - History, commit log, ignoring - teaching</a></p></li>
+<li><p>10:35 - 10:50 (15 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/branches/#branching-and-merging">Branching and merging - teaching</a></p></li>
+<li><p>10:50 - 11:10 (20 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches">Branching and merging - exercises</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/branches/#exercise-create-and-commit-to-branches">Create and commit to branches</a> Teaching resumed before merging branches.</p></li>
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/branches/#optional-exercises-with-branches">Optional exercises with branches: Fast-forward merge and Rebasing</a> - if time allows</p></li>
+</ol>
+</li>
+<li><p>11:10 - 11:20 (10 min) :coffee: :walking: :tea: Break</p></li>
+<li><p>11:20 - 11:35 (15 min) Summarize branching and merging</p></li>
+<li><p>11:35 - 11:45 (10 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/conflicts/">Conflict resolution (teaching)</a></p></li>
+<li><p>11:45 - 12:05 (20 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/conflicts/#exercise-create-and-resolve-a-conflict">Exercise conflict resolution</a></p></li>
+</ul>
+</li>
+<li><p>12:05 - 12:10 (5 min) :coffee: :walking: :tea: Break</p></li>
+<li><p>12:10 - 12:25 (15 min) Buffer, Q&amp;A session</p></li>
+<li><p>12:25 - 12:30 ( 5 min) Feedback &amp; What will we be doing tomorrow?</p></li>
+</ul>
+</section>
+<section id="schedule-day-2">
+<h2>Schedule Day 2<a class="headerlink" href="#schedule-day-2" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>08:50 - 09:00 (10 min) Soft start and icebreaker question</p></li>
+<li><p>09:00 - 09:10 (10 min) Recap and Q&amp;A from day 1</p></li>
+<li><p>09:10 - 12:30 <a class="reference external" href="https://coderefinery.github.io/git-intro/">Introduction to version control (part 2/2)</a></p>
+<ul>
+<li><p>09:10 - 09:20 (10 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/remotes/#sharing-repositories-online">Sharing repositories online - teaching/type-along</a></p></li>
+<li><p>09:20 - 09:40 (20 min) Exercise: <a class="reference external" href="https://coderefinery.github.io/git-intro/remotes/#pushing-our-guacamole-recipe-repository-to-github">Pushing our guacamole recipe repository to GitHub</a></p></li>
+<li><p>09:40 - 09:55 (15 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/archaeology/#inspecting-history">Inspecting history - teaching/type-along</a></p></li>
+<li><p>09:55 - 10:10 :coffee: :walking: :tea: Break</p></li>
+<li><p>10:10 - 10:40 (30 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands">Inspecting history - exercises</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/archaeology/#exercise-basic-archaeology-commands">Basic archeology commands</a></p></li>
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/archaeology/#optional-exercise-git-bisect">Optional: Git bisect</a> - to be done if time allows</p></li>
+</ol>
+</li>
+<li><p>10:40 - 10:50 (10 min) Summarize inspecting history</p></li>
+<li><p>10:50 - 11:05 (15 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/recovering/#undoing-and-recovering">Undoing and recovering - teaching/type-along</a></p></li>
+<li><p>11:05 - 11:15 :coffee: :walking: :tea: Break</p></li>
+<li><p>11:15 - 11:35 (20 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/recovering/#exercise-revert-a-commit">Undoing and recovering - exercises</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/recovering/#exercise-revert-a-commit">Revert a commit</a></p></li>
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/recovering/#exercise-modify-a-previous-commit">Modify a previous commit</a></p></li>
+<li><p><a class="reference external" href="https://coderefinery.github.io/git-intro/recovering/#exercise-git-reset">Git reset</a></p></li>
+</ol>
+</li>
+<li><p>11:35 - 11:50 (15 min) Summarize undoing and recovering and discussion and mention that staging area exists</p></li>
+<li><p>11:50 - 12:00 :coffee: :walking: :tea: Break</p></li>
+<li><p>12:00 - 12:25 (25 min) <a class="reference external" href="https://coderefinery.github.io/git-intro/level/#practical-advice-how-much-git-is-necessary">How much Git is necessary?</a></p></li>
+<li><p>12:25 - 12:30 (05 min) Feedback &amp; What will we be doing tomorrow?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="installation-reminders-for-each-day">
+<h2>Installation reminders for each day<a class="headerlink" href="#installation-reminders-for-each-day" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Day 1: git configuration</p></li>
+<li><p>Day 2: need SSH set up (if you don’t, sharing repositories online will be demo)</p></li>
+</ul>
+</section>
+<section id="why-we-teach-this-lesson">
+<h2>Why we teach this lesson<a class="headerlink" href="#why-we-teach-this-lesson" title="Permalink to this heading">#</a></h2>
+<p>Everyone should be using a version control system for their work, even if they’re working alone.
+There are many version control systems out there, but Git is an industry standard and even if one uses another
+system chances are high one still encounters Git repositories.</p>
+<p>Specific motivations:</p>
+<ul class="simple">
+<li><p>Code easily becomes a disaster without version control</p></li>
+<li><p>Mistakes happen - Git offers roll-back functionality and easy backup mechanism</p></li>
+<li><p>One often needs to work on multiple things in parallel - branches solve that problem</p></li>
+<li><p>Git enables people to collaborate on code or text without stepping on each other’s toes</p></li>
+<li><p>Reproducibility: You can specify exact versions in publications enabling others to reproduce your work,
+and if bugs are found one can find out exactly when it was introduced</p></li>
+</ul>
+<p>Many learners in a CodeRefinery workshop have developed code for a few years. A majority have
+already encountered Git and have used it to some extent, but in most cases they do not yet feel
+comfortable with it. They lack a good mental model of how Git operates and are afraid of making mistakes.
+Other learners have never used Git before.
+This lesson teaches how things are done in Git, which is useful for the newcomers,
+but also how Git operates (e.g. what commits and branches really are) and what are some good
+practices (e.g. how to use the staging area), which is useful for more experienced users.</p>
+</section>
+<section id="intended-learning-outcomes">
+<h2>Intended learning outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Permalink to this heading">#</a></h2>
+<p>By the end of this lesson, learners should:</p>
+<ul class="simple">
+<li><p>realize that version control is very important and Git is a valuable tool to learn and use</p></li>
+<li><p>understand that Git is configurable and know how to set basic configurations</p></li>
+<li><p>be able to set up Git repositories and make commits</p></li>
+<li><p>understand that information on commits, branches etc. are stored under <code class="docutils literal notranslate"><span class="pre">.git/</span></code>, and have a
+mental model of how that relates to the working directory</p></li>
+<li><p>have a mental model of the different states a file can have in Git (untracked, modified, staged, unmodified)</p></li>
+<li><p>know how to write good commit messages</p></li>
+<li><p>have an idea of how the staging area can be used to craft good commits</p></li>
+<li><p>know how to undo commits using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code> and discard changes using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code></p></li>
+<li><p>understand that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> can be dangerous if changes have not been staged</p></li>
+<li><p>know how to create branches and switch between branches</p></li>
+<li><p>have a mental model of how branches work and get used to thinking of branches in a graphical (tree-structure) way</p></li>
+<li><p>know how to merge branches and understand what that means in terms of combining different modifications</p></li>
+<li><p>know how to resolve conflicts, or to abort conflicting merges</p></li>
+<li><p>realize that conflicts are generally a good thing since they prevent incorrect merges</p></li>
+<li><p>be able to set up a repository on GitHub and connect it with local repository</p></li>
+<li><p>push changes to a remote repository</p></li>
+<li><p>know a few ways to search through a repository and its history</p></li>
+<li><p>know about the different meanings of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>, and realize how they’re in fact similar</p></li>
+</ul>
+</section>
+<section id="how-to-teach-this-lesson">
+<h2>How to teach this lesson<a class="headerlink" href="#how-to-teach-this-lesson" title="Permalink to this heading">#</a></h2>
+<section id="take-first-editor-steps-slowly">
+<h3>Take first editor steps slowly<a class="headerlink" href="#take-first-editor-steps-slowly" title="Permalink to this heading">#</a></h3>
+<p>Some participants will be new to using a terminal text editor so please open,
+edit, and close the editor (Nano) slowly in first type-along sessions and
+exercises to avoid that participants will fall behind the instructor. At one
+point a student did not follow the file edits of the instructor, and to correct
+the mistake they had to do a manual merge, which they were not ready for.</p>
+</section>
+<section id="how-to-use-the-exercises">
+<h3>How to use the exercises<a class="headerlink" href="#how-to-use-the-exercises" title="Permalink to this heading">#</a></h3>
+<p>Most episodes have standard exercises followed by optional (often more advanced) exercises
+for more experienced learners so they don’t get bored waiting for the newcomers.
+The instructor should briefly introduce the exercises and mention that after finishing the
+standard exercise (and indicating that using the green sticky) the learners can move on to the
+optional ones if they wish. When at least half of the learners have raised the green sticky
+the instructor should go through the standard exercise to describe its most important take-home messages.
+It’s also fine to briefly go though important points from the optional exercises, but don’t spend
+too much time on it since everyone will not have attempted them.</p>
+</section>
+<section id="test-your-understanding-exercises">
+<h3>“Test your understanding” exercises<a class="headerlink" href="#test-your-understanding-exercises" title="Permalink to this heading">#</a></h3>
+<p>Some episodes have a “test your understanding” exercise at the end which is intended as <em>formative assessment</em>,
+i.e. an activity that provides feedback to instructors and learners on whether learning objectives are being met.
+The instructor should end each episode by posing the “test your understanding” multiple-choice question,
+giving learners a minute to think about it, and then asking for the right answer or asking learners to raise their
+hands to signal which answer they think is correct.</p>
+</section>
+<section id="inspecting-history">
+<h3>Inspecting history<a class="headerlink" href="#inspecting-history" title="Permalink to this heading">#</a></h3>
+<p>Key lesson is <em>how to find when something is broken or what commit has broken
+the code</em>.</p>
+<p>It can be useful to emphasize that it can be really valuable to be able to
+search through the history of a project efficiently to find when bugs were
+introduced or when something changed and why.  Also show that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">annotate</span></code>
+and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> are available on GitHub and GitLab.</p>
+<p>When discussing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">annotate</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> the “when” is more important
+than “who”. It is not to blame anybody but rather to find out whether published
+results are affected.</p>
+<p>Discuss how one would find out this information without version control.</p>
+<p><strong>Questions to involve participants:</strong></p>
+<ul class="simple">
+<li><p>Have you ever found a bug in your code and wondered whether it has affected published results?</p></li>
+<li><p>Have you ever wondered when, and by whom, a particular line of code was introduced?</p></li>
+<li><p>Have you ever found out that a code behaves differently than it used to but you are not sure when
+precisely this changed?</p></li>
+</ul>
+<p><strong>Confusion during <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> exercise:</strong></p>
+<p>Learners may get stuck in the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span></code> exercise if they incorrectly assign a commit
+as <em>bad</em> or <em>good</em>.
+To leave the bisect mode and return to the commit before <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">start</span></code> was issued,
+one can do</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>bisect<span class="w"> </span>reset
+</pre></div>
+</div>
+<p>and start over if needed.</p>
+</section>
+<section id="live-better-than-reading-the-website-material">
+<h3>Live better than reading the website material<a class="headerlink" href="#live-better-than-reading-the-website-material" title="Permalink to this heading">#</a></h3>
+<p>It is better to demonstrate the commands live and type-along. Ideally connecting
+to examples discussed earlier.</p>
+</section>
+<section id="log-your-history-in-a-separate-window">
+<h3>Log your history in a separate window<a class="headerlink" href="#log-your-history-in-a-separate-window" title="Permalink to this heading">#</a></h3>
+<p>The screencasting (shell window cheatsheet) hints have been moved to
+the <a class="reference external" href="https://coderefinery.github.io/manuals/instructor-tech-setup/">presenting
+manual</a>.</p>
+</section>
+<section id="create-a-cheatsheet-on-the-board">
+<h3>Create a cheatsheet on the board<a class="headerlink" href="#create-a-cheatsheet-on-the-board" title="Permalink to this heading">#</a></h3>
+<p>For in-person workshops, create a “cheatsheet” on the board as you go. After
+each command is introduced, write it on the board. After each module, make sure
+you haven’t forgotten anything. Re-create and expand in future git lessons.
+One strategy is:</p>
+<ul class="simple">
+<li><p>a common section for basic commands: <code class="docutils literal notranslate"><span class="pre">init</span></code>, <code class="docutils literal notranslate"><span class="pre">config``clone</span></code>, <code class="docutils literal notranslate"><span class="pre">help</span></code>, <code class="docutils literal notranslate"><span class="pre">stash</span></code></p></li>
+<li><p>info commands, can be run anytime: <code class="docutils literal notranslate"><span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">diff</span></code>, <code class="docutils literal notranslate"><span class="pre">graph</span></code></p></li>
+<li><p>A section for all the commands that move code from different states:
+<code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, etc.  See the visual cheat sheet below.</p></li>
+</ul>
+<p>You can get inspired by http://www.ndpsoftware.com/git-cheatsheet.html
+to make your cheatsheet, but if you show this make it clear there are
+far, far more commands on there than you need to know right now., and
+it’s probably too confusing to use after this course.  But, the idea
+of commands moving from the “working dir”, “staging area”, “commits”,
+etc is good.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/cheat-sheet.jpg"><img alt="Example cheat sheet" src="../_images/cheat-sheet.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Example cheat sheet.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We also recommend to draw simple diagrams up on the board (e.g.: working
+directory - staging area - repository with commands to move between) and keep
+them there for students to refer to.</p>
+</section>
+<section id="draw-a-graph-on-the-board">
+<h3>Draw a graph on the board<a class="headerlink" href="#draw-a-graph-on-the-board" title="Permalink to this heading">#</a></h3>
+<p>Draw the standard commit graphs on the board early on - you know, the
+thing in all the diagrams.  Keep it updated all the time.  After the
+first few samples, you can basically keep using the same graph the
+whole lesson.  When you are introducing new commands, explain and
+update the graph first, then run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code>, then do the command,
+then look at <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> again.</p>
+</section>
+<section id="repeat-the-following-points">
+<h3>Repeat the following points<a class="headerlink" href="#repeat-the-following-points" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Always check <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> (our alias) before and
+after every command until you get used to things. These give you a clear view
+into what is going on, the key to knowing what you are doing.  Even
+after you are used to things… anytime you do something you do
+infrequently, it’s good to check.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">graph</span></code> is a direct representation of what we are drawing on the
+board and should constantly be compared to it.</p></li>
+<li><p>Once you <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> something, it’s almost impossible to lose it.
+This is used all the time, for example once you commit or even add
+it is hard to lose.  Commit before you merge or rebase. And so on.</p></li>
+</ul>
+</section>
+<section id="start-from-identical-environment">
+<h3>Start from identical environment<a class="headerlink" href="#start-from-identical-environment" title="Permalink to this heading">#</a></h3>
+<p>You probably have a highly optimized bash and git environment - one
+that is different from students.  Move <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> and <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> out
+of the way before you start so that your environment is identical to
+what students have.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../exercises/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">List of exercises</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-day-1">Schedule Day 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule-day-2">Schedule Day 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-reminders-for-each-day">Installation reminders for each day</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-we-teach-this-lesson">Why we teach this lesson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-learning-outcomes">Intended learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-teach-this-lesson">How to teach this lesson</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-first-editor-steps-slowly">Take first editor steps slowly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-exercises">How to use the exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-understanding-exercises">“Test your understanding” exercises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-history">Inspecting history</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#live-better-than-reading-the-website-material">Live better than reading the website material</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-your-history-in-a-separate-window">Log your history in a separate window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-cheatsheet-on-the-board">Create a cheatsheet on the board</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-a-graph-on-the-board">Draw a graph on the board</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeat-the-following-points">Repeat the following points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-from-identical-environment">Start from identical environment</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CodeRefinery team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright CodeRefinery team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

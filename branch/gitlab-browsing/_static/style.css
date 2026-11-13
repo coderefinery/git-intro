@@ -1,0 +1,6 @@
+.rst-content .objectives {
+    background: #fee0d2;
+}
+.rst-content .objectives > .admonition-title {
+    background: #fc9272;
+}

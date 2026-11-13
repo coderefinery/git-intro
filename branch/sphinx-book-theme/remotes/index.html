@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Sharing repositories online &#8212; Introduction to version control with Git  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/minipres.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Inspecting history" href="../archaeology/" />
+    <link rel="prev" title="Conflict resolution" href="../conflicts/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introduction to version control with Git  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core episodes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sharing repositories online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: how much Git is necessary?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what-to-avoid/">What to avoid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro/edit/main/content/remotes.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/coderefinery/git-intro/issues/new?title=Issue%20on%20page%20%2Fremotes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/remotes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sharing repositories online</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-our-laptops-to-the-web">From our laptops to the web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remotes">Remotes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-along-create-a-new-repository-on-github">Type-along: Create a new repository on GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pushing-our-guacamole-recipe-repository-to-github">Pushing our guacamole recipe repository to GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-push-your-guacamole-recipe-to-github">Exercise: Push your guacamole recipe to GitHub</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repository">Cloning a repository</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="sharing-repositories-online">
+<h1>Sharing repositories online<a class="headerlink" href="#sharing-repositories-online" title="Permalink to this heading">#</a></h1>
+<div class="admonition-objectives objectives admonition" id="objectives-0">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>We get a feeling for remote repositories (<a class="reference external" href="https://coderefinery.github.io/git-collaborative/">more later</a>).</p></li>
+<li><p>We are able to publish a repository on the web.</p></li>
+<li><p>We are able to fetch and track a repository from the web.</p></li>
+</ul>
+</div>
+<div class="admonition-instructor-note instructor-note admonition" id="instructor-note-0">
+<p class="admonition-title">Instructor note</p>
+<ul class="simple">
+<li><p>30 min demonstration/type-along</p></li>
+</ul>
+</div>
+<section id="from-our-laptops-to-the-web">
+<h2>From our laptops to the web<a class="headerlink" href="#from-our-laptops-to-the-web" title="Permalink to this heading">#</a></h2>
+<p>We have seen that <strong>creating Git repositories and moving them around is
+simple</strong> and that is great.</p>
+<p>So far everything was local and all snapshots, branches, and tags are saved under <code class="docutils literal notranslate"><span class="pre">.git</span></code>.</p>
+<p>If we remove <code class="docutils literal notranslate"><span class="pre">.git</span></code>, we remove all Git history of a project.</p>
+<div class="admonition-discussion discussion important admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<ul class="simple">
+<li><p>What if the hard disk fails?</p></li>
+<li><p>What if somebody steals my laptop?</p></li>
+<li><p>How can we collaborate with others across the web?</p></li>
+</ul>
+</div>
+</section>
+<section id="remotes">
+<h2>Remotes<a class="headerlink" href="#remotes" title="Permalink to this heading">#</a></h2>
+<p>We will learn how to work with remote repositories in detail in the
+<a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative distributed version control</a> lesson.</p>
+<p>In this section we only want to get a taste to prepare us for other lessons
+where we will employ GitHub.  Our goal is to publish our guacamole recipe on
+the web. Don’t worry, you will be able to remove it afterwards.</p>
+<p>To store your git data on another server, you use <strong>remotes</strong>.
+A remote is a repository on its own, with its own branches
+We can <strong>push</strong> changes to the remote and <strong>pull</strong>
+from the remote.</p>
+<p>You might use remotes to:</p>
+<ul class="simple">
+<li><p>Back up your own work.</p></li>
+<li><p>To collaborate with other people.</p></li>
+</ul>
+<p>There are different types of remotes:</p>
+<ul class="simple">
+<li><p>If you have a server you can ssh to, you can use that as a remote.</p></li>
+<li><p><a class="reference external" href="https://github.com">GitHub</a> is a popular, closed-source commercial site.</p></li>
+<li><p><a class="reference external" href="https://about.gitlab.com">GitLab</a> is a popular, open-core
+commercial site.  Many universities have their own private GitLab servers
+set up.</p></li>
+<li><p><a class="reference external" href="https://bitbucket.org">Bitbucket</a> is yet another popular commercial site.</p></li>
+<li><p>Another option is <a class="reference external" href="https://notabug.org">NotABug</a></p></li>
+<li><p>We also operate a <a class="reference external" href="https://coderefinery.org/repository/">Nordic
+research software repository
+platform</a>.
+This is GitLab, free for researchers and allows private,
+cross-university sharing.</p></li>
+</ul>
+</section>
+<section id="type-along-create-a-new-repository-on-github">
+<h2>Type-along: Create a new repository on GitHub<a class="headerlink" href="#type-along-create-a-new-repository-on-github" title="Permalink to this heading">#</a></h2>
+<div class="admonition-we-need-ssh-keys-configured-for-this-part-to-work admonition">
+<p class="admonition-title">We need SSH keys configured for this part to work</p>
+<p>To try this part during exercise or type-along, you need SSH keys configured
+and the public key deposited on GitHub (see our <a class="reference external" href="https://coderefinery.github.io/installation/ssh/">installation
+instructions</a>).</p>
+<p>If you do not have these configured, please watch as we do this episode and you
+can prepare before the <a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative Git
+lesson</a>, where we will need
+this set up.</p>
+</div>
+<p>For the rest of this page, we will make a new repository for our
+guacamole recipe on GitHub (<a class="reference internal" href="../#index"><span class="std std-ref">here</span></a> we motivate why we demonstrate this
+with GitHub),
+send our code to it, and then see how
+others can get the code from it.</p>
+<div class="admonition-if-you-don-t-have-the-recipe-repository-from-previous-episodes admonition">
+<p class="admonition-title">If you don’t have the recipe repository from previous episodes</p>
+<p>Maybe you joined the workshop later or got stuck somewhere? <strong>No problem</strong>!</p>
+<p><strong>If you don’t have the recipe repository from previous episodes</strong>, you can
+clone our version of the repository using (please <strong>skip this if you have the recipe
+repository on your computer already</strong>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/coderefinery/recipe-before-merge.git<span class="w"> </span>recipe
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>recipe
+<span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>origin
+</pre></div>
+</div>
+<p>Now you have a repository called <code class="docutils literal notranslate"><span class="pre">recipe</span></code> on your computer with a couple of
+commits. Further down we will also clarify what <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> does.</p>
+</div>
+<p>Make sure that you are <strong>logged into GitHub</strong>.</p>
+<figure class="align-default" id="id1">
+<a class="with-border reference internal image-reference" href="../_images/new-top-left.png"><img alt="../_images/new-top-left.png" class="with-border" src="../_images/new-top-left.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">To create a repository we either click the green button “New” (top left corner).</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<a class="with-border reference internal image-reference" href="../_images/new-top-right.png"><img alt="../_images/new-top-right.png" class="with-border" src="../_images/new-top-right.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Or if you see your profile page, there is a “+” menu (top right corner).</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Yet another way to create a new repository is to visit
+<a class="github reference external" href="https://github.com/new">new</a> directly.</p>
+<hr class="docutils" />
+<p>On this page choose a project name.
+For the sake of this exercise <strong>do not select</strong>
+“Initialize this repository with a README” (what will happen if you do?):</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/creating.png"><img alt="../_images/creating.png" class="with-border" src="../_images/creating.png" style="width: 100%;" /></a>
+</figure>
+<p>Once you click the green “Create repository”, you will see a page similar to:</p>
+<figure class="align-default">
+<a class="with-border reference internal image-reference" href="../_images/created.png"><img alt="../_images/created.png" class="with-border" src="../_images/created.png" style="width: 100%;" /></a>
+</figure>
+<p>What this means is that we have now an empty project with either an HTTPS or an
+SSH address: click on the HTTPS and SSH buttons to see what happens.</p>
+</section>
+<hr class="docutils" />
+<section id="pushing-our-guacamole-recipe-repository-to-github">
+<h2>Pushing our guacamole recipe repository to GitHub<a class="headerlink" href="#pushing-our-guacamole-recipe-repository-to-github" title="Permalink to this heading">#</a></h2>
+<p>To push changes to the project please <strong>select SSH</strong>.
+For this to work <a class="reference external" href="https://coderefinery.github.io/installation/ssh/">you will need your SSH keys configured</a>.</p>
+<p>We now want to try the second option that GitHub suggests:</p>
+<blockquote>
+<div><p><strong>… or push an existing repository from the command line</strong></p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Now go to your guacamole repository on your computer.</p></li>
+<li><p>Check that you are in the right place with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Copy paste the three lines to the terminal and execute those, in my case (<strong>you
+need to replace the “user” part and possibly also the repository name</strong>):</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user/recipe.git
+<span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+<span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>The meaning of the above lines:</p>
+<ul class="simple">
+<li><p>Add a remote reference with the name “origin”</p></li>
+<li><p>Rename current branch to “main”</p></li>
+<li><p>Push branch “main” to “origin”</p></li>
+</ul>
+<p>You should now see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:user/recipe.git
+ * [new branch]      main -&gt; main
+Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;origin&#39;.
+</pre></div>
+</div>
+<section id="exercise-push-your-guacamole-recipe-to-github">
+<h3>Exercise: Push your guacamole recipe to GitHub<a class="headerlink" href="#exercise-push-your-guacamole-recipe-to-github" title="Permalink to this heading">#</a></h3>
+<div class="admonition-push-1-push-your-guacamole-recipe-to-github exercise important admonition" id="exercise-0">
+<p class="admonition-title">Push-1: Push your guacamole recipe to GitHub</p>
+<ul class="simple">
+<li><p>Go to your recipe directory on your computer.</p></li>
+<li><p>Check that you are in the right place with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Define the remote with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">git&#64;github.com:user/recipe.git</span></code>.</p></li>
+<li><p>Rename the current branch to “main”, if needed: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-M</span> <span class="pre">main</span></code>.</p></li>
+<li><p>Push the local branch “main” to the remote: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</p></li>
+</ul>
+</div>
+<p><strong>Reload your GitHub project website and - taa-daa - your commits should now be
+online!</strong></p>
+<p>What just happened? <strong>Think of publishing a repository as uploading the <code class="docutils literal notranslate"><span class="pre">.git</span></code> part online</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We could have pushed the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch using <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code>,
+without renaming it to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Here we chose to rename the branch to <code class="docutils literal notranslate"><span class="pre">main</span></code> to
+closely follow the instructions from the GitHub web interface.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="cloning-a-repository">
+<h2>Cloning a repository<a class="headerlink" href="#cloning-a-repository" title="Permalink to this heading">#</a></h2>
+<p>Now other people can clone this repository and contribute changes. In the
+<a class="reference external" href="https://coderefinery.github.io/git-collaborative/">collaborative distributed version control</a> lesson
+we will learn how this works.</p>
+<p>At this point only a brief demo - if you copy the SSH or HTTPS address, you can clone repositories like this
+(again adapt the “namespace/repository.git” part):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:user/recipe.git
+</pre></div>
+</div>
+<p>This creates a directory called “recipe” unless it already exists. You can also specify the target directory
+on your computer:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:user/recipe.git<span class="w"> </span>myrecipe
+</pre></div>
+</div>
+<p>What just happened? <strong>Think of cloning as downloading the <code class="docutils literal notranslate"><span class="pre">.git</span></code> part to your
+computer</strong>. After downloading the <code class="docutils literal notranslate"><span class="pre">.git</span></code> part the branch pointed to by HEAD is
+automatically checked out.</p>
+<div class="admonition-keypoints keypoints admonition" id="keypoints-0">
+<p class="admonition-title">Keypoints</p>
+<ul class="simple">
+<li><p>A repository can have one or multiple remotes (we will revisit these later).</p></li>
+<li><p>Local branches often track remote branches.</p></li>
+<li><p>A remote serves as a full backup of your work.</p></li>
+<li><p>We’ll properly learn how to use these in the <a class="reference external" href="https://coderefinery.github.io/git-collaborative/">Collaborative Git lesson</a>.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../conflicts/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conflict resolution</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../archaeology/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Inspecting history</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-our-laptops-to-the-web">From our laptops to the web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remotes">Remotes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-along-create-a-new-repository-on-github">Type-along: Create a new repository on GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pushing-our-guacamole-recipe-repository-to-github">Pushing our guacamole recipe repository to GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-push-your-guacamole-recipe-to-github">Exercise: Push your guacamole recipe to GitHub</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repository">Cloning a repository</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CodeRefinery team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright CodeRefinery team.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

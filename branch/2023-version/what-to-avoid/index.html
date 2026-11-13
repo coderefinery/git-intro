@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What to avoid &mdash; Introduction to version control with Git  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+
+  
+    <link rel="shortcut icon" href="../_static/coderefinery.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=187304be"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=582ca9e2"></script>
+        <script src="../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Using the Git staging area" href="../staging-area/" />
+    <link rel="prev" title="Practical advice: how much Git is necessary?" href="../level/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../" class="icon icon-home">
+            Introduction to version control with Git
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Core episodes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../motivation/">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches/">Branching and merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflicts/">Conflict resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../remotes/">Sharing repositories online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archaeology/">Inspecting history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../level/">Practical advice: how much Git is necessary?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">What to avoid</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optional episodes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../staging-area/">Using the Git staging area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recovering/">Undoing and recovering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interrupted/">Interrupted work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aliases/">Aliases and configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../under-the-hood/">Git under the hood</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">Other resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">List of exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/core/">All lessons</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/">CodeRefinery</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://coderefinery.org/lessons/reusing/">Reusing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Introduction to version control with Git</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">What to avoid</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/coderefinery/git-intro/blob/main/content/what-to-avoid.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="what-to-avoid">
+<h1>What to avoid<a class="headerlink" href="#what-to-avoid" title="Link to this heading"></a></h1>
+<p>The idea for this page came up during a discussion: quick reference page of
+things that you should not do with Git. Basically, a list of some common Git
+gotchas.</p>
+<p><strong>Postponing commits because the changes are “unfinished”/”ugly”</strong>: It is
+better to have many OK-ish commits than too few perfect commits.  Too few
+perfect commits are probably too large and make undoing more difficult.  It is
+also easier to combine too small commits than it is to split too large commits.
+The longer you wait because of this, the harder it will be to
+commit it at all.</p>
+<p><strong>Not updating your branch before starting new work</strong>: Few things are worse
+than doing work and then noticing a lot of conflicts because
+unrelated but conflicting work was done in the meantime or even before you started.  Or noticing that someone
+else has already done it.  This problem is largest when you come back
+to an active project weeks or months later.</p>
+<p><strong>Commit unrelated changes together</strong>: Makes it difficult to undo changes since
+it can undo also the unrelated change.
+But, this is the counterpoint to the first point: In the end, it is probably better to make big
+ugly commits than to never commit.  This is especially true in in the chaotic early
+phases of small projects.</p>
+<p><strong>Too ambitious branch which risks to never get completed</strong>: The branch will
+never merge back and be so big and so ambitious with too many/big features that
+the risk is high that once it is really ready, there are conflicts everywhere.</p>
+<p><strong>Committing generated files</strong>: See <a class="reference internal" href="../basics/#gitignore"><span class="std std-ref">Ignoring files and paths with .gitignore</span></a>.</p>
+<p><strong>Over-engineering the branch layout and safeguards in small projects</strong>: This
+may prevent people from contributing (maybe even including yourself?). Add more restrictions and safeguards as
+the project and the group of collaborators grows.</p>
+<p><strong>Commit messages that explain what has been changed but do not explain why it has been
+changed</strong>: This is as useful as code comments which describe the “obvious” such
+as “this is a loop” instead of explaining why something is done this way.
+But don’t let perfect commit messages stop you from the most important point, committing often (first point).</p>
+<p><strong>Commit huge files</strong>: Huge files get sometimes accidentally added and
+committed which can significantly increase the repository size. Note that a
+subsequent <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code> does not remove the addition from the repository history.
+Code review can help detecting accidental large file additions.
+You can also add an automated test which checks for file sizes during a pull request or merge request.</p>
+<div class="admonition-discussion discussion important admonition" id="discussion-0">
+<p class="admonition-title">Discussion</p>
+<p>Question to all seasoned Git users: What are we missing on this page? Please
+contribute improvements.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../level/" class="btn btn-neutral float-left" title="Practical advice: how much Git is necessary?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../staging-area/" class="btn btn-neutral float-right" title="Using the Git staging area" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright CodeRefinery team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
