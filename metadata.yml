@@ -99,7 +99,7 @@ learningResourceType: "lesson"
 # given-names, orcid (optional)} for people. When enabled: mapped to
 # CITATION.cff's contact field, bioschemas.yml's maintainer property,
 # and Zenodo's contributors (as ContactPerson).
-# maintainers:
+maintainers:
 - family-names: "Hemanadhan"
   given-names: "Myneni"
   orcid: "https://orcid.org/0000-0003-2498-3841"
