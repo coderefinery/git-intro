@@ -89,8 +89,10 @@ learningResourceType: "lesson"
 # CITATION.cff's contact field, bioschemas.yml's maintainer property,
 # and Zenodo's contributors (as ContactPerson).
 # maintainers:
-# - family-names: ""
-#   given-names: ""
+- family-names: "Hemanadhan"
+  given-names: "Myneni"
+- family-names: "Iusan"
+  given-names: "Diana"
 
 # List of CFF-style author entries: either {name: "Org"} for
 # organizations, or {family-names, given-names, orcid (optional)} for
